@@ -1,6 +1,11 @@
-import { describe, it, expect } from 'vitest';
-import { createCanonicalForm } from './crypto';
-import type { Playlist, PlaylistItem } from './types';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import {
+  createCanonicalForm,
+  getServerKeyPair,
+  signPlaylist,
+  verifyPlaylistSignature,
+} from './crypto';
+import type { Playlist, PlaylistItem, Env } from './types';
 
 describe('Crypto Functions', () => {
   describe('createCanonicalForm', () => {
@@ -171,6 +176,262 @@ describe('Crypto Functions', () => {
 
       const parsed = JSON.parse(canonical);
       expect(parsed.items[0].duration).toBe(0);
+    });
+  });
+
+  describe('getServerKeyPair', () => {
+    const validPrivateKeyHex =
+      '302e020100300506032b657004220420d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a';
+
+    it('should throw error when ED25519_PRIVATE_KEY is not provided', async () => {
+      const env: Env = {} as Env;
+
+      await expect(getServerKeyPair(env)).rejects.toThrow(
+        'ED25519_PRIVATE_KEY environment variable is required'
+      );
+    });
+
+    it('should throw error when ED25519_PRIVATE_KEY is empty', async () => {
+      const env: Env = { ED25519_PRIVATE_KEY: '' } as Env;
+
+      await expect(getServerKeyPair(env)).rejects.toThrow(
+        'ED25519_PRIVATE_KEY environment variable is required'
+      );
+    });
+
+    it('should load valid PKCS#8 private key', async () => {
+      const env: Env = { ED25519_PRIVATE_KEY: validPrivateKeyHex } as Env;
+
+      const keyPair = await getServerKeyPair(env);
+
+      expect(keyPair).toBeDefined();
+      expect(keyPair.privateKey).toBeInstanceOf(Uint8Array);
+      expect(keyPair.publicKey).toBeInstanceOf(Uint8Array);
+      expect(keyPair.publicKey.length).toBe(32);
+    });
+
+    it('should load valid private key with 0x prefix', async () => {
+      const env: Env = { ED25519_PRIVATE_KEY: `0x${validPrivateKeyHex}` } as Env;
+
+      const keyPair = await getServerKeyPair(env);
+
+      expect(keyPair).toBeDefined();
+      expect(keyPair.privateKey).toBeInstanceOf(Uint8Array);
+      expect(keyPair.publicKey).toBeInstanceOf(Uint8Array);
+    });
+
+    it('should handle 32-byte raw private key', async () => {
+      // Generate a 32-byte hex string (64 characters)
+      const rawPrivateKey = 'd75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a';
+      const env: Env = { ED25519_PRIVATE_KEY: rawPrivateKey } as Env;
+
+      const keyPair = await getServerKeyPair(env);
+
+      expect(keyPair).toBeDefined();
+      expect(keyPair.privateKey).toBeInstanceOf(Uint8Array);
+      expect(keyPair.publicKey).toBeInstanceOf(Uint8Array);
+    });
+
+    it('should throw error for invalid private key format', async () => {
+      const env: Env = { ED25519_PRIVATE_KEY: 'invalid-key-format' } as Env;
+
+      await expect(getServerKeyPair(env)).rejects.toThrow(
+        'Failed to load ED25519 private key from environment'
+      );
+    });
+
+    it('should throw error for wrong key length', async () => {
+      const env: Env = { ED25519_PRIVATE_KEY: 'deadbeef' } as Env; // Too short
+
+      await expect(getServerKeyPair(env)).rejects.toThrow(
+        'Failed to load ED25519 private key from environment'
+      );
+    });
+  });
+
+  describe('signPlaylist and verifyPlaylistSignature integration', () => {
+    const testPlaylist: Omit<Playlist, 'signature'> = {
+      dpVersion: '1.0.0',
+      id: 'test-playlist-id',
+      slug: 'test-playlist',
+      title: 'Test Playlist for Signing',
+      created: '2025-01-01T00:00:00Z',
+      items: [
+        {
+          id: 'test-item-1',
+          title: 'Test Item',
+          source: 'https://example.com/test',
+          duration: 300,
+          license: 'open' as const,
+        },
+      ],
+    };
+
+    let keyPair: { publicKey: Uint8Array; privateKey: Uint8Array };
+
+    beforeEach(async () => {
+      // Generate a test key pair
+      const validPrivateKeyHex =
+        '302e020100300506032b657004220420d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a';
+      const env: Env = { ED25519_PRIVATE_KEY: validPrivateKeyHex } as Env;
+      keyPair = await getServerKeyPair(env);
+    });
+
+    describe('signPlaylist', () => {
+      it('should create a valid signature', async () => {
+        const signature = await signPlaylist(testPlaylist, keyPair.privateKey);
+
+        expect(signature).toMatch(/^ed25519:0x[a-f0-9]{128}$/);
+      });
+
+      it('should create deterministic signatures for the same playlist', async () => {
+        const signature1 = await signPlaylist(testPlaylist, keyPair.privateKey);
+        const signature2 = await signPlaylist(testPlaylist, keyPair.privateKey);
+
+        expect(signature1).toBe(signature2);
+      });
+
+      it('should create different signatures for different playlists', async () => {
+        const playlist2 = { ...testPlaylist, title: 'Different Title' };
+
+        const signature1 = await signPlaylist(testPlaylist, keyPair.privateKey);
+        const signature2 = await signPlaylist(playlist2, keyPair.privateKey);
+
+        expect(signature1).not.toBe(signature2);
+      });
+
+      it('should handle complex playlist structures', async () => {
+        const complexPlaylist: Omit<Playlist, 'signature'> = {
+          ...testPlaylist,
+          defaults: {
+            duration: 300,
+            license: 'token' as const,
+            display: {
+              scaling: 'fit' as const,
+              background: '#ffffff',
+            },
+          },
+          items: [
+            {
+              ...testPlaylist.items[0],
+              display: {
+                scaling: 'fill' as const,
+                margin: 10,
+              },
+              repro: {
+                engineVersion: { chromium: '123.0.0' },
+                seed: '0x123456',
+                assetsSHA256: ['hash1'],
+                frameHash: {
+                  sha256: 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef',
+                  phash: '0x12345678',
+                },
+              },
+            },
+          ],
+        };
+
+        const signature = await signPlaylist(complexPlaylist, keyPair.privateKey);
+        expect(signature).toMatch(/^ed25519:0x[a-f0-9]{128}$/);
+      });
+    });
+
+    describe('verifyPlaylistSignature', () => {
+      it('should verify a valid signature', async () => {
+        // TODO: Implement this
+      });
+
+      it('should reject playlist without signature', async () => {
+        const playlistWithoutSig = testPlaylist as Playlist;
+
+        const isValid = await verifyPlaylistSignature(playlistWithoutSig, keyPair.publicKey);
+        expect(isValid).toBe(false);
+      });
+
+      it('should reject playlist with invalid signature format', async () => {
+        const playlistWithInvalidSig: Playlist = {
+          ...testPlaylist,
+          signature: 'invalid-signature-format',
+        };
+
+        const isValid = await verifyPlaylistSignature(playlistWithInvalidSig, keyPair.publicKey);
+        expect(isValid).toBe(false);
+      });
+
+      it('should reject playlist with wrong signature', async () => {
+        const playlistWithWrongSig: Playlist = {
+          ...testPlaylist,
+          signature: 'ed25519:0x' + 'a'.repeat(128), // Valid format but wrong signature
+        };
+
+        const isValid = await verifyPlaylistSignature(playlistWithWrongSig, keyPair.publicKey);
+        expect(isValid).toBe(false);
+      });
+
+      it('should reject tampered playlist', async () => {
+        const signature = await signPlaylist(testPlaylist, keyPair.privateKey);
+        const tamperedPlaylist: Playlist = {
+          ...testPlaylist,
+          title: 'Tampered Title', // Changed after signing
+          signature,
+        };
+
+        const isValid = await verifyPlaylistSignature(tamperedPlaylist, keyPair.publicKey);
+        expect(isValid).toBe(false);
+      });
+
+      it('should handle verification errors gracefully', async () => {
+        const invalidPublicKey = new Uint8Array(32); // All zeros
+        const signature = await signPlaylist(testPlaylist, keyPair.privateKey);
+        const signedPlaylist: Playlist = { ...testPlaylist, signature };
+
+        const isValid = await verifyPlaylistSignature(signedPlaylist, invalidPublicKey);
+        expect(isValid).toBe(false);
+      });
+    });
+  });
+
+  describe('hexToUint8Array (via integration testing)', () => {
+    it('should handle hex strings with 0x prefix in getServerKeyPair', async () => {
+      const hexWithPrefix =
+        '0x302e020100300506032b657004220420d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a';
+      const env: Env = { ED25519_PRIVATE_KEY: hexWithPrefix } as Env;
+
+      const keyPair = await getServerKeyPair(env);
+      expect(keyPair).toBeDefined();
+      expect(keyPair.privateKey).toBeInstanceOf(Uint8Array);
+    });
+
+    it('should handle hex strings without 0x prefix in getServerKeyPair', async () => {
+      const hexWithoutPrefix =
+        '302e020100300506032b657004220420d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a';
+      const env: Env = { ED25519_PRIVATE_KEY: hexWithoutPrefix } as Env;
+
+      const keyPair = await getServerKeyPair(env);
+      expect(keyPair).toBeDefined();
+      expect(keyPair.privateKey).toBeInstanceOf(Uint8Array);
+    });
+
+    it('should handle hex parsing edge cases in getServerKeyPair', async () => {
+      // Test with completely invalid hex that should fail at crypto operations
+      const completelyInvalidHex = 'not-hex-at-all';
+      const env1: Env = { ED25519_PRIVATE_KEY: completelyInvalidHex } as Env;
+
+      await expect(getServerKeyPair(env1)).rejects.toThrow();
+
+      // Test with mostly valid hex but wrong for crypto operations
+      // This might pass hex parsing but fail at crypto key import
+      const wrongFormatHex = 'deadbeefdeadbeefdeadbeefdeadbeef'; // Valid hex but wrong key format
+      const env2: Env = { ED25519_PRIVATE_KEY: wrongFormatHex } as Env;
+
+      await expect(getServerKeyPair(env2)).rejects.toThrow();
+    });
+
+    it('should reject odd-length hex strings in getServerKeyPair', async () => {
+      const oddLengthHex = '302e020100300506032b657004220420d75a980182b10ab7d54bfed3c964073'; // Missing last character
+      const env: Env = { ED25519_PRIVATE_KEY: oddLengthHex } as Env;
+
+      await expect(getServerKeyPair(env)).rejects.toThrow();
     });
   });
 });

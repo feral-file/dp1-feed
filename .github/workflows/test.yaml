@@ -26,7 +26,14 @@ jobs:
         run: npm ci
 
       - name: Run unit tests
-        run: npm test
+        run: npm run test:coverage
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: display-protocol/dp1-feed
+          flags: unittests
 
       - name: Start development server for integration tests
         run: |
