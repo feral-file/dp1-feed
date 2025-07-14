@@ -3,7 +3,6 @@ name: Deploy Server
 on:
   push:
     branches: [main]
-    paths: ['prototype/server/**']
   workflow_dispatch:
     inputs:
       environment:
@@ -20,10 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy to Cloudflare Workers
 
-    defaults:
-      run:
-        working-directory: ./prototype/server
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -33,7 +28,7 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
-          cache-dependency-path: 'prototype/server/package-lock.json'
+          cache-dependency-path: 'package-lock.json'
 
       - name: Install dependencies
         run: npm ci
@@ -46,7 +41,6 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          workingDirectory: './prototype/server'
           command: deploy
 
       - name: Deploy to Cloudflare Workers (Production)
@@ -54,5 +48,4 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          workingDirectory: './prototype/server'
           command: deploy --env production

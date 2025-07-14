@@ -3,21 +3,13 @@ name: Test Server
 on:
   push:
     branches: [main]
-    paths:
-      - 'prototype/server/**'
   pull_request:
     branches: [main]
-    paths:
-      - 'prototype/server/**'
 
 jobs:
   test:
     runs-on: ubuntu-latest
     name: Server Tests
-
-    defaults:
-      run:
-        working-directory: ./prototype/server
 
     steps:
       - name: Checkout code
@@ -28,7 +20,7 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
-          cache-dependency-path: 'prototype/server/package-lock.json'
+          cache-dependency-path: 'package-lock.json'
 
       - name: Install dependencies
         run: npm ci
