@@ -77,6 +77,11 @@ preview_id = "YOUR_PLAYLISTS_PREVIEW_KV_ID_HERE"
 binding = "DP1_PLAYLIST_GROUPS"
 id = "YOUR_PLAYLIST_GROUPS_KV_ID_HERE"
 preview_id = "YOUR_PLAYLIST_GROUPS_PREVIEW_KV_ID_HERE"
+
+[[kv_namespaces]]
+binding = "DP1_PLAYLIST_ITEMS"
+id = "YOUR_PLAYLIST_ITEMS_KV_ID_HERE"
+preview_id = "YOUR_PLAYLIST_ITEMS_PREVIEW_KV_ID_HERE"
 ```
 
 ### 4. Set API Secrets
@@ -513,8 +518,8 @@ const PlaylistSchema = z.object({
 
 ## 📚 Documentation
 
-- [DP-1 Specification](../../docs/DP-1%20Specification.md)
-- [OpenAPI Schema](../../docs/api/openapi.yaml)
+- [DP-1 Specification](https://github.com/display-protocol/dp1/blob/main/docs/spec.md)
+- [OpenAPI Schema](https://github.com/display-protocol/dp1/blob/main/docs/feed-api.yaml)
 - [Hono Documentation](https://hono.dev/)
 - [Zod Documentation](https://zod.dev/)
 - [Cloudflare Workers Docs](https://developers.cloudflare.com/workers/)
@@ -563,7 +568,7 @@ npm run type-check
 
 ### Getting Help
 
-- Check the [issues page](https://github.com/feralfile/dp-1/issues)
+- Check the [issues page](https://github.com/display-protocol/dp1-feed/issues)
 - Review Hono [documentation](https://hono.dev/)
 - Review Zod [documentation](https://zod.dev/)
 - Contact support at support@feralfile.com
