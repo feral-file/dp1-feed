@@ -138,14 +138,12 @@ const testPlaylistGroup: PlaylistGroup = {
 
 describe('Storage Module', () => {
   beforeEach(() => {
-    // Clear storage between tests
-    const mockPlaylistKV = testEnv.DP1_PLAYLISTS as any;
-    const mockGroupKV = testEnv.DP1_PLAYLIST_GROUPS as any;
-    const mockPlaylistItemsKV = testEnv.DP1_PLAYLIST_ITEMS as any;
+    vi.clearAllMocks();
 
-    mockPlaylistKV.storage.clear();
-    mockGroupKV.storage.clear();
-    mockPlaylistItemsKV.storage.clear();
+    // Clear storage and mock between tests
+    testEnv.DP1_PLAYLISTS = createMockKV();
+    testEnv.DP1_PLAYLIST_GROUPS = createMockKV();
+    testEnv.DP1_PLAYLIST_ITEMS = createMockKV();
   });
 
   describe('Playlist Storage', () => {
@@ -289,8 +287,8 @@ describe('Storage Module', () => {
       const mockPlaylistKV = testEnv.DP1_PLAYLISTS as any;
 
       // Check that playlist group index keys were created
-      const groupIndexKey1 = `${STORAGE_KEYS.PLAYLIST_BY_GROUP_PREFIX}${testPlaylistGroup.id}:550e8400-e29b-41d4-a716-446655440000`;
-      const groupIndexKey2 = `${STORAGE_KEYS.PLAYLIST_BY_GROUP_PREFIX}${testPlaylistGroup.id}:550e8400-e29b-41d4-a716-446655440002`;
+      const groupIndexKey1 = `${STORAGE_KEYS.PLAYLIST_BY_GROUP_PREFIX}${testPlaylistGroup.id}:${playlistId1}`;
+      const groupIndexKey2 = `${STORAGE_KEYS.PLAYLIST_BY_GROUP_PREFIX}${testPlaylistGroup.id}:${playlistId2}`;
 
       expect(mockPlaylistKV.storage.has(groupIndexKey1)).toBe(true);
       expect(mockPlaylistKV.storage.has(groupIndexKey2)).toBe(true);
@@ -688,15 +686,10 @@ describe('Storage Module', () => {
         playlists: ['https://api.feed.feralfile.com/api/v1/playlists/nonexistent-playlist-id'],
       };
 
-      const logSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
-
-      const saved = await savePlaylistGroup(group, envWithSelfHosted);
-      expect(saved).toBe(false); // Should fail because playlist not found
-
-      // Verify error was logged
-      expect(logSpy).toHaveBeenCalledWith(expect.stringContaining('not found in database'));
-
-      logSpy.mockRestore();
+      // Should throw an error because playlist not found
+      await expect(savePlaylistGroup(group, envWithSelfHosted)).rejects.toThrow(
+        'Playlist nonexistent-playlist-id not found in database for URL: https://api.feed.feralfile.com/api/v1/playlists/nonexistent-playlist-id'
+      );
     });
 
     it('should handle invalid self-hosted URL format gracefully', async () => {
@@ -710,17 +703,10 @@ describe('Storage Module', () => {
         playlists: ['https://api.feed.feralfile.com/invalid/path/format'],
       };
 
-      const logSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
-
-      const saved = await savePlaylistGroup(group, envWithSelfHosted);
-      expect(saved).toBe(false); // Should fail because URL format is invalid
-
-      // Verify error was logged
-      expect(logSpy).toHaveBeenCalledWith(
-        expect.stringContaining('Could not extract playlist identifier from self-hosted URL')
+      // Should throw an error because URL format is invalid
+      await expect(savePlaylistGroup(group, envWithSelfHosted)).rejects.toThrow(
+        'Could not extract playlist identifier from self-hosted URL: https://api.feed.feralfile.com/invalid/path/format'
       );
-
-      logSpy.mockRestore();
     });
 
     it('should work when SELF_HOSTED_DOMAINS is undefined', async () => {
@@ -820,23 +806,15 @@ describe('Storage Module', () => {
           playlists: [url],
         };
 
-        const logSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
-
-        const saved = await savePlaylistGroup(group, envWithSelfHosted);
-
         if (expectedId) {
+          const saved = await savePlaylistGroup(group, envWithSelfHosted);
           expect(saved).toBe(true);
-          expect(logSpy).not.toHaveBeenCalledWith(
-            expect.stringContaining('Could not extract playlist identifier')
-          );
         } else {
-          expect(saved).toBe(false);
-          expect(logSpy).toHaveBeenCalledWith(
-            expect.stringContaining('Could not extract playlist identifier from self-hosted URL')
+          // Should throw an error for invalid URL formats
+          await expect(savePlaylistGroup(group, envWithSelfHosted)).rejects.toThrow(
+            'Could not extract playlist identifier from self-hosted URL'
           );
         }
-
-        logSpy.mockRestore();
       }
     });
 

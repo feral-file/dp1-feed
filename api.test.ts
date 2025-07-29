@@ -486,7 +486,7 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.error).toBe('not_found');
     });
 
-    it('POST /playlists with invalid data returns 400', async () => {
+    it('POST /playlists with empty data returns 400', async () => {
       const req = new Request('http://localhost/api/v1/playlists', {
         method: 'POST',
         headers: validAuth,
@@ -499,6 +499,19 @@ describe('DP-1 Feed Operator API', () => {
 
       const data = await response.json();
       expect(data.error).toBe('validation_error');
+    });
+
+    it('POST /playlists with invalid data returns 400', async () => {
+      const req = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: validAuth,
+        body: 'invalid json',
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('invalid_json');
     });
 
     it('POST /playlists should create playlist with server-generated ID and slug', async () => {
@@ -565,6 +578,97 @@ describe('DP-1 Feed Operator API', () => {
         /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
       );
     });
+
+    it('PUT /playlists/:id with empty data returns 400', async () => {
+      // First create a playlist
+      const createReq = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(validPlaylist),
+      });
+      const createResponse = await app.fetch(createReq, testEnv);
+      const createdPlaylist = await createResponse.json();
+
+      // Try to update with empty data
+      const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+        method: 'PUT',
+        headers: validAuth,
+        body: JSON.stringify({}),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(400);
+
+      const data = await updateResponse.json();
+      expect(data.error).toBe('validation_error');
+    });
+
+    it('PUT /playlists/:id with invalid data returns 400', async () => {
+      // First create a playlist
+      const createReq = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(validPlaylist),
+      });
+      const createResponse = await app.fetch(createReq, testEnv);
+      const createdPlaylist = await createResponse.json();
+
+      // Try to update with invalid JSON
+      const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+        method: 'PUT',
+        headers: validAuth,
+        body: 'invalid json',
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(400);
+
+      const data = await updateResponse.json();
+      expect(data.error).toBe('invalid_json');
+    });
+
+    it('PUT /playlists/:id with invalid playlist ID returns 400', async () => {
+      const updateReq = new Request('http://localhost/api/v1/playlists/invalid@playlist!id', {
+        method: 'PUT',
+        headers: validAuth,
+        body: JSON.stringify({
+          items: [
+            {
+              title: 'Test Artwork',
+              source: 'https://example.com/artwork.html',
+              duration: 300,
+              license: 'open' as const,
+            },
+          ],
+        }),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(400);
+
+      const data = await updateResponse.json();
+      expect(data.error).toBe('invalid_id');
+      expect(data.message).toBe(
+        'Playlist ID must be a valid UUID or slug (alphanumeric with hyphens)'
+      );
+    });
+
+    it('GET /playlists with limit below minimum returns 400', async () => {
+      const req = new Request('http://localhost/api/v1/playlists?limit=0');
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('invalid_limit');
+      expect(data.message).toBe('Limit must be between 1 and 100');
+    });
+
+    it('GET /playlists with limit above maximum returns 400', async () => {
+      const req = new Request('http://localhost/api/v1/playlists?limit=101');
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('invalid_limit');
+      expect(data.message).toBe('Limit must be between 1 and 100');
+    });
   });
 
   describe('Playlist Groups API', () => {
@@ -600,6 +704,34 @@ describe('DP-1 Feed Operator API', () => {
 
       const data = await response.json();
       expect(data.error).toBe('not_found');
+    });
+
+    it('POST /playlist-groups with empty data returns 400', async () => {
+      const req = new Request('http://localhost/api/v1/playlist-groups', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify({
+          // Missing required fields
+        }),
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('validation_error');
+    });
+
+    it('POST /playlist-groups with invalid data returns 400', async () => {
+      const req = new Request('http://localhost/api/v1/playlist-groups', {
+        method: 'POST',
+        headers: validAuth,
+        body: 'not json',
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('invalid_json');
     });
 
     it('POST /playlist-groups should create group with server-generated ID and slug', async () => {
@@ -654,6 +786,110 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.id).toBe(groupId); // ID should remain the same
       expect(data.slug).toBe(createdGroup.slug); // Slug should be preserved, not regenerated
       expect(data.title).toBe('Updated Exhibition Title'); // Title should be updated
+    });
+
+    it('PUT /playlist-groups/:id with empty data returns 400', async () => {
+      // Mock fetch for external playlist validation
+      mockStandardPlaylistFetch();
+
+      // First create a playlist group
+      const createReq = new Request('http://localhost/api/v1/playlist-groups', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(validPlaylistGroup),
+      });
+      const createResponse = await app.fetch(createReq, testEnv);
+      const createdGroup = await createResponse.json();
+
+      // Try to update with empty data
+      const updateReq = new Request(`http://localhost/api/v1/playlist-groups/${createdGroup.id}`, {
+        method: 'PUT',
+        headers: validAuth,
+        body: JSON.stringify({}),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(400);
+
+      const data = await updateResponse.json();
+      expect(data.error).toBe('validation_error');
+    });
+
+    it('PUT /playlist-groups/:id with invalid data returns 400', async () => {
+      // Mock fetch for external playlist validation
+      mockStandardPlaylistFetch();
+
+      // First create a playlist group
+      const createReq = new Request('http://localhost/api/v1/playlist-groups', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(validPlaylistGroup),
+      });
+      const createResponse = await app.fetch(createReq, testEnv);
+      const createdGroup = await createResponse.json();
+
+      // Try to update with invalid JSON
+      const updateReq = new Request(`http://localhost/api/v1/playlist-groups/${createdGroup.id}`, {
+        method: 'PUT',
+        headers: validAuth,
+        body: 'invalid json',
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(400);
+
+      const data = await updateResponse.json();
+      expect(data.error).toBe('invalid_json');
+    });
+
+    it('PUT /playlist-groups/:id with invalid group ID returns 400', async () => {
+      const updateReq = new Request('http://localhost/api/v1/playlist-groups/invalid@group!id', {
+        method: 'PUT',
+        headers: validAuth,
+        body: JSON.stringify({
+          title: 'Updated Exhibition',
+          curator: 'Test Curator',
+          playlists: ['https://example.com/playlists/test-playlist-1'],
+        }),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(400);
+
+      const data = await updateResponse.json();
+      expect(data.error).toBe('invalid_id');
+      expect(data.message).toBe(
+        'Playlist group ID must be a valid UUID or slug (alphanumeric with hyphens)'
+      );
+    });
+
+    it('GET /playlist-groups/:id with invalid group ID returns 400', async () => {
+      const req = new Request('http://localhost/api/v1/playlist-groups/invalid@group!id');
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('invalid_id');
+      expect(data.message).toBe(
+        'Playlist group ID must be a valid UUID or slug (alphanumeric with hyphens)'
+      );
+    });
+
+    it('GET /playlist-groups with limit below minimum returns 400', async () => {
+      const req = new Request('http://localhost/api/v1/playlist-groups?limit=0');
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('invalid_limit');
+      expect(data.message).toBe('Limit must be between 1 and 100');
+    });
+
+    it('GET /playlist-groups with limit above maximum returns 400', async () => {
+      const req = new Request('http://localhost/api/v1/playlist-groups?limit=101');
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('invalid_limit');
+      expect(data.message).toBe('Limit must be between 1 and 100');
     });
   });
 
