@@ -45,6 +45,7 @@ jobs:
         env:
           TARGET_URL: ${{ github.event.inputs.target_url }}
           TEST_TYPE: ${{ github.event.inputs.test_type }}
+          API_SECRET: ${{ secrets.DEV_API_SECRET }}
         run: |
           # Use default values if not provided
           URL=${TARGET_URL:-'https://dp1-feed-operator-api-dev.autonomy-system.workers.dev'}
