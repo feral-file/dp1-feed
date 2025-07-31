@@ -3,6 +3,7 @@
 [![Build Status](https://img.shields.io/github/actions/workflow/status/display-protocol/dp1-feed/test.yaml?branch=main&label=build%20status&logo=github)](https://github.com/display-protocol/dp1-feed/actions/workflows/test.yaml)
 [![Linter](https://img.shields.io/github/actions/workflow/status/display-protocol/dp1-feed/lint.yaml?branch=main&label=linter&logo=github)](https://github.com/display-protocol/dp1-feed/actions/workflows/lint.yaml)
 [![Code Coverage](https://img.shields.io/codecov/c/github/display-protocol/dp1-feed/main?label=code%20coverage&logo=codecov)](https://codecov.io/gh/display-protocol/dp1-feed)
+[![Benchmark](https://img.shields.io/github/actions/workflow/status/display-protocol/dp1-feed/benchmark.yaml?branch=main&label=benchmark%20status&logo=github)](https://github.com/display-protocol/dp1-feed/actions/workflows/benchmark.yaml)
 
 A modern, serverless API server built for Cloudflare Workers using the **Hono framework**. Implements OpenAPI 3.1.0 specification for DP-1 playlists and playlist-groups with comprehensive middleware, schema validation, and modular architecture.
 
@@ -147,6 +148,18 @@ npm run test:coverage
 
 # API integration tests
 npm run test:api
+
+# Performance benchmarks (K6)
+npm run benchmark
+
+# Different K6 test scenarios
+npm run benchmark:light      # CI/CD friendly
+npm run benchmark:stress     # High load testing
+npm run benchmark:spike      # Sudden load testing
+npm run benchmark:soak       # Long-running stability
+
+# Generate report from existing results
+npm run benchmark:report
 ```
 
 ### Code Quality
@@ -423,6 +436,69 @@ if (['POST', 'PUT', 'DELETE'].includes(method)) {
 ```
 
 ## 📊 Monitoring & Debugging
+
+### Performance Benchmarking with K6
+
+The API uses **K6**, the industry-standard performance testing tool, to ensure optimal response times and reliability:
+
+```bash
+# Run standard benchmark test
+npm run benchmark
+
+# Run different test scenarios
+npm run benchmark:light     # Light load (CI/CD friendly)
+npm run benchmark:stress    # Stress test with higher load
+npm run benchmark:spike     # Spike test for sudden load
+npm run benchmark:soak      # Long-running stability test
+
+# Run against custom URL with specific test type
+npm run benchmark https://your-api.workers.dev stress
+
+# Generate report from existing results
+npm run benchmark:report
+```
+
+**Performance Criteria:**
+- GET requests: P95 ≤ 100ms
+- POST/PUT requests: P95 ≤ 400ms  
+- Success rate: ≥ 95%
+- Check success rate: ≥ 95%
+
+**K6 Benchmark Features:**
+- **Industry Standard**: Uses K6 for professional-grade performance testing
+- **Multiple Test Scenarios**: Light, normal, stress, spike, and soak tests
+- **Advanced Metrics**: P90, P95, P99 response times with detailed breakdowns
+- **Real Data Testing**: Creates and uses actual API resources for testing
+- **HTTP Method Analysis**: Separate thresholds and reporting for GET/POST/PUT
+- **Comprehensive Reporting**: Detailed markdown reports with visual status indicators
+- **CI/CD Integration**: Automated testing in GitHub Actions
+- **Performance Badges**: Automatic README badge updates
+
+**Test Scenarios:**
+- **Light** (5s warmup, 15s @ 2 users): Perfect for CI/CD pipelines
+- **Normal** (1.5min @ 5-10 users): Standard performance validation  
+- **Stress** (2.5min @ 10-30 users): High load performance testing
+- **Spike** (50s with sudden spike to 50 users): Sudden load resilience
+- **Soak** (5min @ 5 users): Long-running stability testing
+
+**Report Output:**
+- `benchmark-report.md`: Comprehensive K6 performance report
+- `k6-results/`: Raw K6 JSON and HTML reports
+- Automatic README badge updates with current performance status
+- HTTP method breakdown and detailed metrics analysis
+
+**Installation Requirements:**
+K6 must be installed separately:
+```bash
+# macOS
+brew install k6
+
+# Linux  
+sudo apt-get install k6
+
+# Windows
+choco install k6
+```
 
 ### Structured Logging
 

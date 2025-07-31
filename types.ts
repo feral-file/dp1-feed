@@ -111,19 +111,19 @@ const ReproSchema = z
       .array(
         z
           .string()
-          .regex(/^[a-fA-F0-9]+$/)
-          .max(64)
+          .regex(/^0x[a-fA-F0-9]+$/)
+          .max(66)
       )
       .max(1024),
     frameHash: z.object({
       sha256: z
         .string()
-        .regex(/^[a-fA-F0-9]+$/)
-        .max(64),
+        .regex(/^0x[a-fA-F0-9]+$/)
+        .max(66),
       phash: z
         .string()
         .regex(/^0x[a-fA-F0-9]+$/)
-        .max(32)
+        .max(18)
         .optional(),
     }),
   })
@@ -147,8 +147,8 @@ const ProvenanceSchema = z
           .optional(),
         metaHash: z
           .string()
-          .regex(/^[a-fA-F0-9]+$/)
-          .max(64)
+          .regex(/^0x[a-fA-F0-9]+$/)
+          .max(66)
           .optional(),
       })
       .optional(),

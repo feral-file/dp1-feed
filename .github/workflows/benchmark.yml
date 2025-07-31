@@ -1,0 +1,75 @@
+name: K6 Performance Benchmarks
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      target_url:
+        description: 'Target URL to benchmark'
+        required: false
+        default: 'https://dp1-feed-operator-api-dev.autonomy-system.workers.dev'
+      test_type:
+        description: 'Test type (light, normal, stress, spike, soak)'
+        required: false
+        default: 'light'
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install K6
+        run: |
+          sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C5AD17C747E3415A3642D57D77C6C491D6AC1D69
+          echo "deb https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+          sudo apt-get update
+          sudo apt-get install k6
+
+      - name: Run K6 performance benchmarks
+        env:
+          TARGET_URL: ${{ github.event.inputs.target_url }}
+          TEST_TYPE: ${{ github.event.inputs.test_type }}
+        run: |
+          # Use default values if not provided
+          URL=${TARGET_URL:-'https://dp1-feed-operator-api-dev.autonomy-system.workers.dev'}
+          TYPE=${TEST_TYPE:-'light'}
+
+          # Run K6 benchmarks
+          npm run benchmark $URL $TYPE
+
+      - name: Upload K6 results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: k6-benchmark-results
+          path: |
+            benchmark-report.md
+            k6-results/
+          retention-days: 30
+
+      - name: Show benchmark summary
+        if: always()
+        run: |
+          if [ -f benchmark-report.md ]; then
+            echo "📊 K6 Benchmark completed - report generated"
+            echo "## Summary from benchmark-report.md:"
+            head -30 benchmark-report.md
+          else
+            echo "❌ No benchmark report found"
+          fi

@@ -17,6 +17,7 @@ export default defineConfig({
         '.eslintrc.js',
         'scripts/**',
         'eslint.config.js',
+        'k6/**',
       ],
       thresholds: {
         global: {
