@@ -459,12 +459,14 @@ npm run benchmark:report
 ```
 
 **Performance Criteria:**
+
 - GET requests: P95 ≤ 200ms
-- POST/PUT requests: P95 ≤ 800ms  
+- POST/PUT requests: P95 ≤ 800ms
 - Success rate: ≥ 95%
 - Check success rate: ≥ 95%
 
 **K6 Benchmark Features:**
+
 - **Industry Standard**: Uses K6 for professional-grade performance testing
 - **Multiple Test Scenarios**: Light, normal, stress, spike, and soak tests
 - **Advanced Metrics**: P90, P95, P99 response times with detailed breakdowns
@@ -475,13 +477,15 @@ npm run benchmark:report
 - **Performance Badges**: Automatic README badge updates
 
 **Test Scenarios:**
+
 - **Light** (5s warmup, 15s @ 2 users): Perfect for CI/CD pipelines
-- **Normal** (1.5min @ 5-10 users): Standard performance validation  
+- **Normal** (1.5min @ 5-10 users): Standard performance validation
 - **Stress** (2.5min @ 10-30 users): High load performance testing
 - **Spike** (50s with sudden spike to 50 users): Sudden load resilience
 - **Soak** (5min @ 5 users): Long-running stability testing
 
 **Report Output:**
+
 - `benchmark-report.md`: Comprehensive K6 performance report
 - `k6-results/`: Raw K6 JSON and HTML reports
 - Automatic README badge updates with current performance status
@@ -489,11 +493,12 @@ npm run benchmark:report
 
 **Installation Requirements:**
 K6 must be installed separately:
+
 ```bash
 # macOS
 brew install k6
 
-# Linux  
+# Linux
 sudo apt-get install k6
 
 # Windows

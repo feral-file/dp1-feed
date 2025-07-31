@@ -39,7 +39,7 @@
     "kv:put": "wrangler kv key put",
     "benchmark": "node scripts/k6-benchmark.js",
     "benchmark:light": "node scripts/k6-benchmark.js light",
-    "benchmark:stress": "node scripts/k6-benchmark.js stress", 
+    "benchmark:stress": "node scripts/k6-benchmark.js stress",
     "benchmark:spike": "node scripts/k6-benchmark.js spike",
     "benchmark:soak": "node scripts/k6-benchmark.js soak",
     "benchmark:report": "node scripts/k6-benchmark.js --report",
