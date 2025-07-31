@@ -121,7 +121,9 @@ export function setup() {
   try {
     // Fetch existing playlists
     console.log('📥 Fetching existing playlists...');
-    const playlistsResponse = makeRequest('/api/v1/playlists', 'GET', null, { setup: 'true' });
+    const playlistsResponse = makeRequest('/api/v1/playlists?limit=10', 'GET', null, {
+      setup: 'true',
+    });
 
     if (playlistsResponse.status === 200) {
       const responseData = JSON.parse(playlistsResponse.body);
@@ -132,14 +134,13 @@ export function setup() {
       }
     }
 
-    // Create additional playlists if needed
-    const playlistsNeeded = Math.max(2 - cachedPlaylists.length, 2);
-    if (playlistsNeeded > 0) {
-      console.log(`📝 Creating ${playlistsNeeded} additional playlists for testing...`);
+    // Only create playlists if none exist
+    if (cachedPlaylists.length === 0) {
+      console.log('📝 No existing playlists found, creating test playlists...');
 
-      for (let i = 0; i < playlistsNeeded; i++) {
+      for (let i = 0; i < 2; i++) {
         const playlistData = generatePlaylistData(i + 3000); // High index to avoid conflicts
-        console.log(`📤 Sending playlist data: ${JSON.stringify(playlistData)}`);
+        console.log(`📤 Creating playlist ${i + 1}/2...`);
         const response = makeRequest('/api/v1/playlists', 'POST', playlistData, { setup: 'true' });
 
         if (response.status === 201) {
@@ -162,7 +163,9 @@ export function setup() {
 
     // Fetch existing playlist groups
     console.log('📥 Fetching existing playlist groups...');
-    const groupsResponse = makeRequest('/api/v1/playlist-groups', 'GET', null, { setup: 'true' });
+    const groupsResponse = makeRequest('/api/v1/playlist-groups?limit=10', 'GET', null, {
+      setup: 'true',
+    });
 
     if (groupsResponse.status === 200) {
       const responseData = JSON.parse(groupsResponse.body);
@@ -170,6 +173,29 @@ export function setup() {
       if (Array.isArray(groups)) {
         cachedPlaylistGroups = groups;
         console.log(`✅ Found ${cachedPlaylistGroups.length} existing playlist groups`);
+      }
+    }
+
+    // Only create playlist groups if none exist and we have playlists to reference
+    if (cachedPlaylistGroups.length === 0 && cachedPlaylists.length >= 2) {
+      console.log('📝 No existing playlist groups found, creating test group...');
+
+      const groupData = generatePlaylistGroupData(0);
+      console.log('📤 Creating playlist group...');
+      const response = makeRequest('/api/v1/playlist-groups', 'POST', groupData, { setup: 'true' });
+
+      if (response.status === 201) {
+        const group = JSON.parse(response.body);
+        cachedPlaylistGroups.push(group);
+        console.log(`✅ Created playlist group: ${group.id}`);
+      } else {
+        console.log(`❌ Failed to create playlist group: ${response.status}`);
+        try {
+          const errorBody = JSON.parse(response.body);
+          console.log(`❌ Error details: ${JSON.stringify(errorBody)}`);
+        } catch (e) {
+          console.log(`❌ Error: ${e.message}`);
+        }
       }
     }
 
