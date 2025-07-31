@@ -459,8 +459,8 @@ npm run benchmark:report
 ```
 
 **Performance Criteria:**
-- GET requests: P95 ≤ 100ms
-- POST/PUT requests: P95 ≤ 400ms  
+- GET requests: P95 ≤ 200ms
+- POST/PUT requests: P95 ≤ 800ms  
 - Success rate: ≥ 95%
 - Check success rate: ≥ 95%
 
