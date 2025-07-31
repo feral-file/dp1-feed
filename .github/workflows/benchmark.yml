@@ -54,7 +54,7 @@ jobs:
           npm run benchmark $URL $TYPE
 
       - name: Upload K6 results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: k6-benchmark-results
