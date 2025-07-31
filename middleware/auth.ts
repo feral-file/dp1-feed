@@ -123,18 +123,82 @@ export async function errorMiddleware(c: Context, next: Next): Promise<void> {
  * Request logging middleware
  */
 export async function loggingMiddleware(c: Context, next: Next): Promise<void> {
-  const start = Date.now();
+  const start = globalThis.performance.now();
   const method = c.req.method;
   const path = c.req.path;
+  const userAgent = c.req.header('User-Agent') || 'unknown';
+  const requestId = crypto.randomUUID();
+  const clientIP =
+    c.req.header('CF-Connecting-IP') ||
+    c.req.header('X-Forwarded-For') ||
+    c.req.header('X-Real-IP') ||
+    'unknown';
 
-  console.log(`→ ${method} ${path}`);
+  // Add request ID to context for tracing
+  c.set('requestId', requestId);
 
-  await next();
+  // Log request start
+  console.log(
+    JSON.stringify({
+      timestamp: new Date().toISOString(),
+      level: 'debug',
+      type: 'request_start',
+      requestId,
+      method,
+      path,
+      clientIP,
+      userAgent,
+    })
+  );
 
-  const duration = Date.now() - start;
+  try {
+    await next();
+  } catch (error) {
+    const duration = globalThis.performance.now() - start;
+    console.error(
+      JSON.stringify({
+        timestamp: new Date().toISOString(),
+        level: 'error',
+        type: 'request_error',
+        requestId,
+        method,
+        path,
+        clientIP,
+        duration: duration.toFixed(2),
+        error: error instanceof Error ? error.message : String(error),
+      })
+    );
+    throw error;
+  }
+
+  const duration = globalThis.performance.now() - start;
   const status = c.res.status;
+  const contentLength = c.res.headers.get('Content-Length') || '0';
 
-  console.log(`← ${method} ${path} ${status} (${duration}ms)`);
+  // Enhanced logging with performance metrics
+  const logLevel = status >= 400 ? 'error' : 'info';
+  const logMessage = JSON.stringify({
+    timestamp: new Date().toISOString(),
+    level: logLevel,
+    type: 'request_complete',
+    requestId,
+    method,
+    path,
+    clientIP,
+    status,
+    duration: duration.toFixed(2),
+    contentLength,
+  });
+
+  if (logLevel === 'error') {
+    console.error(logMessage);
+  } else {
+    console.log(logMessage);
+  }
+
+  // Add performance headers for client-side monitoring
+  c.header('X-Response-Time', `${duration.toFixed(2)}ms`);
+  c.header('X-Request-ID', requestId);
 }
 
 /**

@@ -30,7 +30,7 @@
     "type-check": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "validate": "npm run type-check && npm run lint && npm run test",
+    "validate": "prettier --check . &&npm run type-check && npm run lint && npm run test",
     "schema:validate": "ajv validate -s ../schemas/playlist-schema.json -d data/playlist.json",
     "logs": "wrangler tail",
     "logs:production": "wrangler tail --env production",
