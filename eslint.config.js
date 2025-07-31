@@ -36,6 +36,8 @@ export default [
         __filename: 'readonly',
         global: 'readonly',
         globalThis: 'readonly',
+        // K6 globals
+        __ENV: 'readonly',
       },
     },
     plugins: {
@@ -55,6 +57,7 @@ export default [
       'no-console': 'off',
       eqeqeq: ['error', 'always'],
       curly: ['error', 'all'],
+      'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     },
   },
 
@@ -68,6 +71,7 @@ export default [
       '**/*.test.ts',
       '**/*.spec.ts',
       'scripts/',
+      'k6-results/',
     ],
   },
 

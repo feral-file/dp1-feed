@@ -127,3 +127,7 @@ temp/
 # ed25519 private key
 *.pem
 *.der
+
+# K6 results
+k6-results/
+benchmark-report.md
