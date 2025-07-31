@@ -30,7 +30,7 @@
     "types": ["@cloudflare/workers-types", "@types/node"]
   },
   "include": ["**/*.ts", "**/*.js", "**/*.json"],
-  "exclude": ["node_modules", "dist", "coverage", "**/*.test.ts", "**/*.spec.ts"],
+  "exclude": ["node_modules", "dist", "coverage", "**/*.test.ts", "**/*.spec.ts", "k6-results/**"],
   "ts-node": {
     "esm": true
   }

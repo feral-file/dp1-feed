@@ -152,7 +152,7 @@ export function setup() {
             const errorBody = JSON.parse(response.body);
             console.log(`❌ Error details: ${JSON.stringify(errorBody)}`);
           } catch (e) {
-            console.log(`❌ Error body: ${response.body}`);
+            console.log(`❌ Error: ${e.message}`);
           }
         }
 
@@ -258,7 +258,7 @@ function testPlaylistOperations() {
     endpoint: 'list_playlists',
   });
 
-  let listSuccess = check(listResponse, {
+  const listSuccess = check(listResponse, {
     'List Playlists: status is 200': r => r.status === 200,
     'List Playlists: returns paginated data': r => {
       try {
@@ -279,7 +279,7 @@ function testPlaylistOperations() {
       endpoint: 'create_playlist',
     });
 
-    let createSuccess = check(createResponse, {
+    const createSuccess = check(createResponse, {
       'Create Playlist: status is 201': r => r.status === 201,
       'Create Playlist: returns playlist with ID': r => {
         try {
@@ -303,7 +303,7 @@ function testPlaylistOperations() {
           endpoint: 'get_playlist',
         });
 
-        let getSuccess = check(getResponse, {
+        const getSuccess = check(getResponse, {
           'Get Playlist: status is 200': r => r.status === 200,
           'Get Playlist: returns correct playlist': r => {
             try {
@@ -330,7 +330,7 @@ function testPlaylistOperations() {
           { endpoint: 'update_playlist' }
         );
 
-        let updateSuccess = check(updateResponse, {
+        const updateSuccess = check(updateResponse, {
           'Update Playlist: status is 200': r => r.status === 200,
           'Update Playlist: title updated': r => {
             try {
@@ -356,7 +356,7 @@ function testPlaylistOperations() {
         endpoint: 'get_playlist',
       });
 
-      let getSuccess = check(getResponse, {
+      const getSuccess = check(getResponse, {
         'Get Existing Playlist: status is 200': r => r.status === 200,
       });
 
@@ -371,7 +371,7 @@ function testPlaylistGroupOperations() {
     endpoint: 'list_groups',
   });
 
-  let listSuccess = check(listResponse, {
+  const listSuccess = check(listResponse, {
     'List Groups: status is 200': r => r.status === 200,
     'List Groups: returns paginated data': r => {
       try {
@@ -392,7 +392,7 @@ function testPlaylistGroupOperations() {
       endpoint: 'create_group',
     });
 
-    let createSuccess = check(createResponse, {
+    const createSuccess = check(createResponse, {
       'Create Group: status is 201': r => r.status === 201,
       'Create Group: returns group with ID': r => {
         try {
@@ -416,7 +416,7 @@ function testPlaylistGroupOperations() {
           endpoint: 'get_group',
         });
 
-        let getSuccess = check(getResponse, {
+        const getSuccess = check(getResponse, {
           'Get Group: status is 200': r => r.status === 200,
           'Get Group: returns correct group': r => {
             try {
@@ -444,7 +444,7 @@ function testPlaylistGroupOperations() {
           { endpoint: 'update_group' }
         );
 
-        let updateSuccess = check(updateResponse, {
+        const updateSuccess = check(updateResponse, {
           'Update Group: status is 200': r => r.status === 200,
           'Update Group: title updated': r => {
             try {
@@ -470,7 +470,7 @@ function testPlaylistGroupOperations() {
         endpoint: 'get_group',
       });
 
-      let getSuccess = check(getResponse, {
+      const getSuccess = check(getResponse, {
         'Get Existing Group: status is 200': r => r.status === 200,
       });
 
@@ -485,7 +485,7 @@ function testPlaylistItems() {
     endpoint: 'list_items',
   });
 
-  let listSuccess = check(listResponse, {
+  const listSuccess = check(listResponse, {
     'List Items: status is 200': r => r.status === 200,
     'List Items: returns paginated data': r => {
       try {
@@ -508,7 +508,7 @@ function testPlaylistItems() {
         endpoint: 'get_item',
       });
 
-      let getSuccess = check(getResponse, {
+      const getSuccess = check(getResponse, {
         'Get Item: status is 200': r => r.status === 200,
         'Get Item: returns item': r => {
           try {
@@ -526,6 +526,6 @@ function testPlaylistItems() {
 }
 
 // Teardown function - runs once after the test
-export function teardown(data) {
+export function teardown(_data) {
   console.log('🧹 Test completed - K6 benchmark finished');
 }
