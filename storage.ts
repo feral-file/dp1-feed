@@ -1,5 +1,6 @@
 import type { Env, Playlist, PlaylistGroup, PlaylistItem } from './types';
 import { PlaylistSchema } from './types';
+import type { KVNamespaceListResult } from '@cloudflare/workers-types';
 
 // Updated KV Storage Keys with consistent prefixes
 export const STORAGE_KEYS = {
@@ -487,7 +488,7 @@ export async function savePlaylistGroup(
     const playlistIds = await getPlaylistsForGroup(playlistGroup.id, env);
 
     // Filter out the playlists that are no longer in the group
-    let playlistIdsToUnlink: string[] = [];
+    const playlistIdsToUnlink: string[] = [];
     for (const playlistId of playlistIds) {
       if (!validatedPlaylistsMap.has(playlistId)) {
         playlistIdsToUnlink.push(playlistId);
