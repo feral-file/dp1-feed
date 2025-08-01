@@ -283,7 +283,7 @@ playlistGroups.put('/:id', async c => {
     };
 
     // Save updated playlist group
-    const saved = await savePlaylistGroup(updatedGroup, c.env);
+    const saved = await savePlaylistGroup(updatedGroup, c.env, true);
     if (!saved) {
       return c.json(
         {

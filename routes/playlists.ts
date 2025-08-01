@@ -219,10 +219,12 @@ playlists.post('/', async c => {
     // Sign the playlist using ed25519 as per DP-1 specification
     const keyPair = await getServerKeyPair(c.env);
 
+    // Sign the playlist
     playlist.signature = await signPlaylist(playlist, keyPair.privateKey);
 
     // Save playlist
     const saved = await savePlaylist(playlist, c.env);
+
     if (!saved) {
       return c.json(
         {
@@ -313,7 +315,7 @@ playlists.put('/:id', async c => {
     updatedPlaylist.signature = await signPlaylist(updatedPlaylist, keyPair.privateKey);
 
     // Save updated playlist
-    const saved = await savePlaylist(updatedPlaylist, c.env);
+    const saved = await savePlaylist(updatedPlaylist, c.env, true);
     if (!saved) {
       return c.json(
         {
