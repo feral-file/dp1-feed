@@ -288,7 +288,10 @@ export async function savePlaylist(
   const playlistData = JSON.stringify(playlist);
   let existingPlaylist: Playlist | null = null;
   if (update) {
+    const start = globalThis.performance.now();
     existingPlaylist = await getPlaylistByIdOrSlug(playlist.id, env);
+    const end = globalThis.performance.now();
+    console.log(`getPlaylistByIdOrSlug took ${end - start}ms`);
     if (!existingPlaylist) {
       throw new Error(`Playlist ${playlist.id} not found`);
     }
@@ -303,7 +306,10 @@ export async function savePlaylist(
   // Handle old items deletion (if updating)
   if (update && existingPlaylist) {
     // Get the playlist group IDs
+    const start = globalThis.performance.now();
     const playlistGroupIds = await getPlaylistGroupsForPlaylist(playlist.id, env);
+    const end = globalThis.performance.now();
+    console.log(`getPlaylistGroupsForPlaylist took ${end - start}ms`);
 
     // Delete all items and their group associations (if any)
     for (const item of existingPlaylist.items) {
@@ -341,7 +347,10 @@ export async function savePlaylist(
   }
 
   // Execute all operations in parallel
+  const start = globalThis.performance.now();
   await Promise.all(operations);
+  const end = globalThis.performance.now();
+  console.log(`Parallel savePlaylist for ${operations.length} operations took ${end - start}ms`);
 
   return true;
 }
@@ -457,7 +466,10 @@ export async function savePlaylistGroup(
   });
 
   // Validate all playlists in parallel
+  const start = globalThis.performance.now();
   const validatedPlaylists = await Promise.all(playlistValidationPromises);
+  const end = globalThis.performance.now();
+  console.log(`Parallel playlistValidationPromises took ${end - start}ms`);
 
   // Turn the validated playlists into a map for quick lookup
   const validatedPlaylistsMap = new Map(
@@ -485,7 +497,10 @@ export async function savePlaylistGroup(
   // the chance of collision is very low and could be ignored.
   if (update) {
     // Get all playlists that are currently in the group
+    const start = globalThis.performance.now();
     const playlistIds = await getPlaylistsForGroup(playlistGroup.id, env);
+    const end = globalThis.performance.now();
+    console.log(`getPlaylistsForGroup took ${end - start}ms`);
 
     // Filter out the playlists that are no longer in the group
     const playlistIdsToUnlink: string[] = [];
@@ -511,7 +526,10 @@ export async function savePlaylistGroup(
 
     // Clean up the group associated playlist items
     const playlistKeys = playlistIdsToUnlink.map(id => `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${id}`);
+    const start2 = globalThis.performance.now();
     const playlists = await batchFetchFromKV<Playlist>(playlistKeys, env.DP1_PLAYLISTS, 'playlist');
+    const end2 = globalThis.performance.now();
+    console.log(`batchFetchFromKV for associated playlists took ${end2 - start2}ms`);
     for (const playlist of playlists) {
       for (const item of playlist.items) {
         operations.push(
@@ -578,7 +596,13 @@ export async function savePlaylistGroup(
     }
   }
 
+  const start3 = globalThis.performance.now();
   await Promise.all(operations);
+  const end3 = globalThis.performance.now();
+  console.log(
+    `Parallel savePlaylistGroup operations took ${end3 - start3}ms for ${operations.length} operations`
+  );
+
   return true;
 }
 
