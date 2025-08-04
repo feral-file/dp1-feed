@@ -13,6 +13,15 @@ vi.mock('./crypto', () => ({
   createCanonicalForm: vi.fn((playlist: any) => JSON.stringify(playlist) + '\n'),
 }));
 
+// Mock the queue processor for route testing
+vi.mock('./queue/processor', () => ({
+  queueWriteOperation: vi.fn().mockResolvedValue(undefined),
+  generateMessageId: vi.fn().mockReturnValue('test-message-id'),
+}));
+
+import { queueWriteOperation } from './queue/processor';
+import { savePlaylist, savePlaylistGroup } from './storage';
+
 // Constants for test playlist IDs
 const playlistId1 = '550e8400-e29b-41d4-a716-446655440000';
 const playlistId2 = '550e8400-e29b-41d4-a716-446655440002';
@@ -105,15 +114,93 @@ const createMockKV = () => {
   };
 };
 
-// Test environment setup
-const testEnv: Env = {
-  API_SECRET: 'test-secret-key',
-  ED25519_PRIVATE_KEY: 'test-private-key',
-  ENVIRONMENT: 'test',
-  DP1_PLAYLISTS: createMockKV() as any,
-  DP1_PLAYLIST_GROUPS: createMockKV() as any,
-  DP1_PLAYLIST_ITEMS: createMockKV() as any,
+// Mock Queue implementation for testing that immediately processes messages synchronously
+const createMockQueue = (env: any) => {
+  const sentMessages: any[] = [];
+  return {
+    sentMessages, // Expose for testing
+    send: vi.fn(async (message: any) => {
+      sentMessages.push(message);
+
+      // Process immediately and synchronously for tests
+      try {
+        switch (message.operation) {
+          case 'create_playlist':
+            const playlist = message.data.playlist;
+            env.DP1_PLAYLISTS.storage.set(`playlist:${playlist.id}`, JSON.stringify(playlist));
+            env.DP1_PLAYLISTS.storage.set(`slug:${playlist.slug}`, playlist.id);
+            // Save playlist items
+            for (const item of playlist.items) {
+              env.DP1_PLAYLIST_ITEMS.storage.set(
+                `item:${item.id}`,
+                JSON.stringify({
+                  ...item,
+                  playlistId: playlist.id,
+                })
+              );
+            }
+            break;
+
+          case 'update_playlist':
+            const updatedPlaylist = message.data.playlist;
+            env.DP1_PLAYLISTS.storage.set(
+              `playlist:${updatedPlaylist.id}`,
+              JSON.stringify(updatedPlaylist)
+            );
+            // Save playlist items (in a real implementation, we'd clear old ones first)
+            for (const item of updatedPlaylist.items) {
+              env.DP1_PLAYLIST_ITEMS.storage.set(
+                `item:${item.id}`,
+                JSON.stringify({
+                  ...item,
+                  playlistId: updatedPlaylist.id,
+                })
+              );
+            }
+            break;
+
+          case 'create_playlist_group':
+            const group = message.data.playlistGroup;
+            env.DP1_PLAYLIST_GROUPS.storage.set(`group:${group.id}`, JSON.stringify(group));
+            env.DP1_PLAYLIST_GROUPS.storage.set(`slug:${group.slug}`, group.id);
+            break;
+
+          case 'update_playlist_group':
+            const updatedGroup = message.data.playlistGroup;
+            env.DP1_PLAYLIST_GROUPS.storage.set(
+              `group:${updatedGroup.id}`,
+              JSON.stringify(updatedGroup)
+            );
+            break;
+        }
+      } catch (error) {
+        console.error('Mock queue processing error:', error);
+      }
+
+      return { id: `msg-${Date.now()}` };
+    }),
+  };
 };
+
+// Test environment setup - create env first, then queue that references env
+const createTestEnv = (): Env => {
+  const env = {
+    API_SECRET: 'test-secret-key',
+    ED25519_PRIVATE_KEY: 'test-private-key',
+    ENVIRONMENT: 'test',
+    DP1_PLAYLISTS: createMockKV() as any,
+    DP1_PLAYLIST_GROUPS: createMockKV() as any,
+    DP1_PLAYLIST_ITEMS: createMockKV() as any,
+    DP1_WRITE_QUEUE: null as any, // Will be set below
+  };
+
+  // Create queue that references the environment
+  env.DP1_WRITE_QUEUE = createMockQueue(env) as any;
+
+  return env;
+};
+
+const testEnv: Env = createTestEnv();
 
 const validPlaylist = {
   dpVersion: '1.0.0',
@@ -136,14 +223,38 @@ const validPlaylistGroup = {
 
 describe('DP-1 Feed Operator API', () => {
   beforeEach(() => {
-    // Clear storage between tests
+    // Clear storage and queue between tests
     const mockPlaylistKV = testEnv.DP1_PLAYLISTS as any;
     const mockGroupKV = testEnv.DP1_PLAYLIST_GROUPS as any;
     const mockPlaylistItemsKV = testEnv.DP1_PLAYLIST_ITEMS as any;
+    const mockQueue = testEnv.DP1_WRITE_QUEUE as any;
 
     mockPlaylistKV.storage.clear();
     mockGroupKV.storage.clear();
     mockPlaylistItemsKV.storage.clear();
+    mockQueue.sentMessages.length = 0;
+
+    // Clear mock calls
+    vi.clearAllMocks();
+
+    // Set up the mock queue write operation to actually process data synchronously
+    vi.mocked(queueWriteOperation).mockImplementation(async (message: any, env: any) => {
+      // Process the queue message immediately by calling real storage functions
+      switch (message.operation) {
+        case 'create_playlist':
+          await savePlaylist(message.data.playlist, env);
+          break;
+        case 'update_playlist':
+          await savePlaylist(message.data.playlist, env, true);
+          break;
+        case 'create_playlist_group':
+          await savePlaylistGroup(message.data.playlistGroup, env);
+          break;
+        case 'update_playlist_group':
+          await savePlaylistGroup(message.data.playlistGroup, env, true);
+          break;
+      }
+    });
   });
 
   describe('Health and Info Endpoints', () => {
@@ -533,6 +644,20 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.items[0].id).toMatch(
         /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
       );
+
+      // Verify queue operation was called
+      expect(queueWriteOperation).toHaveBeenCalledWith(
+        expect.objectContaining({
+          operation: 'create_playlist',
+          data: expect.objectContaining({
+            playlist: expect.objectContaining({
+              id: data.id,
+              title: 'Test Playlist',
+            }),
+          }),
+        }),
+        testEnv
+      );
     });
 
     it('PUT /playlists/:id should update playlist and preserve protected fields', async () => {
@@ -576,6 +701,21 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.slug).toBe(createdPlaylist.slug);
       expect(data.items[0].id).toMatch(
         /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
+      );
+
+      // Verify queue operation was called for update
+      expect(queueWriteOperation).toHaveBeenCalledWith(
+        expect.objectContaining({
+          operation: 'update_playlist',
+          data: expect.objectContaining({
+            playlistId: playlistId,
+            playlist: expect.objectContaining({
+              id: playlistId,
+              title: 'Updated Test Playlist',
+            }),
+          }),
+        }),
+        testEnv
       );
     });
 
@@ -669,6 +809,102 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.error).toBe('invalid_limit');
       expect(data.message).toBe('Limit must be between 1 and 100');
     });
+
+    describe('Queue Error Handling', () => {
+      it('should handle queue errors gracefully for playlist creation', async () => {
+        // Mock queueWriteOperation to fail
+        vi.mocked(queueWriteOperation).mockRejectedValueOnce(new Error('Queue failure'));
+
+        const req = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(500);
+
+        const data = await response.json();
+        expect(data.error).toBe('queue_error');
+        expect(data.message).toBe('Failed to queue playlist for processing');
+      });
+
+      it('should handle queue errors gracefully for playlist updates', async () => {
+        // First create a playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        const createdPlaylist = await createResponse.json();
+
+        // Mock queueWriteOperation to fail for the update
+        vi.mocked(queueWriteOperation).mockRejectedValueOnce(new Error('Queue failure'));
+
+        const updateData = {
+          title: 'Updated Playlist',
+          items: [
+            {
+              title: 'Updated Artwork',
+              source: 'https://example.com/updated.html',
+              duration: 400,
+              license: 'subscription' as const,
+            },
+          ],
+        };
+
+        const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+          method: 'PUT',
+          headers: validAuth,
+          body: JSON.stringify(updateData),
+        });
+        const updateResponse = await app.fetch(updateReq, testEnv);
+        expect(updateResponse.status).toBe(500);
+
+        const data = await updateResponse.json();
+        expect(data.error).toBe('queue_error');
+        expect(data.message).toBe('Failed to queue playlist for processing');
+      });
+    });
+
+    describe('Queue Message Structure', () => {
+      it('should generate proper queue messages for playlist creation', async () => {
+        const req = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+        await app.fetch(req, testEnv);
+
+        expect(queueWriteOperation).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: expect.any(String),
+            timestamp: expect.any(String),
+            operation: 'create_playlist',
+            data: expect.objectContaining({
+              playlist: expect.objectContaining({
+                dpVersion: '1.0.0',
+                id: expect.any(String),
+                slug: expect.any(String),
+                title: 'Test Playlist',
+                created: expect.any(String),
+                signature: expect.any(String),
+                items: expect.arrayContaining([
+                  expect.objectContaining({
+                    id: expect.any(String),
+                    title: 'Test Artwork',
+                    source: 'https://example.com/artwork.html',
+                    duration: 300,
+                    license: 'open',
+                  }),
+                ]),
+              }),
+            }),
+          }),
+          testEnv
+        );
+      });
+    });
   });
 
   describe('Playlist Groups API', () => {
@@ -750,6 +986,20 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.id).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);
       expect(data.slug).toMatch(/^test-exhibition-\d{4}$/);
       expect(data.created).toBeTruthy();
+
+      // Verify queue operation was called
+      expect(queueWriteOperation).toHaveBeenCalledWith(
+        expect.objectContaining({
+          operation: 'create_playlist_group',
+          data: expect.objectContaining({
+            playlistGroup: expect.objectContaining({
+              id: data.id,
+              title: 'Test Exhibition',
+            }),
+          }),
+        }),
+        testEnv
+      );
     });
 
     it('PUT /playlist-groups/:id should update group and preserve slug', async () => {
@@ -786,6 +1036,21 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.id).toBe(groupId); // ID should remain the same
       expect(data.slug).toBe(createdGroup.slug); // Slug should be preserved, not regenerated
       expect(data.title).toBe('Updated Exhibition Title'); // Title should be updated
+
+      // Verify queue operation was called for update
+      expect(queueWriteOperation).toHaveBeenCalledWith(
+        expect.objectContaining({
+          operation: 'update_playlist_group',
+          data: expect.objectContaining({
+            groupId: groupId,
+            playlistGroup: expect.objectContaining({
+              id: groupId,
+              title: 'Updated Exhibition Title',
+            }),
+          }),
+        }),
+        testEnv
+      );
     });
 
     it('PUT /playlist-groups/:id with empty data returns 400', async () => {
@@ -890,6 +1155,98 @@ describe('DP-1 Feed Operator API', () => {
       const data = await response.json();
       expect(data.error).toBe('invalid_limit');
       expect(data.message).toBe('Limit must be between 1 and 100');
+    });
+
+    describe('Queue Error Handling', () => {
+      it('should handle queue errors gracefully for playlist group creation', async () => {
+        // Mock fetch for external playlist validation
+        mockStandardPlaylistFetch();
+
+        // Mock queueWriteOperation to fail
+        vi.mocked(queueWriteOperation).mockRejectedValueOnce(new Error('Queue failure'));
+
+        const req = new Request('http://localhost/api/v1/playlist-groups', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylistGroup),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(500);
+
+        const data = await response.json();
+        expect(data.error).toBe('queue_error');
+        expect(data.message).toBe('Failed to queue playlist group for processing');
+      });
+
+      it('should handle queue errors gracefully for playlist group updates', async () => {
+        // Mock fetch for external playlist validation
+        mockStandardPlaylistFetch();
+
+        // First create a playlist group
+        const createReq = new Request('http://localhost/api/v1/playlist-groups', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylistGroup),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        const createdGroup = await createResponse.json();
+
+        // Mock queueWriteOperation to fail for the update
+        vi.mocked(queueWriteOperation).mockRejectedValueOnce(new Error('Queue failure'));
+
+        const updateData = {
+          title: 'Updated Exhibition',
+          curator: 'Updated Curator',
+          playlists: ['https://example.com/playlists/test-playlist-1'],
+        };
+
+        const updateReq = new Request(
+          `http://localhost/api/v1/playlist-groups/${createdGroup.id}`,
+          {
+            method: 'PUT',
+            headers: validAuth,
+            body: JSON.stringify(updateData),
+          }
+        );
+        const updateResponse = await app.fetch(updateReq, testEnv);
+        expect(updateResponse.status).toBe(500);
+
+        const data = await updateResponse.json();
+        expect(data.error).toBe('queue_error');
+        expect(data.message).toBe('Failed to queue playlist group for processing');
+      });
+    });
+
+    describe('Queue Message Structure', () => {
+      it('should generate proper queue messages for playlist group creation', async () => {
+        mockStandardPlaylistFetch();
+
+        const req = new Request('http://localhost/api/v1/playlist-groups', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylistGroup),
+        });
+        await app.fetch(req, testEnv);
+
+        expect(queueWriteOperation).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: expect.any(String),
+            timestamp: expect.any(String),
+            operation: 'create_playlist_group',
+            data: expect.objectContaining({
+              playlistGroup: expect.objectContaining({
+                id: expect.any(String),
+                slug: expect.any(String),
+                title: 'Test Exhibition',
+                curator: 'Test Curator',
+                playlists: ['https://example.com/playlists/test-playlist-1'],
+                created: expect.any(String),
+              }),
+            }),
+          }),
+          testEnv
+        );
+      });
     });
   });
 

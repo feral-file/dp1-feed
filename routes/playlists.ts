@@ -1,6 +1,13 @@
 import { Hono, Context } from 'hono';
 import { z } from 'zod';
-import type { Env, PlaylistInput, PlaylistUpdate, Playlist } from '../types';
+import type {
+  Env,
+  PlaylistInput,
+  PlaylistUpdate,
+  Playlist,
+  CreatePlaylistMessage,
+  UpdatePlaylistMessage,
+} from '../types';
 import {
   PlaylistInputSchema,
   PlaylistUpdateSchema,
@@ -8,12 +15,8 @@ import {
   validateNoProtectedFields,
 } from '../types';
 import { signPlaylist, getServerKeyPair } from '../crypto';
-import {
-  listAllPlaylists,
-  savePlaylist,
-  getPlaylistByIdOrSlug,
-  listPlaylistsByGroupId,
-} from '../storage';
+import { listAllPlaylists, getPlaylistByIdOrSlug, listPlaylistsByGroupId } from '../storage';
+import { queueWriteOperation, generateMessageId } from '../queue/processor';
 
 // Create playlist router
 const playlists = new Hono<{ Bindings: Env }>();
@@ -197,6 +200,7 @@ playlists.get('/:id', async c => {
 
 /**
  * POST /playlists - Create new playlist (server-generated ID)
+ * Fast response: validates, signs, queues for async processing
  */
 playlists.post('/', async c => {
   try {
@@ -222,19 +226,31 @@ playlists.post('/', async c => {
     // Sign the playlist
     playlist.signature = await signPlaylist(playlist, keyPair.privateKey);
 
-    // Save playlist
-    const saved = await savePlaylist(playlist, c.env);
+    // Create queue message for async processing
+    const queueMessage: CreatePlaylistMessage = {
+      id: generateMessageId('create_playlist', playlist.id),
+      timestamp: new Date().toISOString(),
+      operation: 'create_playlist',
+      data: {
+        playlist: playlist,
+      },
+    };
 
-    if (!saved) {
+    // Queue the save operation for async processing
+    try {
+      await queueWriteOperation(queueMessage, c.env);
+    } catch (queueError) {
+      console.error('Failed to queue playlist creation:', queueError);
       return c.json(
         {
-          error: 'save_error',
-          message: 'Failed to save playlist',
+          error: 'queue_error',
+          message: 'Failed to queue playlist for processing',
         },
         500
       );
     }
 
+    // Return immediately with the signed playlist (before saving)
     return c.json(playlist, 201);
   } catch (error) {
     console.error('Error creating playlist:', error);
@@ -250,6 +266,7 @@ playlists.post('/', async c => {
 
 /**
  * PUT /playlists/:id - Update existing playlist by UUID or slug
+ * Fast response: validates, signs, queues for async processing
  */
 playlists.put('/:id', async c => {
   try {
@@ -314,18 +331,32 @@ playlists.put('/:id', async c => {
     const keyPair = await getServerKeyPair(c.env);
     updatedPlaylist.signature = await signPlaylist(updatedPlaylist, keyPair.privateKey);
 
-    // Save updated playlist
-    const saved = await savePlaylist(updatedPlaylist, c.env, true);
-    if (!saved) {
+    // Create queue message for async processing
+    const queueMessage: UpdatePlaylistMessage = {
+      id: generateMessageId('update_playlist', updatedPlaylist.id),
+      timestamp: new Date().toISOString(),
+      operation: 'update_playlist',
+      data: {
+        playlistId: updatedPlaylist.id,
+        playlist: updatedPlaylist,
+      },
+    };
+
+    // Queue the update operation for async processing
+    try {
+      await queueWriteOperation(queueMessage, c.env);
+    } catch (queueError) {
+      console.error('Failed to queue playlist update:', queueError);
       return c.json(
         {
-          error: 'save_error',
-          message: 'Failed to update playlist',
+          error: 'queue_error',
+          message: 'Failed to queue playlist for processing',
         },
         500
       );
     }
 
+    // Return immediately with the signed playlist (before saving)
     return c.json(updatedPlaylist);
   } catch (error) {
     console.error('Error updating playlist:', error);

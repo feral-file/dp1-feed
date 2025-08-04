@@ -113,6 +113,7 @@ const testEnv: Env = {
   DP1_PLAYLISTS: createMockKV() as any,
   DP1_PLAYLIST_GROUPS: createMockKV() as any,
   DP1_PLAYLIST_ITEMS: createMockKV() as any,
+  DP1_WRITE_QUEUE: { send: vi.fn() } as any,
 };
 
 // Test data

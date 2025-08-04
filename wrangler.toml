@@ -45,6 +45,16 @@ id = "DP1_PLAYLIST_GROUPS"
 binding = "DP1_PLAYLIST_ITEMS"
 id = "DP1_PLAYLIST_ITEMS"
 
+# Production Queue configuration
+[[env.production.queues.producers]]
+binding = "DP1_WRITE_QUEUE"
+queue = "dp1-write-operations-prod"
+
+[[env.production.queues.consumers]]
+queue = "dp1-write-operations-prod"
+max_batch_size = 10
+max_batch_timeout = 10
+
 # Durable Objects (for real-time features - optional)
 # [[durable_objects.bindings]]
 # name = "PLAYLIST_SESSIONS"
@@ -57,6 +67,16 @@ id = "DP1_PLAYLIST_ITEMS"
 # Analytics Engine (for usage tracking - optional)
 # [[analytics_engine_datasets]]
 # binding = "DP1_ANALYTICS"
+
+# Queue configuration for async processing
+[[queues.producers]]
+binding = "DP1_WRITE_QUEUE"
+queue = "dp1-write-operations"
+
+[[queues.consumers]]
+queue = "dp1-write-operations"
+max_batch_size = 5
+max_batch_timeout = 10
 
 # Rate limiting configuration
 [limits]

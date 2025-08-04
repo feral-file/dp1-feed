@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import semver from 'semver';
+import { Queue } from '@cloudflare/workers-types';
 
 // Minimum DP-1 protocol version supported by this server
 export const MIN_DP_VERSION = '0.9.0';
@@ -61,6 +62,9 @@ export interface Env {
   DP1_PLAYLISTS: KVNamespace;
   DP1_PLAYLIST_GROUPS: KVNamespace;
   DP1_PLAYLIST_ITEMS: KVNamespace;
+
+  // Cloudflare Queue binding for async processing
+  DP1_WRITE_QUEUE: Queue;
 
   // Optional environment variables
   ENVIRONMENT?: string;
@@ -456,6 +460,54 @@ export type PlaylistItemInput = z.infer<typeof PlaylistItemInputSchema>;
 export type PlaylistGroupInput = z.infer<typeof PlaylistGroupInputSchema>;
 export type PlaylistUpdate = z.infer<typeof PlaylistUpdateSchema>;
 export type PlaylistGroupUpdate = z.infer<typeof PlaylistGroupUpdateSchema>;
+
+// Queue Message Types for async processing
+export interface QueueMessage {
+  id: string;
+  timestamp: string;
+  operation:
+    | 'create_playlist'
+    | 'update_playlist'
+    | 'create_playlist_group'
+    | 'update_playlist_group';
+  retryCount?: number;
+}
+
+export interface CreatePlaylistMessage extends QueueMessage {
+  operation: 'create_playlist';
+  data: {
+    playlist: Playlist; // Already signed and ready to save
+  };
+}
+
+export interface UpdatePlaylistMessage extends QueueMessage {
+  operation: 'update_playlist';
+  data: {
+    playlistId: string;
+    playlist: Playlist; // Already signed and ready to save
+  };
+}
+
+export interface CreatePlaylistGroupMessage extends QueueMessage {
+  operation: 'create_playlist_group';
+  data: {
+    playlistGroup: PlaylistGroup; // Ready to save
+  };
+}
+
+export interface UpdatePlaylistGroupMessage extends QueueMessage {
+  operation: 'update_playlist_group';
+  data: {
+    groupId: string;
+    playlistGroup: PlaylistGroup; // Ready to save
+  };
+}
+
+export type WriteOperationMessage =
+  | CreatePlaylistMessage
+  | UpdatePlaylistMessage
+  | CreatePlaylistGroupMessage
+  | UpdatePlaylistGroupMessage;
 
 // Utility function to generate slug from title
 export function generateSlug(title: string): string {

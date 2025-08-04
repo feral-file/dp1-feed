@@ -1,13 +1,21 @@
 import { Hono, Context } from 'hono';
 import { z } from 'zod';
-import type { Env, PlaylistGroupInput, PlaylistGroupUpdate, PlaylistGroup } from '../types';
+import type {
+  Env,
+  PlaylistGroupInput,
+  PlaylistGroupUpdate,
+  PlaylistGroup,
+  CreatePlaylistGroupMessage,
+  UpdatePlaylistGroupMessage,
+} from '../types';
 import {
   PlaylistGroupInputSchema,
   PlaylistGroupUpdateSchema,
   createPlaylistGroupFromInput,
   validateNoProtectedFields,
 } from '../types';
-import { listAllPlaylistGroups, savePlaylistGroup, getPlaylistGroupByIdOrSlug } from '../storage';
+import { listAllPlaylistGroups, getPlaylistGroupByIdOrSlug } from '../storage';
+import { queueWriteOperation, generateMessageId } from '../queue/processor';
 
 // Create playlist groups router
 const playlistGroups = new Hono<{ Bindings: Env }>();
@@ -181,6 +189,7 @@ playlistGroups.get('/:id', async c => {
 
 /**
  * POST /playlist-groups - Create new playlist group
+ * Fast response: validates, queues for async processing
  */
 playlistGroups.post('/', async c => {
   try {
@@ -200,18 +209,31 @@ playlistGroups.post('/', async c => {
     // Create playlist group with server-generated ID, timestamp, and slug
     const playlistGroup = createPlaylistGroupFromInput(validatedData);
 
-    // Save playlist group
-    const saved = await savePlaylistGroup(playlistGroup, c.env);
-    if (!saved) {
+    // Create queue message for async processing
+    const queueMessage: CreatePlaylistGroupMessage = {
+      id: generateMessageId('create_playlist_group', playlistGroup.id),
+      timestamp: new Date().toISOString(),
+      operation: 'create_playlist_group',
+      data: {
+        playlistGroup: playlistGroup,
+      },
+    };
+
+    // Queue the save operation for async processing
+    try {
+      await queueWriteOperation(queueMessage, c.env);
+    } catch (queueError) {
+      console.error('Failed to queue playlist group creation:', queueError);
       return c.json(
         {
-          error: 'save_error',
-          message: 'Failed to save playlist group',
+          error: 'queue_error',
+          message: 'Failed to queue playlist group for processing',
         },
         500
       );
     }
 
+    // Return immediately with the playlist group (before saving)
     return c.json(playlistGroup, 201);
   } catch (error) {
     console.error('Error creating playlist group:', error);
@@ -227,6 +249,7 @@ playlistGroups.post('/', async c => {
 
 /**
  * PUT /playlist-groups/:id - Update existing playlist group by UUID or slug
+ * Fast response: validates, queues for async processing
  */
 playlistGroups.put('/:id', async c => {
   try {
@@ -282,18 +305,32 @@ playlistGroups.put('/:id', async c => {
       coverImage: validatedData.coverImage,
     };
 
-    // Save updated playlist group
-    const saved = await savePlaylistGroup(updatedGroup, c.env, true);
-    if (!saved) {
+    // Create queue message for async processing
+    const queueMessage: UpdatePlaylistGroupMessage = {
+      id: generateMessageId('update_playlist_group', updatedGroup.id),
+      timestamp: new Date().toISOString(),
+      operation: 'update_playlist_group',
+      data: {
+        groupId: updatedGroup.id,
+        playlistGroup: updatedGroup,
+      },
+    };
+
+    // Queue the update operation for async processing
+    try {
+      await queueWriteOperation(queueMessage, c.env);
+    } catch (queueError) {
+      console.error('Failed to queue playlist group update:', queueError);
       return c.json(
         {
-          error: 'save_error',
-          message: 'Failed to update playlist group',
+          error: 'queue_error',
+          message: 'Failed to queue playlist group for processing',
         },
         500
       );
     }
 
+    // Return immediately with the updated playlist group (before saving)
     return c.json(updatedGroup, 200);
   } catch (error) {
     console.error('Error updating playlist group:', error);

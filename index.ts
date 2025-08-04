@@ -10,6 +10,8 @@ import {
 import { playlists } from './routes/playlists';
 import { playlistGroups } from './routes/playlistGroups';
 import playlistItems from './routes/playlistItems';
+import { processWriteOperations } from './queue/processor';
+import { MessageBatch, ExecutionContext } from '@cloudflare/workers-types';
 
 /**
  * DP-1 Feed Operator API Server
@@ -105,5 +107,13 @@ app.onError((error, c) => {
   );
 });
 
+// Queue consumer for async write operations
+async function queue(batch: MessageBatch, env: Env, _ctx: ExecutionContext): Promise<void> {
+  await processWriteOperations(batch, env);
+}
+
 // Export for Cloudflare Workers
-export default app;
+export default {
+  fetch: app.fetch,
+  queue,
+};
