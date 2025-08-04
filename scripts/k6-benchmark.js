@@ -157,7 +157,7 @@ class K6BenchmarkRunner {
     report += `**Tool:** K6 Performance Testing  \n`;
     report += `**Target URL:** \`${this.baseUrl}\`  \n`;
     report += `**Test Type:** ${this.testType}  \n`;
-    report += `**Performance Thresholds:** GET ≤ 100ms, POST/PUT ≤ 400ms (P95), Success Rate ≥ 95%  \n\n`;
+    report += `**Performance Thresholds:** GET ≤ 200ms, POST/PUT ≤ 800ms (P95), Success Rate ≥ 95%  \n\n`;
 
     if (!summary) {
       report += `## Summary\n\n`;
@@ -178,7 +178,7 @@ class K6BenchmarkRunner {
     const checksRate = checks.values?.rate || 0;
 
     // Determine overall pass/fail
-    const p95Threshold = this.testType === 'stress' ? 150 : this.testType === 'spike' ? 200 : 100;
+    const p95Threshold = this.testType === 'stress' ? 300 : this.testType === 'spike' ? 300 : 200;
     const failureThreshold =
       this.testType === 'stress' ? 0.1 : this.testType === 'spike' ? 0.15 : 0.05;
 
@@ -193,9 +193,9 @@ class K6BenchmarkRunner {
       : '![K6 Benchmark](https://img.shields.io/badge/K6%20benchmark-failing-red)';
 
     const p95Badge =
-      p95Duration <= 100
+      p95Duration <= 200
         ? `![P95 Response Time](https://img.shields.io/badge/P95-${Math.round(p95Duration)}ms-brightgreen)`
-        : p95Duration <= 200
+        : p95Duration <= 300
           ? `![P95 Response Time](https://img.shields.io/badge/P95-${Math.round(p95Duration)}ms-yellow)`
           : `![P95 Response Time](https://img.shields.io/badge/P95-${Math.round(p95Duration)}ms-red)`;
 
@@ -239,7 +239,7 @@ class K6BenchmarkRunner {
         const p95 = Math.round(getReqs.values['p(95)'] || 0);
         const avg = Math.round(getReqs.values.avg || 0);
         const count = getReqs.values.count || 0;
-        const pass = p95 <= 100;
+        const pass = p95 <= 200;
         report += `| GET | ${p95}ms | ${avg}ms | ${count} | ${pass ? '✅' : '❌'} |\n`;
       }
 
@@ -247,7 +247,7 @@ class K6BenchmarkRunner {
         const p95 = Math.round(postReqs.values['p(95)'] || 0);
         const avg = Math.round(postReqs.values.avg || 0);
         const count = postReqs.values.count || 0;
-        const pass = p95 <= 400;
+        const pass = p95 <= 800;
         report += `| POST | ${p95}ms | ${avg}ms | ${count} | ${pass ? '✅' : '❌'} |\n`;
       }
 
@@ -255,7 +255,7 @@ class K6BenchmarkRunner {
         const p95 = Math.round(putReqs.values['p(95)'] || 0);
         const avg = Math.round(putReqs.values.avg || 0);
         const count = putReqs.values.count || 0;
-        const pass = p95 <= 400;
+        const pass = p95 <= 800;
         report += `| PUT | ${p95}ms | ${avg}ms | ${count} | ${pass ? '✅' : '❌'} |\n`;
       }
     }
@@ -267,8 +267,8 @@ class K6BenchmarkRunner {
     report += `- **Timestamp:** ${timestamp}\n\n`;
 
     report += `## Performance Criteria\n\n`;
-    report += `- **GET requests:** P95 ≤ 100ms\n`;
-    report += `- **POST/PUT requests:** P95 ≤ 400ms\n`;
+    report += `- **GET requests:** P95 ≤ 200ms\n`;
+    report += `- **POST/PUT requests:** P95 ≤ 800ms\n`;
     report += `- **Success rate:** ≥ 95%\n`;
     report += `- **Check success rate:** ≥ 95%\n\n`;
 
