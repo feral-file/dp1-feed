@@ -1,28 +1,63 @@
-name = "dp1-feed-operator-api-dev"
+name = "dp1-feed-operator-api"
 main = "index.ts"
 compatibility_date = "2024-01-15"
 compatibility_flags = ["nodejs_compat"]
 
 # Variables for all environments
 [vars]
-ENVIRONMENT = "development"
-SELF_HOSTED_DOMAINS = "dp1-feed-operator-api-dev.autonomy-system.workers.dev,localhost:8787"
+ENVIRONMENT = "local"
+SELF_HOSTED_DOMAINS = "localhost:8787"
 
 # KV namespace bindings for storing JSON data
 [[kv_namespaces]]
 binding = "DP1_PLAYLISTS"
-id = "4f76b8ce88854022b9bf80da15b2de34"
-preview_id = "4f76b8ce88854022b9bf80da15b2de34"
+id = "local-playlist-id"
 
 [[kv_namespaces]]
 binding = "DP1_PLAYLIST_GROUPS"
-id = "be9799c62f3e48528d9ad51516b7f7a5"
-preview_id = "be9799c62f3e48528d9ad51516b7f7a5"
+id = "local-group-id"
 
 [[kv_namespaces]]
 binding = "DP1_PLAYLIST_ITEMS"
+id = "local-item-id"
+
+# Queue configuration for async processing
+[[queues.producers]]
+binding = "DP1_WRITE_QUEUE"
+queue = "dp1-write-operations"
+
+[[queues.consumers]]
+queue = "dp1-write-operations"
+max_batch_size = 1
+max_batch_timeout = 1
+
+# Dev environment
+[env.dev.vars]
+ENVIRONMENT = "development"
+SELF_HOSTED_DOMAINS = "dp1-feed-operator-api-dev.autonomy-system.workers.dev"
+
+# KV namespace bindings for storing JSON data
+[[env.dev.kv_namespaces]]
+binding = "DP1_PLAYLISTS"
+id = "4f76b8ce88854022b9bf80da15b2de34"
+
+[[env.dev.kv_namespaces]]
+binding = "DP1_PLAYLIST_GROUPS"
+id = "be9799c62f3e48528d9ad51516b7f7a5"
+
+[[env.dev.kv_namespaces]]
+binding = "DP1_PLAYLIST_ITEMS"
 id = "75d25c68e4ee4284abdc97468eca122a"
-preview_id = "75d25c68e4ee4284abdc97468eca122a"
+
+# Dev Queue configuration
+[[env.dev.queues.producers]]
+binding = "DP1_WRITE_QUEUE"
+queue = "dp1-write-operations"
+
+[[env.dev.queues.consumers]]
+queue = "dp1-write-operations"
+max_batch_size = 10
+max_batch_timeout = 10
 
 # Production environment
 [env.production]
@@ -53,7 +88,7 @@ queue = "dp1-write-operations-prod"
 [[env.production.queues.consumers]]
 queue = "dp1-write-operations-prod"
 max_batch_size = 10
-max_batch_timeout = 10
+max_batch_timeout = 5
 
 # Durable Objects (for real-time features - optional)
 # [[durable_objects.bindings]]
@@ -67,16 +102,6 @@ max_batch_timeout = 10
 # Analytics Engine (for usage tracking - optional)
 # [[analytics_engine_datasets]]
 # binding = "DP1_ANALYTICS"
-
-# Queue configuration for async processing
-[[queues.producers]]
-binding = "DP1_WRITE_QUEUE"
-queue = "dp1-write-operations"
-
-[[queues.consumers]]
-queue = "dp1-write-operations"
-max_batch_size = 5
-max_batch_timeout = 10
 
 # Rate limiting configuration
 [limits]
