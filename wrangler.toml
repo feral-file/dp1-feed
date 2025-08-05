@@ -56,8 +56,8 @@ queue = "dp1-write-operations"
 
 [[env.dev.queues.consumers]]
 queue = "dp1-write-operations"
-max_batch_size = 10
-max_batch_timeout = 10
+max_batch_size = 1
+max_batch_timeout = 1
 
 # Production environment
 [env.production]
@@ -87,8 +87,8 @@ queue = "dp1-write-operations-prod"
 
 [[env.production.queues.consumers]]
 queue = "dp1-write-operations-prod"
-max_batch_size = 10
-max_batch_timeout = 5
+max_batch_size = 5
+max_batch_timeout = 2
 
 # Durable Objects (for real-time features - optional)
 # [[durable_objects.bindings]]
