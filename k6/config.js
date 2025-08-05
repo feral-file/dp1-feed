@@ -9,11 +9,11 @@ export const lightLoad = {
   ],
 
   thresholds: {
-    'http_req_duration{method:GET}': ['p(95)<200'],
-    'http_req_duration{method:POST}': ['p(95)<800'],
-    'http_req_duration{method:PUT}': ['p(95)<800'],
-    http_req_failed: ['rate<0.05'],
-    errors: ['rate<0.05'],
+    'http_req_duration{method:GET}': ['p(95)<300'],
+    'http_req_duration{method:POST}': ['p(95)<450'],
+    'http_req_duration{method:PUT}': ['p(95)<450'],
+    http_req_failed: ['rate<0.01'],
+    errors: ['rate<0.01'],
   },
 };
 
@@ -28,11 +28,11 @@ export const normalLoad = {
   ],
 
   thresholds: {
-    'http_req_duration{method:GET}': ['p(95)<200'],
-    'http_req_duration{method:POST}': ['p(95)<800'],
-    'http_req_duration{method:PUT}': ['p(95)<800'],
-    http_req_failed: ['rate<0.05'],
-    errors: ['rate<0.05'],
+    'http_req_duration{method:GET}': ['p(95)<300'],
+    'http_req_duration{method:POST}': ['p(95)<450'],
+    'http_req_duration{method:PUT}': ['p(95)<450'],
+    http_req_failed: ['rate<0.01'],
+    errors: ['rate<0.01'],
   },
 };
 
@@ -49,11 +49,11 @@ export const stressTest = {
   ],
 
   thresholds: {
-    'http_req_duration{method:GET}': ['p(95)<300'], // Slightly relaxed for stress test
-    'http_req_duration{method:POST}': ['p(95)<1000'],
-    'http_req_duration{method:PUT}': ['p(95)<1000'],
-    http_req_failed: ['rate<0.10'], // Allow up to 10% failure under stress
-    errors: ['rate<0.10'],
+    'http_req_duration{method:GET}': ['p(95)<400'], // Slightly relaxed for stress test
+    'http_req_duration{method:POST}': ['p(95)<600'],
+    'http_req_duration{method:PUT}': ['p(95)<600'],
+    http_req_failed: ['rate<0.02'], // Allow up to 2% failure under stress
+    errors: ['rate<0.02'],
   },
 };
 
@@ -67,11 +67,11 @@ export const spikeTest = {
   ],
 
   thresholds: {
-    'http_req_duration{method:GET}': ['p(95)<300'], // More relaxed for spike test
-    'http_req_duration{method:POST}': ['p(95)<1000'],
-    'http_req_duration{method:PUT}': ['p(95)<1000'],
-    http_req_failed: ['rate<0.15'], // Allow up to 15% failure during spike
-    errors: ['rate<0.15'],
+    'http_req_duration{method:GET}': ['p(95)<500'], // More relaxed for spike test
+    'http_req_duration{method:POST}': ['p(95)<750'],
+    'http_req_duration{method:PUT}': ['p(95)<750'],
+    http_req_failed: ['rate<0.05'], // Allow up to 5% failure during spike
+    errors: ['rate<0.05'],
   },
 };
 
@@ -84,10 +84,10 @@ export const soakTest = {
   ],
 
   thresholds: {
-    'http_req_duration{method:GET}': ['p(95)<200'],
-    'http_req_duration{method:POST}': ['p(95)<800'],
-    'http_req_duration{method:PUT}': ['p(95)<800'],
-    http_req_failed: ['rate<0.05'],
-    errors: ['rate<0.05'],
+    'http_req_duration{method:GET}': ['p(95)<300'],
+    'http_req_duration{method:POST}': ['p(95)<450'],
+    'http_req_duration{method:PUT}': ['p(95)<450'],
+    http_req_failed: ['rate<0.01'],
+    errors: ['rate<0.01'],
   },
 };
