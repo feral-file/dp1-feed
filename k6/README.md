@@ -15,35 +15,35 @@ This directory contains K6 performance test scripts for the DP-1 Feed Operator A
 - **Duration**: 25 seconds
 - **Users**: 2 concurrent users
 - **Purpose**: CI/CD pipeline testing
-- **Thresholds**: Standard (GET ≤200ms, POST/PUT ≤800ms, 95% success)
+- **Thresholds**: Standard (GET ≤300ms, POST/PUT ≤450ms, 99% success)
 
 ### Normal Load (`normal`)
 
 - **Duration**: 90 seconds
 - **Users**: 5-10 concurrent users (ramp up)
 - **Purpose**: Regular performance validation
-- **Thresholds**: Standard (GET ≤200ms, POST/PUT ≤800ms, 95% success)
+- **Thresholds**: Standard (GET ≤300ms, POST/PUT ≤450ms, 99% success)
 
 ### Stress Test (`stress`)
 
 - **Duration**: 140 seconds
 - **Users**: 10-30 concurrent users (gradual ramp up)
 - **Purpose**: High load performance testing
-- **Thresholds**: Relaxed (GET ≤300ms, POST/PUT ≤1000ms, 90% success)
+- **Thresholds**: Relaxed (GET ≤400ms, POST/PUT ≤600ms, 98% success)
 
 ### Spike Test (`spike`)
 
 - **Duration**: 50 seconds
 - **Users**: 5 → 50 → 5 users (sudden spike)
 - **Purpose**: Testing sudden load resilience
-- **Thresholds**: Very relaxed (GET ≤300ms, POST/PUT ≤1000ms, 85% success)
+- **Thresholds**: Very relaxed (GET ≤500ms, POST/PUT ≤750ms, 95% success)
 
 ### Soak Test (`soak`)
 
 - **Duration**: 5 minutes 20 seconds
 - **Users**: 5 concurrent users (constant)
 - **Purpose**: Long-running stability testing
-- **Thresholds**: Standard (GET ≤200ms, POST/PUT ≤800ms, 95% success)
+- **Thresholds**: Standard (GET ≤300ms, POST/PUT ≤450ms, 99% success)
 
 ## Running Tests
 
@@ -118,13 +118,13 @@ The K6 tests cover all API endpoints:
 
 ### CRUD Operations (with Authentication)
 
-- `POST /api/v1/playlists` - Create playlist
+- `POST /api/v1/playlists` - Create playlist (async processing)
 - `GET /api/v1/playlists/:id` - Get playlist by ID
-- `PUT /api/v1/playlists/:id` - Update playlist
+- `PUT /api/v1/playlists/:id` - Update playlist (async processing)
 
-- `POST /api/v1/playlist-groups` - Create playlist group
+- `POST /api/v1/playlist-groups` - Create playlist group (async processing)
 - `GET /api/v1/playlist-groups/:id` - Get playlist group by ID
-- `PUT /api/v1/playlist-groups/:id` - Update playlist group
+- `PUT /api/v1/playlist-groups/:id` - Update playlist group (async processing)
 
 - `GET /api/v1/playlist-items/:id` - Get playlist item by ID
 
@@ -134,6 +134,7 @@ The K6 tests cover all API endpoints:
 - **Real Data**: Uses actual playlist URLs for playlist group creation
 - **Data Reuse**: Cycles through created resources for realistic testing
 - **Authentication**: Automatically adds Bearer token for write operations
+- **Async Processing**: Tests reflect the new async queue-based write operations
 
 ## Metrics and Thresholds
 

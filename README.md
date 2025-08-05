@@ -27,6 +27,7 @@ A modern, serverless API server built for Cloudflare Workers using the **Hono fr
 
 - **Cloudflare Workers**: Serverless deployment with global edge performance
 - **KV Storage**: Distributed key-value storage for playlists and metadata
+- **Cloudflare Queue**: Asynchronous processing for write operations with automatic retries
 - **Authentication Middleware**: Bearer token authentication for write operations
 - **CORS Middleware**: Cross-origin resource sharing for web applications
 - **Request Logging**: Structured logging with performance metrics
@@ -60,7 +61,7 @@ npm install
 npx wrangler login
 ```
 
-### 3. Create KV Namespaces
+### 3. Create KV Namespaces and Queue
 
 ```bash
 npm run setup:kv
@@ -83,6 +84,16 @@ preview_id = "YOUR_PLAYLIST_GROUPS_PREVIEW_KV_ID_HERE"
 binding = "DP1_PLAYLIST_ITEMS"
 id = "YOUR_PLAYLIST_ITEMS_KV_ID_HERE"
 preview_id = "YOUR_PLAYLIST_ITEMS_PREVIEW_KV_ID_HERE"
+
+# Queue configuration for async processing
+[[queues.producers]]
+binding = "DP1_WRITE_QUEUE"
+queue = "dp1-write-operations"
+
+[[queues.consumers]]
+queue = "dp1-write-operations"
+max_batch_size = 1
+max_batch_timeout = 1
 ```
 
 ### 4. Set API Secrets
@@ -203,6 +214,7 @@ The API is built using modern web standards optimized for edge computing:
 │ • KV Storage Operations                │
 │ • Ed25519 Cryptography                 │
 │ • Schema Validation                    │
+│ • Queue Processing                     │
 └─────────────────────────────────────────┘
 ```
 
@@ -218,8 +230,10 @@ src/
 │   ├── playlists.ts        # Playlist CRUD operations
 │   ├── playlistGroups.ts   # Playlist group operations
 │   └── playlistItems.ts    # Playlist item read operations
-├── fileUtils.ts            # KV storage operations
+├── storage.ts              # KV storage operations
 ├── crypto.ts               # Ed25519 signing utilities
+├── queue/
+│   └── processor.ts        # Queue message processing
 └── scripts/                # Deployment and testing scripts
 ```
 
@@ -230,6 +244,13 @@ src/
 3. **CORS**: Cross-origin headers and preflight handling
 4. **Content-Type Validation**: JSON validation for write operations
 5. **Authentication**: Bearer token validation for protected routes
+
+### Queue Processing
+
+1. **Message Creation**: Write operations create queue messages with operation details
+2. **Async Processing**: Queue processor handles storage operations in the background
+3. **Automatic Retries**: Failed operations are retried automatically by Cloudflare Queue
+4. **Batch Processing**: Configurable batch size and timeout for optimal performance
 
 ### Schema Validation
 
@@ -271,6 +292,7 @@ The API follows REST principles with comprehensive validation:
 - **Type Safety**: Full TypeScript support end-to-end
 - **Error Handling**: Detailed error messages with proper HTTP status codes
 - **Authentication**: Bearer token required for write operations
+- **Async Processing**: Write operations (POST/PUT) are queued for asynchronous processing
 
 ### Authentication
 
@@ -295,14 +317,14 @@ GET  /health                            # Health check with environment info
 # Playlists (with full Zod validation)
 GET  /playlists                         # List all playlists (array)
 GET  /playlists/{id}                    # Get specific playlist
-POST /playlists                         # Create playlist (requires auth + validation)
-PUT  /playlists/{id}                    # Update playlist (requires auth + validation)
+POST /playlists                         # Create playlist (async, requires auth + validation)
+PUT  /playlists/{id}                    # Update playlist (async, requires auth + validation)
 
 # Playlist Groups (with full Zod validation)
 GET  /playlist-groups                   # List all groups (array)
 GET  /playlist-groups/{id}              # Get specific group
-POST /playlist-groups                   # Create group (requires auth + validation)
-PUT  /playlist-groups/{id}              # Update group (requires auth + validation)
+POST /playlist-groups                   # Create group (async, requires auth + validation)
+PUT  /playlist-groups/{id}              # Update group (async, requires auth + validation)
 
 # Playlist Items (read-only access)
 GET  /playlist-items                    # List all playlist items (with optional filtering)
@@ -324,7 +346,7 @@ GET  /api/v1/playlist-items/{id}
 
 ### Example Requests
 
-#### Create a Playlist (with validation)
+#### Create a Playlist (with async processing)
 
 ```bash
 curl -X POST https://your-api.workers.dev/playlists \
@@ -343,6 +365,8 @@ curl -X POST https://your-api.workers.dev/playlists \
     ]
   }'
 ```
+
+**Response**: The API returns the signed playlist immediately (before persistence) with a 201 status code. The playlist is queued for asynchronous storage processing.
 
 #### Response with Validation Errors
 
@@ -388,11 +412,12 @@ ARWEAVE_GATEWAY_URL=https://arweave.net
 The `wrangler.toml` file configures:
 
 - KV namespace bindings
+- Queue configuration for async processing
 - Environment-specific settings
 - Route patterns for custom domains
 - Build and deployment settings
 
-## 🗄️ Data Storage
+## 🗄️ Data Storage & Queue Architecture
 
 ### KV Namespace Structure
 
@@ -405,6 +430,23 @@ The `wrangler.toml` file configures:
 - `playlist-group:{id}` - Individual groups
 
 **Note:** Playlist items are stored within playlists but can be accessed individually via dedicated endpoints for read operations.
+
+### Queue Architecture
+
+**DP1_WRITE_QUEUE:**
+
+- **Purpose**: Asynchronous processing of write operations
+- **Operations**: Create/update playlists and playlist groups
+- **Benefits**: Fast API responses, automatic retries, improved reliability
+- **Processing**: Batch processing with configurable batch size and timeout
+
+### Async Processing Flow
+
+1. **Request Validation**: API validates and authenticates the request
+2. **Queue Message**: Creates a queue message with operation details
+3. **Fast Response**: Returns the resource immediately (before persistence)
+4. **Background Processing**: Queue processor saves to KV storage
+5. **Automatic Retries**: Failed operations are retried automatically
 
 ### Data Persistence
 
@@ -460,10 +502,10 @@ npm run benchmark:report
 
 **Performance Criteria:**
 
-- GET requests: P95 ≤ 200ms
-- POST/PUT requests: P95 ≤ 800ms
-- Success rate: ≥ 95%
-- Check success rate: ≥ 95%
+- GET requests: P95 ≤ 300ms
+- POST/PUT requests: P95 ≤ 450ms (async processing)
+- Success rate: ≥ 99%
+- Check success rate: ≥ 99%
 
 **K6 Benchmark Features:**
 
@@ -478,11 +520,11 @@ npm run benchmark:report
 
 **Test Scenarios:**
 
-- **Light** (5s warmup, 15s @ 2 users): Perfect for CI/CD pipelines
-- **Normal** (1.5min @ 5-10 users): Standard performance validation
-- **Stress** (2.5min @ 10-30 users): High load performance testing
+- **Light** (25s @ 2 users): Perfect for CI/CD pipelines
+- **Normal** (90s @ 5-10 users): Standard performance validation
+- **Stress** (140s @ 10-30 users): High load performance testing
 - **Spike** (50s with sudden spike to 50 users): Sudden load resilience
-- **Soak** (5min @ 5 users): Long-running stability testing
+- **Soak** (5min 20s @ 5 users): Long-running stability testing
 
 **Report Output:**
 
@@ -645,6 +687,16 @@ wrangler secret put ED25519_PRIVATE_KEY
 ```bash
 # Check types and schemas
 npm run type-check
+```
+
+**Queue processing issues:**
+
+```bash
+# Check queue status
+npx wrangler queue list
+
+# View queue messages
+npx wrangler queue peek dp1-write-operations
 ```
 
 ### Getting Help
