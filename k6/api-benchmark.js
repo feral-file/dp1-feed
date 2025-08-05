@@ -507,7 +507,7 @@ function testPlaylistGroupOperations() {
 
 function testPlaylistItems() {
   // List all playlist items
-  const listResponse = makeRequest('/api/v1/playlist-items', 'GET', null, {
+  const listResponse = makeRequest('/api/v1/playlist-items?limit=10', 'GET', null, {
     endpoint: 'list_items',
   });
 
