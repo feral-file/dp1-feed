@@ -22,7 +22,7 @@ import { MessageBatch, ExecutionContext } from '@cloudflare/workers-types';
  * - Modular route organization
  * - Comprehensive middleware stack
  * - OpenAPI 3.1.0 compliance
- * - DP-1 v0.9-alpha specification implementation
+ * - DP-1 v1.0.0 specification implementation
  */
 
 // Create main Hono app
@@ -42,7 +42,7 @@ app.get('/api/v1', c => {
     version: MIN_DP_VERSION,
     description:
       'REST interface for creating, updating, and retrieving DP-1 playlists and playlist-groups',
-    specification: 'DP-1 v0.9-alpha',
+    specification: 'DP-1 v1.0.0',
     openapi: '3.1.0',
     endpoints: {
       playlists: '/api/v1/playlists',
@@ -50,7 +50,7 @@ app.get('/api/v1', c => {
       playlistItems: '/api/v1/playlist-items',
       health: '/api/v1/health',
     },
-    documentation: 'https://github.com/feralfile/dp-1/tree/main/docs',
+    documentation: 'https://github.com/display-protocol/dp1/blob/main/docs/spec.md',
   });
 });
 

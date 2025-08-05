@@ -19,7 +19,7 @@ A modern, serverless API server built for Cloudflare Workers using the **Hono fr
 ### DP-1 Compliance
 
 - **OpenAPI 3.1.0 Compliant**: Full REST interface matching the DP-1 Feed Operator API specification
-- **DP-1 Specification**: Complete implementation of DP-1 v0.9-alpha for blockchain-native digital art
+- **DP-1 Specification**: Complete implementation of DP-1 v1.0.0 for blockchain-native digital art
 - **Ed25519 Signatures**: Cryptographic playlist signing as per DP-1 specification
 - **Schema Validation**: Comprehensive validation against DP-1 JSON schemas
 
