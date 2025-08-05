@@ -8,38 +8,47 @@ import {
   getPlaylistGroupByIdOrSlug,
   listAllPlaylistGroups,
   getPlaylistGroupsForPlaylist,
+  getPlaylistItemById,
+  listAllPlaylistItems,
+  listPlaylistItemsByGroupId,
   STORAGE_KEYS,
 } from './storage';
 import type { Env, Playlist, PlaylistGroup } from './types';
 
 const playlistId1 = '550e8400-e29b-41d4-a716-446655440000';
 const playlistId2 = '550e8400-e29b-41d4-a716-446655440002';
+const itemId1 = '550e8400-e29b-41d4-a716-446655440001';
+const itemId2 = '550e8400-e29b-41d4-a716-446655440003';
 const playlistSlug1 = 'test-playlist-1';
 const playlistSlug2 = 'test-playlist-2';
 
 // Helper function to create a simple mock playlist response
-const createMockPlaylistResponse = (id: string, slug: string) =>
-  ({
+const createMockPlaylistResponse = (id: string, slug: string) => {
+  // Pre-define unique item IDs for each playlist
+  const itemId = id === playlistId1 ? itemId1 : itemId2;
+
+  return {
     ok: true,
     json: () =>
       Promise.resolve({
         dpVersion: '1.0.0',
         id,
         slug,
-        title: 'Test External Playlist', // Required field for DP-1 validation
+        title: 'Test Playlist',
         created: '2024-01-01T00:00:00Z',
-        signature: 'ed25519:0x1234567890abcdef', // Required for DP-1 validation
+        signature: 'ed25519:0x1234567890abcdef',
         items: [
           {
-            id: '550e8400-e29b-41d4-a716-446655440001',
-            title: 'External Test Artwork',
-            source: 'https://example.com/external-artwork.html',
+            id: itemId,
+            title: 'Test Artwork',
+            source: 'https://example.com/artwork.html',
             duration: 300,
             license: 'open',
           },
         ],
       }),
-  }) as Response;
+  } as Response;
+};
 
 // Helper function to mock fetch for the standard test playlist group URLs
 const mockStandardPlaylistFetch = () => {
@@ -104,18 +113,19 @@ const testEnv: Env = {
   DP1_PLAYLISTS: createMockKV() as any,
   DP1_PLAYLIST_GROUPS: createMockKV() as any,
   DP1_PLAYLIST_ITEMS: createMockKV() as any,
+  DP1_WRITE_QUEUE: { send: vi.fn() } as any,
 };
 
 // Test data
 const testPlaylist: Playlist = {
   dpVersion: '1.0.0',
-  id: '550e8400-e29b-41d4-a716-446655440000',
+  id: playlistId1,
   slug: 'test-playlist-1234',
   title: 'Test Playlist',
   created: '2024-01-01T00:00:00Z',
   items: [
     {
-      id: '550e8400-e29b-41d4-a716-446655440001',
+      id: itemId1,
       title: 'Test Artwork',
       source: 'https://example.com/artwork.html',
       duration: 300,
@@ -131,8 +141,8 @@ const testPlaylistGroup: PlaylistGroup = {
   curator: 'Test Curator',
   created: '2024-01-01T00:00:00Z',
   playlists: [
-    'https://example.com/playlists/550e8400-e29b-41d4-a716-446655440000',
-    'https://example.com/playlists/550e8400-e29b-41d4-a716-446655440002',
+    `https://example.com/playlists/${playlistId1}`,
+    `https://example.com/playlists/${playlistId2}`,
   ],
 };
 
@@ -237,6 +247,46 @@ describe('Storage Module', () => {
       expect(result.items.map(p => p.id)).toContain(playlist1.id);
       expect(result.items.map(p => p.id)).toContain(playlist2.id);
     });
+
+    it('should update playlist and handle item changes', async () => {
+      // Save initial playlist
+      await savePlaylist(testPlaylist, testEnv);
+
+      // Verify initial item exists
+      const mockItemsKV = testEnv.DP1_PLAYLIST_ITEMS as any;
+      const initialItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${testPlaylist.items[0].id}`;
+      expect(mockItemsKV.storage.has(initialItemKey)).toBe(true);
+
+      // Create updated playlist with different items
+      const updatedPlaylist = {
+        ...testPlaylist,
+        items: [
+          {
+            id: '550e8400-e29b-41d4-a716-446655440010',
+            title: 'Updated Artwork',
+            source: 'https://example.com/updated-artwork.html',
+            duration: 400,
+            license: 'token' as const,
+          },
+        ],
+      };
+
+      // Update playlist
+      const updated = await savePlaylist(updatedPlaylist, testEnv, true);
+      expect(updated).toBe(true);
+
+      // Verify updated playlist data
+      const retrieved = await getPlaylistByIdOrSlug(testPlaylist.id, testEnv);
+      expect(retrieved).toEqual(updatedPlaylist);
+
+      // Verify new item exists
+      const newItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${updatedPlaylist.items[0].id}`;
+      expect(mockItemsKV.storage.has(newItemKey)).toBe(true);
+
+      // Verify old item is deleted
+      const oldItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${testPlaylist.items[0].id}`;
+      expect(mockItemsKV.storage.has(oldItemKey)).toBe(false);
+    });
   });
 
   describe('Playlist Group Storage', () => {
@@ -276,22 +326,27 @@ describe('Storage Module', () => {
       expect(retrieved).toEqual(testPlaylistGroup);
     });
 
-    it('should create playlist group indexes for efficient filtering', async () => {
+    it('should create bidirectional playlist-group mappings for efficient filtering', async () => {
       // Mock fetch for external playlist validation
       mockStandardPlaylistFetch();
 
       // Save playlist group
       await savePlaylistGroup(testPlaylistGroup, testEnv);
 
-      // Verify playlist group indexes were created
+      // Verify bidirectional mappings were created
       const mockPlaylistKV = testEnv.DP1_PLAYLISTS as any;
 
-      // Check that playlist group index keys were created
-      const groupIndexKey1 = `${STORAGE_KEYS.PLAYLIST_BY_GROUP_PREFIX}${testPlaylistGroup.id}:${playlistId1}`;
-      const groupIndexKey2 = `${STORAGE_KEYS.PLAYLIST_BY_GROUP_PREFIX}${testPlaylistGroup.id}:${playlistId2}`;
+      // Check playlist-to-groups mappings
+      const playlistToGroup1 = `${STORAGE_KEYS.PLAYLIST_TO_GROUPS_PREFIX}${playlistId1}:${testPlaylistGroup.id}`;
+      const playlistToGroup2 = `${STORAGE_KEYS.PLAYLIST_TO_GROUPS_PREFIX}${playlistId2}:${testPlaylistGroup.id}`;
+      expect(mockPlaylistKV.storage.has(playlistToGroup1)).toBe(true);
+      expect(mockPlaylistKV.storage.has(playlistToGroup2)).toBe(true);
 
-      expect(mockPlaylistKV.storage.has(groupIndexKey1)).toBe(true);
-      expect(mockPlaylistKV.storage.has(groupIndexKey2)).toBe(true);
+      // Check group-to-playlists mappings
+      const groupToPlaylist1 = `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX}${testPlaylistGroup.id}:${playlistId1}`;
+      const groupToPlaylist2 = `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX}${testPlaylistGroup.id}:${playlistId2}`;
+      expect(mockPlaylistKV.storage.has(groupToPlaylist1)).toBe(true);
+      expect(mockPlaylistKV.storage.has(groupToPlaylist2)).toBe(true);
     });
 
     it('should return null for non-existent playlist group', async () => {
@@ -344,6 +399,160 @@ describe('Storage Module', () => {
       expect(nextResult.items).toHaveLength(2);
       expect(nextResult.hasMore).toBe(false);
       expect(nextResult.cursor).toBeUndefined();
+    });
+
+    it('should handle empty playlist group playlists array gracefully', async () => {
+      const emptyGroup = {
+        ...testPlaylistGroup,
+        playlists: [],
+      };
+
+      const saved = await savePlaylistGroup(emptyGroup, testEnv);
+      expect(saved).toBe(false);
+    });
+
+    it('should properly clean up old playlists when updating playlist group', async () => {
+      // Mock fetch for external playlist validation
+      global.fetch = vi.fn((url: string) => {
+        if (url.includes(playlistId1)) {
+          return Promise.resolve(createMockPlaylistResponse(playlistId1, playlistSlug1));
+        }
+        if (url.includes(playlistId2)) {
+          return Promise.resolve(createMockPlaylistResponse(playlistId2, playlistSlug2));
+        }
+        return Promise.resolve({ ok: false, status: 404 } as Response);
+      }) as any;
+
+      // Create initial playlist group with two playlists
+      const initialGroup: PlaylistGroup = {
+        id: 'test-group-update',
+        slug: 'test-group-update-slug',
+        title: 'Initial Group',
+        curator: 'Test Curator',
+        summary: 'Initial summary',
+        playlists: [
+          `https://example.com/playlists/${playlistId1}`,
+          `https://example.com/playlists/${playlistId2}`,
+        ],
+        created: '2024-01-01T00:00:00Z',
+      };
+
+      // Save initial group
+      const saved = await savePlaylistGroup(initialGroup, testEnv);
+      expect(saved).toBe(true);
+
+      // Verify bidirectional mappings exist for both playlists
+      const mockPlaylistsKV = testEnv.DP1_PLAYLISTS as any;
+      const mapping1Key = `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX}${initialGroup.id}:${playlistId1}`;
+      const mapping2Key = `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX}${initialGroup.id}:${playlistId2}`;
+
+      expect(mockPlaylistsKV.storage.has(mapping1Key)).toBe(true);
+      expect(mockPlaylistsKV.storage.has(mapping2Key)).toBe(true);
+
+      // Update group to only include first playlist (remove second)
+      const updatedGroup: PlaylistGroup = {
+        ...initialGroup,
+        playlists: [
+          `https://example.com/playlists/${playlistId1}`, // Keep this one
+        ],
+      };
+
+      // Update the group
+      const updated = await savePlaylistGroup(updatedGroup, testEnv, true);
+      expect(updated).toBe(true);
+
+      // Verify first mapping still exists
+      expect(mockPlaylistsKV.storage.has(mapping1Key)).toBe(true);
+
+      // Verify second mapping was removed
+      expect(mockPlaylistsKV.storage.has(mapping2Key)).toBe(false);
+
+      // Verify reverse mappings are also cleaned up
+      const reverseMapping2Key = `${STORAGE_KEYS.PLAYLIST_TO_GROUPS_PREFIX}${playlistId2}:${initialGroup.id}`;
+      expect(mockPlaylistsKV.storage.has(reverseMapping2Key)).toBe(false);
+    });
+  });
+
+  describe('Playlist Items Storage', () => {
+    it('should save and retrieve playlist items', async () => {
+      // Save playlist (which saves items)
+      await savePlaylist(testPlaylist, testEnv);
+
+      // Retrieve item by ID
+      const item = await getPlaylistItemById(testPlaylist.items[0].id, testEnv);
+      expect(item).toEqual(testPlaylist.items[0]);
+    });
+
+    it('should list all playlist items with pagination', async () => {
+      // Create playlists with multiple items
+      const playlists = Array.from({ length: 3 }, (_, i) => ({
+        ...testPlaylist,
+        id: `playlist-${i}`,
+        slug: `playlist-slug-${i}`,
+        items: Array.from({ length: 2 }, (_, j) => ({
+          id: `item-${i}-${j}`,
+          title: `Item ${i}-${j}`,
+          source: `https://example.com/item-${i}-${j}.html`,
+          duration: 300 + j * 100,
+          license: 'open' as const,
+        })),
+      }));
+
+      for (const playlist of playlists) {
+        await savePlaylist(playlist, testEnv);
+      }
+
+      // List all items
+      const result = await listAllPlaylistItems(testEnv, { limit: 4 });
+      expect(result.items.length).toBeGreaterThan(0);
+      expect(result.items.length).toEqual(4);
+    });
+
+    it('should list playlist items by group ID', async () => {
+      // Mock fetch for external playlist validation
+      mockStandardPlaylistFetch();
+
+      // Save playlist group
+      await savePlaylistGroup(testPlaylistGroup, testEnv);
+
+      // List items by group
+      const result = await listPlaylistItemsByGroupId(testPlaylistGroup.id, testEnv);
+      expect(result.items.length).toEqual(2);
+      expect(result.items[0]).toHaveProperty('id');
+      expect(result.items[0]).toHaveProperty('title');
+    });
+
+    it('should handle playlist items for groups during updates', async () => {
+      // Mock fetch for external playlist validation
+      mockStandardPlaylistFetch();
+
+      // Save initial playlist group
+      await savePlaylistGroup(testPlaylistGroup, testEnv);
+
+      // Verify playlist item group indexes were created
+      const mockItemsKV = testEnv.DP1_PLAYLIST_ITEMS as any;
+      const itemGroupKeys = (Array.from(mockItemsKV.storage.keys()) as string[]).filter(
+        (key: string) => key.startsWith(STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_PREFIX)
+      );
+      expect(itemGroupKeys.length).toBeGreaterThan(0);
+
+      // Update group with fewer playlists
+      const updatedGroup = {
+        ...testPlaylistGroup,
+        playlists: [testPlaylistGroup.playlists[0]], // Only first playlist
+      };
+
+      await savePlaylistGroup(updatedGroup, testEnv, true);
+
+      // Verify some item group indexes were cleaned up for the removed playlist
+      const remainingItemGroupKeys = (Array.from(mockItemsKV.storage.keys()) as string[]).filter(
+        (key: string) =>
+          key.startsWith(`${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_PREFIX}${testPlaylistGroup.id}:`)
+      );
+
+      // The cleanup should reduce the number of item-group associations
+      // but might not remove all since external playlists were fetched and stored
+      expect(remainingItemGroupKeys.length).toEqual(itemGroupKeys.length - 1);
     });
   });
 
@@ -434,7 +643,7 @@ describe('Storage Module', () => {
         playlists: [`https://example.com/playlists/${playlistId1}`], // Only first playlist
       };
 
-      await savePlaylistGroup(updatedGroup, testEnv);
+      await savePlaylistGroup(updatedGroup, testEnv, true);
 
       // Verify old mappings were cleaned up and new ones created
       expect(mockPlaylistKV.storage.has(playlistToGroup1)).toBe(true); // Still exists
@@ -497,7 +706,8 @@ describe('Storage Module', () => {
       expect(STORAGE_KEYS.PLAYLIST_SLUG_PREFIX).toBe('playlist:slug:');
       expect(STORAGE_KEYS.PLAYLIST_GROUP_ID_PREFIX).toBe('playlist-group:id:');
       expect(STORAGE_KEYS.PLAYLIST_GROUP_SLUG_PREFIX).toBe('playlist-group:slug:');
-      expect(STORAGE_KEYS.PLAYLIST_BY_GROUP_PREFIX).toBe('playlist:playlist-group-id:');
+      expect(STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX).toBe('playlist-item:id:');
+      expect(STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_PREFIX).toBe('playlist-item:group-id:');
       expect(STORAGE_KEYS.PLAYLIST_TO_GROUPS_PREFIX).toBe('playlist-to-groups:');
       expect(STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX).toBe('group-to-playlists:');
     });
@@ -530,12 +740,15 @@ describe('Storage Module', () => {
         )
       ).toBe(true);
 
-      // Check playlist group filtering indexes
-      const groupIndexPrefix = `${STORAGE_KEYS.PLAYLIST_BY_GROUP_PREFIX}${testPlaylistGroup.id}:`;
-      const groupIndexKeys = (Array.from(mockPlaylistKV.storage.keys()) as string[]).filter(key =>
-        key.startsWith(groupIndexPrefix)
+      // Check bidirectional mapping indexes
+      const playlistToGroupKeys = (Array.from(mockPlaylistKV.storage.keys()) as string[]).filter(
+        (key: string) => key.startsWith(STORAGE_KEYS.PLAYLIST_TO_GROUPS_PREFIX)
       );
-      expect(groupIndexKeys).toHaveLength(2); // Two playlists in the group
+      const groupToPlaylistKeys = (Array.from(mockPlaylistKV.storage.keys()) as string[]).filter(
+        (key: string) => key.startsWith(STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX)
+      );
+      expect(playlistToGroupKeys).toHaveLength(2); // Two playlists in the group
+      expect(groupToPlaylistKeys).toHaveLength(2); // Two playlists in the group
     });
   });
 
@@ -740,8 +953,8 @@ describe('Storage Module', () => {
           description: 'UUID format',
         },
         {
-          url: 'http://localhost:8787/api/v1/playlists/550e8400-e29b-41d4-a716-446655440000',
-          expectedId: '550e8400-e29b-41d4-a716-446655440000',
+          url: `http://localhost:8787/api/v1/playlists/${playlistId1}`,
+          expectedId: playlistId1,
           description: 'UUID on localhost',
         },
         {
@@ -760,8 +973,8 @@ describe('Storage Module', () => {
           description: 'Slug with mixed case and year',
         },
         {
-          url: 'https://api.feed.feralfile.com/api/v1/playlists/550e8400-e29b-41d4-a716-446655440000?query=param',
-          expectedId: '550e8400-e29b-41d4-a716-446655440000',
+          url: `https://api.feed.feralfile.com/api/v1/playlists/${playlistId1}?query=param`,
+          expectedId: playlistId1,
           description: 'UUID with query params (should be ignored)',
         },
         {
@@ -836,7 +1049,7 @@ describe('Storage Module', () => {
         title: 'Self-Hosted Playlist',
         items: [
           {
-            id: '550e8400-e29b-41d4-a716-446655440001',
+            id: itemId1,
             title: 'Self-Hosted Item 1',
             source: 'https://example.com/self-hosted-artwork.html',
             duration: 600,
@@ -873,7 +1086,7 @@ describe('Storage Module', () => {
                 signature: 'ed25519:0x1234567890abcdef',
                 items: [
                   {
-                    id: '550e8400-e29b-41d4-a716-446655440002',
+                    id: itemId2,
                     title: 'External Item 1',
                     source: 'https://external-example.com/external-artwork.html',
                     duration: 400,
@@ -935,20 +1148,6 @@ describe('Storage Module', () => {
       );
       expect(selfHostedSlugCall).toBeUndefined();
 
-      // Verify that group indexes were created for BOTH playlists
-      const selfHostedGroupIndexCall = putCalls.find(
-        call =>
-          call[0] ===
-          `${STORAGE_KEYS.PLAYLIST_BY_GROUP_PREFIX}${mixedGroup.id}:${selfHostedPlaylistId}`
-      );
-      const externalGroupIndexCall = putCalls.find(
-        call =>
-          call[0] ===
-          `${STORAGE_KEYS.PLAYLIST_BY_GROUP_PREFIX}${mixedGroup.id}:${externalPlaylistId}`
-      );
-      expect(selfHostedGroupIndexCall).toBeTruthy();
-      expect(externalGroupIndexCall).toBeTruthy();
-
       // Verify that bidirectional mappings were created for BOTH playlists
       const selfHostedToGroupCall = putCalls.find(
         call =>
@@ -988,12 +1187,19 @@ describe('Storage Module', () => {
       expect(groupToSelfHostedCall).toBeTruthy();
       expect(groupToExternalCall).toBeTruthy();
 
-      // SUMMARY: The spy verification above proves that savePlaylistGroup:
-      // 1. ✅ Does NOT write self-hosted playlist data OR slug indexes (optimization working)
-      // 2. ✅ DOES write external playlist data AND slug indexes (functionality preserved)
-      // 3. ✅ Creates group indexes for BOTH playlists (functionality preserved)
-      // 4. ✅ Creates bidirectional mappings for BOTH playlists (functionality preserved)
-      // Note: Self-hosted playlists rely on existing slug indexes from when they were originally saved
+      // Verify that playlist-to-groups mappings were also created for both
+      const playlistToSelfHostedCall = putCalls.find(
+        call =>
+          call[0] ===
+          `${STORAGE_KEYS.PLAYLIST_TO_GROUPS_PREFIX}${selfHostedPlaylistId}:${mixedGroup.id}`
+      );
+      const playlistToExternalCall = putCalls.find(
+        call =>
+          call[0] ===
+          `${STORAGE_KEYS.PLAYLIST_TO_GROUPS_PREFIX}${externalPlaylistId}:${mixedGroup.id}`
+      );
+      expect(playlistToSelfHostedCall).toBeTruthy();
+      expect(playlistToExternalCall).toBeTruthy();
 
       // Verify logging behavior
       expect(logSpy).toHaveBeenCalledWith(expect.stringContaining('Detected self-hosted URL'));
@@ -1009,29 +1215,70 @@ describe('Storage Module', () => {
       );
 
       // Verify playlist items: external items should be saved, self-hosted should remain from pre-population
-      // Check that external playlist item was written by savePlaylistGroup
       const externalItemCall = kvItemsPutSpy.mock.calls.find(
-        call =>
-          call[0] === `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}550e8400-e29b-41d4-a716-446655440002`
+        call => call[0] === `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${itemId2}`
       );
       expect(externalItemCall).toBeTruthy();
 
       // Check that self-hosted playlist item was NOT written by savePlaylistGroup
       const selfHostedItemCall = kvItemsPutSpy.mock.calls.find(
-        call =>
-          call[0] === `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}550e8400-e29b-41d4-a716-446655440001`
+        call => call[0] === `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${itemId1}`
       );
       expect(selfHostedItemCall).toBeUndefined();
 
       // Both items should exist in storage (external from savePlaylistGroup, self-hosted from pre-population)
-      const selfHostedItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}550e8400-e29b-41d4-a716-446655440001`;
-      const externalItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}550e8400-e29b-41d4-a716-446655440002`;
+      const selfHostedItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${itemId1}`;
+      const externalItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${itemId2}`;
       expect(mockItemsKV.storage.get(selfHostedItemKey)).toBeTruthy();
       expect(mockItemsKV.storage.get(externalItemKey)).toBeTruthy();
 
       logSpy.mockRestore();
       kvPutSpy.mockRestore();
       kvItemsPutSpy.mockRestore();
+    });
+  });
+
+  describe('Error Handling and Edge Cases', () => {
+    it('should handle invalid URLs in playlist groups', async () => {
+      const invalidGroup: PlaylistGroup = {
+        ...testPlaylistGroup,
+        playlists: ['not-a-url', 'ftp://invalid-protocol.com/playlist'],
+      };
+
+      // Should reject invalid URLs
+      await expect(savePlaylistGroup(invalidGroup, testEnv)).rejects.toThrow();
+    });
+
+    it('should handle network failures gracefully', async () => {
+      global.fetch = vi.fn(() => {
+        return Promise.reject(new Error('Network error'));
+      }) as any;
+
+      const groupWithExternalUrl: PlaylistGroup = {
+        ...testPlaylistGroup,
+        playlists: ['https://external.example.com/api/v1/playlists/failing-playlist'],
+      };
+
+      await expect(savePlaylistGroup(groupWithExternalUrl, testEnv)).rejects.toThrow(
+        'Network error'
+      );
+    });
+
+    it('should handle KV operation failures', async () => {
+      // Mock KV failure
+      const failingKV = {
+        ...createMockKV(),
+        put: vi.fn().mockRejectedValue(new Error('KV operation failed')),
+      };
+
+      const envWithFailingKV: Env = {
+        ...testEnv,
+        DP1_PLAYLISTS: failingKV as any,
+      };
+
+      await expect(savePlaylist(testPlaylist, envWithFailingKV)).rejects.toThrow(
+        'KV operation failed'
+      );
     });
   });
 });

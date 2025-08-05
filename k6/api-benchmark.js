@@ -298,7 +298,7 @@ function testPlaylistOperations() {
 
   if (!listSuccess) errorRate.add(1);
 
-  // Create playlist (if authenticated)
+  // Create playlist (if authenticated) - test creation only
   if (API_SECRET) {
     const playlistData = generatePlaylistData(Math.floor(Math.random() * 1000));
     const createResponse = makeRequest('/api/v1/playlists', 'POST', playlistData, {
@@ -318,75 +318,58 @@ function testPlaylistOperations() {
     });
 
     if (!createSuccess) errorRate.add(1);
+  }
 
-    // If creation successful, test get and update
-    if (createResponse.status === 201) {
-      try {
-        const createdPlaylist = JSON.parse(createResponse.body);
+  // Test GET and UPDATE operations using cached playlists (to avoid KV async issues)
+  if (cachedPlaylists.length > 0) {
+    const existingPlaylist = cachedPlaylists[Math.floor(Math.random() * cachedPlaylists.length)];
 
-        // Get playlist by ID
-        const getResponse = makeRequest(`/api/v1/playlists/${createdPlaylist.id}`, 'GET', null, {
-          endpoint: 'get_playlist',
-        });
+    // Get playlist by ID
+    const getResponse = makeRequest(`/api/v1/playlists/${existingPlaylist.id}`, 'GET', null, {
+      endpoint: 'get_playlist',
+    });
 
-        const getSuccess = check(getResponse, {
-          'Get Playlist: status is 200': r => r.status === 200,
-          'Get Playlist: returns correct playlist': r => {
-            try {
-              const data = JSON.parse(r.body);
-              return data.id === createdPlaylist.id;
-            } catch {
-              return false;
-            }
-          },
-        });
+    const getSuccess = check(getResponse, {
+      'Get Playlist: status is 200': r => r.status === 200,
+      'Get Playlist: returns correct playlist': r => {
+        try {
+          const data = JSON.parse(r.body);
+          return data.id === existingPlaylist.id;
+        } catch {
+          return false;
+        }
+      },
+    });
 
-        if (!getSuccess) errorRate.add(1);
+    if (!getSuccess) errorRate.add(1);
 
-        // Update playlist
-        const updateData = {
-          title: `Updated ${createdPlaylist.title}`,
-          items: playlistData.items,
-        };
+    // Update playlist (if authenticated)
+    if (API_SECRET) {
+      const updateData = {
+        title: `Updated ${existingPlaylist.title} - ${Date.now()}`,
+        items: existingPlaylist.items || [],
+      };
 
-        const updateResponse = makeRequest(
-          `/api/v1/playlists/${createdPlaylist.id}`,
-          'PUT',
-          updateData,
-          { endpoint: 'update_playlist' }
-        );
+      const updateResponse = makeRequest(
+        `/api/v1/playlists/${existingPlaylist.id}`,
+        'PUT',
+        updateData,
+        { endpoint: 'update_playlist' }
+      );
 
-        const updateSuccess = check(updateResponse, {
-          'Update Playlist: status is 200': r => r.status === 200,
-          'Update Playlist: title updated': r => {
-            try {
-              const data = JSON.parse(r.body);
-              return data.title.startsWith('Updated');
-            } catch {
-              return false;
-            }
-          },
-        });
-
-        if (!updateSuccess) errorRate.add(1);
-      } catch (error) {
-        console.error(`Error in playlist operations: ${error.message}`);
-        errorRate.add(1);
-      }
-    }
-  } else {
-    // Test with existing playlist if available
-    if (cachedPlaylists.length > 0) {
-      const playlist = cachedPlaylists[Math.floor(Math.random() * cachedPlaylists.length)];
-      const getResponse = makeRequest(`/api/v1/playlists/${playlist.id}`, 'GET', null, {
-        endpoint: 'get_playlist',
+      const updateSuccess = check(updateResponse, {
+        'Update Playlist: status is 200': r => r.status === 200,
+        'Update Playlist: title updated': r => {
+          try {
+            const data = JSON.parse(r.body);
+            return data.title.includes('Updated');
+          } catch {
+            return false;
+          }
+        },
       });
 
-      const getSuccess = check(getResponse, {
-        'Get Existing Playlist: status is 200': r => r.status === 200,
-      });
-
-      if (!getSuccess) errorRate.add(1);
+      if (!updateSuccess) errorRate.add(1);
     }
   }
 }
@@ -411,7 +394,7 @@ function testPlaylistGroupOperations() {
 
   if (!listSuccess) errorRate.add(1);
 
-  // Create playlist group (if authenticated and have playlists)
+  // Create playlist group (if authenticated and have playlists) - test creation only
   if (API_SECRET && cachedPlaylists.length >= 2) {
     const groupData = generatePlaylistGroupData(Math.floor(Math.random() * 1000));
     const createResponse = makeRequest('/api/v1/playlist-groups', 'POST', groupData, {
@@ -431,83 +414,67 @@ function testPlaylistGroupOperations() {
     });
 
     if (!createSuccess) errorRate.add(1);
+  }
 
-    // If creation successful, test get and update
-    if (createResponse.status === 201) {
-      try {
-        const createdGroup = JSON.parse(createResponse.body);
+  // Test GET and UPDATE operations using cached playlist groups (to avoid KV async issues)
+  if (cachedPlaylistGroups.length > 0) {
+    const existingGroup =
+      cachedPlaylistGroups[Math.floor(Math.random() * cachedPlaylistGroups.length)];
 
-        // Get group by ID
-        const getResponse = makeRequest(`/api/v1/playlist-groups/${createdGroup.id}`, 'GET', null, {
-          endpoint: 'get_group',
-        });
+    // Get group by ID
+    const getResponse = makeRequest(`/api/v1/playlist-groups/${existingGroup.id}`, 'GET', null, {
+      endpoint: 'get_group',
+    });
 
-        const getSuccess = check(getResponse, {
-          'Get Group: status is 200': r => r.status === 200,
-          'Get Group: returns correct group': r => {
-            try {
-              const data = JSON.parse(r.body);
-              return data.id === createdGroup.id;
-            } catch {
-              return false;
-            }
-          },
-        });
+    const getSuccess = check(getResponse, {
+      'Get Group: status is 200': r => r.status === 200,
+      'Get Group: returns correct group': r => {
+        try {
+          const data = JSON.parse(r.body);
+          return data.id === existingGroup.id;
+        } catch {
+          return false;
+        }
+      },
+    });
 
-        if (!getSuccess) errorRate.add(1);
+    if (!getSuccess) errorRate.add(1);
 
-        // Update group
-        const updateData = {
-          title: `Updated ${createdGroup.title}`,
-          curator: createdGroup.curator,
-          playlists: groupData.playlists,
-        };
+    // Update group (if authenticated)
+    if (API_SECRET) {
+      const updateData = {
+        title: `Updated ${existingGroup.title} - ${Date.now()}`,
+        curator: existingGroup.curator || `Updated Curator - ${Date.now()}`,
+        playlists: existingGroup.playlists || [],
+      };
 
-        const updateResponse = makeRequest(
-          `/api/v1/playlist-groups/${createdGroup.id}`,
-          'PUT',
-          updateData,
-          { endpoint: 'update_group' }
-        );
+      const updateResponse = makeRequest(
+        `/api/v1/playlist-groups/${existingGroup.id}`,
+        'PUT',
+        updateData,
+        { endpoint: 'update_group' }
+      );
 
-        const updateSuccess = check(updateResponse, {
-          'Update Group: status is 200': r => r.status === 200,
-          'Update Group: title updated': r => {
-            try {
-              const data = JSON.parse(r.body);
-              return data.title.startsWith('Updated');
-            } catch {
-              return false;
-            }
-          },
-        });
-
-        if (!updateSuccess) errorRate.add(1);
-      } catch (error) {
-        console.error(`Error in playlist group operations: ${error.message}`);
-        errorRate.add(1);
-      }
-    }
-  } else {
-    // Test with existing group if available
-    if (cachedPlaylistGroups.length > 0) {
-      const group = cachedPlaylistGroups[Math.floor(Math.random() * cachedPlaylistGroups.length)];
-      const getResponse = makeRequest(`/api/v1/playlist-groups/${group.id}`, 'GET', null, {
-        endpoint: 'get_group',
+      const updateSuccess = check(updateResponse, {
+        'Update Group: status is 200': r => r.status === 200,
+        'Update Group: title updated': r => {
+          try {
+            const data = JSON.parse(r.body);
+            return data.title.includes('Updated');
+          } catch {
+            return false;
+          }
+        },
       });
 
-      const getSuccess = check(getResponse, {
-        'Get Existing Group: status is 200': r => r.status === 200,
-      });
-
-      if (!getSuccess) errorRate.add(1);
+      if (!updateSuccess) errorRate.add(1);
     }
   }
 }
 
 function testPlaylistItems() {
   // List all playlist items
-  const listResponse = makeRequest('/api/v1/playlist-items', 'GET', null, {
+  const listResponse = makeRequest('/api/v1/playlist-items?limit=10', 'GET', null, {
     endpoint: 'list_items',
   });
 
@@ -525,28 +492,37 @@ function testPlaylistItems() {
 
   if (!listSuccess) errorRate.add(1);
 
-  // Test getting individual playlist items if we have playlists
-  if (cachedPlaylists.length > 0) {
-    const playlist = cachedPlaylists[Math.floor(Math.random() * cachedPlaylists.length)];
-    if (playlist.items && playlist.items.length > 0) {
-      const item = playlist.items[Math.floor(Math.random() * playlist.items.length)];
-      const getResponse = makeRequest(`/api/v1/playlist-items/${item.id}`, 'GET', null, {
-        endpoint: 'get_item',
-      });
+  // Test getting individual playlist items from the list response (to avoid KV async issues)
+  if (listResponse.status === 200) {
+    try {
+      const responseData = JSON.parse(listResponse.body);
+      const items = Array.isArray(responseData) ? responseData : responseData.items || [];
 
-      const getSuccess = check(getResponse, {
-        'Get Item: status is 200': r => r.status === 200,
-        'Get Item: returns item': r => {
-          try {
-            const data = JSON.parse(r.body);
-            return data.id === item.id;
-          } catch {
-            return false;
-          }
-        },
-      });
+      if (items.length > 0) {
+        const randomItem = items[Math.floor(Math.random() * items.length)];
+        if (randomItem && randomItem.id) {
+          const getResponse = makeRequest(`/api/v1/playlist-items/${randomItem.id}`, 'GET', null, {
+            endpoint: 'get_item',
+          });
 
-      if (!getSuccess) errorRate.add(1);
+          const getSuccess = check(getResponse, {
+            'Get Item: status is 200': r => r.status === 200,
+            'Get Item: returns item': r => {
+              try {
+                const data = JSON.parse(r.body);
+                return data.id === randomItem.id;
+              } catch {
+                return false;
+              }
+            },
+          });
+
+          if (!getSuccess) errorRate.add(1);
+        }
+      }
+    } catch (error) {
+      console.error(`Error in playlist items operations: ${error.message}`);
+      errorRate.add(1);
     }
   }
 }

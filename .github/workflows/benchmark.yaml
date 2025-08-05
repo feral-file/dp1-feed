@@ -1,10 +1,6 @@
 name: K6 Performance Benchmarks
 
 on:
-  push:
-    branches: [main, develop]
-  pull_request:
-    branches: [main]
   workflow_dispatch:
     inputs:
       target_url:
@@ -15,10 +11,17 @@ on:
         description: 'Test type (light, normal, stress, spike, soak)'
         required: false
         default: 'light'
+  workflow_run:
+    workflows: ['Deploy Server']
+    types:
+      - completed
+    branches: [main]
 
 jobs:
   benchmark:
     runs-on: ubuntu-latest
+    # Only run if the deploy workflow succeeded or on manual dispatch
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
 
     steps:
       - name: Checkout code

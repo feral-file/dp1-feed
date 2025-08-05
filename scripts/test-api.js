@@ -14,6 +14,7 @@ const baseUrl = args[0] || 'http://localhost:8787';
 const apiSecret = args[1] || process.env.API_SECRET;
 
 console.log(`🧪 Testing DP-1 Feed Operator API at: ${baseUrl}`);
+console.log(`⚡ API uses queue-based processing - adding 500ms delays after writes`);
 
 if (!apiSecret) {
   console.error('❌ API_SECRET not provided. Pass as argument or set environment variable.');
@@ -235,6 +236,9 @@ async function testCreatePlaylist() {
       console.log('❌ Playlist item UUID format is invalid');
       return false;
     }
+
+    // Wait for queue processing
+    await new Promise(resolve => setTimeout(resolve, 500));
   } else {
     console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
   }
@@ -334,6 +338,9 @@ async function testUpdatePlaylist() {
     } else {
       console.log('✅ Slug was not regenerated after title change');
     }
+
+    // Wait for queue processing
+    await new Promise(resolve => setTimeout(resolve, 500));
   } else {
     console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
   }
@@ -391,6 +398,9 @@ async function testCreatePlaylistGroup() {
       console.log('❌ Server-generated group slug format is invalid or missing');
       return false;
     }
+
+    // Wait for queue processing
+    await new Promise(resolve => setTimeout(resolve, 500));
   } else {
     console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
   }
@@ -805,6 +815,9 @@ async function testPlaylistItemsUpdate() {
     return false;
   }
 
+  // Wait for queue processing
+  await new Promise(resolve => setTimeout(resolve, 500));
+
   // Verify the old item is no longer accessible
   const oldItemResponse = await makeRequest('GET', `/api/v1/playlist-items/${originalItemId}`);
   if (oldItemResponse.status === 404) {
@@ -894,7 +907,7 @@ async function runTests() {
 
   if (passed === total) {
     console.log(
-      '\n🎉 All tests passed! Your DP-1 Feed Operator API is working correctly with UUID and slug support.'
+      '\n🎉 All tests passed! Your DP-1 Feed Operator API is working correctly with UUID, slug support, and queue-based processing.'
     );
   } else {
     console.log('\n⚠️  Some tests failed. Please check the output above for details.');
