@@ -110,6 +110,11 @@ export function createCanonicalForm(playlist: Omit<Playlist, 'signature'>): stri
     throw new Error('Failed to canonicalize playlist');
   }
 
+  // Add LF terminator if it's not present
+  if (!canonical.endsWith('\n')) {
+    return canonical + '\n';
+  }
+
   return canonical;
 }
 
