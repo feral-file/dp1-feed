@@ -3,13 +3,13 @@ import type { Env } from '../types';
 
 /**
  * Authentication middleware for Hono
- * Checks Bearer token for write operations (POST, PUT, DELETE)
+ * Checks Bearer token for write operations (POST, PUT, PATCH, DELETE)
  */
 export async function authMiddleware(c: Context<{ Bindings: Env }>, next: Next): Promise<void> {
   const method = c.req.method;
 
   // Only require authentication for write operations
-  if (!['POST', 'PUT', 'DELETE'].includes(method)) {
+  if (!['POST', 'PUT', 'PATCH', 'DELETE'].includes(method)) {
     await next();
     return;
   }
@@ -80,7 +80,7 @@ export async function corsMiddleware(c: Context, next: Next): Promise<void> {
   if (c.req.method === 'OPTIONS') {
     c.header('Access-Control-Allow-Origin', '*');
     c.header('Access-Control-Allow-Headers', 'Authorization, Content-Type');
-    c.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    c.header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
     c.header('Access-Control-Max-Age', '86400');
     c.res = new Response(null, { status: 204 });
     return;
@@ -91,7 +91,7 @@ export async function corsMiddleware(c: Context, next: Next): Promise<void> {
   // Add CORS headers to all responses
   c.header('Access-Control-Allow-Origin', '*'); // TODO: restrict to specific origins
   c.header('Access-Control-Allow-Headers', 'Authorization, Content-Type');
-  c.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  c.header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
 }
 
 /**
@@ -208,7 +208,7 @@ export async function validateJsonMiddleware(c: Context, next: Next): Promise<vo
   const method = c.req.method;
 
   // Only validate JSON for write operations
-  if (!['POST', 'PUT'].includes(method)) {
+  if (!['POST', 'PUT', 'PATCH'].includes(method)) {
     await next();
     return;
   }

@@ -318,30 +318,19 @@ GET  /health                            # Health check with environment info
 GET  /playlists                         # List all playlists (array)
 GET  /playlists/{id}                    # Get specific playlist
 POST /playlists                         # Create playlist (async, requires auth + validation)
-PUT  /playlists/{id}                    # Update playlist (async, requires auth + validation)
+PUT  /playlists/{id}                    # Update full playlist (async, requires auth + validation)
+PATCH /playlists/{id}                   # Update partial playlist (async, requires auth + validation)
 
 # Playlist Groups (with full Zod validation)
 GET  /playlist-groups                   # List all groups (array)
 GET  /playlist-groups/{id}              # Get specific group
 POST /playlist-groups                   # Create group (async, requires auth + validation)
 PUT  /playlist-groups/{id}              # Update group (async, requires auth + validation)
+PATCH /playlist-groups/{id}             # Update partial group (async, requires auth + validation)
 
 # Playlist Items (read-only access)
 GET  /playlist-items                    # List all playlist items (with optional filtering)
 GET  /playlist-items/{id}               # Get specific playlist item by UUID
-```
-
-#### Legacy Compatibility
-
-```bash
-# Legacy v1 routes (for backward compatibility)
-GET  /api/v1/playlists
-POST /api/v1/playlists
-GET  /api/v1/playlist-groups
-POST /api/v1/playlist-groups
-GET  /api/v1/playlist-items
-GET  /api/v1/playlist-items/{id}
-# ... (mirrors main API)
 ```
 
 ### Example Requests
@@ -469,7 +458,7 @@ The `wrangler.toml` file configures:
 
 ```typescript
 // Middleware validates all write operations
-if (['POST', 'PUT', 'DELETE'].includes(method)) {
+if (['POST', 'PUT', 'PATCH', 'DELETE'].includes(method)) {
   const token = req.header('Authorization')?.replace(/^Bearer\s+/, '');
   if (token !== env.API_SECRET) {
     return unauthorized();

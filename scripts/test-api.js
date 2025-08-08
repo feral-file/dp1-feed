@@ -301,7 +301,7 @@ async function testUpdatePlaylist() {
     return true;
   }
 
-  console.log('\n📝 Testing PUT /api/v1/playlists/{id} (slug regeneration and new item IDs)...');
+  console.log('\n📝 Testing PATCH /api/v1/playlists/{id} (slug regeneration and new item IDs)...');
   // remove the dpVersion from the testPlaylist
   const { dpVersion, ...rest } = testPlaylist;
   const updatedPlaylist = {
@@ -321,7 +321,7 @@ async function testUpdatePlaylist() {
   };
 
   const response = await makeRequest(
-    'PUT',
+    'PATCH',
     `/api/v1/playlists/${createdPlaylistId}`,
     updatedPlaylist
   );
@@ -793,7 +793,7 @@ async function testPlaylistItemsUpdate() {
   };
 
   const updateResponse = await makeRequest(
-    'PUT',
+    'PATCH',
     `/api/v1/playlists/${createdPlaylistId}`,
     updateData
   );

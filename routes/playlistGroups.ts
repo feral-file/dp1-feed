@@ -67,7 +67,7 @@ async function validatePlaylistGroupBody(
 }
 
 /**
- * Validate request body for playlist group updates (excludes protected fields)
+ * Validate request body for playlist group updates (PATCH - excludes protected fields)
  */
 async function validatePlaylistGroupUpdateBody(
   c: Context
@@ -248,10 +248,105 @@ playlistGroups.post('/', async c => {
 });
 
 /**
- * PUT /playlist-groups/:id - Update existing playlist group by UUID or slug
- * Fast response: validates, queues for async processing
+ * PUT /playlist-groups/:id - Replace existing playlist group (requires full resource fields)
  */
 playlistGroups.put('/:id', async c => {
+  try {
+    const groupId = c.req.param('id');
+
+    // Validate ID format (UUID or slug)
+    const validation = validateIdentifier(groupId);
+
+    if (!groupId || !validation.isValid) {
+      return c.json(
+        {
+          error: 'invalid_id',
+          message: 'Playlist group ID must be a valid UUID or slug (alphanumeric with hyphens)',
+        },
+        400
+      );
+    }
+
+    // Validate full body using creation schema
+    const validatedData = await validatePlaylistGroupBody(c);
+
+    if ('error' in validatedData) {
+      return c.json(
+        {
+          error: validatedData.error,
+          message: validatedData.message,
+        },
+        validatedData.status as 400
+      );
+    }
+
+    // Check if playlist group exists first
+    const existingGroup = await getPlaylistGroupByIdOrSlug(groupId, c.env);
+    if (!existingGroup) {
+      return c.json(
+        {
+          error: 'not_found',
+          message: 'Playlist group not found',
+        },
+        404
+      );
+    }
+
+    // Create updated playlist group keeping original ID, slug, and created timestamp
+    const updatedGroup: PlaylistGroup = {
+      id: existingGroup.id,
+      slug: existingGroup.slug,
+      title: validatedData.title,
+      curator: validatedData.curator,
+      summary: validatedData.summary,
+      playlists: validatedData.playlists,
+      created: existingGroup.created,
+      coverImage: validatedData.coverImage,
+    };
+
+    // Create queue message for async processing
+    const queueMessage: UpdatePlaylistGroupMessage = {
+      id: generateMessageId('update_playlist_group', updatedGroup.id),
+      timestamp: new Date().toISOString(),
+      operation: 'update_playlist_group',
+      data: {
+        groupId: updatedGroup.id,
+        playlistGroup: updatedGroup,
+      },
+    };
+
+    // Queue the update operation for async processing
+    try {
+      await queueWriteOperation(queueMessage, c.env);
+    } catch (queueError) {
+      console.error('Failed to queue playlist group update:', queueError);
+      return c.json(
+        {
+          error: 'queue_error',
+          message: 'Failed to queue playlist group for processing',
+        },
+        500
+      );
+    }
+
+    // Return immediately with the updated playlist group (before saving)
+    return c.json(updatedGroup, 200);
+  } catch (error) {
+    console.error('Error updating playlist group (PUT):', error);
+    return c.json(
+      {
+        error: 'internal_error',
+        message: 'Failed to update playlist group',
+      },
+      500
+    );
+  }
+});
+
+/**
+ * PATCH /playlist-groups/:id - Partial update (excludes protected fields)
+ */
+playlistGroups.patch('/:id', async c => {
   try {
     const groupId = c.req.param('id');
 
@@ -295,14 +390,14 @@ playlistGroups.put('/:id', async c => {
 
     // Create updated playlist group keeping original ID, slug, and created timestamp
     const updatedGroup: PlaylistGroup = {
-      id: existingGroup.id, // Keep original server-generated ID
-      slug: existingGroup.slug, // Keep original slug (don't regenerate)
+      id: existingGroup.id,
+      slug: existingGroup.slug,
       title: validatedData.title || existingGroup.title,
       curator: validatedData.curator || existingGroup.curator,
       summary: validatedData.summary || existingGroup.summary,
-      playlists: validatedData.playlists,
+      playlists: validatedData.playlists || existingGroup.playlists,
       created: existingGroup.created,
-      coverImage: validatedData.coverImage,
+      coverImage: validatedData.coverImage || existingGroup.coverImage,
     };
 
     // Create queue message for async processing
@@ -333,7 +428,7 @@ playlistGroups.put('/:id', async c => {
     // Return immediately with the updated playlist group (before saving)
     return c.json(updatedGroup, 200);
   } catch (error) {
-    console.error('Error updating playlist group:', error);
+    console.error('Error updating playlist group (PATCH):', error);
     return c.json(
       {
         error: 'internal_error',

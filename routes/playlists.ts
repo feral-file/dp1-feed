@@ -68,7 +68,7 @@ async function validatePlaylistBody(
 }
 
 /**
- * Validate request body for playlist updates (excludes protected fields)
+ * Validate request body for playlist updates (PATCH - excludes protected fields)
  */
 async function validatePlaylistUpdateBody(
   c: Context
@@ -265,10 +265,114 @@ playlists.post('/', async c => {
 });
 
 /**
- * PUT /playlists/:id - Update existing playlist by UUID or slug
- * Fast response: validates, signs, queues for async processing
+ * PUT /playlists/:id - Replace existing playlist (requires full resource fields)
  */
 playlists.put('/:id', async c => {
+  try {
+    const playlistId = c.req.param('id');
+
+    // Validate ID format (UUID or slug)
+    const validation = validateIdentifier(playlistId);
+
+    if (!playlistId || !validation.isValid) {
+      return c.json(
+        {
+          error: 'invalid_id',
+          message: 'Playlist ID must be a valid UUID or slug (alphanumeric with hyphens)',
+        },
+        400
+      );
+    }
+
+    // Validate full body using creation schema (no protected fields)
+    const validatedData = await validatePlaylistBody(c);
+
+    // Check if validation returned an error
+    if ('error' in validatedData) {
+      return c.json(
+        {
+          error: validatedData.error,
+          message: validatedData.message,
+        },
+        validatedData.status as 400
+      );
+    }
+
+    // Check if playlist exists first
+    const existingPlaylist = await getPlaylistByIdOrSlug(playlistId, c.env);
+    if (!existingPlaylist) {
+      return c.json(
+        {
+          error: 'not_found',
+          message: 'Playlist not found',
+        },
+        404
+      );
+    }
+
+    // Generate IDs for items being replaced
+    const itemsWithIds = validatedData.items.map(item => ({
+      ...item,
+      id: crypto.randomUUID(),
+    }));
+
+    // Create updated playlist by replacing non-protected fields
+    const updatedPlaylist: Playlist = {
+      dpVersion: validatedData.dpVersion,
+      id: existingPlaylist.id, // Keep original server-generated ID
+      slug: existingPlaylist.slug,
+      title: validatedData.title,
+      created: existingPlaylist.created,
+      defaults: validatedData.defaults,
+      items: itemsWithIds,
+    };
+
+    // Re-sign the playlist
+    const keyPair = await getServerKeyPair(c.env);
+    updatedPlaylist.signature = await signPlaylist(updatedPlaylist, keyPair.privateKey);
+
+    // Create queue message for async processing
+    const queueMessage: UpdatePlaylistMessage = {
+      id: generateMessageId('update_playlist', updatedPlaylist.id),
+      timestamp: new Date().toISOString(),
+      operation: 'update_playlist',
+      data: {
+        playlistId: updatedPlaylist.id,
+        playlist: updatedPlaylist,
+      },
+    };
+
+    // Queue the update operation for async processing
+    try {
+      await queueWriteOperation(queueMessage, c.env);
+    } catch (queueError) {
+      console.error('Failed to queue playlist update:', queueError);
+      return c.json(
+        {
+          error: 'queue_error',
+          message: 'Failed to queue playlist for processing',
+        },
+        500
+      );
+    }
+
+    return c.json(updatedPlaylist);
+  } catch (error) {
+    console.error('Error updating playlist (PUT):', error);
+    return c.json(
+      {
+        error: 'internal_error',
+        message: 'Failed to update playlist',
+      },
+      500
+    );
+  }
+});
+
+/**
+ * PATCH /playlists/:id - Partial update of existing playlist (excludes protected fields)
+ */
+playlists.patch('/:id', async c => {
   try {
     const playlistId = c.req.param('id');
 
@@ -310,20 +414,22 @@ playlists.put('/:id', async c => {
       );
     }
 
-    // Generate new IDs for playlist items
-    const itemsWithIds = validatedData.items.map(item => ({
-      ...item,
-      id: crypto.randomUUID(),
-    }));
+    let itemsWithIds = existingPlaylist.items;
+    if (validatedData.items) {
+      itemsWithIds = validatedData.items.map(item => ({
+        ...item,
+        id: crypto.randomUUID(),
+      }));
+    }
 
-    // Create updated playlist, just allow to update non-protected fields
+    // Create updated playlist, allow updating non-protected fields
     const updatedPlaylist: Playlist = {
       dpVersion: existingPlaylist.dpVersion,
-      id: existingPlaylist.id, // Keep original server-generated ID
+      id: existingPlaylist.id,
       slug: existingPlaylist.slug,
       title: validatedData.title || existingPlaylist.title,
       created: existingPlaylist.created,
-      defaults: validatedData.defaults,
+      defaults: validatedData.defaults ?? existingPlaylist.defaults,
       items: itemsWithIds,
     };
 
@@ -359,7 +465,7 @@ playlists.put('/:id', async c => {
     // Return immediately with the signed playlist (before saving)
     return c.json(updatedPlaylist);
   } catch (error) {
-    console.error('Error updating playlist:', error);
+    console.error('Error updating playlist (PATCH):', error);
     return c.json(
       {
         error: 'internal_error',

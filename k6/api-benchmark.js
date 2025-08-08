@@ -352,7 +352,7 @@ function testPlaylistOperations() {
 
       const updateResponse = makeRequest(
         `/api/v1/playlists/${existingPlaylist.id}`,
-        'PUT',
+        'PATCH',
         updateData,
         { endpoint: 'update_playlist' }
       );
@@ -450,7 +450,7 @@ function testPlaylistGroupOperations() {
 
       const updateResponse = makeRequest(
         `/api/v1/playlist-groups/${existingGroup.id}`,
-        'PUT',
+        'PATCH',
         updateData,
         { endpoint: 'update_group' }
       );

@@ -363,7 +363,7 @@ describe('DP-1 Feed Operator API', () => {
       'Content-Type': 'application/json',
     };
 
-    it('should reject playlist updates with protected fields', async () => {
+    it('should reject playlist updates with protected fields (PATCH)', async () => {
       const invalidUpdateData = {
         dpVersion: '2.0.0', // Protected field
         id: 'custom-id', // Protected field
@@ -379,7 +379,7 @@ describe('DP-1 Feed Operator API', () => {
       };
 
       const req = new Request('http://localhost/api/v1/playlists/test-id', {
-        method: 'PUT',
+        method: 'PATCH',
         headers: validAuth,
         body: JSON.stringify(invalidUpdateData),
       });
@@ -391,7 +391,7 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.message).toContain('dpVersion, id, slug');
     });
 
-    it('should reject playlist group updates with protected fields', async () => {
+    it('should reject playlist group updates with protected fields (PATCH)', async () => {
       const invalidUpdateData = {
         id: 'custom-id', // Protected field
         slug: 'custom-slug', // Protected field
@@ -401,7 +401,7 @@ describe('DP-1 Feed Operator API', () => {
       };
 
       const req = new Request('http://localhost/api/v1/playlist-groups/test-id', {
-        method: 'PUT',
+        method: 'PATCH',
         headers: validAuth,
         body: JSON.stringify(invalidUpdateData),
       });
@@ -413,7 +413,7 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.message).toContain('id, slug');
     });
 
-    it('should allow valid playlist updates without protected fields', async () => {
+    it('should allow valid playlist updates without protected fields (PATCH)', async () => {
       // First create a playlist
       const createReq = new Request('http://localhost/api/v1/playlists', {
         method: 'POST',
@@ -438,7 +438,7 @@ describe('DP-1 Feed Operator API', () => {
       };
 
       const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: validAuth,
         body: JSON.stringify(validUpdateData),
       });
@@ -498,7 +498,7 @@ describe('DP-1 Feed Operator API', () => {
       const response = await app.fetch(req, testEnv);
       expect(response.headers.get('Access-Control-Allow-Origin')).toBe('*');
       expect(response.headers.get('Access-Control-Allow-Methods')).toBe(
-        'GET, POST, PUT, DELETE, OPTIONS'
+        'GET, POST, PUT, PATCH, DELETE, OPTIONS'
       );
     });
 
@@ -660,7 +660,7 @@ describe('DP-1 Feed Operator API', () => {
       );
     });
 
-    it('PUT /playlists/:id should update playlist and preserve protected fields', async () => {
+    it('PATCH /playlists/:id should update playlist and preserve protected fields', async () => {
       // First create a playlist
       const createReq = new Request('http://localhost/api/v1/playlists', {
         method: 'POST',
@@ -688,7 +688,7 @@ describe('DP-1 Feed Operator API', () => {
       };
 
       const updateReq = new Request(`http://localhost/api/v1/playlists/${playlistId}`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: validAuth,
         body: JSON.stringify(updatedPlaylist),
       });
@@ -729,7 +729,7 @@ describe('DP-1 Feed Operator API', () => {
       const createResponse = await app.fetch(createReq, testEnv);
       const createdPlaylist = await createResponse.json();
 
-      // Try to update with empty data
+      // Try update with empty data (invalid for PUT)
       const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
         method: 'PUT',
         headers: validAuth,
@@ -740,6 +740,33 @@ describe('DP-1 Feed Operator API', () => {
 
       const data = await updateResponse.json();
       expect(data.error).toBe('validation_error');
+    });
+
+    it('PATCH /playlists/:id with empty data should be a no-op and return 200', async () => {
+      // First create a playlist
+      const createReq = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(validPlaylist),
+      });
+      const createResponse = await app.fetch(createReq, testEnv);
+      const createdPlaylist = await createResponse.json();
+
+      // No-op PATCH
+      const patchReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+        method: 'PATCH',
+        headers: validAuth,
+        body: JSON.stringify({}),
+      });
+      const patchResponse = await app.fetch(patchReq, testEnv);
+      expect(patchResponse.status).toBe(200);
+
+      const updated = await patchResponse.json();
+      expect(updated.id).toBe(createdPlaylist.id);
+      expect(updated.slug).toBe(createdPlaylist.slug);
+      expect(updated.title).toBe(createdPlaylist.title);
+      expect(updated.items.length).toBe(createdPlaylist.items.length);
+      expect(updated.items[0].id).toBe(createdPlaylist.items[0].id);
     });
 
     it('PUT /playlists/:id with invalid data returns 400', async () => {
@@ -828,7 +855,7 @@ describe('DP-1 Feed Operator API', () => {
         expect(data.message).toBe('Failed to queue playlist for processing');
       });
 
-      it('should handle queue errors gracefully for playlist updates', async () => {
+      it('should handle queue errors gracefully for playlist updates (PATCH)', async () => {
         // First create a playlist
         const createReq = new Request('http://localhost/api/v1/playlists', {
           method: 'POST',
@@ -854,7 +881,7 @@ describe('DP-1 Feed Operator API', () => {
         };
 
         const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
-          method: 'PUT',
+          method: 'PATCH',
           headers: validAuth,
           body: JSON.stringify(updateData),
         });
@@ -1002,7 +1029,7 @@ describe('DP-1 Feed Operator API', () => {
       );
     });
 
-    it('PUT /playlist-groups/:id should update group and preserve slug', async () => {
+    it('PATCH /playlist-groups/:id should update group and preserve slug', async () => {
       // Mock fetch for external playlist validation
       mockStandardPlaylistFetch();
 
@@ -1025,7 +1052,7 @@ describe('DP-1 Feed Operator API', () => {
       };
 
       const updateReq = new Request(`http://localhost/api/v1/playlist-groups/${groupId}`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: validAuth,
         body: JSON.stringify(updatedGroup),
       });
@@ -1066,7 +1093,7 @@ describe('DP-1 Feed Operator API', () => {
       const createResponse = await app.fetch(createReq, testEnv);
       const createdGroup = await createResponse.json();
 
-      // Try to update with empty data
+      // Try update with empty data (invalid for PUT)
       const updateReq = new Request(`http://localhost/api/v1/playlist-groups/${createdGroup.id}`, {
         method: 'PUT',
         headers: validAuth,
@@ -1077,6 +1104,36 @@ describe('DP-1 Feed Operator API', () => {
 
       const data = await updateResponse.json();
       expect(data.error).toBe('validation_error');
+    });
+
+    it('PATCH /playlist-groups/:id with empty data should be a no-op and return 200', async () => {
+      // Mock fetch for external playlist validation
+      mockStandardPlaylistFetch();
+
+      // First create a playlist group
+      const createReq = new Request('http://localhost/api/v1/playlist-groups', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(validPlaylistGroup),
+      });
+      const createResponse = await app.fetch(createReq, testEnv);
+      const createdGroup = await createResponse.json();
+
+      // No-op PATCH
+      const patchReq = new Request(`http://localhost/api/v1/playlist-groups/${createdGroup.id}`, {
+        method: 'PATCH',
+        headers: validAuth,
+        body: JSON.stringify({}),
+      });
+      const patchResponse = await app.fetch(patchReq, testEnv);
+      expect(patchResponse.status).toBe(200);
+
+      const updated = await patchResponse.json();
+      expect(updated.id).toBe(createdGroup.id);
+      expect(updated.slug).toBe(createdGroup.slug);
+      expect(updated.title).toBe(createdGroup.title);
+      expect(updated.curator).toBe(createdGroup.curator);
+      expect(updated.playlists).toEqual(createdGroup.playlists);
     });
 
     it('PUT /playlist-groups/:id with invalid data returns 400', async () => {
@@ -1409,7 +1466,7 @@ describe('DP-1 Feed Operator API', () => {
         expect(retrieved.slug).toBe(group.slug);
       });
 
-      it('should update playlist by slug', async () => {
+      it('should update playlist by slug (PATCH)', async () => {
         // Create a playlist
         const req = new Request('http://localhost/api/v1/playlists', {
           method: 'POST',
@@ -1432,7 +1489,7 @@ describe('DP-1 Feed Operator API', () => {
         };
 
         const updateReq = new Request(`http://localhost/api/v1/playlists/${playlist.slug}`, {
-          method: 'PUT',
+          method: 'PATCH',
           headers: validAuth,
           body: JSON.stringify(updateData),
         });
@@ -1798,7 +1855,7 @@ describe('DP-1 Feed Operator API', () => {
         };
 
         const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
-          method: 'PUT',
+          method: 'PATCH',
           headers: validAuth,
           body: JSON.stringify(updateData),
         });

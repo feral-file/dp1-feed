@@ -301,6 +301,8 @@ export async function savePlaylist(
   );
 
   // Handle old items deletion (if updating)
+  // FIXME this assumes that the playlist items always be updated, which is not the case.
+  // We need to handle the case where the playlist items are not updated.
   if (update && existingPlaylist) {
     // Get the playlist group IDs
     const playlistGroupIds = await getPlaylistGroupsForPlaylist(playlist.id, env);

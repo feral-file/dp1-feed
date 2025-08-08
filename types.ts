@@ -269,7 +269,7 @@ export const PlaylistUpdateSchema = z.object({
       duration: z.number().min(1).optional(),
     })
     .optional(),
-  items: z.array(PlaylistItemInputSchema).min(1).max(1024),
+  items: z.array(PlaylistItemInputSchema).min(1).max(1024).optional(),
   title: z.string().max(256).optional(),
 });
 
@@ -285,7 +285,8 @@ export const PlaylistGroupUpdateSchema = z.object({
         .max(1024)
     )
     .min(1)
-    .max(1024),
+    .max(1024)
+    .optional(),
   coverImage: z
     .string()
     .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
