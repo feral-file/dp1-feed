@@ -228,9 +228,9 @@ class K6BenchmarkRunner {
     // HTTP method breakdown if available
     const getReqs = metrics['http_req_duration{method:GET}'];
     const postReqs = metrics['http_req_duration{method:POST}'];
-    const putReqs = metrics['http_req_duration{method:PUT}'];
+    const patchReqs = metrics['http_req_duration{method:PATCH}'];
 
-    if (getReqs || postReqs || putReqs) {
+    if (getReqs || postReqs || patchReqs) {
       report += `\n## HTTP Method Breakdown\n\n`;
       report += `| Method | P95 (ms) | Avg (ms) | Count | Status |\n`;
       report += `|--------|----------|----------|-------|--------|\n`;
@@ -251,12 +251,12 @@ class K6BenchmarkRunner {
         report += `| POST | ${p95}ms | ${avg}ms | ${count} | ${pass ? '✅' : '❌'} |\n`;
       }
 
-      if (putReqs?.values) {
-        const p95 = Math.round(putReqs.values['p(95)'] || 0);
-        const avg = Math.round(putReqs.values.avg || 0);
-        const count = putReqs.values.count || 0;
+      if (patchReqs?.values) {
+        const p95 = Math.round(patchReqs.values['p(95)'] || 0);
+        const avg = Math.round(patchReqs.values.avg || 0);
+        const count = patchReqs.values.count || 0;
         const pass = p95 <= 800;
-        report += `| PUT | ${p95}ms | ${avg}ms | ${count} | ${pass ? '✅' : '❌'} |\n`;
+        report += `| PATCH | ${p95}ms | ${avg}ms | ${count} | ${pass ? '✅' : '❌'} |\n`;
       }
     }
 
@@ -268,7 +268,7 @@ class K6BenchmarkRunner {
 
     report += `## Performance Criteria\n\n`;
     report += `- **GET requests:** P95 ≤ 200ms\n`;
-    report += `- **POST/PUT requests:** P95 ≤ 800ms\n`;
+    report += `- **POST/PUT/PATCH/DELETE requests:** P95 ≤ 800ms\n`;
     report += `- **Success rate:** ≥ 95%\n`;
     report += `- **Check success rate:** ≥ 95%\n\n`;
 

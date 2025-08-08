@@ -36,7 +36,7 @@ let cachedPlaylistGroups = [];
 // Generate realistic test data
 function generatePlaylistData(index = 0) {
   return {
-    dpVersion: '0.9.0',
+    dpVersion: '1.0.0',
     title: `K6 Benchmark Playlist ${index + 1} - ${Date.now()}`,
     items: [
       {
@@ -101,7 +101,7 @@ function makeRequest(endpoint, method = 'GET', body = null, tags = {}) {
   };
 
   // Add authentication for write operations
-  if (['POST', 'PUT', 'DELETE'].includes(method) && API_SECRET) {
+  if (['POST', 'PUT', 'PATCH', 'DELETE'].includes(method) && API_SECRET) {
     headers['Authorization'] = `Bearer ${API_SECRET}`;
   }
 
@@ -346,7 +346,7 @@ function testPlaylistOperations() {
     // Update playlist (if authenticated)
     if (API_SECRET) {
       const updateData = {
-        title: `Updated ${existingPlaylist.title} - ${Date.now()}`,
+        title: `Updated ${existingPlaylist.title.slice(0, 64)} - ${Date.now()}`,
         items: existingPlaylist.items || [],
       };
 
@@ -443,7 +443,7 @@ function testPlaylistGroupOperations() {
     // Update group (if authenticated)
     if (API_SECRET) {
       const updateData = {
-        title: `Updated ${existingGroup.title} - ${Date.now()}`,
+        title: `Updated ${existingGroup.title.slice(0, 64)} - ${Date.now()}`,
         curator: existingGroup.curator || `Updated Curator - ${Date.now()}`,
         playlists: existingGroup.playlists || [],
       };
