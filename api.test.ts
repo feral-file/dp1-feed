@@ -19,7 +19,7 @@ vi.mock('./queue/processor', () => ({
   generateMessageId: vi.fn().mockReturnValue('test-message-id'),
 }));
 
-import { queueWriteOperation } from './queue/processor';
+import { queueWriteOperation, generateMessageId } from './queue/processor';
 import { savePlaylist, savePlaylistGroup } from './storage';
 
 // Constants for test playlist IDs
@@ -365,7 +365,6 @@ describe('DP-1 Feed Operator API', () => {
 
     it('should reject playlist updates with protected fields (PATCH)', async () => {
       const invalidUpdateData = {
-        dpVersion: '2.0.0', // Protected field
         id: 'custom-id', // Protected field
         slug: 'custom-slug', // Protected field
         items: [
@@ -850,6 +849,29 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.error).toBe('invalid_json');
     });
 
+    it('PATCH /playlists/:id with invalid data returns 400', async () => {
+      // First create a playlist
+      const createReq = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(validPlaylist),
+      });
+      const createResponse = await app.fetch(createReq, testEnv);
+      const createdPlaylist = await createResponse.json();
+
+      // Try to update with invalid JSON
+      const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+        method: 'PATCH',
+        headers: validAuth,
+        body: 'invalid json',
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(400);
+
+      const data = await updateResponse.json();
+      expect(data.error).toBe('invalid_json');
+    });
+
     it('PUT /playlists/:id with invalid playlist ID returns 400', async () => {
       const updateReq = new Request('http://localhost/api/v1/playlists/invalid@playlist!id', {
         method: 'PUT',
@@ -872,6 +894,134 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.error).toBe('invalid_id');
       expect(data.message).toBe(
         'Playlist ID must be a valid UUID or slug (alphanumeric with hyphens)'
+      );
+    });
+
+    it('PATCH /playlists/:id with invalid playlist ID returns 400', async () => {
+      const updateReq = new Request('http://localhost/api/v1/playlists/invalid@playlist!id', {
+        method: 'PATCH',
+        headers: validAuth,
+        body: JSON.stringify({
+          items: [
+            {
+              title: 'Test Artwork',
+              source: 'https://example.com/artwork.html',
+              duration: 300,
+              license: 'open' as const,
+            },
+          ],
+        }),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(400);
+
+      const data = await updateResponse.json();
+      expect(data.error).toBe('invalid_id');
+      expect(data.message).toBe(
+        'Playlist ID must be a valid UUID or slug (alphanumeric with hyphens)'
+      );
+    });
+
+    it('PUT /playlists/:id with non-existent playlist ID returns 400', async () => {
+      const updateReq = new Request('http://localhost/api/v1/playlists/test-playlist-abcwer', {
+        method: 'PUT',
+        headers: validAuth,
+        body: JSON.stringify({
+          dpVersion: '1.0.0',
+          title: 'Test Playlist',
+          items: [
+            {
+              title: 'Test Artwork',
+              source: 'https://example.com/artwork.html',
+              duration: 300,
+              license: 'open' as const,
+            },
+          ],
+        }),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(404);
+
+      const data = await updateResponse.json();
+      expect(data.error).toBe('not_found');
+      expect(data.message).toBe('Playlist not found');
+    });
+
+    it('PATCH /playlists/:id with non-existent playlist ID returns 400', async () => {
+      const updateReq = new Request('http://localhost/api/v1/playlists/test-playlist-abcwer', {
+        method: 'PATCH',
+        headers: validAuth,
+        body: JSON.stringify({
+          dpVersion: '1.0.0',
+          title: 'Test Playlist',
+        }),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(404);
+
+      const data = await updateResponse.json();
+      expect(data.error).toBe('not_found');
+      expect(data.message).toBe('Playlist not found');
+    });
+
+    it('PATCH /playlists/:id with invalid dpVersion returns 400', async () => {
+      const createReq = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(validPlaylist),
+      });
+      const createResponse = await app.fetch(createReq, testEnv);
+      const createdPlaylist = await createResponse.json();
+
+      const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+        method: 'PATCH',
+        headers: validAuth,
+        body: JSON.stringify({
+          dpVersion: 'invalid',
+        }),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(400);
+
+      const data = await updateResponse.json();
+      expect(data.error).toBe('validation_error');
+      expect(data.message).toBe(
+        'Invalid playlist update data: dpVersion: Invalid semantic version format: invalid'
+      );
+    });
+
+    it('PUT /playlists/:id with invalid dpVersion returns 400', async () => {
+      const createReq = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(validPlaylist),
+      });
+      const createResponse = await app.fetch(createReq, testEnv);
+      const createdPlaylist = await createResponse.json();
+
+      const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+        method: 'PUT',
+        headers: validAuth,
+        body: JSON.stringify({
+          dpVersion: 'invalid',
+          title: 'Updated Playlist',
+          items: [
+            {
+              title: 'Updated Artwork',
+              source: 'https://example.com/updated.html',
+              duration: 400,
+              license: 'subscription' as const,
+            },
+          ],
+        }),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(400);
+
+      const data = await updateResponse.json();
+      expect(data.error).toBe('validation_error');
+      expect(data.message).toBe(
+        'Invalid playlist data: dpVersion: Invalid semantic version format: invalid'
       );
     });
 
@@ -949,6 +1099,128 @@ describe('DP-1 Feed Operator API', () => {
         const data = await updateResponse.json();
         expect(data.error).toBe('queue_error');
         expect(data.message).toBe('Failed to queue playlist for processing');
+      });
+
+      it('should handle queue errors gracefully for playlist updates (PUT)', async () => {
+        // First create a playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        const createdPlaylist = await createResponse.json();
+
+        // Mock queueWriteOperation to fail for the update
+        vi.mocked(queueWriteOperation).mockRejectedValueOnce(new Error('Queue failure'));
+
+        const updateData = {
+          dpVersion: '1.0.1',
+          title: 'Updated Playlist',
+          items: [
+            {
+              title: 'Updated Artwork',
+              source: 'https://example.com/updated.html',
+              duration: 400,
+              license: 'subscription' as const,
+            },
+          ],
+        };
+
+        const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+          method: 'PUT',
+          headers: validAuth,
+          body: JSON.stringify(updateData),
+        });
+        const updateResponse = await app.fetch(updateReq, testEnv);
+        expect(updateResponse.status).toBe(500);
+
+        const data = await updateResponse.json();
+        expect(data.error).toBe('queue_error');
+        expect(data.message).toBe('Failed to queue playlist for processing');
+      });
+    });
+
+    describe('Unexpected Errors', () => {
+      it('should return internal_error for unexpected failure during playlist update (PATCH)', async () => {
+        // Create a playlist first
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        const createdPlaylist = await createResponse.json();
+
+        // Simulate unexpected error (e.g., ID generation)
+        vi.mocked(generateMessageId).mockImplementationOnce(() => {
+          throw new Error('Unexpected failure');
+        });
+
+        const updateData = {
+          title: 'Updated Playlist',
+          items: [
+            {
+              title: 'Updated Artwork',
+              source: 'https://example.com/updated.html',
+              duration: 400,
+              license: 'subscription' as const,
+            },
+          ],
+        };
+
+        const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+          method: 'PATCH',
+          headers: validAuth,
+          body: JSON.stringify(updateData),
+        });
+        const updateResponse = await app.fetch(updateReq, testEnv);
+        expect(updateResponse.status).toBe(500);
+
+        const data = await updateResponse.json();
+        expect(data.error).toBe('internal_error');
+        expect(data.message).toBe('Failed to update playlist');
+      });
+
+      it('should return internal_error for unexpected failure during playlist update (PUT)', async () => {
+        // Create a playlist first
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        const createdPlaylist = await createResponse.json();
+
+        // Simulate unexpected error (e.g., ID generation)
+        vi.mocked(generateMessageId).mockImplementationOnce(() => {
+          throw new Error('Unexpected failure');
+        });
+
+        const updateData = {
+          dpVersion: '1.0.1',
+          title: 'Updated Playlist',
+          items: [
+            {
+              title: 'Updated Artwork',
+              source: 'https://example.com/updated.html',
+              duration: 400,
+              license: 'subscription' as const,
+            },
+          ],
+        };
+
+        const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+          method: 'PUT',
+          headers: validAuth,
+          body: JSON.stringify(updateData),
+        });
+        const updateResponse = await app.fetch(updateReq, testEnv);
+        expect(updateResponse.status).toBe(500);
+
+        const data = await updateResponse.json();
+        expect(data.error).toBe('internal_error');
+        expect(data.message).toBe('Failed to update playlist');
       });
     });
 
@@ -1270,6 +1542,32 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.error).toBe('invalid_json');
     });
 
+    it('PATCH /playlist-groups/:id with invalid data returns 400', async () => {
+      // Mock fetch for external playlist validation
+      mockStandardPlaylistFetch();
+
+      // First create a playlist group
+      const createReq = new Request('http://localhost/api/v1/playlist-groups', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(validPlaylistGroup),
+      });
+      const createResponse = await app.fetch(createReq, testEnv);
+      const createdGroup = await createResponse.json();
+
+      // Try to update with invalid JSON
+      const updateReq = new Request(`http://localhost/api/v1/playlist-groups/${createdGroup.id}`, {
+        method: 'PATCH',
+        headers: validAuth,
+        body: 'invalid json',
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(400);
+
+      const data = await updateResponse.json();
+      expect(data.error).toBe('invalid_json');
+    });
+
     it('PUT /playlist-groups/:id with invalid group ID returns 400', async () => {
       const updateReq = new Request('http://localhost/api/v1/playlist-groups/invalid@group!id', {
         method: 'PUT',
@@ -1288,6 +1586,62 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.message).toBe(
         'Playlist group ID must be a valid UUID or slug (alphanumeric with hyphens)'
       );
+    });
+
+    it('PATCH /playlist-groups/:id with invalid group ID returns 400', async () => {
+      const updateReq = new Request('http://localhost/api/v1/playlist-groups/invalid@group!id', {
+        method: 'PATCH',
+        headers: validAuth,
+        body: JSON.stringify({
+          title: 'Updated Exhibition',
+          curator: 'Test Curator',
+          playlists: ['https://example.com/playlists/test-playlist-1'],
+        }),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(400);
+
+      const data = await updateResponse.json();
+      expect(data.error).toBe('invalid_id');
+      expect(data.message).toBe(
+        'Playlist group ID must be a valid UUID or slug (alphanumeric with hyphens)'
+      );
+    });
+
+    it('PUT /playlist-groups/:id with non-existent group ID returns 400', async () => {
+      const updateReq = new Request('http://localhost/api/v1/playlist-groups/test-group-abcwer', {
+        method: 'PUT',
+        headers: validAuth,
+        body: JSON.stringify({
+          title: 'Updated Exhibition',
+          curator: 'Test Curator',
+          playlists: ['https://example.com/playlists/test-playlist-1'],
+        }),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(404);
+
+      const data = await updateResponse.json();
+      expect(data.error).toBe('not_found');
+      expect(data.message).toBe('Playlist group not found');
+    });
+
+    it('PATCH /playlist-groups/:id with non-existent group ID returns 400', async () => {
+      const updateReq = new Request('http://localhost/api/v1/playlist-groups/test-group-abcwer', {
+        method: 'PATCH',
+        headers: validAuth,
+        body: JSON.stringify({
+          title: 'Updated Exhibition',
+          curator: 'Test Curator',
+          playlists: ['https://example.com/playlists/test-playlist-1'],
+        }),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(404);
+
+      const data = await updateResponse.json();
+      expect(data.error).toBe('not_found');
+      expect(data.message).toBe('Playlist group not found');
     });
 
     it('GET /playlist-groups/:id with invalid group ID returns 400', async () => {
@@ -1379,6 +1733,86 @@ describe('DP-1 Feed Operator API', () => {
         const data = await updateResponse.json();
         expect(data.error).toBe('queue_error');
         expect(data.message).toBe('Failed to queue playlist group for processing');
+      });
+    });
+
+    describe('Unexpected Errors', () => {
+      it('should return internal_error for unexpected failure during playlist group update (PATCH)', async () => {
+        // Mock fetch for external playlist validation
+        mockStandardPlaylistFetch();
+
+        // Create a playlist group first
+        const createReq = new Request('http://localhost/api/v1/playlist-groups', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylistGroup),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        const createdGroup = await createResponse.json();
+
+        // Simulate unexpected error (e.g., ID generation)
+        vi.mocked(generateMessageId).mockImplementationOnce(() => {
+          throw new Error('Unexpected failure');
+        });
+
+        const updateData = {
+          title: 'Updated Exhibition Title',
+        };
+
+        const updateReq = new Request(
+          `http://localhost/api/v1/playlist-groups/${createdGroup.id}`,
+          {
+            method: 'PATCH',
+            headers: validAuth,
+            body: JSON.stringify(updateData),
+          }
+        );
+        const updateResponse = await app.fetch(updateReq, testEnv);
+        expect(updateResponse.status).toBe(500);
+
+        const data = await updateResponse.json();
+        expect(data.error).toBe('internal_error');
+        expect(data.message).toBe('Failed to update playlist group');
+      });
+
+      it('should return internal_error for unexpected failure during playlist group update (PUT)', async () => {
+        // Mock fetch for external playlist validation
+        mockStandardPlaylistFetch();
+
+        // Create a playlist group first
+        const createReq = new Request('http://localhost/api/v1/playlist-groups', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylistGroup),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        const createdGroup = await createResponse.json();
+
+        // Simulate unexpected error (e.g., ID generation)
+        vi.mocked(generateMessageId).mockImplementationOnce(() => {
+          throw new Error('Unexpected failure');
+        });
+
+        const updateData = {
+          title: 'Updated Exhibition',
+          curator: 'Updated Curator',
+          playlists: ['https://example.com/playlists/test-playlist-1'],
+        };
+
+        const updateReq = new Request(
+          `http://localhost/api/v1/playlist-groups/${createdGroup.id}`,
+          {
+            method: 'PUT',
+            headers: validAuth,
+            body: JSON.stringify(updateData),
+          }
+        );
+        const updateResponse = await app.fetch(updateReq, testEnv);
+        expect(updateResponse.status).toBe(500);
+
+        const data = await updateResponse.json();
+        expect(data.error).toBe('internal_error');
+        expect(data.message).toBe('Failed to update playlist group');
       });
     });
 
