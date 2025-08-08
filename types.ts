@@ -3,7 +3,7 @@ import semver from 'semver';
 import { Queue } from '@cloudflare/workers-types';
 
 // Minimum DP-1 protocol version supported by this server
-export const MIN_DP_VERSION = '0.9.0';
+export const MIN_DP_VERSION = '1.0.0';
 
 /**
  * Validates that a dpVersion is valid semver and greater than or equal to MIN_DP_VERSION
@@ -38,7 +38,7 @@ export function validateNoProtectedFields(
   body: any,
   operation: 'playlist' | 'playlistGroup'
 ): { isValid: boolean; protectedFields?: string[] } {
-  const protectedPlaylistFields = ['dpVersion', 'id', 'slug', 'created', 'signature'];
+  const protectedPlaylistFields = ['id', 'slug', 'created', 'signature'];
   const protectedGroupFields = ['id', 'slug', 'created'];
 
   const protectedFields = operation === 'playlist' ? protectedPlaylistFields : protectedGroupFields;
@@ -262,6 +262,22 @@ export const PlaylistGroupInputSchema = z.object({
 
 // Update schemas that exclude protected fields
 export const PlaylistUpdateSchema = z.object({
+  dpVersion: z
+    .string()
+    .max(16)
+    .refine(
+      version => {
+        const validation = validateDpVersion(version);
+        return validation.isValid;
+      },
+      version => {
+        const validation = validateDpVersion(version);
+        return {
+          message: validation.error || 'Invalid dpVersion',
+        };
+      }
+    )
+    .optional(),
   defaults: z
     .object({
       display: DisplayPrefsSchema,
@@ -269,7 +285,7 @@ export const PlaylistUpdateSchema = z.object({
       duration: z.number().min(1).optional(),
     })
     .optional(),
-  items: z.array(PlaylistItemInputSchema).min(1).max(1024),
+  items: z.array(PlaylistItemInputSchema).min(1).max(1024).optional(),
   title: z.string().max(256).optional(),
 });
 
@@ -285,7 +301,8 @@ export const PlaylistGroupUpdateSchema = z.object({
         .max(1024)
     )
     .min(1)
-    .max(1024),
+    .max(1024)
+    .optional(),
   coverImage: z
     .string()
     .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
