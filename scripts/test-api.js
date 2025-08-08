@@ -23,7 +23,7 @@ if (!apiSecret) {
 
 // Test data without IDs or dpVersion (server will generate them)
 const testPlaylist = {
-  dpVersion: '0.9.0',
+  dpVersion: '1.0.0',
   title: 'My Amazing Test Playlist',
   defaults: {
     display: {
