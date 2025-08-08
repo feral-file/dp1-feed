@@ -424,7 +424,7 @@ playlists.patch('/:id', async c => {
 
     // Create updated playlist, allow updating non-protected fields
     const updatedPlaylist: Playlist = {
-      dpVersion: existingPlaylist.dpVersion,
+      dpVersion: validatedData.dpVersion || existingPlaylist.dpVersion,
       id: existingPlaylist.id,
       slug: existingPlaylist.slug,
       title: validatedData.title || existingPlaylist.title,

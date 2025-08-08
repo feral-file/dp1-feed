@@ -265,7 +265,7 @@ describe('DP-1 Feed Operator API', () => {
 
       const data = await response.json();
       expect(data.status).toBe('healthy');
-      expect(data.version).toBe('0.9.0');
+      expect(data.version).toBe('1.0.0');
     });
 
     it('GET /api/v1 returns API information', async () => {
@@ -275,7 +275,7 @@ describe('DP-1 Feed Operator API', () => {
 
       const data = await response.json();
       expect(data.name).toBe('DP-1 Feed Operator API');
-      expect(data.version).toBe('0.9.0');
+      expect(data.version).toBe('1.0.0');
       expect(data.specification).toBe('DP-1 v1.0.0');
     });
   });
@@ -316,7 +316,7 @@ describe('DP-1 Feed Operator API', () => {
   describe('dpVersion Validation', () => {
     it(`should validate minimum version requirement (${MIN_DP_VERSION})`, () => {
       // Valid versions (>= MIN_DP_VERSION)
-      const validVersions = ['0.9.0', '0.9.1', '1.0.0', '1.2.3', '2.0.0'];
+      const validVersions = ['1.0.0', '1.2.3', '2.0.0'];
 
       validVersions.forEach(version => {
         const result = validateDpVersion(version);
@@ -325,7 +325,7 @@ describe('DP-1 Feed Operator API', () => {
       });
 
       // Invalid versions (< MIN_DP_VERSION)
-      const invalidVersions = ['0.8.9', '0.8.0', '0.1.0'];
+      const invalidVersions = ['0.8.9', '0.9.0', '0.1.0'];
 
       invalidVersions.forEach(version => {
         const result = validateDpVersion(version);
@@ -347,7 +347,7 @@ describe('DP-1 Feed Operator API', () => {
 
     it('should accept valid semantic versions', () => {
       // Test versions that pass both format and minimum version requirements
-      const validVersions = ['1.0.0', '0.9.0', '10.20.30'];
+      const validVersions = ['1.0.0', '10.20.30', '1.2.3', '10000000.1000000.1000000'];
 
       validVersions.forEach(version => {
         const result = validateDpVersion(version);
@@ -388,7 +388,7 @@ describe('DP-1 Feed Operator API', () => {
 
       const data = await response.json();
       expect(data.error).toBe('protected_fields');
-      expect(data.message).toContain('dpVersion, id, slug');
+      expect(data.message).toContain('id, slug');
     });
 
     it('should reject playlist group updates with protected fields (PATCH)', async () => {
@@ -675,6 +675,64 @@ describe('DP-1 Feed Operator API', () => {
 
       // Then update it with new title (only send updateable fields)
       const updatedPlaylist = {
+        dpVersion: '1.0.1',
+        title: 'Updated Test Playlist',
+        defaults: { license: 'token' as const },
+      };
+
+      const updateReq = new Request(`http://localhost/api/v1/playlists/${playlistId}`, {
+        method: 'PATCH',
+        headers: validAuth,
+        body: JSON.stringify(updatedPlaylist),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(200);
+
+      const data = await updateResponse.json();
+      expect(data.id).toBe(playlistId); // ID should remain the same
+      expect(data.dpVersion).toBe('1.0.1'); // Server should preserve client's dpVersion
+      expect(data.slug).toBe(createdPlaylist.slug);
+      expect(data.items.length).toBe(createdPlaylist.items.length);
+      for (let i = 0; i < data.items.length; i++) {
+        expect(data.items[i].id).toBe(createdPlaylist.items[i].id);
+        expect(data.items[i].title).toBe(createdPlaylist.items[i].title);
+        expect(data.items[i].source).toBe(createdPlaylist.items[i].source);
+        expect(data.items[i].duration).toBe(createdPlaylist.items[i].duration);
+        expect(data.items[i].license).toBe(createdPlaylist.items[i].license);
+      }
+
+      // Verify queue operation was called for update
+      expect(queueWriteOperation).toHaveBeenCalledWith(
+        expect.objectContaining({
+          operation: 'update_playlist',
+          data: expect.objectContaining({
+            playlistId: playlistId,
+            playlist: expect.objectContaining({
+              id: playlistId,
+              title: 'Updated Test Playlist',
+            }),
+          }),
+        }),
+        testEnv
+      );
+    });
+
+    it('PUT /playlists/:id should update playlist and preserve protected fields', async () => {
+      // First create a playlist
+      const createReq = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(validPlaylist),
+      });
+      const createResponse = await app.fetch(createReq, testEnv);
+      expect(createResponse.status).toBe(201);
+
+      const createdPlaylist = await createResponse.json();
+      const playlistId = createdPlaylist.id;
+
+      // Then update it with new title (only send updateable fields)
+      const updatedPlaylist = {
+        dpVersion: '1.0.1',
         title: 'Updated Test Playlist',
         defaults: { license: 'token' as const },
         items: [
@@ -688,7 +746,7 @@ describe('DP-1 Feed Operator API', () => {
       };
 
       const updateReq = new Request(`http://localhost/api/v1/playlists/${playlistId}`, {
-        method: 'PATCH',
+        method: 'PUT',
         headers: validAuth,
         body: JSON.stringify(updatedPlaylist),
       });
@@ -697,7 +755,7 @@ describe('DP-1 Feed Operator API', () => {
 
       const data = await updateResponse.json();
       expect(data.id).toBe(playlistId); // ID should remain the same
-      expect(data.dpVersion).toBe('1.0.0'); // Server should preserve client's dpVersion
+      expect(data.dpVersion).toBe('1.0.1'); // Server should preserve client's dpVersion
       expect(data.slug).toBe(createdPlaylist.slug);
       expect(data.items[0].id).toMatch(
         /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
@@ -1047,12 +1105,62 @@ describe('DP-1 Feed Operator API', () => {
 
       // Then update it with new title
       const updatedGroup = {
-        ...validPlaylistGroup,
         title: 'Updated Exhibition Title',
       };
 
       const updateReq = new Request(`http://localhost/api/v1/playlist-groups/${groupId}`, {
         method: 'PATCH',
+        headers: validAuth,
+        body: JSON.stringify(updatedGroup),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(200);
+
+      const data = await updateResponse.json();
+      expect(data.id).toBe(groupId); // ID should remain the same
+      expect(data.slug).toBe(createdGroup.slug); // Slug should be preserved, not regenerated
+      expect(data.title).toBe('Updated Exhibition Title'); // Title should be updated
+
+      // Verify queue operation was called for update
+      expect(queueWriteOperation).toHaveBeenCalledWith(
+        expect.objectContaining({
+          operation: 'update_playlist_group',
+          data: expect.objectContaining({
+            groupId: groupId,
+            playlistGroup: expect.objectContaining({
+              id: groupId,
+              title: 'Updated Exhibition Title',
+            }),
+          }),
+        }),
+        testEnv
+      );
+    });
+
+    it('PUT /playlist-groups/:id should update group and preserve slug', async () => {
+      // Mock fetch for external playlist validation
+      mockStandardPlaylistFetch();
+
+      // First create a playlist group
+      const createReq = new Request('http://localhost/api/v1/playlist-groups', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(validPlaylistGroup),
+      });
+      const createResponse = await app.fetch(createReq, testEnv);
+      expect(createResponse.status).toBe(201);
+
+      const createdGroup = await createResponse.json();
+      const groupId = createdGroup.id;
+
+      // Then update it with new title
+      const updatedGroup = {
+        ...validPlaylistGroup,
+        title: 'Updated Exhibition Title',
+      };
+
+      const updateReq = new Request(`http://localhost/api/v1/playlist-groups/${groupId}`, {
+        method: 'PUT',
         headers: validAuth,
         body: JSON.stringify(updatedGroup),
       });
