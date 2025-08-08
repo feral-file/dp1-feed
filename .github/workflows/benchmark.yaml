@@ -20,8 +20,11 @@ on:
 jobs:
   benchmark:
     runs-on: ubuntu-latest
-    # Only run if the deploy workflow succeeded or on manual dispatch
-    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    environment: development
+    # Run when:
+    # - the Deploy Server workflow completed successfully and was triggered by a push (typically to main), OR
+    # - manual dispatch is used
+    if: ${{ (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push') || github.event_name == 'workflow_dispatch' }}
 
     steps:
       - name: Checkout code
@@ -50,7 +53,7 @@ jobs:
           TEST_TYPE: ${{ github.event.inputs.test_type }}
           API_SECRET: ${{ secrets.DEV_API_SECRET }}
         run: |
-          # Use default values if not provided
+          # Use default values if not provided (workflow_run does not have inputs)
           URL=${TARGET_URL:-'https://dp1-feed-operator-api-dev.autonomy-system.workers.dev'}
           TYPE=${TEST_TYPE:-'light'}
 
