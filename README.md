@@ -379,6 +379,28 @@ curl -X GET "https://your-api.workers.dev/playlist-items?playlist-group=385f79b6
 curl -X GET "https://your-api.workers.dev/playlist-items/123e4567-e89b-12d3-a456-426614174000"
 ```
 
+#### Sorting Support
+
+All listing endpoints support sorting by creation time:
+
+```bash
+# Sort playlists by creation time (defaults to desc - newest first)
+curl -X GET "https://your-api.workers.dev/playlists"
+curl -X GET "https://your-api.workers.dev/playlists?sort=desc"
+
+# Sort playlists ascending (oldest first)
+curl -X GET "https://your-api.workers.dev/playlists?sort=asc"
+
+# Sort playlist groups (same parameters)
+curl -X GET "https://your-api.workers.dev/playlist-groups?sort=asc"
+
+# Sort playlist items by their individual created_at timestamps
+curl -X GET "https://your-api.workers.dev/playlist-items?sort=desc"
+curl -X GET "https://your-api.workers.dev/playlist-items?playlist-group=group-id&sort=asc"
+```
+
+**Note**: The default sort order is `desc` (newest first) when no `sort` parameter is provided. Each playlist item has its own `created_at` timestamp for deterministic sorting.
+
 ## 🔧 Configuration
 
 ### Environment Variables

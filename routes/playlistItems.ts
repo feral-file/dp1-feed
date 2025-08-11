@@ -71,6 +71,7 @@ playlistItems.get('/:id', async c => {
  * - limit: number of items per page (max 100)
  * - cursor: pagination cursor from previous response
  * - playlist-group: filter by playlist group ID (required)
+ * - sort: asc | desc (by created time)
  */
 playlistItems.get('/', async c => {
   try {
@@ -78,6 +79,8 @@ playlistItems.get('/', async c => {
     const limit = parseInt(c.req.query('limit') || '100');
     const cursor = c.req.query('cursor') || undefined;
     const playlistGroupId = c.req.query('playlist-group');
+    const sortParam = (c.req.query('sort') || '').toLowerCase();
+    const sort: 'asc' | 'desc' = sortParam === 'asc' ? 'asc' : 'desc'; // Default to 'desc' when no sort or invalid sort
 
     // Validate limit
     if (limit < 1 || limit > 100) {
@@ -110,11 +113,13 @@ playlistItems.get('/', async c => {
       result = await listPlaylistItemsByGroupId(playlistGroupId, c.env, {
         limit,
         cursor,
+        sort,
       });
     } else {
       result = await listAllPlaylistItems(c.env, {
         limit,
         cursor,
+        sort,
       });
     }
 

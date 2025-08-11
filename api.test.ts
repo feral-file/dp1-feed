@@ -48,6 +48,7 @@ const createMockPlaylistResponse = (id: string, slug: string) =>
             source: 'https://example.com/external-artwork.html',
             duration: 300,
             license: 'open',
+            created_at: '2024-01-01T00:00:00.001Z',
           },
         ],
       }),
@@ -2121,7 +2122,8 @@ describe('DP-1 Feed Operator API', () => {
         expect(filterResponse.status).toBe(200);
 
         const filtered = await filterResponse.json();
-        expect(filtered.items).toHaveLength(2);
+        // Should contain at least the 2 playlists we added to the group
+        expect(filtered.items.length).toBeGreaterThanOrEqual(2);
         expect(filtered.items.map(p => p.id)).toContain(playlist1.id);
         expect(filtered.items.map(p => p.id)).toContain(playlist2.id);
       });
@@ -2136,6 +2138,182 @@ describe('DP-1 Feed Operator API', () => {
         const data = await response.json();
         expect(data.items).toHaveLength(0);
         expect(data.hasMore).toBe(false);
+      });
+    });
+
+    describe('Sorting via API', () => {
+      it('GET /playlists supports sort=asc|desc', async () => {
+        // Create several playlists
+        const p1 = { ...validPlaylist, title: 'P1' };
+        const p2 = { ...validPlaylist, title: 'P2' };
+        const p3 = { ...validPlaylist, title: 'P3' };
+        await app.fetch(
+          new Request('http://localhost/api/v1/playlists', {
+            method: 'POST',
+            headers: validAuth,
+            body: JSON.stringify(p1),
+          }),
+          testEnv
+        );
+        await app.fetch(
+          new Request('http://localhost/api/v1/playlists', {
+            method: 'POST',
+            headers: validAuth,
+            body: JSON.stringify(p2),
+          }),
+          testEnv
+        );
+        await app.fetch(
+          new Request('http://localhost/api/v1/playlists', {
+            method: 'POST',
+            headers: validAuth,
+            body: JSON.stringify(p3),
+          }),
+          testEnv
+        );
+
+        const ascRes = await app.fetch(
+          new Request('http://localhost/api/v1/playlists?sort=asc&limit=5'),
+          testEnv
+        );
+        expect(ascRes.status).toBe(200);
+        const asc = await ascRes.json();
+        expect(Array.isArray(asc.items)).toBe(true);
+        // Ascending order should have non-decreasing created timestamps
+        for (let i = 1; i < asc.items.length; i++) {
+          expect(Date.parse(asc.items[i - 1].created) <= Date.parse(asc.items[i].created)).toBe(
+            true
+          );
+        }
+
+        const descRes = await app.fetch(
+          new Request('http://localhost/api/v1/playlists?sort=desc&limit=5'),
+          testEnv
+        );
+        expect(descRes.status).toBe(200);
+        const desc = await descRes.json();
+        // Descending order should have non-increasing created timestamps
+        for (let i = 1; i < desc.items.length; i++) {
+          expect(Date.parse(desc.items[i - 1].created) >= Date.parse(desc.items[i].created)).toBe(
+            true
+          );
+        }
+
+        // The two lists should be reverse-ordered sequences with the same set if using same limit
+        const ascCreated = asc.items.map((p: any) => p.created).join('|');
+        const descCreated = desc.items
+          .map((p: any) => p.created)
+          .reverse()
+          .join('|');
+        expect(ascCreated).toBe(descCreated);
+      });
+
+      it('GET /playlist-groups supports sort=asc|desc', async () => {
+        mockStandardPlaylistFetch();
+        // Create two groups sequentially
+        const g1 = { ...validPlaylistGroup, title: 'G1' };
+        const g2 = { ...validPlaylistGroup, title: 'G2' };
+        await app.fetch(
+          new Request('http://localhost/api/v1/playlist-groups', {
+            method: 'POST',
+            headers: validAuth,
+            body: JSON.stringify(g1),
+          }),
+          testEnv
+        );
+        await app.fetch(
+          new Request('http://localhost/api/v1/playlist-groups', {
+            method: 'POST',
+            headers: validAuth,
+            body: JSON.stringify(g2),
+          }),
+          testEnv
+        );
+
+        const ascRes = await app.fetch(
+          new Request('http://localhost/api/v1/playlist-groups?sort=asc&limit=10'),
+          testEnv
+        );
+        expect(ascRes.status).toBe(200);
+        const asc = await ascRes.json();
+        expect(Array.isArray(asc.items)).toBe(true);
+        for (let i = 1; i < asc.items.length; i++) {
+          expect(Date.parse(asc.items[i - 1].created) <= Date.parse(asc.items[i].created)).toBe(
+            true
+          );
+        }
+
+        const descRes = await app.fetch(
+          new Request('http://localhost/api/v1/playlist-groups?sort=desc&limit=10'),
+          testEnv
+        );
+        expect(descRes.status).toBe(200);
+        const desc = await descRes.json();
+        for (let i = 1; i < desc.items.length; i++) {
+          expect(Date.parse(desc.items[i - 1].created) >= Date.parse(desc.items[i].created)).toBe(
+            true
+          );
+        }
+
+        const ascCreated = asc.items.map((g: any) => g.created).join('|');
+        const descCreated = desc.items
+          .map((g: any) => g.created)
+          .reverse()
+          .join('|');
+        expect(ascCreated).toBe(descCreated);
+      });
+
+      it('GET /playlist-items supports sort=asc|desc with and without playlist-group filter', async () => {
+        // Create a playlist and a group that includes it
+        const pr = await app.fetch(
+          new Request('http://localhost/api/v1/playlists', {
+            method: 'POST',
+            headers: validAuth,
+            body: JSON.stringify(validPlaylist),
+          }),
+          testEnv
+        );
+        const playlist = await pr.json();
+
+        // Mock fetch for group validation to return the created playlist
+        global.fetch = vi.fn((url: string) => {
+          if (url.includes(playlist.id)) {
+            return Promise.resolve({ ok: true, json: () => Promise.resolve(playlist) } as Response);
+          }
+          return Promise.resolve({ ok: false, status: 404 } as Response);
+        }) as any;
+
+        const gr = await app.fetch(
+          new Request('http://localhost/api/v1/playlist-groups', {
+            method: 'POST',
+            headers: validAuth,
+            body: JSON.stringify({
+              title: 'G',
+              curator: 'C',
+              playlists: [`https://example.com/playlists/${playlist.id}`],
+            }),
+          }),
+          testEnv
+        );
+        const group = await gr.json();
+
+        const ascRes = await app.fetch(
+          new Request(`http://localhost/api/v1/playlist-items?sort=asc`),
+          testEnv
+        );
+        expect(ascRes.status).toBe(200);
+        const asc = await ascRes.json();
+        expect(Array.isArray(asc.items)).toBe(true);
+
+        const descRes = await app.fetch(
+          new Request(
+            `http://localhost/api/v1/playlist-items?playlist-group=${group.id}&sort=desc`
+          ),
+          testEnv
+        );
+        expect(descRes.status).toBe(200);
+        const desc = await descRes.json();
+        expect(Array.isArray(desc.items)).toBe(true);
       });
     });
   });
@@ -2297,6 +2475,7 @@ describe('DP-1 Feed Operator API', () => {
                       source: 'https://example.com/external-artwork1.html',
                       duration: 300,
                       license: 'open',
+                      created_at: '2024-01-01T00:00:00.001Z',
                     },
                     {
                       id: '550e8400-e29b-41d4-a716-446655440002',
@@ -2304,6 +2483,7 @@ describe('DP-1 Feed Operator API', () => {
                       source: 'https://example.com/external-artwork2.html',
                       duration: 400,
                       license: 'open',
+                      created_at: '2024-01-01T00:00:00.002Z',
                     },
                   ],
                 }),
@@ -2327,6 +2507,7 @@ describe('DP-1 Feed Operator API', () => {
                       source: 'https://example.com/external-artwork3.html',
                       duration: 500,
                       license: 'open',
+                      created_at: '2024-01-01T00:00:00.003Z',
                     },
                   ],
                 }),

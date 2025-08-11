@@ -110,12 +110,15 @@ async function validatePlaylistGroupUpdateBody(
  * Query params:
  * - limit: number of items per page (max 100)
  * - cursor: pagination cursor from previous response
+ * - sort: asc | desc (by created time)
  */
 playlistGroups.get('/', async c => {
   try {
     // Parse query parameters
     const limit = parseInt(c.req.query('limit') || '100');
     const cursor = c.req.query('cursor') || undefined;
+    const sortParam = (c.req.query('sort') || '').toLowerCase();
+    const sort: 'asc' | 'desc' = sortParam === 'asc' ? 'asc' : 'desc'; // Default to 'desc' when no sort or invalid sort
 
     // Validate limit
     if (limit < 1 || limit > 100) {
@@ -128,7 +131,7 @@ playlistGroups.get('/', async c => {
       );
     }
 
-    const result = await listAllPlaylistGroups(c.env, { limit, cursor });
+    const result = await listAllPlaylistGroups(c.env, { limit, cursor, sort });
     return c.json(result);
   } catch (error) {
     console.error('Error retrieving playlist groups:', error);
