@@ -48,6 +48,8 @@ let createdPlaylistId = null;
 let createdPlaylistSlug = null;
 let createdPlaylistGroupId = null;
 let createdPlaylistGroupSlug = null;
+let sortingTestPlaylistIds = []; // For sorting tests
+let sortingTestGroupIds = []; // For sorting tests
 
 // Helper function to make HTTP requests
 async function makeRequest(method, path, body = null) {
@@ -846,6 +848,356 @@ async function testPlaylistItemsUpdate() {
   return true;
 }
 
+async function testSortingSetup() {
+  console.log('\n🎯 Setting up sorting tests - creating multiple playlists with delays...');
+
+  sortingTestPlaylistIds = []; // Reset for multiple test runs
+
+  // Create 3 playlists with delays to ensure different creation timestamps
+  for (let i = 1; i <= 3; i++) {
+    const sortingPlaylist = {
+      dpVersion: '1.0.0',
+      title: `Sorting Test Playlist ${i}`,
+      defaults: {
+        license: 'open',
+        duration: 300,
+      },
+      items: [
+        {
+          title: `Sorting Test Artwork ${i}`,
+          source: `https://example.com/sorting-test-${i}.html`,
+          duration: 300,
+          license: 'open',
+        },
+      ],
+    };
+
+    const response = await makeRequest('POST', '/api/v1/playlists', sortingPlaylist);
+
+    if (response.ok) {
+      console.log(`✅ Created sorting test playlist ${i}: ${response.data.id}`);
+      console.log(`   Created at: ${response.data.created}`);
+      sortingTestPlaylistIds.push({
+        id: response.data.id,
+        created: response.data.created,
+        title: response.data.title,
+        index: i,
+      });
+
+      // Wait for queue processing and to ensure different timestamps
+      await new Promise(resolve => setTimeout(resolve, 1000));
+    } else {
+      console.log(`❌ Failed to create sorting test playlist ${i}: ${response.status}`);
+      return false;
+    }
+  }
+
+  console.log('✅ Sorting test playlists created successfully');
+  return true;
+}
+
+async function testPlaylistSortingAscending() {
+  if (sortingTestPlaylistIds.length < 3) {
+    console.log('\n⚠️  Skipping ascending sort test - not enough test playlists');
+    return true;
+  }
+
+  console.log('\n⬆️  Testing playlist sorting (ascending by creation time)...');
+  const response = await makeRequest('GET', '/api/v1/playlists?sort=asc&limit=10');
+
+  if (response.ok) {
+    const result = response.data;
+    if (result && Array.isArray(result.items)) {
+      console.log(`   Retrieved ${result.items.length} playlists`);
+
+      // Find our test playlists in the results
+      const testPlaylists = result.items.filter(p =>
+        sortingTestPlaylistIds.some(tp => tp.id === p.id)
+      );
+
+      if (testPlaylists.length < 3) {
+        console.log(`⚠️  Only found ${testPlaylists.length}/3 test playlists in results`);
+        // Still validate what we found
+      }
+
+      // Verify they're in ascending order (oldest first)
+      let isAscending = true;
+      for (let i = 1; i < testPlaylists.length; i++) {
+        const prev = new Date(testPlaylists[i - 1].created);
+        const curr = new Date(testPlaylists[i].created);
+        if (prev > curr) {
+          console.log(`❌ Ascending order violated at index ${i}:`);
+          console.log(
+            `   Previous: ${testPlaylists[i - 1].title} (${testPlaylists[i - 1].created})`
+          );
+          console.log(`   Current:  ${testPlaylists[i].title} (${testPlaylists[i].created})`);
+          isAscending = false;
+          break;
+        }
+      }
+
+      if (isAscending && testPlaylists.length > 1) {
+        console.log('✅ Playlists are correctly sorted in ascending order by creation time');
+        console.log('   Order found:');
+        testPlaylists.forEach((p, i) => {
+          console.log(`   ${i + 1}. ${p.title} (${p.created})`);
+        });
+      } else if (testPlaylists.length <= 1) {
+        console.log('ℹ️  Not enough test playlists to verify sorting order');
+      } else {
+        console.log('❌ Playlists are NOT in ascending order');
+        return false;
+      }
+    } else {
+      console.log('❌ Expected paginated result format with items array');
+      return false;
+    }
+  } else {
+    console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
+    return false;
+  }
+
+  return true;
+}
+
+async function testPlaylistSortingDescending() {
+  if (sortingTestPlaylistIds.length < 3) {
+    console.log('\n⚠️  Skipping descending sort test - not enough test playlists');
+    return true;
+  }
+
+  console.log('\n⬇️  Testing playlist sorting (descending by creation time)...');
+  const response = await makeRequest('GET', '/api/v1/playlists?sort=desc&limit=10');
+
+  if (response.ok) {
+    const result = response.data;
+    if (result && Array.isArray(result.items)) {
+      console.log(`   Retrieved ${result.items.length} playlists`);
+
+      // Find our test playlists in the results
+      const testPlaylists = result.items.filter(p =>
+        sortingTestPlaylistIds.some(tp => tp.id === p.id)
+      );
+
+      if (testPlaylists.length < 3) {
+        console.log(`⚠️  Only found ${testPlaylists.length}/3 test playlists in results`);
+        // Still validate what we found
+      }
+
+      // Verify they're in descending order (newest first)
+      let isDescending = true;
+      for (let i = 1; i < testPlaylists.length; i++) {
+        const prev = new Date(testPlaylists[i - 1].created);
+        const curr = new Date(testPlaylists[i].created);
+        if (prev < curr) {
+          console.log(`❌ Descending order violated at index ${i}:`);
+          console.log(
+            `   Previous: ${testPlaylists[i - 1].title} (${testPlaylists[i - 1].created})`
+          );
+          console.log(`   Current:  ${testPlaylists[i].title} (${testPlaylists[i].created})`);
+          isDescending = false;
+          break;
+        }
+      }
+
+      if (isDescending && testPlaylists.length > 1) {
+        console.log('✅ Playlists are correctly sorted in descending order by creation time');
+        console.log('   Order found:');
+        testPlaylists.forEach((p, i) => {
+          console.log(`   ${i + 1}. ${p.title} (${p.created})`);
+        });
+      } else if (testPlaylists.length <= 1) {
+        console.log('ℹ️  Not enough test playlists to verify sorting order');
+      } else {
+        console.log('❌ Playlists are NOT in descending order');
+        return false;
+      }
+    } else {
+      console.log('❌ Expected paginated result format with items array');
+      return false;
+    }
+  } else {
+    console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
+    return false;
+  }
+
+  return true;
+}
+
+async function testPlaylistSortingDefault() {
+  console.log('\n🔄 Testing playlist sorting (default - should be desc)...');
+  const response = await makeRequest('GET', '/api/v1/playlists?limit=10');
+
+  if (response.ok) {
+    const result = response.data;
+    if (result && Array.isArray(result.items)) {
+      console.log(`   Retrieved ${result.items.length} playlists (default sort)`);
+
+      if (result.items.length > 1) {
+        // Verify default sort is descending
+        let isDescending = true;
+        for (let i = 1; i < result.items.length; i++) {
+          const prev = new Date(result.items[i - 1].created);
+          const curr = new Date(result.items[i].created);
+          if (prev < curr) {
+            console.log(`❌ Default sort is not descending at index ${i}`);
+            isDescending = false;
+            break;
+          }
+        }
+
+        if (isDescending) {
+          console.log('✅ Default sorting is descending (newest first)');
+        } else {
+          console.log('❌ Default sorting is not descending');
+          return false;
+        }
+      } else {
+        console.log('ℹ️  Not enough playlists to verify default sorting order');
+      }
+    } else {
+      console.log('❌ Expected paginated result format with items array');
+      return false;
+    }
+  } else {
+    console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
+    return false;
+  }
+
+  return true;
+}
+
+async function testPlaylistGroupSorting() {
+  console.log('\n📂 Testing playlist group sorting...');
+
+  // Test both asc and desc for groups
+  const ascResponse = await makeRequest('GET', '/api/v1/playlist-groups?sort=asc&limit=10');
+  const descResponse = await makeRequest('GET', '/api/v1/playlist-groups?sort=desc&limit=10');
+
+  if (ascResponse.ok && descResponse.ok) {
+    console.log('✅ Playlist group sorting endpoints are accessible');
+
+    const ascResult = ascResponse.data;
+    const descResult = descResponse.data;
+
+    if (ascResult.items && ascResult.items.length > 1) {
+      // Verify ascending order
+      let isAscending = true;
+      for (let i = 1; i < ascResult.items.length; i++) {
+        const prev = new Date(ascResult.items[i - 1].created);
+        const curr = new Date(ascResult.items[i].created);
+        if (prev > curr) {
+          isAscending = false;
+          break;
+        }
+      }
+
+      if (isAscending) {
+        console.log('✅ Playlist groups correctly sorted in ascending order');
+      } else {
+        console.log('❌ Playlist groups NOT in ascending order');
+        return false;
+      }
+    }
+
+    if (descResult.items && descResult.items.length > 1) {
+      // Verify descending order
+      let isDescending = true;
+      for (let i = 1; i < descResult.items.length; i++) {
+        const prev = new Date(descResult.items[i - 1].created);
+        const curr = new Date(descResult.items[i].created);
+        if (prev < curr) {
+          isDescending = false;
+          break;
+        }
+      }
+
+      if (isDescending) {
+        console.log('✅ Playlist groups correctly sorted in descending order');
+      } else {
+        console.log('❌ Playlist groups NOT in descending order');
+        return false;
+      }
+    }
+
+    if ((ascResult.items?.length || 0) <= 1 && (descResult.items?.length || 0) <= 1) {
+      console.log('ℹ️  Not enough playlist groups to verify sorting order');
+    }
+  } else {
+    console.log('❌ Failed to test playlist group sorting');
+    return false;
+  }
+
+  return true;
+}
+
+async function testPlaylistItemSorting() {
+  console.log('\n🎯 Testing playlist item sorting...');
+
+  // Test both asc and desc for items
+  const ascResponse = await makeRequest('GET', '/api/v1/playlist-items?sort=asc&limit=10');
+  const descResponse = await makeRequest('GET', '/api/v1/playlist-items?sort=desc&limit=10');
+
+  if (ascResponse.ok && descResponse.ok) {
+    console.log('✅ Playlist item sorting endpoints are accessible');
+
+    const ascResult = ascResponse.data;
+    const descResult = descResponse.data;
+
+    console.log(
+      `   Found ${ascResult.items?.length || 0} items (asc), ${descResult.items?.length || 0} items (desc)`
+    );
+
+    // For items, we check the created_at field (not created)
+    if (ascResult.items && ascResult.items.length > 1) {
+      let isAscending = true;
+      for (let i = 1; i < ascResult.items.length; i++) {
+        const prev = new Date(ascResult.items[i - 1].created_at);
+        const curr = new Date(ascResult.items[i].created_at);
+        if (prev > curr) {
+          isAscending = false;
+          break;
+        }
+      }
+
+      if (isAscending) {
+        console.log('✅ Playlist items correctly sorted in ascending order');
+      } else {
+        console.log('❌ Playlist items NOT in ascending order');
+        return false;
+      }
+    }
+
+    if (descResult.items && descResult.items.length > 1) {
+      let isDescending = true;
+      for (let i = 1; i < descResult.items.length; i++) {
+        const prev = new Date(descResult.items[i - 1].created_at);
+        const curr = new Date(descResult.items[i].created_at);
+        if (prev < curr) {
+          isDescending = false;
+          break;
+        }
+      }
+
+      if (isDescending) {
+        console.log('✅ Playlist items correctly sorted in descending order');
+      } else {
+        console.log('❌ Playlist items NOT in descending order');
+        return false;
+      }
+    }
+
+    if ((ascResult.items?.length || 0) <= 1 && (descResult.items?.length || 0) <= 1) {
+      console.log('ℹ️  Not enough playlist items to verify sorting order');
+    }
+  } else {
+    console.log('❌ Failed to test playlist item sorting');
+    return false;
+  }
+
+  return true;
+}
+
 // Main test runner
 async function runTests() {
   console.log('🚀 Starting DP-1 Feed Operator API Tests (UUID + Slug Support)\n');
@@ -874,6 +1226,12 @@ async function runTests() {
     { name: 'Playlist Items Update via Playlist', fn: testPlaylistItemsUpdate },
     { name: 'Identifier Validation (400/404)', fn: testInvalidIdentifiers },
     { name: 'Authentication Failure', fn: testAuthenticationFailure },
+    { name: 'Sorting Setup', fn: testSortingSetup },
+    { name: 'Playlist Sorting (Ascending)', fn: testPlaylistSortingAscending },
+    { name: 'Playlist Sorting (Descending)', fn: testPlaylistSortingDescending },
+    { name: 'Playlist Sorting (Default)', fn: testPlaylistSortingDefault },
+    { name: 'Playlist Group Sorting', fn: testPlaylistGroupSorting },
+    { name: 'Playlist Item Sorting', fn: testPlaylistItemSorting },
   ];
 
   const results = [];

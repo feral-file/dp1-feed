@@ -47,6 +47,8 @@ async function batchFetchFromKV<T>(
 ): Promise<T[]> {
   if (keys.length === 0) return [];
 
+  // Create a map to store results by key to preserve order
+  const resultsMap = new Map<string, T>();
   const batchSize = 100;
   const batches: string[][] = [];
 
@@ -61,7 +63,6 @@ async function batchFetchFromKV<T>(
       // Use batch get to fetch multiple keys at once
       const batchResults = await kvNamespace.get(batch, { type: 'json' });
 
-      const batchItems: T[] = [];
       // Check if batchResults is not null and has entries (real Cloudflare environment)
       if (batchResults && typeof (batchResults as any).entries === 'function') {
         // batchResults is a Map, so we iterate over entries
@@ -69,59 +70,50 @@ async function batchFetchFromKV<T>(
           if (data) {
             try {
               // Since we used type: 'json', the data is already parsed
-              batchItems.push(data as T);
+              resultsMap.set(key, data as T);
             } catch (error) {
               console.error(`Error processing ${errorContext} ${key}:`, error);
             }
           }
         }
       } else {
-        // Fallback for test environments that don't support batch get properly
-        // Process keys individually
-        const individualPromises = batch.map(async key => {
+        // Fallback for test environments - process sequentially to preserve order
+        for (const key of batch) {
           try {
             const data = await kvNamespace.get(key, { type: 'json' });
             if (data) {
-              // If data is a string, it means the json parsing didn't work in test environment
               if (typeof data === 'string') {
                 try {
-                  return JSON.parse(data) as T;
+                  resultsMap.set(key, JSON.parse(data) as T);
                 } catch (parseError) {
                   console.error(`Error parsing JSON for ${key}:`, parseError);
-                  return null;
                 }
+              } else {
+                resultsMap.set(key, data as T);
               }
-              return data as T;
             }
           } catch (error) {
             console.error(`Error processing ${errorContext} ${key}:`, error);
           }
-          return null;
-        });
-
-        const individualResults = await Promise.all(individualPromises);
-        for (const result of individualResults) {
-          if (result !== null) {
-            batchItems.push(result);
-          }
         }
       }
-      return batchItems;
     } catch (error) {
       console.error(`Error processing ${errorContext} batch:`, error);
-      return [];
     }
   });
 
-  const batchResults = await Promise.all(batchPromises);
+  await Promise.all(batchPromises);
 
-  // Flatten all batch results
-  const allItems: T[] = [];
-  for (const batchItems of batchResults) {
-    allItems.push(...batchItems);
+  // Return results in the same order as input keys
+  const orderedResults: T[] = [];
+  for (const key of keys) {
+    const result = resultsMap.get(key);
+    if (result) {
+      orderedResults.push(result);
+    }
   }
 
-  return allItems;
+  return orderedResults;
 }
 
 /**
