@@ -37,7 +37,7 @@ const mockPlaylist: Playlist = {
       source: 'https://example.com/artwork.html',
       duration: 300,
       license: 'open',
-      created_at: '2024-01-01T00:00:00.001Z',
+      created: '2024-01-01T00:00:00.001Z',
     },
   ],
   signature: 'ed25519:0x1234567890abcdef',

@@ -44,7 +44,7 @@ const createMockPlaylistResponse = (id: string, slug: string) => {
             source: 'https://example.com/artwork.html',
             duration: 300,
             license: 'open',
-            created_at: '2024-01-01T00:00:00.001Z',
+            created: '2024-01-01T00:00:00.001Z',
           },
         ],
       }),
@@ -131,7 +131,7 @@ const testPlaylist: Playlist = {
       source: 'https://example.com/artwork.html',
       duration: 300,
       license: 'open',
-      created_at: '2024-01-01T00:00:00.001Z',
+      created: '2024-01-01T00:00:00.001Z',
     },
   ],
 };
@@ -269,7 +269,7 @@ describe('Storage Module', () => {
             source: 'https://example.com/updated-artwork.html',
             duration: 400,
             license: 'token' as const,
-            created_at: '2024-01-01T00:00:00.002Z',
+            created: '2024-01-01T00:00:00.002Z',
           },
         ],
       };
@@ -498,7 +498,7 @@ describe('Storage Module', () => {
           source: `https://example.com/item-${i}-${j}.html`,
           duration: 300 + j * 100,
           license: 'open' as const,
-          created_at: `2024-01-01T00:00:0${i}.00${j}Z`,
+          created: `2024-01-01T00:00:0${i}.00${j}Z`,
         })),
       }));
 
@@ -797,7 +797,7 @@ describe('Storage Module', () => {
                     source: 'https://example.com/i1.html',
                     duration: 300,
                     license: 'open',
-                    created_at: '2024-01-01T00:00:00.001Z',
+                    created: '2024-01-01T00:00:00.001Z',
                   },
                 ],
               }),
@@ -821,7 +821,7 @@ describe('Storage Module', () => {
                     source: 'https://example.com/i2.html',
                     duration: 300,
                     license: 'open',
-                    created_at: '2024-01-02T00:00:00.001Z',
+                    created: '2024-01-02T00:00:00.001Z',
                   },
                 ],
               }),
@@ -845,7 +845,7 @@ describe('Storage Module', () => {
                     source: 'https://example.com/i3.html',
                     duration: 300,
                     license: 'open',
-                    created_at: '2024-01-03T00:00:00.001Z',
+                    created: '2024-01-03T00:00:00.001Z',
                   },
                 ],
               }),
@@ -916,13 +916,13 @@ describe('Storage Module', () => {
       expect(desc.items.map(g => g.id)).toEqual(['g-3', 'g-2', 'g-1']);
     });
 
-    it('should sort playlist items globally by created asc and desc (based on item created_at)', async () => {
+    it('should sort playlist items globally by created asc and desc (based on item created)', async () => {
       const p1 = { ...testPlaylist, id: 'pp-1', slug: 'pp-1', created: '2024-01-01T00:00:00Z' };
       const p2 = { ...testPlaylist, id: 'pp-2', slug: 'pp-2', created: '2024-01-02T00:00:00Z' };
       const p3 = { ...testPlaylist, id: 'pp-3', slug: 'pp-3', created: '2024-01-03T00:00:00Z' };
-      p1.items = [{ ...p1.items[0], id: 'i-1', created_at: '2024-01-01T00:00:00.001Z' }];
-      p2.items = [{ ...p2.items[0], id: 'i-2', created_at: '2024-01-02T00:00:00.001Z' }];
-      p3.items = [{ ...p3.items[0], id: 'i-3', created_at: '2024-01-03T00:00:00.001Z' }];
+      p1.items = [{ ...p1.items[0], id: 'i-1', created: '2024-01-01T00:00:00.001Z' }];
+      p2.items = [{ ...p2.items[0], id: 'i-2', created: '2024-01-02T00:00:00.001Z' }];
+      p3.items = [{ ...p3.items[0], id: 'i-3', created: '2024-01-03T00:00:00.001Z' }];
       await savePlaylist(p1, testEnv);
       await savePlaylist(p2, testEnv);
       await savePlaylist(p3, testEnv);
@@ -942,8 +942,8 @@ describe('Storage Module', () => {
       const p2 = { ...testPlaylist, id: gp2, slug: 'gp-2', created: '2024-01-02T00:00:00Z' };
       const gi1 = '550e8400-e29b-41d4-a716-446655443111';
       const gi2 = '550e8400-e29b-41d4-a716-446655443112';
-      p1.items = [{ ...p1.items[0], id: gi1, created_at: '2024-01-01T00:00:00.001Z' }];
-      p2.items = [{ ...p2.items[0], id: gi2, created_at: '2024-01-02T00:00:00.001Z' }];
+      p1.items = [{ ...p1.items[0], id: gi1, created: '2024-01-01T00:00:00.001Z' }];
+      p2.items = [{ ...p2.items[0], id: gi2, created: '2024-01-02T00:00:00.001Z' }];
       await savePlaylist(p1, testEnv);
       await savePlaylist(p2, testEnv);
 
@@ -1298,7 +1298,7 @@ describe('Storage Module', () => {
             source: 'https://example.com/self-hosted-artwork.html',
             duration: 600,
             license: 'open',
-            created_at: '2024-01-01T00:00:00.001Z',
+            created: '2024-01-01T00:00:00.001Z',
           },
         ],
       };
@@ -1336,7 +1336,7 @@ describe('Storage Module', () => {
                     source: 'https://external-example.com/external-artwork.html',
                     duration: 400,
                     license: 'open',
-                    created_at: '2024-01-01T00:00:00.001Z',
+                    created: '2024-01-01T00:00:00.001Z',
                   },
                 ],
               }),

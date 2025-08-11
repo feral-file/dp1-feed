@@ -22,7 +22,7 @@ describe('Crypto Functions', () => {
           source: 'https://example.com/artwork.html',
           duration: 300,
           license: 'open' as const,
-          created_at: '2025-06-03T17:01:00.001Z',
+          created: '2025-06-03T17:01:00.001Z',
         },
       ],
     };
@@ -123,7 +123,7 @@ describe('Crypto Functions', () => {
             source: 'https://example.com/1',
             duration: 200,
             license: 'token' as const,
-            created_at: '2025-06-03T17:01:00.001Z',
+            created: '2025-06-03T17:01:00.001Z',
             display: {
               scaling: 'fill' as const,
               margin: 10,
@@ -153,7 +153,7 @@ describe('Crypto Functions', () => {
             source: 'https://example.com/2',
             duration: 400,
             license: 'subscription' as const,
-            created_at: '2025-06-03T17:01:00.002Z',
+            created: '2025-06-03T17:01:00.002Z',
           },
         ],
       };
@@ -196,7 +196,7 @@ describe('Crypto Functions', () => {
             source: 'https://example.com/edge',
             duration: 0, // zero duration
             license: 'open' as const,
-            created_at: '2025-01-01T00:00:00.001Z',
+            created: '2025-01-01T00:00:00.001Z',
             // Test special characters
             display: {
               background: 'transparent',
@@ -306,7 +306,7 @@ describe('Crypto Functions', () => {
           source: 'https://example.com/test',
           duration: 300,
           license: 'open' as const,
-          created_at: '2025-01-01T00:00:00.001Z',
+          created: '2025-01-01T00:00:00.001Z',
         },
       ],
     };

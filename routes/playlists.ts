@@ -313,14 +313,14 @@ playlists.put('/:id', async c => {
       );
     }
 
-    // Generate IDs and created_at timestamps for items being replaced
+    // Generate IDs and created timestamps for items being replaced
     const itemsWithIds = validatedData.items.map((item, index) => {
       // Create a unique timestamp for each item by adding milliseconds based on index
       const itemTimestamp = new Date(Date.now() + index).toISOString();
       return {
         ...item,
         id: crypto.randomUUID(),
-        created_at: itemTimestamp,
+        created: itemTimestamp,
       };
     });
 
@@ -430,7 +430,7 @@ playlists.patch('/:id', async c => {
         return {
           ...item,
           id: crypto.randomUUID(),
-          created_at: itemTimestamp,
+          created: itemTimestamp,
         };
       });
     }

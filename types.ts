@@ -191,7 +191,7 @@ const PlaylistItemSchema = z.object({
   display: DisplayPrefsSchema,
   repro: ReproSchema,
   provenance: ProvenanceSchema,
-  created_at: z.string().datetime(),
+  created: z.string().datetime(),
 });
 
 // Base schemas without IDs for input validation
@@ -433,7 +433,7 @@ export interface PlaylistItem {
   display?: DisplayPrefs;
   repro?: Repro;
   provenance?: Provenance;
-  created_at: string;
+  created: string;
 }
 
 export interface Playlist {
@@ -560,7 +560,7 @@ export function createPlaylistFromInput(input: PlaylistInput): Playlist {
     return {
       ...item,
       id: crypto.randomUUID(),
-      created_at: itemTimestamp,
+      created: itemTimestamp,
     };
   });
 

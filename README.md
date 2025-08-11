@@ -394,12 +394,12 @@ curl -X GET "https://your-api.workers.dev/playlists?sort=asc"
 # Sort playlist groups (same parameters)
 curl -X GET "https://your-api.workers.dev/playlist-groups?sort=asc"
 
-# Sort playlist items by their individual created_at timestamps
+# Sort playlist items by their individual created timestamps
 curl -X GET "https://your-api.workers.dev/playlist-items?sort=desc"
 curl -X GET "https://your-api.workers.dev/playlist-items?playlist-group=group-id&sort=asc"
 ```
 
-**Note**: The default sort order is `desc` (newest first) when no `sort` parameter is provided. Each playlist item has its own `created_at` timestamp for deterministic sorting.
+**Note**: The default sort order is `desc` (newest first) when no `sort` parameter is provided. Each playlist item has its own `created` timestamp for deterministic sorting.
 
 ## 🔧 Configuration
 

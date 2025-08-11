@@ -344,9 +344,9 @@ export async function savePlaylist(
       operations.push(
         env.DP1_PLAYLIST_ITEMS.delete(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`)
       );
-      // Delete created-time indexes for items using item's created_at
-      if (item.created_at) {
-        const oldTs = toSortableTimestamps(item.created_at);
+      // Delete created-time indexes for items using item's created
+      if (item.created) {
+        const oldTs = toSortableTimestamps(item.created);
         operations.push(
           env.DP1_PLAYLIST_ITEMS.delete(
             `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${oldTs.asc}:${item.id}`
@@ -362,9 +362,9 @@ export async function savePlaylist(
             `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_PREFIX}${playlistGroupId}:${item.id}`
           )
         );
-        // Delete group-created indexes for items using item's created_at
-        if (item.created_at) {
-          const oldTs = toSortableTimestamps(item.created_at);
+        // Delete group-created indexes for items using item's created
+        if (item.created) {
+          const oldTs = toSortableTimestamps(item.created);
           operations.push(
             env.DP1_PLAYLIST_ITEMS.delete(
               `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_CREATED_ASC_PREFIX}${playlistGroupId}:${oldTs.asc}:${item.id}`
@@ -386,9 +386,9 @@ export async function savePlaylist(
             item.id
           )
         );
-        // Add created-time group indexes for items using item's created_at
-        if (item.created_at) {
-          const ts = toSortableTimestamps(item.created_at);
+        // Add created-time group indexes for items using item's created
+        if (item.created) {
+          const ts = toSortableTimestamps(item.created);
           operations.push(
             env.DP1_PLAYLIST_ITEMS.put(
               `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_CREATED_ASC_PREFIX}${playlistGroupId}:${ts.asc}:${item.id}`,
@@ -410,9 +410,9 @@ export async function savePlaylist(
     operations.push(
       env.DP1_PLAYLIST_ITEMS.put(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`, itemData)
     );
-    // Global created-time indexes for items using item's created_at
-    if (item.created_at) {
-      const ts = toSortableTimestamps(item.created_at);
+    // Global created-time indexes for items using item's created
+    if (item.created) {
+      const ts = toSortableTimestamps(item.created);
       operations.push(
         env.DP1_PLAYLIST_ITEMS.put(
           `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`,
@@ -742,9 +742,9 @@ export async function savePlaylistGroup(
           env.DP1_PLAYLIST_ITEMS.put(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`, itemData)
         );
 
-        // Global created-time indexes for items using item's created_at
-        if (item.created_at) {
-          const ts = toSortableTimestamps(item.created_at);
+        // Global created-time indexes for items using item's created
+        if (item.created) {
+          const ts = toSortableTimestamps(item.created);
           operations.push(
             env.DP1_PLAYLIST_ITEMS.put(
               `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`,
@@ -765,9 +765,9 @@ export async function savePlaylistGroup(
           )
         );
 
-        // Secondary index by playlist group ID + created time using item's created_at
-        if (item.created_at) {
-          const ts = toSortableTimestamps(item.created_at);
+        // Secondary index by playlist group ID + created time using item's created
+        if (item.created) {
+          const ts = toSortableTimestamps(item.created);
           operations.push(
             env.DP1_PLAYLIST_ITEMS.put(
               `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_CREATED_ASC_PREFIX}${playlistGroup.id}:${ts.asc}:${item.id}`,
