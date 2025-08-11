@@ -12,6 +12,17 @@ export const STORAGE_KEYS = {
   PLAYLIST_ITEM_BY_GROUP_PREFIX: 'playlist-item:group-id:', // playlist-item:group-id:${playlistGroupId}:${playlistItemId}=>${playlistItemId}
   PLAYLIST_TO_GROUPS_PREFIX: 'playlist-to-groups:', // playlist-to-groups:${playlistId}:${playlistGroupId}=>${playlistGroupId}
   GROUP_TO_PLAYLISTS_PREFIX: 'group-to-playlists:', // group-to-playlists:${groupId}:${playlistId}=>${playlistId}
+  // Created-time secondary indexes (asc/desc)
+  PLAYLIST_CREATED_ASC_PREFIX: 'playlist:created:asc:', // playlist:created:asc:${timestampMs}:${playlistId} => ${playlistId}
+  PLAYLIST_CREATED_DESC_PREFIX: 'playlist:created:desc:', // playlist:created:desc:${invTimestampMs}:${playlistId} => ${playlistId}
+  PLAYLIST_GROUP_CREATED_ASC_PREFIX: 'playlist-group:created:asc:', // playlist-group:created:asc:${timestampMs}:${groupId} => ${groupId}
+  PLAYLIST_GROUP_CREATED_DESC_PREFIX: 'playlist-group:created:desc:', // playlist-group:created:desc:${invTimestampMs}:${groupId} => ${groupId}
+  PLAYLIST_ITEM_CREATED_ASC_PREFIX: 'playlist-item:created:asc:', // playlist-item:created:asc:${timestampMs}:${itemId} => ${itemId}
+  PLAYLIST_ITEM_CREATED_DESC_PREFIX: 'playlist-item:created:desc:', // playlist-item:created:desc:${invTimestampMs}:${itemId} => ${itemId}
+  GROUP_TO_PLAYLISTS_CREATED_ASC_PREFIX: 'group-to-playlists-created:asc:', // group-to-playlists-created:asc:${groupId}:${timestampMs}:${playlistId} => ${playlistId}
+  GROUP_TO_PLAYLISTS_CREATED_DESC_PREFIX: 'group-to-playlists-created:desc:', // group-to-playlists-created:desc:${groupId}:${invTimestampMs}:${playlistId} => ${playlistId}
+  PLAYLIST_ITEM_BY_GROUP_CREATED_ASC_PREFIX: 'playlist-item:group-created:asc:', // playlist-item:group-created:asc:${groupId}:${timestampMs}:${itemId} => ${itemId}
+  PLAYLIST_ITEM_BY_GROUP_CREATED_DESC_PREFIX: 'playlist-item:group-created:desc:', // playlist-item:group-created:desc:${groupId}:${invTimestampMs}:${itemId} => ${itemId}
 } as const;
 
 export interface PaginatedResult<T> {
@@ -23,6 +34,7 @@ export interface PaginatedResult<T> {
 export interface ListOptions {
   limit?: number;
   cursor?: string;
+  sort?: 'asc' | 'desc';
 }
 
 /**
@@ -35,6 +47,8 @@ async function batchFetchFromKV<T>(
 ): Promise<T[]> {
   if (keys.length === 0) return [];
 
+  // Create a map to store results by key to preserve order
+  const resultsMap = new Map<string, T>();
   const batchSize = 100;
   const batches: string[][] = [];
 
@@ -49,67 +63,70 @@ async function batchFetchFromKV<T>(
       // Use batch get to fetch multiple keys at once
       const batchResults = await kvNamespace.get(batch, { type: 'json' });
 
-      const batchItems: T[] = [];
       // Check if batchResults is not null and has entries (real Cloudflare environment)
-      if (batchResults && typeof batchResults.entries === 'function') {
+      if (batchResults && typeof (batchResults as any).entries === 'function') {
         // batchResults is a Map, so we iterate over entries
-        for (const [key, data] of batchResults.entries()) {
+        for (const [key, data] of (batchResults as any).entries()) {
           if (data) {
             try {
               // Since we used type: 'json', the data is already parsed
-              batchItems.push(data as T);
+              resultsMap.set(key, data as T);
             } catch (error) {
               console.error(`Error processing ${errorContext} ${key}:`, error);
             }
           }
         }
       } else {
-        // Fallback for test environments that don't support batch get properly
-        // Process keys individually
-        const individualPromises = batch.map(async key => {
+        // Fallback for test environments - process sequentially to preserve order
+        for (const key of batch) {
           try {
             const data = await kvNamespace.get(key, { type: 'json' });
             if (data) {
-              // If data is a string, it means the json parsing didn't work in test environment
               if (typeof data === 'string') {
                 try {
-                  return JSON.parse(data) as T;
+                  resultsMap.set(key, JSON.parse(data) as T);
                 } catch (parseError) {
                   console.error(`Error parsing JSON for ${key}:`, parseError);
-                  return null;
                 }
+              } else {
+                resultsMap.set(key, data as T);
               }
-              return data as T;
             }
           } catch (error) {
             console.error(`Error processing ${errorContext} ${key}:`, error);
           }
-          return null;
-        });
-
-        const individualResults = await Promise.all(individualPromises);
-        for (const result of individualResults) {
-          if (result !== null) {
-            batchItems.push(result);
-          }
         }
       }
-      return batchItems;
     } catch (error) {
       console.error(`Error processing ${errorContext} batch:`, error);
-      return [];
     }
   });
 
-  const batchResults = await Promise.all(batchPromises);
+  await Promise.all(batchPromises);
 
-  // Flatten all batch results
-  const allItems: T[] = [];
-  for (const batchItems of batchResults) {
-    allItems.push(...batchItems);
+  // Return results in the same order as input keys
+  const orderedResults: T[] = [];
+  for (const key of keys) {
+    const result = resultsMap.get(key);
+    if (result) {
+      orderedResults.push(result);
+    }
   }
 
-  return allItems;
+  return orderedResults;
+}
+
+/**
+ * Utility: produce sortable timestamp strings for asc/desc indexes
+ */
+function toSortableTimestamps(isoTimestamp: string): { asc: string; desc: string } {
+  const ms = Number.isFinite(Number(isoTimestamp))
+    ? Number(isoTimestamp)
+    : Date.parse(isoTimestamp);
+  const padded = String(ms).padStart(13, '0');
+  const maxMs = 9999999999999; // ~ Sat Nov 20 2286
+  const inv = String(maxMs - ms).padStart(13, '0');
+  return { asc: padded, desc: inv };
 }
 
 /**
@@ -235,7 +252,7 @@ async function getPlaylistsForGroup(groupId: string, env: Env): Promise<string[]
     if (listResult.list_complete) {
       break;
     }
-    cursor = listResult.cursor;
+    cursor = (listResult as any).cursor;
   }
 
   return playlistIds;
@@ -269,7 +286,7 @@ export async function getPlaylistGroupsForPlaylist(
     if (listResult.list_complete) {
       break;
     }
-    cursor = listResult.cursor;
+    cursor = (listResult as any).cursor;
   }
 
   return groupIds;
@@ -300,6 +317,21 @@ export async function savePlaylist(
     env.DP1_PLAYLISTS.put(`${STORAGE_KEYS.PLAYLIST_SLUG_PREFIX}${playlist.slug}`, playlist.id)
   );
 
+  // Created-time indexes for playlists
+  if (playlist.created) {
+    const ts = toSortableTimestamps(playlist.created);
+    operations.push(
+      env.DP1_PLAYLISTS.put(
+        `${STORAGE_KEYS.PLAYLIST_CREATED_ASC_PREFIX}${ts.asc}:${playlist.id}`,
+        playlist.id
+      ),
+      env.DP1_PLAYLISTS.put(
+        `${STORAGE_KEYS.PLAYLIST_CREATED_DESC_PREFIX}${ts.desc}:${playlist.id}`,
+        playlist.id
+      )
+    );
+  }
+
   // Handle old items deletion (if updating)
   // FIXME this assumes that the playlist items always be updated, which is not the case.
   // We need to handle the case where the playlist items are not updated.
@@ -312,12 +344,36 @@ export async function savePlaylist(
       operations.push(
         env.DP1_PLAYLIST_ITEMS.delete(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`)
       );
+      // Delete created-time indexes for items using item's created
+      if (item.created) {
+        const oldTs = toSortableTimestamps(item.created);
+        operations.push(
+          env.DP1_PLAYLIST_ITEMS.delete(
+            `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${oldTs.asc}:${item.id}`
+          ),
+          env.DP1_PLAYLIST_ITEMS.delete(
+            `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${oldTs.desc}:${item.id}`
+          )
+        );
+      }
       for (const playlistGroupId of playlistGroupIds) {
         operations.push(
           env.DP1_PLAYLIST_ITEMS.delete(
             `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_PREFIX}${playlistGroupId}:${item.id}`
           )
         );
+        // Delete group-created indexes for items using item's created
+        if (item.created) {
+          const oldTs = toSortableTimestamps(item.created);
+          operations.push(
+            env.DP1_PLAYLIST_ITEMS.delete(
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_CREATED_ASC_PREFIX}${playlistGroupId}:${oldTs.asc}:${item.id}`
+            ),
+            env.DP1_PLAYLIST_ITEMS.delete(
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_CREATED_DESC_PREFIX}${playlistGroupId}:${oldTs.desc}:${item.id}`
+            )
+          );
+        }
       }
     }
 
@@ -330,6 +386,20 @@ export async function savePlaylist(
             item.id
           )
         );
+        // Add created-time group indexes for items using item's created
+        if (item.created) {
+          const ts = toSortableTimestamps(item.created);
+          operations.push(
+            env.DP1_PLAYLIST_ITEMS.put(
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_CREATED_ASC_PREFIX}${playlistGroupId}:${ts.asc}:${item.id}`,
+              item.id
+            ),
+            env.DP1_PLAYLIST_ITEMS.put(
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_CREATED_DESC_PREFIX}${playlistGroupId}:${ts.desc}:${item.id}`,
+              item.id
+            )
+          );
+        }
       }
     }
   }
@@ -340,6 +410,20 @@ export async function savePlaylist(
     operations.push(
       env.DP1_PLAYLIST_ITEMS.put(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`, itemData)
     );
+    // Global created-time indexes for items using item's created
+    if (item.created) {
+      const ts = toSortableTimestamps(item.created);
+      operations.push(
+        env.DP1_PLAYLIST_ITEMS.put(
+          `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`,
+          item.id
+        ),
+        env.DP1_PLAYLIST_ITEMS.put(
+          `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${ts.desc}:${item.id}`,
+          item.id
+        )
+      );
+    }
   }
 
   // Execute all operations in parallel
@@ -379,20 +463,35 @@ export async function listAllPlaylists(
   options: ListOptions = {}
 ): Promise<PaginatedResult<Playlist>> {
   const limit = options.limit || 1000;
+
+  const prefix =
+    options.sort === 'asc'
+      ? STORAGE_KEYS.PLAYLIST_CREATED_ASC_PREFIX
+      : options.sort === 'desc'
+        ? STORAGE_KEYS.PLAYLIST_CREATED_DESC_PREFIX
+        : STORAGE_KEYS.PLAYLIST_ID_PREFIX; // Default to ID prefix when no sort provided
   const response = await env.DP1_PLAYLISTS.list({
-    prefix: STORAGE_KEYS.PLAYLIST_ID_PREFIX,
+    prefix,
     limit,
     cursor: options.cursor,
   });
-
-  // Extract key names and batch fetch all playlists
-  const keyNames = response.keys.map(key => key.name);
-  const playlists = await batchFetchFromKV<Playlist>(keyNames, env.DP1_PLAYLISTS, 'playlist');
-
+  const playlistKeys: string[] = [];
+  for (const key of response.keys) {
+    if (options.sort) {
+      // Key format: playlist:created:(asc|desc):${ts}:${playlistId}
+      const parts = key.name.split(':');
+      const playlistId = parts[parts.length - 1];
+      playlistKeys.push(`${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${playlistId}`);
+    } else {
+      // Key format: playlist:id:${playlistId}
+      playlistKeys.push(key.name);
+    }
+  }
+  const playlists = await batchFetchFromKV<Playlist>(playlistKeys, env.DP1_PLAYLISTS, 'playlist');
   return {
     items: playlists,
-    cursor: response.list_complete ? undefined : (response as any).cursor,
-    hasMore: !response.list_complete,
+    cursor: (response as any).list_complete ? undefined : (response as any).cursor,
+    hasMore: !(response as any).list_complete,
   };
 }
 
@@ -405,33 +504,40 @@ export async function listPlaylistsByGroupId(
   options: ListOptions = {}
 ): Promise<PaginatedResult<Playlist>> {
   const limit = options.limit || 1000;
+
+  const prefix =
+    options.sort === 'asc'
+      ? `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_CREATED_ASC_PREFIX}${playlistGroupId}:`
+      : options.sort === 'desc'
+        ? `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_CREATED_DESC_PREFIX}${playlistGroupId}:`
+        : `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX}${playlistGroupId}:`; // Default to basic group prefix
   const response = await env.DP1_PLAYLISTS.list({
-    prefix: `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX}${playlistGroupId}:`,
+    prefix,
     limit,
     cursor: options.cursor,
   });
 
-  // Extract playlist IDs and build actual keys for batch retrieval
   const playlistKeys: string[] = [];
   for (const key of response.keys) {
-    try {
-      // Parse the playlist ID directly from the key (saves one KV query)
-      // Key format: playlist:playlist-group-id:$playlist-group-id:$playlist-id
-      const keyParts = key.name.split(':');
-      const playlistId = keyParts[keyParts.length - 1]; // Last part is the playlist ID
+    if (options.sort) {
+      // Key format: group-to-playlists-created:(asc|desc):${groupId}:${ts}:${playlistId}
+      const parts = key.name.split(':');
+      const playlistId = parts[parts.length - 1];
       playlistKeys.push(`${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${playlistId}`);
-    } catch (error) {
-      console.error(`Error parsing playlist ID from group reference ${key.name}:`, error);
+    } else {
+      // Key format: group-to-playlists:${groupId}:${playlistId}
+      const parts = key.name.split(':');
+      const playlistId = parts[parts.length - 1];
+      playlistKeys.push(`${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${playlistId}`);
     }
   }
 
-  // Batch fetch all playlists
   const playlists = await batchFetchFromKV<Playlist>(playlistKeys, env.DP1_PLAYLISTS, 'playlist');
 
   return {
     items: playlists,
-    cursor: response.list_complete ? undefined : (response as any).cursor,
-    hasMore: !response.list_complete,
+    cursor: (response as any).list_complete ? undefined : (response as any).cursor,
+    hasMore: !(response as any).list_complete,
   };
 }
 
@@ -481,6 +587,21 @@ export async function savePlaylistGroup(
     ),
   ];
 
+  // Created-time indexes for playlist groups
+  if (playlistGroup.created) {
+    const ts = toSortableTimestamps(playlistGroup.created);
+    operations.push(
+      env.DP1_PLAYLIST_GROUPS.put(
+        `${STORAGE_KEYS.PLAYLIST_GROUP_CREATED_ASC_PREFIX}${ts.asc}:${playlistGroup.id}`,
+        playlistGroup.id
+      ),
+      env.DP1_PLAYLIST_GROUPS.put(
+        `${STORAGE_KEYS.PLAYLIST_GROUP_CREATED_DESC_PREFIX}${ts.desc}:${playlistGroup.id}`,
+        playlistGroup.id
+      )
+    );
+  }
+
   // If this is an update, figure out which playlists are no longer in the group
   // and clean up the old indexes.
   // To be simplified, we assume that uuid v4 is unique cross-system even though
@@ -509,6 +630,18 @@ export async function savePlaylistGroup(
           `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX}${playlistGroup.id}:${playlistId}`
         )
       );
+      // Also remove created-time group playlist indexes
+      if (playlistGroup.created) {
+        const ts = toSortableTimestamps(playlistGroup.created);
+        operations.push(
+          env.DP1_PLAYLISTS.delete(
+            `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_CREATED_ASC_PREFIX}${playlistGroup.id}:${ts.asc}:${playlistId}`
+          ),
+          env.DP1_PLAYLISTS.delete(
+            `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_CREATED_DESC_PREFIX}${playlistGroup.id}:${ts.desc}:${playlistId}`
+          )
+        );
+      }
     }
 
     // Clean up the group associated playlist items
@@ -521,6 +654,17 @@ export async function savePlaylistGroup(
             `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_PREFIX}${playlistGroup.id}:${item.id}`
           )
         );
+        if (playlist.created) {
+          const ts = toSortableTimestamps(playlist.created);
+          operations.push(
+            env.DP1_PLAYLIST_ITEMS.delete(
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_CREATED_ASC_PREFIX}${playlistGroup.id}:${ts.asc}:${item.id}`
+            ),
+            env.DP1_PLAYLIST_ITEMS.delete(
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_CREATED_DESC_PREFIX}${playlistGroup.id}:${ts.desc}:${item.id}`
+            )
+          );
+        }
       }
     }
   }
@@ -539,6 +683,20 @@ export async function savePlaylistGroup(
           validPlaylist.id
         )
       );
+      // Ensure playlist created-time indexes exist
+      if (validPlaylist.playlist.created) {
+        const ts = toSortableTimestamps(validPlaylist.playlist.created);
+        operations.push(
+          env.DP1_PLAYLISTS.put(
+            `${STORAGE_KEYS.PLAYLIST_CREATED_ASC_PREFIX}${ts.asc}:${validPlaylist.id}`,
+            validPlaylist.id
+          ),
+          env.DP1_PLAYLISTS.put(
+            `${STORAGE_KEYS.PLAYLIST_CREATED_DESC_PREFIX}${ts.desc}:${validPlaylist.id}`,
+            validPlaylist.id
+          )
+        );
+      }
     }
 
     // Add bidirectional indexes for efficient lookups
@@ -552,6 +710,21 @@ export async function savePlaylistGroup(
         validPlaylist.id
       )
     );
+
+    // Created-time group->playlists indexes (based on playlist created time)
+    if (validPlaylist.playlist.created) {
+      const ts = toSortableTimestamps(validPlaylist.playlist.created);
+      operations.push(
+        env.DP1_PLAYLISTS.put(
+          `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_CREATED_ASC_PREFIX}${playlistGroup.id}:${ts.asc}:${validPlaylist.id}`,
+          validPlaylist.id
+        ),
+        env.DP1_PLAYLISTS.put(
+          `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_CREATED_DESC_PREFIX}${playlistGroup.id}:${ts.desc}:${validPlaylist.id}`,
+          validPlaylist.id
+        )
+      );
+    }
   }
 
   // Add playlist item operations to the same batch
@@ -569,6 +742,21 @@ export async function savePlaylistGroup(
           env.DP1_PLAYLIST_ITEMS.put(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`, itemData)
         );
 
+        // Global created-time indexes for items using item's created
+        if (item.created) {
+          const ts = toSortableTimestamps(item.created);
+          operations.push(
+            env.DP1_PLAYLIST_ITEMS.put(
+              `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`,
+              item.id
+            ),
+            env.DP1_PLAYLIST_ITEMS.put(
+              `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${ts.desc}:${item.id}`,
+              item.id
+            )
+          );
+        }
+
         // Secondary index by playlist group ID
         operations.push(
           env.DP1_PLAYLIST_ITEMS.put(
@@ -576,6 +764,21 @@ export async function savePlaylistGroup(
             item.id
           )
         );
+
+        // Secondary index by playlist group ID + created time using item's created
+        if (item.created) {
+          const ts = toSortableTimestamps(item.created);
+          operations.push(
+            env.DP1_PLAYLIST_ITEMS.put(
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_CREATED_ASC_PREFIX}${playlistGroup.id}:${ts.asc}:${item.id}`,
+              item.id
+            ),
+            env.DP1_PLAYLIST_ITEMS.put(
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_CREATED_DESC_PREFIX}${playlistGroup.id}:${ts.desc}:${item.id}`,
+              item.id
+            )
+          );
+        }
       }
     }
   }
@@ -615,24 +818,42 @@ export async function listAllPlaylistGroups(
   options: ListOptions = {}
 ): Promise<PaginatedResult<PlaylistGroup>> {
   const limit = options.limit || 1000;
+
+  const prefix =
+    options.sort === 'asc'
+      ? STORAGE_KEYS.PLAYLIST_GROUP_CREATED_ASC_PREFIX
+      : options.sort === 'desc'
+        ? STORAGE_KEYS.PLAYLIST_GROUP_CREATED_DESC_PREFIX
+        : STORAGE_KEYS.PLAYLIST_GROUP_ID_PREFIX; // Default to ID prefix when no sort provided
   const response = await env.DP1_PLAYLIST_GROUPS.list({
-    prefix: STORAGE_KEYS.PLAYLIST_GROUP_ID_PREFIX,
+    prefix,
     limit,
     cursor: options.cursor,
   });
 
-  // Extract key names and batch fetch all playlist groups
-  const keyNames = response.keys.map(key => key.name);
+  const groupKeys: string[] = [];
+  for (const key of response.keys) {
+    if (options.sort) {
+      // Key format: playlist-group:created:(asc|desc):${ts}:${groupId}
+      const parts = key.name.split(':');
+      const groupId = parts[parts.length - 1];
+      groupKeys.push(`${STORAGE_KEYS.PLAYLIST_GROUP_ID_PREFIX}${groupId}`);
+    } else {
+      // Key format: playlist-group:id:${groupId}
+      groupKeys.push(key.name);
+    }
+  }
+
   const groups = await batchFetchFromKV<PlaylistGroup>(
-    keyNames,
+    groupKeys,
     env.DP1_PLAYLIST_GROUPS,
     'playlist group'
   );
 
   return {
     items: groups,
-    cursor: response.list_complete ? undefined : (response as any).cursor,
-    hasMore: !response.list_complete,
+    cursor: (response as any).list_complete ? undefined : (response as any).cursor,
+    hasMore: !(response as any).list_complete,
   };
 }
 
@@ -656,24 +877,42 @@ export async function listAllPlaylistItems(
   options: ListOptions = {}
 ): Promise<PaginatedResult<PlaylistItem>> {
   const limit = options.limit || 1000;
+
+  const prefix =
+    options.sort === 'asc'
+      ? STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX
+      : options.sort === 'desc'
+        ? STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX
+        : STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX; // Default to ID prefix when no sort provided
   const response = await env.DP1_PLAYLIST_ITEMS.list({
-    prefix: STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX,
+    prefix,
     limit,
     cursor: options.cursor,
   });
 
-  // Extract key names and batch fetch all playlist items
-  const keyNames = response.keys.map(key => key.name);
+  const itemKeys: string[] = [];
+  for (const key of response.keys) {
+    if (options.sort) {
+      // Key format: playlist-item:created:(asc|desc):${ts}:${itemId}
+      const parts = key.name.split(':');
+      const itemId = parts[parts.length - 1];
+      itemKeys.push(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${itemId}`);
+    } else {
+      // Key format: playlist-item:id:${itemId}
+      itemKeys.push(key.name);
+    }
+  }
+
   const items = await batchFetchFromKV<PlaylistItem>(
-    keyNames,
+    itemKeys,
     env.DP1_PLAYLIST_ITEMS,
     'playlist item'
   );
 
   return {
     items,
-    cursor: response.list_complete ? undefined : (response as any).cursor,
-    hasMore: !response.list_complete,
+    cursor: (response as any).list_complete ? undefined : (response as any).cursor,
+    hasMore: !(response as any).list_complete,
   };
 }
 
@@ -686,23 +925,31 @@ export async function listPlaylistItemsByGroupId(
   options: ListOptions = {}
 ): Promise<PaginatedResult<PlaylistItem>> {
   const limit = options.limit || 1000;
+
+  const prefix =
+    options.sort === 'asc'
+      ? `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_CREATED_ASC_PREFIX}${playlistGroupId}:`
+      : options.sort === 'desc'
+        ? `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_CREATED_DESC_PREFIX}${playlistGroupId}:`
+        : `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_PREFIX}${playlistGroupId}:`; // Default to basic group prefix
   const response = await env.DP1_PLAYLIST_ITEMS.list({
-    prefix: `${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_PREFIX}${playlistGroupId}:`,
+    prefix,
     limit,
     cursor: options.cursor,
   });
 
-  // Extract playlist item IDs and build actual keys for batch retrieval
   const playlistItemKeys: string[] = [];
   for (const key of response.keys) {
-    try {
-      // Parse the playlist item ID directly from the key
-      // Key format: playlist-item:group-id:$group-id:$playlist-item-id
+    if (options.sort) {
+      // Key format: playlist-item:group-created:(asc|desc):${groupId}:${ts}:${playlistItemId}
       const keyParts = key.name.split(':');
       const playlistItemId = keyParts[keyParts.length - 1]; // Last part is the playlist item ID
       playlistItemKeys.push(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${playlistItemId}`);
-    } catch (error) {
-      console.error(`Error parsing playlist item ID from group reference ${key.name}:`, error);
+    } else {
+      // Key format: playlist-item:group-id:${groupId}:${playlistItemId}
+      const keyParts = key.name.split(':');
+      const playlistItemId = keyParts[keyParts.length - 1]; // Last part is the playlist item ID
+      playlistItemKeys.push(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${playlistItemId}`);
     }
   }
 
@@ -715,7 +962,7 @@ export async function listPlaylistItemsByGroupId(
 
   return {
     items: playlistItems,
-    cursor: response.list_complete ? undefined : (response as any).cursor,
-    hasMore: !response.list_complete,
+    cursor: (response as any).list_complete ? undefined : (response as any).cursor,
+    hasMore: !(response as any).list_complete,
   };
 }

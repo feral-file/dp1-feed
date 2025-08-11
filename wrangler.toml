@@ -39,15 +39,15 @@ SELF_HOSTED_DOMAINS = "dp1-feed-operator-api-dev.autonomy-system.workers.dev"
 # KV namespace bindings for storing JSON data
 [[env.dev.kv_namespaces]]
 binding = "DP1_PLAYLISTS"
-id = "4f76b8ce88854022b9bf80da15b2de34"
+id = "1da79f6f0f914529858468874d4834a2"
 
 [[env.dev.kv_namespaces]]
 binding = "DP1_PLAYLIST_GROUPS"
-id = "be9799c62f3e48528d9ad51516b7f7a5"
+id = "7a34bb7347e54236b107f9077416c5ba"
 
 [[env.dev.kv_namespaces]]
 binding = "DP1_PLAYLIST_ITEMS"
-id = "75d25c68e4ee4284abdc97468eca122a"
+id = "796f0a4b1e7541f48df8e0d744c77b98"
 
 # Dev Queue configuration
 [[env.dev.queues.producers]]

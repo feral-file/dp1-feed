@@ -112,6 +112,7 @@ async function validatePlaylistUpdateBody(
  * - limit: number of items per page (max 100)
  * - cursor: pagination cursor from previous response
  * - playlist-group: filter by playlist group ID
+ * - sort: asc | desc (by created time)
  */
 playlists.get('/', async c => {
   try {
@@ -119,6 +120,8 @@ playlists.get('/', async c => {
     const limit = parseInt(c.req.query('limit') || '100');
     const cursor = c.req.query('cursor') || undefined;
     const playlistGroupId = c.req.query('playlist-group');
+    const sortParam = (c.req.query('sort') || '').toLowerCase();
+    const sort: 'asc' | 'desc' = sortParam === 'asc' ? 'asc' : 'desc'; // Default to 'desc' when no sort or invalid sort
 
     // Validate limit
     if (limit < 1 || limit > 100) {
@@ -134,10 +137,10 @@ playlists.get('/', async c => {
     let result;
     if (playlistGroupId) {
       // Filter by playlist group
-      result = await listPlaylistsByGroupId(playlistGroupId, c.env, { limit, cursor });
+      result = await listPlaylistsByGroupId(playlistGroupId, c.env, { limit, cursor, sort });
     } else {
       // List all playlists
-      result = await listAllPlaylists(c.env, { limit, cursor });
+      result = await listAllPlaylists(c.env, { limit, cursor, sort });
     }
 
     return c.json(result);
@@ -310,11 +313,16 @@ playlists.put('/:id', async c => {
       );
     }
 
-    // Generate IDs for items being replaced
-    const itemsWithIds = validatedData.items.map(item => ({
-      ...item,
-      id: crypto.randomUUID(),
-    }));
+    // Generate IDs and created timestamps for items being replaced
+    const itemsWithIds = validatedData.items.map((item, index) => {
+      // Create a unique timestamp for each item by adding milliseconds based on index
+      const itemTimestamp = new Date(Date.now() + index).toISOString();
+      return {
+        ...item,
+        id: crypto.randomUUID(),
+        created: itemTimestamp,
+      };
+    });
 
     // Create updated playlist by replacing non-protected fields
     const updatedPlaylist: Playlist = {
@@ -416,10 +424,15 @@ playlists.patch('/:id', async c => {
 
     let itemsWithIds = existingPlaylist.items;
     if (validatedData.items) {
-      itemsWithIds = validatedData.items.map(item => ({
-        ...item,
-        id: crypto.randomUUID(),
-      }));
+      itemsWithIds = validatedData.items.map((item, index) => {
+        // Create a unique timestamp for each item by adding milliseconds based on index
+        const itemTimestamp = new Date(Date.now() + index).toISOString();
+        return {
+          ...item,
+          id: crypto.randomUUID(),
+          created: itemTimestamp,
+        };
+      });
     }
 
     // Create updated playlist, allow updating non-protected fields

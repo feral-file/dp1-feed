@@ -44,6 +44,7 @@ const createMockPlaylistResponse = (id: string, slug: string) => {
             source: 'https://example.com/artwork.html',
             duration: 300,
             license: 'open',
+            created: '2024-01-01T00:00:00.001Z',
           },
         ],
       }),
@@ -130,6 +131,7 @@ const testPlaylist: Playlist = {
       source: 'https://example.com/artwork.html',
       duration: 300,
       license: 'open',
+      created: '2024-01-01T00:00:00.001Z',
     },
   ],
 };
@@ -267,6 +269,7 @@ describe('Storage Module', () => {
             source: 'https://example.com/updated-artwork.html',
             duration: 400,
             license: 'token' as const,
+            created: '2024-01-01T00:00:00.002Z',
           },
         ],
       };
@@ -495,6 +498,7 @@ describe('Storage Module', () => {
           source: `https://example.com/item-${i}-${j}.html`,
           duration: 300 + j * 100,
           license: 'open' as const,
+          created: `2024-01-01T00:00:0${i}.00${j}Z`,
         })),
       }));
 
@@ -749,6 +753,246 @@ describe('Storage Module', () => {
       );
       expect(playlistToGroupKeys).toHaveLength(2); // Two playlists in the group
       expect(groupToPlaylistKeys).toHaveLength(2); // Two playlists in the group
+    });
+  });
+
+  describe('Sorting', () => {
+    it('should sort playlists by created asc and desc', async () => {
+      const p1 = { ...testPlaylist, id: 'p-1', slug: 'p-1', created: '2024-01-01T00:00:00Z' };
+      const p2 = { ...testPlaylist, id: 'p-2', slug: 'p-2', created: '2024-01-02T00:00:00Z' };
+      const p3 = { ...testPlaylist, id: 'p-3', slug: 'p-3', created: '2024-01-03T00:00:00Z' };
+      await savePlaylist(p1, testEnv);
+      await savePlaylist(p2, testEnv);
+      await savePlaylist(p3, testEnv);
+
+      const asc = await listAllPlaylists(testEnv, { limit: 10, sort: 'asc' });
+      expect(asc.items.map(p => p.id)).toEqual(['p-1', 'p-2', 'p-3']);
+
+      const desc = await listAllPlaylists(testEnv, { limit: 10, sort: 'desc' });
+      expect(desc.items.map(p => p.id)).toEqual(['p-3', 'p-2', 'p-1']);
+    });
+
+    it('should sort playlists by created within a playlist group', async () => {
+      // Use valid UUIDs for external playlists
+      const u1 = '550e8400-e29b-41d4-a716-446655441111';
+      const u2 = '550e8400-e29b-41d4-a716-446655441112';
+      const u3 = '550e8400-e29b-41d4-a716-446655441113';
+      // Mock fetch for external playlist validation
+      global.fetch = vi.fn((url: string) => {
+        if (url.includes(u1)) {
+          return Promise.resolve({
+            ok: true,
+            json: () =>
+              Promise.resolve({
+                dpVersion: '1.0.0',
+                id: u1,
+                slug: 'p-1',
+                title: 'P1',
+                created: '2024-01-01T00:00:00Z',
+                signature: 'ed25519:0x1234567890abcdef',
+                items: [
+                  {
+                    id: '550e8400-e29b-41d4-a716-446655441211',
+                    title: 'I1',
+                    source: 'https://example.com/i1.html',
+                    duration: 300,
+                    license: 'open',
+                    created: '2024-01-01T00:00:00.001Z',
+                  },
+                ],
+              }),
+          } as Response);
+        }
+        if (url.includes(u2)) {
+          return Promise.resolve({
+            ok: true,
+            json: () =>
+              Promise.resolve({
+                dpVersion: '1.0.0',
+                id: u2,
+                slug: 'p-2',
+                title: 'P2',
+                created: '2024-01-02T00:00:00Z',
+                signature: 'ed25519:0x1234567890abcdef',
+                items: [
+                  {
+                    id: '550e8400-e29b-41d4-a716-446655441212',
+                    title: 'I2',
+                    source: 'https://example.com/i2.html',
+                    duration: 300,
+                    license: 'open',
+                    created: '2024-01-02T00:00:00.001Z',
+                  },
+                ],
+              }),
+          } as Response);
+        }
+        if (url.includes(u3)) {
+          return Promise.resolve({
+            ok: true,
+            json: () =>
+              Promise.resolve({
+                dpVersion: '1.0.0',
+                id: u3,
+                slug: 'p-3',
+                title: 'P3',
+                created: '2024-01-03T00:00:00Z',
+                signature: 'ed25519:0x1234567890abcdef',
+                items: [
+                  {
+                    id: '550e8400-e29b-41d4-a716-446655441213',
+                    title: 'I3',
+                    source: 'https://example.com/i3.html',
+                    duration: 300,
+                    license: 'open',
+                    created: '2024-01-03T00:00:00.001Z',
+                  },
+                ],
+              }),
+          } as Response);
+        }
+        return Promise.resolve({ ok: false, status: 404 } as Response);
+      }) as any;
+
+      const p1 = { ...testPlaylist, id: u1, slug: 'p-1', created: '2024-01-01T00:00:00Z' };
+      const p2 = { ...testPlaylist, id: u2, slug: 'p-2', created: '2024-01-02T00:00:00Z' };
+      const p3 = { ...testPlaylist, id: u3, slug: 'p-3', created: '2024-01-03T00:00:00Z' };
+      await savePlaylist(p1, testEnv);
+      await savePlaylist(p2, testEnv);
+      await savePlaylist(p3, testEnv);
+
+      const group: PlaylistGroup = {
+        ...testPlaylistGroup,
+        id: 'group-sort',
+        slug: 'group-sort',
+        playlists: [
+          `https://example.com/playlists/${u1}`,
+          `https://example.com/playlists/${u2}`,
+          `https://example.com/playlists/${u3}`,
+        ],
+      } as any;
+      await savePlaylistGroup(group, testEnv);
+
+      const asc = await listPlaylistsByGroupId('group-sort', testEnv, { limit: 10, sort: 'asc' });
+      expect(asc.items.map(p => p.id)).toEqual([u1, u2, u3]);
+
+      const desc = await listPlaylistsByGroupId('group-sort', testEnv, { limit: 10, sort: 'desc' });
+      expect(desc.items.map(p => p.id)).toEqual([u3, u2, u1]);
+    });
+
+    it('should sort playlist groups by created asc and desc', async () => {
+      // Mock fetch for external playlist validation
+      mockStandardPlaylistFetch();
+
+      const g1: PlaylistGroup = {
+        ...testPlaylistGroup,
+        id: 'g-1',
+        slug: 'g-1',
+        title: 'G1',
+        created: '2024-01-01T00:00:00Z',
+      };
+      const g2: PlaylistGroup = {
+        ...testPlaylistGroup,
+        id: 'g-2',
+        slug: 'g-2',
+        title: 'G2',
+        created: '2024-01-02T00:00:00Z',
+      };
+      const g3: PlaylistGroup = {
+        ...testPlaylistGroup,
+        id: 'g-3',
+        slug: 'g-3',
+        title: 'G3',
+        created: '2024-01-03T00:00:00Z',
+      };
+      await savePlaylistGroup(g1, testEnv);
+      await savePlaylistGroup(g2, testEnv);
+      await savePlaylistGroup(g3, testEnv);
+
+      const asc = await listAllPlaylistGroups(testEnv, { limit: 10, sort: 'asc' });
+      expect(asc.items.map(g => g.id)).toEqual(['g-1', 'g-2', 'g-3']);
+
+      const desc = await listAllPlaylistGroups(testEnv, { limit: 10, sort: 'desc' });
+      expect(desc.items.map(g => g.id)).toEqual(['g-3', 'g-2', 'g-1']);
+    });
+
+    it('should sort playlist items globally by created asc and desc (based on item created)', async () => {
+      const p1 = { ...testPlaylist, id: 'pp-1', slug: 'pp-1', created: '2024-01-01T00:00:00Z' };
+      const p2 = { ...testPlaylist, id: 'pp-2', slug: 'pp-2', created: '2024-01-02T00:00:00Z' };
+      const p3 = { ...testPlaylist, id: 'pp-3', slug: 'pp-3', created: '2024-01-03T00:00:00Z' };
+      p1.items = [{ ...p1.items[0], id: 'i-1', created: '2024-01-01T00:00:00.001Z' }];
+      p2.items = [{ ...p2.items[0], id: 'i-2', created: '2024-01-02T00:00:00.001Z' }];
+      p3.items = [{ ...p3.items[0], id: 'i-3', created: '2024-01-03T00:00:00.001Z' }];
+      await savePlaylist(p1, testEnv);
+      await savePlaylist(p2, testEnv);
+      await savePlaylist(p3, testEnv);
+
+      const asc = await listAllPlaylistItems(testEnv, { limit: 10, sort: 'asc' });
+      expect(asc.items.map(i => i.id)).toEqual(['i-1', 'i-2', 'i-3']);
+
+      const desc = await listAllPlaylistItems(testEnv, { limit: 10, sort: 'desc' });
+      expect(desc.items.map(i => i.id)).toEqual(['i-3', 'i-2', 'i-1']);
+    });
+
+    it('should sort playlist items by group by created asc and desc', async () => {
+      // Prepare playlists with known created and items
+      const gp1 = '550e8400-e29b-41d4-a716-446655442111';
+      const gp2 = '550e8400-e29b-41d4-a716-446655442112';
+      const p1 = { ...testPlaylist, id: gp1, slug: 'gp-1', created: '2024-01-01T00:00:00Z' };
+      const p2 = { ...testPlaylist, id: gp2, slug: 'gp-2', created: '2024-01-02T00:00:00Z' };
+      const gi1 = '550e8400-e29b-41d4-a716-446655443111';
+      const gi2 = '550e8400-e29b-41d4-a716-446655443112';
+      p1.items = [{ ...p1.items[0], id: gi1, created: '2024-01-01T00:00:00.001Z' }];
+      p2.items = [{ ...p2.items[0], id: gi2, created: '2024-01-02T00:00:00.001Z' }];
+      await savePlaylist(p1, testEnv);
+      await savePlaylist(p2, testEnv);
+
+      // Mock fetch to return playlists when saving the group
+      global.fetch = vi.fn((url: string) => {
+        if (url.includes(gp1)) {
+          return Promise.resolve({
+            ok: true,
+            json: () =>
+              Promise.resolve({
+                ...p1,
+                dpVersion: '1.0.0',
+                signature: 'ed25519:0x1234567890abcdef',
+              }),
+          } as Response);
+        }
+        if (url.includes(gp2)) {
+          return Promise.resolve({
+            ok: true,
+            json: () =>
+              Promise.resolve({
+                ...p2,
+                dpVersion: '1.0.0',
+                signature: 'ed25519:0x1234567890abcdef',
+              }),
+          } as Response);
+        }
+        return Promise.resolve({ ok: false, status: 404 } as Response);
+      }) as any;
+
+      const group: PlaylistGroup = {
+        ...testPlaylistGroup,
+        id: 'group-items-sort',
+        slug: 'group-items-sort',
+        playlists: [`https://example.com/playlists/${gp1}`, `https://example.com/playlists/${gp2}`],
+      } as any;
+      await savePlaylistGroup(group, testEnv);
+
+      const asc = await listPlaylistItemsByGroupId('group-items-sort', testEnv, {
+        limit: 10,
+        sort: 'asc',
+      });
+      expect(asc.items.map(i => i.id)).toEqual([gi1, gi2]);
+
+      const desc = await listPlaylistItemsByGroupId('group-items-sort', testEnv, {
+        limit: 10,
+        sort: 'desc',
+      });
+      expect(desc.items.map(i => i.id)).toEqual([gi2, gi1]);
     });
   });
 
@@ -1054,6 +1298,7 @@ describe('Storage Module', () => {
             source: 'https://example.com/self-hosted-artwork.html',
             duration: 600,
             license: 'open',
+            created: '2024-01-01T00:00:00.001Z',
           },
         ],
       };
@@ -1091,6 +1336,7 @@ describe('Storage Module', () => {
                     source: 'https://external-example.com/external-artwork.html',
                     duration: 400,
                     license: 'open',
+                    created: '2024-01-01T00:00:00.001Z',
                   },
                 ],
               }),

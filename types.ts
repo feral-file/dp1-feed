@@ -191,6 +191,7 @@ const PlaylistItemSchema = z.object({
   display: DisplayPrefsSchema,
   repro: ReproSchema,
   provenance: ProvenanceSchema,
+  created: z.string().datetime(),
 });
 
 // Base schemas without IDs for input validation
@@ -432,6 +433,7 @@ export interface PlaylistItem {
   display?: DisplayPrefs;
   repro?: Repro;
   provenance?: Provenance;
+  created: string;
 }
 
 export interface Playlist {
@@ -551,11 +553,16 @@ export function createPlaylistFromInput(input: PlaylistInput): Playlist {
   const playlistId = crypto.randomUUID();
   const timestamp = new Date().toISOString();
 
-  // Generate IDs for all playlist items and determine slug source
-  const itemsWithIds = input.items.map(item => ({
-    ...item,
-    id: crypto.randomUUID(),
-  }));
+  // Generate IDs for all playlist items with unique timestamps
+  const itemsWithIds = input.items.map((item, index) => {
+    // Create a unique timestamp for each item by adding milliseconds based on index
+    const itemTimestamp = new Date(Date.now() + index).toISOString();
+    return {
+      ...item,
+      id: crypto.randomUUID(),
+      created: itemTimestamp,
+    };
+  });
 
   // Generate slug from first item title or playlist ID
   const slug = generateSlug(input.title || playlistId);
