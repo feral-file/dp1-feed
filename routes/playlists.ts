@@ -121,7 +121,7 @@ playlists.get('/', async c => {
     const cursor = c.req.query('cursor') || undefined;
     const playlistGroupId = c.req.query('playlist-group');
     const sortParam = (c.req.query('sort') || '').toLowerCase();
-    const sort: 'asc' | 'desc' = sortParam === 'asc' ? 'asc' : 'desc'; // Default to 'desc' when no sort or invalid sort
+    const sort: 'asc' | 'desc' = sortParam === 'desc' ? 'desc' : 'asc'; // Default to 'asc' when no sort or invalid sort
 
     // Validate limit
     if (limit < 1 || limit > 100) {
