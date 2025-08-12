@@ -1025,7 +1025,7 @@ async function testPlaylistSortingDescending() {
 }
 
 async function testPlaylistSortingDefault() {
-  console.log('\n🔄 Testing playlist sorting (default - should be desc)...');
+  console.log('\n🔄 Testing playlist sorting (default - should be asc)...');
   const response = await makeRequest('GET', '/api/v1/playlists?limit=10');
 
   if (response.ok) {
@@ -1034,22 +1034,22 @@ async function testPlaylistSortingDefault() {
       console.log(`   Retrieved ${result.items.length} playlists (default sort)`);
 
       if (result.items.length > 1) {
-        // Verify default sort is descending
-        let isDescending = true;
+        // Verify default sort is ascending
+        let isAscending = true;
         for (let i = 1; i < result.items.length; i++) {
           const prev = new Date(result.items[i - 1].created);
           const curr = new Date(result.items[i].created);
-          if (prev < curr) {
-            console.log(`❌ Default sort is not descending at index ${i}`);
-            isDescending = false;
+          if (prev > curr) {
+            console.log(`❌ Default sort is not ascending at index ${i}`);
+            isAscending = false;
             break;
           }
         }
 
-        if (isDescending) {
-          console.log('✅ Default sorting is descending (newest first)');
+        if (isAscending) {
+          console.log('✅ Default sorting is ascending (oldest first)');
         } else {
-          console.log('❌ Default sorting is not descending');
+          console.log('❌ Default sorting is not ascending');
           return false;
         }
       } else {
