@@ -69,15 +69,15 @@ SELF_HOSTED_DOMAINS = "feed.feralfile.com, dp1-feed-operator-api-prod.autonomy-s
 # Production KV namespaces
 [[env.production.kv_namespaces]]
 binding = "DP1_PLAYLISTS"
-id = "12e4c094c5c4463ba2037ec73e2fc43c"
+id = "d8dd2c9576964fd4832fd16dd3feceb8"
 
 [[env.production.kv_namespaces]]
 binding = "DP1_PLAYLIST_GROUPS"
-id = "772479c78107479ab1a4f3e791ca1124"
+id = "99d0a95fdb844df6bd01e688c014be26"
 
 [[env.production.kv_namespaces]]
 binding = "DP1_PLAYLIST_ITEMS"
-id = "0feae59357f4421db1346ccc50e82360"
+id = "97e0151430994b37b443eda4260f07d7"
 
 # Production Queue configuration
 [[env.production.queues.producers]]
