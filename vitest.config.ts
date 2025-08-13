@@ -18,6 +18,9 @@ export default defineConfig({
         'scripts/**',
         'eslint.config.js',
         'k6/**',
+        'storage/index.ts',
+        'queue/index.ts',
+        'test-helpers.ts',
       ],
       thresholds: {
         global: {

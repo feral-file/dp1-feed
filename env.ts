@@ -134,7 +134,7 @@ function createNATSQueueProvider(_bindings: SelfHostedBindings): any {
  * Helper function to detect if bindings are CloudFlare-specific
  */
 export function isCloudFlareBindings(bindings: any): bindings is CloudFlareBindings {
-  return (
+  return !!(
     bindings &&
     typeof bindings === 'object' &&
     'DP1_PLAYLISTS' in bindings &&
@@ -148,7 +148,7 @@ export function isCloudFlareBindings(bindings: any): bindings is CloudFlareBindi
  * Helper function to detect if bindings are self-hosted configuration
  */
 export function isSelfHostedBindings(bindings: any): bindings is SelfHostedBindings {
-  return (
+  return !!(
     bindings &&
     typeof bindings === 'object' &&
     ('FOUNDATIONDB_CLUSTER_FILE' in bindings || 'NATS_URL' in bindings)

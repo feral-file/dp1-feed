@@ -34,11 +34,11 @@ export class CloudFlareKVStorage implements KeyValueStorage {
 
         // Handle the case where batchResults might be null (if all keys don't exist)
         if (batchResults instanceof Map) {
-          for (const [key, value] of batchResults.entries()) {
+          batchResults.forEach((value, key) => {
             if (value !== null) {
               resultMap.set(key, value);
             }
-          }
+          });
         } else {
           // Fallback: try individual gets for this batch
           console.warn(

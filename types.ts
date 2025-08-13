@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import semver from 'semver';
+import * as semver from 'semver';
 
 // Minimum DP-1 protocol version supported by this server
 export const MIN_DP_VERSION = '1.0.0';
