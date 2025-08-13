@@ -1,13 +1,7 @@
 import { Hono, Context } from 'hono';
 import { z } from 'zod';
-import type {
-  Env,
-  PlaylistGroupInput,
-  PlaylistGroupUpdate,
-  PlaylistGroup,
-  CreatePlaylistGroupMessage,
-  UpdatePlaylistGroupMessage,
-} from '../types';
+import type { Env, PlaylistGroupInput, PlaylistGroupUpdate, PlaylistGroup } from '../types';
+import type { CreatePlaylistGroupMessage, UpdatePlaylistGroupMessage } from '../queue/interfaces';
 import {
   PlaylistGroupInputSchema,
   PlaylistGroupUpdateSchema,
@@ -16,9 +10,10 @@ import {
 } from '../types';
 import { listAllPlaylistGroups, getPlaylistGroupByIdOrSlug } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
+import type { EnvironmentBindings } from '../env';
 
 // Create playlist groups router
-const playlistGroups = new Hono<{ Bindings: Env }>();
+const playlistGroups = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();
 
 /**
  * Validate identifier format (UUID or slug)
@@ -131,7 +126,7 @@ playlistGroups.get('/', async c => {
       );
     }
 
-    const result = await listAllPlaylistGroups(c.env, { limit, cursor, sort });
+    const result = await listAllPlaylistGroups(c.var.env, { limit, cursor, sort });
     return c.json(result);
   } catch (error) {
     console.error('Error retrieving playlist groups:', error);
@@ -165,7 +160,7 @@ playlistGroups.get('/:id', async c => {
       );
     }
 
-    const group = await getPlaylistGroupByIdOrSlug(groupId, c.env);
+    const group = await getPlaylistGroupByIdOrSlug(groupId, c.var.env);
 
     if (!group) {
       return c.json(
@@ -224,7 +219,7 @@ playlistGroups.post('/', async c => {
 
     // Queue the save operation for async processing
     try {
-      await queueWriteOperation(queueMessage, c.env);
+      await queueWriteOperation(queueMessage, c.var.env);
     } catch (queueError) {
       console.error('Failed to queue playlist group creation:', queueError);
       return c.json(
@@ -284,7 +279,7 @@ playlistGroups.put('/:id', async c => {
     }
 
     // Check if playlist group exists first
-    const existingGroup = await getPlaylistGroupByIdOrSlug(groupId, c.env);
+    const existingGroup = await getPlaylistGroupByIdOrSlug(groupId, c.var.env);
     if (!existingGroup) {
       return c.json(
         {
@@ -320,7 +315,7 @@ playlistGroups.put('/:id', async c => {
 
     // Queue the update operation for async processing
     try {
-      await queueWriteOperation(queueMessage, c.env);
+      await queueWriteOperation(queueMessage, c.var.env);
     } catch (queueError) {
       console.error('Failed to queue playlist group update:', queueError);
       return c.json(
@@ -380,7 +375,7 @@ playlistGroups.patch('/:id', async c => {
     }
 
     // Check if playlist group exists first
-    const existingGroup = await getPlaylistGroupByIdOrSlug(groupId, c.env);
+    const existingGroup = await getPlaylistGroupByIdOrSlug(groupId, c.var.env);
     if (!existingGroup) {
       return c.json(
         {
@@ -416,7 +411,7 @@ playlistGroups.patch('/:id', async c => {
 
     // Queue the update operation for async processing
     try {
-      await queueWriteOperation(queueMessage, c.env);
+      await queueWriteOperation(queueMessage, c.var.env);
     } catch (queueError) {
       console.error('Failed to queue playlist group update:', queueError);
       return c.json(

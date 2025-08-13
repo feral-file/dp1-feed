@@ -5,7 +5,10 @@ import type { Env } from '../types';
  * Authentication middleware for Hono
  * Checks Bearer token for write operations (POST, PUT, PATCH, DELETE)
  */
-export async function authMiddleware(c: Context<{ Bindings: Env }>, next: Next): Promise<void> {
+export async function authMiddleware(
+  c: Context<{ Bindings: any; Variables: { env: Env } }>,
+  next: Next
+): Promise<void> {
   const method = c.req.method;
 
   // Only require authentication for write operations
@@ -33,7 +36,7 @@ export async function authMiddleware(c: Context<{ Bindings: Env }>, next: Next):
   }
 
   const token = authorization.replace(/^Bearer\s+/, '');
-  const expectedSecret = c.env.API_SECRET;
+  const expectedSecret = c.var.env.API_SECRET;
 
   if (!expectedSecret) {
     console.error('API_SECRET not configured');

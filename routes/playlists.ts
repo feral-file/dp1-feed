@@ -1,13 +1,8 @@
 import { Hono, Context } from 'hono';
 import { z } from 'zod';
-import type {
-  Env,
-  PlaylistInput,
-  PlaylistUpdate,
-  Playlist,
-  CreatePlaylistMessage,
-  UpdatePlaylistMessage,
-} from '../types';
+import type { Env, PlaylistInput, PlaylistUpdate, Playlist } from '../types';
+import type { EnvironmentBindings } from '../env';
+import type { CreatePlaylistMessage, UpdatePlaylistMessage } from '../queue/interfaces';
 import {
   PlaylistInputSchema,
   PlaylistUpdateSchema,
@@ -19,7 +14,7 @@ import { listAllPlaylists, getPlaylistByIdOrSlug, listPlaylistsByGroupId } from 
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
 
 // Create playlist router
-const playlists = new Hono<{ Bindings: Env }>();
+const playlists = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();
 
 /**
  * Validate identifier format (UUID or slug)
@@ -137,10 +132,10 @@ playlists.get('/', async c => {
     let result;
     if (playlistGroupId) {
       // Filter by playlist group
-      result = await listPlaylistsByGroupId(playlistGroupId, c.env, { limit, cursor, sort });
+      result = await listPlaylistsByGroupId(playlistGroupId, c.var.env, { limit, cursor, sort });
     } else {
       // List all playlists
-      result = await listAllPlaylists(c.env, { limit, cursor, sort });
+      result = await listAllPlaylists(c.var.env, { limit, cursor, sort });
     }
 
     return c.json(result);
@@ -176,7 +171,7 @@ playlists.get('/:id', async c => {
       );
     }
 
-    const playlist = await getPlaylistByIdOrSlug(playlistId, c.env);
+    const playlist = await getPlaylistByIdOrSlug(playlistId, c.var.env);
 
     if (!playlist) {
       return c.json(
@@ -224,7 +219,7 @@ playlists.post('/', async c => {
     const playlist = createPlaylistFromInput(validatedData);
 
     // Sign the playlist using ed25519 as per DP-1 specification
-    const keyPair = await getServerKeyPair(c.env);
+    const keyPair = await getServerKeyPair(c.var.env);
 
     // Sign the playlist
     playlist.signature = await signPlaylist(playlist, keyPair.privateKey);
@@ -241,7 +236,7 @@ playlists.post('/', async c => {
 
     // Queue the save operation for async processing
     try {
-      await queueWriteOperation(queueMessage, c.env);
+      await queueWriteOperation(queueMessage, c.var.env);
     } catch (queueError) {
       console.error('Failed to queue playlist creation:', queueError);
       return c.json(
@@ -302,7 +297,7 @@ playlists.put('/:id', async c => {
     }
 
     // Check if playlist exists first
-    const existingPlaylist = await getPlaylistByIdOrSlug(playlistId, c.env);
+    const existingPlaylist = await getPlaylistByIdOrSlug(playlistId, c.var.env);
     if (!existingPlaylist) {
       return c.json(
         {
@@ -336,7 +331,7 @@ playlists.put('/:id', async c => {
     };
 
     // Re-sign the playlist
-    const keyPair = await getServerKeyPair(c.env);
+    const keyPair = await getServerKeyPair(c.var.env);
     updatedPlaylist.signature = await signPlaylist(updatedPlaylist, keyPair.privateKey);
 
     // Create queue message for async processing
@@ -352,7 +347,7 @@ playlists.put('/:id', async c => {
 
     // Queue the update operation for async processing
     try {
-      await queueWriteOperation(queueMessage, c.env);
+      await queueWriteOperation(queueMessage, c.var.env);
     } catch (queueError) {
       console.error('Failed to queue playlist update:', queueError);
       return c.json(
@@ -411,7 +406,7 @@ playlists.patch('/:id', async c => {
     }
 
     // Check if playlist exists first
-    const existingPlaylist = await getPlaylistByIdOrSlug(playlistId, c.env);
+    const existingPlaylist = await getPlaylistByIdOrSlug(playlistId, c.var.env);
     if (!existingPlaylist) {
       return c.json(
         {
@@ -447,7 +442,7 @@ playlists.patch('/:id', async c => {
     };
 
     // Re-sign the playlist
-    const keyPair = await getServerKeyPair(c.env);
+    const keyPair = await getServerKeyPair(c.var.env);
     updatedPlaylist.signature = await signPlaylist(updatedPlaylist, keyPair.privateKey);
 
     // Create queue message for async processing
@@ -463,7 +458,7 @@ playlists.patch('/:id', async c => {
 
     // Queue the update operation for async processing
     try {
-      await queueWriteOperation(queueMessage, c.env);
+      await queueWriteOperation(queueMessage, c.var.env);
     } catch (queueError) {
       console.error('Failed to queue playlist update:', queueError);
       return c.json(

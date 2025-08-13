@@ -57,7 +57,7 @@ export default [
       'no-console': 'off',
       eqeqeq: ['error', 'always'],
       curly: ['error', 'all'],
-      'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      'no-unused-vars': 'off', // Disable in favor of @typescript-eslint/no-unused-vars
     },
   },
 

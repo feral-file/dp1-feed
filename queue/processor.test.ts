@@ -1,23 +1,33 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import type { MessageBatch, Message } from '@cloudflare/workers-types';
+
+// Mock the StorageService methods BEFORE importing anything that uses them
+const mockSavePlaylist = vi.fn();
+const mockSavePlaylistGroup = vi.fn();
+
+vi.mock('../storage/service', () => {
+  return {
+    StorageService: vi.fn().mockImplementation(() => ({
+      savePlaylist: mockSavePlaylist,
+      savePlaylistGroup: mockSavePlaylistGroup,
+    })),
+  };
+});
+
 import { processWriteOperations, queueWriteOperation, generateMessageId } from './processor';
+import type { Env, Playlist, PlaylistGroup } from '../types';
 import type {
-  Env,
-  Playlist,
-  PlaylistGroup,
   CreatePlaylistMessage,
   UpdatePlaylistMessage,
   CreatePlaylistGroupMessage,
   UpdatePlaylistGroupMessage,
-} from '../types';
-
-// Mock the storage module
-vi.mock('../storage', () => ({
-  savePlaylist: vi.fn(),
-  savePlaylistGroup: vi.fn(),
-}));
-
-import { savePlaylist, savePlaylistGroup } from '../storage';
+} from './interfaces';
+import {
+  createTestEnv,
+  createMockMessageBatch,
+  setupStandardPlaylistFetch,
+  MockQueue,
+  MockKeyValueStorage,
+} from '../test-helpers';
 
 // Mock console methods to avoid noise in tests
 const consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
@@ -52,71 +62,38 @@ const mockPlaylistGroup: PlaylistGroup = {
   created: '2024-01-01T00:00:00Z',
 };
 
-// Mock KV implementation for testing
-const createMockKV = () => {
-  const storage = new Map<string, string>();
-  return {
-    storage,
-    get: async (key: string) => storage.get(key) || null,
-    put: async (key: string, value: string) => {
-      storage.set(key, value);
-    },
-    delete: async (key: string) => {
-      storage.delete(key);
-    },
-    list: async () => ({ keys: [], list_complete: true }),
-  };
-};
-
-// Mock Queue implementation for testing
-const createMockQueue = () => {
-  const messages: any[] = [];
-  return {
-    messages, // Expose for testing
-    send: vi.fn(async (message: any) => {
-      messages.push(message);
-      return { id: `msg-${Date.now()}` };
-    }),
-  };
-};
-
-// Test environment setup
-const createTestEnv = (): Env => {
-  const mockQueue = createMockQueue();
-  return {
-    API_SECRET: 'test-secret-key',
-    ED25519_PRIVATE_KEY: 'test-private-key',
-    ENVIRONMENT: 'test',
-    DP1_PLAYLISTS: createMockKV() as any,
-    DP1_PLAYLIST_GROUPS: createMockKV() as any,
-    DP1_PLAYLIST_ITEMS: createMockKV() as any,
-    DP1_WRITE_QUEUE: mockQueue as any,
-  };
-};
-
-// Helper to create mock message batch
-const createMockMessageBatch = (messages: any[]): MessageBatch<unknown> => ({
-  messages: messages.map((body, index) => ({
-    id: `message-${index}`,
-    timestamp: new Date(),
-    body,
-    attempts: 1,
-    ack: vi.fn(),
-    retry: vi.fn(),
-  })),
-  queue: 'test-queue',
-  retryAll: vi.fn(),
-  ackAll: vi.fn(),
-});
-
 describe('Queue Processor', () => {
   let testEnv: Env;
+  let mockQueue: MockQueue;
+  let mockStorages: {
+    playlist: MockKeyValueStorage;
+    group: MockKeyValueStorage;
+    item: MockKeyValueStorage;
+  };
 
   beforeEach(() => {
-    testEnv = createTestEnv();
+    const setup = createTestEnv();
+    testEnv = setup.env;
+    mockQueue = setup.mockQueue;
+    mockStorages = setup.mockStorages;
+
     vi.clearAllMocks();
+    mockSavePlaylist.mockClear();
+    mockSavePlaylistGroup.mockClear();
     consoleLogSpy.mockClear();
     consoleErrorSpy.mockClear();
+
+    // Clear storage
+    mockStorages.playlist.storage.clear();
+    mockStorages.group.storage.clear();
+    mockStorages.item.storage.clear();
+
+    // Reset queue
+    mockQueue.messages.length = 0;
+    mockQueue.sendMock.mockClear();
+
+    // Set up standard fetch mocks
+    setupStandardPlaylistFetch();
   });
 
   describe('generateMessageId', () => {
@@ -154,9 +131,9 @@ describe('Queue Processor', () => {
 
       await queueWriteOperation(message, testEnv);
 
-      expect(testEnv.DP1_WRITE_QUEUE.send).toHaveBeenCalledWith(message);
+      expect(mockQueue.sendMock).toHaveBeenCalledWith(message, undefined);
       expect(consoleLogSpy).toHaveBeenCalledWith(
-        `Queued ${message.operation} operation with id ${message.id}`
+        expect.stringContaining(`Queued ${message.operation} operation`)
       );
     });
 
@@ -169,7 +146,7 @@ describe('Queue Processor', () => {
       };
 
       // Mock queue send to fail
-      vi.mocked(testEnv.DP1_WRITE_QUEUE.send).mockRejectedValueOnce(new Error('Queue error'));
+      mockQueue.sendMock.mockRejectedValueOnce(new Error('Queue error'));
 
       await expect(queueWriteOperation(message, testEnv)).rejects.toThrow(
         'Failed to queue write operation'
@@ -192,15 +169,19 @@ describe('Queue Processor', () => {
         };
 
         const batch = createMockMessageBatch([message]);
-        vi.mocked(savePlaylist).mockResolvedValueOnce(true);
+        mockSavePlaylist.mockResolvedValueOnce(true);
 
         await processWriteOperations(batch, testEnv);
 
-        expect(savePlaylist).toHaveBeenCalledWith(mockPlaylist, testEnv);
-        expect(batch.messages[0].ack).toHaveBeenCalled();
-        expect(consoleLogSpy).toHaveBeenCalledWith(
-          `Successfully processed ${message.operation} operation with id ${message.id}`
+        expect(mockSavePlaylist).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockPlaylist.id,
+            title: mockPlaylist.title,
+          }),
+          false
         );
+        expect(batch.ackAll).toHaveBeenCalled();
+        expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining(`Processed message`));
       });
 
       it('should handle playlist creation failure', async () => {
@@ -212,14 +193,23 @@ describe('Queue Processor', () => {
         };
 
         const batch = createMockMessageBatch([message]);
-        vi.mocked(savePlaylist).mockResolvedValueOnce(false);
+        mockSavePlaylist.mockRejectedValueOnce(new Error('Playlist save failed'));
 
-        await processWriteOperations(batch, testEnv);
+        // The whole batch should fail if any message fails
+        await expect(processWriteOperations(batch, testEnv)).rejects.toThrow(
+          'Playlist save failed'
+        );
 
-        expect(savePlaylist).toHaveBeenCalledWith(mockPlaylist, testEnv);
-        expect(batch.messages[0].retry).toHaveBeenCalled();
+        expect(mockSavePlaylist).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockPlaylist.id,
+            title: mockPlaylist.title,
+          }),
+          false
+        );
+        expect(batch.ackAll).not.toHaveBeenCalled();
         expect(consoleErrorSpy).toHaveBeenCalledWith(
-          'Error processing queue message:',
+          expect.stringContaining('Error processing message'),
           expect.any(Error)
         );
       });
@@ -238,15 +228,19 @@ describe('Queue Processor', () => {
         };
 
         const batch = createMockMessageBatch([message]);
-        vi.mocked(savePlaylist).mockResolvedValueOnce(true);
+        mockSavePlaylist.mockResolvedValueOnce(true);
 
         await processWriteOperations(batch, testEnv);
 
-        expect(savePlaylist).toHaveBeenCalledWith(mockPlaylist, testEnv, true);
-        expect(batch.messages[0].ack).toHaveBeenCalled();
-        expect(consoleLogSpy).toHaveBeenCalledWith(
-          `Successfully processed ${message.operation} operation with id ${message.id}`
+        expect(mockSavePlaylist).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockPlaylist.id,
+            title: mockPlaylist.title,
+          }),
+          true
         );
+        expect(batch.ackAll).toHaveBeenCalled();
+        expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining(`Processed message`));
       });
 
       it('should handle playlist update failure', async () => {
@@ -261,12 +255,20 @@ describe('Queue Processor', () => {
         };
 
         const batch = createMockMessageBatch([message]);
-        vi.mocked(savePlaylist).mockResolvedValueOnce(false);
+        mockSavePlaylist.mockRejectedValueOnce(new Error('Playlist update failed'));
 
-        await processWriteOperations(batch, testEnv);
+        await expect(processWriteOperations(batch, testEnv)).rejects.toThrow(
+          'Playlist update failed'
+        );
 
-        expect(savePlaylist).toHaveBeenCalledWith(mockPlaylist, testEnv, true);
-        expect(batch.messages[0].retry).toHaveBeenCalled();
+        expect(mockSavePlaylist).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockPlaylist.id,
+            title: mockPlaylist.title,
+          }),
+          true
+        );
+        expect(batch.ackAll).not.toHaveBeenCalled();
       });
     });
 
@@ -276,19 +278,26 @@ describe('Queue Processor', () => {
           id: generateMessageId('create_playlist_group', mockPlaylistGroup.id),
           timestamp: new Date().toISOString(),
           operation: 'create_playlist_group',
-          data: { playlistGroup: mockPlaylistGroup },
+          data: {
+            playlistGroup: mockPlaylistGroup,
+          },
         };
 
         const batch = createMockMessageBatch([message]);
-        vi.mocked(savePlaylistGroup).mockResolvedValueOnce(true);
+        mockSavePlaylistGroup.mockResolvedValueOnce(true);
 
         await processWriteOperations(batch, testEnv);
 
-        expect(savePlaylistGroup).toHaveBeenCalledWith(mockPlaylistGroup, testEnv);
-        expect(batch.messages[0].ack).toHaveBeenCalled();
-        expect(consoleLogSpy).toHaveBeenCalledWith(
-          `Successfully saved playlist group ${mockPlaylistGroup.id} (${mockPlaylistGroup.title})`
+        expect(mockSavePlaylistGroup).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockPlaylistGroup.id,
+            title: mockPlaylistGroup.title,
+          }),
+          expect.any(Object),
+          false
         );
+        expect(batch.ackAll).toHaveBeenCalled();
+        expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining(`Processed message`));
       });
 
       it('should handle playlist group creation failure', async () => {
@@ -296,16 +305,27 @@ describe('Queue Processor', () => {
           id: generateMessageId('create_playlist_group', mockPlaylistGroup.id),
           timestamp: new Date().toISOString(),
           operation: 'create_playlist_group',
-          data: { playlistGroup: mockPlaylistGroup },
+          data: {
+            playlistGroup: mockPlaylistGroup,
+          },
         };
 
         const batch = createMockMessageBatch([message]);
-        vi.mocked(savePlaylistGroup).mockResolvedValueOnce(false);
+        mockSavePlaylistGroup.mockRejectedValueOnce(new Error('Playlist group creation failed'));
 
-        await processWriteOperations(batch, testEnv);
+        await expect(processWriteOperations(batch, testEnv)).rejects.toThrow(
+          'Playlist group creation failed'
+        );
 
-        expect(savePlaylistGroup).toHaveBeenCalledWith(mockPlaylistGroup, testEnv);
-        expect(batch.messages[0].retry).toHaveBeenCalled();
+        expect(mockSavePlaylistGroup).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockPlaylistGroup.id,
+            title: mockPlaylistGroup.title,
+          }),
+          expect.any(Object),
+          false
+        );
+        expect(batch.ackAll).not.toHaveBeenCalled();
       });
     });
 
@@ -322,12 +342,19 @@ describe('Queue Processor', () => {
         };
 
         const batch = createMockMessageBatch([message]);
-        vi.mocked(savePlaylistGroup).mockResolvedValueOnce(true);
+        mockSavePlaylistGroup.mockResolvedValueOnce(true);
 
         await processWriteOperations(batch, testEnv);
 
-        expect(savePlaylistGroup).toHaveBeenCalledWith(mockPlaylistGroup, testEnv, true);
-        expect(batch.messages[0].ack).toHaveBeenCalled();
+        expect(mockSavePlaylistGroup).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockPlaylistGroup.id,
+            title: mockPlaylistGroup.title,
+          }),
+          expect.any(Object),
+          true
+        );
+        expect(batch.ackAll).toHaveBeenCalled();
       });
 
       it('should handle playlist group update failure', async () => {
@@ -342,12 +369,21 @@ describe('Queue Processor', () => {
         };
 
         const batch = createMockMessageBatch([message]);
-        vi.mocked(savePlaylistGroup).mockResolvedValueOnce(false);
+        mockSavePlaylistGroup.mockRejectedValueOnce(new Error('Playlist group update failed'));
 
-        await processWriteOperations(batch, testEnv);
+        await expect(processWriteOperations(batch, testEnv)).rejects.toThrow(
+          'Playlist group update failed'
+        );
 
-        expect(savePlaylistGroup).toHaveBeenCalledWith(mockPlaylistGroup, testEnv, true);
-        expect(batch.messages[0].retry).toHaveBeenCalled();
+        expect(mockSavePlaylistGroup).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockPlaylistGroup.id,
+            title: mockPlaylistGroup.title,
+          }),
+          expect.any(Object),
+          true
+        );
+        expect(batch.ackAll).not.toHaveBeenCalled();
       });
     });
 
@@ -368,16 +404,28 @@ describe('Queue Processor', () => {
         };
 
         const batch = createMockMessageBatch([playlistMessage, groupMessage]);
-        vi.mocked(savePlaylist).mockResolvedValueOnce(true);
-        vi.mocked(savePlaylistGroup).mockResolvedValueOnce(true);
+        mockSavePlaylist.mockResolvedValueOnce(true);
+        mockSavePlaylistGroup.mockResolvedValueOnce(true);
 
         await processWriteOperations(batch, testEnv);
 
-        expect(savePlaylist).toHaveBeenCalledWith(mockPlaylist, testEnv);
-        expect(savePlaylistGroup).toHaveBeenCalledWith(mockPlaylistGroup, testEnv);
-        expect(batch.messages[0].ack).toHaveBeenCalled();
-        expect(batch.messages[1].ack).toHaveBeenCalled();
-        expect(consoleLogSpy).toHaveBeenCalledWith('Processing 2 write operations');
+        expect(mockSavePlaylist).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockPlaylist.id,
+            title: mockPlaylist.title,
+          }),
+          false
+        );
+        expect(mockSavePlaylistGroup).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockPlaylistGroup.id,
+            title: mockPlaylistGroup.title,
+          }),
+          expect.any(Object),
+          false
+        );
+        expect(batch.ackAll).toHaveBeenCalled();
+        expect(consoleLogSpy).toHaveBeenCalledWith('Processing batch of 2 write operations');
       });
 
       it('should continue processing other messages if one fails', async () => {
@@ -396,22 +444,23 @@ describe('Queue Processor', () => {
         };
 
         const batch = createMockMessageBatch([message1, message2]);
-        vi.mocked(savePlaylist).mockResolvedValueOnce(false); // First fails
-        vi.mocked(savePlaylistGroup).mockResolvedValueOnce(true); // Second succeeds
+        mockSavePlaylist.mockRejectedValueOnce(new Error('Playlist creation failed')); // First fails
+        mockSavePlaylistGroup.mockResolvedValueOnce(true); // Second succeeds
 
-        await processWriteOperations(batch, testEnv);
+        await expect(processWriteOperations(batch, testEnv)).rejects.toThrow(
+          'Playlist creation failed'
+        );
 
-        expect(savePlaylist).toHaveBeenCalled();
-        expect(savePlaylistGroup).toHaveBeenCalled();
-        expect(batch.messages[0].retry).toHaveBeenCalled(); // First message retried
-        expect(batch.messages[1].ack).toHaveBeenCalled(); // Second message acked
+        expect(mockSavePlaylist).toHaveBeenCalled();
+        expect(mockSavePlaylistGroup).toHaveBeenCalled();
+        expect(batch.ackAll).not.toHaveBeenCalled(); // Batch should not be acked on failure
       });
     });
 
     describe('error handling', () => {
       it('should handle unknown operations', async () => {
         const invalidMessage = {
-          id: 'test-id',
+          id: generateMessageId('unknown_operation', 'unknown-id'),
           timestamp: new Date().toISOString(),
           operation: 'unknown_operation' as any,
           data: {},
@@ -419,11 +468,13 @@ describe('Queue Processor', () => {
 
         const batch = createMockMessageBatch([invalidMessage]);
 
-        await processWriteOperations(batch, testEnv);
+        await expect(processWriteOperations(batch, testEnv)).rejects.toThrow(
+          'Unknown message operation: unknown_operation'
+        );
 
-        expect(batch.messages[0].retry).toHaveBeenCalled();
+        expect(batch.ackAll).not.toHaveBeenCalled();
         expect(consoleErrorSpy).toHaveBeenCalledWith(
-          'Error processing queue message:',
+          'Error processing message message-0:',
           expect.any(Error)
         );
       });
@@ -437,13 +488,13 @@ describe('Queue Processor', () => {
         };
 
         const batch = createMockMessageBatch([message]);
-        vi.mocked(savePlaylist).mockRejectedValueOnce(new Error('Storage error'));
+        mockSavePlaylist.mockRejectedValueOnce(new Error('Storage error'));
 
-        await processWriteOperations(batch, testEnv);
+        await expect(processWriteOperations(batch, testEnv)).rejects.toThrow('Storage error');
 
-        expect(batch.messages[0].retry).toHaveBeenCalled();
+        expect(batch.ackAll).not.toHaveBeenCalled();
         expect(consoleErrorSpy).toHaveBeenCalledWith(
-          'Error processing queue message:',
+          'Error processing message message-0:',
           expect.any(Error)
         );
       });

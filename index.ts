@@ -1,5 +1,6 @@
 import { Hono } from 'hono';
 import { MIN_DP_VERSION, type Env } from './types';
+import { type CloudFlareBindings, type EnvironmentBindings, initializeCloudFlareEnv } from './env';
 import {
   authMiddleware,
   corsMiddleware,
@@ -7,6 +8,7 @@ import {
   loggingMiddleware,
   validateJsonMiddleware,
 } from './middleware/auth';
+import { envMiddleware } from './middleware/env';
 import { playlists } from './routes/playlists';
 import { playlistGroups } from './routes/playlistGroups';
 import playlistItems from './routes/playlistItems';
@@ -25,14 +27,15 @@ import { MessageBatch, ExecutionContext } from '@cloudflare/workers-types';
  * - DP-1 v1.0.0 specification implementation
  */
 
-// Create main Hono app
-const app = new Hono<{ Bindings: Env }>();
+// Create main Hono app with support for multiple environment types
+const app = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();
 
 // Global middleware stack
 app.use('*', errorMiddleware); // Error handling (first)
 app.use('*', loggingMiddleware); // Request logging
 app.use('*', corsMiddleware); // CORS headers
-app.use('*', authMiddleware); // Authentication (before validation)
+app.use('*', envMiddleware); // Environment initialization (before auth)
+app.use('*', authMiddleware); // Authentication (after env setup)
 app.use('*', validateJsonMiddleware); // Content-Type validation (last)
 
 // API version info
@@ -60,7 +63,7 @@ app.get('/api/v1/health', c => {
     status: 'healthy',
     timestamp: new Date().toISOString(),
     version: MIN_DP_VERSION,
-    environment: c.env.ENVIRONMENT || 'development',
+    environment: c.var.env?.ENVIRONMENT || 'development',
   });
 });
 
@@ -110,7 +113,12 @@ app.onError((error, c) => {
 });
 
 // Queue consumer for async write operations
-async function queue(batch: MessageBatch, env: Env, _ctx: ExecutionContext): Promise<void> {
+async function queue(
+  batch: MessageBatch,
+  bindings: CloudFlareBindings,
+  _ctx: ExecutionContext
+): Promise<void> {
+  const env = initializeCloudFlareEnv(bindings);
   await processWriteOperations(batch, env);
 }
 

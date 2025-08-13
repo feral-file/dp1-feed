@@ -1,9 +1,10 @@
 import { Hono } from 'hono';
 import type { Env } from '../types';
+import type { EnvironmentBindings } from '../env';
 import { getPlaylistItemById, listAllPlaylistItems, listPlaylistItemsByGroupId } from '../storage';
 
 // Create playlist items router
-const playlistItems = new Hono<{ Bindings: Env }>();
+const playlistItems = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();
 
 /**
  * Validate identifier format (UUID only for playlist items)
@@ -40,7 +41,7 @@ playlistItems.get('/:id', async c => {
       );
     }
 
-    const playlistItem = await getPlaylistItemById(itemId, c.env);
+    const playlistItem = await getPlaylistItemById(itemId, c.var.env);
 
     if (!playlistItem) {
       return c.json(
@@ -110,13 +111,13 @@ playlistItems.get('/', async c => {
           400
         );
       }
-      result = await listPlaylistItemsByGroupId(playlistGroupId, c.env, {
+      result = await listPlaylistItemsByGroupId(playlistGroupId, c.var.env, {
         limit,
         cursor,
         sort,
       });
     } else {
-      result = await listAllPlaylistItems(c.env, {
+      result = await listAllPlaylistItems(c.var.env, {
         limit,
         cursor,
         sort,

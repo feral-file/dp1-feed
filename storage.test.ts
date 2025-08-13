@@ -14,6 +14,7 @@ import {
   STORAGE_KEYS,
 } from './storage';
 import type { Env, Playlist, PlaylistGroup } from './types';
+import { createTestEnv, MockKeyValueStorage, MockQueue } from './test-helpers';
 
 const playlistId1 = '550e8400-e29b-41d4-a716-446655440000';
 const playlistId2 = '550e8400-e29b-41d4-a716-446655440002';
@@ -54,6 +55,12 @@ const createMockPlaylistResponse = (id: string, slug: string) => {
 // Helper function to mock fetch for the standard test playlist group URLs
 const mockStandardPlaylistFetch = () => {
   global.fetch = vi.fn((url: string) => {
+    if (url.includes(playlistSlug1)) {
+      return Promise.resolve(createMockPlaylistResponse(playlistId1, playlistSlug1));
+    }
+    if (url.includes(playlistSlug2)) {
+      return Promise.resolve(createMockPlaylistResponse(playlistId2, playlistSlug2));
+    }
     if (url.includes(playlistId1)) {
       return Promise.resolve(createMockPlaylistResponse(playlistId1, playlistSlug1));
     }
@@ -64,58 +71,9 @@ const mockStandardPlaylistFetch = () => {
   }) as any;
 };
 
-// Mock KV implementation for testing
-const createMockKV = () => {
-  const storage = new Map<string, string>();
-
-  return {
-    storage, // Expose storage for clearing in tests
-    get: async (key: string) => storage.get(key) || null,
-    put: async (key: string, value: string) => {
-      storage.set(key, value);
-    },
-    delete: async (key: string) => {
-      storage.delete(key);
-    },
-    list: async (options?: { prefix?: string; limit?: number; cursor?: string }) => {
-      const allKeys = Array.from(storage.keys())
-        .filter(key => !options?.prefix || key.startsWith(options.prefix))
-        .sort();
-
-      let startIndex = 0;
-      if (options?.cursor) {
-        const cursorIndex = allKeys.findIndex(key => key > options.cursor!);
-        startIndex = cursorIndex >= 0 ? cursorIndex : allKeys.length;
-      }
-
-      const limit = options?.limit || 1000;
-      const keys = allKeys.slice(startIndex, startIndex + limit);
-      const hasMore = startIndex + limit < allKeys.length;
-
-      const result: any = {
-        keys: keys.map(name => ({ name })),
-        list_complete: !hasMore,
-      };
-
-      if (hasMore) {
-        result.cursor = keys[keys.length - 1];
-      }
-
-      return result;
-    },
-  };
-};
-
-// Test environment setup
-const testEnv: Env = {
-  API_SECRET: 'test-secret-key',
-  ED25519_PRIVATE_KEY: 'test-private-key',
-  ENVIRONMENT: 'test',
-  DP1_PLAYLISTS: createMockKV() as any,
-  DP1_PLAYLIST_GROUPS: createMockKV() as any,
-  DP1_PLAYLIST_ITEMS: createMockKV() as any,
-  DP1_WRITE_QUEUE: { send: vi.fn() } as any,
-};
+const testSetup = createTestEnv();
+const testEnv = testSetup.env;
+const mockStorages = testSetup.mockStorages;
 
 // Test data
 const testPlaylist: Playlist = {
@@ -153,9 +111,9 @@ describe('Storage Module', () => {
     vi.clearAllMocks();
 
     // Clear storage and mock between tests
-    testEnv.DP1_PLAYLISTS = createMockKV();
-    testEnv.DP1_PLAYLIST_GROUPS = createMockKV();
-    testEnv.DP1_PLAYLIST_ITEMS = createMockKV();
+    mockStorages.playlist.storage.clear();
+    mockStorages.group.storage.clear();
+    mockStorages.item.storage.clear();
   });
 
   describe('Playlist Storage', () => {
@@ -165,9 +123,8 @@ describe('Storage Module', () => {
       expect(saved).toBe(true);
 
       // Verify ID index was created
-      const mockKV = testEnv.DP1_PLAYLISTS as any;
       const idKey = `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${testPlaylist.id}`;
-      expect(mockKV.storage.has(idKey)).toBe(true);
+      expect(mockStorages.playlist.storage.has(idKey)).toBe(true);
 
       // Retrieve by ID
       const retrieved = await getPlaylistByIdOrSlug(testPlaylist.id, testEnv);
@@ -179,10 +136,9 @@ describe('Storage Module', () => {
       await savePlaylist(testPlaylist, testEnv);
 
       // Verify slug index was created
-      const mockKV = testEnv.DP1_PLAYLISTS as any;
       const slugKey = `${STORAGE_KEYS.PLAYLIST_SLUG_PREFIX}${testPlaylist.slug}`;
-      expect(mockKV.storage.has(slugKey)).toBe(true);
-      expect(mockKV.storage.get(slugKey)).toBe(testPlaylist.id);
+      expect(mockStorages.playlist.storage.has(slugKey)).toBe(true);
+      expect(mockStorages.playlist.storage.get(slugKey)).toBe(testPlaylist.id);
 
       // Retrieve by slug
       const retrieved = await getPlaylistByIdOrSlug(testPlaylist.slug, testEnv);
@@ -255,9 +211,8 @@ describe('Storage Module', () => {
       await savePlaylist(testPlaylist, testEnv);
 
       // Verify initial item exists
-      const mockItemsKV = testEnv.DP1_PLAYLIST_ITEMS as any;
       const initialItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${testPlaylist.items[0].id}`;
-      expect(mockItemsKV.storage.has(initialItemKey)).toBe(true);
+      expect(mockStorages.item.storage.has(initialItemKey)).toBe(true);
 
       // Create updated playlist with different items
       const updatedPlaylist = {
@@ -284,11 +239,11 @@ describe('Storage Module', () => {
 
       // Verify new item exists
       const newItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${updatedPlaylist.items[0].id}`;
-      expect(mockItemsKV.storage.has(newItemKey)).toBe(true);
+      expect(mockStorages.item.storage.has(newItemKey)).toBe(true);
 
       // Verify old item is deleted
       const oldItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${testPlaylist.items[0].id}`;
-      expect(mockItemsKV.storage.has(oldItemKey)).toBe(false);
+      expect(mockStorages.item.storage.has(oldItemKey)).toBe(false);
     });
   });
 
@@ -302,9 +257,8 @@ describe('Storage Module', () => {
       expect(saved).toBe(true);
 
       // Verify ID index was created
-      const mockKV = testEnv.DP1_PLAYLIST_GROUPS as any;
       const idKey = `${STORAGE_KEYS.PLAYLIST_GROUP_ID_PREFIX}${testPlaylistGroup.id}`;
-      expect(mockKV.storage.has(idKey)).toBe(true);
+      expect(mockStorages.group.storage.has(idKey)).toBe(true);
 
       // Retrieve by ID
       const retrieved = await getPlaylistGroupByIdOrSlug(testPlaylistGroup.id, testEnv);
@@ -319,10 +273,9 @@ describe('Storage Module', () => {
       await savePlaylistGroup(testPlaylistGroup, testEnv);
 
       // Verify slug index was created
-      const mockKV = testEnv.DP1_PLAYLIST_GROUPS as any;
       const slugKey = `${STORAGE_KEYS.PLAYLIST_GROUP_SLUG_PREFIX}${testPlaylistGroup.slug}`;
-      expect(mockKV.storage.has(slugKey)).toBe(true);
-      expect(mockKV.storage.get(slugKey)).toBe(testPlaylistGroup.id);
+      expect(mockStorages.group.storage.has(slugKey)).toBe(true);
+      expect(mockStorages.group.storage.get(slugKey)).toBe(testPlaylistGroup.id);
 
       // Retrieve by slug
       const retrieved = await getPlaylistGroupByIdOrSlug(testPlaylistGroup.slug, testEnv);
@@ -337,19 +290,16 @@ describe('Storage Module', () => {
       await savePlaylistGroup(testPlaylistGroup, testEnv);
 
       // Verify bidirectional mappings were created
-      const mockPlaylistKV = testEnv.DP1_PLAYLISTS as any;
-
-      // Check playlist-to-groups mappings
       const playlistToGroup1 = `${STORAGE_KEYS.PLAYLIST_TO_GROUPS_PREFIX}${playlistId1}:${testPlaylistGroup.id}`;
       const playlistToGroup2 = `${STORAGE_KEYS.PLAYLIST_TO_GROUPS_PREFIX}${playlistId2}:${testPlaylistGroup.id}`;
-      expect(mockPlaylistKV.storage.has(playlistToGroup1)).toBe(true);
-      expect(mockPlaylistKV.storage.has(playlistToGroup2)).toBe(true);
+      expect(mockStorages.playlist.storage.has(playlistToGroup1)).toBe(true);
+      expect(mockStorages.playlist.storage.has(playlistToGroup2)).toBe(true);
 
       // Check group-to-playlists mappings
       const groupToPlaylist1 = `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX}${testPlaylistGroup.id}:${playlistId1}`;
       const groupToPlaylist2 = `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX}${testPlaylistGroup.id}:${playlistId2}`;
-      expect(mockPlaylistKV.storage.has(groupToPlaylist1)).toBe(true);
-      expect(mockPlaylistKV.storage.has(groupToPlaylist2)).toBe(true);
+      expect(mockStorages.playlist.storage.has(groupToPlaylist1)).toBe(true);
+      expect(mockStorages.playlist.storage.has(groupToPlaylist2)).toBe(true);
     });
 
     it('should return null for non-existent playlist group', async () => {
@@ -445,12 +395,11 @@ describe('Storage Module', () => {
       expect(saved).toBe(true);
 
       // Verify bidirectional mappings exist for both playlists
-      const mockPlaylistsKV = testEnv.DP1_PLAYLISTS as any;
       const mapping1Key = `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX}${initialGroup.id}:${playlistId1}`;
       const mapping2Key = `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX}${initialGroup.id}:${playlistId2}`;
 
-      expect(mockPlaylistsKV.storage.has(mapping1Key)).toBe(true);
-      expect(mockPlaylistsKV.storage.has(mapping2Key)).toBe(true);
+      expect(mockStorages.playlist.storage.has(mapping1Key)).toBe(true);
+      expect(mockStorages.playlist.storage.has(mapping2Key)).toBe(true);
 
       // Update group to only include first playlist (remove second)
       const updatedGroup: PlaylistGroup = {
@@ -465,14 +414,14 @@ describe('Storage Module', () => {
       expect(updated).toBe(true);
 
       // Verify first mapping still exists
-      expect(mockPlaylistsKV.storage.has(mapping1Key)).toBe(true);
+      expect(mockStorages.playlist.storage.has(mapping1Key)).toBe(true);
 
       // Verify second mapping was removed
-      expect(mockPlaylistsKV.storage.has(mapping2Key)).toBe(false);
+      expect(mockStorages.playlist.storage.has(mapping2Key)).toBe(false);
 
       // Verify reverse mappings are also cleaned up
       const reverseMapping2Key = `${STORAGE_KEYS.PLAYLIST_TO_GROUPS_PREFIX}${playlistId2}:${initialGroup.id}`;
-      expect(mockPlaylistsKV.storage.has(reverseMapping2Key)).toBe(false);
+      expect(mockStorages.playlist.storage.has(reverseMapping2Key)).toBe(false);
     });
   });
 
@@ -534,8 +483,7 @@ describe('Storage Module', () => {
       await savePlaylistGroup(testPlaylistGroup, testEnv);
 
       // Verify playlist item group indexes were created
-      const mockItemsKV = testEnv.DP1_PLAYLIST_ITEMS as any;
-      const itemGroupKeys = (Array.from(mockItemsKV.storage.keys()) as string[]).filter(
+      const itemGroupKeys = (Array.from(mockStorages.item.storage.keys()) as string[]).filter(
         (key: string) => key.startsWith(STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_PREFIX)
       );
       expect(itemGroupKeys.length).toBeGreaterThan(0);
@@ -549,9 +497,10 @@ describe('Storage Module', () => {
       await savePlaylistGroup(updatedGroup, testEnv, true);
 
       // Verify some item group indexes were cleaned up for the removed playlist
-      const remainingItemGroupKeys = (Array.from(mockItemsKV.storage.keys()) as string[]).filter(
-        (key: string) =>
-          key.startsWith(`${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_PREFIX}${testPlaylistGroup.id}:`)
+      const remainingItemGroupKeys = (
+        Array.from(mockStorages.item.storage.keys()) as string[]
+      ).filter((key: string) =>
+        key.startsWith(`${STORAGE_KEYS.PLAYLIST_ITEM_BY_GROUP_PREFIX}${testPlaylistGroup.id}:`)
       );
 
       // The cleanup should reduce the number of item-group associations
@@ -569,24 +518,22 @@ describe('Storage Module', () => {
       await savePlaylistGroup(testPlaylistGroup, testEnv);
 
       // Verify playlist-to-groups mappings were created
-      const mockPlaylistKV = testEnv.DP1_PLAYLISTS as any;
-
       const playlistToGroup1 = `${STORAGE_KEYS.PLAYLIST_TO_GROUPS_PREFIX}${playlistId1}:${testPlaylistGroup.id}`;
       const playlistToGroup2 = `${STORAGE_KEYS.PLAYLIST_TO_GROUPS_PREFIX}${playlistId2}:${testPlaylistGroup.id}`;
       const groupToPlaylist1 = `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX}${testPlaylistGroup.id}:${playlistId1}`;
       const groupToPlaylist2 = `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX}${testPlaylistGroup.id}:${playlistId2}`;
 
       // Verify playlist → groups mappings
-      expect(mockPlaylistKV.storage.has(playlistToGroup1)).toBe(true);
-      expect(mockPlaylistKV.storage.has(playlistToGroup2)).toBe(true);
-      expect(mockPlaylistKV.storage.get(playlistToGroup1)).toBe(testPlaylistGroup.id);
-      expect(mockPlaylistKV.storage.get(playlistToGroup2)).toBe(testPlaylistGroup.id);
+      expect(mockStorages.playlist.storage.has(playlistToGroup1)).toBe(true);
+      expect(mockStorages.playlist.storage.has(playlistToGroup2)).toBe(true);
+      expect(mockStorages.playlist.storage.get(playlistToGroup1)).toBe(testPlaylistGroup.id);
+      expect(mockStorages.playlist.storage.get(playlistToGroup2)).toBe(testPlaylistGroup.id);
 
       // Verify group → playlists mappings
-      expect(mockPlaylistKV.storage.has(groupToPlaylist1)).toBe(true);
-      expect(mockPlaylistKV.storage.has(groupToPlaylist2)).toBe(true);
-      expect(mockPlaylistKV.storage.get(groupToPlaylist1)).toBe(playlistId1);
-      expect(mockPlaylistKV.storage.get(groupToPlaylist2)).toBe(playlistId2);
+      expect(mockStorages.playlist.storage.has(groupToPlaylist1)).toBe(true);
+      expect(mockStorages.playlist.storage.has(groupToPlaylist2)).toBe(true);
+      expect(mockStorages.playlist.storage.get(groupToPlaylist1)).toBe(playlistId1);
+      expect(mockStorages.playlist.storage.get(groupToPlaylist2)).toBe(playlistId2);
     });
 
     it('should efficiently retrieve all groups for a playlist', async () => {
@@ -630,16 +577,15 @@ describe('Storage Module', () => {
       await savePlaylistGroup(testPlaylistGroup, testEnv);
 
       // Verify initial bidirectional mappings exist
-      const mockPlaylistKV = testEnv.DP1_PLAYLISTS as any;
       const playlistToGroup1 = `${STORAGE_KEYS.PLAYLIST_TO_GROUPS_PREFIX}${playlistId1}:${testPlaylistGroup.id}`;
       const playlistToGroup2 = `${STORAGE_KEYS.PLAYLIST_TO_GROUPS_PREFIX}${playlistId2}:${testPlaylistGroup.id}`;
       const groupToPlaylist1 = `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX}${testPlaylistGroup.id}:${playlistId1}`;
       const groupToPlaylist2 = `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX}${testPlaylistGroup.id}:${playlistId2}`;
 
-      expect(mockPlaylistKV.storage.has(playlistToGroup1)).toBe(true);
-      expect(mockPlaylistKV.storage.has(playlistToGroup2)).toBe(true);
-      expect(mockPlaylistKV.storage.has(groupToPlaylist1)).toBe(true);
-      expect(mockPlaylistKV.storage.has(groupToPlaylist2)).toBe(true);
+      expect(mockStorages.playlist.storage.has(playlistToGroup1)).toBe(true);
+      expect(mockStorages.playlist.storage.has(playlistToGroup2)).toBe(true);
+      expect(mockStorages.playlist.storage.has(groupToPlaylist1)).toBe(true);
+      expect(mockStorages.playlist.storage.has(groupToPlaylist2)).toBe(true);
 
       // Update group to only include one playlist
       const updatedGroup = {
@@ -650,10 +596,10 @@ describe('Storage Module', () => {
       await savePlaylistGroup(updatedGroup, testEnv, true);
 
       // Verify old mappings were cleaned up and new ones created
-      expect(mockPlaylistKV.storage.has(playlistToGroup1)).toBe(true); // Still exists
-      expect(mockPlaylistKV.storage.has(playlistToGroup2)).toBe(false); // Should be removed
-      expect(mockPlaylistKV.storage.has(groupToPlaylist1)).toBe(true); // Still exists
-      expect(mockPlaylistKV.storage.has(groupToPlaylist2)).toBe(false); // Should be removed
+      expect(mockStorages.playlist.storage.has(playlistToGroup1)).toBe(true); // Still exists
+      expect(mockStorages.playlist.storage.has(playlistToGroup2)).toBe(false); // Should be removed
+      expect(mockStorages.playlist.storage.has(groupToPlaylist1)).toBe(true); // Still exists
+      expect(mockStorages.playlist.storage.has(groupToPlaylist2)).toBe(false); // Should be removed
 
       // Verify the playlist shows up in correct groups
       const groupsForPlaylist1 = await getPlaylistGroupsForPlaylist(playlistId1, testEnv);
@@ -671,29 +617,28 @@ describe('Storage Module', () => {
       await savePlaylistGroup(testPlaylistGroup, testEnv);
 
       // Verify bidirectional mappings exist
-      const mockPlaylistKV = testEnv.DP1_PLAYLISTS as any;
       const playlistToGroup1 = `${STORAGE_KEYS.PLAYLIST_TO_GROUPS_PREFIX}${playlistId1}:${testPlaylistGroup.id}`;
       const playlistToGroup2 = `${STORAGE_KEYS.PLAYLIST_TO_GROUPS_PREFIX}${playlistId2}:${testPlaylistGroup.id}`;
       const groupToPlaylist1 = `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX}${testPlaylistGroup.id}:${playlistId1}`;
       const groupToPlaylist2 = `${STORAGE_KEYS.GROUP_TO_PLAYLISTS_PREFIX}${testPlaylistGroup.id}:${playlistId2}`;
 
-      expect(mockPlaylistKV.storage.has(playlistToGroup1)).toBe(true);
-      expect(mockPlaylistKV.storage.has(playlistToGroup2)).toBe(true);
-      expect(mockPlaylistKV.storage.has(groupToPlaylist1)).toBe(true);
-      expect(mockPlaylistKV.storage.has(groupToPlaylist2)).toBe(true);
+      expect(mockStorages.playlist.storage.has(playlistToGroup1)).toBe(true);
+      expect(mockStorages.playlist.storage.has(playlistToGroup2)).toBe(true);
+      expect(mockStorages.playlist.storage.has(groupToPlaylist1)).toBe(true);
+      expect(mockStorages.playlist.storage.has(groupToPlaylist2)).toBe(true);
 
       // Simulate the cleanup that deletePlaylistGroup should do
       // Delete both directions of the mappings
-      mockPlaylistKV.storage.delete(playlistToGroup1);
-      mockPlaylistKV.storage.delete(playlistToGroup2);
-      mockPlaylistKV.storage.delete(groupToPlaylist1);
-      mockPlaylistKV.storage.delete(groupToPlaylist2);
+      mockStorages.playlist.storage.delete(playlistToGroup1);
+      mockStorages.playlist.storage.delete(playlistToGroup2);
+      mockStorages.playlist.storage.delete(groupToPlaylist1);
+      mockStorages.playlist.storage.delete(groupToPlaylist2);
 
       // Verify mappings were cleaned up
-      expect(mockPlaylistKV.storage.has(playlistToGroup1)).toBe(false);
-      expect(mockPlaylistKV.storage.has(playlistToGroup2)).toBe(false);
-      expect(mockPlaylistKV.storage.has(groupToPlaylist1)).toBe(false);
-      expect(mockPlaylistKV.storage.has(groupToPlaylist2)).toBe(false);
+      expect(mockStorages.playlist.storage.has(playlistToGroup1)).toBe(false);
+      expect(mockStorages.playlist.storage.has(playlistToGroup2)).toBe(false);
+      expect(mockStorages.playlist.storage.has(groupToPlaylist1)).toBe(false);
+      expect(mockStorages.playlist.storage.has(groupToPlaylist2)).toBe(false);
 
       // Verify playlists no longer show up in any groups
       const groupsForPlaylist1 = await getPlaylistGroupsForPlaylist(playlistId1, testEnv);
@@ -723,8 +668,8 @@ describe('Storage Module', () => {
       await savePlaylist(testPlaylist, testEnv);
       await savePlaylistGroup(testPlaylistGroup, testEnv);
 
-      const mockPlaylistKV = testEnv.DP1_PLAYLISTS as any;
-      const mockGroupKV = testEnv.DP1_PLAYLIST_GROUPS as any;
+      const mockPlaylistKV = mockStorages.playlist;
+      const mockGroupKV = mockStorages.group;
 
       // Check playlist indexes
       expect(
@@ -1276,7 +1221,7 @@ describe('Storage Module', () => {
     });
 
     it('should only save external playlists to storage while creating indexes for both internal and external', async () => {
-      const envWithSelfHosted: Env = {
+      const envWithSelfHostedDomains: Env = {
         ...testEnv,
         SELF_HOSTED_DOMAINS: 'api.feed.feralfile.com',
       };
@@ -1302,7 +1247,7 @@ describe('Storage Module', () => {
           },
         ],
       };
-      await savePlaylist(selfHostedPlaylist, envWithSelfHosted);
+      await savePlaylist(selfHostedPlaylist, envWithSelfHostedDomains);
 
       // Create a playlist group with both self-hosted and external URLs
       const mixedGroup: PlaylistGroup = {
@@ -1347,9 +1292,9 @@ describe('Storage Module', () => {
 
       const logSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
 
-      // Get access to the mock KV storage for verification
-      const mockPlaylistKV = envWithSelfHosted.DP1_PLAYLISTS as any;
-      const mockItemsKV = envWithSelfHosted.DP1_PLAYLIST_ITEMS as any;
+      // Use the same environment where we saved the self-hosted playlist
+      const mockPlaylistKV = envWithSelfHostedDomains.storageProvider.getPlaylistStorage() as any;
+      const mockItemsKV = envWithSelfHostedDomains.storageProvider.getPlaylistItemStorage() as any;
 
       // Spy on KV put operations to track what gets written
       const kvPutSpy = vi.spyOn(mockPlaylistKV, 'put');
@@ -1358,7 +1303,7 @@ describe('Storage Module', () => {
       // Record the state of self-hosted playlist storage before savePlaylistGroup
       const selfHostedStorageKey = `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${selfHostedPlaylistId}`;
       const externalStorageKey = `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${externalPlaylistId}`;
-      const preExistingPlaylistData = mockPlaylistKV.storage.get(selfHostedStorageKey);
+      const preExistingPlaylistData = mockPlaylistKV.get(selfHostedStorageKey);
       expect(preExistingPlaylistData).toBeTruthy(); // Should exist from pre-population
 
       // Clear the spies to only track savePlaylistGroup operations
@@ -1366,7 +1311,7 @@ describe('Storage Module', () => {
       kvItemsPutSpy.mockClear();
 
       // Save the mixed playlist group
-      const saved = await savePlaylistGroup(mixedGroup, envWithSelfHosted);
+      const saved = await savePlaylistGroup(mixedGroup, envWithSelfHostedDomains);
       expect(saved).toBe(true);
 
       // Verify KV put operations: external playlist SHOULD be saved, self-hosted should NOT
@@ -1409,13 +1354,13 @@ describe('Storage Module', () => {
       expect(externalToGroupCall).toBeTruthy();
 
       // Verify storage state: both playlists should be accessible
-      const storedSelfHosted = mockPlaylistKV.storage.get(selfHostedStorageKey);
-      const storedExternal = mockPlaylistKV.storage.get(externalStorageKey);
+      const storedSelfHosted = await mockPlaylistKV.get(selfHostedStorageKey);
+      const storedExternal = await mockPlaylistKV.get(externalStorageKey);
       expect(storedSelfHosted).toBeTruthy(); // From pre-population
       expect(storedExternal).toBeTruthy(); // From savePlaylistGroup
 
-      const parsedSelfHosted = JSON.parse(storedSelfHosted);
-      const parsedExternal = JSON.parse(storedExternal);
+      const parsedSelfHosted = JSON.parse(storedSelfHosted!);
+      const parsedExternal = JSON.parse(storedExternal!);
       expect(parsedSelfHosted.title).toBe('Self-Hosted Playlist');
       expect(parsedExternal.title).toBe('External Playlist');
 
@@ -1475,8 +1420,8 @@ describe('Storage Module', () => {
       // Both items should exist in storage (external from savePlaylistGroup, self-hosted from pre-population)
       const selfHostedItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${itemId1}`;
       const externalItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${itemId2}`;
-      expect(mockItemsKV.storage.get(selfHostedItemKey)).toBeTruthy();
-      expect(mockItemsKV.storage.get(externalItemKey)).toBeTruthy();
+      expect(mockItemsKV.get(selfHostedItemKey)).toBeTruthy();
+      expect(mockItemsKV.get(externalItemKey)).toBeTruthy();
 
       logSpy.mockRestore();
       kvPutSpy.mockRestore();
@@ -1512,15 +1457,12 @@ describe('Storage Module', () => {
 
     it('should handle KV operation failures', async () => {
       // Mock KV failure
-      const failingKV = {
-        ...createMockKV(),
-        put: vi.fn().mockRejectedValue(new Error('KV operation failed')),
-      };
+      const failingStorage = new MockKeyValueStorage();
+      failingStorage.put = vi.fn().mockRejectedValue(new Error('KV operation failed'));
 
-      const envWithFailingKV: Env = {
-        ...testEnv,
-        DP1_PLAYLISTS: failingKV as any,
-      };
+      const { env: envWithFailingKV } = createTestEnv();
+      // Replace the playlist storage with the failing one
+      (envWithFailingKV.storageProvider as any).playlistStorage = failingStorage;
 
       await expect(savePlaylist(testPlaylist, envWithFailingKV)).rejects.toThrow(
         'KV operation failed'

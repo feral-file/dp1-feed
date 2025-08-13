@@ -2,6 +2,7 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 import app from './index';
 import type { Env } from './types';
 import { generateSlug, validateDpVersion, MIN_DP_VERSION } from './types';
+import { createTestEnv, MockKeyValueStorage, MockQueue } from './test-helpers';
 
 // Mock the crypto module to avoid ED25519 key issues in tests
 vi.mock('./crypto', () => ({
@@ -73,135 +74,9 @@ const mockStandardPlaylistFetch = () => {
   }) as any;
 };
 
-// Mock KV implementation for testing
-const createMockKV = () => {
-  const storage = new Map<string, string>();
-
-  return {
-    storage, // Expose storage for clearing in tests
-    get: async (key: string) => storage.get(key) || null,
-    put: async (key: string, value: string) => {
-      storage.set(key, value);
-    },
-    delete: async (key: string) => {
-      storage.delete(key);
-    },
-    list: async (options?: { prefix?: string; limit?: number; cursor?: string }) => {
-      const allKeys = Array.from(storage.keys())
-        .filter(key => !options?.prefix || key.startsWith(options.prefix))
-        .sort();
-
-      let startIndex = 0;
-      if (options?.cursor) {
-        const cursorIndex = allKeys.findIndex(key => key > options.cursor!);
-        startIndex = cursorIndex >= 0 ? cursorIndex : allKeys.length;
-      }
-
-      const limit = options?.limit || 1000;
-      const keys = allKeys.slice(startIndex, startIndex + limit);
-      const hasMore = startIndex + limit < allKeys.length;
-
-      const result: any = {
-        keys: keys.map(name => ({ name })),
-        list_complete: !hasMore,
-      };
-
-      if (hasMore) {
-        result.cursor = keys[keys.length - 1];
-      }
-
-      return result;
-    },
-  };
-};
-
-// Mock Queue implementation for testing that immediately processes messages synchronously
-const createMockQueue = (env: any) => {
-  const sentMessages: any[] = [];
-  return {
-    sentMessages, // Expose for testing
-    send: vi.fn(async (message: any) => {
-      sentMessages.push(message);
-
-      // Process immediately and synchronously for tests
-      try {
-        switch (message.operation) {
-          case 'create_playlist':
-            const playlist = message.data.playlist;
-            env.DP1_PLAYLISTS.storage.set(`playlist:${playlist.id}`, JSON.stringify(playlist));
-            env.DP1_PLAYLISTS.storage.set(`slug:${playlist.slug}`, playlist.id);
-            // Save playlist items
-            for (const item of playlist.items) {
-              env.DP1_PLAYLIST_ITEMS.storage.set(
-                `item:${item.id}`,
-                JSON.stringify({
-                  ...item,
-                  playlistId: playlist.id,
-                })
-              );
-            }
-            break;
-
-          case 'update_playlist':
-            const updatedPlaylist = message.data.playlist;
-            env.DP1_PLAYLISTS.storage.set(
-              `playlist:${updatedPlaylist.id}`,
-              JSON.stringify(updatedPlaylist)
-            );
-            // Save playlist items (in a real implementation, we'd clear old ones first)
-            for (const item of updatedPlaylist.items) {
-              env.DP1_PLAYLIST_ITEMS.storage.set(
-                `item:${item.id}`,
-                JSON.stringify({
-                  ...item,
-                  playlistId: updatedPlaylist.id,
-                })
-              );
-            }
-            break;
-
-          case 'create_playlist_group':
-            const group = message.data.playlistGroup;
-            env.DP1_PLAYLIST_GROUPS.storage.set(`group:${group.id}`, JSON.stringify(group));
-            env.DP1_PLAYLIST_GROUPS.storage.set(`slug:${group.slug}`, group.id);
-            break;
-
-          case 'update_playlist_group':
-            const updatedGroup = message.data.playlistGroup;
-            env.DP1_PLAYLIST_GROUPS.storage.set(
-              `group:${updatedGroup.id}`,
-              JSON.stringify(updatedGroup)
-            );
-            break;
-        }
-      } catch (error) {
-        console.error('Mock queue processing error:', error);
-      }
-
-      return { id: `msg-${Date.now()}` };
-    }),
-  };
-};
-
-// Test environment setup - create env first, then queue that references env
-const createTestEnv = (): Env => {
-  const env = {
-    API_SECRET: 'test-secret-key',
-    ED25519_PRIVATE_KEY: 'test-private-key',
-    ENVIRONMENT: 'test',
-    DP1_PLAYLISTS: createMockKV() as any,
-    DP1_PLAYLIST_GROUPS: createMockKV() as any,
-    DP1_PLAYLIST_ITEMS: createMockKV() as any,
-    DP1_WRITE_QUEUE: null as any, // Will be set below
-  };
-
-  // Create queue that references the environment
-  env.DP1_WRITE_QUEUE = createMockQueue(env) as any;
-
-  return env;
-};
-
-const testEnv: Env = createTestEnv();
+const testSetup = createTestEnv();
+const testEnv = testSetup.env;
+const mockStorages = testSetup.mockStorages;
 
 const validPlaylist = {
   dpVersion: '1.0.0',
@@ -224,16 +99,10 @@ const validPlaylistGroup = {
 
 describe('DP-1 Feed Operator API', () => {
   beforeEach(() => {
-    // Clear storage and queue between tests
-    const mockPlaylistKV = testEnv.DP1_PLAYLISTS as any;
-    const mockGroupKV = testEnv.DP1_PLAYLIST_GROUPS as any;
-    const mockPlaylistItemsKV = testEnv.DP1_PLAYLIST_ITEMS as any;
-    const mockQueue = testEnv.DP1_WRITE_QUEUE as any;
-
-    mockPlaylistKV.storage.clear();
-    mockGroupKV.storage.clear();
-    mockPlaylistItemsKV.storage.clear();
-    mockQueue.sentMessages.length = 0;
+    // Clear storage through the mock storage instances
+    mockStorages.playlist.storage.clear();
+    mockStorages.group.storage.clear();
+    mockStorages.item.storage.clear();
 
     // Clear mock calls
     vi.clearAllMocks();
@@ -241,19 +110,24 @@ describe('DP-1 Feed Operator API', () => {
     // Set up the mock queue write operation to actually process data synchronously
     vi.mocked(queueWriteOperation).mockImplementation(async (message: any, env: any) => {
       // Process the queue message immediately by calling real storage functions
-      switch (message.operation) {
-        case 'create_playlist':
-          await savePlaylist(message.data.playlist, env);
-          break;
-        case 'update_playlist':
-          await savePlaylist(message.data.playlist, env, true);
-          break;
-        case 'create_playlist_group':
-          await savePlaylistGroup(message.data.playlistGroup, env);
-          break;
-        case 'update_playlist_group':
-          await savePlaylistGroup(message.data.playlistGroup, env, true);
-          break;
+      try {
+        switch (message.operation) {
+          case 'create_playlist':
+            await savePlaylist(message.data.playlist, env);
+            break;
+          case 'update_playlist':
+            await savePlaylist(message.data.playlist, env, true);
+            break;
+          case 'create_playlist_group':
+            await savePlaylistGroup(message.data.playlistGroup, env);
+            break;
+          case 'update_playlist_group':
+            await savePlaylistGroup(message.data.playlistGroup, env, true);
+            break;
+        }
+      } catch (error) {
+        console.error('Mock queue processing error:', error);
+        throw error;
       }
     });
   });
