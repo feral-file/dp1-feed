@@ -21,6 +21,7 @@ export default defineConfig({
         'storage/index.ts',
         'queue/index.ts',
         'test-helpers.ts',
+        'index.ts',
       ],
       thresholds: {
         global: {
