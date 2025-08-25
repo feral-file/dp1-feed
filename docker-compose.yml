@@ -30,6 +30,8 @@ services:
     volumes:
       - nats_data:/data
       - ./docker/nats/nats.conf:/etc/nats/nats.conf:ro
+    ports:
+      - '8222:8222' # NATS HTTP monitoring port
     networks:
       - dp1-network
     healthcheck:

@@ -184,7 +184,6 @@ npm run test:coverage
 
 ## 📚 Documentation
 
-- **[DEPLOYMENT.md](DEPLOYMENT.md)** - Complete deployment guide for both platforms
 - **[DEVELOPMENT.md](DEVELOPMENT.md)** - Local development setup and project structure
 - **[TESTING.md](TESTING.md)** - Testing strategies and performance benchmarking
 - **[k6/README.md](k6/README.md)** - Performance testing with K6
