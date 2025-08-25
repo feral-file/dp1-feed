@@ -33,6 +33,7 @@ npm run type-check
 Scripts are organized by deployment type with clear prefixes:
 
 #### Shared Scripts (Both Deployments)
+
 ```bash
 # Testing
 npm test                    # Run all tests
@@ -54,6 +55,7 @@ npm run benchmark:soak    # Soak test
 ```
 
 #### Cloudflare Workers Scripts
+
 ```bash
 # Development
 npm run worker:dev        # Start CF Workers dev server
@@ -80,6 +82,7 @@ npm run worker:kv:put     # Put KV value
 ```
 
 #### Node.js Server Scripts
+
 ```bash
 # Development
 npm run node:dev          # Start Node.js dev server
@@ -310,14 +313,14 @@ export interface CloudFlareBindings {
   DP1_PLAYLISTS: KVNamespace;
   DP1_PLAYLIST_GROUPS: KVNamespace;
   DP1_PLAYLIST_ITEMS: KVNamespace;
-  
+
   // Queue
   DP1_WRITE_QUEUE: Queue;
-  
+
   // Secrets
   API_SECRET: string;
   ED25519_PRIVATE_KEY: string;
-  
+
   // Environment
   ENVIRONMENT: string;
 }
@@ -331,13 +334,13 @@ export interface SelfHostedBindings {
   // API Configuration
   API_SECRET: string;
   ED25519_PRIVATE_KEY: string;
-  
+
   // etcd Configuration
   ETCD_ENDPOINT: string;
   ETCD_USERNAME?: string;
   ETCD_PASSWORD?: string;
   ETCD_PREFIX?: string;
-  
+
   // NATS Configuration
   NATS_ENDPOINT: string;
   NATS_USERNAME?: string;
@@ -345,7 +348,7 @@ export interface SelfHostedBindings {
   NATS_TOKEN?: string;
   NATS_STREAM_NAME: string;
   NATS_SUBJECT_NAME: string;
-  
+
   // Environment
   ENVIRONMENT: string;
   SELF_HOSTED_DOMAINS?: string;
@@ -400,34 +403,34 @@ The project includes a comprehensive `docker-compose.yml` file with pre-configur
 ```yaml
 # Key services in docker-compose.yml
 services:
-  etcd:                    # Key-value store (replaces CloudFlare KV)
+  etcd: # Key-value store (replaces CloudFlare KV)
     image: quay.io/coreos/etcd:v3.5.15
-    ports: ["2379:2379"]
-    
-  nats:                    # Message streaming (replaces CloudFlare Queue)
+    ports: ['2379:2379']
+
+  nats: # Message streaming (replaces CloudFlare Queue)
     image: nats:2.10-alpine
-    ports: ["4222:4222"]
-    
-  dp1-server:              # Main API server
+    ports: ['4222:4222']
+
+  dp1-server: # Main API server
     build: { context: ., dockerfile: Dockerfile.server }
-    ports: ["8787:8787"]
+    ports: ['8787:8787']
     environment:
       - API_SECRET=dev-secret-key-change-in-production
       - ED25519_PRIVATE_KEY=302e020100300506032b6570042204205e42cad90e34efb36d84b8dbbcf15777ac33f4126a80c087cdedfb030138ac6f
       - ETCD_ENDPOINT=http://etcd:2379
       - NATS_ENDPOINT=nats://nats:4222
-      
-  dp1-consumer:            # Queue message processor
+
+  dp1-consumer: # Queue message processor
     build: { context: ., dockerfile: Dockerfile.consumer }
-    
-  nats-box:                # NATS management UI (debug profile)
+
+  nats-box: # NATS management UI (debug profile)
     image: natsio/nats-box:latest
-    profiles: ["debug"]
-    
-  etcd-keeper:             # etcd management UI (debug profile)
+    profiles: ['debug']
+
+  etcd-keeper: # etcd management UI (debug profile)
     image: nikfoundas/etcd-viewer:latest
-    ports: ["8080:8080"]
-    profiles: ["debug"]
+    ports: ['8080:8080']
+    profiles: ['debug']
 ```
 
 **Development Options:**
@@ -437,6 +440,7 @@ services:
 3. **With Debug Tools**: `docker compose --profile debug up -d` (includes management UIs)
 
 **Key Features:**
+
 - Pre-configured development environment variables
 - Health checks for all services
 - Persistent volumes for etcd and NATS data

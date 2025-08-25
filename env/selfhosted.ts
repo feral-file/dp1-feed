@@ -77,4 +77,3 @@ export async function initializeSelfHostedEnv(bindings: SelfHostedBindings): Pro
     SELF_HOSTED_DOMAINS: bindings.SELF_HOSTED_DOMAINS,
   };
 }
-

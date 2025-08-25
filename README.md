@@ -35,6 +35,7 @@ npm install
 ### Quick Deploy
 
 **Cloudflare Workers:**
+
 ```bash
 npm run worker:setup:kv
 npm run worker:setup:secrets
@@ -42,6 +43,7 @@ npm run worker:deploy
 ```
 
 **Node.js Server:**
+
 ```bash
 npm run node:build
 npm run node:start:dev
@@ -68,35 +70,39 @@ npm run lint && npm run format
 ## 📡 API Reference
 
 ### Base URL
+
 - **Cloudflare Workers**: `https://your-worker.your-subdomain.workers.dev`
 - **Node.js**: `http://localhost:8787` (default)
 
 ### Authentication
+
 All write operations require Bearer token authentication:
+
 ```bash
 Authorization: Bearer YOUR_API_SECRET
 ```
 
 ### Core Endpoints
 
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| `GET` | `/api/v1` | API information | No |
-| `GET` | `/api/v1/health` | Health check | No |
-| `GET` | `/api/v1/playlists` | List playlists | No |
-| `GET` | `/api/v1/playlists/{id}` | Get playlist | No |
-| `POST` | `/api/v1/playlists` | Create playlist | Yes |
-| `PUT` | `/api/v1/playlists/{id}` | Update playlist | Yes |
-| `GET` | `/api/v1/playlist-groups` | List groups | No |
-| `GET` | `/api/v1/playlist-groups/{id}` | Get group | No |
-| `POST` | `/api/v1/playlist-groups` | Create group | Yes |
-| `PUT` | `/api/v1/playlist-groups/{id}` | Update group | Yes |
-| `GET` | `/api/v1/playlist-items` | List items | No |
-| `GET` | `/api/v1/playlist-items/{id}` | Get item | No |
+| Method | Endpoint                       | Description     | Auth Required |
+| ------ | ------------------------------ | --------------- | ------------- |
+| `GET`  | `/api/v1`                      | API information | No            |
+| `GET`  | `/api/v1/health`               | Health check    | No            |
+| `GET`  | `/api/v1/playlists`            | List playlists  | No            |
+| `GET`  | `/api/v1/playlists/{id}`       | Get playlist    | No            |
+| `POST` | `/api/v1/playlists`            | Create playlist | Yes           |
+| `PUT`  | `/api/v1/playlists/{id}`       | Update playlist | Yes           |
+| `GET`  | `/api/v1/playlist-groups`      | List groups     | No            |
+| `GET`  | `/api/v1/playlist-groups/{id}` | Get group       | No            |
+| `POST` | `/api/v1/playlist-groups`      | Create group    | Yes           |
+| `PUT`  | `/api/v1/playlist-groups/{id}` | Update group    | Yes           |
+| `GET`  | `/api/v1/playlist-items`       | List items      | No            |
+| `GET`  | `/api/v1/playlist-items/{id}`  | Get item        | No            |
 
 ### Example Requests
 
 #### Create Playlist
+
 ```bash
 curl -X POST https://your-api.workers.dev/api/v1/playlists \
   -H "Authorization: Bearer YOUR_API_SECRET" \
@@ -115,11 +121,13 @@ curl -X POST https://your-api.workers.dev/api/v1/playlists \
 ```
 
 #### Get Playlists
+
 ```bash
 curl -X GET "https://your-api.workers.dev/api/v1/playlists?sort=desc&limit=10"
 ```
 
 #### Health Check
+
 ```bash
 curl -X GET https://your-api.workers.dev/api/v1/health
 ```
@@ -127,6 +135,7 @@ curl -X GET https://your-api.workers.dev/api/v1/health
 ### Response Format
 
 **Success Response:**
+
 ```json
 {
   "dpVersion": "1.0.0",
@@ -138,6 +147,7 @@ curl -X GET https://your-api.workers.dev/api/v1/health
 ```
 
 **Error Response:**
+
 ```json
 {
   "error": "validation_error",
@@ -147,12 +157,12 @@ curl -X GET https://your-api.workers.dev/api/v1/health
 
 ### Error Codes
 
-| Code | Description |
-|------|-------------|
-| `400` | Bad Request (validation error) |
+| Code  | Description                          |
+| ----- | ------------------------------------ |
+| `400` | Bad Request (validation error)       |
 | `401` | Unauthorized (missing/invalid token) |
-| `404` | Not Found |
-| `500` | Internal Server Error |
+| `404` | Not Found                            |
+| `500` | Internal Server Error                |
 
 ## 🧪 Testing
 

@@ -134,7 +134,7 @@ describe('Playlist Creation', () => {
     };
 
     const result = await createPlaylist(playlistData);
-    
+
     expect(result).toHaveProperty('id', 'test-playlist');
     expect(result).toHaveProperty('signature');
     expect(result.items).toHaveLength(1);
@@ -170,6 +170,7 @@ open coverage/index.html
 ```
 
 Coverage targets:
+
 - **Statements**: > 90%
 - **Branches**: > 85%
 - **Functions**: > 90%
@@ -278,13 +279,13 @@ choco install k6
 
 #### Test Scenarios
 
-| Scenario | Duration | Users | Purpose |
-|----------|----------|-------|---------|
-| **Light** | 25s | 2 | CI/CD pipeline testing |
-| **Normal** | 90s | 5-10 | Standard performance validation |
-| **Stress** | 140s | 10-30 | High load performance testing |
-| **Spike** | 50s | 5→50→5 | Sudden load resilience |
-| **Soak** | 5min 20s | 5 | Long-running stability |
+| Scenario   | Duration | Users  | Purpose                         |
+| ---------- | -------- | ------ | ------------------------------- |
+| **Light**  | 25s      | 2      | CI/CD pipeline testing          |
+| **Normal** | 90s      | 5-10   | Standard performance validation |
+| **Stress** | 140s     | 10-30  | High load performance testing   |
+| **Spike**  | 50s      | 5→50→5 | Sudden load resilience          |
+| **Soak**   | 5min 20s | 5      | Long-running stability          |
 
 #### Running Performance Tests
 
@@ -332,6 +333,7 @@ ls k6-results/
 ```
 
 Report includes:
+
 - P90, P95, P99 response times
 - Success rates by HTTP method
 - Error analysis
@@ -535,6 +537,7 @@ npm run validate
 When adding new features:
 
 1. **Add Unit Tests**
+
    ```typescript
    // Add tests for new functionality
    describe('New Feature', () => {
@@ -545,6 +548,7 @@ When adding new features:
    ```
 
 2. **Add Integration Tests**
+
    ```typescript
    // Add API endpoint tests
    it('should handle new endpoint', async () => {
@@ -572,3 +576,4 @@ npm run clean
 - **[k6/README.md](k6/README.md)** - Detailed K6 performance testing guide
 - **[Vitest Documentation](https://vitest.dev/)** - Unit testing framework docs
 - **[K6 Documentation](https://k6.io/docs/)** - Performance testing framework docs
+```

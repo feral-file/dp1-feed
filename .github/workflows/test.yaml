@@ -37,7 +37,7 @@ jobs:
 
       - name: Start development server for integration tests
         run: |
-          npm run dev:port &
+          npm run worker:dev:port &
           sleep 5
 
       - name: Run integration tests
