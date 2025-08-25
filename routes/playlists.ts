@@ -1,7 +1,7 @@
 import { Hono, Context } from 'hono';
 import { z } from 'zod';
 import type { Env, PlaylistInput, PlaylistUpdate, Playlist } from '../types';
-import type { EnvironmentBindings } from '../env';
+import type { EnvironmentBindings } from '../env/types';
 import type { CreatePlaylistMessage, UpdatePlaylistMessage } from '../queue/interfaces';
 import {
   PlaylistInputSchema,

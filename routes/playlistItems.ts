@@ -1,6 +1,6 @@
 import { Hono } from 'hono';
 import type { Env } from '../types';
-import type { EnvironmentBindings } from '../env';
+import type { EnvironmentBindings } from '../env/types';
 import { getPlaylistItemById, listAllPlaylistItems, listPlaylistItemsByGroupId } from '../storage';
 
 // Create playlist items router

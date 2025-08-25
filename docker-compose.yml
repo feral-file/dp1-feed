@@ -1,0 +1,152 @@
+services:
+  # etcd key-value store (replaces CloudFlare KV)
+  etcd:
+    image: quay.io/coreos/etcd:v3.5.15
+    container_name: dp1-etcd
+    restart: unless-stopped
+    environment:
+      - ETCD_NAME=etcd0
+      - ETCD_DATA_DIR=/etcd-data
+      - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+      - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
+      - ETCD_LISTEN_PEER_URLS=http://0.0.0.0:2380
+      - ETCD_INITIAL_ADVERTISE_PEER_URLS=http://etcd:2380
+      - ETCD_INITIAL_CLUSTER=etcd0=http://etcd:2380
+      - ETCD_INITIAL_CLUSTER_TOKEN=etcd-cluster-1
+      - ETCD_INITIAL_CLUSTER_STATE=new
+      - ETCD_AUTO_COMPACTION_RETENTION=1
+    volumes:
+      - etcd_data:/etcd-data
+    networks:
+      - dp1-network
+
+  # NATS JetStream (replaces CloudFlare Queue)
+  nats:
+    image: nats:2.10-alpine
+    container_name: dp1-nats
+    restart: unless-stopped
+    command:
+      - '--config=/etc/nats/nats.conf'
+    volumes:
+      - nats_data:/data
+      - ./docker/nats/nats.conf:/etc/nats/nats.conf:ro
+    networks:
+      - dp1-network
+    healthcheck:
+      test: ['CMD', 'nats', 'server', 'check', '--server=nats://localhost:4222']
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # DP1 Feed Server (replaces CloudFlare Worker)
+  dp1-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    container_name: dp1-server
+    restart: unless-stopped
+    environment:
+      - ETCD_ENDPOINT=http://etcd:2379
+      - ETCD_USERNAME=
+      - ETCD_PASSWORD=
+      - NATS_ENDPOINT=nats://nats:4222
+      - NATS_STREAM_NAME=DP1_WRITE_OPERATIONS
+      - NATS_SUBJECT_NAME=dp1.write.operations
+      - API_SECRET=test-api-secret
+      - ED25519_PRIVATE_KEY=302e020100300506032b6570042204205e42cad90e34efb36d84b8dbbcf15777ac33f4126a80c087cdedfb030138ac6f
+      - ENVIRONMENT=self-hosted
+      - SELF_HOSTED_DOMAINS=localhost:8787
+    ports:
+      - '8787:8787'
+    networks:
+      - dp1-network
+    depends_on:
+      - etcd
+      - nats
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'wget',
+          '--no-verbose',
+          '--tries=1',
+          '--spider',
+          'http://localhost:8787/api/v1/health',
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # NATS Consumer (processes queue messages)
+  dp1-consumer:
+    build:
+      context: .
+      dockerfile: Dockerfile.consumer
+    container_name: dp1-consumer
+    restart: unless-stopped
+    user: '1000:1000'
+    environment:
+      - NATS_URL=nats://nats:4222
+      - NATS_USERNAME=
+      - NATS_PASSWORD=
+      - NATS_TOKEN=
+      - NATS_STREAM_NAME=DP1_WRITE_OPERATIONS
+      - NATS_SUBJECT_NAME=dp1.write.operations
+      - NATS_CONSUMER_NAME=dp1-consumer
+      - SERVER_URL=http://dp1-server:8787
+      - API_SECRET=test-api-secret
+      - NATS_MAX_MESSAGES=100
+      - NATS_BATCH_SIZE=1
+      - NATS_ACK_WAIT=30
+    networks:
+      - dp1-network
+    depends_on:
+      - nats
+      - dp1-server
+    healthcheck:
+      test: ['CMD', 'node', '-e', 'process.exit(0)']
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # NATS Management UI (optional, for monitoring)
+  nats-box:
+    image: natsio/nats-box:latest
+    container_name: dp1-nats-box
+    restart: 'no'
+    networks:
+      - dp1-network
+    depends_on:
+      - nats
+    profiles:
+      - debug
+    command: ['sleep', 'infinity']
+
+  # etcd management UI (optional, for monitoring)
+  etcd-keeper:
+    image: nikfoundas/etcd-viewer:latest
+    container_name: dp1-etcd-keeper
+    restart: unless-stopped
+    environment:
+      - ETCD_ENDPOINTS=http://etcd:2379
+    ports:
+      - '8080:8080'
+    networks:
+      - dp1-network
+    depends_on:
+      - etcd
+    profiles:
+      - debug
+
+volumes:
+  etcd_data:
+    driver: local
+  nats_data:
+    driver: local
+
+networks:
+  dp1-network:
+    driver: bridge

@@ -8,6 +8,7 @@ import type {
   UpdatePlaylistMessage,
   CreatePlaylistGroupMessage,
   UpdatePlaylistGroupMessage,
+  ProcessingResult,
 } from './interfaces';
 import { StorageService } from '../storage/service';
 
@@ -20,8 +21,13 @@ export class QueueProcessorService implements QueueProcessor<WriteOperationMessa
   /**
    * Process a batch of write operation messages
    */
-  async processBatch(batch: MessageBatch<WriteOperationMessage>, env?: any): Promise<void> {
+  async processBatch(
+    batch: MessageBatch<WriteOperationMessage>,
+    env?: any
+  ): Promise<ProcessingResult> {
     console.log(`Processing batch of ${batch.messages.length} write operations`);
+
+    const errors: Array<{ messageId: string; error: string }> = [];
 
     const promises = batch.messages.map(async message => {
       try {
@@ -29,12 +35,27 @@ export class QueueProcessorService implements QueueProcessor<WriteOperationMessa
         console.log(`Processed message ${message.id} successfully`);
       } catch (error) {
         console.error(`Error processing message ${message.id}:`, error);
-        throw error;
+        errors.push({
+          messageId: message.id,
+          error: error instanceof Error ? error.message : 'Unknown error',
+        });
       }
     });
 
     await Promise.all(promises);
-    batch.ackAll();
+
+    const processedCount = batch.messages.length - errors.length;
+    const success = errors.length === 0;
+
+    console.log(
+      `Batch processing completed: ${processedCount}/${batch.messages.length} messages processed successfully`
+    );
+
+    return {
+      success,
+      processedCount,
+      errors: errors.length > 0 ? errors : undefined,
+    };
   }
 
   /**

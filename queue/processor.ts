@@ -1,5 +1,5 @@
 import type { Env } from '../types';
-import type { MessageBatch, WriteOperationMessage } from './interfaces';
+import type { MessageBatch, WriteOperationMessage, ProcessingResult } from './interfaces';
 import { QueueProcessorService, QueueService } from './service';
 import { StorageService } from '../storage/service';
 
@@ -21,9 +21,12 @@ function createQueueService(env: Env): QueueService {
 /**
  * Process write operations from the queue
  */
-export async function processWriteOperations(batch: MessageBatch, env: Env): Promise<void> {
+export async function processWriteOperations(
+  batch: MessageBatch,
+  env: Env
+): Promise<ProcessingResult> {
   const processorService = createQueueProcessorService(env);
-  await processorService.processBatch(batch as MessageBatch<WriteOperationMessage>, env);
+  return await processorService.processBatch(batch as MessageBatch<WriteOperationMessage>, env);
 }
 
 /**

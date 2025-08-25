@@ -76,6 +76,17 @@ export class MockKVNamespace {
 
     return result;
   }
+
+  async getWithMetadata(
+    key: string,
+    options?: any
+  ): Promise<{ value: string | null; metadata: any }> {
+    const value = await this.get(key, options);
+    return {
+      value: value as string | null,
+      metadata: null, // Mock metadata as null for simplicity
+    };
+  }
 }
 
 // Mock KeyValueStorage implementation that wraps MockKVNamespace
@@ -125,6 +136,12 @@ export class MockQueue implements Queue {
 
   async send(message: any, options?: any): Promise<void> {
     return this.sendMock(message, options);
+  }
+
+  async sendBatch(messages: any[], options?: any): Promise<void> {
+    for (const message of messages) {
+      await this.send(message, options);
+    }
   }
 
   getName(): string {

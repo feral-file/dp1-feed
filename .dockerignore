@@ -1,0 +1,59 @@
+# Dependencies
+node_modules
+npm-debug.log*
+
+# Build artifacts
+dist
+coverage
+.wrangler
+
+# Development files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# IDE and editor files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Documentation and config that's not needed in container
+README.md
+DEPLOYMENT.md
+*.md
+.prettierrc
+.eslintrc*
+eslint.config.js
+
+# Test files
+*.test.ts
+*.test.js
+test-helpers.ts
+vitest.config.ts
+
+# Scripts that aren't needed in production
+scripts/
+k6/
+
+# Development docker files
+docker-compose.yml
+docker-compose.*.yml
+
+# Cloudflare specific files (not needed for self-hosted)
+wrangler.toml
+workerd.capnp
+
+# Logs
+logs
+*.log

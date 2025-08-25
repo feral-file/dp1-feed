@@ -2,26 +2,23 @@
   "name": "dp1-feed-operator-api",
   "version": "1.0.0",
   "description": "DP-1 Feed Operator API Server - OpenAPI 3.1.0 compliant server for managing blockchain-native digital art playlists and exhibitions",
-  "main": "index.ts",
+  "main": "./worker.ts",
+  "exports": {
+    ".": {
+      "import": "./worker.ts",
+      "types": "./worker.ts"
+    },
+    "./server": {
+      "import": "./server.ts",
+      "types": "./server.ts"
+    },
+    "./worker": {
+      "import": "./worker.ts",
+      "types": "./worker.ts"
+    }
+  },
   "type": "module",
   "scripts": {
-    "dev": "wrangler dev",
-    "dev:port": "wrangler dev --port 8787",
-    "dev:live": "wrangler dev --live-reload",
-    "build": "tsc && wrangler deploy --dry-run",
-    "build:worker": "tsc --noEmit",
-    "deploy": "npm run validate && wrangler deploy --env dev",
-    "deploy:production": "npm run validate && wrangler deploy --env production",
-    "setup:kv": "npm run setup:kv:dev",
-    "setup:kv:dev": "wrangler kv namespace create DP1_PLAYLISTS --preview && wrangler kv namespace create DP1_PLAYLIST_GROUPS --preview && wrangler kv namespace create DP1_PLAYLIST_ITEMS --preview",
-    "setup:kv:production": "wrangler kv namespace create DP1_PLAYLISTS --env production && wrangler kv namespace create DP1_PLAYLIST_GROUPS --env production && wrangler kv namespace create DP1_PLAYLIST_ITEMS --env production",
-    "setup:secrets": "npm run setup:secrets:dev",
-    "setup:secrets:dev": "wrangler secret put API_SECRET --env dev && wrangler secret put ED25519_PRIVATE_KEY --env dev",
-    "setup:secrets:production": "wrangler secret put API_SECRET --env production && wrangler secret put ED25519_PRIVATE_KEY --env production",
-    "setup:queues:dev": "wrangler queues create dp1-write-operations --env dev",
-    "setup:queues:production": "wrangler queues create dp1-write-operations-prod --env production",
-    "init:data": "node scripts/init-kv-data.js",
-    "init:data:production": "node scripts/init-kv-data.js --env production",
     "test": "vitest run --passWithNoTests",
     "test:watch": "vitest --passWithNoTests",
     "test:coverage": "vitest run --coverage --passWithNoTests",
@@ -34,11 +31,6 @@
     "format:check": "prettier --check .",
     "validate": "prettier --check . &&npm run type-check && npm run lint && npm run test",
     "schema:validate": "ajv validate -s ../schemas/playlist-schema.json -d data/playlist.json",
-    "logs": "wrangler tail --env dev",
-    "logs:production": "wrangler tail --env production",
-    "kv:list": "wrangler kv namespace list",
-    "kv:get": "wrangler kv key get",
-    "kv:put": "wrangler kv key put",
     "benchmark": "node scripts/k6-benchmark.js",
     "benchmark:light": "node scripts/k6-benchmark.js light",
     "benchmark:stress": "node scripts/k6-benchmark.js stress",
@@ -46,7 +38,31 @@
     "benchmark:soak": "node scripts/k6-benchmark.js soak",
     "benchmark:report": "node scripts/k6-benchmark.js --report",
     "clean": "rm -rf dist coverage .wrangler",
-    "postinstall": "npm run type-check"
+    "worker:dev": "wrangler dev",
+    "worker:dev:port": "wrangler dev --port 8787",
+    "worker:dev:live": "wrangler dev --live-reload",
+    "worker:build": "tsc --noEmit",
+    "worker:deploy": "npm run validate && wrangler deploy --env dev",
+    "worker:deploy:production": "npm run validate && wrangler deploy --env production",
+    "worker:setup:kv": "npm run worker:setup:kv:dev",
+    "worker:setup:kv:dev": "wrangler kv namespace create DP1_PLAYLISTS --preview && wrangler kv namespace create DP1_PLAYLIST_GROUPS --preview && wrangler kv namespace create DP1_PLAYLIST_ITEMS --preview",
+    "worker:setup:kv:production": "wrangler kv namespace create DP1_PLAYLISTS --env production && wrangler kv namespace create DP1_PLAYLIST_GROUPS --env production && wrangler kv namespace create DP1_PLAYLIST_ITEMS --env production",
+    "worker:setup:secrets": "npm run worker:setup:secrets:dev",
+    "worker:setup:secrets:dev": "wrangler secret put API_SECRET --env dev && wrangler secret put ED25519_PRIVATE_KEY --env dev",
+    "worker:setup:secrets:production": "wrangler secret put API_SECRET --env production && wrangler secret put ED25519_PRIVATE_KEY --env production",
+    "worker:setup:queues:dev": "wrangler queues create dp1-write-operations --env dev",
+    "worker:setup:queues:production": "wrangler queues create dp1-write-operations-prod --env production",
+    "worker:init:data": "node scripts/init-kv-data.js",
+    "worker:init:data:production": "node scripts/init-kv-data.js --env production",
+    "worker:logs": "wrangler tail --env dev",
+    "worker:logs:production": "wrangler tail --env production",
+    "worker:kv:list": "wrangler kv namespace list",
+    "worker:kv:get": "wrangler kv key get",
+    "worker:kv:put": "wrangler kv key put",
+    "node:dev": "tsx --watch server.ts",
+    "node:start": "node dist/server.js",
+    "node:start:dev": "tsx server.ts",
+    "node:build": "esbuild server.ts --bundle --platform=node --format=esm --outfile=dist/server.js --external:@hono/node-server --external:nats --external:canonicalize --external:semver --external:zod"
   },
   "keywords": [
     "dp1",
@@ -62,19 +78,20 @@
     "kv-storage"
   ],
   "author": "Feral File",
-  "license": "MIT",
+  "license": "MPL-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/feralfile/dp-1.git",
-    "directory": "prototype/server"
+    "url": "https://github.com/display-protocol/dp1-feed.git"
   },
   "engines": {
     "node": ">=22.0.0"
   },
   "dependencies": {
     "@cloudflare/workers-types": "^4.20240925.0",
+    "@hono/node-server": "^1.18.2",
     "canonicalize": "^2.1.0",
     "hono": "^4.8.3",
+    "nats": "^2.29.3",
     "semver": "^7.7.2",
     "zod": "^3.25.67"
   },
@@ -95,7 +112,9 @@
     "node-fetch": "^3.3.2",
     "prettier": "^3.6.2",
     "puppeteer": "^24.11.2",
+    "tsx": "^4.19.2",
     "typescript": "^5.8.3",
+    "esbuild": "^0.19.0",
     "vitest": "^3.2.4",
     "vitest-environment-miniflare": "^2.14.4",
     "wrangler": "^4.22.0"

@@ -26,6 +26,15 @@ export interface QueueSendOptions {
 }
 
 /**
+ * Result of processing a batch of messages
+ */
+export interface ProcessingResult {
+  success: boolean;
+  processedCount: number;
+  errors?: Array<{ messageId: string; error: string }>;
+}
+
+/**
  * Generic queue interface that abstracts the underlying queue implementation
  */
 export interface Queue {
@@ -57,7 +66,7 @@ export interface QueueProcessor<T = unknown> {
   /**
    * Process a batch of messages
    */
-  processBatch(batch: MessageBatch<T>): Promise<void>;
+  processBatch(batch: MessageBatch<T>, env?: any): Promise<ProcessingResult>;
 }
 
 import type { Playlist, PlaylistGroup } from '../types';

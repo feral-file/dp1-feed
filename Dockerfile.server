@@ -1,0 +1,48 @@
+# Build stage - compile TypeScript to optimized JavaScript
+FROM node:22-alpine AS builder
+
+WORKDIR /app
+
+# Copy package files and install dependencies for building
+COPY package*.json ./
+COPY tsconfig*.json ./
+RUN npm ci
+
+# Copy source code
+COPY . .
+
+# Build optimized JavaScript bundle with esbuild
+RUN npm run node:build
+
+# Production stage - minimal Node.js runtime
+FROM node:22-alpine
+
+# Install dumb-init for proper signal handling
+RUN apk add --no-cache dumb-init
+
+# Create app user
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nodejs -u 1001
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files and install only production dependencies
+COPY package*.json ./
+RUN npm ci --only=production && npm cache clean --force
+
+# Copy the compiled JavaScript bundle from builder stage
+COPY --from=builder --chown=nodejs:nodejs /app/dist ./dist
+
+# Switch to non-root user
+USER nodejs
+
+# Expose the port that the Node.js server will listen on
+EXPOSE 8787
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:8787/api/v1/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) })" || exit 1
+
+# Start the production server with compiled JavaScript
+CMD ["dumb-init", "node", "dist/server.js"] 

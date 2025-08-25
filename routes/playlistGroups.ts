@@ -10,7 +10,7 @@ import {
 } from '../types';
 import { listAllPlaylistGroups, getPlaylistGroupByIdOrSlug } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
-import type { EnvironmentBindings } from '../env';
+import type { EnvironmentBindings } from '../env/types';
 
 // Create playlist groups router
 const playlistGroups = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();

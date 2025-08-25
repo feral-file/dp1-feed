@@ -1,4 +1,4 @@
-name: Deploy Server
+name: Deploy Cloudflare Workers
 
 on:
   push:
@@ -15,7 +15,7 @@ on:
           - production
 
 jobs:
-  deploy:
+  deploy-worker:
     runs-on: ubuntu-latest
     name: Deploy to Cloudflare Workers
 
@@ -34,7 +34,7 @@ jobs:
         run: npm ci
 
       - name: Build project
-        run: npm run build:worker
+        run: npm run worker:build
 
       - name: Deploy to Cloudflare Workers (Development)
         if: ${{ github.event.inputs.environment == 'development' || github.event.inputs.environment == '' }}

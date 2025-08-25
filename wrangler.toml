@@ -1,5 +1,5 @@
 name = "dp1-feed-operator-api"
-main = "index.ts"
+main = "worker.ts"
 compatibility_date = "2024-01-15"
 compatibility_flags = ["nodejs_compat"]
 
@@ -108,7 +108,7 @@ cpu_ms = 30000
 
 # Build configuration
 [build]
-command = "npm run build:worker"
+command = "npm run worker:build"
 
 # Secrets (set via wrangler secret put)
 # API_SECRET - Bearer token secret

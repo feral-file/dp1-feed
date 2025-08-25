@@ -180,7 +180,8 @@ describe('Queue Processor', () => {
           }),
           false
         );
-        expect(batch.ackAll).toHaveBeenCalled();
+        // Note: batch.ackAll is not called by processWriteOperations itself
+        // The caller (like index.ts queue function) handles acking based on the result
         expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining(`Processed message`));
       });
 
@@ -196,9 +197,10 @@ describe('Queue Processor', () => {
         mockSavePlaylist.mockRejectedValueOnce(new Error('Playlist save failed'));
 
         // The whole batch should fail if any message fails
-        await expect(processWriteOperations(batch, testEnv)).rejects.toThrow(
-          'Playlist save failed'
-        );
+        const result = await processWriteOperations(batch, testEnv);
+        expect(result.success).toBe(false);
+        expect(result.errors).toHaveLength(1);
+        expect(result.errors![0].error).toBe('Playlist save failed');
 
         expect(mockSavePlaylist).toHaveBeenCalledWith(
           expect.objectContaining({
@@ -239,7 +241,8 @@ describe('Queue Processor', () => {
           }),
           true
         );
-        expect(batch.ackAll).toHaveBeenCalled();
+        // Note: batch.ackAll is not called by processWriteOperations itself
+        // The caller (like index.ts queue function) handles acking based on the result
         expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining(`Processed message`));
       });
 
@@ -257,9 +260,10 @@ describe('Queue Processor', () => {
         const batch = createMockMessageBatch([message]);
         mockSavePlaylist.mockRejectedValueOnce(new Error('Playlist update failed'));
 
-        await expect(processWriteOperations(batch, testEnv)).rejects.toThrow(
-          'Playlist update failed'
-        );
+        const result = await processWriteOperations(batch, testEnv);
+        expect(result.success).toBe(false);
+        expect(result.errors).toHaveLength(1);
+        expect(result.errors![0].error).toBe('Playlist update failed');
 
         expect(mockSavePlaylist).toHaveBeenCalledWith(
           expect.objectContaining({
@@ -296,7 +300,8 @@ describe('Queue Processor', () => {
           expect.any(Object),
           false
         );
-        expect(batch.ackAll).toHaveBeenCalled();
+        // Note: batch.ackAll is not called by processWriteOperations itself
+        // The caller (like index.ts queue function) handles acking based on the result
         expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining(`Processed message`));
       });
 
@@ -313,9 +318,10 @@ describe('Queue Processor', () => {
         const batch = createMockMessageBatch([message]);
         mockSavePlaylistGroup.mockRejectedValueOnce(new Error('Playlist group creation failed'));
 
-        await expect(processWriteOperations(batch, testEnv)).rejects.toThrow(
-          'Playlist group creation failed'
-        );
+        const result = await processWriteOperations(batch, testEnv);
+        expect(result.success).toBe(false);
+        expect(result.errors).toHaveLength(1);
+        expect(result.errors![0].error).toBe('Playlist group creation failed');
 
         expect(mockSavePlaylistGroup).toHaveBeenCalledWith(
           expect.objectContaining({
@@ -354,7 +360,8 @@ describe('Queue Processor', () => {
           expect.any(Object),
           true
         );
-        expect(batch.ackAll).toHaveBeenCalled();
+        // Note: batch.ackAll is not called by processWriteOperations itself
+        // The caller (like index.ts queue function) handles acking based on the result
       });
 
       it('should handle playlist group update failure', async () => {
@@ -371,9 +378,10 @@ describe('Queue Processor', () => {
         const batch = createMockMessageBatch([message]);
         mockSavePlaylistGroup.mockRejectedValueOnce(new Error('Playlist group update failed'));
 
-        await expect(processWriteOperations(batch, testEnv)).rejects.toThrow(
-          'Playlist group update failed'
-        );
+        const result = await processWriteOperations(batch, testEnv);
+        expect(result.success).toBe(false);
+        expect(result.errors).toHaveLength(1);
+        expect(result.errors![0].error).toBe('Playlist group update failed');
 
         expect(mockSavePlaylistGroup).toHaveBeenCalledWith(
           expect.objectContaining({
@@ -424,7 +432,8 @@ describe('Queue Processor', () => {
           expect.any(Object),
           false
         );
-        expect(batch.ackAll).toHaveBeenCalled();
+        // Note: batch.ackAll is not called by processWriteOperations itself
+        // The caller (like index.ts queue function) handles acking based on the result
         expect(consoleLogSpy).toHaveBeenCalledWith('Processing batch of 2 write operations');
       });
 
@@ -447,9 +456,10 @@ describe('Queue Processor', () => {
         mockSavePlaylist.mockRejectedValueOnce(new Error('Playlist creation failed')); // First fails
         mockSavePlaylistGroup.mockResolvedValueOnce(true); // Second succeeds
 
-        await expect(processWriteOperations(batch, testEnv)).rejects.toThrow(
-          'Playlist creation failed'
-        );
+        const result = await processWriteOperations(batch, testEnv);
+        expect(result.success).toBe(false);
+        expect(result.errors).toHaveLength(1);
+        expect(result.errors![0].error).toBe('Playlist creation failed');
 
         expect(mockSavePlaylist).toHaveBeenCalled();
         expect(mockSavePlaylistGroup).toHaveBeenCalled();
@@ -468,9 +478,10 @@ describe('Queue Processor', () => {
 
         const batch = createMockMessageBatch([invalidMessage]);
 
-        await expect(processWriteOperations(batch, testEnv)).rejects.toThrow(
-          'Unknown message operation: unknown_operation'
-        );
+        const result = await processWriteOperations(batch, testEnv);
+        expect(result.success).toBe(false);
+        expect(result.errors).toHaveLength(1);
+        expect(result.errors![0].error).toBe('Unknown message operation: unknown_operation');
 
         expect(batch.ackAll).not.toHaveBeenCalled();
         expect(consoleErrorSpy).toHaveBeenCalledWith(
@@ -490,7 +501,10 @@ describe('Queue Processor', () => {
         const batch = createMockMessageBatch([message]);
         mockSavePlaylist.mockRejectedValueOnce(new Error('Storage error'));
 
-        await expect(processWriteOperations(batch, testEnv)).rejects.toThrow('Storage error');
+        const result = await processWriteOperations(batch, testEnv);
+        expect(result.success).toBe(false);
+        expect(result.errors).toHaveLength(1);
+        expect(result.errors![0].error).toBe('Storage error');
 
         expect(batch.ackAll).not.toHaveBeenCalled();
         expect(consoleErrorSpy).toHaveBeenCalledWith(

@@ -1,0 +1,35 @@
+{
+  "name": "dp1-feed-nats-consumer",
+  "version": "1.0.0",
+  "description": "NATS JetStream consumer for DP-1 Feed Operator API",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "node --watch --loader ts-node/esm index.ts",
+    "build": "tsc",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "nats",
+    "jetstream",
+    "consumer",
+    "dp1",
+    "queue"
+  ],
+  "author": "Feral File",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "nats": "^2.29.3",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}

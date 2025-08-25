@@ -1,8 +1,7 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import app from './index';
-import type { Env } from './types';
+import app from './worker';
 import { generateSlug, validateDpVersion, MIN_DP_VERSION } from './types';
-import { createTestEnv, MockKeyValueStorage, MockQueue } from './test-helpers';
+import { createTestEnv } from './test-helpers';
 
 // Mock the crypto module to avoid ED25519 key issues in tests
 vi.mock('./crypto', () => ({
