@@ -7,9 +7,9 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  unit_test:
     runs-on: ubuntu-latest
-    name: Server Tests
+    name: General Unit Tests
 
     steps:
       - name: Checkout code
@@ -35,7 +35,25 @@ jobs:
           slug: display-protocol/dp1-feed
           flags: unittests
 
-      - name: Start development server for integration tests
+  worker_integration_test:
+    runs-on: ubuntu-latest
+    name: Worker Integration Tests
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Start local worker for integration tests
         run: |
           npm run worker:dev:port &
           sleep 5
@@ -44,6 +62,69 @@ jobs:
         run: npm run test:api
         env:
           API_SECRET: test-api-secret
+          ENVIRONMENT: self-hosted
+          SELF_HOSTED_DOMAINS: localhost:8787
 
       - name: Stop development server
         run: pkill -f "wrangler dev" || true
+
+  node-server-integration-test:
+    runs-on: ubuntu-latest
+    name: Node Server Integration Tests
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify Docker availability
+        run: |
+          docker --version
+          docker-compose --version
+          echo "Docker and Docker Compose are available"
+
+      - name: Start Docker Compose services
+        run: |
+          # Clean up any existing containers
+          docker-compose down -v || true
+
+          # Start the all services
+          docker-compose up -d --build
+          echo "Started all services..."
+
+          # Wait for all services to be ready
+          sleep 10
+
+      - name: Wait for services to be healthy
+        run: |
+          # Wait for all services to be ready
+          echo "Waiting for all services..."
+          timeout 60 bash -c 'until docker exec dp1-etcd etcdctl endpoint health; do sleep 2; done'
+          timeout 60 bash -c 'until docker exec dp1-nats nats server check --server=nats://localhost:4222; do sleep 2; done'
+          timeout 60 bash -c 'until docker exec dp1-consumer node -e "process.exit(0)"; do sleep 2; done'
+          timeout 120 bash -c 'until curl -f http://localhost:8787/api/v1/health; do sleep 5; done'
+
+          echo "All services are ready!"
+
+      - name: Run integration tests
+        run: npm run test:api
+        env:
+          API_SECRET: test-api-secret
+          ENVIRONMENT: self-hosted
+          SELF_HOSTED_DOMAINS: localhost:8787
+
+      - name: Stop Docker Compose services
+        if: always()
+        run: |
+          echo "Stopping Docker Compose services..."
+          docker-compose down -v || true
+          echo "Services stopped successfully"
