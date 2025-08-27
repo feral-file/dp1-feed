@@ -89,16 +89,15 @@ jobs:
       - name: Verify Docker availability
         run: |
           docker --version
-          docker-compose --version
           echo "Docker and Docker Compose are available"
 
       - name: Start Docker Compose services
         run: |
           # Clean up any existing containers
-          docker-compose down -v || true
+          docker compose down -v || true
 
           # Start the all services
-          docker-compose up -d --build
+          docker compose up -d --build
           echo "Started all services..."
 
           # Wait for all services to be ready
@@ -126,5 +125,5 @@ jobs:
         if: always()
         run: |
           echo "Stopping Docker Compose services..."
-          docker-compose down -v || true
+          docker compose down -v || true
           echo "Services stopped successfully"
