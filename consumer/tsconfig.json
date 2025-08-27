@@ -20,8 +20,8 @@
     "declarationMap": true,
     "isolatedModules": true
   },
-  "include": ["**/*.ts"],
-  "exclude": ["node_modules", "dist"],
+  "include": ["*.ts", "**/*.ts"],
+  "exclude": ["node_modules", "dist", "coverage", "**/*.test.ts", "**/*.spec.ts"],
   "ts-node": {
     "esm": true
   }

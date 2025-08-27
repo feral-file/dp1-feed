@@ -19,6 +19,12 @@ services:
       - etcd_data:/etcd-data
     networks:
       - dp1-network
+    healthcheck:
+      test: ['CMD', 'etcdctl', 'endpoint', 'health']
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
 
   # NATS JetStream (replaces CloudFlare Queue)
   nats:
@@ -35,7 +41,8 @@ services:
     networks:
       - dp1-network
     healthcheck:
-      test: ['CMD', 'nats', 'server', 'check', '--server=nats://localhost:4222']
+      test:
+        ['CMD', 'wget', '--no-verbose', '--tries=1', '--spider', 'http://localhost:8222/healthz']
       interval: 30s
       timeout: 10s
       retries: 3
@@ -64,22 +71,10 @@ services:
     networks:
       - dp1-network
     depends_on:
-      - etcd
-      - nats
-    healthcheck:
-      test:
-        [
-          'CMD',
-          'wget',
-          '--no-verbose',
-          '--tries=1',
-          '--spider',
-          'http://localhost:8787/api/v1/health',
-        ]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 60s
+      etcd:
+        condition: service_healthy
+      nats:
+        condition: service_healthy
 
   # NATS Consumer (processes queue messages)
   dp1-consumer:
@@ -105,8 +100,10 @@ services:
     networks:
       - dp1-network
     depends_on:
-      - nats
-      - dp1-server
+      nats:
+        condition: service_healthy
+      dp1-server:
+        condition: service_healthy
     healthcheck:
       test: ['CMD', 'node', '-e', 'process.exit(0)']
       interval: 30s
