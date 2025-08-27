@@ -104,14 +104,14 @@ export class EtcdKVStorage implements KeyValueStorage {
           return JSON.parse(value);
         } catch (parseError) {
           console.error(`Error parsing JSON for key ${key}:`, parseError);
-          return null;
+          throw parseError;
         }
       }
 
       return value;
     } catch (error) {
       console.error(`Error getting key ${key} from etcd:`, error);
-      return null;
+      throw error;
     }
   }
 
@@ -138,7 +138,7 @@ export class EtcdKVStorage implements KeyValueStorage {
       return resultMap;
     } catch (error) {
       console.error('Error getting multiple keys from etcd:', error);
-      return resultMap;
+      throw error;
     }
   }
 

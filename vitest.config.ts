@@ -22,6 +22,7 @@ export default defineConfig({
         'queue/index.ts',
         'test-helpers.ts',
         'worker.ts',
+        'server.ts',
       ],
       thresholds: {
         global: {

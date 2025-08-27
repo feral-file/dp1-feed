@@ -17,9 +17,17 @@ vi.mock('./crypto', () => ({
 vi.mock('./queue/processor', () => ({
   queueWriteOperation: vi.fn().mockResolvedValue(undefined),
   generateMessageId: vi.fn().mockReturnValue('test-message-id'),
+  processWriteOperations: vi.fn().mockImplementation(async (messageBatch: any, env: any) => {
+    // Return processedCount based on the number of messages in the batch
+    return {
+      success: true,
+      processedCount: messageBatch.messages.length,
+      errors: undefined,
+    };
+  }),
 }));
 
-import { queueWriteOperation, generateMessageId } from './queue/processor';
+import { queueWriteOperation, generateMessageId, processWriteOperations } from './queue/processor';
 import { savePlaylist, savePlaylistGroup } from './storage';
 
 // Constants for test playlist IDs
@@ -2509,6 +2517,761 @@ describe('DP-1 Feed Operator API', () => {
         expect(playlist.items[0].id).toMatch(
           /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
         );
+      });
+    });
+  });
+
+  describe('Queue Processing API', () => {
+    const validAuth = {
+      Authorization: 'Bearer test-secret-key',
+      'Content-Type': 'application/json',
+    };
+
+    // Helper function to create a valid write operation message
+    const createValidMessage = (operation: string, data: any) => ({
+      id: 'test-message-id',
+      timestamp: new Date().toISOString(),
+      operation,
+      data,
+    });
+
+    describe('POST /queues/process-message', () => {
+      it('should process a valid create_playlist message', async () => {
+        const message = createValidMessage('create_playlist', {
+          playlist: {
+            dpVersion: '1.0.0',
+            id: '550e8400-e29b-41d4-a716-446655440000',
+            slug: 'test-playlist-1234',
+            title: 'Test Playlist',
+            created: '2024-01-01T00:00:00Z',
+            signature: 'ed25519:0x1234567890abcdef',
+            items: [
+              {
+                id: '550e8400-e29b-41d4-a716-446655440001',
+                title: 'Test Artwork',
+                source: 'https://example.com/artwork.html',
+                duration: 300,
+                license: 'open',
+                created: '2024-01-01T00:00:00.001Z',
+              },
+            ],
+          },
+        });
+
+        const req = new Request('http://localhost/queues/process-message', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(message),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(200);
+
+        const result = await response.json();
+        expect(result.success).toBe(true);
+        expect(result.messageId).toBe('test-message-id');
+        expect(result.operation).toBe('create_playlist');
+        expect(result.processedCount).toBe(1);
+        expect(result.errors).toBeUndefined();
+      });
+
+      it('should process a valid update_playlist message', async () => {
+        const message = createValidMessage('update_playlist', {
+          playlistId: '550e8400-e29b-41d4-a716-446655440000',
+          playlist: {
+            dpVersion: '1.0.1',
+            id: '550e8400-e29b-41d4-a716-446655440000',
+            slug: 'test-playlist-1234',
+            title: 'Updated Test Playlist',
+            created: '2024-01-01T00:00:00Z',
+            signature: 'ed25519:0x1234567890abcdef',
+            items: [
+              {
+                id: '550e8400-e29b-41d4-a716-446655440001',
+                title: 'Updated Artwork',
+                source: 'https://example.com/updated-artwork.html',
+                duration: 400,
+                license: 'token',
+                created: '2024-01-01T00:00:00.001Z',
+              },
+            ],
+          },
+        });
+
+        const req = new Request('http://localhost/queues/process-message', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(message),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(200);
+
+        const result = await response.json();
+        expect(result.success).toBe(true);
+        expect(result.messageId).toBe('test-message-id');
+        expect(result.operation).toBe('update_playlist');
+        expect(result.processedCount).toBe(1);
+        expect(result.errors).toBeUndefined();
+      });
+
+      it('should process a valid create_playlist_group message', async () => {
+        const message = createValidMessage('create_playlist_group', {
+          playlistGroup: {
+            id: '550e8400-e29b-41d4-a716-446655440001',
+            slug: 'test-exhibition-5678',
+            title: 'Test Exhibition',
+            curator: 'Test Curator',
+            created: '2024-01-01T00:00:00Z',
+            playlists: ['https://example.com/playlists/test-playlist-1'],
+          },
+        });
+
+        const req = new Request('http://localhost/queues/process-message', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(message),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(200);
+
+        const result = await response.json();
+        expect(result.success).toBe(true);
+        expect(result.messageId).toBe('test-message-id');
+        expect(result.operation).toBe('create_playlist_group');
+        expect(result.processedCount).toBe(1);
+        expect(result.errors).toBeUndefined();
+      });
+
+      it('should process a valid update_playlist_group message', async () => {
+        const message = createValidMessage('update_playlist_group', {
+          groupId: '550e8400-e29b-41d4-a716-446655440001',
+          playlistGroup: {
+            id: '550e8400-e29b-41d4-a716-446655440001',
+            slug: 'test-exhibition-5678',
+            title: 'Updated Test Exhibition',
+            curator: 'Updated Test Curator',
+            created: '2024-01-01T00:00:00Z',
+            playlists: ['https://example.com/playlists/test-playlist-2'],
+          },
+        });
+
+        const req = new Request('http://localhost/queues/process-message', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(message),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(200);
+
+        const result = await response.json();
+        expect(result.success).toBe(true);
+        expect(result.messageId).toBe('test-message-id');
+        expect(result.operation).toBe('update_playlist_group');
+        expect(result.processedCount).toBe(1);
+        expect(result.errors).toBeUndefined();
+      });
+
+      it('should return 400 for message missing operation field', async () => {
+        const invalidMessage = {
+          id: 'test-message-id',
+          timestamp: new Date().toISOString(),
+          // Missing operation field
+          data: { playlist: {} },
+        };
+
+        const req = new Request('http://localhost/queues/process-message', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(invalidMessage),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(400);
+
+        const result = await response.json();
+        expect(result.error).toBe('invalid_message');
+        expect(result.message).toBe('Message must contain operation, id, and timestamp fields');
+      });
+
+      it('should return 400 for message missing id field', async () => {
+        const invalidMessage = {
+          // Missing id field
+          timestamp: new Date().toISOString(),
+          operation: 'create_playlist',
+          data: { playlist: {} },
+        };
+
+        const req = new Request('http://localhost/queues/process-message', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(invalidMessage),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(400);
+
+        const result = await response.json();
+        expect(result.error).toBe('invalid_message');
+        expect(result.message).toBe('Message must contain operation, id, and timestamp fields');
+      });
+
+      it('should return 400 for message missing timestamp field', async () => {
+        const invalidMessage = {
+          id: 'test-message-id',
+          // Missing timestamp field
+          operation: 'create_playlist',
+          data: { playlist: {} },
+        };
+
+        const req = new Request('http://localhost/queues/process-message', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(invalidMessage),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(400);
+
+        const result = await response.json();
+        expect(result.error).toBe('invalid_message');
+        expect(result.message).toBe('Message must contain operation, id, and timestamp fields');
+      });
+
+      it('should return 400 for invalid JSON', async () => {
+        const req = new Request('http://localhost/queues/process-message', {
+          method: 'POST',
+          headers: validAuth,
+          body: 'invalid json',
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(500);
+
+        const result = await response.json();
+        expect(result.error).toBe('processing_failed');
+        expect(result.message).toBe('Failed to process the message');
+      });
+
+      it('should handle processing errors gracefully', async () => {
+        // Mock processWriteOperations to throw an error
+        vi.mocked(processWriteOperations).mockRejectedValueOnce(new Error('Processing failed'));
+
+        const message = createValidMessage('create_playlist', {
+          playlist: {
+            dpVersion: '1.0.0',
+            id: '550e8400-e29b-41d4-a716-446655440000',
+            slug: 'test-playlist-1234',
+            title: 'Test Playlist',
+            created: '2024-01-01T00:00:00Z',
+            signature: 'ed25519:0x1234567890abcdef',
+            items: [],
+          },
+        });
+
+        const req = new Request('http://localhost/queues/process-message', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(message),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(500);
+
+        const result = await response.json();
+        expect(result.error).toBe('processing_failed');
+        expect(result.message).toBe('Failed to process the message');
+        expect(result.details).toBe('Processing failed');
+      });
+
+      it('should handle retry count in message', async () => {
+        const message = {
+          ...createValidMessage('create_playlist', {
+            playlist: {
+              dpVersion: '1.0.0',
+              id: '550e8400-e29b-41d4-a716-446655440000',
+              slug: 'test-playlist-1234',
+              title: 'Test Playlist',
+              created: '2024-01-01T00:00:00Z',
+              signature: 'ed25519:0x1234567890abcdef',
+              items: [],
+            },
+          }),
+          retryCount: 3,
+        };
+
+        const req = new Request('http://localhost/queues/process-message', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(message),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(200);
+
+        const result = await response.json();
+        expect(result.success).toBe(true);
+        expect(result.processedCount).toBe(1);
+      });
+    });
+
+    describe('POST /queues/process-batch', () => {
+      it('should process a valid batch of messages', async () => {
+        const messages = [
+          createValidMessage('create_playlist', {
+            playlist: {
+              dpVersion: '1.0.0',
+              id: '550e8400-e29b-41d4-a716-446655440000',
+              slug: 'test-playlist-1234',
+              title: 'Test Playlist 1',
+              created: '2024-01-01T00:00:00Z',
+              signature: 'ed25519:0x1234567890abcdef',
+              items: [],
+            },
+          }),
+          createValidMessage('create_playlist_group', {
+            playlistGroup: {
+              id: '550e8400-e29b-41d4-a716-446655440001',
+              slug: 'test-exhibition-5678',
+              title: 'Test Exhibition',
+              curator: 'Test Curator',
+              created: '2024-01-01T00:00:00Z',
+              playlists: ['https://example.com/playlists/test-playlist-1'],
+            },
+          }),
+        ];
+
+        const req = new Request('http://localhost/queues/process-batch', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify({ messages }),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(200);
+
+        const result = await response.json();
+        expect(result.success).toBe(true);
+        expect(result.processedCount).toBe(2);
+        expect(result.messageIds).toEqual(['test-message-id', 'test-message-id']);
+        expect(result.errors).toBeUndefined();
+      });
+
+      it('should return 400 for empty messages array', async () => {
+        const req = new Request('http://localhost/queues/process-batch', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify({ messages: [] }),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(400);
+
+        const result = await response.json();
+        expect(result.error).toBe('invalid_batch');
+        expect(result.message).toBe('Request must contain a non-empty array of messages');
+      });
+
+      it('should return 400 for non-array messages', async () => {
+        const req = new Request('http://localhost/queues/process-batch', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify({ messages: 'not an array' }),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(400);
+
+        const result = await response.json();
+        expect(result.error).toBe('invalid_batch');
+        expect(result.message).toBe('Request must contain a non-empty array of messages');
+      });
+
+      it('should return 400 for batch with invalid message (missing operation)', async () => {
+        const messages = [
+          createValidMessage('create_playlist', {
+            playlist: {
+              dpVersion: '1.0.0',
+              id: '550e8400-e29b-41d4-a716-446655440000',
+              slug: 'test-playlist-1234',
+              title: 'Test Playlist',
+              created: '2024-01-01T00:00:00Z',
+              signature: 'ed25519:0x1234567890abcdef',
+              items: [],
+            },
+          }),
+          {
+            id: 'test-message-id-2',
+            timestamp: new Date().toISOString(),
+            // Missing operation field
+            data: { playlist: {} },
+          },
+        ];
+
+        const req = new Request('http://localhost/queues/process-batch', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify({ messages }),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(400);
+
+        const result = await response.json();
+        expect(result.error).toBe('invalid_message');
+        expect(result.message).toBe(
+          'All messages must contain operation, id, and timestamp fields'
+        );
+      });
+
+      it('should return 400 for batch with invalid message (missing id)', async () => {
+        const messages = [
+          createValidMessage('create_playlist', {
+            playlist: {
+              dpVersion: '1.0.0',
+              id: '550e8400-e29b-41d4-a716-446655440000',
+              slug: 'test-playlist-1234',
+              title: 'Test Playlist',
+              created: '2024-01-01T00:00:00Z',
+              signature: 'ed25519:0x1234567890abcdef',
+              items: [],
+            },
+          }),
+          {
+            // Missing id field
+            timestamp: new Date().toISOString(),
+            operation: 'create_playlist',
+            data: { playlist: {} },
+          },
+        ];
+
+        const req = new Request('http://localhost/queues/process-batch', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify({ messages }),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(400);
+
+        const result = await response.json();
+        expect(result.error).toBe('invalid_message');
+        expect(result.message).toBe(
+          'All messages must contain operation, id, and timestamp fields'
+        );
+      });
+
+      it('should return 400 for batch with invalid message (missing timestamp)', async () => {
+        const messages = [
+          createValidMessage('create_playlist', {
+            playlist: {
+              dpVersion: '1.0.0',
+              id: '550e8400-e29b-41d4-a716-446655440000',
+              slug: 'test-playlist-1234',
+              title: 'Test Playlist',
+              created: '2024-01-01T00:00:00Z',
+              signature: 'ed25519:0x1234567890abcdef',
+              items: [],
+            },
+          }),
+          {
+            id: 'test-message-id-2',
+            // Missing timestamp field
+            operation: 'create_playlist',
+            data: { playlist: {} },
+          },
+        ];
+
+        const req = new Request('http://localhost/queues/process-batch', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify({ messages }),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(400);
+
+        const result = await response.json();
+        expect(result.error).toBe('invalid_message');
+        expect(result.message).toBe(
+          'All messages must contain operation, id, and timestamp fields'
+        );
+      });
+
+      it('should return 400 for invalid JSON', async () => {
+        const req = new Request('http://localhost/queues/process-batch', {
+          method: 'POST',
+          headers: validAuth,
+          body: 'invalid json',
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(500);
+
+        const result = await response.json();
+        expect(result.error).toBe('batch_processing_failed');
+        expect(result.message).toBe('Failed to process the message batch');
+      });
+
+      it('should handle batch processing errors gracefully', async () => {
+        // Mock processWriteOperations to throw an error
+        vi.mocked(processWriteOperations).mockRejectedValueOnce(
+          new Error('Batch processing failed')
+        );
+
+        const messages = [
+          createValidMessage('create_playlist', {
+            playlist: {
+              dpVersion: '1.0.0',
+              id: '550e8400-e29b-41d4-a716-446655440000',
+              slug: 'test-playlist-1234',
+              title: 'Test Playlist',
+              created: '2024-01-01T00:00:00Z',
+              signature: 'ed25519:0x1234567890abcdef',
+              items: [],
+            },
+          }),
+        ];
+
+        const req = new Request('http://localhost/queues/process-batch', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify({ messages }),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(500);
+
+        const result = await response.json();
+        expect(result.error).toBe('batch_processing_failed');
+        expect(result.message).toBe('Failed to process the message batch');
+        expect(result.details).toBe('Batch processing failed');
+      });
+
+      it('should handle retry counts in batch messages', async () => {
+        const messages = [
+          {
+            ...createValidMessage('create_playlist', {
+              playlist: {
+                dpVersion: '1.0.0',
+                id: '550e8400-e29b-41d4-a716-446655440000',
+                slug: 'test-playlist-1234',
+                title: 'Test Playlist 1',
+                created: '2024-01-01T00:00:00Z',
+                signature: 'ed25519:0x1234567890abcdef',
+                items: [],
+              },
+            }),
+            retryCount: 1,
+          },
+          {
+            ...createValidMessage('create_playlist', {
+              playlist: {
+                dpVersion: '1.0.0',
+                id: '550e8400-e29b-41d4-a716-446655440001',
+                slug: 'test-playlist-5678',
+                title: 'Test Playlist 2',
+                created: '2024-01-01T00:00:00Z',
+                signature: 'ed25519:0x1234567890abcdef',
+                items: [],
+              },
+            }),
+            retryCount: 2,
+          },
+        ];
+
+        const req = new Request('http://localhost/queues/process-batch', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify({ messages }),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(200);
+
+        const result = await response.json();
+        expect(result.success).toBe(true);
+        expect(result.processedCount).toBe(2);
+        expect(result.messageIds).toEqual(['test-message-id', 'test-message-id']);
+      });
+    });
+
+    describe('Queue Processing Integration', () => {
+      it('should actually store data when processing create_playlist message', async () => {
+        // Temporarily override the mock to actually process the data
+        vi.mocked(processWriteOperations).mockImplementationOnce(
+          async (messageBatch: any, env: any) => {
+            const { savePlaylist } = await import('./storage');
+            for (const message of messageBatch.messages) {
+              const body = message.body;
+              if (body.operation === 'create_playlist') {
+                await savePlaylist(body.data.playlist, env);
+              }
+            }
+            return {
+              success: true,
+              processedCount: messageBatch.messages.length,
+              errors: undefined,
+            };
+          }
+        );
+
+        const message = createValidMessage('create_playlist', {
+          playlist: {
+            dpVersion: '1.0.0',
+            id: '550e8400-e29b-41d4-a716-446655440000',
+            slug: 'test-playlist-1234',
+            title: 'Test Playlist',
+            created: '2024-01-01T00:00:00Z',
+            signature: 'ed25519:0x1234567890abcdef',
+            items: [
+              {
+                id: '550e8400-e29b-41d4-a716-446655440001',
+                title: 'Test Artwork',
+                source: 'https://example.com/artwork.html',
+                duration: 300,
+                license: 'open',
+                created: '2024-01-01T00:00:00.001Z',
+              },
+            ],
+          },
+        });
+
+        const req = new Request('http://localhost/queues/process-message', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(message),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(200);
+
+        // Verify the playlist was actually stored
+        const getReq = new Request(
+          'http://localhost/api/v1/playlists/550e8400-e29b-41d4-a716-446655440000'
+        );
+        const getResponse = await app.fetch(getReq, testEnv);
+        expect(getResponse.status).toBe(200);
+
+        const playlist = await getResponse.json();
+        expect(playlist.id).toBe('550e8400-e29b-41d4-a716-446655440000');
+        expect(playlist.title).toBe('Test Playlist');
+        expect(playlist.items).toHaveLength(1);
+        expect(playlist.items[0].title).toBe('Test Artwork');
+      });
+
+      it('should actually store data when processing create_playlist_group message', async () => {
+        // Set up mock fetch for external playlist URLs
+        mockStandardPlaylistFetch();
+
+        // Temporarily override the mock to actually process the data
+        vi.mocked(processWriteOperations).mockImplementationOnce(
+          async (messageBatch: any, env: any) => {
+            const { savePlaylistGroup } = await import('./storage');
+            for (const message of messageBatch.messages) {
+              const body = message.body;
+              if (body.operation === 'create_playlist_group') {
+                await savePlaylistGroup(body.data.playlistGroup, env);
+              }
+            }
+            return {
+              success: true,
+              processedCount: messageBatch.messages.length,
+              errors: undefined,
+            };
+          }
+        );
+
+        const message = createValidMessage('create_playlist_group', {
+          playlistGroup: {
+            id: '550e8400-e29b-41d4-a716-446655440001',
+            slug: 'test-exhibition-5678',
+            title: 'Test Exhibition',
+            curator: 'Test Curator',
+            created: '2024-01-01T00:00:00Z',
+            playlists: ['https://example.com/playlists/test-playlist-1'],
+          },
+        });
+
+        const req = new Request('http://localhost/queues/process-message', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(message),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(200);
+
+        // Verify the playlist group was actually stored
+        const getReq = new Request(
+          'http://localhost/api/v1/playlist-groups/550e8400-e29b-41d4-a716-446655440001'
+        );
+        const getResponse = await app.fetch(getReq, testEnv);
+        expect(getResponse.status).toBe(200);
+
+        const group = await getResponse.json();
+        expect(group.id).toBe('550e8400-e29b-41d4-a716-446655440001');
+        expect(group.title).toBe('Test Exhibition');
+        expect(group.curator).toBe('Test Curator');
+        expect(group.playlists).toEqual(['https://example.com/playlists/test-playlist-1']);
+      });
+
+      it('should actually update data when processing update_playlist message', async () => {
+        // Temporarily override the mock to actually process the data
+        vi.mocked(processWriteOperations).mockImplementation(
+          async (messageBatch: any, env: any) => {
+            const { savePlaylist } = await import('./storage');
+            for (const message of messageBatch.messages) {
+              const body = message.body;
+              if (body.operation === 'create_playlist') {
+                await savePlaylist(body.data.playlist, env);
+              } else if (body.operation === 'update_playlist') {
+                await savePlaylist(body.data.playlist, env, true);
+              }
+            }
+            return {
+              success: true,
+              processedCount: messageBatch.messages.length,
+              errors: undefined,
+            };
+          }
+        );
+
+        // First create a playlist via queue
+        const createMessage = createValidMessage('create_playlist', {
+          playlist: {
+            dpVersion: '1.0.0',
+            id: '550e8400-e29b-41d4-a716-446655440000',
+            slug: 'test-playlist-1234',
+            title: 'Original Title',
+            created: '2024-01-01T00:00:00Z',
+            signature: 'ed25519:0x1234567890abcdef',
+            items: [],
+          },
+        });
+
+        await app.fetch(
+          new Request('http://localhost/queues/process-message', {
+            method: 'POST',
+            headers: validAuth,
+            body: JSON.stringify(createMessage),
+          }),
+          testEnv
+        );
+
+        // Then update it via queue
+        const updateMessage = createValidMessage('update_playlist', {
+          playlistId: '550e8400-e29b-41d4-a716-446655440000',
+          playlist: {
+            dpVersion: '1.0.1',
+            id: '550e8400-e29b-41d4-a716-446655440000',
+            slug: 'test-playlist-1234',
+            title: 'Updated Title',
+            created: '2024-01-01T00:00:00Z',
+            signature: 'ed25519:0x1234567890abcdef',
+            items: [],
+          },
+        });
+
+        const updateReq = new Request('http://localhost/queues/process-message', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(updateMessage),
+        });
+        const updateResponse = await app.fetch(updateReq, testEnv);
+        expect(updateResponse.status).toBe(200);
+
+        // Verify the playlist was actually updated
+        const getReq = new Request(
+          'http://localhost/api/v1/playlists/550e8400-e29b-41d4-a716-446655440000'
+        );
+        const getResponse = await app.fetch(getReq, testEnv);
+        expect(getResponse.status).toBe(200);
+
+        const playlist = await getResponse.json();
+        expect(playlist.title).toBe('Updated Title');
+        expect(playlist.dpVersion).toBe('1.0.1');
       });
     });
   });

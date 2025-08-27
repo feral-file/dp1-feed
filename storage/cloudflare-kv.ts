@@ -54,6 +54,7 @@ export class CloudFlareKVStorage implements KeyValueStorage {
                     resultMap.set(key, JSON.parse(data));
                   } catch (parseError) {
                     console.error(`Error parsing JSON for ${key}:`, parseError);
+                    throw parseError;
                   }
                 } else {
                   resultMap.set(key, data);
@@ -61,31 +62,14 @@ export class CloudFlareKVStorage implements KeyValueStorage {
               }
             } catch (individualError) {
               console.error(`Error getting key ${key}:`, individualError);
+              throw individualError;
             }
           }
         }
       } catch (error) {
         console.error(`Error getting batch of keys:`, error);
 
-        // Fallback to individual gets for this batch if batch operation fails
-        for (const key of batch) {
-          try {
-            const data = await this.kv.get(key, options as any);
-            if (data !== null) {
-              if (options?.type === 'json' && typeof data === 'string') {
-                try {
-                  resultMap.set(key, JSON.parse(data));
-                } catch (parseError) {
-                  console.error(`Error parsing JSON for ${key}:`, parseError);
-                }
-              } else {
-                resultMap.set(key, data);
-              }
-            }
-          } catch (individualError) {
-            console.error(`Error getting key ${key}:`, individualError);
-          }
-        }
+        throw error;
       }
     }
 
@@ -101,12 +85,7 @@ export class CloudFlareKVStorage implements KeyValueStorage {
   }
 
   async list(options?: KVListOptions): Promise<KVListResult> {
-    const result = await this.kv.list(options);
-    return {
-      keys: result.keys.map(k => ({ name: k.name, metadata: k.metadata })),
-      list_complete: result.list_complete,
-      cursor: (result as any).cursor,
-    };
+    return this.kv.list(options);
   }
 }
 

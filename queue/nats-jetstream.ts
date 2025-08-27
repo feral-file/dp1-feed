@@ -39,7 +39,7 @@ export class NatsJetStreamQueue implements Queue {
   /**
    * Establish native connection to NATS
    */
-  private async connect(): Promise<void> {
+  public async connect(): Promise<void> {
     if (this.nc && !this.nc.isClosed()) {
       return; // Already connected
     }
@@ -85,8 +85,6 @@ export class NatsJetStreamQueue implements Queue {
 
   async send(message: any, options?: QueueSendOptions): Promise<void> {
     try {
-      await this.connect();
-
       if (!this.js) {
         throw new Error('JetStream client not initialized');
       }
@@ -131,12 +129,11 @@ export class NatsJetStreamQueue implements Queue {
    */
   async ensureStream(): Promise<void> {
     try {
-      await this.connect();
-
       if (!this.nc) {
         throw new Error('NATS connection not established');
       }
 
+      // Get JetStream manager
       const jsManager = await this.nc.jetstreamManager();
 
       // Check if stream exists
@@ -202,6 +199,7 @@ export class NatsJetStreamQueueProvider implements QueueProvider {
    * Initialize the queue provider by ensuring streams exist
    */
   async initialize(): Promise<void> {
+    await this.writeQueue.connect();
     await this.writeQueue.ensureStream();
   }
 
