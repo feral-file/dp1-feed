@@ -5,6 +5,7 @@ This document describes the API flow for both Cloudflare Workers and self-hosted
 ## Overview
 
 The DP-1 Feed API follows an asynchronous pattern where:
+
 1. API requests are validated and signed immediately
 2. Operations are queued for async processing
 3. A response is returned to the client before persistence
@@ -13,12 +14,14 @@ The DP-1 Feed API follows an asynchronous pattern where:
 ## Deployment Types
 
 ### 1. Cloudflare Workers Deployment
+
 - **Storage**: Cloudflare KV (key-value store)
 - **Queue**: Cloudflare Queue
 - **Consumer**: Built-in Cloudflare Queue consumer
 - **Processing**: Direct database operations
 
 ### 2. Self-Hosted Node.js Deployment
+
 - **Storage**: etcd (key-value store)
 - **Queue**: NATS JetStream
 - **Consumer**: Separate Node.js consumer service
@@ -118,16 +121,19 @@ Both deployments use the same message structure:
 
 ```typescript
 interface WriteOperationMessage {
-  id: string;           // Unique message ID
-  timestamp: string;    // ISO timestamp
-  operation: 'create_playlist' | 'update_playlist' | 
-            'create_playlist_group' | 'update_playlist_group';
+  id: string; // Unique message ID
+  timestamp: string; // ISO timestamp
+  operation:
+    | 'create_playlist'
+    | 'update_playlist'
+    | 'create_playlist_group'
+    | 'update_playlist_group';
   data: {
-    playlist?: Playlist;           // For playlist operations
+    playlist?: Playlist; // For playlist operations
     playlistGroup?: PlaylistGroup; // For playlist group operations
-    playlistId?: string;          // For update operations
+    playlistId?: string; // For update operations
   };
-  retryCount?: number;  // For retry tracking
+  retryCount?: number; // For retry tracking
 }
 ```
 
@@ -145,13 +151,13 @@ sequenceDiagram
 
     CF_Queue->>CF_Consumer: Deliver message batch
     CF_Consumer->>Processor: processWriteOperations(batch)
-    
+
     Processor->>Processor: Create QueueProcessorService
     Processor->>Processor: Create StorageService
-    
+
     loop For each message in batch
         Processor->>Processor: processMessage(message)
-        
+
         alt create_playlist
             Processor->>Storage: savePlaylist(playlist, false)
             Storage->>CF_KV: PUT /playlists/{id}
@@ -166,7 +172,7 @@ sequenceDiagram
             Storage->>CF_KV: PUT /playlist-groups/{id}
         end
     end
-    
+
     Processor->>CF_Consumer: Return ProcessingResult
     CF_Consumer->>CF_Queue: ACK all (success) or NAK all (failure)
 ```
@@ -184,16 +190,16 @@ sequenceDiagram
 
     Consumer->>NATS_JS: Fetch messages (batch)
     NATS_JS->>Consumer: Return message batch
-    
+
     loop For each message in batch
         Consumer->>Node_API: POST /api/v1/queues/process-message
         Node_API->>Processor: processWriteOperations(messageBatch)
-        
+
         Processor->>Processor: Create QueueProcessorService
         Processor->>Processor: Create StorageService
-        
+
         Processor->>Processor: processMessage(message)
-        
+
         alt create_playlist
             Processor->>Storage: savePlaylist(playlist, false)
             Storage->>ETCD: PUT /dp1/playlists/{id}
@@ -207,11 +213,11 @@ sequenceDiagram
             Processor->>Storage: savePlaylistGroup(group, env, true)
             Storage->>ETCD: PUT /dp1/playlist-groups/{id}
         end
-        
+
         Processor->>Node_API: Return ProcessingResult
         Node_API->>Consumer: Return success/error response
     end
-    
+
     Consumer->>NATS_JS: ACK all (success) or NAK all (failure)
 ```
 
@@ -228,7 +234,7 @@ sequenceDiagram
     participant CF_KV as Cloudflare KV
 
     CF_Queue->>CF_Consumer: Deliver message batch
-    
+
     alt Processing Success
         CF_Consumer->>CF_KV: Persist data successfully
         CF_Consumer->>CF_Queue: batch.ackAll()
@@ -253,10 +259,10 @@ sequenceDiagram
 
     Consumer->>NATS_JS: Fetch messages (batch)
     NATS_JS->>Consumer: Return message batch
-    
+
     loop For each message
         Consumer->>Node_API: POST /api/v1/queues/process-message
-        
+
         alt API Success
             Node_API->>Consumer: Return success response
         else API Error (4xx)
@@ -267,7 +273,7 @@ sequenceDiagram
             Note right of Consumer: Temporary failure - will retry
         end
     end
-    
+
     alt All Messages Success
         Consumer->>NATS_JS: ACK all messages
         Note right of NATS_JS: Messages removed from stream
@@ -282,12 +288,12 @@ sequenceDiagram
 
 ## Key Differences Between Deployments
 
-| Aspect | Cloudflare Workers | Self-Hosted Node.js |
-|--------|-------------------|-------------------|
-| **Storage** | Cloudflare KV | etcd |
-| **Queue** | Cloudflare Queue | NATS JetStream |
-| **Consumer** | Built-in CF consumer | Separate Node.js service |
-| **Processing** | Direct database calls | HTTP API calls |
-| **Retry Logic** | Cloudflare managed | Custom implementation |
-| **Scaling** | Automatic | Manual/container orchestration |
-| **Monitoring** | Cloudflare dashboard | Custom metrics/logging |
+| Aspect          | Cloudflare Workers    | Self-Hosted Node.js            |
+| --------------- | --------------------- | ------------------------------ |
+| **Storage**     | Cloudflare KV         | etcd                           |
+| **Queue**       | Cloudflare Queue      | NATS JetStream                 |
+| **Consumer**    | Built-in CF consumer  | Separate Node.js service       |
+| **Processing**  | Direct database calls | HTTP API calls                 |
+| **Retry Logic** | Cloudflare managed    | Custom implementation          |
+| **Scaling**     | Automatic             | Manual/container orchestration |
+| **Monitoring**  | Cloudflare dashboard  | Custom metrics/logging         |
