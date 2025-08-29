@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { EtcdKVStorage, EtcdStorageProvider, type EtcdConfig } from './etcd-kv';
+import { EtcdKVStorage, EtcdStorageProvider, encodeBase64, type EtcdConfig } from './etcd-kv';
 import type { KVGetOptions, KVListOptions } from './interfaces';
 
 // Mock fetch globally
@@ -202,6 +202,29 @@ describe('EtcdKVStorage', () => {
       expect(result).toEqual(jsonValue);
     });
 
+    it('should handle emojis and Unicode characters when getting values', async () => {
+      const key = 'emoji-key';
+      const expectedValue = 'Test emojis 😊👪🏼🌍 🚀';
+
+      const base64Value = encodeBase64(expectedValue);
+
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            kvs: [
+              {
+                key: 'ZHAxL3Rlc3QtbmFtZXNwYWNlL2Vtb2ppLWtleQ==',
+                value: base64Value,
+              },
+            ],
+          }),
+      });
+
+      const result = await storage.get(key);
+      expect(result).toBe(expectedValue);
+    });
+
     it('should throw error for invalid JSON', async () => {
       const key = 'test-key';
       const options: KVGetOptions = { type: 'json' };
@@ -346,6 +369,53 @@ describe('EtcdKVStorage', () => {
           }),
         })
       );
+    });
+
+    it('should handle emojis and Unicode characters in values', async () => {
+      const key = 'emoji-key';
+      const value = 'Test emojis 😊👪🏼🌍 🚀';
+
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: () => Promise.resolve({}),
+      });
+
+      await storage.put(key, value);
+
+      expect(mockFetch).toHaveBeenCalledWith(
+        'http://localhost:2379/v3/kv/put',
+        expect.objectContaining({
+          method: 'POST',
+          body: expect.stringContaining('"key":"ZHAxL3Rlc3QtbmFtZXNwYWNlL2Vtb2ppLWtleQ=="'),
+        })
+      );
+
+      expect(mockFetch).toHaveBeenCalledTimes(1);
+    });
+
+    it('should handle JSON with emojis', async () => {
+      const key = 'json-emoji-key';
+      const jsonValue = JSON.stringify({
+        name: 'Test 🎨',
+        description: 'Art piece with emojis 👪🏼 and symbols ✨',
+        tags: ['emoji 😀', 'unicode 🌈'],
+      });
+
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: () => Promise.resolve({}),
+      });
+
+      await storage.put(key, jsonValue);
+
+      expect(mockFetch).toHaveBeenCalledWith(
+        'http://localhost:2379/v3/kv/put',
+        expect.objectContaining({
+          method: 'POST',
+        })
+      );
+
+      expect(mockFetch).toHaveBeenCalledTimes(1);
     });
 
     it('should handle put errors', async () => {

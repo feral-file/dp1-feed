@@ -82,7 +82,7 @@ export class EtcdKVStorage implements KeyValueStorage {
       const response = await this.makeRequest('/v3/kv/range', {
         method: 'POST',
         body: JSON.stringify({
-          key: btoa(etcdKey),
+          key: encodeBase64(etcdKey),
         }),
       });
 
@@ -96,7 +96,7 @@ export class EtcdKVStorage implements KeyValueStorage {
         return null;
       }
 
-      const value = atob(data.kvs[0]!.value);
+      const value = decodeBase64(data.kvs[0]!.value);
 
       // Handle JSON parsing if requested
       if (options?.type === 'json') {
@@ -148,8 +148,8 @@ export class EtcdKVStorage implements KeyValueStorage {
       const response = await this.makeRequest('/v3/kv/put', {
         method: 'POST',
         body: JSON.stringify({
-          key: btoa(etcdKey),
-          value: btoa(value),
+          key: encodeBase64(etcdKey),
+          value: encodeBase64(value),
         }),
       });
 
@@ -168,7 +168,7 @@ export class EtcdKVStorage implements KeyValueStorage {
       const response = await this.makeRequest('/v3/kv/deleterange', {
         method: 'POST',
         body: JSON.stringify({
-          key: btoa(etcdKey),
+          key: encodeBase64(etcdKey),
         }),
       });
 
@@ -187,8 +187,8 @@ export class EtcdKVStorage implements KeyValueStorage {
       const limit = options?.limit || 1000;
 
       const body: any = {
-        key: btoa(prefix),
-        range_end: btoa(prefix + '\0'), // Get all keys with this prefix
+        key: encodeBase64(prefix),
+        range_end: encodeBase64(prefix + '\0'), // Get all keys with this prefix
         limit: limit,
       };
 
@@ -196,7 +196,7 @@ export class EtcdKVStorage implements KeyValueStorage {
       if (options?.cursor) {
         try {
           const cursorKey = atob(options.cursor);
-          body.key = btoa(cursorKey);
+          body.key = encodeBase64(cursorKey);
         } catch (error) {
           console.error('Invalid cursor provided:', error);
         }
@@ -232,7 +232,7 @@ export class EtcdKVStorage implements KeyValueStorage {
       if (hasMore && kvs.length > 0) {
         // Use the last key as cursor for next page
         const lastKey = atob(kvs[kvs.length - 1]!.key);
-        cursor = btoa(lastKey + '\0'); // Increment for next range
+        cursor = encodeBase64(lastKey + '\0'); // Increment for next range
       }
 
       return {
@@ -275,4 +275,27 @@ export class EtcdStorageProvider implements StorageProvider {
   getPlaylistItemStorage(): KeyValueStorage {
     return this.playlistItemStorage;
   }
+}
+
+/**
+ * Helper functions for UTF-8 safe base64 encoding/decoding
+ */
+export function encodeBase64(str: string): string {
+  const encoder = new TextEncoder();
+  const bytes = encoder.encode(str);
+  let binary = '';
+  for (let i = 0; i < bytes.length; i++) {
+    binary += String.fromCharCode(bytes[i]!);
+  }
+  return btoa(binary);
+}
+
+export function decodeBase64(base64: string): string {
+  const binary = atob(base64);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+    bytes[i] = binary.charCodeAt(i);
+  }
+  const decoder = new TextDecoder();
+  return decoder.decode(bytes);
 }
