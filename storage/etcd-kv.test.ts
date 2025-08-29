@@ -1,9 +1,20 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { EtcdKVStorage, EtcdStorageProvider, encodeBase64, type EtcdConfig } from './etcd-kv';
+import {
+  EtcdKVStorage,
+  EtcdStorageProvider,
+  encodeBase64,
+  incrementString,
+  type EtcdConfig,
+} from './etcd-kv';
 import type { KVGetOptions, KVListOptions } from './interfaces';
 
 // Mock fetch globally
 global.fetch = vi.fn();
+
+// Helper function to calculate expected range_end
+function getExpectedRangeEnd(prefix: string): string {
+  return encodeBase64(incrementString(prefix));
+}
 
 describe('EtcdKVStorage', () => {
   let storage: EtcdKVStorage;
@@ -510,7 +521,7 @@ describe('EtcdKVStorage', () => {
           method: 'POST',
           body: JSON.stringify({
             key: 'ZHAxL3Rlc3QtbmFtZXNwYWNlL3Rlc3Qt',
-            range_end: 'ZHAxL3Rlc3QtbmFtZXNwYWNlL3Rlc3QtAA==',
+            range_end: getExpectedRangeEnd('dp1/test-namespace/test-'),
             limit: 10,
           }),
         })
@@ -539,7 +550,7 @@ describe('EtcdKVStorage', () => {
         expect.objectContaining({
           body: JSON.stringify({
             key: 'ZHAxL3Rlc3QtbmFtZXNwYWNlLw==',
-            range_end: 'ZHAxL3Rlc3QtbmFtZXNwYWNlLwA=',
+            range_end: getExpectedRangeEnd('dp1/test-namespace/'),
             limit: 1000,
           }),
         })

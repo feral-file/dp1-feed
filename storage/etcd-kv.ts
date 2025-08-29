@@ -186,16 +186,19 @@ export class EtcdKVStorage implements KeyValueStorage {
       const prefix = this.getKey(options?.prefix || '');
       const limit = options?.limit || 1000;
 
+      // Calculate range_end by incrementing the last byte of the prefix
+      const rangeEnd = incrementString(prefix);
+
       const body: any = {
         key: encodeBase64(prefix),
-        range_end: encodeBase64(prefix + '\0'), // Get all keys with this prefix
+        range_end: encodeBase64(rangeEnd), // Get all keys with this prefix
         limit: limit,
       };
 
       // Handle cursor for pagination
       if (options?.cursor) {
         try {
-          const cursorKey = atob(options.cursor);
+          const cursorKey = decodeBase64(options.cursor);
           body.key = encodeBase64(cursorKey);
         } catch (error) {
           console.error('Invalid cursor provided:', error);
@@ -215,7 +218,7 @@ export class EtcdKVStorage implements KeyValueStorage {
       const kvs = data.kvs || [];
 
       const keys = kvs.map(kv => {
-        const fullKey = atob(kv.key);
+        const fullKey = decodeBase64(kv.key);
         // Remove the namespace prefix to get the original key
         const prefixToRemove = this.getKey('');
         const name = fullKey.startsWith(prefixToRemove)
@@ -230,9 +233,10 @@ export class EtcdKVStorage implements KeyValueStorage {
       let cursor: string | undefined;
 
       if (hasMore && kvs.length > 0) {
-        // Use the last key as cursor for next page
-        const lastKey = atob(kvs[kvs.length - 1]!.key);
-        cursor = encodeBase64(lastKey + '\0'); // Increment for next range
+        // Use the last key + 1 as cursor for next page to avoid duplicates
+        const lastKey = decodeBase64(kvs[kvs.length - 1]!.key);
+        const nextKey = incrementString(lastKey);
+        cursor = encodeBase64(nextKey);
       }
 
       return {
@@ -298,4 +302,29 @@ export function decodeBase64(base64: string): string {
   }
   const decoder = new TextDecoder();
   return decoder.decode(bytes);
+}
+
+/**
+ * Increment a string by one byte, for etcd range queries
+ */
+export function incrementString(str: string): string {
+  // Convert string to byte array
+  const bytes = new TextEncoder().encode(str);
+  const result = new Uint8Array(bytes.length + 1);
+  result.set(bytes);
+
+  // Increment the last byte, handling overflow
+  let i = bytes.length - 1;
+  while (i >= 0) {
+    if (bytes[i]! < 255) {
+      result[i] = bytes[i]! + 1;
+      return new TextDecoder().decode(result.slice(0, bytes.length));
+    }
+    result[i] = 0;
+    i--;
+  }
+
+  // If all bytes overflowed, append a byte
+  result[bytes.length] = 1;
+  return new TextDecoder().decode(result);
 }
