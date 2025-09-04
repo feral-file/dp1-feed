@@ -6,7 +6,7 @@ on:
       target_url:
         description: 'Target URL to benchmark'
         required: false
-        default: 'https://dp1-feed-api-prod.dp1.workers.dev'
+        default: 'https://feed.feralfile.com'
       test_type:
         description: 'Test type (light, normal, stress, spike, soak)'
         required: false
