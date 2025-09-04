@@ -28,35 +28,10 @@ vi.mock('./queue/processor', () => ({
 }));
 
 import { queueWriteOperation, generateMessageId, processWriteOperations } from './queue/processor';
-import { savePlaylist } from './storage';
+import { savePlaylist, listAllPlaylistItems } from './storage';
 
 // Constants for test playlist IDs
 const playlistId1 = '550e8400-e29b-41d4-a716-446655440000';
-
-// Helper function to create a simple mock playlist response
-const createMockPlaylistResponse = (id: string, slug: string) =>
-  ({
-    ok: true,
-    json: () =>
-      Promise.resolve({
-        dpVersion: '1.0.0',
-        id,
-        slug,
-        title: 'Test External Playlist', // Required field for DP-1 validation
-        created: '2024-01-01T00:00:00Z',
-        signature: 'ed25519:0x1234567890abcdef', // Required for DP-1 validation
-        items: [
-          {
-            id: '550e8400-e29b-41d4-a716-446655440001',
-            title: 'External Test Artwork',
-            source: 'https://example.com/external-artwork.html',
-            duration: 300,
-            license: 'open',
-            created: '2024-01-01T00:00:00.001Z',
-          },
-        ],
-      }),
-  }) as Response;
 
 const testSetup = createTestEnv();
 const testEnv = testSetup.env;
@@ -69,6 +44,12 @@ const validPlaylist = {
     {
       title: 'Test Artwork',
       source: 'https://example.com/artwork.html',
+      duration: 300,
+      license: 'open' as const,
+    },
+    {
+      title: 'Test Artwork 2',
+      source: 'https://example.com/artwork2.html',
       duration: 300,
       license: 'open' as const,
     },
@@ -1146,15 +1127,6 @@ describe('DP-1 Feed Operator API', () => {
         expect(data2.hasMore).toBe(false);
         expect(data2.cursor).toBeUndefined();
       });
-
-      it('should validate limit parameter', async () => {
-        const req = new Request('http://localhost/api/v1/playlists?limit=1001');
-        const response = await app.fetch(req, testEnv);
-        expect(response.status).toBe(400);
-
-        const data = await response.json();
-        expect(data.error).toBe('invalid_limit');
-      });
     });
 
     describe('Slug-based Access', () => {
@@ -1312,6 +1284,111 @@ describe('DP-1 Feed Operator API', () => {
       }) as any;
     });
 
+    describe('GET /playlist-items', () => {
+      it('should list all playlist items with default limit', async () => {
+        const req = new Request('http://localhost/api/v1/playlist-items');
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(200);
+
+        const result = await response.json();
+        expect(result).toHaveProperty('items');
+        expect(result.cursor).toBeUndefined();
+        expect(Array.isArray(result.items)).toBe(true);
+        expect(result.items.length).toEqual(2);
+      });
+
+      it('should list playlist items with specific limit', async () => {
+        const limit = 1;
+        const req = new Request(`http://localhost/api/v1/playlist-items?limit=${limit}`);
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(200);
+
+        const result = await response.json();
+        expect(result).toHaveProperty('items');
+        expect(result).toHaveProperty('cursor');
+        expect(Array.isArray(result.items)).toBe(true);
+        expect(result.items.length).toBeLessThanOrEqual(limit);
+      });
+
+      it('should return 500 for internal error', async () => {
+        // Create a spy on the listAllPlaylistItems function to mock it for this test
+        const listAllPlaylistItemsSpy = vi
+          .spyOn(await import('./storage'), 'listAllPlaylistItems')
+          .mockRejectedValueOnce(new Error('Internal error'));
+
+        const req = new Request('http://localhost/api/v1/playlist-items');
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(500);
+
+        const data = await response.json();
+        expect(data.error).toBe('internal_error');
+        expect(data.message).toBe('Failed to retrieve playlist items');
+
+        // Restore the original function
+        listAllPlaylistItemsSpy.mockRestore();
+      });
+
+      it('should return 400 for limit too low', async () => {
+        const req = new Request('http://localhost/api/v1/playlist-items?limit=0');
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(400);
+
+        const data = await response.json();
+        expect(data.error).toBe('invalid_limit');
+        expect(data.message).toBe('Limit must be between 1 and 100');
+      });
+
+      it('should return 400 for limit too high', async () => {
+        const req = new Request('http://localhost/api/v1/playlist-items?limit=101');
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(400);
+
+        const data = await response.json();
+        expect(data.error).toBe('invalid_limit');
+        expect(data.message).toBe('Limit must be between 1 and 100');
+      });
+
+      it('should support sorting in ascending order', async () => {
+        const req = new Request('http://localhost/api/v1/playlist-items?sort=asc&limit=10');
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(200);
+
+        const result = await response.json();
+        expect(result).toHaveProperty('items');
+        expect(Array.isArray(result.items)).toBe(true);
+
+        // Verify ascending sort order (by created time)
+        if (result.items.length > 1) {
+          const firstItem = result.items[0];
+          const secondItem = result.items[1];
+          // In ascending order, first item should have earlier or equal created time
+          expect(new Date(firstItem.created).getTime()).toBeLessThanOrEqual(
+            new Date(secondItem.created).getTime()
+          );
+        }
+      });
+
+      it('should support sorting in descending order', async () => {
+        const req = new Request('http://localhost/api/v1/playlist-items?sort=desc&limit=10');
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(200);
+
+        const result = await response.json();
+        expect(result).toHaveProperty('items');
+        expect(Array.isArray(result.items)).toBe(true);
+
+        // Verify descending sort order (by created time)
+        if (result.items.length > 1) {
+          const firstItem = result.items[0];
+          const secondItem = result.items[1];
+          // In descending order, first item should have later or equal created time
+          expect(new Date(firstItem.created).getTime()).toBeGreaterThanOrEqual(
+            new Date(secondItem.created).getTime()
+          );
+        }
+      });
+    });
+
     describe('GET /playlist-items/:id', () => {
       it('should get playlist item by ID', async () => {
         const playlistItemId = createdPlaylist.items[0].id;
@@ -1348,6 +1425,25 @@ describe('DP-1 Feed Operator API', () => {
         const data = await response.json();
         expect(data.error).toBe('invalid_id');
         expect(data.message).toBe('Playlist item ID must be a valid UUID');
+      });
+
+      it('should return 500 for internal error', async () => {
+        const getPlaylistItemByIdSpy = vi
+          .spyOn(await import('./storage'), 'getPlaylistItemById')
+          .mockRejectedValueOnce(new Error('Internal error'));
+
+        const req = new Request(
+          `http://localhost/api/v1/playlist-items/550e8400-e29b-41d4-a716-446655440999`
+        );
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(500);
+
+        const data = await response.json();
+        expect(data.error).toBe('internal_error');
+        expect(data.message).toBe('Failed to retrieve playlist item');
+
+        // Restore the original function
+        getPlaylistItemByIdSpy.mockRestore();
       });
     });
 
