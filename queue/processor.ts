@@ -26,7 +26,7 @@ export async function processWriteOperations(
   env: Env
 ): Promise<ProcessingResult> {
   const processorService = createQueueProcessorService(env);
-  return await processorService.processBatch(batch as MessageBatch<WriteOperationMessage>, env);
+  return await processorService.processBatch(batch as MessageBatch<WriteOperationMessage>);
 }
 
 /**

@@ -55,11 +55,6 @@ export interface StorageProvider {
   getPlaylistStorage(): KeyValueStorage;
 
   /**
-   * Get the playlist groups storage namespace
-   */
-  getPlaylistGroupStorage(): KeyValueStorage;
-
-  /**
    * Get the playlist items storage namespace
    */
   getPlaylistItemStorage(): KeyValueStorage;

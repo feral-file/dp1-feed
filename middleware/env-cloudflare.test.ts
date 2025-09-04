@@ -42,7 +42,6 @@ describe('cloudflareEnvMiddleware', () => {
         ED25519_PRIVATE_KEY: 'test-private-key',
         ENVIRONMENT: 'test',
         PLAYLIST_KV: {} as any,
-        PLAYLIST_GROUP_KV: {} as any,
         PLAYLIST_ITEM_KV: {} as any,
         DP1_WRITE_QUEUE: {} as any,
       },
