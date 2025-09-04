@@ -14,7 +14,6 @@ binding = "DP1_PLAYLISTS"
 id = "local-playlist-id"
 
 [[kv_namespaces]]
-[[kv_namespaces]]
 binding = "DP1_PLAYLIST_ITEMS"
 id = "local-item-id"
 
