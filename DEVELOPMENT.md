@@ -16,7 +16,7 @@ This guide covers local development setup, project structure, and configuration 
 
 ```bash
 # Clone the repository
-git clone https://github.com/display-protocol/dp1-feed.git
+git clone https://github.com/feral-file/dp1-feed.git
 cd dp1-feed
 
 # Install dependencies
@@ -624,6 +624,6 @@ nats-server -js
 
 ### Getting Help
 
-- Check the [issues page](https://github.com/display-protocol/dp1-feed/issues)
+- Check the [issues page](https://github.com/feral-file/dp1-feed/issues)
 - Review [TESTING.md](TESTING.md) for testing strategies
 - Contact support at support@feralfile.com

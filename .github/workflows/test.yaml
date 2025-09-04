@@ -32,7 +32,7 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: display-protocol/dp1-feed
+          slug: feral-file/dp1-feed
           flags: unittests
 
   worker_integration_test:

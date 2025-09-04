@@ -1,9 +1,9 @@
 # DP-1 Feed Operator API
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/display-protocol/dp1-feed/test.yaml?branch=main&label=build%20status&logo=github)](https://github.com/display-protocol/dp1-feed/actions/workflows/test.yaml)
-[![Linter](https://img.shields.io/github/actions/workflow/status/display-protocol/dp1-feed/lint.yaml?branch=main&label=linter&logo=github)](https://github.com/display-protocol/dp1-feed/actions/workflows/lint.yaml)
-[![Code Coverage](https://img.shields.io/codecov/c/github/display-protocol/dp1-feed/main?label=code%20coverage&logo=codecov)](https://codecov.io/gh/display-protocol/dp1-feed)
-[![Benchmark](https://img.shields.io/github/actions/workflow/status/display-protocol/dp1-feed/benchmark.yaml?branch=main&label=benchmark%20status&logo=github)](https://github.com/display-protocol/dp1-feed/actions/workflows/benchmark.yaml)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/feral-file/dp1-feed/test.yaml?branch=main&label=build%20status&logo=github)](https://github.com/feral-file/dp1-feed/actions/workflows/test.yaml)
+[![Linter](https://img.shields.io/github/actions/workflow/status/feral-file/dp1-feed/lint.yaml?branch=main&label=linter&logo=github)](https://github.com/feral-file/dp1-feed/actions/workflows/lint.yaml)
+[![Code Coverage](https://img.shields.io/codecov/c/github/feral-file/dp1-feed/main?label=code%20coverage&logo=codecov)](https://codecov.io/gh/feral-file/dp1-feed)
+[![Benchmark](https://img.shields.io/github/actions/workflow/status/feral-file/dp1-feed/benchmark.yaml?branch=main&label=benchmark%20status&logo=github)](https://github.com/feral-file/dp1-feed/actions/workflows/benchmark.yaml)
 
 A modern API server implementing the DP-1 Feed Operator specification for blockchain-native digital art playlists. Supports both **Cloudflare Workers** (serverless) and **Node.js** (self-hosted) deployments.
 
@@ -27,7 +27,7 @@ A modern API server implementing the DP-1 Feed Operator specification for blockc
 ### Installation
 
 ```bash
-git clone https://github.com/display-protocol/dp1-feed.git
+git clone https://github.com/feral-file/dp1-feed.git
 cd dp1-feed
 npm install
 ```
