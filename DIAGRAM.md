@@ -1,6 +1,6 @@
 # DP-1 Feed API Flow Sequence Diagrams
 
-This document describes the API flow for both Cloudflare Workers and self-hosted Node.js deployments, covering playlist and playlist group operations.
+This document describes the API flow for both Cloudflare Workers and self-hosted Node.js deployments, covering playlist operations.
 
 ## Overview
 
@@ -29,7 +29,7 @@ The DP-1 Feed API follows an asynchronous pattern where:
 
 ---
 
-## Sequence Diagram: Playlist/Playlist Group Creation/Update Flow
+## Sequence Diagram: Playlist Creation/Update Flow
 
 ### Cloudflare Workers Deployment
 
@@ -41,10 +41,10 @@ sequenceDiagram
     participant CF_Consumer as CF Queue Consumer
     participant CF_KV as Cloudflare KV
 
-    Note over Client,CF_KV: Create/Update Playlist/Playlist Group Flow (Cloudflare Workers)
+    Note over Client,CF_KV: Create/Update Playlist Flow (Cloudflare Workers)
 
-    Client->>CF_Worker: POST/PUT/PATCH /playlists or /playlist-groups
-    Note right of Client: Request includes playlist/group data
+    Client->>CF_Worker: POST/PUT/PATCH /playlists
+    Note right of Client: Request includes playlist data
 
     CF_Worker->>CF_Worker: 1. Validate request body (Zod schema)
     CF_Worker->>CF_Worker: 2. Generate server IDs (UUID, slug, timestamps)
@@ -54,7 +54,7 @@ sequenceDiagram
     CF_Worker->>CF_Queue: 5. Queue write operation message
     Note right of CF_Queue: Message contains: {operation, id, timestamp, data}
 
-    CF_Worker->>Client: 6. Return signed playlist/group (201/200)
+    CF_Worker->>Client: 6. Return signed playlist (201/200)
     Note right of Client: Response includes signature, server-generated IDs
 
     Note over CF_Queue,CF_KV: Async Processing (Cloudflare handles)
@@ -77,10 +77,9 @@ sequenceDiagram
     participant Node_API as Node.js API (Internal)
     participant ETCD as etcd Storage
 
-    Note over Client,ETCD: Create/Update Playlist/Playlist Group Flow (Self-Hosted)
+    Note over Client,ETCD: Create/Update Playlist Flow (Self-Hosted)
 
-    Client->>Node_Server: POST/PUT/PATCH /playlists or /playlist-groups
-    Note right of Client: Request includes playlist/group data
+    Note right of Client: Request includes playlist data
 
     Node_Server->>Node_Server: 1. Validate request body (Zod schema)
     Node_Server->>Node_Server: 2. Generate server IDs (UUID, slug, timestamps)
@@ -90,7 +89,7 @@ sequenceDiagram
     Node_Server->>NATS_JS: 5. Publish message to JetStream
     Note right of NATS_JS: Message contains: {operation, id, timestamp, data}
 
-    Node_Server->>Client: 6. Return signed playlist/group (201/200)
+    Node_Server->>Client: 6. Return signed playlist (201/200)
     Note right of Client: Response includes signature, server-generated IDs
 
     Note over NATS_JS,ETCD: Async Processing (Separate Consumer)
@@ -123,14 +122,9 @@ Both deployments use the same message structure:
 interface WriteOperationMessage {
   id: string; // Unique message ID
   timestamp: string; // ISO timestamp
-  operation:
-    | 'create_playlist'
-    | 'update_playlist'
-    | 'create_playlist_group'
-    | 'update_playlist_group';
+  operation: 'create_playlist' | 'update_playlist';
   data: {
     playlist?: Playlist; // For playlist operations
-    playlistGroup?: PlaylistGroup; // For playlist group operations
     playlistId?: string; // For update operations
   };
   retryCount?: number; // For retry tracking
@@ -164,12 +158,6 @@ sequenceDiagram
         else update_playlist
             Processor->>Storage: savePlaylist(playlist, true)
             Storage->>CF_KV: PUT /playlists/{id}
-        else create_playlist_group
-            Processor->>Storage: savePlaylistGroup(group, env, false)
-            Storage->>CF_KV: PUT /playlist-groups/{id}
-        else update_playlist_group
-            Processor->>Storage: savePlaylistGroup(group, env, true)
-            Storage->>CF_KV: PUT /playlist-groups/{id}
         end
     end
 
@@ -206,12 +194,6 @@ sequenceDiagram
         else update_playlist
             Processor->>Storage: savePlaylist(playlist, true)
             Storage->>ETCD: PUT /dp1/playlists/{id}
-        else create_playlist_group
-            Processor->>Storage: savePlaylistGroup(group, env, false)
-            Storage->>ETCD: PUT /dp1/playlist-groups/{id}
-        else update_playlist_group
-            Processor->>Storage: savePlaylistGroup(group, env, true)
-            Storage->>ETCD: PUT /dp1/playlist-groups/{id}
         end
 
         Processor->>Node_API: Return ProcessingResult

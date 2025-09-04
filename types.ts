@@ -33,15 +33,12 @@ export function validateDpVersion(dpVersion: string): {
 /**
  * Validates that update request doesn't contain protected fields
  */
-export function validateNoProtectedFields(
-  body: any,
-  operation: 'playlist' | 'playlistGroup'
-): { isValid: boolean; protectedFields?: string[] } {
+export function validateNoProtectedFields(body: any): {
+  isValid: boolean;
+  protectedFields?: string[];
+} {
   const protectedPlaylistFields = ['id', 'slug', 'created', 'signature'];
-  const protectedGroupFields = ['id', 'slug', 'created'];
-
-  const protectedFields = operation === 'playlist' ? protectedPlaylistFields : protectedGroupFields;
-  const foundProtectedFields = protectedFields.filter(field => field in body);
+  const foundProtectedFields = protectedPlaylistFields.filter(field => field in body);
 
   if (foundProtectedFields.length > 0) {
     return {
@@ -241,26 +238,6 @@ export const PlaylistInputSchema = z.object({
   items: z.array(PlaylistItemInputSchema).min(1).max(1024),
 });
 
-export const PlaylistGroupInputSchema = z.object({
-  title: z.string().max(256),
-  curator: z.string().max(128),
-  summary: z.string().max(4096).optional(),
-  playlists: z
-    .array(
-      z
-        .string()
-        .regex(/^http[s]?:\/\/[^\s]+$/)
-        .max(1024)
-    )
-    .min(1)
-    .max(1024),
-  coverImage: z
-    .string()
-    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
-    .max(1024)
-    .optional(),
-});
-
 // Update schemas that exclude protected fields
 export const PlaylistUpdateSchema = z.object({
   dpVersion: z
@@ -288,27 +265,6 @@ export const PlaylistUpdateSchema = z.object({
     .optional(),
   items: z.array(PlaylistItemInputSchema).min(1).max(1024).optional(),
   title: z.string().max(256).optional(),
-});
-
-export const PlaylistGroupUpdateSchema = z.object({
-  title: z.string().max(256).optional(),
-  curator: z.string().max(128).optional(),
-  summary: z.string().max(4096).optional(),
-  playlists: z
-    .array(
-      z
-        .string()
-        .regex(/^http[s]?:\/\/[^\s]+$/)
-        .max(1024)
-    )
-    .min(1)
-    .max(1024)
-    .optional(),
-  coverImage: z
-    .string()
-    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
-    .max(1024)
-    .optional(),
 });
 
 // Complete schemas with server-generated fields for output
@@ -347,32 +303,6 @@ export const PlaylistSchema = z.object({
     .string()
     .regex(/^ed25519:0x[a-fA-F0-9]+$/)
     .max(150),
-});
-
-export const PlaylistGroupSchema = z.object({
-  id: z.string().uuid(),
-  slug: z
-    .string()
-    .regex(/^[a-zA-Z0-9-]+$/)
-    .max(64),
-  title: z.string().max(256),
-  curator: z.string().max(128),
-  summary: z.string().max(4096).optional(),
-  playlists: z
-    .array(
-      z
-        .string()
-        .regex(/^https:\/\/[^\s]+$/)
-        .max(1024)
-    )
-    .min(1)
-    .max(1024),
-  created: z.string().datetime(),
-  coverImage: z
-    .string()
-    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
-    .max(1024)
-    .optional(),
 });
 
 // DP-1 Core Types based on specification and OpenAPI schema
@@ -451,17 +381,6 @@ export interface Playlist {
   signature?: string;
 }
 
-export interface PlaylistGroup {
-  id: string;
-  slug: string;
-  title: string;
-  curator: string;
-  summary?: string;
-  playlists: string[];
-  created?: string;
-  coverImage?: string;
-}
-
 export interface ErrorResponse {
   error: string;
   message: string;
@@ -476,17 +395,13 @@ export interface KeyPair {
 // Inferred types from Zod schemas
 export type PlaylistInput = z.infer<typeof PlaylistInputSchema>;
 export type PlaylistItemInput = z.infer<typeof PlaylistItemInputSchema>;
-export type PlaylistGroupInput = z.infer<typeof PlaylistGroupInputSchema>;
 export type PlaylistUpdate = z.infer<typeof PlaylistUpdateSchema>;
-export type PlaylistGroupUpdate = z.infer<typeof PlaylistGroupUpdateSchema>;
 
 // Re-export queue message types from the queue package for convenience
 export type {
   QueueMessage,
   CreatePlaylistMessage,
   UpdatePlaylistMessage,
-  CreatePlaylistGroupMessage,
-  UpdatePlaylistGroupMessage,
   WriteOperationMessage,
 } from './queue/interfaces';
 
@@ -537,23 +452,5 @@ export function createPlaylistFromInput(input: PlaylistInput): Playlist {
     created: timestamp,
     defaults: input.defaults,
     items: itemsWithIds,
-  };
-}
-
-// Utility function to transform input to complete playlist group with server-generated fields
-export function createPlaylistGroupFromInput(input: PlaylistGroupInput): PlaylistGroup {
-  const groupId = crypto.randomUUID();
-  const timestamp = new Date().toISOString();
-  const slug = generateSlug(input.title);
-
-  return {
-    id: groupId,
-    slug,
-    title: input.title,
-    curator: input.curator,
-    summary: input.summary,
-    playlists: input.playlists,
-    created: timestamp,
-    coverImage: input.coverImage,
   };
 }

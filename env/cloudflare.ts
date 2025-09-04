@@ -13,7 +13,6 @@ export interface CloudFlareBindings {
 
   // CloudFlare KV bindings
   DP1_PLAYLISTS: KVNamespace;
-  DP1_PLAYLIST_GROUPS: KVNamespace;
   DP1_PLAYLIST_ITEMS: KVNamespace;
 
   // CloudFlare Queue binding
@@ -30,10 +29,8 @@ export interface CloudFlareBindings {
  */
 export function initializeCloudFlareEnv(bindings: CloudFlareBindings): Env {
   // Validate required bindings
-  if (!bindings.DP1_PLAYLISTS || !bindings.DP1_PLAYLIST_GROUPS || !bindings.DP1_PLAYLIST_ITEMS) {
-    throw new Error(
-      'Missing required KV bindings: DP1_PLAYLISTS, DP1_PLAYLIST_GROUPS, DP1_PLAYLIST_ITEMS'
-    );
+  if (!bindings.DP1_PLAYLISTS || !bindings.DP1_PLAYLIST_ITEMS) {
+    throw new Error('Missing required KV bindings: DP1_PLAYLISTS, DP1_PLAYLIST_ITEMS');
   }
 
   if (!bindings.DP1_WRITE_QUEUE) {
@@ -43,7 +40,6 @@ export function initializeCloudFlareEnv(bindings: CloudFlareBindings): Env {
   // Create providers from bindings
   const storageProvider = new CloudFlareStorageProvider(
     bindings.DP1_PLAYLISTS,
-    bindings.DP1_PLAYLIST_GROUPS,
     bindings.DP1_PLAYLIST_ITEMS
   );
 

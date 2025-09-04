@@ -31,7 +31,6 @@ describe('env.ts', () => {
       } as any;
       const mockBindings = {
         DP1_PLAYLISTS: mockKVNamespace,
-        DP1_PLAYLIST_GROUPS: mockKVNamespace,
         DP1_PLAYLIST_ITEMS: mockKVNamespace,
         DP1_WRITE_QUEUE: mockQueue,
         API_SECRET: 'test-secret',
@@ -64,7 +63,7 @@ describe('env.ts', () => {
 
       // Act & Assert
       expect(() => initializeCloudFlareEnv(mockBindings as any)).toThrow(
-        'Missing required KV bindings: DP1_PLAYLISTS, DP1_PLAYLIST_GROUPS, DP1_PLAYLIST_ITEMS'
+        'Missing required KV bindings: DP1_PLAYLISTS, DP1_PLAYLIST_ITEMS'
       );
     });
 
@@ -79,7 +78,6 @@ describe('env.ts', () => {
       };
       const mockBindings = {
         DP1_PLAYLISTS: mockKVNamespace,
-        DP1_PLAYLIST_GROUPS: mockKVNamespace,
         DP1_PLAYLIST_ITEMS: mockKVNamespace,
         API_SECRET: 'test-secret',
         ED25519_PRIVATE_KEY: 'test-key',
