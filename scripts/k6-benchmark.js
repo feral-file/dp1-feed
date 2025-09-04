@@ -6,7 +6,7 @@ import path from 'path';
 import chalk from 'chalk';
 
 // Configuration
-const DEFAULT_BASE_URL = 'https://dp1-feed-operator-api-dev.autonomy-system.workers.dev';
+const DEFAULT_BASE_URL = 'https://dp1-feed-api-prod.dp1.workers.dev';
 const RESULTS_DIR = 'k6-results';
 
 class K6BenchmarkRunner {

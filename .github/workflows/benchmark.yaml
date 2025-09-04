@@ -6,7 +6,7 @@ on:
       target_url:
         description: 'Target URL to benchmark'
         required: false
-        default: 'https://dp1-feed-operator-api-dev.autonomy-system.workers.dev'
+        default: 'https://dp1-feed-api-prod.dp1.workers.dev'
       test_type:
         description: 'Test type (light, normal, stress, spike, soak)'
         required: false
@@ -54,7 +54,7 @@ jobs:
           API_SECRET: ${{ secrets.DEV_API_SECRET }}
         run: |
           # Use default values if not provided (workflow_run does not have inputs)
-          URL=${TARGET_URL:-'https://dp1-feed-operator-api-dev.autonomy-system.workers.dev'}
+          URL=${TARGET_URL:-'https://dp1-feed-api-prod.dp1.workers.dev'}
           TYPE=${TEST_TYPE:-'light'}
 
           # Run K6 benchmarks

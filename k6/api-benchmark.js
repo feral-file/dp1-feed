@@ -26,7 +26,7 @@ export const options = {
 };
 
 // Configuration
-const BASE_URL = __ENV.BASE_URL || 'https://dp1-feed-operator-api-dev.autonomy-system.workers.dev';
+const BASE_URL = __ENV.BASE_URL || 'https://dp1-feed-api-prod.dp1.workers.dev';
 const API_SECRET = __ENV.API_SECRET || __ENV.BENCHMARK_API_SECRET;
 
 // Test data cache

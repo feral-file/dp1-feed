@@ -30,16 +30,16 @@ max_batch_timeout = 1
 # Dev environment
 [env.dev.vars]
 ENVIRONMENT = "development"
-SELF_HOSTED_DOMAINS = "dp1-feed-operator-api-dev.autonomy-system.workers.dev"
+SELF_HOSTED_DOMAINS = "dp1-feed-api-dev.dp1.workers.dev"
 
 # KV namespace bindings for storing JSON data
 [[env.dev.kv_namespaces]]
 binding = "DP1_PLAYLISTS"
-id = "1da79f6f0f914529858468874d4834a2"
+id = "dp1-playlists"
 
 [[env.dev.kv_namespaces]]
 binding = "DP1_PLAYLIST_ITEMS"
-id = "796f0a4b1e7541f48df8e0d744c77b98"
+id = "dp1-playlist-items"
 
 # Dev Queue configuration
 [[env.dev.queues.producers]]
@@ -56,16 +56,16 @@ max_batch_timeout = 1
 name = "dp1-feed-operator-api-prod"
 [env.production.vars]
 ENVIRONMENT = "production"
-SELF_HOSTED_DOMAINS = "feed.feralfile.com, dp1-feed-operator-api-prod.autonomy-system.workers.dev"
+SELF_HOSTED_DOMAINS = "feed.dp1.com, dp1-feed-api-prod.dp1.workers.dev"
 
 # Production KV namespaces
 [[env.production.kv_namespaces]]
 binding = "DP1_PLAYLISTS"
-id = "d8dd2c9576964fd4832fd16dd3feceb8"
+id = "dp1-playlists"
 
 [[env.production.kv_namespaces]]
 binding = "DP1_PLAYLIST_ITEMS"
-id = "97e0151430994b37b443eda4260f07d7"
+id = "dp1-playlist-items"
 
 # Production Queue configuration
 [[env.production.queues.producers]]
