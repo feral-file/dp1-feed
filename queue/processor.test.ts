@@ -2,18 +2,25 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 
 // Mock the StorageService methods BEFORE importing anything that uses them
 const mockSavePlaylist = vi.fn();
+const mockSavePlaylistGroup = vi.fn();
 
 vi.mock('../storage/service', () => {
   return {
     StorageService: vi.fn().mockImplementation(() => ({
       savePlaylist: mockSavePlaylist,
+      savePlaylistGroup: mockSavePlaylistGroup,
     })),
   };
 });
 
 import { processWriteOperations, queueWriteOperation, generateMessageId } from './processor';
-import type { Env, Playlist } from '../types';
-import type { CreatePlaylistMessage, UpdatePlaylistMessage } from './interfaces';
+import type { Env, Playlist, PlaylistGroup } from '../types';
+import type {
+  CreatePlaylistMessage,
+  UpdatePlaylistMessage,
+  CreatePlaylistGroupMessage,
+  UpdatePlaylistGroupMessage,
+} from './interfaces';
 import {
   createTestEnv,
   createMockMessageBatch,
@@ -46,11 +53,21 @@ const mockPlaylist: Playlist = {
   signature: 'ed25519:0x1234567890abcdef',
 };
 
+const mockPlaylistGroup: PlaylistGroup = {
+  id: '550e8400-e29b-41d4-a716-446655440002',
+  slug: 'test-exhibition-5678',
+  title: 'Test Exhibition',
+  curator: 'Test Curator',
+  playlists: ['https://example.com/playlists/test-playlist-1'],
+  created: '2024-01-01T00:00:00Z',
+};
+
 describe('Queue Processor', () => {
   let testEnv: Env;
   let mockQueue: MockQueue;
   let mockStorages: {
     playlist: MockKeyValueStorage;
+    group: MockKeyValueStorage;
     item: MockKeyValueStorage;
   };
 
@@ -62,11 +79,13 @@ describe('Queue Processor', () => {
 
     vi.clearAllMocks();
     mockSavePlaylist.mockClear();
+    mockSavePlaylistGroup.mockClear();
     consoleLogSpy.mockClear();
     consoleErrorSpy.mockClear();
 
     // Clear storage
     mockStorages.playlist.storage.clear();
+    mockStorages.group.storage.clear();
     mockStorages.item.storage.clear();
 
     // Reset queue
@@ -91,8 +110,8 @@ describe('Queue Processor', () => {
     });
 
     it('should include operation and resource ID in message ID', () => {
-      const operation = 'update_playlist';
-      const resourceId = mockPlaylist.id;
+      const operation = 'update_playlist_group';
+      const resourceId = mockPlaylistGroup.id;
 
       const messageId = generateMessageId(operation, resourceId);
 
@@ -257,6 +276,125 @@ describe('Queue Processor', () => {
       });
     });
 
+    describe('create_playlist_group operations', () => {
+      it('should successfully process playlist group creation', async () => {
+        const message: CreatePlaylistGroupMessage = {
+          id: generateMessageId('create_playlist_group', mockPlaylistGroup.id),
+          timestamp: new Date().toISOString(),
+          operation: 'create_playlist_group',
+          data: {
+            playlistGroup: mockPlaylistGroup,
+          },
+        };
+
+        const batch = createMockMessageBatch([message]);
+        mockSavePlaylistGroup.mockResolvedValueOnce(true);
+
+        await processWriteOperations(batch, testEnv);
+
+        expect(mockSavePlaylistGroup).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockPlaylistGroup.id,
+            title: mockPlaylistGroup.title,
+          }),
+          expect.any(Object),
+          false
+        );
+        // Note: batch.ackAll is not called by processWriteOperations itself
+        // The caller (like index.ts queue function) handles acking based on the result
+        expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining(`Processed message`));
+      });
+
+      it('should handle playlist group creation failure', async () => {
+        const message: CreatePlaylistGroupMessage = {
+          id: generateMessageId('create_playlist_group', mockPlaylistGroup.id),
+          timestamp: new Date().toISOString(),
+          operation: 'create_playlist_group',
+          data: {
+            playlistGroup: mockPlaylistGroup,
+          },
+        };
+
+        const batch = createMockMessageBatch([message]);
+        mockSavePlaylistGroup.mockRejectedValueOnce(new Error('Playlist group creation failed'));
+
+        const result = await processWriteOperations(batch, testEnv);
+        expect(result.success).toBe(false);
+        expect(result.errors).toHaveLength(1);
+        expect(result.errors![0].error).toBe('Playlist group creation failed');
+
+        expect(mockSavePlaylistGroup).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockPlaylistGroup.id,
+            title: mockPlaylistGroup.title,
+          }),
+          expect.any(Object),
+          false
+        );
+        expect(batch.ackAll).not.toHaveBeenCalled();
+      });
+    });
+
+    describe('update_playlist_group operations', () => {
+      it('should successfully process playlist group update', async () => {
+        const message: UpdatePlaylistGroupMessage = {
+          id: generateMessageId('update_playlist_group', mockPlaylistGroup.id),
+          timestamp: new Date().toISOString(),
+          operation: 'update_playlist_group',
+          data: {
+            groupId: mockPlaylistGroup.id,
+            playlistGroup: mockPlaylistGroup,
+          },
+        };
+
+        const batch = createMockMessageBatch([message]);
+        mockSavePlaylistGroup.mockResolvedValueOnce(true);
+
+        await processWriteOperations(batch, testEnv);
+
+        expect(mockSavePlaylistGroup).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockPlaylistGroup.id,
+            title: mockPlaylistGroup.title,
+          }),
+          expect.any(Object),
+          true
+        );
+        // Note: batch.ackAll is not called by processWriteOperations itself
+        // The caller (like index.ts queue function) handles acking based on the result
+      });
+
+      it('should handle playlist group update failure', async () => {
+        const message: UpdatePlaylistGroupMessage = {
+          id: generateMessageId('update_playlist_group', mockPlaylistGroup.id),
+          timestamp: new Date().toISOString(),
+          operation: 'update_playlist_group',
+          data: {
+            groupId: mockPlaylistGroup.id,
+            playlistGroup: mockPlaylistGroup,
+          },
+        };
+
+        const batch = createMockMessageBatch([message]);
+        mockSavePlaylistGroup.mockRejectedValueOnce(new Error('Playlist group update failed'));
+
+        const result = await processWriteOperations(batch, testEnv);
+        expect(result.success).toBe(false);
+        expect(result.errors).toHaveLength(1);
+        expect(result.errors![0].error).toBe('Playlist group update failed');
+
+        expect(mockSavePlaylistGroup).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockPlaylistGroup.id,
+            title: mockPlaylistGroup.title,
+          }),
+          expect.any(Object),
+          true
+        );
+        expect(batch.ackAll).not.toHaveBeenCalled();
+      });
+    });
+
     describe('batch processing', () => {
       it('should process multiple messages in a batch', async () => {
         const playlistMessage: CreatePlaylistMessage = {
@@ -266,8 +404,65 @@ describe('Queue Processor', () => {
           data: { playlist: mockPlaylist },
         };
 
-        const batch = createMockMessageBatch([playlistMessage]);
+        const groupMessage: CreatePlaylistGroupMessage = {
+          id: generateMessageId('create_playlist_group', mockPlaylistGroup.id),
+          timestamp: new Date().toISOString(),
+          operation: 'create_playlist_group',
+          data: { playlistGroup: mockPlaylistGroup },
+        };
 
+        const batch = createMockMessageBatch([playlistMessage, groupMessage]);
+        mockSavePlaylist.mockResolvedValueOnce(true);
+        mockSavePlaylistGroup.mockResolvedValueOnce(true);
+
+        await processWriteOperations(batch, testEnv);
+
+        expect(mockSavePlaylist).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockPlaylist.id,
+            title: mockPlaylist.title,
+          }),
+          false
+        );
+        expect(mockSavePlaylistGroup).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockPlaylistGroup.id,
+            title: mockPlaylistGroup.title,
+          }),
+          expect.any(Object),
+          false
+        );
+        // Note: batch.ackAll is not called by processWriteOperations itself
+        // The caller (like index.ts queue function) handles acking based on the result
+        expect(consoleLogSpy).toHaveBeenCalledWith('Processing batch of 2 write operations');
+      });
+
+      it('should continue processing other messages if one fails', async () => {
+        const message1: CreatePlaylistMessage = {
+          id: generateMessageId('create_playlist', mockPlaylist.id),
+          timestamp: new Date().toISOString(),
+          operation: 'create_playlist',
+          data: { playlist: mockPlaylist },
+        };
+
+        const message2: CreatePlaylistGroupMessage = {
+          id: generateMessageId('create_playlist_group', mockPlaylistGroup.id),
+          timestamp: new Date().toISOString(),
+          operation: 'create_playlist_group',
+          data: { playlistGroup: mockPlaylistGroup },
+        };
+
+        const batch = createMockMessageBatch([message1, message2]);
+        mockSavePlaylist.mockRejectedValueOnce(new Error('Playlist creation failed')); // First fails
+        mockSavePlaylistGroup.mockResolvedValueOnce(true); // Second succeeds
+
+        const result = await processWriteOperations(batch, testEnv);
+        expect(result.success).toBe(false);
+        expect(result.errors).toHaveLength(1);
+        expect(result.errors![0].error).toBe('Playlist creation failed');
+
+        expect(mockSavePlaylist).toHaveBeenCalled();
+        expect(mockSavePlaylistGroup).toHaveBeenCalled();
         expect(batch.ackAll).not.toHaveBeenCalled(); // Batch should not be acked on failure
       });
     });

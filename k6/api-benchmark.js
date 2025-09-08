@@ -31,6 +31,7 @@ const API_SECRET = __ENV.API_SECRET || __ENV.BENCHMARK_API_SECRET;
 
 // Test data cache
 let cachedPlaylists = [];
+let cachedPlaylistGroups = [];
 
 // Generate realistic test data
 function generatePlaylistData(index = 0) {
@@ -61,6 +62,33 @@ function generatePlaylistData(index = 0) {
         },
       },
     ],
+  };
+}
+
+function generatePlaylistGroupData(index = 0) {
+  // Use real playlist URLs if available
+  let playlistUrls = [];
+
+  if (cachedPlaylists.length >= 2) {
+    const playlist1 = cachedPlaylists[index % cachedPlaylists.length];
+    const playlist2 = cachedPlaylists[(index + 1) % cachedPlaylists.length];
+    playlistUrls = [
+      `${BASE_URL}/api/v1/playlists/${playlist1.id}`,
+      `${BASE_URL}/api/v1/playlists/${playlist2.id}`,
+    ];
+  } else {
+    playlistUrls = [
+      `https://example.com/k6-playlist-${index + 1}`,
+      `https://example.com/k6-playlist-${index + 2}`,
+    ];
+  }
+
+  return {
+    title: `K6 Benchmark Group ${index + 1} - ${Date.now()}`,
+    curator: `K6 Test Curator ${index + 1}`,
+    summary: `K6 benchmark test playlist group (${index + 1})`,
+    playlists: playlistUrls,
+    coverImage: `https://example.com/k6-cover-${index + 1}.jpg`,
   };
 }
 
@@ -133,18 +161,59 @@ export function setup() {
       }
     }
 
+    // Fetch existing playlist groups
+    console.log('📥 Fetching existing playlist groups...');
+    const groupsResponse = makeRequest('/api/v1/playlist-groups?limit=10', 'GET', null, {
+      setup: 'true',
+    });
+
+    if (groupsResponse.status === 200) {
+      const responseData = JSON.parse(groupsResponse.body);
+      const groups = Array.isArray(responseData) ? responseData : responseData.items || [];
+      if (Array.isArray(groups)) {
+        cachedPlaylistGroups = groups;
+        console.log(`✅ Found ${cachedPlaylistGroups.length} existing playlist groups`);
+      }
+    }
+
+    // Only create playlist groups if none exist and we have playlists to reference
+    if (cachedPlaylistGroups.length === 0 && cachedPlaylists.length >= 2) {
+      console.log('📝 No existing playlist groups found, creating test group...');
+
+      const groupData = generatePlaylistGroupData(0);
+      console.log('📤 Creating playlist group...');
+      const response = makeRequest('/api/v1/playlist-groups', 'POST', groupData, { setup: 'true' });
+
+      if (response.status === 201) {
+        const group = JSON.parse(response.body);
+        cachedPlaylistGroups.push(group);
+        console.log(`✅ Created playlist group: ${group.id}`);
+      } else {
+        console.log(`❌ Failed to create playlist group: ${response.status}`);
+        try {
+          const errorBody = JSON.parse(response.body);
+          console.log(`❌ Error details: ${JSON.stringify(errorBody)}`);
+        } catch (e) {
+          console.log(`❌ Error: ${e.message}`);
+        }
+      }
+    }
+
     const setupTime = Date.now() - setupStart;
     setupDuration.add(setupTime);
 
     console.log(`🎯 Setup completed in ${setupTime}ms`);
-    console.log(`📊 Available for testing: ${cachedPlaylists.length} playlists`);
+    console.log(
+      `📊 Available for testing: ${cachedPlaylists.length} playlists, ${cachedPlaylistGroups.length} groups`
+    );
 
     return {
       playlists: cachedPlaylists,
+      groups: cachedPlaylistGroups,
     };
   } catch (error) {
     console.error(`❌ Setup failed: ${error.message}`);
-    return { playlists: [] };
+    return { playlists: [], groups: [] };
   }
 }
 
@@ -152,6 +221,7 @@ export function setup() {
 export default function (data) {
   // Update cached data from setup
   cachedPlaylists = data.playlists || [];
+  cachedPlaylistGroups = data.groups || [];
 
   // Test API info endpoint
   testAPIInfo();
@@ -161,6 +231,9 @@ export default function (data) {
 
   // Test playlist operations
   testPlaylistOperations();
+
+  // Test playlist group operations
+  testPlaylistGroupOperations();
 
   // Test playlist items (read-only)
   testPlaylistItems();
@@ -287,6 +360,104 @@ function testPlaylistOperations() {
       const updateSuccess = check(updateResponse, {
         'Update Playlist: status is 200': r => r.status === 200,
         'Update Playlist: title updated': r => {
+          try {
+            const data = JSON.parse(r.body);
+            return data.title.includes('Updated');
+          } catch {
+            return false;
+          }
+        },
+      });
+
+      if (!updateSuccess) errorRate.add(1);
+    }
+  }
+}
+
+function testPlaylistGroupOperations() {
+  // List playlist groups
+  const listResponse = makeRequest('/api/v1/playlist-groups?limit=10', 'GET', null, {
+    endpoint: 'list_groups',
+  });
+
+  const listSuccess = check(listResponse, {
+    'List Groups: status is 200': r => r.status === 200,
+    'List Groups: returns paginated data': r => {
+      try {
+        const data = JSON.parse(r.body);
+        return Array.isArray(data) || (data && Array.isArray(data.items));
+      } catch {
+        return false;
+      }
+    },
+  });
+
+  if (!listSuccess) errorRate.add(1);
+
+  // Create playlist group (if authenticated and have playlists) - test creation only
+  if (API_SECRET && cachedPlaylists.length >= 2) {
+    const groupData = generatePlaylistGroupData(Math.floor(Math.random() * 1000));
+    const createResponse = makeRequest('/api/v1/playlist-groups', 'POST', groupData, {
+      endpoint: 'create_group',
+    });
+
+    const createSuccess = check(createResponse, {
+      'Create Group: status is 201': r => r.status === 201,
+      'Create Group: returns group with ID': r => {
+        try {
+          const data = JSON.parse(r.body);
+          return data.id && data.title;
+        } catch {
+          return false;
+        }
+      },
+    });
+
+    if (!createSuccess) errorRate.add(1);
+  }
+
+  // Test GET and UPDATE operations using cached playlist groups (to avoid KV async issues)
+  if (cachedPlaylistGroups.length > 0) {
+    const existingGroup =
+      cachedPlaylistGroups[Math.floor(Math.random() * cachedPlaylistGroups.length)];
+
+    // Get group by ID
+    const getResponse = makeRequest(`/api/v1/playlist-groups/${existingGroup.id}`, 'GET', null, {
+      endpoint: 'get_group',
+    });
+
+    const getSuccess = check(getResponse, {
+      'Get Group: status is 200': r => r.status === 200,
+      'Get Group: returns correct group': r => {
+        try {
+          const data = JSON.parse(r.body);
+          return data.id === existingGroup.id;
+        } catch {
+          return false;
+        }
+      },
+    });
+
+    if (!getSuccess) errorRate.add(1);
+
+    // Update group (if authenticated)
+    if (API_SECRET) {
+      const updateData = {
+        title: `Updated ${existingGroup.title.slice(0, 64)} - ${Date.now()}`,
+        curator: existingGroup.curator || `Updated Curator - ${Date.now()}`,
+        playlists: existingGroup.playlists || [],
+      };
+
+      const updateResponse = makeRequest(
+        `/api/v1/playlist-groups/${existingGroup.id}`,
+        'PATCH',
+        updateData,
+        { endpoint: 'update_group' }
+      );
+
+      const updateSuccess = check(updateResponse, {
+        'Update Group: status is 200': r => r.status === 200,
+        'Update Group: title updated': r => {
           try {
             const data = JSON.parse(r.body);
             return data.title.includes('Updated');

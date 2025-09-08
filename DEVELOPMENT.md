@@ -261,6 +261,7 @@ dp1-feed/
 │
 ├── routes/                # API routes
 │   ├── playlists.ts       # Playlist CRUD operations
+│   ├── playlistGroups.ts  # Playlist group operations
 │   ├── playlistItems.ts   # Playlist item operations
 │   └── queues.ts          # Queue management
 │
@@ -310,6 +311,7 @@ dp1-feed/
 export interface CloudFlareBindings {
   // KV Storage
   DP1_PLAYLISTS: KVNamespace;
+  DP1_PLAYLIST_GROUPS: KVNamespace;
   DP1_PLAYLIST_ITEMS: KVNamespace;
 
   // Queue
@@ -372,6 +374,11 @@ name = "dp1-feed-operator-api-prod"
 binding = "DP1_PLAYLISTS"
 id = "your-playlists-kv-id"
 preview_id = "your-playlists-preview-kv-id"
+
+[[kv_namespaces]]
+binding = "DP1_PLAYLIST_GROUPS"
+id = "your-playlist-groups-kv-id"
+preview_id = "your-playlist-groups-preview-kv-id"
 
 [[kv_namespaces]]
 binding = "DP1_PLAYLIST_ITEMS"
