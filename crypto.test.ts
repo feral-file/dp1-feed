@@ -1,10 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import {
-  createCanonicalForm,
-  getServerKeyPair,
-  signPlaylist,
-  verifyPlaylistSignature,
-} from './crypto';
+import { createCanonicalForm, getServerKeyPair, signObj, verifyPlaylistSignature } from './crypto';
 import type { Playlist, PlaylistItem, Env } from './types';
 
 describe('Crypto Functions', () => {
@@ -323,14 +318,14 @@ describe('Crypto Functions', () => {
 
     describe('signPlaylist', () => {
       it('should create a valid signature', async () => {
-        const signature = await signPlaylist(testPlaylist, keyPair.privateKey);
+        const signature = await signObj(testPlaylist, keyPair.privateKey);
 
         expect(signature).toMatch(/^ed25519:0x[a-f0-9]{128}$/);
       });
 
       it('should create deterministic signatures for the same playlist', async () => {
-        const signature1 = await signPlaylist(testPlaylist, keyPair.privateKey);
-        const signature2 = await signPlaylist(testPlaylist, keyPair.privateKey);
+        const signature1 = await signObj(testPlaylist, keyPair.privateKey);
+        const signature2 = await signObj(testPlaylist, keyPair.privateKey);
 
         expect(signature1).toBe(signature2);
       });
@@ -338,8 +333,8 @@ describe('Crypto Functions', () => {
       it('should create different signatures for different playlists', async () => {
         const playlist2 = { ...testPlaylist, title: 'Different Title' };
 
-        const signature1 = await signPlaylist(testPlaylist, keyPair.privateKey);
-        const signature2 = await signPlaylist(playlist2, keyPair.privateKey);
+        const signature1 = await signObj(testPlaylist, keyPair.privateKey);
+        const signature2 = await signObj(playlist2, keyPair.privateKey);
 
         expect(signature1).not.toBe(signature2);
       });
@@ -375,7 +370,7 @@ describe('Crypto Functions', () => {
           ],
         };
 
-        const signature = await signPlaylist(complexPlaylist, keyPair.privateKey);
+        const signature = await signObj(complexPlaylist, keyPair.privateKey);
         expect(signature).toMatch(/^ed25519:0x[a-f0-9]{128}$/);
       });
     });
@@ -385,7 +380,7 @@ describe('Crypto Functions', () => {
         // Note: Current implementation uses placeholder public key for signing-only use case
         // This test verifies the signature verification process works, even if it returns false
         // due to the placeholder public key mismatch
-        const signature = await signPlaylist(testPlaylist, keyPair.privateKey);
+        const signature = await signObj(testPlaylist, keyPair.privateKey);
         const signedPlaylist: Playlist = { ...testPlaylist, signature };
 
         // The verification will return false because we're using a placeholder public key
@@ -425,7 +420,7 @@ describe('Crypto Functions', () => {
       });
 
       it('should reject tampered playlist', async () => {
-        const signature = await signPlaylist(testPlaylist, keyPair.privateKey);
+        const signature = await signObj(testPlaylist, keyPair.privateKey);
         const tamperedPlaylist: Playlist = {
           ...testPlaylist,
           title: 'Tampered Title', // Changed after signing
@@ -438,7 +433,7 @@ describe('Crypto Functions', () => {
 
       it('should handle verification errors gracefully', async () => {
         const invalidPublicKey = new Uint8Array(32); // All zeros
-        const signature = await signPlaylist(testPlaylist, keyPair.privateKey);
+        const signature = await signObj(testPlaylist, keyPair.privateKey);
         const signedPlaylist: Playlist = { ...testPlaylist, signature };
 
         const isValid = await verifyPlaylistSignature(signedPlaylist, invalidPublicKey);

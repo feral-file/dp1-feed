@@ -5,7 +5,11 @@ import { createTestEnv } from './test-helpers';
 
 // Mock the crypto module to avoid ED25519 key issues in tests
 vi.mock('./crypto', () => ({
-  signPlaylist: vi.fn().mockResolvedValue('ed25519:0x1234567890abcdef'),
+  signObj: vi
+    .fn()
+    .mockResolvedValue(
+      'ed25519:0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef'
+    ),
   getServerKeyPair: vi.fn().mockResolvedValue({
     publicKey: new Uint8Array(32),
     privateKey: new Uint8Array(32),
@@ -101,7 +105,34 @@ const validPlaylist = {
 const validChannel = {
   title: 'Test Exhibition',
   curator: 'Test Curator',
+  curators: [
+    {
+      name: 'Primary Curator',
+      key: 'curator-key-1',
+      url: 'https://example.com/curator1',
+    },
+    {
+      name: 'Secondary Curator',
+      url: 'https://example.com/curator2',
+    },
+  ],
+  summary: 'A comprehensive digital art exhibition showcasing modern works',
+  publisher: {
+    name: 'Art Gallery Foundation',
+    key: 'publisher-key',
+    url: 'https://example.com/publisher',
+  },
   playlists: ['https://example.com/playlists/test-playlist-1'],
+  coverImage: 'https://example.com/cover.jpg',
+  dynamicQueries: [
+    {
+      endpoint: 'https://api.example.com/artworks',
+      params: {
+        category: 'digital',
+        year: '2024',
+      },
+    },
+  ],
 };
 
 describe('DP-1 Feed Operator API', () => {
@@ -1206,7 +1237,97 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.error).toBe('invalid_json');
     });
 
-    it('POST /channels should create group with server-generated ID and slug', async () => {
+    it('POST /channels with invalid curators array returns 400', async () => {
+      const invalidChannel = {
+        ...validChannel,
+        curators: [
+          {
+            name: 'a'.repeat(129), // Invalid: name too long (max 128)
+            url: 'https://example.com/curator',
+          },
+        ],
+      };
+
+      const req = new Request('http://localhost/api/v1/channels', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(invalidChannel),
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('validation_error');
+      expect(data.message).toContain('curators');
+    });
+
+    it('POST /channels with invalid publisher entity returns 400', async () => {
+      const invalidChannel = {
+        ...validChannel,
+        publisher: {
+          name: '', // Invalid: empty name
+          url: 'invalid-url', // Invalid: not a valid URL
+        },
+      };
+
+      const req = new Request('http://localhost/api/v1/channels', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(invalidChannel),
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('validation_error');
+    });
+
+    it('POST /channels with invalid dynamicQueries returns 400', async () => {
+      const invalidChannel = {
+        ...validChannel,
+        dynamicQueries: [
+          {
+            endpoint: 'invalid-endpoint', // Invalid: not a valid URL
+            params: {
+              test: 'value',
+            },
+          },
+        ],
+      };
+
+      const req = new Request('http://localhost/api/v1/channels', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(invalidChannel),
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('validation_error');
+      expect(data.message).toContain('dynamicQueries');
+    });
+
+    it('POST /channels with invalid coverImage URL returns 400', async () => {
+      const invalidChannel = {
+        ...validChannel,
+        coverImage: 'invalid-url', // Invalid: not a valid URL
+      };
+
+      const req = new Request('http://localhost/api/v1/channels', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(invalidChannel),
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('validation_error');
+      expect(data.message).toContain('coverImage');
+    });
+
+    it('POST /channels should create new one with server-generated ID and slug', async () => {
       // Mock fetch for external playlist validation
       mockStandardPlaylistFetch();
 
@@ -1222,6 +1343,12 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.id).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);
       expect(data.slug).toMatch(/^test-exhibition-\d{4}$/);
       expect(data.created).toBeTruthy();
+      expect(data.curators).toEqual(validChannel.curators);
+      expect(data.publisher).toEqual(validChannel.publisher);
+      expect(data.dynamicQueries).toEqual(validChannel.dynamicQueries);
+      expect(data.coverImage).toBe(validChannel.coverImage);
+      expect(data.summary).toBe(validChannel.summary);
+      expect(data.signature).toMatch(/^ed25519:0x[a-fA-F0-9]+$/);
 
       // Verify queue operation was called
       expect(queueWriteOperation).toHaveBeenCalledWith(
@@ -1257,6 +1384,28 @@ describe('DP-1 Feed Operator API', () => {
       // Then update it with new title
       const updatedGroup = {
         title: 'Updated Exhibition Title',
+        summary: 'Updated summary with new content',
+        curators: [
+          {
+            name: 'Updated Curator',
+            key: 'updated-curator-key',
+            url: 'https://example.com/updated-curator',
+          },
+        ],
+        publisher: {
+          name: 'Updated Publisher',
+          url: 'https://example.com/updated-publisher',
+        },
+        dynamicQueries: [
+          {
+            endpoint: 'https://api.example.com/updated',
+            params: {
+              filter: 'updated',
+              status: 'active',
+            },
+          },
+        ],
+        coverImage: 'https://example.com/updated-cover.jpg',
       };
 
       const updateReq = new Request(`http://localhost/api/v1/channels/${groupId}`, {
@@ -1271,6 +1420,11 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.id).toBe(groupId); // ID should remain the same
       expect(data.slug).toBe(createdGroup.slug); // Slug should be preserved, not regenerated
       expect(data.title).toBe('Updated Exhibition Title'); // Title should be updated
+      expect(data.summary).toBe(updatedGroup.summary);
+      expect(data.curators).toEqual(updatedGroup.curators);
+      expect(data.publisher).toEqual(updatedGroup.publisher);
+      expect(data.dynamicQueries).toEqual(updatedGroup.dynamicQueries);
+      expect(data.coverImage).toBe(updatedGroup.coverImage);
 
       // Verify queue operation was called for update
       expect(queueWriteOperation).toHaveBeenCalledWith(
@@ -1445,6 +1599,43 @@ describe('DP-1 Feed Operator API', () => {
 
       const data = await updateResponse.json();
       expect(data.error).toBe('invalid_json');
+    });
+
+    it('PATCH /channels/:id with protected fields returns 400', async () => {
+      // Mock fetch for external playlist validation
+      mockStandardPlaylistFetch();
+
+      // First create a channel
+      const createReq = new Request('http://localhost/api/v1/channels', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(validChannel),
+      });
+      const createResponse = await app.fetch(createReq, testEnv);
+      const createdGroup = await createResponse.json();
+
+      // Try to update with protected fields
+      const updateReq = new Request(`http://localhost/api/v1/channels/${createdGroup.id}`, {
+        method: 'PATCH',
+        headers: validAuth,
+        body: JSON.stringify({
+          title: 'Updated Title',
+          id: 'new-id', // Protected field
+          slug: 'new-slug', // Protected field
+          created: '2025-01-01T00:00:00Z', // Protected field
+          signature: 'ed25519:0x123456', // Protected field
+        }),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(400);
+
+      const data = await updateResponse.json();
+      expect(data.error).toBe('protected_fields');
+      expect(data.message).toContain('Cannot update protected fields');
+      expect(data.message).toContain('id');
+      expect(data.message).toContain('slug');
+      expect(data.message).toContain('created');
+      expect(data.message).toContain('signature');
     });
 
     it('PUT /channels/:id with invalid group ID returns 400', async () => {

@@ -699,39 +699,39 @@ export class StorageService {
     }
 
     // Add playlist item operations to the same batch
+    // Create channel-to-playlist-item indexes for ALL playlists (both local and external)
     for (const validPlaylist of validatedPlaylists) {
-      if (
-        validPlaylist.playlist &&
-        validPlaylist.external &&
-        validPlaylist.playlist.items.length > 0
-      ) {
+      if (validPlaylist.playlist && validPlaylist.playlist.items.length > 0) {
         for (const item of validPlaylist.playlist.items) {
-          const itemData = JSON.stringify(item);
+          // For external playlists, store the item data (since it's not stored elsewhere)
+          if (validPlaylist.external) {
+            const itemData = JSON.stringify(item);
 
-          // Main record by playlist item ID
-          operations.push(
-            this.playlistItemStorage.put(
-              `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`,
-              itemData
-            )
-          );
-
-          // Global created-time indexes for items using item's created
-          if (item.created) {
-            const ts = this.toSortableTimestamps(item.created);
+            // Main record by playlist item ID
             operations.push(
               this.playlistItemStorage.put(
-                `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`,
-                item.id
-              ),
-              this.playlistItemStorage.put(
-                `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${ts.desc}:${item.id}`,
-                item.id
+                `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`,
+                itemData
               )
             );
+
+            // Global created-time indexes for items using item's created
+            if (item.created) {
+              const ts = this.toSortableTimestamps(item.created);
+              operations.push(
+                this.playlistItemStorage.put(
+                  `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`,
+                  item.id
+                ),
+                this.playlistItemStorage.put(
+                  `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${ts.desc}:${item.id}`,
+                  item.id
+                )
+              );
+            }
           }
 
-          // Secondary index by channel ID
+          // Create channel-to-playlist-item indexes for ALL playlists (local and external)
           operations.push(
             this.playlistItemStorage.put(
               `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channel.id}:${item.id}`,
@@ -885,6 +885,7 @@ export class StorageService {
 
   /**
    * List playlist items by channel ID with pagination
+   * Now uses the proper direct channel-to-playlist-item indexes
    */
   async listPlaylistItemsByChannelId(
     channelId: string,
@@ -892,6 +893,7 @@ export class StorageService {
   ): Promise<PaginatedResult<PlaylistItem>> {
     const limit = options.limit || 1000;
 
+    // Use direct channel-to-playlist-item indexes (now created for both local and external playlists)
     const prefix =
       options.sort === 'asc'
         ? `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channelId}:`

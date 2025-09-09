@@ -11,6 +11,7 @@ import {
 import { listAllChannels, getChannelByIdOrSlug } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
 import type { EnvironmentBindings } from '../env/types';
+import { signObj, getServerKeyPair } from '../crypto';
 
 // Create channels router
 const channels = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();
@@ -207,6 +208,12 @@ channels.post('/', async c => {
     // Create channel with server-generated ID, timestamp, and slug
     const channel = createChannelFromInput(validatedData);
 
+    // Sign the channel using ed25519 as per DP-1 specification
+    const keyPair = await getServerKeyPair(c.var.env);
+
+    // Sign the channel
+    channel.signature = await signObj(channel, keyPair.privateKey);
+
     // Create queue message for async processing
     const queueMessage: CreateChannelMessage = {
       id: generateMessageId('create_channel', channel.id),
@@ -296,11 +303,18 @@ channels.put('/:id', async c => {
       slug: existingChannel.slug,
       title: validatedData.title,
       curator: validatedData.curator,
+      curators: validatedData.curators,
       summary: validatedData.summary,
+      publisher: validatedData.publisher,
       playlists: validatedData.playlists,
       created: existingChannel.created,
       coverImage: validatedData.coverImage,
+      dynamicQueries: validatedData.dynamicQueries,
     };
+
+    // Sign the channel
+    const keyPair = await getServerKeyPair(c.var.env);
+    updatedChannel.signature = await signObj(updatedChannel, keyPair.privateKey);
 
     // Create queue message for async processing
     const queueMessage: UpdateChannelMessage = {
@@ -392,11 +406,18 @@ channels.patch('/:id', async c => {
       slug: existingChannel.slug,
       title: validatedData.title || existingChannel.title,
       curator: validatedData.curator || existingChannel.curator,
+      curators: validatedData.curators || existingChannel.curators,
       summary: validatedData.summary || existingChannel.summary,
+      publisher: validatedData.publisher || existingChannel.publisher,
       playlists: validatedData.playlists || existingChannel.playlists,
       created: existingChannel.created,
       coverImage: validatedData.coverImage || existingChannel.coverImage,
+      dynamicQueries: validatedData.dynamicQueries || existingChannel.dynamicQueries,
     };
+
+    // Sign the channel
+    const keyPair = await getServerKeyPair(c.var.env);
+    updatedChannel.signature = await signObj(updatedChannel, keyPair.privateKey);
 
     // Create queue message for async processing
     const queueMessage: UpdateChannelMessage = {

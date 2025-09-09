@@ -99,11 +99,36 @@ const testChannel: Channel = {
   slug: 'test-exhibition-1234',
   title: 'Test Exhibition',
   curator: 'Test Curator',
+  curators: [
+    {
+      name: 'Primary Curator',
+      key: 'curator-key-1',
+      url: 'https://example.com/curator1',
+    },
+  ],
+  summary: 'A test exhibition for storage validation',
+  publisher: {
+    name: 'Test Publisher',
+    key: 'publisher-key',
+    url: 'https://example.com/publisher',
+  },
   created: '2024-01-01T00:00:00Z',
   playlists: [
     `https://example.com/playlists/${playlistId1}`,
     `https://example.com/playlists/${playlistId2}`,
   ],
+  coverImage: 'https://example.com/test-cover.jpg',
+  dynamicQueries: [
+    {
+      endpoint: 'https://api.example.com/test',
+      params: {
+        type: 'test',
+        limit: '10',
+      },
+    },
+  ],
+  signature:
+    'ed25519:0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef',
 };
 
 describe('Storage Module', () => {
@@ -280,6 +305,31 @@ describe('Storage Module', () => {
       // Retrieve by slug
       const retrieved = await getChannelByIdOrSlug(testChannel.slug, testEnv);
       expect(retrieved).toEqual(testChannel);
+    });
+
+    it('should properly store and retrieve all new channel fields', async () => {
+      // Mock fetch for external playlist validation
+      mockStandardPlaylistFetch();
+
+      // Save channel with all new fields
+      const saved = await saveChannel(testChannel, testEnv);
+      expect(saved).toBe(true);
+
+      // Retrieve and verify all fields
+      const retrieved = await getChannelByIdOrSlug(testChannel.id, testEnv);
+      expect(retrieved).toBeDefined();
+
+      // Verify fields are correct
+      expect(retrieved!.curators).toEqual(testChannel.curators);
+      expect(retrieved!.publisher).toEqual(testChannel.publisher);
+      expect(retrieved!.dynamicQueries).toEqual(testChannel.dynamicQueries);
+      expect(retrieved!.coverImage).toBe(testChannel.coverImage);
+      expect(retrieved!.summary).toBe(testChannel.summary);
+      expect(retrieved!.signature).toBe(testChannel.signature);
+      expect(retrieved!.id).toBe(testChannel.id);
+      expect(retrieved!.title).toBe(testChannel.title);
+      expect(retrieved!.curator).toBe(testChannel.curator);
+      expect(retrieved!.playlists).toEqual(testChannel.playlists);
     });
 
     it('should create bidirectional channel mappings for efficient filtering', async () => {

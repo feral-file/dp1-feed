@@ -38,7 +38,7 @@ export function validateNoProtectedFields(
   operation: 'playlist' | 'channel'
 ): { isValid: boolean; protectedFields?: string[] } {
   const protectedPlaylistFields = ['id', 'slug', 'created', 'signature'];
-  const protectedChannelFields = ['id', 'slug', 'created'];
+  const protectedChannelFields = ['id', 'slug', 'created', 'signature'];
 
   const protectedFields =
     operation === 'playlist' ? protectedPlaylistFields : protectedChannelFields;
@@ -73,6 +73,26 @@ export interface Env {
 }
 
 // Zod Schemas for Request Validation
+
+// Entity Schema
+const EntitySchema = z.object({
+  name: z.string().max(128),
+  key: z.string().max(128).optional(),
+  url: z
+    .string()
+    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
+    .max(1024)
+    .optional(),
+});
+
+// Dynamic Query Schema
+const DynamicQuerySchema = z.object({
+  endpoint: z
+    .string()
+    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
+    .max(1024),
+  params: z.record(z.string().max(1024)),
+});
 
 // Display Preferences Schema
 const DisplayPrefsSchema = z
@@ -244,8 +264,10 @@ export const PlaylistInputSchema = z.object({
 
 export const ChannelInputSchema = z.object({
   title: z.string().max(256),
-  curator: z.string().max(128),
+  curator: z.string().max(128).optional(),
+  curators: z.array(EntitySchema).optional(),
   summary: z.string().max(4096).optional(),
+  publisher: EntitySchema.optional(),
   playlists: z
     .array(
       z
@@ -260,6 +282,7 @@ export const ChannelInputSchema = z.object({
     .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
     .max(1024)
     .optional(),
+  dynamicQueries: z.array(DynamicQuerySchema).optional(),
 });
 
 // Update schemas that exclude protected fields
@@ -294,7 +317,9 @@ export const PlaylistUpdateSchema = z.object({
 export const ChannelUpdateSchema = z.object({
   title: z.string().max(256).optional(),
   curator: z.string().max(128).optional(),
+  curators: z.array(EntitySchema).optional(),
   summary: z.string().max(4096).optional(),
+  publisher: EntitySchema.optional(),
   playlists: z
     .array(
       z
@@ -310,6 +335,7 @@ export const ChannelUpdateSchema = z.object({
     .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
     .max(1024)
     .optional(),
+  dynamicQueries: z.array(DynamicQuerySchema).optional(),
 });
 
 // Complete schemas with server-generated fields for output
@@ -357,8 +383,10 @@ export const ChannelSchema = z.object({
     .regex(/^[a-zA-Z0-9-]+$/)
     .max(64),
   title: z.string().max(256),
-  curator: z.string().max(128),
+  curator: z.string().max(128).optional(),
+  curators: z.array(EntitySchema).optional(),
   summary: z.string().max(4096).optional(),
+  publisher: EntitySchema.optional(),
   playlists: z
     .array(
       z
@@ -374,6 +402,11 @@ export const ChannelSchema = z.object({
     .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
     .max(1024)
     .optional(),
+  dynamicQueries: z.array(DynamicQuerySchema).optional(),
+  signature: z
+    .string()
+    .regex(/^ed25519:0x[a-fA-F0-9]+$/)
+    .max(150),
 });
 
 // DP-1 Core Types based on specification and OpenAPI schema
@@ -456,11 +489,26 @@ export interface Channel {
   id: string;
   slug: string;
   title: string;
-  curator: string;
+  curator?: string;
+  curators?: Entity[];
   summary?: string;
+  publisher?: Entity;
   playlists: string[];
   created?: string;
   coverImage?: string;
+  dynamicQueries?: DynamicQuery[];
+  signature?: string;
+}
+
+export interface Entity {
+  name: string;
+  key?: string;
+  url?: string;
+}
+
+export interface DynamicQuery {
+  endpoint: string;
+  params: Record<string, string>;
 }
 
 export interface ErrorResponse {
@@ -552,6 +600,9 @@ export function createChannelFromInput(input: ChannelInput): Channel {
     slug,
     title: input.title,
     curator: input.curator,
+    curators: input.curators,
+    publisher: input.publisher,
+    dynamicQueries: input.dynamicQueries,
     summary: input.summary,
     playlists: input.playlists,
     created: timestamp,

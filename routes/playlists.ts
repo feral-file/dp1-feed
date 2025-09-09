@@ -9,7 +9,7 @@ import {
   createPlaylistFromInput,
   validateNoProtectedFields,
 } from '../types';
-import { signPlaylist, getServerKeyPair } from '../crypto';
+import { signObj, getServerKeyPair } from '../crypto';
 import { listAllPlaylists, getPlaylistByIdOrSlug, listPlaylistsByChannelId } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
 
@@ -222,7 +222,7 @@ playlists.post('/', async c => {
     const keyPair = await getServerKeyPair(c.var.env);
 
     // Sign the playlist
-    playlist.signature = await signPlaylist(playlist, keyPair.privateKey);
+    playlist.signature = await signObj(playlist, keyPair.privateKey);
 
     // Create queue message for async processing
     const queueMessage: CreatePlaylistMessage = {
@@ -332,7 +332,7 @@ playlists.put('/:id', async c => {
 
     // Re-sign the playlist
     const keyPair = await getServerKeyPair(c.var.env);
-    updatedPlaylist.signature = await signPlaylist(updatedPlaylist, keyPair.privateKey);
+    updatedPlaylist.signature = await signObj(updatedPlaylist, keyPair.privateKey);
 
     // Create queue message for async processing
     const queueMessage: UpdatePlaylistMessage = {
@@ -443,7 +443,7 @@ playlists.patch('/:id', async c => {
 
     // Re-sign the playlist
     const keyPair = await getServerKeyPair(c.var.env);
-    updatedPlaylist.signature = await signPlaylist(updatedPlaylist, keyPair.privateKey);
+    updatedPlaylist.signature = await signObj(updatedPlaylist, keyPair.privateKey);
 
     // Create queue message for async processing
     const queueMessage: UpdatePlaylistMessage = {

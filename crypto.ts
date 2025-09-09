@@ -99,15 +99,15 @@ export async function getServerKeyPair(env: Env): Promise<KeyPair> {
 }
 
 /**
- * Create canonical form of playlist for signing (RFC 8785 compliant)
+ * Create canonical form of playlist or channel for signing (RFC 8785 compliant)
  * Uses the canonicalize library which implements the official RFC 8785 standard
  */
-export function createCanonicalForm(playlist: Omit<Playlist, 'signature'>): string {
+export function createCanonicalForm(obj: Omit<any, 'signature'>): string {
   // Use the canonicalize library which is RFC 8785 compliant
-  const canonical = canonicalize(playlist);
+  const canonical = canonicalize(obj);
 
   if (!canonical) {
-    throw new Error('Failed to canonicalize playlist');
+    throw new Error('Failed to canonicalize object');
   }
 
   // Add LF terminator if it's not present
@@ -119,13 +119,13 @@ export function createCanonicalForm(playlist: Omit<Playlist, 'signature'>): stri
 }
 
 /**
- * Sign a playlist using ed25519 as per DP-1 specification
+ * Sign an object using ed25519 as per DP-1 specification
  */
-export async function signPlaylist(
-  playlist: Omit<Playlist, 'signature'>,
+export async function signObj(
+  obj: Omit<any, 'signature'>,
   privateKey: Uint8Array
 ): Promise<string> {
-  const canonicalForm = createCanonicalForm(playlist);
+  const canonicalForm = createCanonicalForm(obj);
   const encoder = new TextEncoder();
   const data = encoder.encode(canonicalForm);
 

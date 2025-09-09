@@ -58,8 +58,31 @@ const mockChannel: Channel = {
   slug: 'test-exhibition-5678',
   title: 'Test Exhibition',
   curator: 'Test Curator',
+  curators: [
+    {
+      name: 'Test Curator',
+      key: 'curator-key',
+      url: 'https://example.com/curator',
+    },
+  ],
+  summary: 'Test exhibition for queue processing',
+  publisher: {
+    name: 'Test Publisher',
+    url: 'https://example.com/publisher',
+  },
   playlists: ['https://example.com/playlists/test-playlist-1'],
   created: '2024-01-01T00:00:00Z',
+  coverImage: 'https://example.com/cover.jpg',
+  dynamicQueries: [
+    {
+      endpoint: 'https://api.example.com/query',
+      params: {
+        filter: 'active',
+      },
+    },
+  ],
+  signature:
+    'ed25519:0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef',
 };
 
 describe('Queue Processor', () => {
