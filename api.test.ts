@@ -92,6 +92,15 @@ const mockStorages = testSetup.mockStorages;
 const validPlaylist = {
   dpVersion: '1.0.0',
   title: 'Test Playlist',
+  curators: [
+    {
+      name: 'Test Curator',
+      key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+      url: 'https://example.com/curator',
+    },
+  ],
+  summary: 'A test playlist showcasing digital artworks',
+  coverImage: 'https://example.com/playlist-cover.jpg',
   items: [
     {
       title: 'Test Artwork',
@@ -537,6 +546,129 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.error).toBe('invalid_json');
     });
 
+    it('POST /playlists with invalid curators array returns 400', async () => {
+      const invalidPlaylist = {
+        dpVersion: '1.0.0',
+        title: 'Test Playlist',
+        curators: [
+          {
+            name: 'a'.repeat(129), // Invalid: name too long (max 128)
+            url: 'https://example.com/curator',
+          },
+        ],
+        items: [
+          {
+            title: 'Test Artwork',
+            source: 'https://example.com/artwork.html',
+            duration: 300,
+            license: 'open' as const,
+          },
+        ],
+      };
+
+      const req = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(invalidPlaylist),
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('validation_error');
+      expect(data.message).toContain('curators');
+    });
+
+    it('POST /playlists with invalid coverImage URL returns 400', async () => {
+      const invalidPlaylist = {
+        dpVersion: '1.0.0',
+        title: 'Test Playlist',
+        coverImage: 'invalid-url', // Invalid: not a valid URL
+        items: [
+          {
+            title: 'Test Artwork',
+            source: 'https://example.com/artwork.html',
+            duration: 300,
+            license: 'open' as const,
+          },
+        ],
+      };
+
+      const req = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(invalidPlaylist),
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('validation_error');
+      expect(data.message).toContain('coverImage');
+    });
+
+    it('POST /playlists with invalid summary length returns 400', async () => {
+      const invalidPlaylist = {
+        dpVersion: '1.0.0',
+        title: 'Test Playlist',
+        summary: 'a'.repeat(4097), // Invalid: too long (max 4096)
+        items: [
+          {
+            title: 'Test Artwork',
+            source: 'https://example.com/artwork.html',
+            duration: 300,
+            license: 'open' as const,
+          },
+        ],
+      };
+
+      const req = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(invalidPlaylist),
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('validation_error');
+      expect(data.message).toContain('summary');
+    });
+
+    it('POST /playlists with invalid DID key format in curators returns 400', async () => {
+      const invalidPlaylist = {
+        dpVersion: '1.0.0',
+        title: 'Test Playlist',
+        curators: [
+          {
+            name: 'Test Curator',
+            key: 'invalid-key-format', // Invalid: not a valid DID key
+            url: 'https://example.com/curator',
+          },
+        ],
+        items: [
+          {
+            title: 'Test Artwork',
+            source: 'https://example.com/artwork.html',
+            duration: 300,
+            license: 'open' as const,
+          },
+        ],
+      };
+
+      const req = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(invalidPlaylist),
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('validation_error');
+      expect(data.message).toContain('curators');
+    });
+
     it('POST /playlists should create playlist with server-generated ID and slug', async () => {
       const req = new Request('http://localhost/api/v1/playlists', {
         method: 'POST',
@@ -570,6 +702,104 @@ describe('DP-1 Feed Operator API', () => {
         }),
         testEnv
       );
+    });
+
+    it('POST /playlists should create playlist with optional fields (curators, summary, coverImage)', async () => {
+      const playlistWithOptionalFields = {
+        dpVersion: '1.0.0',
+        title: 'Test Playlist with Optional Fields',
+        curators: [
+          {
+            name: 'Primary Curator',
+            key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+            url: 'https://example.com/curator1',
+          },
+          {
+            name: 'Secondary Curator',
+            url: 'https://example.com/curator2',
+          },
+        ],
+        summary: 'A comprehensive playlist showcasing digital artworks from various artists',
+        coverImage: 'https://example.com/playlist-cover-image.jpg',
+        items: [
+          {
+            title: 'Test Artwork',
+            source: 'https://example.com/artwork.html',
+            duration: 300,
+            license: 'open' as const,
+          },
+        ],
+      };
+
+      const req = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(playlistWithOptionalFields),
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(201);
+
+      const data = await response.json();
+      expect(data.id).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);
+      expect(data.dpVersion).toBe('1.0.0');
+      expect(data.slug).toMatch(/^test-playlist-with-optional-fields-\d{4}$/);
+      expect(data.title).toBe('Test Playlist with Optional Fields');
+      expect(data.curators).toEqual(playlistWithOptionalFields.curators);
+      expect(data.summary).toBe(playlistWithOptionalFields.summary);
+      expect(data.coverImage).toBe(playlistWithOptionalFields.coverImage);
+      expect(data.created).toBeTruthy();
+      expect(data.signature).toBeTruthy();
+
+      // Verify queue operation was called
+      expect(queueWriteOperation).toHaveBeenCalledWith(
+        expect.objectContaining({
+          operation: 'create_playlist',
+          data: expect.objectContaining({
+            playlist: expect.objectContaining({
+              id: data.id,
+              title: 'Test Playlist with Optional Fields',
+              curators: playlistWithOptionalFields.curators,
+              summary: playlistWithOptionalFields.summary,
+              coverImage: playlistWithOptionalFields.coverImage,
+            }),
+          }),
+        }),
+        testEnv
+      );
+    });
+
+    it('POST /playlists should create playlist without optional fields', async () => {
+      const playlistWithoutOptionalFields = {
+        dpVersion: '1.0.0',
+        title: 'Test Playlist without Optional Fields',
+        items: [
+          {
+            title: 'Test Artwork',
+            source: 'https://example.com/artwork.html',
+            duration: 300,
+            license: 'open' as const,
+          },
+        ],
+      };
+
+      const req = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(playlistWithoutOptionalFields),
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(201);
+
+      const data = await response.json();
+      expect(data.id).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);
+      expect(data.dpVersion).toBe('1.0.0');
+      expect(data.slug).toMatch(/^test-playlist-without-optional-fields-\d{4}$/);
+      expect(data.title).toBe('Test Playlist without Optional Fields');
+      expect(data.curators).toBeUndefined();
+      expect(data.summary).toBeUndefined();
+      expect(data.coverImage).toBeUndefined();
+      expect(data.created).toBeTruthy();
+      expect(data.signature).toBeTruthy();
     });
 
     it('PATCH /playlists/:id should update playlist and preserve protected fields', async () => {

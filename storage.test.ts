@@ -81,6 +81,15 @@ const testPlaylist: Playlist = {
   id: playlistId1,
   slug: 'test-playlist-1234',
   title: 'Test Playlist',
+  curators: [
+    {
+      name: 'Test Curator',
+      key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+      url: 'https://example.com/curator',
+    },
+  ],
+  summary: 'A test playlist for storage validation',
+  coverImage: 'https://example.com/test-playlist-cover.jpg',
   created: '2024-01-01T00:00:00Z',
   items: [
     {

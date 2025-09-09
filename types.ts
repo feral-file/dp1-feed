@@ -262,6 +262,13 @@ export const PlaylistInputSchema = z.object({
     })
     .optional(),
   title: z.string().max(256),
+  curators: z.array(EntitySchema).optional(),
+  summary: z.string().max(4096).optional(),
+  coverImage: z
+    .string()
+    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
+    .max(1024)
+    .optional(),
   items: z.array(PlaylistItemInputSchema).min(1).max(1024),
 });
 
@@ -314,7 +321,14 @@ export const PlaylistUpdateSchema = z.object({
     })
     .optional(),
   items: z.array(PlaylistItemInputSchema).min(1).max(1024).optional(),
+  coverImage: z
+    .string()
+    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
+    .max(1024)
+    .optional(),
   title: z.string().max(256).optional(),
+  curators: z.array(EntitySchema).optional(),
+  summary: z.string().max(4096).optional(),
 });
 
 export const ChannelUpdateSchema = z.object({
@@ -364,6 +378,8 @@ export const PlaylistSchema = z.object({
     .regex(/^[a-zA-Z0-9-]+$/)
     .max(64),
   title: z.string().max(256),
+  curators: z.array(EntitySchema).optional(),
+  summary: z.string().max(4096).optional(),
   created: z.string().datetime(),
   defaults: z
     .object({
@@ -373,6 +389,11 @@ export const PlaylistSchema = z.object({
     })
     .optional(),
   items: z.array(PlaylistItemSchema).min(1).max(1024),
+  coverImage: z
+    .string()
+    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
+    .max(1024)
+    .optional(),
   signature: z
     .string()
     .regex(/^ed25519:0x[a-fA-F0-9]+$/)
@@ -478,6 +499,9 @@ export interface Playlist {
   id: string;
   slug: string;
   title: string;
+  curators?: Entity[];
+  summary?: string;
+  coverImage?: string;
   created?: string;
   defaults?: {
     display?: DisplayPrefs;
@@ -586,6 +610,9 @@ export function createPlaylistFromInput(input: PlaylistInput): Playlist {
     id: playlistId,
     slug,
     title: input.title,
+    curators: input.curators,
+    summary: input.summary,
+    coverImage: input.coverImage,
     created: timestamp,
     defaults: input.defaults,
     items: itemsWithIds,

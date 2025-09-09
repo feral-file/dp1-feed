@@ -25,6 +25,15 @@ if (!apiSecret) {
 const testPlaylist = {
   dpVersion: '1.0.0',
   title: 'My Amazing Test Playlist',
+  curators: [
+    {
+      name: 'Test Curator',
+      key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+      url: 'https://example.com/curator',
+    },
+  ],
+  summary: 'A test playlist for testing the API',
+  coverImage: 'https://example.com/test-playlist-cover.jpg',
   defaults: {
     display: {
       scaling: 'fit',
@@ -365,6 +374,31 @@ async function testCreatePlaylist() {
     }
     console.log('✅ All input data preserved exactly, server fields generated correctly');
 
+    // Verify optional fields are preserved exactly
+    if (JSON.stringify(response.data.curators) !== JSON.stringify(testPlaylist.curators)) {
+      console.log('❌ Curators array not preserved exactly');
+      console.log(`   Expected: ${JSON.stringify(testPlaylist.curators)}`);
+      console.log(`   Received: ${JSON.stringify(response.data.curators)}`);
+      return false;
+    }
+    console.log('✅ Curators array preserved exactly');
+
+    if (response.data.summary !== testPlaylist.summary) {
+      console.log('❌ Summary not preserved exactly');
+      console.log(`   Expected: "${testPlaylist.summary}"`);
+      console.log(`   Received: "${response.data.summary}"`);
+      return false;
+    }
+    console.log('✅ Summary preserved exactly');
+
+    if (response.data.coverImage !== testPlaylist.coverImage) {
+      console.log('❌ Cover image not preserved exactly');
+      console.log(`   Expected: "${testPlaylist.coverImage}"`);
+      console.log(`   Received: "${response.data.coverImage}"`);
+      return false;
+    }
+    console.log('✅ Cover image preserved exactly');
+
     // Validate server-generated fields are reasonable
     if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(response.data.id)) {
       console.log('❌ Server-generated UUID format is invalid');
@@ -470,6 +504,15 @@ async function testUpdatePlaylist() {
   // Create update data with modified and new items
   const updatedData = {
     title: 'Updated Amazing Test Playlist - Enhanced',
+    curators: [
+      {
+        name: 'Updated Curator',
+        key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+        url: 'https://example.com/updated-curator',
+      },
+    ],
+    summary: 'Updated summary for the playlist with enhanced content',
+    coverImage: 'https://example.com/updated-cover.jpg',
     items: [
       {
         ...testPlaylist.items[0],
@@ -540,7 +583,30 @@ async function testUpdatePlaylist() {
       console.log(`   Received: ${JSON.stringify(response.data.defaults)}`);
       return false;
     }
-    console.log('✅ Updated fields changed correctly');
+
+    // Verify optional fields were updated correctly
+    if (JSON.stringify(response.data.curators) !== JSON.stringify(updatedData.curators)) {
+      console.log('❌ Curators not updated correctly');
+      console.log(`   Expected: ${JSON.stringify(updatedData.curators)}`);
+      console.log(`   Received: ${JSON.stringify(response.data.curators)}`);
+      return false;
+    }
+
+    if (response.data.summary !== updatedData.summary) {
+      console.log('❌ Summary not updated correctly');
+      console.log(`   Expected: "${updatedData.summary}"`);
+      console.log(`   Received: "${response.data.summary}"`);
+      return false;
+    }
+
+    if (response.data.coverImage !== updatedData.coverImage) {
+      console.log('❌ Cover image not updated correctly');
+      console.log(`   Expected: "${updatedData.coverImage}"`);
+      console.log(`   Received: "${response.data.coverImage}"`);
+      return false;
+    }
+
+    console.log('✅ Updated fields (including optional fields) changed correctly');
 
     // Verify items were replaced completely
     if (response.data.items.length !== updatedData.items.length) {
@@ -628,7 +694,7 @@ async function testCreateChannel() {
     curators: [
       {
         name: 'Primary Curator',
-        key: 'curator-key-1',
+        key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
         url: 'https://example.com/curator1',
       },
       {
@@ -643,7 +709,7 @@ async function testCreateChannel() {
     ],
     publisher: {
       name: 'Art Gallery Foundation',
-      key: 'publisher-main-key',
+      key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
       url: 'https://artgallery.com/about',
     },
     dynamicQueries: [
