@@ -311,7 +311,7 @@ dp1-feed/
 export interface CloudFlareBindings {
   // KV Storage
   DP1_PLAYLISTS: KVNamespace;
-  DP1_PLAYLIST_GROUPS: KVNamespace;
+  DP1_CHANNELS: KVNamespace;
   DP1_PLAYLIST_ITEMS: KVNamespace;
 
   // Queue
@@ -376,7 +376,7 @@ id = "your-playlists-kv-id"
 preview_id = "your-playlists-preview-kv-id"
 
 [[kv_namespaces]]
-binding = "DP1_PLAYLIST_GROUPS"
+binding = "DP1_CHANNELS"
 id = "your-channels-kv-id"
 preview_id = "your-channels-preview-kv-id"
 
