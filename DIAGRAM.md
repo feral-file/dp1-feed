@@ -123,11 +123,7 @@ Both deployments use the same message structure:
 interface WriteOperationMessage {
   id: string; // Unique message ID
   timestamp: string; // ISO timestamp
-  operation:
-    | 'create_playlist'
-    | 'update_playlist'
-    | 'create_channel'
-    | 'update_channel';
+  operation: 'create_playlist' | 'update_playlist' | 'create_channel' | 'update_channel';
   data: {
     playlist?: Playlist; // For playlist operations
     channel?: Channel; // For channel operations

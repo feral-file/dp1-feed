@@ -84,20 +84,20 @@ Authorization: Bearer YOUR_API_SECRET
 
 ### Core Endpoints
 
-| Method | Endpoint                       | Description     | Auth Required |
-| ------ | ------------------------------ | --------------- | ------------- |
-| `GET`  | `/api/v1`                      | API information | No            |
-| `GET`  | `/api/v1/health`               | Health check    | No            |
-| `GET`  | `/api/v1/playlists`            | List playlists  | No            |
-| `GET`  | `/api/v1/playlists/{id}`       | Get playlist    | No            |
-| `POST` | `/api/v1/playlists`            | Create playlist | Yes           |
-| `PUT`  | `/api/v1/playlists/{id}`       | Update playlist | Yes           |
-| `GET`  | `/api/v1/channels`      | List groups     | No            |
-| `GET`  | `/api/v1/channels/{id}` | Get group       | No            |
-| `POST` | `/api/v1/channels`      | Create group    | Yes           |
-| `PUT`  | `/api/v1/channels/{id}` | Update group    | Yes           |
-| `GET`  | `/api/v1/playlist-items`       | List items      | No            |
-| `GET`  | `/api/v1/playlist-items/{id}`  | Get item        | No            |
+| Method | Endpoint                      | Description     | Auth Required |
+| ------ | ----------------------------- | --------------- | ------------- |
+| `GET`  | `/api/v1`                     | API information | No            |
+| `GET`  | `/api/v1/health`              | Health check    | No            |
+| `GET`  | `/api/v1/playlists`           | List playlists  | No            |
+| `GET`  | `/api/v1/playlists/{id}`      | Get playlist    | No            |
+| `POST` | `/api/v1/playlists`           | Create playlist | Yes           |
+| `PUT`  | `/api/v1/playlists/{id}`      | Update playlist | Yes           |
+| `GET`  | `/api/v1/channels`            | List groups     | No            |
+| `GET`  | `/api/v1/channels/{id}`       | Get group       | No            |
+| `POST` | `/api/v1/channels`            | Create group    | Yes           |
+| `PUT`  | `/api/v1/channels/{id}`       | Update group    | Yes           |
+| `GET`  | `/api/v1/playlist-items`      | List items      | No            |
+| `GET`  | `/api/v1/playlist-items/{id}` | Get item        | No            |
 
 ### Example Requests
 
