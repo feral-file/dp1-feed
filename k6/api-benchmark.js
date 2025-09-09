@@ -38,6 +38,15 @@ function generatePlaylistData(index = 0) {
   return {
     dpVersion: '1.0.0',
     title: `K6 Benchmark Playlist ${index + 1} - ${Date.now()}`,
+    curators: [
+      {
+        name: `K6 Test Curator ${index + 1}`,
+        key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+        url: `https://example.com/k6-test-curator-${index + 1}.html`,
+      },
+    ],
+    summary: `K6 benchmark test playlist (${index + 1})`,
+    coverImage: `https://example.com/k6-cover-${index + 1}.jpg`,
     items: [
       {
         title: `K6 Test Item ${index + 1}`,
@@ -86,9 +95,29 @@ function generateChannelData(index = 0) {
   return {
     title: `K6 Benchmark Group ${index + 1} - ${Date.now()}`,
     curator: `K6 Test Curator ${index + 1}`,
+    curators: [
+      {
+        name: `K6 Test Curator ${index + 1}`,
+        key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+        url: `https://example.com/k6-test-curator-${index + 1}.html`,
+      },
+    ],
     summary: `K6 benchmark test channel (${index + 1})`,
+    publisher: {
+      name: `K6 Test Publisher ${index + 1}`,
+      key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+      url: `https://example.com/k6-test-publisher-${index + 1}.html`,
+    },
     playlists: playlistUrls,
     coverImage: `https://example.com/k6-cover-${index + 1}.jpg`,
+    dynamicQueries: [
+      {
+        endpoint: `https://example.com/k6-dynamic-query-${index + 1}.html`,
+        params: {
+          filter: 'active',
+        },
+      },
+    ],
   };
 }
 
