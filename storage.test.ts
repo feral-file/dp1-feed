@@ -102,14 +102,14 @@ const testChannel: Channel = {
   curators: [
     {
       name: 'Primary Curator',
-      key: 'curator-key-1',
+      key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
       url: 'https://example.com/curator1',
     },
   ],
   summary: 'A test exhibition for storage validation',
   publisher: {
     name: 'Test Publisher',
-    key: 'publisher-key',
+    key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
     url: 'https://example.com/publisher',
   },
   created: '2024-01-01T00:00:00Z',

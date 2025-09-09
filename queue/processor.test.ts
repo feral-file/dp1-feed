@@ -61,7 +61,7 @@ const mockChannel: Channel = {
   curators: [
     {
       name: 'Test Curator',
-      key: 'curator-key',
+      key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
       url: 'https://example.com/curator',
     },
   ],

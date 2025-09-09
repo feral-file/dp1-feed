@@ -77,7 +77,10 @@ export interface Env {
 // Entity Schema
 const EntitySchema = z.object({
   name: z.string().max(128),
-  key: z.string().max(128).optional(),
+  key: z
+    .string()
+    .regex(/^did:key:z[1-9A-HJ-NP-Za-km-z]+$/)
+    .optional(),
   url: z
     .string()
     .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)

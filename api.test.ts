@@ -108,7 +108,7 @@ const validChannel = {
   curators: [
     {
       name: 'Primary Curator',
-      key: 'curator-key-1',
+      key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
       url: 'https://example.com/curator1',
     },
     {
@@ -119,7 +119,7 @@ const validChannel = {
   summary: 'A comprehensive digital art exhibition showcasing modern works',
   publisher: {
     name: 'Art Gallery Foundation',
-    key: 'publisher-key',
+    key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
     url: 'https://example.com/publisher',
   },
   playlists: ['https://example.com/playlists/test-playlist-1'],
@@ -1327,6 +1327,77 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.message).toContain('coverImage');
     });
 
+    it('POST /channels with invalid DID key format in curators returns 400', async () => {
+      const invalidChannel = {
+        ...validChannel,
+        curators: [
+          {
+            name: 'Primary Curator',
+            key: 'invalid-key-format', // Invalid: not a valid DID key
+            url: 'https://example.com/curator1',
+          },
+        ],
+      };
+
+      const req = new Request('http://localhost/api/v1/channels', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(invalidChannel),
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('validation_error');
+      expect(data.message).toContain('curators');
+    });
+
+    it('POST /channels with invalid DID key format in publisher returns 400', async () => {
+      const invalidChannel = {
+        ...validChannel,
+        publisher: {
+          name: 'Art Gallery Foundation',
+          key: 'did:key:invalid-characters-0OIl', // Invalid: contains forbidden characters
+          url: 'https://example.com/publisher',
+        },
+      };
+
+      const req = new Request('http://localhost/api/v1/channels', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(invalidChannel),
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('validation_error');
+      expect(data.message).toContain('publisher');
+    });
+
+    it('POST /channels with DID key missing z prefix returns 400', async () => {
+      const invalidChannel = {
+        ...validChannel,
+        publisher: {
+          name: 'Art Gallery Foundation',
+          key: 'did:key:6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK', // Invalid: missing z prefix
+          url: 'https://example.com/publisher',
+        },
+      };
+
+      const req = new Request('http://localhost/api/v1/channels', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(invalidChannel),
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('validation_error');
+      expect(data.message).toContain('publisher');
+    });
+
     it('POST /channels should create new one with server-generated ID and slug', async () => {
       // Mock fetch for external playlist validation
       mockStandardPlaylistFetch();
@@ -1388,7 +1459,7 @@ describe('DP-1 Feed Operator API', () => {
         curators: [
           {
             name: 'Updated Curator',
-            key: 'updated-curator-key',
+            key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
             url: 'https://example.com/updated-curator',
           },
         ],
