@@ -58,7 +58,7 @@ export function createApp<TBindings extends Record<string, any> = any>(envMiddle
       version: MIN_DP_VERSION,
       description:
         'REST interface for creating, updating, and retrieving DP-1 playlists and channels',
-      specification: 'DP-1 v1.0.0',
+      specification: 'DP-1 v1.1.0',
       openapi: '3.1.0',
       deployment,
       runtime,

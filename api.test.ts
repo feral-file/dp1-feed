@@ -198,7 +198,7 @@ describe('DP-1 Feed Operator API', () => {
       const data = await response.json();
       expect(data.name).toBe('DP-1 Feed Operator API');
       expect(data.version).toBe('1.0.0');
-      expect(data.specification).toBe('DP-1 v1.0.0');
+      expect(data.specification).toBe('DP-1 v1.1.0');
     });
   });
 
