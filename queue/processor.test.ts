@@ -2,18 +2,25 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 
 // Mock the StorageService methods BEFORE importing anything that uses them
 const mockSavePlaylist = vi.fn();
+const mockSaveChannel = vi.fn();
 
 vi.mock('../storage/service', () => {
   return {
     StorageService: vi.fn().mockImplementation(() => ({
       savePlaylist: mockSavePlaylist,
+      saveChannel: mockSaveChannel,
     })),
   };
 });
 
 import { processWriteOperations, queueWriteOperation, generateMessageId } from './processor';
-import type { Env, Playlist } from '../types';
-import type { CreatePlaylistMessage, UpdatePlaylistMessage } from './interfaces';
+import type { Env, Playlist, Channel } from '../types';
+import type {
+  CreatePlaylistMessage,
+  UpdatePlaylistMessage,
+  CreateChannelMessage,
+  UpdateChannelMessage,
+} from './interfaces';
 import {
   createTestEnv,
   createMockMessageBatch,
@@ -46,11 +53,44 @@ const mockPlaylist: Playlist = {
   signature: 'ed25519:0x1234567890abcdef',
 };
 
+const mockChannel: Channel = {
+  id: '550e8400-e29b-41d4-a716-446655440002',
+  slug: 'test-exhibition-5678',
+  title: 'Test Exhibition',
+  curator: 'Test Curator',
+  curators: [
+    {
+      name: 'Test Curator',
+      key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+      url: 'https://example.com/curator',
+    },
+  ],
+  summary: 'Test exhibition for queue processing',
+  publisher: {
+    name: 'Test Publisher',
+    url: 'https://example.com/publisher',
+  },
+  playlists: ['https://example.com/playlists/test-playlist-1'],
+  created: '2024-01-01T00:00:00Z',
+  coverImage: 'https://example.com/cover.jpg',
+  dynamicQueries: [
+    {
+      endpoint: 'https://api.example.com/query',
+      params: {
+        filter: 'active',
+      },
+    },
+  ],
+  signature:
+    'ed25519:0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef',
+};
+
 describe('Queue Processor', () => {
   let testEnv: Env;
   let mockQueue: MockQueue;
   let mockStorages: {
     playlist: MockKeyValueStorage;
+    group: MockKeyValueStorage;
     item: MockKeyValueStorage;
   };
 
@@ -62,11 +102,13 @@ describe('Queue Processor', () => {
 
     vi.clearAllMocks();
     mockSavePlaylist.mockClear();
+    mockSaveChannel.mockClear();
     consoleLogSpy.mockClear();
     consoleErrorSpy.mockClear();
 
     // Clear storage
     mockStorages.playlist.storage.clear();
+    mockStorages.group.storage.clear();
     mockStorages.item.storage.clear();
 
     // Reset queue
@@ -91,8 +133,8 @@ describe('Queue Processor', () => {
     });
 
     it('should include operation and resource ID in message ID', () => {
-      const operation = 'update_playlist';
-      const resourceId = mockPlaylist.id;
+      const operation = 'update_channel';
+      const resourceId = mockChannel.id;
 
       const messageId = generateMessageId(operation, resourceId);
 
@@ -257,6 +299,125 @@ describe('Queue Processor', () => {
       });
     });
 
+    describe('create_channel operations', () => {
+      it('should successfully process channel creation', async () => {
+        const message: CreateChannelMessage = {
+          id: generateMessageId('create_channel', mockChannel.id),
+          timestamp: new Date().toISOString(),
+          operation: 'create_channel',
+          data: {
+            channel: mockChannel,
+          },
+        };
+
+        const batch = createMockMessageBatch([message]);
+        mockSaveChannel.mockResolvedValueOnce(true);
+
+        await processWriteOperations(batch, testEnv);
+
+        expect(mockSaveChannel).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockChannel.id,
+            title: mockChannel.title,
+          }),
+          expect.any(Object),
+          false
+        );
+        // Note: batch.ackAll is not called by processWriteOperations itself
+        // The caller (like index.ts queue function) handles acking based on the result
+        expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining(`Processed message`));
+      });
+
+      it('should handle channel creation failure', async () => {
+        const message: CreateChannelMessage = {
+          id: generateMessageId('create_channel', mockChannel.id),
+          timestamp: new Date().toISOString(),
+          operation: 'create_channel',
+          data: {
+            channel: mockChannel,
+          },
+        };
+
+        const batch = createMockMessageBatch([message]);
+        mockSaveChannel.mockRejectedValueOnce(new Error('Channel creation failed'));
+
+        const result = await processWriteOperations(batch, testEnv);
+        expect(result.success).toBe(false);
+        expect(result.errors).toHaveLength(1);
+        expect(result.errors![0].error).toBe('Channel creation failed');
+
+        expect(mockSaveChannel).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockChannel.id,
+            title: mockChannel.title,
+          }),
+          expect.any(Object),
+          false
+        );
+        expect(batch.ackAll).not.toHaveBeenCalled();
+      });
+    });
+
+    describe('update_channel operations', () => {
+      it('should successfully process channel update', async () => {
+        const message: UpdateChannelMessage = {
+          id: generateMessageId('update_channel', mockChannel.id),
+          timestamp: new Date().toISOString(),
+          operation: 'update_channel',
+          data: {
+            channelId: mockChannel.id,
+            channel: mockChannel,
+          },
+        };
+
+        const batch = createMockMessageBatch([message]);
+        mockSaveChannel.mockResolvedValueOnce(true);
+
+        await processWriteOperations(batch, testEnv);
+
+        expect(mockSaveChannel).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockChannel.id,
+            title: mockChannel.title,
+          }),
+          expect.any(Object),
+          true
+        );
+        // Note: batch.ackAll is not called by processWriteOperations itself
+        // The caller (like index.ts queue function) handles acking based on the result
+      });
+
+      it('should handle channel update failure', async () => {
+        const message: UpdateChannelMessage = {
+          id: generateMessageId('update_channel', mockChannel.id),
+          timestamp: new Date().toISOString(),
+          operation: 'update_channel',
+          data: {
+            channelId: mockChannel.id,
+            channel: mockChannel,
+          },
+        };
+
+        const batch = createMockMessageBatch([message]);
+        mockSaveChannel.mockRejectedValueOnce(new Error('Channel update failed'));
+
+        const result = await processWriteOperations(batch, testEnv);
+        expect(result.success).toBe(false);
+        expect(result.errors).toHaveLength(1);
+        expect(result.errors![0].error).toBe('Channel update failed');
+
+        expect(mockSaveChannel).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockChannel.id,
+            title: mockChannel.title,
+          }),
+          expect.any(Object),
+          true
+        );
+        expect(batch.ackAll).not.toHaveBeenCalled();
+      });
+    });
+
     describe('batch processing', () => {
       it('should process multiple messages in a batch', async () => {
         const playlistMessage: CreatePlaylistMessage = {
@@ -266,8 +427,65 @@ describe('Queue Processor', () => {
           data: { playlist: mockPlaylist },
         };
 
-        const batch = createMockMessageBatch([playlistMessage]);
+        const channelMessage: CreateChannelMessage = {
+          id: generateMessageId('create_channel', mockChannel.id),
+          timestamp: new Date().toISOString(),
+          operation: 'create_channel',
+          data: { channel: mockChannel },
+        };
 
+        const batch = createMockMessageBatch([playlistMessage, channelMessage]);
+        mockSavePlaylist.mockResolvedValueOnce(true);
+        mockSaveChannel.mockResolvedValueOnce(true);
+
+        await processWriteOperations(batch, testEnv);
+
+        expect(mockSavePlaylist).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockPlaylist.id,
+            title: mockPlaylist.title,
+          }),
+          false
+        );
+        expect(mockSaveChannel).toHaveBeenCalledWith(
+          expect.objectContaining({
+            id: mockChannel.id,
+            title: mockChannel.title,
+          }),
+          expect.any(Object),
+          false
+        );
+        // Note: batch.ackAll is not called by processWriteOperations itself
+        // The caller (like index.ts queue function) handles acking based on the result
+        expect(consoleLogSpy).toHaveBeenCalledWith('Processing batch of 2 write operations');
+      });
+
+      it('should continue processing other messages if one fails', async () => {
+        const message1: CreatePlaylistMessage = {
+          id: generateMessageId('create_playlist', mockPlaylist.id),
+          timestamp: new Date().toISOString(),
+          operation: 'create_playlist',
+          data: { playlist: mockPlaylist },
+        };
+
+        const message2: CreateChannelMessage = {
+          id: generateMessageId('create_channel', mockChannel.id),
+          timestamp: new Date().toISOString(),
+          operation: 'create_channel',
+          data: { channel: mockChannel },
+        };
+
+        const batch = createMockMessageBatch([message1, message2]);
+        mockSavePlaylist.mockRejectedValueOnce(new Error('Playlist creation failed')); // First fails
+        mockSaveChannel.mockResolvedValueOnce(true); // Second succeeds
+
+        const result = await processWriteOperations(batch, testEnv);
+        expect(result.success).toBe(false);
+        expect(result.errors).toHaveLength(1);
+        expect(result.errors![0].error).toBe('Playlist creation failed');
+
+        expect(mockSavePlaylist).toHaveBeenCalled();
+        expect(mockSaveChannel).toHaveBeenCalled();
         expect(batch.ackAll).not.toHaveBeenCalled(); // Batch should not be acked on failure
       });
     });

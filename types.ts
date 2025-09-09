@@ -33,12 +33,16 @@ export function validateDpVersion(dpVersion: string): {
 /**
  * Validates that update request doesn't contain protected fields
  */
-export function validateNoProtectedFields(body: any): {
-  isValid: boolean;
-  protectedFields?: string[];
-} {
+export function validateNoProtectedFields(
+  body: any,
+  operation: 'playlist' | 'channel'
+): { isValid: boolean; protectedFields?: string[] } {
   const protectedPlaylistFields = ['id', 'slug', 'created', 'signature'];
-  const foundProtectedFields = protectedPlaylistFields.filter(field => field in body);
+  const protectedChannelFields = ['id', 'slug', 'created', 'signature'];
+
+  const protectedFields =
+    operation === 'playlist' ? protectedPlaylistFields : protectedChannelFields;
+  const foundProtectedFields = protectedFields.filter(field => field in body);
 
   if (foundProtectedFields.length > 0) {
     return {
@@ -69,6 +73,29 @@ export interface Env {
 }
 
 // Zod Schemas for Request Validation
+
+// Entity Schema
+const EntitySchema = z.object({
+  name: z.string().max(128),
+  key: z
+    .string()
+    .regex(/^did:key:z[1-9A-HJ-NP-Za-km-z]+$/)
+    .optional(),
+  url: z
+    .string()
+    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
+    .max(1024)
+    .optional(),
+});
+
+// Dynamic Query Schema
+const DynamicQuerySchema = z.object({
+  endpoint: z
+    .string()
+    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
+    .max(1024),
+  params: z.record(z.string().max(1024)),
+});
 
 // Display Preferences Schema
 const DisplayPrefsSchema = z
@@ -235,7 +262,37 @@ export const PlaylistInputSchema = z.object({
     })
     .optional(),
   title: z.string().max(256),
+  curators: z.array(EntitySchema).optional(),
+  summary: z.string().max(4096).optional(),
+  coverImage: z
+    .string()
+    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
+    .max(1024)
+    .optional(),
   items: z.array(PlaylistItemInputSchema).min(1).max(1024),
+});
+
+export const ChannelInputSchema = z.object({
+  title: z.string().max(256),
+  curator: z.string().max(128).optional(),
+  curators: z.array(EntitySchema).optional(),
+  summary: z.string().max(4096).optional(),
+  publisher: EntitySchema.optional(),
+  playlists: z
+    .array(
+      z
+        .string()
+        .regex(/^http[s]?:\/\/[^\s]+$/)
+        .max(1024)
+    )
+    .min(1)
+    .max(1024),
+  coverImage: z
+    .string()
+    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
+    .max(1024)
+    .optional(),
+  dynamicQueries: z.array(DynamicQuerySchema).optional(),
 });
 
 // Update schemas that exclude protected fields
@@ -264,7 +321,38 @@ export const PlaylistUpdateSchema = z.object({
     })
     .optional(),
   items: z.array(PlaylistItemInputSchema).min(1).max(1024).optional(),
+  coverImage: z
+    .string()
+    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
+    .max(1024)
+    .optional(),
   title: z.string().max(256).optional(),
+  curators: z.array(EntitySchema).optional(),
+  summary: z.string().max(4096).optional(),
+});
+
+export const ChannelUpdateSchema = z.object({
+  title: z.string().max(256).optional(),
+  curator: z.string().max(128).optional(),
+  curators: z.array(EntitySchema).optional(),
+  summary: z.string().max(4096).optional(),
+  publisher: EntitySchema.optional(),
+  playlists: z
+    .array(
+      z
+        .string()
+        .regex(/^http[s]?:\/\/[^\s]+$/)
+        .max(1024)
+    )
+    .min(1)
+    .max(1024)
+    .optional(),
+  coverImage: z
+    .string()
+    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
+    .max(1024)
+    .optional(),
+  dynamicQueries: z.array(DynamicQuerySchema).optional(),
 });
 
 // Complete schemas with server-generated fields for output
@@ -290,6 +378,8 @@ export const PlaylistSchema = z.object({
     .regex(/^[a-zA-Z0-9-]+$/)
     .max(64),
   title: z.string().max(256),
+  curators: z.array(EntitySchema).optional(),
+  summary: z.string().max(4096).optional(),
   created: z.string().datetime(),
   defaults: z
     .object({
@@ -299,6 +389,44 @@ export const PlaylistSchema = z.object({
     })
     .optional(),
   items: z.array(PlaylistItemSchema).min(1).max(1024),
+  coverImage: z
+    .string()
+    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
+    .max(1024)
+    .optional(),
+  signature: z
+    .string()
+    .regex(/^ed25519:0x[a-fA-F0-9]+$/)
+    .max(150),
+});
+
+export const ChannelSchema = z.object({
+  id: z.string().uuid(),
+  slug: z
+    .string()
+    .regex(/^[a-zA-Z0-9-]+$/)
+    .max(64),
+  title: z.string().max(256),
+  curator: z.string().max(128).optional(),
+  curators: z.array(EntitySchema).optional(),
+  summary: z.string().max(4096).optional(),
+  publisher: EntitySchema.optional(),
+  playlists: z
+    .array(
+      z
+        .string()
+        .regex(/^https:\/\/[^\s]+$/)
+        .max(1024)
+    )
+    .min(1)
+    .max(1024),
+  created: z.string().datetime(),
+  coverImage: z
+    .string()
+    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
+    .max(1024)
+    .optional(),
+  dynamicQueries: z.array(DynamicQuerySchema).optional(),
   signature: z
     .string()
     .regex(/^ed25519:0x[a-fA-F0-9]+$/)
@@ -371,6 +499,9 @@ export interface Playlist {
   id: string;
   slug: string;
   title: string;
+  curators?: Entity[];
+  summary?: string;
+  coverImage?: string;
   created?: string;
   defaults?: {
     display?: DisplayPrefs;
@@ -379,6 +510,32 @@ export interface Playlist {
   };
   items: PlaylistItem[];
   signature?: string;
+}
+
+export interface Channel {
+  id: string;
+  slug: string;
+  title: string;
+  curator?: string;
+  curators?: Entity[];
+  summary?: string;
+  publisher?: Entity;
+  playlists: string[];
+  created?: string;
+  coverImage?: string;
+  dynamicQueries?: DynamicQuery[];
+  signature?: string;
+}
+
+export interface Entity {
+  name: string;
+  key?: string;
+  url?: string;
+}
+
+export interface DynamicQuery {
+  endpoint: string;
+  params: Record<string, string>;
 }
 
 export interface ErrorResponse {
@@ -395,13 +552,17 @@ export interface KeyPair {
 // Inferred types from Zod schemas
 export type PlaylistInput = z.infer<typeof PlaylistInputSchema>;
 export type PlaylistItemInput = z.infer<typeof PlaylistItemInputSchema>;
+export type ChannelInput = z.infer<typeof ChannelInputSchema>;
 export type PlaylistUpdate = z.infer<typeof PlaylistUpdateSchema>;
+export type ChannelUpdate = z.infer<typeof ChannelUpdateSchema>;
 
 // Re-export queue message types from the queue package for convenience
 export type {
   QueueMessage,
   CreatePlaylistMessage,
   UpdatePlaylistMessage,
+  CreateChannelMessage,
+  UpdateChannelMessage,
   WriteOperationMessage,
 } from './queue/interfaces';
 
@@ -449,8 +610,32 @@ export function createPlaylistFromInput(input: PlaylistInput): Playlist {
     id: playlistId,
     slug,
     title: input.title,
+    curators: input.curators,
+    summary: input.summary,
+    coverImage: input.coverImage,
     created: timestamp,
     defaults: input.defaults,
     items: itemsWithIds,
+  };
+}
+
+// Utility function to transform input to complete channel with server-generated fields
+export function createChannelFromInput(input: ChannelInput): Channel {
+  const channelId = crypto.randomUUID();
+  const timestamp = new Date().toISOString();
+  const slug = generateSlug(input.title);
+
+  return {
+    id: channelId,
+    slug,
+    title: input.title,
+    curator: input.curator,
+    curators: input.curators,
+    publisher: input.publisher,
+    dynamicQueries: input.dynamicQueries,
+    summary: input.summary,
+    playlists: input.playlists,
+    created: timestamp,
+    coverImage: input.coverImage,
   };
 }

@@ -675,6 +675,30 @@ describe('EtcdStorageProvider', () => {
     });
   });
 
+  describe('getChannelStorage', () => {
+    it('should return an EtcdKVStorage instance for channels', () => {
+      const storage = provider.getChannelStorage();
+
+      expect(storage).toBeInstanceOf(EtcdKVStorage);
+    });
+
+    it('should return the same instance on multiple calls', () => {
+      const storage1 = provider.getChannelStorage();
+      const storage2 = provider.getChannelStorage();
+
+      expect(storage1).toBe(storage2);
+    });
+
+    it('should use correct namespace for channels', () => {
+      const storage = provider.getChannelStorage();
+      const key = 'test-key';
+      const expectedKey = 'dp1/playlist-groups/test-key';
+
+      const result = (storage as any).getKey(key);
+      expect(result).toBe(expectedKey);
+    });
+  });
+
   describe('getPlaylistItemStorage', () => {
     it('should return an EtcdKVStorage instance for playlist items', () => {
       const storage = provider.getPlaylistItemStorage();
@@ -702,6 +726,7 @@ describe('EtcdStorageProvider', () => {
   describe('integration tests', () => {
     it('should work with all storage types independently', async () => {
       const playlistStorage = provider.getPlaylistStorage();
+      const groupStorage = provider.getChannelStorage();
       const itemStorage = provider.getPlaylistItemStorage();
 
       // Mock successful responses for all storage types
@@ -717,14 +742,23 @@ describe('EtcdStorageProvider', () => {
           ok: true,
           json: () =>
             Promise.resolve({
+              kvs: [{ key: 'ZHAxL3BsYXlsaXN0LWdyb3Vwcy9ncm91cC0x', value: 'Z3JvdXAtdmFsdWU=' }],
+            }),
+        })
+        .mockResolvedValueOnce({
+          ok: true,
+          json: () =>
+            Promise.resolve({
               kvs: [{ key: 'ZHAxL3BsYXlsaXN0LWl0ZW1zL2l0ZW0tMQ==', value: 'aXRlbS12YWx1ZQ==' }],
             }),
         });
 
       const playlistResult = await playlistStorage.get('playlist-1');
+      const groupResult = await groupStorage.get('group-1');
       const itemResult = await itemStorage.get('item-1');
 
       expect(playlistResult).toBe('playlist-value');
+      expect(groupResult).toBe('group-value');
       expect(itemResult).toBe('item-value');
     });
 
@@ -737,10 +771,12 @@ describe('EtcdStorageProvider', () => {
       const authProvider = new EtcdStorageProvider(authConfig);
 
       const playlistStorage = authProvider.getPlaylistStorage();
+      const groupStorage = authProvider.getChannelStorage();
       const itemStorage = authProvider.getPlaylistItemStorage();
 
       // All storage instances should have the same authentication config
       expect(playlistStorage).toBeInstanceOf(EtcdKVStorage);
+      expect(groupStorage).toBeInstanceOf(EtcdKVStorage);
       expect(itemStorage).toBeInstanceOf(EtcdKVStorage);
     });
   });

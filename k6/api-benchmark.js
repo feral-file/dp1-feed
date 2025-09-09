@@ -31,12 +31,22 @@ const API_SECRET = __ENV.API_SECRET || __ENV.BENCHMARK_API_SECRET;
 
 // Test data cache
 let cachedPlaylists = [];
+let cachedChannels = [];
 
 // Generate realistic test data
 function generatePlaylistData(index = 0) {
   return {
     dpVersion: '1.0.0',
     title: `K6 Benchmark Playlist ${index + 1} - ${Date.now()}`,
+    curators: [
+      {
+        name: `K6 Test Curator ${index + 1}`,
+        key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+        url: `https://example.com/k6-test-curator-${index + 1}.html`,
+      },
+    ],
+    summary: `K6 benchmark test playlist (${index + 1})`,
+    coverImage: `https://example.com/k6-cover-${index + 1}.jpg`,
     items: [
       {
         title: `K6 Test Item ${index + 1}`,
@@ -58,6 +68,53 @@ function generatePlaylistData(index = 0) {
             address: '0x1234567890123456789012345678901234567890',
             tokenId: String(2000 + index),
           },
+        },
+      },
+    ],
+  };
+}
+
+function generateChannelData(index = 0) {
+  // Use real playlist URLs if available
+  let playlistUrls = [];
+
+  if (cachedPlaylists.length >= 2) {
+    const playlist1 = cachedPlaylists[index % cachedPlaylists.length];
+    const playlist2 = cachedPlaylists[(index + 1) % cachedPlaylists.length];
+    playlistUrls = [
+      `${BASE_URL}/api/v1/playlists/${playlist1.id}`,
+      `${BASE_URL}/api/v1/playlists/${playlist2.id}`,
+    ];
+  } else {
+    playlistUrls = [
+      `https://example.com/k6-playlist-${index + 1}`,
+      `https://example.com/k6-playlist-${index + 2}`,
+    ];
+  }
+
+  return {
+    title: `K6 Benchmark Group ${index + 1} - ${Date.now()}`,
+    curator: `K6 Test Curator ${index + 1}`,
+    curators: [
+      {
+        name: `K6 Test Curator ${index + 1}`,
+        key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+        url: `https://example.com/k6-test-curator-${index + 1}.html`,
+      },
+    ],
+    summary: `K6 benchmark test channel (${index + 1})`,
+    publisher: {
+      name: `K6 Test Publisher ${index + 1}`,
+      key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+      url: `https://example.com/k6-test-publisher-${index + 1}.html`,
+    },
+    playlists: playlistUrls,
+    coverImage: `https://example.com/k6-cover-${index + 1}.jpg`,
+    dynamicQueries: [
+      {
+        endpoint: `https://example.com/k6-dynamic-query-${index + 1}.html`,
+        params: {
+          filter: 'active',
         },
       },
     ],
@@ -133,18 +190,59 @@ export function setup() {
       }
     }
 
+    // Fetch existing channels
+    console.log('📥 Fetching existing channels...');
+    const groupsResponse = makeRequest('/api/v1/channels?limit=10', 'GET', null, {
+      setup: 'true',
+    });
+
+    if (groupsResponse.status === 200) {
+      const responseData = JSON.parse(groupsResponse.body);
+      const groups = Array.isArray(responseData) ? responseData : responseData.items || [];
+      if (Array.isArray(groups)) {
+        cachedChannels = groups;
+        console.log(`✅ Found ${cachedChannels.length} existing channels`);
+      }
+    }
+
+    // Only create channels if none exist and we have playlists to reference
+    if (cachedChannels.length === 0 && cachedPlaylists.length >= 2) {
+      console.log('📝 No existing channels found, creating test channel...');
+
+      const channelData = generateChannelData(0);
+      console.log('📤 Creating channel...');
+      const response = makeRequest('/api/v1/channels', 'POST', channelData, { setup: 'true' });
+
+      if (response.status === 201) {
+        const channel = JSON.parse(response.body);
+        cachedChannels.push(channel);
+        console.log(`✅ Created channel: ${channel.id}`);
+      } else {
+        console.log(`❌ Failed to create channel: ${response.status}`);
+        try {
+          const errorBody = JSON.parse(response.body);
+          console.log(`❌ Error details: ${JSON.stringify(errorBody)}`);
+        } catch (e) {
+          console.log(`❌ Error: ${e.message}`);
+        }
+      }
+    }
+
     const setupTime = Date.now() - setupStart;
     setupDuration.add(setupTime);
 
     console.log(`🎯 Setup completed in ${setupTime}ms`);
-    console.log(`📊 Available for testing: ${cachedPlaylists.length} playlists`);
+    console.log(
+      `📊 Available for testing: ${cachedPlaylists.length} playlists, ${cachedChannels.length} channels`
+    );
 
     return {
       playlists: cachedPlaylists,
+      groups: cachedChannels,
     };
   } catch (error) {
     console.error(`❌ Setup failed: ${error.message}`);
-    return { playlists: [] };
+    return { playlists: [], groups: [] };
   }
 }
 
@@ -152,6 +250,7 @@ export function setup() {
 export default function (data) {
   // Update cached data from setup
   cachedPlaylists = data.playlists || [];
+  cachedChannels = data.groups || [];
 
   // Test API info endpoint
   testAPIInfo();
@@ -161,6 +260,9 @@ export default function (data) {
 
   // Test playlist operations
   testPlaylistOperations();
+
+  // Test channel operations
+  testChannelOperations();
 
   // Test playlist items (read-only)
   testPlaylistItems();
@@ -287,6 +389,103 @@ function testPlaylistOperations() {
       const updateSuccess = check(updateResponse, {
         'Update Playlist: status is 200': r => r.status === 200,
         'Update Playlist: title updated': r => {
+          try {
+            const data = JSON.parse(r.body);
+            return data.title.includes('Updated');
+          } catch {
+            return false;
+          }
+        },
+      });
+
+      if (!updateSuccess) errorRate.add(1);
+    }
+  }
+}
+
+function testChannelOperations() {
+  // List channels
+  const listResponse = makeRequest('/api/v1/channels?limit=10', 'GET', null, {
+    endpoint: 'list_channels',
+  });
+
+  const listSuccess = check(listResponse, {
+    'List Channels: status is 200': r => r.status === 200,
+    'List Channels: returns paginated data': r => {
+      try {
+        const data = JSON.parse(r.body);
+        return Array.isArray(data) || (data && Array.isArray(data.items));
+      } catch {
+        return false;
+      }
+    },
+  });
+
+  if (!listSuccess) errorRate.add(1);
+
+  // Create channel (if authenticated and have playlists) - test creation only
+  if (API_SECRET && cachedPlaylists.length >= 2) {
+    const channelData = generateChannelData(Math.floor(Math.random() * 1000));
+    const createResponse = makeRequest('/api/v1/channels', 'POST', channelData, {
+      endpoint: 'create_channel',
+    });
+
+    const createSuccess = check(createResponse, {
+      'Create Channel: status is 201': r => r.status === 201,
+      'Create Channel: returns channel with ID': r => {
+        try {
+          const data = JSON.parse(r.body);
+          return data.id && data.title;
+        } catch {
+          return false;
+        }
+      },
+    });
+
+    if (!createSuccess) errorRate.add(1);
+  }
+
+  // Test GET and UPDATE operations using cached channels (to avoid KV async issues)
+  if (cachedChannels.length > 0) {
+    const existingChannel = cachedChannels[Math.floor(Math.random() * cachedChannels.length)];
+
+    // Get channel by ID
+    const getResponse = makeRequest(`/api/v1/channels/${existingChannel.id}`, 'GET', null, {
+      endpoint: 'get_channel',
+    });
+
+    const getSuccess = check(getResponse, {
+      'Get Channel: status is 200': r => r.status === 200,
+      'Get Channel: returns correct channel': r => {
+        try {
+          const data = JSON.parse(r.body);
+          return data.id === existingChannel.id;
+        } catch {
+          return false;
+        }
+      },
+    });
+
+    if (!getSuccess) errorRate.add(1);
+
+    // Update channel (if authenticated)
+    if (API_SECRET) {
+      const updateData = {
+        title: `Updated ${existingChannel.title.slice(0, 64)} - ${Date.now()}`,
+        curator: existingChannel.curator || `Updated Curator - ${Date.now()}`,
+        playlists: existingChannel.playlists || [],
+      };
+
+      const updateResponse = makeRequest(
+        `/api/v1/channels/${existingChannel.id}`,
+        'PATCH',
+        updateData,
+        { endpoint: 'update_channel' }
+      );
+
+      const updateSuccess = check(updateResponse, {
+        'Update Channel: status is 200': r => r.status === 200,
+        'Update Channel: title updated': r => {
           try {
             const data = JSON.parse(r.body);
             return data.title.includes('Updated');

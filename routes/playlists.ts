@@ -9,8 +9,8 @@ import {
   createPlaylistFromInput,
   validateNoProtectedFields,
 } from '../types';
-import { signPlaylist, getServerKeyPair } from '../crypto';
-import { listAllPlaylists, getPlaylistByIdOrSlug } from '../storage';
+import { signObj, getServerKeyPair } from '../crypto';
+import { listAllPlaylists, getPlaylistByIdOrSlug, listPlaylistsByChannelId } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
 
 // Create playlist router
@@ -72,7 +72,7 @@ async function validatePlaylistUpdateBody(
     const body = await c.req.json();
 
     // Check for protected fields first
-    const protectedValidation = validateNoProtectedFields(body);
+    const protectedValidation = validateNoProtectedFields(body, 'playlist');
     if (!protectedValidation.isValid) {
       return {
         error: 'protected_fields',
@@ -102,10 +102,11 @@ async function validatePlaylistUpdateBody(
 }
 
 /**
- * GET /playlists - List all playlists with pagination
+ * GET /playlists - List all playlists with pagination and filtering
  * Query params:
  * - limit: number of items per page (max 100)
  * - cursor: pagination cursor from previous response
+ * - channel: filter by channel ID
  * - sort: asc | desc (by created time)
  */
 playlists.get('/', async c => {
@@ -113,6 +114,7 @@ playlists.get('/', async c => {
     // Parse query parameters
     const limit = parseInt(c.req.query('limit') || '100');
     const cursor = c.req.query('cursor') || undefined;
+    const channelId = c.req.query('channel');
     const sortParam = (c.req.query('sort') || '').toLowerCase();
     const sort: 'asc' | 'desc' = sortParam === 'desc' ? 'desc' : 'asc'; // Default to 'asc' when no sort or invalid sort
 
@@ -127,8 +129,14 @@ playlists.get('/', async c => {
       );
     }
 
-    // List all playlists
-    const result = await listAllPlaylists(c.var.env, { limit, cursor, sort });
+    let result;
+    if (channelId) {
+      // Filter by channel
+      result = await listPlaylistsByChannelId(channelId, c.var.env, { limit, cursor, sort });
+    } else {
+      // List all playlists
+      result = await listAllPlaylists(c.var.env, { limit, cursor, sort });
+    }
 
     return c.json(result);
   } catch (error) {
@@ -214,7 +222,7 @@ playlists.post('/', async c => {
     const keyPair = await getServerKeyPair(c.var.env);
 
     // Sign the playlist
-    playlist.signature = await signPlaylist(playlist, keyPair.privateKey);
+    playlist.signature = await signObj(playlist, keyPair.privateKey);
 
     // Create queue message for async processing
     const queueMessage: CreatePlaylistMessage = {
@@ -317,6 +325,9 @@ playlists.put('/:id', async c => {
       id: existingPlaylist.id, // Keep original server-generated ID
       slug: existingPlaylist.slug,
       title: validatedData.title,
+      curators: validatedData.curators,
+      summary: validatedData.summary,
+      coverImage: validatedData.coverImage,
       created: existingPlaylist.created,
       defaults: validatedData.defaults,
       items: itemsWithIds,
@@ -324,7 +335,7 @@ playlists.put('/:id', async c => {
 
     // Re-sign the playlist
     const keyPair = await getServerKeyPair(c.var.env);
-    updatedPlaylist.signature = await signPlaylist(updatedPlaylist, keyPair.privateKey);
+    updatedPlaylist.signature = await signObj(updatedPlaylist, keyPair.privateKey);
 
     // Create queue message for async processing
     const queueMessage: UpdatePlaylistMessage = {
@@ -428,6 +439,9 @@ playlists.patch('/:id', async c => {
       id: existingPlaylist.id,
       slug: existingPlaylist.slug,
       title: validatedData.title || existingPlaylist.title,
+      curators: validatedData.curators || existingPlaylist.curators,
+      summary: validatedData.summary || existingPlaylist.summary,
+      coverImage: validatedData.coverImage || existingPlaylist.coverImage,
       created: existingPlaylist.created,
       defaults: validatedData.defaults ?? existingPlaylist.defaults,
       items: itemsWithIds,
@@ -435,7 +449,7 @@ playlists.patch('/:id', async c => {
 
     // Re-sign the playlist
     const keyPair = await getServerKeyPair(c.var.env);
-    updatedPlaylist.signature = await signPlaylist(updatedPlaylist, keyPair.privateKey);
+    updatedPlaylist.signature = await signObj(updatedPlaylist, keyPair.privateKey);
 
     // Create queue message for async processing
     const queueMessage: UpdatePlaylistMessage = {

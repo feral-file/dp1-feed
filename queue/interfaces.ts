@@ -69,7 +69,7 @@ export interface QueueProcessor<T = unknown> {
   processBatch(batch: MessageBatch<T>, env?: any): Promise<ProcessingResult>;
 }
 
-import type { Playlist } from '../types';
+import type { Playlist, Channel } from '../types';
 
 // Write operation message types (borrowing CloudFlare format but generic)
 export interface CreatePlaylistMessage extends QueueMessage {
@@ -87,4 +87,23 @@ export interface UpdatePlaylistMessage extends QueueMessage {
   };
 }
 
-export type WriteOperationMessage = CreatePlaylistMessage | UpdatePlaylistMessage;
+export interface CreateChannelMessage extends QueueMessage {
+  operation: 'create_channel';
+  data: {
+    channel: Channel;
+  };
+}
+
+export interface UpdateChannelMessage extends QueueMessage {
+  operation: 'update_channel';
+  data: {
+    channelId: string;
+    channel: Channel;
+  };
+}
+
+export type WriteOperationMessage =
+  | CreatePlaylistMessage
+  | UpdatePlaylistMessage
+  | CreateChannelMessage
+  | UpdateChannelMessage;

@@ -25,6 +25,15 @@ if (!apiSecret) {
 const testPlaylist = {
   dpVersion: '1.0.0',
   title: 'My Amazing Test Playlist',
+  curators: [
+    {
+      name: 'Test Curator',
+      key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+      url: 'https://example.com/curator',
+    },
+  ],
+  summary: 'A test playlist for testing the API',
+  coverImage: 'https://example.com/test-playlist-cover.jpg',
   defaults: {
     display: {
       scaling: 'fit',
@@ -46,7 +55,10 @@ const testPlaylist = {
 // Store server-generated data for testing
 let createdPlaylistId = null;
 let createdPlaylistSlug = null;
+let createdChannelId = null;
+let createdChannelSlug = null;
 let sortingTestPlaylistIds = []; // For sorting tests
+let sortingTestChannelIds = []; // For sorting tests
 
 // Helper function to make HTTP requests
 async function makeRequest(method, path, body = null) {
@@ -125,45 +137,165 @@ async function testListPlaylists() {
 }
 
 async function testPagination() {
-  console.log('\n📄 Testing pagination with limit and cursor...');
+  console.log('\n📄 Testing pagination behavior with real data...');
 
-  // Test with limit
-  const limitResponse = await makeRequest('GET', '/api/v1/playlists?limit=1');
-
-  if (limitResponse.ok) {
-    const result = limitResponse.data;
-    if (result.items && result.items.length <= 1) {
-      console.log('✅ Limit parameter working correctly');
-
-      // Test cursor if available
-      if (result.cursor && result.hasMore) {
-        const cursorResponse = await makeRequest(
-          'GET',
-          `/api/v1/playlists?limit=1&cursor=${encodeURIComponent(result.cursor)}`
-        );
-        if (cursorResponse.ok) {
-          console.log('✅ Cursor pagination working correctly');
-        } else {
-          console.log('❌ Cursor pagination failed');
-          return false;
-        }
-      } else {
-        console.log('ℹ️  No cursor available (only one page of results)');
-      }
-    } else {
-      console.log('❌ Limit parameter not working correctly');
-      return false;
-    }
-  } else {
-    console.log(`❌ Pagination test failed: ${limitResponse.status}`);
+  // First, get total count without limit to understand dataset
+  const allResponse = await makeRequest('GET', '/api/v1/playlists?limit=100');
+  if (!allResponse.ok) {
+    console.log('❌ Failed to get all playlists for pagination test');
     return false;
   }
 
+  const totalItems = allResponse.data.items.length;
+  console.log(`   Total playlists available: ${totalItems}`);
+
+  if (totalItems < 2) {
+    console.log('ℹ️  Not enough playlists to test pagination properly');
+    return true;
+  }
+
+  // Test limit parameter with different values
+  const testLimits = [1, 2, Math.min(3, totalItems)];
+
+  for (const limit of testLimits) {
+    console.log(`   Testing limit=${limit}...`);
+    const limitResponse = await makeRequest('GET', `/api/v1/playlists?limit=${limit}`);
+
+    if (!limitResponse.ok) {
+      console.log(`❌ Failed to fetch with limit=${limit}`);
+      return false;
+    }
+
+    const result = limitResponse.data;
+
+    // Verify limit is respected
+    if (result.items.length > limit) {
+      console.log(`❌ Limit ${limit} not respected, got ${result.items.length} items`);
+      return false;
+    }
+
+    // Verify hasMore flag is correct
+    const expectedHasMore = totalItems > limit;
+    if (result.hasMore !== expectedHasMore) {
+      console.log(`❌ hasMore flag incorrect for limit ${limit}`);
+      console.log(`   Expected: ${expectedHasMore}, Got: ${result.hasMore}`);
+      return false;
+    }
+
+    // If there should be more, verify cursor is provided
+    if (expectedHasMore && !result.cursor) {
+      console.log(`❌ Missing cursor when hasMore=true for limit ${limit}`);
+      return false;
+    }
+
+    console.log(`   ✅ Limit ${limit} working correctly`);
+  }
+
+  // Test cursor pagination if we have enough data
+  if (totalItems >= 3) {
+    console.log('   Testing cursor pagination...');
+
+    // Get first page
+    const page1Response = await makeRequest('GET', '/api/v1/playlists?limit=1');
+    if (!page1Response.ok || !page1Response.data.cursor) {
+      console.log('❌ Failed to get first page for cursor test');
+      return false;
+    }
+
+    const page1 = page1Response.data;
+
+    // Get second page using cursor
+    const page2Response = await makeRequest(
+      'GET',
+      `/api/v1/playlists?limit=1&cursor=${encodeURIComponent(page1.cursor)}`
+    );
+
+    if (!page2Response.ok) {
+      console.log('❌ Failed to get second page using cursor');
+      return false;
+    }
+
+    const page2 = page2Response.data;
+
+    // Verify pages contain different items
+    if (page1.items[0].id === page2.items[0].id) {
+      console.log('❌ Cursor pagination returned same item on different pages');
+      return false;
+    }
+
+    // Verify items are in correct order (assuming ascending by default)
+    const item1Created = new Date(page1.items[0].created);
+    const item2Created = new Date(page2.items[0].created);
+
+    if (item1Created > item2Created) {
+      console.log('❌ Pagination order incorrect (should be ascending by created)');
+      console.log(`   Page 1 created: ${page1.items[0].created}`);
+      console.log(`   Page 2 created: ${page2.items[0].created}`);
+      return false;
+    }
+
+    console.log('   ✅ Cursor pagination working correctly');
+  }
+
+  // Test edge cases
+  console.log('   Testing pagination edge cases...');
+
+  // Test limit=0 (should be rejected or default to some value)
+  const zeroLimitResponse = await makeRequest('GET', '/api/v1/playlists?limit=0');
+  if (zeroLimitResponse.ok) {
+    if (zeroLimitResponse.data.items.length > 0) {
+      console.log('   ✅ limit=0 handled gracefully (returned default items)');
+    }
+  } else if (zeroLimitResponse.status === 400) {
+    console.log('   ✅ limit=0 properly rejected with 400');
+  } else {
+    console.log('❌ limit=0 handling unexpected');
+    return false;
+  }
+
+  // Test very large limit
+  const largeLimitResponse = await makeRequest('GET', '/api/v1/playlists?limit=1000');
+  if (largeLimitResponse.ok) {
+    const result = largeLimitResponse.data;
+    if (result.items.length <= totalItems) {
+      console.log('   ✅ Large limit handled correctly (capped to available items)');
+    } else {
+      console.log('❌ Large limit returned more items than exist');
+      return false;
+    }
+  }
+
+  console.log('✅ Pagination behavior verified with real data');
   return true;
 }
 
+async function testChannelFiltering() {
+  if (!createdChannelId) {
+    console.log('\n⚠️  Skipping filtering test - no channel ID available');
+    return true;
+  }
+
+  console.log('\n🔍 Testing playlist filtering by channel...');
+  const response = await makeRequest('GET', `/api/v1/playlists?channel=${createdChannelId}`);
+
+  if (response.ok) {
+    console.log('✅ Channel filtering working');
+    const result = response.data;
+    if (result && Array.isArray(result.items)) {
+      console.log(`   Filtered playlists count: ${result.items.length}`);
+    } else {
+      console.log('❌ Expected paginated result format');
+      return false;
+    }
+  } else {
+    console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
+  }
+
+  return response.ok;
+}
+
 async function testCreatePlaylist() {
-  console.log('\n📝 Testing POST /api/v1/playlists (server-side ID and slug generation)...');
+  console.log('\n📝 Testing POST /api/v1/playlists (data integrity and server generation)...');
   const response = await makeRequest('POST', '/api/v1/playlists', testPlaylist);
 
   if (response.ok) {
@@ -178,35 +310,122 @@ async function testCreatePlaylist() {
     createdPlaylistId = response.data.id;
     createdPlaylistSlug = response.data.slug;
 
-    // Validate UUID format
-    if (/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(response.data.id)) {
-      console.log('✅ Server-generated UUID format is valid');
-    } else {
+    // Data integrity checks - verify input data is preserved exactly
+    if (response.data.title !== testPlaylist.title) {
+      console.log('❌ Title not preserved from input');
+      console.log(`   Expected: "${testPlaylist.title}"`);
+      console.log(`   Received: "${response.data.title}"`);
+      return false;
+    }
+
+    if (response.data.dpVersion !== testPlaylist.dpVersion) {
+      console.log('❌ dpVersion not preserved from input');
+      return false;
+    }
+
+    // Deep comparison of defaults object
+    if (JSON.stringify(response.data.defaults) !== JSON.stringify(testPlaylist.defaults)) {
+      console.log('❌ Defaults object not preserved exactly');
+      console.log(`   Expected: ${JSON.stringify(testPlaylist.defaults)}`);
+      console.log(`   Received: ${JSON.stringify(response.data.defaults)}`);
+      return false;
+    }
+
+    // Verify playlist items data integrity
+    if (response.data.items.length !== testPlaylist.items.length) {
+      console.log('❌ Number of items changed during creation');
+      return false;
+    }
+
+    for (let i = 0; i < testPlaylist.items.length; i++) {
+      const inputItem = testPlaylist.items[i];
+      const outputItem = response.data.items[i];
+
+      // Check that input fields are preserved
+      if (outputItem.title !== inputItem.title) {
+        console.log(`❌ Item ${i} title not preserved`);
+        return false;
+      }
+      if (outputItem.source !== inputItem.source) {
+        console.log(`❌ Item ${i} source not preserved`);
+        return false;
+      }
+      if (outputItem.duration !== inputItem.duration) {
+        console.log(`❌ Item ${i} duration not preserved`);
+        return false;
+      }
+      if (outputItem.license !== inputItem.license) {
+        console.log(`❌ Item ${i} license not preserved`);
+        return false;
+      }
+
+      // Verify server generated fields exist and are valid
+      if (
+        !outputItem.id ||
+        !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(outputItem.id)
+      ) {
+        console.log(`❌ Item ${i} missing or invalid server-generated ID`);
+        return false;
+      }
+      if (!outputItem.created || isNaN(new Date(outputItem.created).getTime())) {
+        console.log(`❌ Item ${i} missing or invalid server-generated created timestamp`);
+        return false;
+      }
+    }
+    console.log('✅ All input data preserved exactly, server fields generated correctly');
+
+    // Verify optional fields are preserved exactly
+    if (JSON.stringify(response.data.curators) !== JSON.stringify(testPlaylist.curators)) {
+      console.log('❌ Curators array not preserved exactly');
+      console.log(`   Expected: ${JSON.stringify(testPlaylist.curators)}`);
+      console.log(`   Received: ${JSON.stringify(response.data.curators)}`);
+      return false;
+    }
+    console.log('✅ Curators array preserved exactly');
+
+    if (response.data.summary !== testPlaylist.summary) {
+      console.log('❌ Summary not preserved exactly');
+      console.log(`   Expected: "${testPlaylist.summary}"`);
+      console.log(`   Received: "${response.data.summary}"`);
+      return false;
+    }
+    console.log('✅ Summary preserved exactly');
+
+    if (response.data.coverImage !== testPlaylist.coverImage) {
+      console.log('❌ Cover image not preserved exactly');
+      console.log(`   Expected: "${testPlaylist.coverImage}"`);
+      console.log(`   Received: "${response.data.coverImage}"`);
+      return false;
+    }
+    console.log('✅ Cover image preserved exactly');
+
+    // Validate server-generated fields are reasonable
+    if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(response.data.id)) {
       console.log('❌ Server-generated UUID format is invalid');
       return false;
     }
 
-    // Validate slug format
-    if (response.data.slug && /^[a-zA-Z0-9-]+-\d{4}$/.test(response.data.slug)) {
-      console.log('✅ Server-generated slug format is valid');
-    } else {
+    if (!response.data.slug || !/^[a-zA-Z0-9-]+-\d{4}$/.test(response.data.slug)) {
       console.log('❌ Server-generated slug format is invalid or missing');
       return false;
     }
 
-    // Validate playlist item IDs are also generated
-    if (
-      response.data.items &&
-      response.data.items[0] &&
-      /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
-        response.data.items[0].id
-      )
-    ) {
-      console.log('✅ Playlist item UUID format is valid');
-    } else {
-      console.log('❌ Playlist item UUID format is invalid');
+    // Verify created timestamp is recent (within 10 seconds)
+    const now = new Date();
+    const created = new Date(response.data.created);
+    const timeDiff = Math.abs(now - created);
+    if (timeDiff > 10000) {
+      console.log('❌ Created timestamp seems incorrect (too old/future)');
       return false;
     }
+
+    // Verify signature is present and looks valid
+    if (!response.data.signature || !response.data.signature.startsWith('ed25519:0x')) {
+      console.log('❌ Signature missing or invalid format');
+      return false;
+    }
+
+    console.log('✅ Server-generated fields are valid and reasonable');
 
     // Wait for queue processing
     await new Promise(resolve => setTimeout(resolve, 500));
@@ -272,15 +491,33 @@ async function testUpdatePlaylist() {
     return true;
   }
 
-  console.log('\n📝 Testing PATCH /api/v1/playlists/{id} (slug regeneration and new item IDs)...');
-  // remove the dpVersion from the testPlaylist
-  const { dpVersion, ...rest } = testPlaylist;
-  const updatedPlaylist = {
-    ...rest,
+  console.log('\n📝 Testing PATCH /api/v1/playlists/{id} (data integrity during updates)...');
+
+  // Get original playlist first to compare
+  const originalResponse = await makeRequest('GET', `/api/v1/playlists/${createdPlaylistId}`);
+  if (!originalResponse.ok) {
+    console.log('❌ Failed to fetch original playlist for update test');
+    return false;
+  }
+  const originalPlaylist = originalResponse.data;
+
+  // Create update data with modified and new items
+  const updatedData = {
+    title: 'Updated Amazing Test Playlist - Enhanced',
+    curators: [
+      {
+        name: 'Updated Curator',
+        key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+        url: 'https://example.com/updated-curator',
+      },
+    ],
+    summary: 'Updated summary for the playlist with enhanced content',
+    coverImage: 'https://example.com/updated-cover.jpg',
     items: [
       {
         ...testPlaylist.items[0],
         title: 'Updated Amazing Digital Artwork',
+        duration: 450, // Changed duration
       },
       {
         title: 'Second Test Artwork',
@@ -288,27 +525,146 @@ async function testUpdatePlaylist() {
         duration: 180,
         license: 'token',
       },
+      {
+        title: 'Third Test Artwork',
+        source: 'https://example.com/test3.html',
+        duration: 600,
+        license: 'subscription',
+      },
     ],
+    // Keep defaults from original, but modify one field
+    defaults: {
+      ...testPlaylist.defaults,
+      duration: 400, // Changed default duration
+    },
   };
 
   const response = await makeRequest(
     'PATCH',
     `/api/v1/playlists/${createdPlaylistId}`,
-    updatedPlaylist
+    updatedData
   );
 
   if (response.ok) {
     console.log('✅ Playlist updated successfully');
     console.log(`   Items: ${response.data.items?.length || 0}`);
-    console.log(`   New slug: ${response.data.slug}`);
+    console.log(`   Title: ${response.data.title}`);
 
-    // Verify slug was not regenerated
-    if (response.data.slug !== createdPlaylistSlug) {
-      console.log('❌ Slug was regenerated after title change');
+    // Verify protected fields were NOT changed
+    if (response.data.id !== originalPlaylist.id) {
+      console.log('❌ Protected field ID was changed during update');
       return false;
-    } else {
-      console.log('✅ Slug was not regenerated after title change');
     }
+    if (response.data.slug !== originalPlaylist.slug) {
+      console.log('❌ Protected field slug was changed during update');
+      return false;
+    }
+    if (response.data.created !== originalPlaylist.created) {
+      console.log('❌ Protected field created was changed during update');
+      return false;
+    }
+    if (response.data.dpVersion !== originalPlaylist.dpVersion) {
+      console.log('❌ dpVersion was changed during update (should be preserved)');
+      return false;
+    }
+    console.log('✅ Protected fields preserved during update');
+
+    // Verify updated fields were changed correctly
+    if (response.data.title !== updatedData.title) {
+      console.log('❌ Title not updated correctly');
+      console.log(`   Expected: "${updatedData.title}"`);
+      console.log(`   Received: "${response.data.title}"`);
+      return false;
+    }
+
+    if (JSON.stringify(response.data.defaults) !== JSON.stringify(updatedData.defaults)) {
+      console.log('❌ Defaults not updated correctly');
+      console.log(`   Expected: ${JSON.stringify(updatedData.defaults)}`);
+      console.log(`   Received: ${JSON.stringify(response.data.defaults)}`);
+      return false;
+    }
+
+    // Verify optional fields were updated correctly
+    if (JSON.stringify(response.data.curators) !== JSON.stringify(updatedData.curators)) {
+      console.log('❌ Curators not updated correctly');
+      console.log(`   Expected: ${JSON.stringify(updatedData.curators)}`);
+      console.log(`   Received: ${JSON.stringify(response.data.curators)}`);
+      return false;
+    }
+
+    if (response.data.summary !== updatedData.summary) {
+      console.log('❌ Summary not updated correctly');
+      console.log(`   Expected: "${updatedData.summary}"`);
+      console.log(`   Received: "${response.data.summary}"`);
+      return false;
+    }
+
+    if (response.data.coverImage !== updatedData.coverImage) {
+      console.log('❌ Cover image not updated correctly');
+      console.log(`   Expected: "${updatedData.coverImage}"`);
+      console.log(`   Received: "${response.data.coverImage}"`);
+      return false;
+    }
+
+    console.log('✅ Updated fields (including optional fields) changed correctly');
+
+    // Verify items were replaced completely
+    if (response.data.items.length !== updatedData.items.length) {
+      console.log('❌ Items array length not updated correctly');
+      return false;
+    }
+
+    // Verify all items have new IDs (complete replacement)
+    for (let i = 0; i < response.data.items.length; i++) {
+      const newItem = response.data.items[i];
+      const inputItem = updatedData.items[i];
+
+      // Verify input data preserved
+      if (newItem.title !== inputItem.title) {
+        console.log(`❌ Item ${i} title not preserved during update`);
+        return false;
+      }
+      if (newItem.source !== inputItem.source) {
+        console.log(`❌ Item ${i} source not preserved during update`);
+        return false;
+      }
+      if (newItem.duration !== inputItem.duration) {
+        console.log(`❌ Item ${i} duration not preserved during update`);
+        return false;
+      }
+      if (newItem.license !== inputItem.license) {
+        console.log(`❌ Item ${i} license not preserved during update`);
+        return false;
+      }
+
+      // Verify new server-generated fields
+      if (
+        !newItem.id ||
+        !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(newItem.id)
+      ) {
+        console.log(`❌ Item ${i} missing or invalid new ID`);
+        return false;
+      }
+
+      // Verify this ID is different from original items (complete replacement)
+      const originalItem = originalPlaylist.items[i];
+      if (originalItem && newItem.id === originalItem.id) {
+        console.log(`❌ Item ${i} ID not changed during update (should be new)`);
+        return false;
+      }
+    }
+    console.log('✅ Items replaced with new IDs and correct data');
+
+    // Verify signature was regenerated
+    if (response.data.signature === originalPlaylist.signature) {
+      console.log('❌ Signature not regenerated after update');
+      return false;
+    }
+    if (!response.data.signature || !response.data.signature.startsWith('ed25519:0x')) {
+      console.log('❌ New signature missing or invalid format');
+      return false;
+    }
+    console.log('✅ Signature regenerated correctly');
 
     // Wait for queue processing
     await new Promise(resolve => setTimeout(resolve, 500));
@@ -317,6 +673,354 @@ async function testUpdatePlaylist() {
   }
 
   return response.ok;
+}
+
+async function testCreateChannel() {
+  console.log('\n📝 Testing POST /api/v1/channels (data integrity with new fields)...');
+
+  // Ensure we have a playlist to reference
+  if (!createdPlaylistId) {
+    console.log('❌ No playlist available to reference in channel. Create a playlist first.');
+    return false;
+  }
+  console.log(`🔍 Using playlist ID: ${createdPlaylistId}`);
+
+  // Create channel data with real playlist reference and comprehensive new fields
+  const playlistUrl = `${baseUrl}/api/v1/playlists/${createdPlaylistId}`;
+
+  const channelData = {
+    title: 'Digital Art Showcase 2024',
+    curator: 'Main Test Curator',
+    curators: [
+      {
+        name: 'Primary Curator',
+        key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+        url: 'https://example.com/curator1',
+      },
+      {
+        name: 'Secondary Curator',
+        // Note: no key or url - testing optional fields
+      },
+      {
+        name: 'External Curator',
+        url: 'https://external-site.com/curator3',
+        // Note: no key - testing optional key field
+      },
+    ],
+    publisher: {
+      name: 'Art Gallery Foundation',
+      key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+      url: 'https://artgallery.com/about',
+    },
+    dynamicQueries: [
+      {
+        endpoint: 'https://api.artworks.com/search',
+        params: {
+          category: 'digital-art',
+          year: '2024',
+          status: 'featured',
+          limit: '50',
+        },
+      },
+      {
+        endpoint: 'https://api.exhibitions.com/current',
+        params: {
+          type: 'virtual',
+          featured: 'true',
+        },
+      },
+    ],
+    coverImage: 'https://cdn.artgallery.com/showcase-2024-cover.jpg',
+    summary:
+      'A comprehensive exhibition showcasing the finest digital artworks from 2024, curated by leading experts in the field and featuring dynamic content from multiple sources.',
+    playlists: [playlistUrl],
+  };
+
+  const response = await makeRequest('POST', '/api/v1/channels', channelData);
+
+  if (response.ok) {
+    console.log('✅ Channel created successfully');
+    console.log(`   ID: ${response.data.id}`);
+    console.log(`   Slug: ${response.data.slug}`);
+    console.log(`   Title: ${response.data.title}`);
+    console.log(`   Created: ${response.data.created}`);
+    console.log(`   Signature: ${response.data.signature ? 'Present' : 'Missing'}`);
+
+    // Store server-generated data
+    createdChannelId = response.data.id;
+    createdChannelSlug = response.data.slug;
+
+    // Data integrity checks - verify ALL input data is preserved exactly
+    const fieldsToCheck = ['title', 'curator', 'summary', 'coverImage'];
+    for (const field of fieldsToCheck) {
+      if (response.data[field] !== channelData[field]) {
+        console.log(`❌ ${field} not preserved from input`);
+        console.log(`   Expected: "${channelData[field]}"`);
+        console.log(`   Received: "${response.data[field]}"`);
+        return false;
+      }
+    }
+    console.log('✅ Basic fields preserved exactly');
+
+    // Deep comparison of complex objects - curators array
+    if (JSON.stringify(response.data.curators) !== JSON.stringify(channelData.curators)) {
+      console.log('❌ Curators array not preserved exactly');
+      console.log(`   Expected: ${JSON.stringify(channelData.curators)}`);
+      console.log(`   Received: ${JSON.stringify(response.data.curators)}`);
+      return false;
+    }
+    console.log(`✅ Curators array preserved exactly (${response.data.curators.length} curators)`);
+
+    // Deep comparison of publisher object
+    if (JSON.stringify(response.data.publisher) !== JSON.stringify(channelData.publisher)) {
+      console.log('❌ Publisher object not preserved exactly');
+      console.log(`   Expected: ${JSON.stringify(channelData.publisher)}`);
+      console.log(`   Received: ${JSON.stringify(response.data.publisher)}`);
+      return false;
+    }
+    console.log('✅ Publisher object preserved exactly');
+
+    // Deep comparison of dynamicQueries array
+    if (
+      JSON.stringify(response.data.dynamicQueries) !== JSON.stringify(channelData.dynamicQueries)
+    ) {
+      console.log('❌ Dynamic queries array not preserved exactly');
+      console.log(`   Expected: ${JSON.stringify(channelData.dynamicQueries)}`);
+      console.log(`   Received: ${JSON.stringify(response.data.dynamicQueries)}`);
+      return false;
+    }
+    console.log(
+      `✅ Dynamic queries preserved exactly (${response.data.dynamicQueries.length} queries)`
+    );
+
+    // Verify playlists array
+    if (JSON.stringify(response.data.playlists) !== JSON.stringify(channelData.playlists)) {
+      console.log('❌ Playlists array not preserved exactly');
+      console.log(`   Expected: ${JSON.stringify(channelData.playlists)}`);
+      console.log(`   Received: ${JSON.stringify(response.data.playlists)}`);
+      return false;
+    }
+    console.log('✅ Playlists array preserved exactly');
+
+    // Verify server-generated fields are valid and reasonable
+    if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(response.data.id)) {
+      console.log('❌ Server-generated UUID format is invalid');
+      return false;
+    }
+
+    if (!response.data.slug || !/^[a-zA-Z0-9-]+-\d{4}$/.test(response.data.slug)) {
+      console.log('❌ Server-generated slug format is invalid or missing');
+      return false;
+    }
+
+    // Verify created timestamp is recent (within 10 seconds)
+    const now = new Date();
+    const created = new Date(response.data.created);
+    const timeDiff = Math.abs(now - created);
+    if (timeDiff > 10000) {
+      console.log('❌ Created timestamp seems incorrect (too old/future)');
+      return false;
+    }
+
+    // Verify signature is present and looks valid
+    if (!response.data.signature || !response.data.signature.startsWith('ed25519:0x')) {
+      console.log('❌ Signature missing or invalid format');
+      return false;
+    }
+
+    console.log('✅ Server-generated fields are valid and reasonable');
+
+    // Wait for queue processing
+    await new Promise(resolve => setTimeout(resolve, 500));
+  } else {
+    console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
+  }
+
+  return response.ok;
+}
+
+async function testListChannels() {
+  console.log('\n📋 Testing GET /api/v1/channels (list all groups)...');
+  const response = await makeRequest('GET', '/api/v1/channels');
+
+  if (response.ok) {
+    console.log('✅ Channels listed successfully');
+    // Handle paginated result format
+    const paginatedResult = response.data;
+    if (paginatedResult && Array.isArray(paginatedResult.items)) {
+      console.log(`   Count: ${paginatedResult.items.length}`);
+      console.log(`   Has more: ${paginatedResult.hasMore || false}`);
+      console.log(`   Cursor: ${paginatedResult.cursor ? 'Present' : 'None'}`);
+      if (paginatedResult.items.length > 0) {
+        console.log(`   First group ID: ${paginatedResult.items[0].id}`);
+        if (paginatedResult.items[0].slug) {
+          console.log(`   First group slug: ${paginatedResult.items[0].slug}`);
+        }
+      }
+    } else {
+      console.log('❌ Expected paginated result format with items array');
+      return false;
+    }
+  } else {
+    console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
+  }
+
+  return response.ok;
+}
+
+async function testGetChannelByUUID() {
+  if (!createdChannelId) {
+    console.log('\n⚠️  Skipping group UUID test - no group ID available');
+    return true;
+  }
+
+  console.log('\n📖 Testing GET /api/v1/channels/{uuid} (access by UUID)...');
+  const response = await makeRequest('GET', `/api/v1/channels/${createdChannelId}`);
+
+  if (response.ok) {
+    console.log('✅ Channel retrieved by UUID successfully');
+    console.log(`   ID: ${response.data.id}`);
+    console.log(`   Slug: ${response.data.slug}`);
+    console.log(`   Curator: ${response.data.curator}`);
+  } else {
+    console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
+  }
+
+  return response.ok;
+}
+
+async function testGetChannelBySlug() {
+  if (!createdChannelSlug) {
+    console.log('\n⚠️  Skipping group slug test - no slug available');
+    return true;
+  }
+
+  console.log('\n📖 Testing GET /api/v1/channels/{slug} (access by slug)...');
+  const response = await makeRequest('GET', `/api/v1/channels/${createdChannelSlug}`);
+
+  if (response.ok) {
+    console.log('✅ Channel retrieved by slug successfully');
+    console.log(`   ID: ${response.data.id}`);
+    console.log(`   Slug: ${response.data.slug}`);
+
+    // Verify we get the same group
+    if (response.data.id === createdChannelId) {
+      console.log('✅ Same channel returned via slug and UUID');
+    } else {
+      console.log('❌ Different channel returned via slug vs UUID');
+      return false;
+    }
+  } else {
+    console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
+  }
+
+  return response.ok;
+}
+
+async function testDataConsistencyAcrossEndpoints() {
+  console.log('\n🔄 Testing data consistency across different endpoints...');
+
+  if (!createdPlaylistId || !createdChannelId) {
+    console.log('⚠️  Skipping consistency test - missing required IDs');
+    return true;
+  }
+
+  // Get playlist via direct endpoint
+  console.log('   Fetching playlist via direct endpoint...');
+  const playlistResponse = await makeRequest('GET', `/api/v1/playlists/${createdPlaylistId}`);
+  if (!playlistResponse.ok) {
+    console.log('❌ Failed to fetch playlist for consistency test');
+    return false;
+  }
+
+  // Get channel via direct endpoint
+  console.log('   Fetching channel via direct endpoint...');
+  const channelResponse = await makeRequest('GET', `/api/v1/channels/${createdChannelId}`);
+  if (!channelResponse.ok) {
+    console.log('❌ Failed to fetch channel for consistency test');
+    return false;
+  }
+
+  // Verify playlist appears in channel's playlists array
+  const playlistUrl = `${baseUrl}/api/v1/playlists/${createdPlaylistId}`;
+  if (!channelResponse.data.playlists.includes(playlistUrl)) {
+    console.log("❌ Playlist not found in channel's playlists array");
+    console.log(`   Expected to find: ${playlistUrl}`);
+    console.log(`   Channel playlists: ${JSON.stringify(channelResponse.data.playlists)}`);
+    return false;
+  }
+  console.log('✅ Playlist correctly referenced in channel');
+
+  // Get playlist items via playlist items endpoint filtered by channel
+  console.log('   Fetching playlist items filtered by channel...');
+  const itemsResponse = await makeRequest(
+    'GET',
+    `/api/v1/playlist-items?channel=${createdChannelId}`
+  );
+  if (!itemsResponse.ok) {
+    console.log('❌ Failed to fetch playlist items by channel');
+    return false;
+  }
+
+  // Verify playlist items from channel filter match items in direct playlist
+  const directPlaylistItems = playlistResponse.data.items;
+  const channelFilteredItems = itemsResponse.data.items;
+
+  if (directPlaylistItems.length !== channelFilteredItems.length) {
+    console.log('❌ Playlist items count mismatch between direct and channel-filtered endpoints');
+    console.log(`   Direct playlist items: ${directPlaylistItems.length}`);
+    console.log(`   Channel-filtered items: ${channelFilteredItems.length}`);
+    return false;
+  }
+
+  // Verify each item matches exactly
+  for (let i = 0; i < directPlaylistItems.length; i++) {
+    const directItem = directPlaylistItems[i];
+    const filteredItem = channelFilteredItems.find(item => item.id === directItem.id);
+
+    if (!filteredItem) {
+      console.log(`❌ Playlist item ${directItem.id} not found in channel-filtered results`);
+      return false;
+    }
+
+    // Compare all fields
+    const fieldsToCompare = ['id', 'title', 'source', 'duration', 'license', 'created'];
+    for (const field of fieldsToCompare) {
+      if (directItem[field] !== filteredItem[field]) {
+        console.log(`❌ Playlist item ${directItem.id} field '${field}' mismatch`);
+        console.log(`   Direct: ${directItem[field]}`);
+        console.log(`   Filtered: ${filteredItem[field]}`);
+        return false;
+      }
+    }
+  }
+  console.log('✅ Playlist items consistent between direct and channel-filtered endpoints');
+
+  // Test listing endpoints include our created data
+  console.log('   Verifying created data appears in listing endpoints...');
+
+  const playlistsListResponse = await makeRequest('GET', '/api/v1/playlists?limit=100');
+  if (playlistsListResponse.ok) {
+    const foundPlaylist = playlistsListResponse.data.items.find(p => p.id === createdPlaylistId);
+    if (!foundPlaylist) {
+      console.log('❌ Created playlist not found in playlists listing');
+      return false;
+    }
+    console.log('✅ Created playlist found in playlists listing');
+  }
+
+  const channelsListResponse = await makeRequest('GET', '/api/v1/channels?limit=100');
+  if (channelsListResponse.ok) {
+    const foundChannel = channelsListResponse.data.items.find(c => c.id === createdChannelId);
+    if (!foundChannel) {
+      console.log('❌ Created channel not found in channels listing');
+      return false;
+    }
+    console.log('✅ Created channel found in channels listing');
+  }
+
+  console.log('✅ Data consistency verified across all endpoints');
+  return true;
 }
 
 async function testInvalidIdentifiers() {
@@ -384,16 +1088,22 @@ async function testEmptyListing() {
 
   // Create a fresh API that might be empty
   const emptyResponse = await makeRequest('GET', '/api/v1/playlists');
+  const emptyGroupsResponse = await makeRequest('GET', '/api/v1/channels');
 
-  if (emptyResponse.ok) {
+  if (emptyResponse.ok && emptyGroupsResponse.ok) {
     console.log('✅ Empty listings handled correctly');
 
     // Check if both return paginated format
     const playlistResult = emptyResponse.data;
-    const playlistsValid = playlistResult && Array.isArray(playlistResult.items);
-    console.log(`   Playlists returned: ${playlistsValid ? 'paginated format' : 'invalid format'}`);
+    const groupResult = emptyGroupsResponse.data;
 
-    return playlistsValid;
+    const playlistsValid = playlistResult && Array.isArray(playlistResult.items);
+    const groupsValid = groupResult && Array.isArray(groupResult.items);
+
+    console.log(`   Playlists returned: ${playlistsValid ? 'paginated format' : 'invalid format'}`);
+    console.log(`   Groups returned: ${groupsValid ? 'paginated format' : 'invalid format'}`);
+
+    return playlistsValid && groupsValid;
   } else {
     console.log(`❌ Failed empty listing test`);
     return false;
@@ -445,6 +1155,52 @@ async function testPlaylistItemById() {
   return response.ok;
 }
 
+async function testPlaylistItemsByGroup() {
+  if (!createdChannelId) {
+    console.log('\n⚠️  Skipping playlist items by group test - no channel ID available');
+    return true;
+  }
+
+  console.log('\n📂 Testing GET /api/v1/playlist-items?channel={id}...');
+  const response = await makeRequest('GET', `/api/v1/playlist-items?channel=${createdChannelId}`);
+
+  if (response.ok) {
+    console.log('✅ Playlist items retrieved by group successfully');
+    const result = response.data;
+
+    if (result && Array.isArray(result.items)) {
+      console.log(`   Count: ${result.items.length}`);
+      console.log(`   Has more: ${result.hasMore || false}`);
+
+      if (result.items.length > 0) {
+        console.log(`   First item ID: ${result.items[0].id}`);
+        console.log(`   First item title: ${result.items[0].title || 'N/A'}`);
+      }
+    } else {
+      console.log('❌ Expected paginated result format with items array');
+      return false;
+    }
+  } else {
+    console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
+  }
+
+  return response.ok;
+}
+
+async function testPlaylistItemsDoesNotRequiredParameter() {
+  console.log('\n🚫 Testing playlist items endpoint does not require channel parameter...');
+  const response = await makeRequest('GET', '/api/v1/playlist-items');
+
+  if (response.status === 200) {
+    console.log('✅ Correctly returned 200 without channel parameter');
+  } else {
+    console.log(`❌ Expected 200, got ${response.status}`);
+    return false;
+  }
+
+  return true;
+}
+
 async function testPlaylistItemsInvalidIds() {
   console.log('\n🚫 Testing playlist items with invalid IDs...');
 
@@ -456,6 +1212,18 @@ async function testPlaylistItemsInvalidIds() {
     console.log('✅ Correctly rejected invalid playlist item ID format');
   } else {
     console.log(`❌ Expected 400 for invalid playlist item ID, got ${invalidItemResponse.status}`);
+    allCorrect = false;
+  }
+
+  // Test invalid channel ID format
+  const invalidGroupResponse = await makeRequest(
+    'GET',
+    '/api/v1/playlist-items?channel=invalid@id'
+  );
+  if (invalidGroupResponse.status === 400) {
+    console.log('✅ Correctly rejected invalid channel ID format');
+  } else {
+    console.log(`❌ Expected 400 for invalid channel ID, got ${invalidGroupResponse.status}`);
     allCorrect = false;
   }
 
@@ -477,10 +1245,18 @@ async function testPlaylistItemsInvalidIds() {
 }
 
 async function testPlaylistItemsPagination() {
+  if (!createdChannelId) {
+    console.log('\n⚠️  Skipping playlist items pagination test - no channel ID available');
+    return true;
+  }
+
   console.log('\n📄 Testing playlist items pagination...');
 
   // Test with limit
-  const limitResponse = await makeRequest('GET', `/api/v1/playlist-items?limit=1`);
+  const limitResponse = await makeRequest(
+    'GET',
+    `/api/v1/playlist-items?channel=${createdChannelId}&limit=1`
+  );
 
   if (limitResponse.ok) {
     const result = limitResponse.data;
@@ -491,7 +1267,7 @@ async function testPlaylistItemsPagination() {
       if (result.cursor && result.hasMore) {
         const cursorResponse = await makeRequest(
           'GET',
-          `/api/v1/playlist-items?limit=1&cursor=${encodeURIComponent(result.cursor)}`
+          `/api/v1/playlist-items?channel=${createdChannelId}&limit=1&cursor=${encodeURIComponent(result.cursor)}`
         );
         if (cursorResponse.ok) {
           console.log('✅ Cursor pagination working correctly for playlist items');
@@ -821,6 +1597,70 @@ async function testPlaylistSortingDefault() {
   return true;
 }
 
+async function testChannelSorting() {
+  console.log('\n📂 Testing channel sorting...');
+
+  // Test both asc and desc for groups
+  const ascResponse = await makeRequest('GET', '/api/v1/channels?sort=asc&limit=10');
+  const descResponse = await makeRequest('GET', '/api/v1/channels?sort=desc&limit=10');
+
+  if (ascResponse.ok && descResponse.ok) {
+    console.log('✅ Channel sorting endpoints are accessible');
+
+    const ascResult = ascResponse.data;
+    const descResult = descResponse.data;
+
+    if (ascResult.items && ascResult.items.length > 1) {
+      // Verify ascending order
+      let isAscending = true;
+      for (let i = 1; i < ascResult.items.length; i++) {
+        const prev = new Date(ascResult.items[i - 1].created);
+        const curr = new Date(ascResult.items[i].created);
+        if (prev > curr) {
+          isAscending = false;
+          break;
+        }
+      }
+
+      if (isAscending) {
+        console.log('✅ Channels correctly sorted in ascending order');
+      } else {
+        console.log('❌ Channels NOT in ascending order');
+        return false;
+      }
+    }
+
+    if (descResult.items && descResult.items.length > 1) {
+      // Verify descending order
+      let isDescending = true;
+      for (let i = 1; i < descResult.items.length; i++) {
+        const prev = new Date(descResult.items[i - 1].created);
+        const curr = new Date(descResult.items[i].created);
+        if (prev < curr) {
+          isDescending = false;
+          break;
+        }
+      }
+
+      if (isDescending) {
+        console.log('✅ Channels correctly sorted in descending order');
+      } else {
+        console.log('❌ Channels NOT in descending order');
+        return false;
+      }
+    }
+
+    if ((ascResult.items?.length || 0) <= 1 && (descResult.items?.length || 0) <= 1) {
+      console.log('ℹ️  Not enough channels to verify sorting order');
+    }
+  } else {
+    console.log('❌ Failed to test channels sorting');
+    return false;
+  }
+
+  return true;
+}
+
 async function testPlaylistItemSorting() {
   console.log('\n🎯 Testing playlist item sorting...');
 
@@ -895,12 +1735,23 @@ async function runTests() {
   const tests = [
     { name: 'Empty Listings', fn: testEmptyListing },
     { name: 'List Playlists', fn: testListPlaylists },
-    { name: 'Pagination', fn: testPagination },
-    { name: 'Create Playlist (UUID + Slug)', fn: testCreatePlaylist },
+    { name: 'Pagination (Real Data Behavior)', fn: testPagination },
+    { name: 'Create Playlist (Data Integrity)', fn: testCreatePlaylist },
     { name: 'Get Playlist by UUID', fn: testGetPlaylistByUUID },
     { name: 'Get Playlist by Slug', fn: testGetPlaylistBySlug },
-    { name: 'Update Playlist (Slug Regeneration)', fn: testUpdatePlaylist },
+    { name: 'Update Playlist (Data Integrity)', fn: testUpdatePlaylist },
+    { name: 'Create Channel (New Fields Integrity)', fn: testCreateChannel },
+    { name: 'List Channels', fn: testListChannels },
+    { name: 'Get Channel by UUID', fn: testGetChannelByUUID },
+    { name: 'Get Channel by Slug', fn: testGetChannelBySlug },
+    { name: 'Data Consistency Across Endpoints', fn: testDataConsistencyAcrossEndpoints },
+    { name: 'Channels Filtering', fn: testChannelFiltering },
     { name: 'Get Playlist Item by ID', fn: testPlaylistItemById },
+    { name: 'List Playlist Items by Group', fn: testPlaylistItemsByGroup },
+    {
+      name: 'Playlist Items Does Not Required Parameter',
+      fn: testPlaylistItemsDoesNotRequiredParameter,
+    },
     { name: 'Playlist Items Invalid IDs', fn: testPlaylistItemsInvalidIds },
     { name: 'Playlist Items Pagination', fn: testPlaylistItemsPagination },
     { name: 'Playlist Items Update via Playlist', fn: testPlaylistItemsUpdate },
@@ -910,6 +1761,7 @@ async function runTests() {
     { name: 'Playlist Sorting (Ascending)', fn: testPlaylistSortingAscending },
     { name: 'Playlist Sorting (Descending)', fn: testPlaylistSortingDescending },
     { name: 'Playlist Sorting (Default)', fn: testPlaylistSortingDefault },
+    { name: 'Channels Sorting', fn: testChannelSorting },
     { name: 'Playlist Item Sorting', fn: testPlaylistItemSorting },
   ];
 

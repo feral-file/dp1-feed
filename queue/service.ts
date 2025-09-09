@@ -6,6 +6,8 @@ import type {
   WriteOperationMessage,
   CreatePlaylistMessage,
   UpdatePlaylistMessage,
+  CreateChannelMessage,
+  UpdateChannelMessage,
   ProcessingResult,
 } from './interfaces';
 import { StorageService } from '../storage/service';
@@ -19,14 +21,17 @@ export class QueueProcessorService implements QueueProcessor<WriteOperationMessa
   /**
    * Process a batch of write operation messages
    */
-  async processBatch(batch: MessageBatch<WriteOperationMessage>): Promise<ProcessingResult> {
+  async processBatch(
+    batch: MessageBatch<WriteOperationMessage>,
+    env?: any
+  ): Promise<ProcessingResult> {
     console.log(`Processing batch of ${batch.messages.length} write operations`);
 
     const errors: Array<{ messageId: string; error: string }> = [];
 
     const promises = batch.messages.map(async message => {
       try {
-        await this.processMessage(message.body);
+        await this.processMessage(message.body, env);
         console.log(`Processed message ${message.id} successfully`);
       } catch (error) {
         console.error(`Error processing message ${message.id}:`, error);
@@ -56,13 +61,19 @@ export class QueueProcessorService implements QueueProcessor<WriteOperationMessa
   /**
    * Process a single write operation message
    */
-  private async processMessage(message: WriteOperationMessage): Promise<void> {
+  private async processMessage(message: WriteOperationMessage, env?: any): Promise<void> {
     switch (message.operation) {
       case 'create_playlist':
         await this.handleCreatePlaylist(message as CreatePlaylistMessage);
         break;
       case 'update_playlist':
         await this.handleUpdatePlaylist(message as UpdatePlaylistMessage);
+        break;
+      case 'create_channel':
+        await this.handleCreateChannel(message as CreateChannelMessage, env);
+        break;
+      case 'update_channel':
+        await this.handleUpdateChannel(message as UpdateChannelMessage, env);
         break;
       default:
         throw new Error(`Unknown message operation: ${(message as any).operation}`);
@@ -77,6 +88,16 @@ export class QueueProcessorService implements QueueProcessor<WriteOperationMessa
   private async handleUpdatePlaylist(message: UpdatePlaylistMessage): Promise<void> {
     console.log(`Updating playlist ${message.data.playlist.id}`);
     await this.storageService.savePlaylist(message.data.playlist, true);
+  }
+
+  private async handleCreateChannel(message: CreateChannelMessage, env: any): Promise<void> {
+    console.log(`Creating channel ${message.data.channel.id}`);
+    await this.storageService.saveChannel(message.data.channel, env, false);
+  }
+
+  private async handleUpdateChannel(message: UpdateChannelMessage, env: any): Promise<void> {
+    console.log(`Updating channel ${message.data.channel.id}`);
+    await this.storageService.saveChannel(message.data.channel, env, true);
   }
 }
 
@@ -116,6 +137,10 @@ export class QueueService {
         return (message as CreatePlaylistMessage).data.playlist.id;
       case 'update_playlist':
         return (message as UpdatePlaylistMessage).data.playlist.id;
+      case 'create_channel':
+        return (message as CreateChannelMessage).data.channel.id;
+      case 'update_channel':
+        return (message as UpdateChannelMessage).data.channel.id;
       default:
         return 'unknown';
     }

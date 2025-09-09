@@ -214,16 +214,22 @@ The integration tests cover:
    - Update playlist
    - Error handling for invalid data
 
-3. **Playlist Item Operations**
+3. **Channel Operations**
+   - Create channel
+   - Get channel by ID
+   - List channels
+   - Update channel
+
+4. **Playlist Item Operations**
    - Get playlist item by ID
    - List playlist items with filtering
    - Pagination support
 
-4. **Authentication**
+5. **Authentication**
    - Bearer token validation
    - Unauthorized access handling
 
-5. **Error Handling**
+6. **Error Handling**
    - Validation errors
    - Not found errors
    - Server errors
@@ -243,6 +249,12 @@ export const createTestPlaylist = () => ({
       license: 'open',
     },
   ],
+});
+
+export const createTestChannel = (playlistIds: string[]) => ({
+  dpVersion: '1.0.0',
+  id: `test-channel-${Date.now()}`,
+  playlists: playlistIds,
 });
 ```
 
@@ -347,6 +359,7 @@ ENVIRONMENT=test
 // env/env.test.ts
 export const testBindings = {
   DP1_PLAYLISTS: new Map(),
+  DP1_CHANNELS: new Map(),
   DP1_PLAYLIST_ITEMS: new Map(),
   API_SECRET: 'test-api-secret',
   ED25519_PRIVATE_KEY: 'test-ed25519-private-key',

@@ -1,16 +1,29 @@
-import type { Playlist, PlaylistItem } from '../types';
+import type { Env, Playlist, Channel, PlaylistItem } from '../types';
+import { PlaylistSchema } from '../types';
 import type { StorageProvider, KeyValueStorage, PaginatedResult, ListOptions } from './interfaces';
 
-// Updated KV Storage Keys with consistent prefixes
+// KV Storage Keys - using original prefixes to avoid data migration
 export const STORAGE_KEYS = {
   PLAYLIST_ID_PREFIX: 'playlist:id:', // playlist:id:${playlistId}=>${playlistData}
   PLAYLIST_SLUG_PREFIX: 'playlist:slug:', // playlist:slug:${playlistSlug}=>${playlistId}
+  // Channel keys (using original playlist-group prefixes to avoid data migration)
+  CHANNEL_ID_PREFIX: 'playlist-group:id:', // playlist-group:id:${channelId}=>${channelData}
+  CHANNEL_SLUG_PREFIX: 'playlist-group:slug:', // playlist-group:slug:${channelSlug}=>${channelId}
   PLAYLIST_ITEM_ID_PREFIX: 'playlist-item:id:', // playlist-item:id:${playlistItemId}=>${playlistItemData}
+  PLAYLIST_ITEM_BY_CHANNEL_PREFIX: 'playlist-item:group-id:', // playlist-item:group-id:${channelId}:${playlistItemId}=>${playlistItemId}
+  PLAYLIST_TO_CHANNELS_PREFIX: 'playlist-to-groups:', // playlist-to-groups:${playlistId}:${channelId}=>${channelId}
+  CHANNEL_TO_PLAYLISTS_PREFIX: 'group-to-playlists:', // group-to-playlists:${channelId}:${playlistId}=>${playlistId}
   // Created-time secondary indexes (asc/desc)
   PLAYLIST_CREATED_ASC_PREFIX: 'playlist:created:asc:', // playlist:created:asc:${timestampMs}:${playlistId} => ${playlistId}
   PLAYLIST_CREATED_DESC_PREFIX: 'playlist:created:desc:', // playlist:created:desc:${invTimestampMs}:${playlistId} => ${playlistId}
+  CHANNEL_CREATED_ASC_PREFIX: 'playlist-group:created:asc:', // playlist-group:created:asc:${timestampMs}:${channelId} => ${channelId}
+  CHANNEL_CREATED_DESC_PREFIX: 'playlist-group:created:desc:', // playlist-group:created:desc:${invTimestampMs}:${channelId} => ${channelId}
   PLAYLIST_ITEM_CREATED_ASC_PREFIX: 'playlist-item:created:asc:', // playlist-item:created:asc:${timestampMs}:${itemId} => ${itemId}
   PLAYLIST_ITEM_CREATED_DESC_PREFIX: 'playlist-item:created:desc:', // playlist-item:created:desc:${invTimestampMs}:${itemId} => ${itemId}
+  CHANNEL_TO_PLAYLISTS_CREATED_ASC_PREFIX: 'group-to-playlists-created:asc:', // group-to-playlists-created:asc:${channelId}:${timestampMs}:${playlistId} => ${playlistId}
+  CHANNEL_TO_PLAYLISTS_CREATED_DESC_PREFIX: 'group-to-playlists-created:desc:', // group-to-playlists-created:desc:${channelId}:${invTimestampMs}:${playlistId} => ${playlistId}
+  PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX: 'playlist-item:group-created:asc:', // playlist-item:group-created:asc:${channelId}:${timestampMs}:${itemId} => ${itemId}
+  PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX: 'playlist-item:group-created:desc:', // playlist-item:group-created:desc:${channelId}:${invTimestampMs}:${itemId} => ${itemId}
 } as const;
 
 /**
@@ -18,10 +31,12 @@ export const STORAGE_KEYS = {
  */
 export class StorageService {
   private playlistStorage: KeyValueStorage;
+  private channelStorage: KeyValueStorage;
   private playlistItemStorage: KeyValueStorage;
 
   constructor(private readonly storageProvider: StorageProvider) {
     this.playlistStorage = this.storageProvider.getPlaylistStorage();
+    this.channelStorage = this.storageProvider.getChannelStorage();
     this.playlistItemStorage = this.storageProvider.getPlaylistItemStorage();
   }
 
@@ -107,6 +122,151 @@ export class StorageService {
   }
 
   /**
+   * Check if a URL points to a self-hosted domain
+   */
+  private isSelfHostedUrl(url: string, selfHostedDomains?: string | null): boolean {
+    if (!selfHostedDomains) {
+      return false;
+    }
+
+    const urlObj = new URL(url);
+    const hostname = urlObj.hostname;
+    const port = urlObj.port;
+    const hostWithPort = port ? `${hostname}:${port}` : hostname;
+
+    const domains = selfHostedDomains.split(',').map(d => d.trim());
+
+    return domains.some(domain => hostWithPort === domain || hostname === domain);
+  }
+
+  /**
+   * Extract playlist identifier (ID or slug) from a self-hosted playlist URL
+   */
+  private extractPlaylistIdentifierFromUrl(url: string): string | null {
+    const urlObj = new URL(url);
+    // Updated regex to handle both UUIDs and slugs
+    // Matches: /api/v1/playlists/{identifier} where identifier can be:
+    // - UUIDs: 79856015-edf8-4145-8be9-135222d4157d
+    // - Slugs: my-awesome-playlist-slug, playlist_123, etc.
+    const pathMatch = urlObj.pathname.match(/^\/api\/v1\/playlists\/([a-zA-Z0-9\-_]+)$/);
+    return pathMatch ? (pathMatch[1] ?? null) : null;
+  }
+
+  /**
+   * Fetch and validate an external playlist URL with strict DP-1 validation.
+   * If the URL points to a self-hosted domain, queries the database directly to avoid
+   * CloudFlare Workers restrictions on same-domain requests.
+   */
+  private async fetchAndValidatePlaylist(
+    url: string,
+    env: Env
+  ): Promise<{ id: string; playlist: Playlist; external: boolean }> {
+    // Check if this is a self-hosted URL
+    if (this.isSelfHostedUrl(url, env.SELF_HOSTED_DOMAINS ?? null)) {
+      console.log(`Detected self-hosted URL ${url}, querying database directly`);
+
+      const playlistIdentifier = this.extractPlaylistIdentifierFromUrl(url);
+      if (!playlistIdentifier) {
+        throw new Error(`Could not extract playlist identifier from self-hosted URL: ${url}`);
+      }
+
+      // Query the database directly instead of making an HTTP request (works with both IDs and slugs)
+      const playlist = await this.getPlaylistByIdOrSlug(playlistIdentifier);
+      if (!playlist) {
+        throw new Error(`Playlist ${playlistIdentifier} not found in database for URL: ${url}`);
+      }
+
+      // For self-hosted playlists, we trust our own data and skip validation
+      console.log(`Successfully retrieved self-hosted playlist ${playlist.id} from database`);
+      return { id: playlist.id, playlist, external: false };
+    }
+
+    // For external URLs, use the normal fetch approach
+    console.log(`Fetching external playlist from ${url}`);
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch playlist from ${url}: ${response.status}`);
+    }
+
+    const rawPlaylist = await response.json();
+
+    // Use Zod schema for strict DP-1 validation
+    const validationResult = PlaylistSchema.safeParse(rawPlaylist);
+    if (!validationResult.success) {
+      throw new Error(`External playlist from ${url} failed DP-1 validation`);
+    }
+
+    const playlist = validationResult.data;
+    return { id: playlist.id, playlist, external: true };
+  }
+
+  /**
+   * Get all playlist IDs that belong to a specific channel (efficient lookup)
+   */
+  private async getPlaylistsForChannel(channelId: string): Promise<string[]> {
+    const prefix = `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${channelId}:`;
+    const playlistIds: string[] = [];
+    let cursor: string | undefined = undefined;
+
+    while (true) {
+      const listResult = await this.playlistStorage.list({
+        prefix: prefix,
+        limit: 1000,
+        cursor: cursor,
+      });
+
+      const ids = listResult.keys
+        .map(key => {
+          // Key format: "group-to-playlists:channelId:playlistId"
+          const parts = key.name.split(':');
+          return parts[parts.length - 1]; // Get the last part (playlistId)
+        })
+        .filter((playlistId): playlistId is string => playlistId !== undefined);
+      playlistIds.push(...ids);
+
+      if (listResult.list_complete) {
+        break;
+      }
+      cursor = listResult.cursor;
+    }
+
+    return playlistIds;
+  }
+
+  /**
+   * Get all channel IDs that a playlist belongs to (efficient reverse lookup)
+   */
+  async getChannelsForPlaylist(playlistId: string): Promise<string[]> {
+    const prefix = `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${playlistId}:`;
+    let cursor: string | undefined = undefined;
+    const channelIds: string[] = [];
+
+    while (true) {
+      const listResult = await this.playlistStorage.list({
+        prefix: prefix,
+        limit: 1000,
+        cursor: cursor,
+      });
+
+      const ids = listResult.keys
+        .map(key => {
+          // Key format: "playlist-to-groups:playlistId:channelId"
+          const parts = key.name.split(':');
+          return parts[parts.length - 1]; // Get the last part (channelId)
+        })
+        .filter((channelId): channelId is string => channelId !== undefined);
+      channelIds.push(...ids);
+
+      if (listResult.list_complete) {
+        break;
+      }
+      cursor = listResult.cursor;
+    }
+
+    return channelIds;
+  }
+
+  /**
    * Save a playlist with multiple indexes for efficient retrieval
    */
   async savePlaylist(playlist: Playlist, update: boolean = false): Promise<boolean> {
@@ -147,7 +307,10 @@ export class StorageService {
     // FIXME this assumes that the playlist items always be updated, which is not the case.
     // We need to handle the case where the playlist items are not updated.
     if (update && existingPlaylist) {
-      // Delete all items
+      // Get the channel IDs
+      const channelIds = await this.getChannelsForPlaylist(playlist.id);
+
+      // Delete all items and their channel associations (if any)
       for (const item of existingPlaylist.items) {
         operations.push(
           this.playlistItemStorage.delete(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`)
@@ -163,6 +326,51 @@ export class StorageService {
               `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${oldTs.desc}:${item.id}`
             )
           );
+        }
+        for (const channelId of channelIds) {
+          operations.push(
+            this.playlistItemStorage.delete(
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channelId}:${item.id}`
+            )
+          );
+          // Delete channel-created indexes for items using item's created
+          if (item.created) {
+            const oldTs = this.toSortableTimestamps(item.created);
+            operations.push(
+              this.playlistItemStorage.delete(
+                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channelId}:${oldTs.asc}:${item.id}`
+              ),
+              this.playlistItemStorage.delete(
+                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channelId}:${oldTs.desc}:${item.id}`
+              )
+            );
+          }
+        }
+      }
+
+      // Add new items to the channel associations
+      for (const item of playlist.items) {
+        for (const channelId of channelIds) {
+          operations.push(
+            this.playlistItemStorage.put(
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channelId}:${item.id}`,
+              item.id
+            )
+          );
+          // Add created-time channel indexes for items using item's created
+          if (item.created) {
+            const ts = this.toSortableTimestamps(item.created);
+            operations.push(
+              this.playlistItemStorage.put(
+                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channelId}:${ts.asc}:${item.id}`,
+                item.id
+              ),
+              this.playlistItemStorage.put(
+                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channelId}:${ts.desc}:${item.id}`,
+                item.id
+              )
+            );
+          }
         }
       }
     }
@@ -261,6 +469,364 @@ export class StorageService {
   }
 
   /**
+   * List playlists by channel ID with pagination
+   */
+  async listPlaylistsByChannelId(
+    channelId: string,
+    options: ListOptions = {}
+  ): Promise<PaginatedResult<Playlist>> {
+    const limit = options.limit || 1000;
+
+    const prefix =
+      options.sort === 'asc'
+        ? `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_ASC_PREFIX}${channelId}:`
+        : options.sort === 'desc'
+          ? `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_DESC_PREFIX}${channelId}:`
+          : `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${channelId}:`; // Default to basic channel prefix
+
+    const response = await this.playlistStorage.list({
+      prefix,
+      limit,
+      cursor: options.cursor,
+    });
+
+    const playlistKeys: string[] = [];
+    for (const key of response.keys) {
+      if (options.sort) {
+        // Key format: group-to-playlists-created:(asc|desc):${groupId}:${ts}:${playlistId}
+        const parts = key.name.split(':');
+        const playlistId = parts[parts.length - 1];
+        playlistKeys.push(`${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${playlistId}`);
+      } else {
+        // Key format: group-to-playlists:${groupId}:${playlistId}
+        const parts = key.name.split(':');
+        const playlistId = parts[parts.length - 1];
+        playlistKeys.push(`${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${playlistId}`);
+      }
+    }
+
+    const playlists = await this.batchFetchFromStorage<Playlist>(
+      playlistKeys,
+      this.playlistStorage,
+      'playlist'
+    );
+
+    return {
+      items: playlists,
+      cursor: response.list_complete ? undefined : response.cursor,
+      hasMore: !response.list_complete,
+    };
+  }
+
+  /**
+   * Save a channel with multiple indexes
+   */
+  async saveChannel(channel: Channel, env: Env, update: boolean = false): Promise<boolean> {
+    if (channel.playlists.length === 0) {
+      console.error('Channel has no playlists');
+      return false;
+    }
+
+    // First, fetch and validate all external playlists in parallel
+    const playlistValidationPromises = channel.playlists.map(async playlistUrl => {
+      // If it's an external URL, fetch and validate it
+      if (playlistUrl.startsWith('http://') || playlistUrl.startsWith('https://')) {
+        return await this.fetchAndValidatePlaylist(playlistUrl, env);
+      } else {
+        throw new Error(`Invalid playlist URL: ${playlistUrl}`);
+      }
+    });
+
+    // Validate all playlists in parallel
+    const validatedPlaylists = await Promise.all(playlistValidationPromises);
+
+    // Turn the validated playlists into a map for quick lookup
+    const validatedPlaylistsMap = new Map(
+      validatedPlaylists.map(playlist => [playlist.id, playlist])
+    );
+
+    // Core channel operations
+    const channelData = JSON.stringify(channel);
+    const operations = [
+      // Main record by ID
+      this.channelStorage.put(`${STORAGE_KEYS.CHANNEL_ID_PREFIX}${channel.id}`, channelData),
+      // Index by slug
+      this.channelStorage.put(`${STORAGE_KEYS.CHANNEL_SLUG_PREFIX}${channel.slug}`, channel.id),
+    ];
+
+    // Created-time indexes for channels
+    if (channel.created) {
+      const ts = this.toSortableTimestamps(channel.created);
+      operations.push(
+        this.channelStorage.put(
+          `${STORAGE_KEYS.CHANNEL_CREATED_ASC_PREFIX}${ts.asc}:${channel.id}`,
+          channel.id
+        ),
+        this.channelStorage.put(
+          `${STORAGE_KEYS.CHANNEL_CREATED_DESC_PREFIX}${ts.desc}:${channel.id}`,
+          channel.id
+        )
+      );
+    }
+
+    // If this is an update, figure out which playlists are no longer in the group
+    // and clean up the old indexes.
+    // To be simplified, we assume that uuid v4 is unique cross-system even though
+    // the chance of collision is very low and could be ignored.
+    if (update) {
+      // Get all playlists that are currently in the channel
+      const playlistIds = await this.getPlaylistsForChannel(channel.id);
+
+      // Filter out the playlists that are no longer in the channel
+      const playlistIdsToUnlink: string[] = [];
+      for (const playlistId of playlistIds) {
+        if (!validatedPlaylistsMap.has(playlistId)) {
+          playlistIdsToUnlink.push(playlistId);
+        }
+      }
+
+      // Clean up the old bidirectional indexes
+      for (const playlistId of playlistIdsToUnlink) {
+        operations.push(
+          this.playlistStorage.delete(
+            `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${playlistId}:${channel.id}`
+          )
+        );
+        operations.push(
+          this.playlistStorage.delete(
+            `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${channel.id}:${playlistId}`
+          )
+        );
+        // Also remove created-time channel playlist indexes
+        if (channel.created) {
+          const ts = this.toSortableTimestamps(channel.created);
+          operations.push(
+            this.playlistStorage.delete(
+              `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${playlistId}`
+            ),
+            this.playlistStorage.delete(
+              `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${playlistId}`
+            )
+          );
+        }
+      }
+
+      // Clean up the channel associated playlist items
+      const playlistKeys = playlistIdsToUnlink.map(id => `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${id}`);
+      const playlists = await this.batchFetchFromStorage<Playlist>(
+        playlistKeys,
+        this.playlistStorage,
+        'playlist'
+      );
+      for (const playlist of playlists) {
+        for (const item of playlist.items) {
+          operations.push(
+            this.playlistItemStorage.delete(
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channel.id}:${item.id}`
+            )
+          );
+          if (playlist.created) {
+            const ts = this.toSortableTimestamps(playlist.created);
+            operations.push(
+              this.playlistItemStorage.delete(
+                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${item.id}`
+              ),
+              this.playlistItemStorage.delete(
+                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${item.id}`
+              )
+            );
+          }
+        }
+      }
+    }
+
+    // Store external playlists
+    for (const validPlaylist of validatedPlaylists) {
+      // If it's an external playlist with data, store it
+      if (validPlaylist.external) {
+        operations.push(
+          this.playlistStorage.put(
+            `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${validPlaylist.id}`,
+            JSON.stringify(validPlaylist.playlist)
+          ),
+          this.playlistStorage.put(
+            `${STORAGE_KEYS.PLAYLIST_SLUG_PREFIX}${validPlaylist.playlist.slug}`,
+            validPlaylist.id
+          )
+        );
+        // Ensure playlist created-time indexes exist
+        if (validPlaylist.playlist.created) {
+          const ts = this.toSortableTimestamps(validPlaylist.playlist.created);
+          operations.push(
+            this.playlistStorage.put(
+              `${STORAGE_KEYS.PLAYLIST_CREATED_ASC_PREFIX}${ts.asc}:${validPlaylist.id}`,
+              validPlaylist.id
+            ),
+            this.playlistStorage.put(
+              `${STORAGE_KEYS.PLAYLIST_CREATED_DESC_PREFIX}${ts.desc}:${validPlaylist.id}`,
+              validPlaylist.id
+            )
+          );
+        }
+      }
+
+      // Add bidirectional indexes for efficient lookups
+      operations.push(
+        this.playlistStorage.put(
+          `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${validPlaylist.id}:${channel.id}`,
+          channel.id
+        ),
+        this.playlistStorage.put(
+          `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${channel.id}:${validPlaylist.id}`,
+          validPlaylist.id
+        )
+      );
+
+      // Created-time channel->playlists indexes (based on playlist created time)
+      if (validPlaylist.playlist.created) {
+        const ts = this.toSortableTimestamps(validPlaylist.playlist.created);
+        operations.push(
+          this.playlistStorage.put(
+            `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${validPlaylist.id}`,
+            validPlaylist.id
+          ),
+          this.playlistStorage.put(
+            `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${validPlaylist.id}`,
+            validPlaylist.id
+          )
+        );
+      }
+    }
+
+    // Add playlist item operations to the same batch
+    // Create channel-to-playlist-item indexes for ALL playlists (both local and external)
+    for (const validPlaylist of validatedPlaylists) {
+      if (validPlaylist.playlist && validPlaylist.playlist.items.length > 0) {
+        for (const item of validPlaylist.playlist.items) {
+          // For external playlists, store the item data (since it's not stored elsewhere)
+          if (validPlaylist.external) {
+            const itemData = JSON.stringify(item);
+
+            // Main record by playlist item ID
+            operations.push(
+              this.playlistItemStorage.put(
+                `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`,
+                itemData
+              )
+            );
+
+            // Global created-time indexes for items using item's created
+            if (item.created) {
+              const ts = this.toSortableTimestamps(item.created);
+              operations.push(
+                this.playlistItemStorage.put(
+                  `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`,
+                  item.id
+                ),
+                this.playlistItemStorage.put(
+                  `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${ts.desc}:${item.id}`,
+                  item.id
+                )
+              );
+            }
+          }
+
+          // Create channel-to-playlist-item indexes for ALL playlists (local and external)
+          operations.push(
+            this.playlistItemStorage.put(
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channel.id}:${item.id}`,
+              item.id
+            )
+          );
+
+          // Secondary index by channel ID + created time using item's created
+          if (item.created) {
+            const ts = this.toSortableTimestamps(item.created);
+            operations.push(
+              this.playlistItemStorage.put(
+                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${item.id}`,
+                item.id
+              ),
+              this.playlistItemStorage.put(
+                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${item.id}`,
+                item.id
+              )
+            );
+          }
+        }
+      }
+    }
+
+    await Promise.all(operations);
+    return true;
+  }
+
+  /**
+   * Get a channel by ID or slug
+   */
+  async getChannelByIdOrSlug(identifier: string): Promise<Channel | null> {
+    const channelId = await this.resolveIdentifierToId(
+      identifier,
+      STORAGE_KEYS.CHANNEL_SLUG_PREFIX,
+      this.channelStorage
+    );
+
+    if (!channelId) return null;
+
+    const channelData = await this.channelStorage.get(
+      `${STORAGE_KEYS.CHANNEL_ID_PREFIX}${channelId}`
+    );
+    if (!channelData) return null;
+
+    return JSON.parse(channelData) as Channel;
+  }
+
+  /**
+   * List all channels with pagination support
+   */
+  async listAllChannels(options: ListOptions = {}): Promise<PaginatedResult<Channel>> {
+    const limit = options.limit || 1000;
+
+    const prefix =
+      options.sort === 'asc'
+        ? STORAGE_KEYS.CHANNEL_CREATED_ASC_PREFIX
+        : options.sort === 'desc'
+          ? STORAGE_KEYS.CHANNEL_CREATED_DESC_PREFIX
+          : STORAGE_KEYS.CHANNEL_ID_PREFIX; // Default to ID prefix when no sort provided
+
+    const response = await this.channelStorage.list({
+      prefix,
+      limit,
+      cursor: options.cursor,
+    });
+
+    const channelKeys: string[] = [];
+    for (const key of response.keys) {
+      if (options.sort) {
+        // Key format: playlist-group:created:(asc|desc):${ts}:${channelId}
+        const parts = key.name.split(':');
+        const channelId = parts[parts.length - 1];
+        channelKeys.push(`${STORAGE_KEYS.CHANNEL_ID_PREFIX}${channelId}`);
+      } else {
+        // Key format: playlist-group:id:${channelId}
+        channelKeys.push(key.name);
+      }
+    }
+
+    const channels = await this.batchFetchFromStorage<Channel>(
+      channelKeys,
+      this.channelStorage,
+      'channel'
+    );
+
+    return {
+      items: channels,
+      cursor: response.list_complete ? undefined : response.cursor,
+      hasMore: !response.list_complete,
+    };
+  }
+
+  /**
    * Get a playlist item by ID
    */
   async getPlaylistItemById(itemId: string): Promise<PlaylistItem | null> {
@@ -312,6 +878,59 @@ export class StorageService {
 
     return {
       items,
+      cursor: response.list_complete ? undefined : response.cursor,
+      hasMore: !response.list_complete,
+    };
+  }
+
+  /**
+   * List playlist items by channel ID with pagination
+   * Now uses the proper direct channel-to-playlist-item indexes
+   */
+  async listPlaylistItemsByChannelId(
+    channelId: string,
+    options: ListOptions = {}
+  ): Promise<PaginatedResult<PlaylistItem>> {
+    const limit = options.limit || 1000;
+
+    // Use direct channel-to-playlist-item indexes (now created for both local and external playlists)
+    const prefix =
+      options.sort === 'asc'
+        ? `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channelId}:`
+        : options.sort === 'desc'
+          ? `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channelId}:`
+          : `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channelId}:`; // Default to basic channel prefix
+
+    const response = await this.playlistItemStorage.list({
+      prefix,
+      limit,
+      cursor: options.cursor,
+    });
+
+    const playlistItemKeys: string[] = [];
+    for (const key of response.keys) {
+      if (options.sort) {
+        // Key format: playlist-item:group-created:(asc|desc):${channelId}:${ts}:${playlistItemId}
+        const keyParts = key.name.split(':');
+        const playlistItemId = keyParts[keyParts.length - 1]; // Last part is the playlist item ID
+        playlistItemKeys.push(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${playlistItemId}`);
+      } else {
+        // Key format: playlist-item:group-id:${channelId}:${playlistItemId}
+        const keyParts = key.name.split(':');
+        const playlistItemId = keyParts[keyParts.length - 1]; // Last part is the playlist item ID
+        playlistItemKeys.push(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${playlistItemId}`);
+      }
+    }
+
+    // Batch fetch all playlist items
+    const playlistItems = await this.batchFetchFromStorage<PlaylistItem>(
+      playlistItemKeys,
+      this.playlistItemStorage,
+      'playlist item'
+    );
+
+    return {
+      items: playlistItems,
       cursor: response.list_complete ? undefined : response.cursor,
       hasMore: !response.list_complete,
     };

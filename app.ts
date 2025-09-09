@@ -9,6 +9,7 @@ import {
 } from './middleware/auth';
 import { testEnvMiddleware } from './middleware/env-cloudflare';
 import { playlists } from './routes/playlists';
+import { channels } from './routes/channels';
 import playlistItems from './routes/playlistItems';
 import { queues as queueRoutes } from './routes/queues';
 
@@ -55,13 +56,15 @@ export function createApp<TBindings extends Record<string, any> = any>(envMiddle
     return c.json({
       name: 'DP-1 Feed Operator API',
       version: MIN_DP_VERSION,
-      description: 'REST interface for creating, updating, and retrieving DP-1 playlists',
-      specification: 'DP-1 v1.0.0',
+      description:
+        'REST interface for creating, updating, and retrieving DP-1 playlists and channels',
+      specification: 'DP-1 v1.1.0',
       openapi: '3.1.0',
       deployment,
       runtime,
       endpoints: {
         playlists: '/api/v1/playlists',
+        channels: '/api/v1/channels',
         playlistItems: '/api/v1/playlist-items',
         health: '/api/v1/health',
         ...(isSelfHosted && { queues: '/queues' }),
@@ -83,7 +86,11 @@ export function createApp<TBindings extends Record<string, any> = any>(envMiddle
 
   // Mount route modules under /api/v1
   app.route('/api/v1/playlists', playlists);
+  app.route('/api/v1/channels', channels);
   app.route('/api/v1/playlist-items', playlistItems);
+
+  // For backward compatibility
+  app.route('/api/v1/playlist-groups', channels);
 
   if (isSelfHosted) {
     // Mount queue API routes for self-hosted deployment
@@ -100,6 +107,11 @@ export function createApp<TBindings extends Record<string, any> = any>(envMiddle
       'GET /api/v1/playlists/:id',
       'PUT /api/v1/playlists/:id',
       'PATCH /api/v1/playlists/:id',
+      'GET /api/v1/channels',
+      'POST /api/v1/channels',
+      'GET /api/v1/channels/:id',
+      'PUT /api/v1/channels/:id',
+      'PATCH /api/v1/channels/:id',
       'GET /api/v1/playlist-items',
       'GET /api/v1/playlist-items/:id',
     ];

@@ -152,15 +152,21 @@ export class MockQueue implements Queue {
 // Mock StorageProvider that uses our mock storage
 export class MockStorageProvider implements StorageProvider {
   private playlistStorage: MockKeyValueStorage;
+  private channelStorage: MockKeyValueStorage;
   private playlistItemStorage: MockKeyValueStorage;
 
   constructor() {
     this.playlistStorage = new MockKeyValueStorage();
+    this.channelStorage = new MockKeyValueStorage();
     this.playlistItemStorage = new MockKeyValueStorage();
   }
 
   getPlaylistStorage(): KeyValueStorage {
     return this.playlistStorage;
+  }
+
+  getChannelStorage(): KeyValueStorage {
+    return this.channelStorage;
   }
 
   getPlaylistItemStorage(): KeyValueStorage {
@@ -171,6 +177,7 @@ export class MockStorageProvider implements StorageProvider {
   getMockStorages() {
     return {
       playlist: this.playlistStorage,
+      group: this.channelStorage,
       item: this.playlistItemStorage,
     };
   }
@@ -201,6 +208,7 @@ export const createTestEnv = (options?: {
   env: Env;
   mockStorages: {
     playlist: MockKeyValueStorage;
+    group: MockKeyValueStorage;
     item: MockKeyValueStorage;
   };
   mockQueue: MockQueue;
