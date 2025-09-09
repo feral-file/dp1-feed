@@ -675,22 +675,22 @@ describe('EtcdStorageProvider', () => {
     });
   });
 
-  describe('getPlaylistGroupStorage', () => {
-    it('should return an EtcdKVStorage instance for playlist groups', () => {
-      const storage = provider.getPlaylistGroupStorage();
+  describe('getChannelStorage', () => {
+    it('should return an EtcdKVStorage instance for channels', () => {
+      const storage = provider.getChannelStorage();
 
       expect(storage).toBeInstanceOf(EtcdKVStorage);
     });
 
     it('should return the same instance on multiple calls', () => {
-      const storage1 = provider.getPlaylistGroupStorage();
-      const storage2 = provider.getPlaylistGroupStorage();
+      const storage1 = provider.getChannelStorage();
+      const storage2 = provider.getChannelStorage();
 
       expect(storage1).toBe(storage2);
     });
 
-    it('should use correct namespace for playlist groups', () => {
-      const storage = provider.getPlaylistGroupStorage();
+    it('should use correct namespace for channels', () => {
+      const storage = provider.getChannelStorage();
       const key = 'test-key';
       const expectedKey = 'dp1/playlist-groups/test-key';
 
@@ -726,7 +726,7 @@ describe('EtcdStorageProvider', () => {
   describe('integration tests', () => {
     it('should work with all storage types independently', async () => {
       const playlistStorage = provider.getPlaylistStorage();
-      const groupStorage = provider.getPlaylistGroupStorage();
+      const groupStorage = provider.getChannelStorage();
       const itemStorage = provider.getPlaylistItemStorage();
 
       // Mock successful responses for all storage types
@@ -771,7 +771,7 @@ describe('EtcdStorageProvider', () => {
       const authProvider = new EtcdStorageProvider(authConfig);
 
       const playlistStorage = authProvider.getPlaylistStorage();
-      const groupStorage = authProvider.getPlaylistGroupStorage();
+      const groupStorage = authProvider.getChannelStorage();
       const itemStorage = authProvider.getPlaylistItemStorage();
 
       // All storage instances should have the same authentication config

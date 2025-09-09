@@ -214,11 +214,11 @@ The integration tests cover:
    - Update playlist
    - Error handling for invalid data
 
-3. **Playlist Group Operations**
-   - Create playlist group
-   - Get playlist group by ID
-   - List playlist groups
-   - Update playlist group
+3. **Channel Operations**
+   - Create channel
+   - Get channel by ID
+   - List channels
+   - Update channel
 
 4. **Playlist Item Operations**
    - Get playlist item by ID
@@ -251,9 +251,9 @@ export const createTestPlaylist = () => ({
   ],
 });
 
-export const createTestPlaylistGroup = (playlistIds: string[]) => ({
+export const createTestChannel = (playlistIds: string[]) => ({
   dpVersion: '1.0.0',
-  id: `test-group-${Date.now()}`,
+  id: `test-channel-${Date.now()}`,
   playlists: playlistIds,
 });
 ```

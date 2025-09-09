@@ -35,12 +35,13 @@ export function validateDpVersion(dpVersion: string): {
  */
 export function validateNoProtectedFields(
   body: any,
-  operation: 'playlist' | 'playlistGroup'
+  operation: 'playlist' | 'channel'
 ): { isValid: boolean; protectedFields?: string[] } {
   const protectedPlaylistFields = ['id', 'slug', 'created', 'signature'];
-  const protectedGroupFields = ['id', 'slug', 'created'];
+  const protectedChannelFields = ['id', 'slug', 'created'];
 
-  const protectedFields = operation === 'playlist' ? protectedPlaylistFields : protectedGroupFields;
+  const protectedFields =
+    operation === 'playlist' ? protectedPlaylistFields : protectedChannelFields;
   const foundProtectedFields = protectedFields.filter(field => field in body);
 
   if (foundProtectedFields.length > 0) {
@@ -241,7 +242,7 @@ export const PlaylistInputSchema = z.object({
   items: z.array(PlaylistItemInputSchema).min(1).max(1024),
 });
 
-export const PlaylistGroupInputSchema = z.object({
+export const ChannelInputSchema = z.object({
   title: z.string().max(256),
   curator: z.string().max(128),
   summary: z.string().max(4096).optional(),
@@ -290,7 +291,7 @@ export const PlaylistUpdateSchema = z.object({
   title: z.string().max(256).optional(),
 });
 
-export const PlaylistGroupUpdateSchema = z.object({
+export const ChannelUpdateSchema = z.object({
   title: z.string().max(256).optional(),
   curator: z.string().max(128).optional(),
   summary: z.string().max(4096).optional(),
@@ -349,7 +350,7 @@ export const PlaylistSchema = z.object({
     .max(150),
 });
 
-export const PlaylistGroupSchema = z.object({
+export const ChannelSchema = z.object({
   id: z.string().uuid(),
   slug: z
     .string()
@@ -451,7 +452,7 @@ export interface Playlist {
   signature?: string;
 }
 
-export interface PlaylistGroup {
+export interface Channel {
   id: string;
   slug: string;
   title: string;
@@ -476,17 +477,17 @@ export interface KeyPair {
 // Inferred types from Zod schemas
 export type PlaylistInput = z.infer<typeof PlaylistInputSchema>;
 export type PlaylistItemInput = z.infer<typeof PlaylistItemInputSchema>;
-export type PlaylistGroupInput = z.infer<typeof PlaylistGroupInputSchema>;
+export type ChannelInput = z.infer<typeof ChannelInputSchema>;
 export type PlaylistUpdate = z.infer<typeof PlaylistUpdateSchema>;
-export type PlaylistGroupUpdate = z.infer<typeof PlaylistGroupUpdateSchema>;
+export type ChannelUpdate = z.infer<typeof ChannelUpdateSchema>;
 
 // Re-export queue message types from the queue package for convenience
 export type {
   QueueMessage,
   CreatePlaylistMessage,
   UpdatePlaylistMessage,
-  CreatePlaylistGroupMessage,
-  UpdatePlaylistGroupMessage,
+  CreateChannelMessage,
+  UpdateChannelMessage,
   WriteOperationMessage,
 } from './queue/interfaces';
 
@@ -540,14 +541,14 @@ export function createPlaylistFromInput(input: PlaylistInput): Playlist {
   };
 }
 
-// Utility function to transform input to complete playlist group with server-generated fields
-export function createPlaylistGroupFromInput(input: PlaylistGroupInput): PlaylistGroup {
-  const groupId = crypto.randomUUID();
+// Utility function to transform input to complete channel with server-generated fields
+export function createChannelFromInput(input: ChannelInput): Channel {
+  const channelId = crypto.randomUUID();
   const timestamp = new Date().toISOString();
   const slug = generateSlug(input.title);
 
   return {
-    id: groupId,
+    id: channelId,
     slug,
     title: input.title,
     curator: input.curator,

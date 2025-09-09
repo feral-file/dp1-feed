@@ -2,24 +2,24 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 
 // Mock the StorageService methods BEFORE importing anything that uses them
 const mockSavePlaylist = vi.fn();
-const mockSavePlaylistGroup = vi.fn();
+const mockSaveChannel = vi.fn();
 
 vi.mock('../storage/service', () => {
   return {
     StorageService: vi.fn().mockImplementation(() => ({
       savePlaylist: mockSavePlaylist,
-      savePlaylistGroup: mockSavePlaylistGroup,
+      saveChannel: mockSaveChannel,
     })),
   };
 });
 
 import { processWriteOperations, queueWriteOperation, generateMessageId } from './processor';
-import type { Env, Playlist, PlaylistGroup } from '../types';
+import type { Env, Playlist, Channel } from '../types';
 import type {
   CreatePlaylistMessage,
   UpdatePlaylistMessage,
-  CreatePlaylistGroupMessage,
-  UpdatePlaylistGroupMessage,
+  CreateChannelMessage,
+  UpdateChannelMessage,
 } from './interfaces';
 import {
   createTestEnv,
@@ -53,7 +53,7 @@ const mockPlaylist: Playlist = {
   signature: 'ed25519:0x1234567890abcdef',
 };
 
-const mockPlaylistGroup: PlaylistGroup = {
+const mockChannel: Channel = {
   id: '550e8400-e29b-41d4-a716-446655440002',
   slug: 'test-exhibition-5678',
   title: 'Test Exhibition',
@@ -79,7 +79,7 @@ describe('Queue Processor', () => {
 
     vi.clearAllMocks();
     mockSavePlaylist.mockClear();
-    mockSavePlaylistGroup.mockClear();
+    mockSaveChannel.mockClear();
     consoleLogSpy.mockClear();
     consoleErrorSpy.mockClear();
 
@@ -110,8 +110,8 @@ describe('Queue Processor', () => {
     });
 
     it('should include operation and resource ID in message ID', () => {
-      const operation = 'update_playlist_group';
-      const resourceId = mockPlaylistGroup.id;
+      const operation = 'update_channel';
+      const resourceId = mockChannel.id;
 
       const messageId = generateMessageId(operation, resourceId);
 
@@ -276,26 +276,26 @@ describe('Queue Processor', () => {
       });
     });
 
-    describe('create_playlist_group operations', () => {
-      it('should successfully process playlist group creation', async () => {
-        const message: CreatePlaylistGroupMessage = {
-          id: generateMessageId('create_playlist_group', mockPlaylistGroup.id),
+    describe('create_channel operations', () => {
+      it('should successfully process channel creation', async () => {
+        const message: CreateChannelMessage = {
+          id: generateMessageId('create_channel', mockChannel.id),
           timestamp: new Date().toISOString(),
-          operation: 'create_playlist_group',
+          operation: 'create_channel',
           data: {
-            playlistGroup: mockPlaylistGroup,
+            channel: mockChannel,
           },
         };
 
         const batch = createMockMessageBatch([message]);
-        mockSavePlaylistGroup.mockResolvedValueOnce(true);
+        mockSaveChannel.mockResolvedValueOnce(true);
 
         await processWriteOperations(batch, testEnv);
 
-        expect(mockSavePlaylistGroup).toHaveBeenCalledWith(
+        expect(mockSaveChannel).toHaveBeenCalledWith(
           expect.objectContaining({
-            id: mockPlaylistGroup.id,
-            title: mockPlaylistGroup.title,
+            id: mockChannel.id,
+            title: mockChannel.title,
           }),
           expect.any(Object),
           false
@@ -305,28 +305,28 @@ describe('Queue Processor', () => {
         expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining(`Processed message`));
       });
 
-      it('should handle playlist group creation failure', async () => {
-        const message: CreatePlaylistGroupMessage = {
-          id: generateMessageId('create_playlist_group', mockPlaylistGroup.id),
+      it('should handle channel creation failure', async () => {
+        const message: CreateChannelMessage = {
+          id: generateMessageId('create_channel', mockChannel.id),
           timestamp: new Date().toISOString(),
-          operation: 'create_playlist_group',
+          operation: 'create_channel',
           data: {
-            playlistGroup: mockPlaylistGroup,
+            channel: mockChannel,
           },
         };
 
         const batch = createMockMessageBatch([message]);
-        mockSavePlaylistGroup.mockRejectedValueOnce(new Error('Playlist group creation failed'));
+        mockSaveChannel.mockRejectedValueOnce(new Error('Channel creation failed'));
 
         const result = await processWriteOperations(batch, testEnv);
         expect(result.success).toBe(false);
         expect(result.errors).toHaveLength(1);
-        expect(result.errors![0].error).toBe('Playlist group creation failed');
+        expect(result.errors![0].error).toBe('Channel creation failed');
 
-        expect(mockSavePlaylistGroup).toHaveBeenCalledWith(
+        expect(mockSaveChannel).toHaveBeenCalledWith(
           expect.objectContaining({
-            id: mockPlaylistGroup.id,
-            title: mockPlaylistGroup.title,
+            id: mockChannel.id,
+            title: mockChannel.title,
           }),
           expect.any(Object),
           false
@@ -335,27 +335,27 @@ describe('Queue Processor', () => {
       });
     });
 
-    describe('update_playlist_group operations', () => {
-      it('should successfully process playlist group update', async () => {
-        const message: UpdatePlaylistGroupMessage = {
-          id: generateMessageId('update_playlist_group', mockPlaylistGroup.id),
+    describe('update_channel operations', () => {
+      it('should successfully process channel update', async () => {
+        const message: UpdateChannelMessage = {
+          id: generateMessageId('update_channel', mockChannel.id),
           timestamp: new Date().toISOString(),
-          operation: 'update_playlist_group',
+          operation: 'update_channel',
           data: {
-            groupId: mockPlaylistGroup.id,
-            playlistGroup: mockPlaylistGroup,
+            channelId: mockChannel.id,
+            channel: mockChannel,
           },
         };
 
         const batch = createMockMessageBatch([message]);
-        mockSavePlaylistGroup.mockResolvedValueOnce(true);
+        mockSaveChannel.mockResolvedValueOnce(true);
 
         await processWriteOperations(batch, testEnv);
 
-        expect(mockSavePlaylistGroup).toHaveBeenCalledWith(
+        expect(mockSaveChannel).toHaveBeenCalledWith(
           expect.objectContaining({
-            id: mockPlaylistGroup.id,
-            title: mockPlaylistGroup.title,
+            id: mockChannel.id,
+            title: mockChannel.title,
           }),
           expect.any(Object),
           true
@@ -364,29 +364,29 @@ describe('Queue Processor', () => {
         // The caller (like index.ts queue function) handles acking based on the result
       });
 
-      it('should handle playlist group update failure', async () => {
-        const message: UpdatePlaylistGroupMessage = {
-          id: generateMessageId('update_playlist_group', mockPlaylistGroup.id),
+      it('should handle channel update failure', async () => {
+        const message: UpdateChannelMessage = {
+          id: generateMessageId('update_channel', mockChannel.id),
           timestamp: new Date().toISOString(),
-          operation: 'update_playlist_group',
+          operation: 'update_channel',
           data: {
-            groupId: mockPlaylistGroup.id,
-            playlistGroup: mockPlaylistGroup,
+            channelId: mockChannel.id,
+            channel: mockChannel,
           },
         };
 
         const batch = createMockMessageBatch([message]);
-        mockSavePlaylistGroup.mockRejectedValueOnce(new Error('Playlist group update failed'));
+        mockSaveChannel.mockRejectedValueOnce(new Error('Channel update failed'));
 
         const result = await processWriteOperations(batch, testEnv);
         expect(result.success).toBe(false);
         expect(result.errors).toHaveLength(1);
-        expect(result.errors![0].error).toBe('Playlist group update failed');
+        expect(result.errors![0].error).toBe('Channel update failed');
 
-        expect(mockSavePlaylistGroup).toHaveBeenCalledWith(
+        expect(mockSaveChannel).toHaveBeenCalledWith(
           expect.objectContaining({
-            id: mockPlaylistGroup.id,
-            title: mockPlaylistGroup.title,
+            id: mockChannel.id,
+            title: mockChannel.title,
           }),
           expect.any(Object),
           true
@@ -404,16 +404,16 @@ describe('Queue Processor', () => {
           data: { playlist: mockPlaylist },
         };
 
-        const groupMessage: CreatePlaylistGroupMessage = {
-          id: generateMessageId('create_playlist_group', mockPlaylistGroup.id),
+        const channelMessage: CreateChannelMessage = {
+          id: generateMessageId('create_channel', mockChannel.id),
           timestamp: new Date().toISOString(),
-          operation: 'create_playlist_group',
-          data: { playlistGroup: mockPlaylistGroup },
+          operation: 'create_channel',
+          data: { channel: mockChannel },
         };
 
-        const batch = createMockMessageBatch([playlistMessage, groupMessage]);
+        const batch = createMockMessageBatch([playlistMessage, channelMessage]);
         mockSavePlaylist.mockResolvedValueOnce(true);
-        mockSavePlaylistGroup.mockResolvedValueOnce(true);
+        mockSaveChannel.mockResolvedValueOnce(true);
 
         await processWriteOperations(batch, testEnv);
 
@@ -424,10 +424,10 @@ describe('Queue Processor', () => {
           }),
           false
         );
-        expect(mockSavePlaylistGroup).toHaveBeenCalledWith(
+        expect(mockSaveChannel).toHaveBeenCalledWith(
           expect.objectContaining({
-            id: mockPlaylistGroup.id,
-            title: mockPlaylistGroup.title,
+            id: mockChannel.id,
+            title: mockChannel.title,
           }),
           expect.any(Object),
           false
@@ -445,16 +445,16 @@ describe('Queue Processor', () => {
           data: { playlist: mockPlaylist },
         };
 
-        const message2: CreatePlaylistGroupMessage = {
-          id: generateMessageId('create_playlist_group', mockPlaylistGroup.id),
+        const message2: CreateChannelMessage = {
+          id: generateMessageId('create_channel', mockChannel.id),
           timestamp: new Date().toISOString(),
-          operation: 'create_playlist_group',
-          data: { playlistGroup: mockPlaylistGroup },
+          operation: 'create_channel',
+          data: { channel: mockChannel },
         };
 
         const batch = createMockMessageBatch([message1, message2]);
         mockSavePlaylist.mockRejectedValueOnce(new Error('Playlist creation failed')); // First fails
-        mockSavePlaylistGroup.mockResolvedValueOnce(true); // Second succeeds
+        mockSaveChannel.mockResolvedValueOnce(true); // Second succeeds
 
         const result = await processWriteOperations(batch, testEnv);
         expect(result.success).toBe(false);
@@ -462,7 +462,7 @@ describe('Queue Processor', () => {
         expect(result.errors![0].error).toBe('Playlist creation failed');
 
         expect(mockSavePlaylist).toHaveBeenCalled();
-        expect(mockSavePlaylistGroup).toHaveBeenCalled();
+        expect(mockSaveChannel).toHaveBeenCalled();
         expect(batch.ackAll).not.toHaveBeenCalled(); // Batch should not be acked on failure
       });
     });

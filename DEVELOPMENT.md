@@ -261,7 +261,7 @@ dp1-feed/
 │
 ├── routes/                # API routes
 │   ├── playlists.ts       # Playlist CRUD operations
-│   ├── playlistGroups.ts  # Playlist group operations
+│   ├── channels.ts        # Channel operations
 │   ├── playlistItems.ts   # Playlist item operations
 │   └── queues.ts          # Queue management
 │
@@ -377,8 +377,8 @@ preview_id = "your-playlists-preview-kv-id"
 
 [[kv_namespaces]]
 binding = "DP1_PLAYLIST_GROUPS"
-id = "your-playlist-groups-kv-id"
-preview_id = "your-playlist-groups-preview-kv-id"
+id = "your-channels-kv-id"
+preview_id = "your-channels-preview-kv-id"
 
 [[kv_namespaces]]
 binding = "DP1_PLAYLIST_ITEMS"

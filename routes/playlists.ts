@@ -10,7 +10,7 @@ import {
   validateNoProtectedFields,
 } from '../types';
 import { signPlaylist, getServerKeyPair } from '../crypto';
-import { listAllPlaylists, getPlaylistByIdOrSlug, listPlaylistsByGroupId } from '../storage';
+import { listAllPlaylists, getPlaylistByIdOrSlug, listPlaylistsByChannelId } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
 
 // Create playlist router
@@ -106,7 +106,7 @@ async function validatePlaylistUpdateBody(
  * Query params:
  * - limit: number of items per page (max 100)
  * - cursor: pagination cursor from previous response
- * - playlist-group: filter by playlist group ID
+ * - channel: filter by channel ID
  * - sort: asc | desc (by created time)
  */
 playlists.get('/', async c => {
@@ -114,7 +114,7 @@ playlists.get('/', async c => {
     // Parse query parameters
     const limit = parseInt(c.req.query('limit') || '100');
     const cursor = c.req.query('cursor') || undefined;
-    const playlistGroupId = c.req.query('playlist-group');
+    const channelId = c.req.query('channel');
     const sortParam = (c.req.query('sort') || '').toLowerCase();
     const sort: 'asc' | 'desc' = sortParam === 'desc' ? 'desc' : 'asc'; // Default to 'asc' when no sort or invalid sort
 
@@ -130,9 +130,9 @@ playlists.get('/', async c => {
     }
 
     let result;
-    if (playlistGroupId) {
-      // Filter by playlist group
-      result = await listPlaylistsByGroupId(playlistGroupId, c.var.env, { limit, cursor, sort });
+    if (channelId) {
+      // Filter by channel
+      result = await listPlaylistsByChannelId(channelId, c.var.env, { limit, cursor, sort });
     } else {
       // List all playlists
       result = await listAllPlaylists(c.var.env, { limit, cursor, sort });

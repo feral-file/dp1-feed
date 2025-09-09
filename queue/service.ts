@@ -6,8 +6,8 @@ import type {
   WriteOperationMessage,
   CreatePlaylistMessage,
   UpdatePlaylistMessage,
-  CreatePlaylistGroupMessage,
-  UpdatePlaylistGroupMessage,
+  CreateChannelMessage,
+  UpdateChannelMessage,
   ProcessingResult,
 } from './interfaces';
 import { StorageService } from '../storage/service';
@@ -69,11 +69,11 @@ export class QueueProcessorService implements QueueProcessor<WriteOperationMessa
       case 'update_playlist':
         await this.handleUpdatePlaylist(message as UpdatePlaylistMessage);
         break;
-      case 'create_playlist_group':
-        await this.handleCreatePlaylistGroup(message as CreatePlaylistGroupMessage, env);
+      case 'create_channel':
+        await this.handleCreateChannel(message as CreateChannelMessage, env);
         break;
-      case 'update_playlist_group':
-        await this.handleUpdatePlaylistGroup(message as UpdatePlaylistGroupMessage, env);
+      case 'update_channel':
+        await this.handleUpdateChannel(message as UpdateChannelMessage, env);
         break;
       default:
         throw new Error(`Unknown message operation: ${(message as any).operation}`);
@@ -90,20 +90,14 @@ export class QueueProcessorService implements QueueProcessor<WriteOperationMessa
     await this.storageService.savePlaylist(message.data.playlist, true);
   }
 
-  private async handleCreatePlaylistGroup(
-    message: CreatePlaylistGroupMessage,
-    env: any
-  ): Promise<void> {
-    console.log(`Creating playlist group ${message.data.playlistGroup.id}`);
-    await this.storageService.savePlaylistGroup(message.data.playlistGroup, env, false);
+  private async handleCreateChannel(message: CreateChannelMessage, env: any): Promise<void> {
+    console.log(`Creating channel ${message.data.channel.id}`);
+    await this.storageService.saveChannel(message.data.channel, env, false);
   }
 
-  private async handleUpdatePlaylistGroup(
-    message: UpdatePlaylistGroupMessage,
-    env: any
-  ): Promise<void> {
-    console.log(`Updating playlist group ${message.data.playlistGroup.id}`);
-    await this.storageService.savePlaylistGroup(message.data.playlistGroup, env, true);
+  private async handleUpdateChannel(message: UpdateChannelMessage, env: any): Promise<void> {
+    console.log(`Updating channel ${message.data.channel.id}`);
+    await this.storageService.saveChannel(message.data.channel, env, true);
   }
 }
 
@@ -143,10 +137,10 @@ export class QueueService {
         return (message as CreatePlaylistMessage).data.playlist.id;
       case 'update_playlist':
         return (message as UpdatePlaylistMessage).data.playlist.id;
-      case 'create_playlist_group':
-        return (message as CreatePlaylistGroupMessage).data.playlistGroup.id;
-      case 'update_playlist_group':
-        return (message as UpdatePlaylistGroupMessage).data.playlistGroup.id;
+      case 'create_channel':
+        return (message as CreateChannelMessage).data.channel.id;
+      case 'update_channel':
+        return (message as UpdateChannelMessage).data.channel.id;
       default:
         return 'unknown';
     }

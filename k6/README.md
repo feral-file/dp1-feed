@@ -113,7 +113,7 @@ The K6 tests cover all API endpoints:
 - `GET /api/v1` - API information
 - `GET /api/v1/health` - Health check
 - `GET /api/v1/playlists` - List playlists
-- `GET /api/v1/playlist-groups` - List playlist groups
+- `GET /api/v1/channels` - List channels
 - `GET /api/v1/playlist-items` - List playlist items
 
 ### CRUD Operations (with Authentication)
@@ -122,16 +122,16 @@ The K6 tests cover all API endpoints:
 - `GET /api/v1/playlists/:id` - Get playlist by ID
 - `PUT /api/v1/playlists/:id` - Update playlist (async processing)
 
-- `POST /api/v1/playlist-groups` - Create playlist group (async processing)
-- `GET /api/v1/playlist-groups/:id` - Get playlist group by ID
-- `PUT /api/v1/playlist-groups/:id` - Update playlist group (async processing)
+- `POST /api/v1/channels` - Create channel (async processing)
+- `GET /api/v1/channels/:id` - Get channel by ID
+- `PUT /api/v1/channels/:id` - Update channel (async processing)
 
 - `GET /api/v1/playlist-items/:id` - Get playlist item by ID
 
 ### Smart Data Management
 
 - **Setup Phase**: Fetches existing playlists and creates additional ones if needed
-- **Real Data**: Uses actual playlist URLs for playlist group creation
+- **Real Data**: Uses actual playlist URLs for channel creation
 - **Data Reuse**: Cycles through created resources for realistic testing
 - **Authentication**: Automatically adds Bearer token for write operations
 - **Async Processing**: Tests reflect the new async queue-based write operations

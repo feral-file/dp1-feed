@@ -1,6 +1,6 @@
 # DP-1 Feed API Flow Sequence Diagrams
 
-This document describes the API flow for both Cloudflare Workers and self-hosted Node.js deployments, covering playlist and playlist group operations.
+This document describes the API flow for both Cloudflare Workers and self-hosted Node.js deployments, covering playlist and channel operations.
 
 ## Overview
 
@@ -29,7 +29,7 @@ The DP-1 Feed API follows an asynchronous pattern where:
 
 ---
 
-## Sequence Diagram: Playlist/Playlist Group Creation/Update Flow
+## Sequence Diagram: Playlist/Channel Creation/Update Flow
 
 ### Cloudflare Workers Deployment
 
@@ -41,9 +41,9 @@ sequenceDiagram
     participant CF_Consumer as CF Queue Consumer
     participant CF_KV as Cloudflare KV
 
-    Note over Client,CF_KV: Create/Update Playlist/Playlist Group Flow (Cloudflare Workers)
+    Note over Client,CF_KV: Create/Update Playlist/Channel Flow (Cloudflare Workers)
 
-    Client->>CF_Worker: POST/PUT/PATCH /playlists or /playlist-groups
+    Client->>CF_Worker: POST/PUT/PATCH /playlists or /channels
     Note right of Client: Request includes playlist/group data
 
     CF_Worker->>CF_Worker: 1. Validate request body (Zod schema)
@@ -77,9 +77,9 @@ sequenceDiagram
     participant Node_API as Node.js API (Internal)
     participant ETCD as etcd Storage
 
-    Note over Client,ETCD: Create/Update Playlist/Playlist Group Flow (Self-Hosted)
+    Note over Client,ETCD: Create/Update Playlist/Channel Flow (Self-Hosted)
 
-    Client->>Node_Server: POST/PUT/PATCH /playlists or /playlist-groups
+    Client->>Node_Server: POST/PUT/PATCH /playlists or /channels
     Note right of Client: Request includes playlist/group data
 
     Node_Server->>Node_Server: 1. Validate request body (Zod schema)
@@ -126,11 +126,11 @@ interface WriteOperationMessage {
   operation:
     | 'create_playlist'
     | 'update_playlist'
-    | 'create_playlist_group'
-    | 'update_playlist_group';
+    | 'create_channel'
+    | 'update_channel';
   data: {
     playlist?: Playlist; // For playlist operations
-    playlistGroup?: PlaylistGroup; // For playlist group operations
+    channel?: Channel; // For channel operations
     playlistId?: string; // For update operations
   };
   retryCount?: number; // For retry tracking
@@ -164,12 +164,12 @@ sequenceDiagram
         else update_playlist
             Processor->>Storage: savePlaylist(playlist, true)
             Storage->>CF_KV: PUT /playlists/{id}
-        else create_playlist_group
-            Processor->>Storage: savePlaylistGroup(group, env, false)
-            Storage->>CF_KV: PUT /playlist-groups/{id}
-        else update_playlist_group
-            Processor->>Storage: savePlaylistGroup(group, env, true)
-            Storage->>CF_KV: PUT /playlist-groups/{id}
+        else create_channel
+            Processor->>Storage: saveChannel(channel, env, false)
+            Storage->>CF_KV: PUT /channels/{id}
+        else update_channel
+            Processor->>Storage: saveChannel(channel, env, true)
+            Storage->>CF_KV: PUT /channels/{id}
         end
     end
 
@@ -206,12 +206,12 @@ sequenceDiagram
         else update_playlist
             Processor->>Storage: savePlaylist(playlist, true)
             Storage->>ETCD: PUT /dp1/playlists/{id}
-        else create_playlist_group
-            Processor->>Storage: savePlaylistGroup(group, env, false)
-            Storage->>ETCD: PUT /dp1/playlist-groups/{id}
-        else update_playlist_group
-            Processor->>Storage: savePlaylistGroup(group, env, true)
-            Storage->>ETCD: PUT /dp1/playlist-groups/{id}
+        else create_channel
+            Processor->>Storage: saveChannel(channel, env, false)
+            Storage->>ETCD: PUT /dp1/channels/{id}
+        else update_channel
+            Processor->>Storage: saveChannel(channel, env, true)
+            Storage->>ETCD: PUT /dp1/channels/{id}
         end
 
         Processor->>Node_API: Return ProcessingResult

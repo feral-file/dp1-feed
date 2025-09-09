@@ -31,7 +31,7 @@ const API_SECRET = __ENV.API_SECRET || __ENV.BENCHMARK_API_SECRET;
 
 // Test data cache
 let cachedPlaylists = [];
-let cachedPlaylistGroups = [];
+let cachedChannels = [];
 
 // Generate realistic test data
 function generatePlaylistData(index = 0) {
@@ -65,7 +65,7 @@ function generatePlaylistData(index = 0) {
   };
 }
 
-function generatePlaylistGroupData(index = 0) {
+function generateChannelData(index = 0) {
   // Use real playlist URLs if available
   let playlistUrls = [];
 
@@ -86,7 +86,7 @@ function generatePlaylistGroupData(index = 0) {
   return {
     title: `K6 Benchmark Group ${index + 1} - ${Date.now()}`,
     curator: `K6 Test Curator ${index + 1}`,
-    summary: `K6 benchmark test playlist group (${index + 1})`,
+    summary: `K6 benchmark test channel (${index + 1})`,
     playlists: playlistUrls,
     coverImage: `https://example.com/k6-cover-${index + 1}.jpg`,
   };
@@ -161,9 +161,9 @@ export function setup() {
       }
     }
 
-    // Fetch existing playlist groups
-    console.log('📥 Fetching existing playlist groups...');
-    const groupsResponse = makeRequest('/api/v1/playlist-groups?limit=10', 'GET', null, {
+    // Fetch existing channels
+    console.log('📥 Fetching existing channels...');
+    const groupsResponse = makeRequest('/api/v1/channels?limit=10', 'GET', null, {
       setup: 'true',
     });
 
@@ -171,25 +171,25 @@ export function setup() {
       const responseData = JSON.parse(groupsResponse.body);
       const groups = Array.isArray(responseData) ? responseData : responseData.items || [];
       if (Array.isArray(groups)) {
-        cachedPlaylistGroups = groups;
-        console.log(`✅ Found ${cachedPlaylistGroups.length} existing playlist groups`);
+        cachedChannels = groups;
+        console.log(`✅ Found ${cachedChannels.length} existing channels`);
       }
     }
 
-    // Only create playlist groups if none exist and we have playlists to reference
-    if (cachedPlaylistGroups.length === 0 && cachedPlaylists.length >= 2) {
-      console.log('📝 No existing playlist groups found, creating test group...');
+    // Only create channels if none exist and we have playlists to reference
+    if (cachedChannels.length === 0 && cachedPlaylists.length >= 2) {
+      console.log('📝 No existing channels found, creating test channel...');
 
-      const groupData = generatePlaylistGroupData(0);
-      console.log('📤 Creating playlist group...');
-      const response = makeRequest('/api/v1/playlist-groups', 'POST', groupData, { setup: 'true' });
+      const channelData = generateChannelData(0);
+      console.log('📤 Creating channel...');
+      const response = makeRequest('/api/v1/channels', 'POST', channelData, { setup: 'true' });
 
       if (response.status === 201) {
-        const group = JSON.parse(response.body);
-        cachedPlaylistGroups.push(group);
-        console.log(`✅ Created playlist group: ${group.id}`);
+        const channel = JSON.parse(response.body);
+        cachedChannels.push(channel);
+        console.log(`✅ Created channel: ${channel.id}`);
       } else {
-        console.log(`❌ Failed to create playlist group: ${response.status}`);
+        console.log(`❌ Failed to create channel: ${response.status}`);
         try {
           const errorBody = JSON.parse(response.body);
           console.log(`❌ Error details: ${JSON.stringify(errorBody)}`);
@@ -204,12 +204,12 @@ export function setup() {
 
     console.log(`🎯 Setup completed in ${setupTime}ms`);
     console.log(
-      `📊 Available for testing: ${cachedPlaylists.length} playlists, ${cachedPlaylistGroups.length} groups`
+      `📊 Available for testing: ${cachedPlaylists.length} playlists, ${cachedChannels.length} channels`
     );
 
     return {
       playlists: cachedPlaylists,
-      groups: cachedPlaylistGroups,
+      groups: cachedChannels,
     };
   } catch (error) {
     console.error(`❌ Setup failed: ${error.message}`);
@@ -221,7 +221,7 @@ export function setup() {
 export default function (data) {
   // Update cached data from setup
   cachedPlaylists = data.playlists || [];
-  cachedPlaylistGroups = data.groups || [];
+  cachedChannels = data.groups || [];
 
   // Test API info endpoint
   testAPIInfo();
@@ -232,8 +232,8 @@ export default function (data) {
   // Test playlist operations
   testPlaylistOperations();
 
-  // Test playlist group operations
-  testPlaylistGroupOperations();
+  // Test channel operations
+  testChannelOperations();
 
   // Test playlist items (read-only)
   testPlaylistItems();
@@ -374,15 +374,15 @@ function testPlaylistOperations() {
   }
 }
 
-function testPlaylistGroupOperations() {
-  // List playlist groups
-  const listResponse = makeRequest('/api/v1/playlist-groups?limit=10', 'GET', null, {
-    endpoint: 'list_groups',
+function testChannelOperations() {
+  // List channels
+  const listResponse = makeRequest('/api/v1/channels?limit=10', 'GET', null, {
+    endpoint: 'list_channels',
   });
 
   const listSuccess = check(listResponse, {
-    'List Groups: status is 200': r => r.status === 200,
-    'List Groups: returns paginated data': r => {
+    'List Channels: status is 200': r => r.status === 200,
+    'List Channels: returns paginated data': r => {
       try {
         const data = JSON.parse(r.body);
         return Array.isArray(data) || (data && Array.isArray(data.items));
@@ -394,16 +394,16 @@ function testPlaylistGroupOperations() {
 
   if (!listSuccess) errorRate.add(1);
 
-  // Create playlist group (if authenticated and have playlists) - test creation only
+  // Create channel (if authenticated and have playlists) - test creation only
   if (API_SECRET && cachedPlaylists.length >= 2) {
-    const groupData = generatePlaylistGroupData(Math.floor(Math.random() * 1000));
-    const createResponse = makeRequest('/api/v1/playlist-groups', 'POST', groupData, {
-      endpoint: 'create_group',
+    const channelData = generateChannelData(Math.floor(Math.random() * 1000));
+    const createResponse = makeRequest('/api/v1/channels', 'POST', channelData, {
+      endpoint: 'create_channel',
     });
 
     const createSuccess = check(createResponse, {
-      'Create Group: status is 201': r => r.status === 201,
-      'Create Group: returns group with ID': r => {
+      'Create Channel: status is 201': r => r.status === 201,
+      'Create Channel: returns channel with ID': r => {
         try {
           const data = JSON.parse(r.body);
           return data.id && data.title;
@@ -416,22 +416,21 @@ function testPlaylistGroupOperations() {
     if (!createSuccess) errorRate.add(1);
   }
 
-  // Test GET and UPDATE operations using cached playlist groups (to avoid KV async issues)
-  if (cachedPlaylistGroups.length > 0) {
-    const existingGroup =
-      cachedPlaylistGroups[Math.floor(Math.random() * cachedPlaylistGroups.length)];
+  // Test GET and UPDATE operations using cached channels (to avoid KV async issues)
+  if (cachedChannels.length > 0) {
+    const existingChannel = cachedChannels[Math.floor(Math.random() * cachedChannels.length)];
 
-    // Get group by ID
-    const getResponse = makeRequest(`/api/v1/playlist-groups/${existingGroup.id}`, 'GET', null, {
-      endpoint: 'get_group',
+    // Get channel by ID
+    const getResponse = makeRequest(`/api/v1/channels/${existingChannel.id}`, 'GET', null, {
+      endpoint: 'get_channel',
     });
 
     const getSuccess = check(getResponse, {
-      'Get Group: status is 200': r => r.status === 200,
-      'Get Group: returns correct group': r => {
+      'Get Channel: status is 200': r => r.status === 200,
+      'Get Channel: returns correct channel': r => {
         try {
           const data = JSON.parse(r.body);
-          return data.id === existingGroup.id;
+          return data.id === existingChannel.id;
         } catch {
           return false;
         }
@@ -440,24 +439,24 @@ function testPlaylistGroupOperations() {
 
     if (!getSuccess) errorRate.add(1);
 
-    // Update group (if authenticated)
+    // Update channel (if authenticated)
     if (API_SECRET) {
       const updateData = {
-        title: `Updated ${existingGroup.title.slice(0, 64)} - ${Date.now()}`,
-        curator: existingGroup.curator || `Updated Curator - ${Date.now()}`,
-        playlists: existingGroup.playlists || [],
+        title: `Updated ${existingChannel.title.slice(0, 64)} - ${Date.now()}`,
+        curator: existingChannel.curator || `Updated Curator - ${Date.now()}`,
+        playlists: existingChannel.playlists || [],
       };
 
       const updateResponse = makeRequest(
-        `/api/v1/playlist-groups/${existingGroup.id}`,
+        `/api/v1/channels/${existingChannel.id}`,
         'PATCH',
         updateData,
-        { endpoint: 'update_group' }
+        { endpoint: 'update_channel' }
       );
 
       const updateSuccess = check(updateResponse, {
-        'Update Group: status is 200': r => r.status === 200,
-        'Update Group: title updated': r => {
+        'Update Channel: status is 200': r => r.status === 200,
+        'Update Channel: title updated': r => {
           try {
             const data = JSON.parse(r.body);
             return data.title.includes('Updated');

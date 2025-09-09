@@ -1,7 +1,11 @@
 import { Hono } from 'hono';
 import type { Env } from '../types';
 import type { EnvironmentBindings } from '../env/types';
-import { getPlaylistItemById, listAllPlaylistItems, listPlaylistItemsByGroupId } from '../storage';
+import {
+  getPlaylistItemById,
+  listAllPlaylistItems,
+  listPlaylistItemsByChannelId,
+} from '../storage';
 
 // Create playlist items router
 const playlistItems = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();
@@ -67,11 +71,11 @@ playlistItems.get('/:id', async c => {
 });
 
 /**
- * GET /playlist-items - List playlist items with filtering by playlist group
+ * GET /playlist-items - List playlist items with filtering by channel
  * Query params:
  * - limit: number of items per page (max 100)
  * - cursor: pagination cursor from previous response
- * - playlist-group: filter by playlist group ID (required)
+ * - channel: filter by channel ID (optional)
  * - sort: asc | desc (by created time)
  */
 playlistItems.get('/', async c => {
@@ -79,7 +83,7 @@ playlistItems.get('/', async c => {
     // Parse query parameters
     const limit = parseInt(c.req.query('limit') || '100');
     const cursor = c.req.query('cursor') || undefined;
-    const playlistGroupId = c.req.query('playlist-group');
+    const channelId = c.req.query('channel');
     const sortParam = (c.req.query('sort') || '').toLowerCase();
     const sort: 'asc' | 'desc' = sortParam === 'desc' ? 'desc' : 'asc'; // Default to 'asc' when no sort or invalid sort
 
@@ -94,24 +98,24 @@ playlistItems.get('/', async c => {
       );
     }
 
-    // playlist-group is optional for playlist items query
+    // channel is optional for playlist items query
     let result;
-    if (playlistGroupId) {
-      // Validate playlist group ID format
+    if (channelId) {
+      // Validate channel ID format
       const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
-        playlistGroupId
+        channelId
       );
-      const isSlug = /^[a-zA-Z0-9-]+$/.test(playlistGroupId);
+      const isSlug = /^[a-zA-Z0-9-]+$/.test(channelId);
       if (!isUuid && !isSlug) {
         return c.json(
           {
-            error: 'invalid_playlist_group_id',
-            message: 'Playlist group ID must be a valid UUID or slug',
+            error: 'invalid_channel_id',
+            message: 'Channel ID must be a valid UUID or slug',
           },
           400
         );
       }
-      result = await listPlaylistItemsByGroupId(playlistGroupId, c.var.env, {
+      result = await listPlaylistItemsByChannelId(channelId, c.var.env, {
         limit,
         cursor,
         sort,

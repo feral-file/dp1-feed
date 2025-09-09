@@ -94,12 +94,12 @@ export class CloudFlareKVStorage implements KeyValueStorage {
  */
 export class CloudFlareStorageProvider implements StorageProvider {
   private playlistStorage: CloudFlareKVStorage;
-  private playlistGroupStorage: CloudFlareKVStorage;
+  private channelStorage: CloudFlareKVStorage;
   private playlistItemStorage: CloudFlareKVStorage;
 
-  constructor(playlistKV: KVNamespace, playlistGroupKV: KVNamespace, playlistItemKV: KVNamespace) {
+  constructor(playlistKV: KVNamespace, channelKV: KVNamespace, playlistItemKV: KVNamespace) {
     this.playlistStorage = new CloudFlareKVStorage(playlistKV);
-    this.playlistGroupStorage = new CloudFlareKVStorage(playlistGroupKV);
+    this.channelStorage = new CloudFlareKVStorage(channelKV);
     this.playlistItemStorage = new CloudFlareKVStorage(playlistItemKV);
   }
 
@@ -107,8 +107,8 @@ export class CloudFlareStorageProvider implements StorageProvider {
     return this.playlistStorage;
   }
 
-  getPlaylistGroupStorage(): KeyValueStorage {
-    return this.playlistGroupStorage;
+  getChannelStorage(): KeyValueStorage {
+    return this.channelStorage;
   }
 
   getPlaylistItemStorage(): KeyValueStorage {

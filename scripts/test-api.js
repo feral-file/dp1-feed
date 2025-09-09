@@ -46,10 +46,10 @@ const testPlaylist = {
 // Store server-generated data for testing
 let createdPlaylistId = null;
 let createdPlaylistSlug = null;
-let createdPlaylistGroupId = null;
-let createdPlaylistGroupSlug = null;
+let createdChannelId = null;
+let createdChannelSlug = null;
 let sortingTestPlaylistIds = []; // For sorting tests
-let sortingTestGroupIds = []; // For sorting tests
+let sortingTestChannelIds = []; // For sorting tests
 
 // Helper function to make HTTP requests
 async function makeRequest(method, path, body = null) {
@@ -165,20 +165,17 @@ async function testPagination() {
   return true;
 }
 
-async function testPlaylistGroupFiltering() {
-  if (!createdPlaylistGroupId) {
-    console.log('\n⚠️  Skipping filtering test - no playlist group ID available');
+async function testChannelFiltering() {
+  if (!createdChannelId) {
+    console.log('\n⚠️  Skipping filtering test - no channel ID available');
     return true;
   }
 
-  console.log('\n🔍 Testing playlist filtering by playlist-group...');
-  const response = await makeRequest(
-    'GET',
-    `/api/v1/playlists?playlist-group=${createdPlaylistGroupId}`
-  );
+  console.log('\n🔍 Testing playlist filtering by channel...');
+  const response = await makeRequest('GET', `/api/v1/playlists?channel=${createdChannelId}`);
 
   if (response.ok) {
-    console.log('✅ Playlist group filtering working');
+    console.log('✅ Channel filtering working');
     const result = response.data;
     if (result && Array.isArray(result.items)) {
       console.log(`   Filtered playlists count: ${result.items.length}`);
@@ -350,40 +347,40 @@ async function testUpdatePlaylist() {
   return response.ok;
 }
 
-async function testCreatePlaylistGroup() {
-  console.log('\n📝 Testing POST /api/v1/playlist-groups (server-side ID and slug generation)...');
+async function testCreateChannel() {
+  console.log('\n📝 Testing POST /api/v1/channels (server-side ID and slug generation)...');
 
   // Ensure we have a playlist to reference
   if (!createdPlaylistId) {
-    console.log('❌ No playlist available to reference in group. Create a playlist first.');
+    console.log('❌ No playlist available to reference in channel. Create a playlist first.');
     return false;
   }
   console.log(`🔍 Using playlist ID: ${createdPlaylistId}`);
 
-  // Create playlist group data with real playlist reference
+  // Create channel data with real playlist reference
   // For testing, we need to use an actual fetchable URL since the server validates external playlists
   // We'll use a real example playlist from the DP-1 spec for testing
   const playlistUrl = `http://localhost:8787/api/v1/playlists/${createdPlaylistId}`;
 
-  const playlistGroupData = {
+  const channelData = {
     title: 'Digital Art Showcase 2024',
     curator: 'Test Curator',
     summary: 'A test exhibition for API validation with UUID and slug support',
     playlists: [playlistUrl],
   };
 
-  const response = await makeRequest('POST', '/api/v1/playlist-groups', playlistGroupData);
+  const response = await makeRequest('POST', '/api/v1/channels', channelData);
 
   if (response.ok) {
-    console.log('✅ Playlist group created successfully');
+    console.log('✅ Channel created successfully');
     console.log(`   ID: ${response.data.id}`);
     console.log(`   Slug: ${response.data.slug}`);
     console.log(`   Title: ${response.data.title}`);
     console.log(`   Created: ${response.data.created}`);
 
     // Store server-generated data
-    createdPlaylistGroupId = response.data.id;
-    createdPlaylistGroupSlug = response.data.slug;
+    createdChannelId = response.data.id;
+    createdChannelSlug = response.data.slug;
 
     // Validate UUID format
     if (/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(response.data.id)) {
@@ -410,12 +407,12 @@ async function testCreatePlaylistGroup() {
   return response.ok;
 }
 
-async function testListPlaylistGroups() {
-  console.log('\n📋 Testing GET /api/v1/playlist-groups (list all groups)...');
-  const response = await makeRequest('GET', '/api/v1/playlist-groups');
+async function testListChannels() {
+  console.log('\n📋 Testing GET /api/v1/channels (list all groups)...');
+  const response = await makeRequest('GET', '/api/v1/channels');
 
   if (response.ok) {
-    console.log('✅ Playlist groups listed successfully');
+    console.log('✅ Channels listed successfully');
     // Handle paginated result format
     const paginatedResult = response.data;
     if (paginatedResult && Array.isArray(paginatedResult.items)) {
@@ -439,17 +436,17 @@ async function testListPlaylistGroups() {
   return response.ok;
 }
 
-async function testGetPlaylistGroupByUUID() {
-  if (!createdPlaylistGroupId) {
+async function testGetChannelByUUID() {
+  if (!createdChannelId) {
     console.log('\n⚠️  Skipping group UUID test - no group ID available');
     return true;
   }
 
-  console.log('\n📖 Testing GET /api/v1/playlist-groups/{uuid} (access by UUID)...');
-  const response = await makeRequest('GET', `/api/v1/playlist-groups/${createdPlaylistGroupId}`);
+  console.log('\n📖 Testing GET /api/v1/channels/{uuid} (access by UUID)...');
+  const response = await makeRequest('GET', `/api/v1/channels/${createdChannelId}`);
 
   if (response.ok) {
-    console.log('✅ Playlist group retrieved by UUID successfully');
+    console.log('✅ Channel retrieved by UUID successfully');
     console.log(`   ID: ${response.data.id}`);
     console.log(`   Slug: ${response.data.slug}`);
     console.log(`   Curator: ${response.data.curator}`);
@@ -460,25 +457,25 @@ async function testGetPlaylistGroupByUUID() {
   return response.ok;
 }
 
-async function testGetPlaylistGroupBySlug() {
-  if (!createdPlaylistGroupSlug) {
+async function testGetChannelBySlug() {
+  if (!createdChannelSlug) {
     console.log('\n⚠️  Skipping group slug test - no slug available');
     return true;
   }
 
-  console.log('\n📖 Testing GET /api/v1/playlist-groups/{slug} (access by slug)...');
-  const response = await makeRequest('GET', `/api/v1/playlist-groups/${createdPlaylistGroupSlug}`);
+  console.log('\n📖 Testing GET /api/v1/channels/{slug} (access by slug)...');
+  const response = await makeRequest('GET', `/api/v1/channels/${createdChannelSlug}`);
 
   if (response.ok) {
-    console.log('✅ Playlist group retrieved by slug successfully');
+    console.log('✅ Channel retrieved by slug successfully');
     console.log(`   ID: ${response.data.id}`);
     console.log(`   Slug: ${response.data.slug}`);
 
     // Verify we get the same group
-    if (response.data.id === createdPlaylistGroupId) {
-      console.log('✅ Same playlist group returned via slug and UUID');
+    if (response.data.id === createdChannelId) {
+      console.log('✅ Same channel returned via slug and UUID');
     } else {
-      console.log('❌ Different playlist group returned via slug vs UUID');
+      console.log('❌ Different channel returned via slug vs UUID');
       return false;
     }
   } else {
@@ -553,7 +550,7 @@ async function testEmptyListing() {
 
   // Create a fresh API that might be empty
   const emptyResponse = await makeRequest('GET', '/api/v1/playlists');
-  const emptyGroupsResponse = await makeRequest('GET', '/api/v1/playlist-groups');
+  const emptyGroupsResponse = await makeRequest('GET', '/api/v1/channels');
 
   if (emptyResponse.ok && emptyGroupsResponse.ok) {
     console.log('✅ Empty listings handled correctly');
@@ -621,16 +618,13 @@ async function testPlaylistItemById() {
 }
 
 async function testPlaylistItemsByGroup() {
-  if (!createdPlaylistGroupId) {
-    console.log('\n⚠️  Skipping playlist items by group test - no playlist group ID available');
+  if (!createdChannelId) {
+    console.log('\n⚠️  Skipping playlist items by group test - no channel ID available');
     return true;
   }
 
-  console.log('\n📂 Testing GET /api/v1/playlist-items?playlist-group={id}...');
-  const response = await makeRequest(
-    'GET',
-    `/api/v1/playlist-items?playlist-group=${createdPlaylistGroupId}`
-  );
+  console.log('\n📂 Testing GET /api/v1/playlist-items?channel={id}...');
+  const response = await makeRequest('GET', `/api/v1/playlist-items?channel=${createdChannelId}`);
 
   if (response.ok) {
     console.log('✅ Playlist items retrieved by group successfully');
@@ -656,11 +650,11 @@ async function testPlaylistItemsByGroup() {
 }
 
 async function testPlaylistItemsDoesNotRequiredParameter() {
-  console.log('\n🚫 Testing playlist items endpoint does not require playlist-group parameter...');
+  console.log('\n🚫 Testing playlist items endpoint does not require channel parameter...');
   const response = await makeRequest('GET', '/api/v1/playlist-items');
 
   if (response.status === 200) {
-    console.log('✅ Correctly returned 200 without playlist-group parameter');
+    console.log('✅ Correctly returned 200 without channel parameter');
   } else {
     console.log(`❌ Expected 200, got ${response.status}`);
     return false;
@@ -683,17 +677,15 @@ async function testPlaylistItemsInvalidIds() {
     allCorrect = false;
   }
 
-  // Test invalid playlist group ID format
+  // Test invalid channel ID format
   const invalidGroupResponse = await makeRequest(
     'GET',
-    '/api/v1/playlist-items?playlist-group=invalid@id'
+    '/api/v1/playlist-items?channel=invalid@id'
   );
   if (invalidGroupResponse.status === 400) {
-    console.log('✅ Correctly rejected invalid playlist group ID format');
+    console.log('✅ Correctly rejected invalid channel ID format');
   } else {
-    console.log(
-      `❌ Expected 400 for invalid playlist group ID, got ${invalidGroupResponse.status}`
-    );
+    console.log(`❌ Expected 400 for invalid channel ID, got ${invalidGroupResponse.status}`);
     allCorrect = false;
   }
 
@@ -715,8 +707,8 @@ async function testPlaylistItemsInvalidIds() {
 }
 
 async function testPlaylistItemsPagination() {
-  if (!createdPlaylistGroupId) {
-    console.log('\n⚠️  Skipping playlist items pagination test - no playlist group ID available');
+  if (!createdChannelId) {
+    console.log('\n⚠️  Skipping playlist items pagination test - no channel ID available');
     return true;
   }
 
@@ -725,7 +717,7 @@ async function testPlaylistItemsPagination() {
   // Test with limit
   const limitResponse = await makeRequest(
     'GET',
-    `/api/v1/playlist-items?playlist-group=${createdPlaylistGroupId}&limit=1`
+    `/api/v1/playlist-items?channel=${createdChannelId}&limit=1`
   );
 
   if (limitResponse.ok) {
@@ -737,7 +729,7 @@ async function testPlaylistItemsPagination() {
       if (result.cursor && result.hasMore) {
         const cursorResponse = await makeRequest(
           'GET',
-          `/api/v1/playlist-items?playlist-group=${createdPlaylistGroupId}&limit=1&cursor=${encodeURIComponent(result.cursor)}`
+          `/api/v1/playlist-items?channel=${createdChannelId}&limit=1&cursor=${encodeURIComponent(result.cursor)}`
         );
         if (cursorResponse.ok) {
           console.log('✅ Cursor pagination working correctly for playlist items');
@@ -1067,15 +1059,15 @@ async function testPlaylistSortingDefault() {
   return true;
 }
 
-async function testPlaylistGroupSorting() {
-  console.log('\n📂 Testing playlist group sorting...');
+async function testChannelSorting() {
+  console.log('\n📂 Testing channel sorting...');
 
   // Test both asc and desc for groups
-  const ascResponse = await makeRequest('GET', '/api/v1/playlist-groups?sort=asc&limit=10');
-  const descResponse = await makeRequest('GET', '/api/v1/playlist-groups?sort=desc&limit=10');
+  const ascResponse = await makeRequest('GET', '/api/v1/channels?sort=asc&limit=10');
+  const descResponse = await makeRequest('GET', '/api/v1/channels?sort=desc&limit=10');
 
   if (ascResponse.ok && descResponse.ok) {
-    console.log('✅ Playlist group sorting endpoints are accessible');
+    console.log('✅ Channel sorting endpoints are accessible');
 
     const ascResult = ascResponse.data;
     const descResult = descResponse.data;
@@ -1093,9 +1085,9 @@ async function testPlaylistGroupSorting() {
       }
 
       if (isAscending) {
-        console.log('✅ Playlist groups correctly sorted in ascending order');
+        console.log('✅ Channels correctly sorted in ascending order');
       } else {
-        console.log('❌ Playlist groups NOT in ascending order');
+        console.log('❌ Channels NOT in ascending order');
         return false;
       }
     }
@@ -1113,18 +1105,18 @@ async function testPlaylistGroupSorting() {
       }
 
       if (isDescending) {
-        console.log('✅ Playlist groups correctly sorted in descending order');
+        console.log('✅ Channels correctly sorted in descending order');
       } else {
-        console.log('❌ Playlist groups NOT in descending order');
+        console.log('❌ Channels NOT in descending order');
         return false;
       }
     }
 
     if ((ascResult.items?.length || 0) <= 1 && (descResult.items?.length || 0) <= 1) {
-      console.log('ℹ️  Not enough playlist groups to verify sorting order');
+      console.log('ℹ️  Not enough channels to verify sorting order');
     }
   } else {
-    console.log('❌ Failed to test playlist group sorting');
+    console.log('❌ Failed to test channels sorting');
     return false;
   }
 
@@ -1210,11 +1202,11 @@ async function runTests() {
     { name: 'Get Playlist by UUID', fn: testGetPlaylistByUUID },
     { name: 'Get Playlist by Slug', fn: testGetPlaylistBySlug },
     { name: 'Update Playlist (Slug Regeneration)', fn: testUpdatePlaylist },
-    { name: 'Create Playlist Group (UUID + Slug)', fn: testCreatePlaylistGroup },
-    { name: 'List Playlist Groups', fn: testListPlaylistGroups },
-    { name: 'Get Playlist Group by UUID', fn: testGetPlaylistGroupByUUID },
-    { name: 'Get Playlist Group by Slug', fn: testGetPlaylistGroupBySlug },
-    { name: 'Playlist Group Filtering', fn: testPlaylistGroupFiltering },
+    { name: 'Create Channel (UUID + Slug)', fn: testCreateChannel },
+    { name: 'List Channels', fn: testListChannels },
+    { name: 'Get Channel by UUID', fn: testGetChannelByUUID },
+    { name: 'Get Channel by Slug', fn: testGetChannelBySlug },
+    { name: 'Channels Filtering', fn: testChannelFiltering },
     { name: 'Get Playlist Item by ID', fn: testPlaylistItemById },
     { name: 'List Playlist Items by Group', fn: testPlaylistItemsByGroup },
     {
@@ -1230,7 +1222,7 @@ async function runTests() {
     { name: 'Playlist Sorting (Ascending)', fn: testPlaylistSortingAscending },
     { name: 'Playlist Sorting (Descending)', fn: testPlaylistSortingDescending },
     { name: 'Playlist Sorting (Default)', fn: testPlaylistSortingDefault },
-    { name: 'Playlist Group Sorting', fn: testPlaylistGroupSorting },
+    { name: 'Channels Sorting', fn: testChannelSorting },
     { name: 'Playlist Item Sorting', fn: testPlaylistItemSorting },
   ];
 

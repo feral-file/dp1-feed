@@ -388,7 +388,7 @@ describe('CloudFlareKVStorage', () => {
 describe('CloudFlareStorageProvider', () => {
   let provider: CloudFlareStorageProvider;
   let mockPlaylistKV: any;
-  let mockPlaylistGroupKV: any;
+  let mockChannelKV: any;
   let mockPlaylistItemKV: any;
 
   beforeEach(() => {
@@ -402,7 +402,7 @@ describe('CloudFlareStorageProvider', () => {
       list: vi.fn(),
     };
 
-    mockPlaylistGroupKV = {
+    mockChannelKV = {
       get: vi.fn(),
       put: vi.fn(),
       delete: vi.fn(),
@@ -416,11 +416,7 @@ describe('CloudFlareStorageProvider', () => {
       list: vi.fn(),
     };
 
-    provider = new CloudFlareStorageProvider(
-      mockPlaylistKV,
-      mockPlaylistGroupKV,
-      mockPlaylistItemKV
-    );
+    provider = new CloudFlareStorageProvider(mockPlaylistKV, mockChannelKV, mockPlaylistItemKV);
   });
 
   describe('constructor', () => {
@@ -460,33 +456,33 @@ describe('CloudFlareStorageProvider', () => {
     });
   });
 
-  describe('getPlaylistGroupStorage', () => {
-    it('should return a CloudFlareKVStorage instance for playlist groups', () => {
-      const storage = provider.getPlaylistGroupStorage();
+  describe('getChannelStorage', () => {
+    it('should return a CloudFlareKVStorage instance for channels', () => {
+      const storage = provider.getChannelStorage();
 
       expect(storage).toBeInstanceOf(CloudFlareKVStorage);
     });
 
     it('should return the same instance on multiple calls', () => {
-      const storage1 = provider.getPlaylistGroupStorage();
-      const storage2 = provider.getPlaylistGroupStorage();
+      const storage1 = provider.getChannelStorage();
+      const storage2 = provider.getChannelStorage();
 
       expect(storage1).toBe(storage2);
     });
 
-    it('should allow operations on playlist group storage', async () => {
-      const storage = provider.getPlaylistGroupStorage();
+    it('should allow operations on channel storage', async () => {
+      const storage = provider.getChannelStorage();
       const key = 'group-1';
       const value = 'group-data';
 
-      mockPlaylistGroupKV.put.mockResolvedValue(undefined);
-      mockPlaylistGroupKV.get.mockResolvedValue(value);
+      mockChannelKV.put.mockResolvedValue(undefined);
+      mockChannelKV.get.mockResolvedValue(value);
 
       await storage.put(key, value);
       const result = await storage.get(key);
 
-      expect(mockPlaylistGroupKV.put).toHaveBeenCalledWith(key, value);
-      expect(mockPlaylistGroupKV.get).toHaveBeenCalledWith(key, undefined);
+      expect(mockChannelKV.put).toHaveBeenCalledWith(key, value);
+      expect(mockChannelKV.get).toHaveBeenCalledWith(key, undefined);
       expect(result).toBe(value);
     });
   });
@@ -525,7 +521,7 @@ describe('CloudFlareStorageProvider', () => {
   describe('integration tests', () => {
     it('should work with all storage types independently', async () => {
       const playlistStorage = provider.getPlaylistStorage();
-      const groupStorage = provider.getPlaylistGroupStorage();
+      const groupStorage = provider.getChannelStorage();
       const itemStorage = provider.getPlaylistItemStorage();
 
       // Test playlist storage
@@ -535,8 +531,8 @@ describe('CloudFlareStorageProvider', () => {
       const playlistResult = await playlistStorage.get('playlist-1');
 
       // Test group storage
-      mockPlaylistGroupKV.put.mockResolvedValue(undefined);
-      mockPlaylistGroupKV.get.mockResolvedValue('group-value');
+      mockChannelKV.put.mockResolvedValue(undefined);
+      mockChannelKV.get.mockResolvedValue('group-value');
       await groupStorage.put('group-1', 'group-value');
       const groupResult = await groupStorage.get('group-1');
 
@@ -553,15 +549,15 @@ describe('CloudFlareStorageProvider', () => {
 
     it('should handle errors independently across storage types', async () => {
       const playlistStorage = provider.getPlaylistStorage();
-      const groupStorage = provider.getPlaylistGroupStorage();
+      const groupStorage = provider.getChannelStorage();
       const itemStorage = provider.getPlaylistItemStorage();
 
       // Playlist storage fails
       mockPlaylistKV.put.mockRejectedValue(new Error('Playlist put failed'));
 
       // Group storage succeeds
-      mockPlaylistGroupKV.put.mockResolvedValue(undefined);
-      mockPlaylistGroupKV.get.mockResolvedValue('group-value');
+      mockChannelKV.put.mockResolvedValue(undefined);
+      mockChannelKV.get.mockResolvedValue('group-value');
 
       // Item storage succeeds
       mockPlaylistItemKV.put.mockResolvedValue(undefined);

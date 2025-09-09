@@ -28,14 +28,14 @@ vi.mock('./queue/processor', () => ({
 }));
 
 import { queueWriteOperation, generateMessageId, processWriteOperations } from './queue/processor';
-import { savePlaylist, savePlaylistGroup } from './storage';
+import { savePlaylist, saveChannel } from './storage';
 
 // Constants for test playlist IDs
 const playlistId1 = '550e8400-e29b-41d4-a716-446655440000';
 const playlistId2 = '550e8400-e29b-41d4-a716-446655440002';
 const playlistSlug1 = 'test-playlist-1';
 const playlistSlug2 = 'test-playlist-2';
-const playlistGroupId = '550e8400-e29b-41d4-a716-446655440001';
+const channelId = '550e8400-e29b-41d4-a716-446655440001';
 
 // Helper function to create a simple mock playlist response
 const createMockPlaylistResponse = (id: string, slug: string) =>
@@ -62,7 +62,7 @@ const createMockPlaylistResponse = (id: string, slug: string) =>
       }),
   }) as Response;
 
-// Helper function to mock fetch for the standard test playlist group URLs
+// Helper function to mock fetch for the standard test channel URLs
 const mockStandardPlaylistFetch = () => {
   global.fetch = vi.fn((url: string) => {
     if (url.includes(playlistSlug1)) {
@@ -98,7 +98,7 @@ const validPlaylist = {
   ],
 };
 
-const validPlaylistGroup = {
+const validChannel = {
   title: 'Test Exhibition',
   curator: 'Test Curator',
   playlists: ['https://example.com/playlists/test-playlist-1'],
@@ -125,11 +125,11 @@ describe('DP-1 Feed Operator API', () => {
           case 'update_playlist':
             await savePlaylist(message.data.playlist, env, true);
             break;
-          case 'create_playlist_group':
-            await savePlaylistGroup(message.data.playlistGroup, env);
+          case 'create_channel':
+            await saveChannel(message.data.channel, env);
             break;
-          case 'update_playlist_group':
-            await savePlaylistGroup(message.data.playlistGroup, env, true);
+          case 'update_channel':
+            await saveChannel(message.data.channel, env, true);
             break;
         }
       } catch (error) {
@@ -272,7 +272,7 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.message).toContain('id, slug');
     });
 
-    it('should reject playlist group updates with protected fields (PATCH)', async () => {
+    it('should reject channel updates with protected fields (PATCH)', async () => {
       const invalidUpdateData = {
         id: 'custom-id', // Protected field
         slug: 'custom-slug', // Protected field
@@ -281,7 +281,7 @@ describe('DP-1 Feed Operator API', () => {
         playlists: ['https://example.com/playlists/test-playlist-2'],
       };
 
-      const req = new Request('http://localhost/api/v1/playlist-groups/test-id', {
+      const req = new Request('http://localhost/api/v1/channels/test-id', {
         method: 'PATCH',
         headers: validAuth,
         body: JSON.stringify(invalidUpdateData),
@@ -429,16 +429,16 @@ describe('DP-1 Feed Operator API', () => {
       }
     });
 
-    it('should accept valid UUIDs in playlist group endpoints', async () => {
-      const req = new Request(`http://localhost/api/v1/playlist-groups/${playlistGroupId}`, {
+    it('should accept valid UUIDs in channel endpoints', async () => {
+      const req = new Request(`http://localhost/api/v1/channels/${channelId}`, {
         headers: validAuth,
       });
       const response = await app.fetch(req, testEnv);
       expect(response.status).toBe(404); // Not found is OK, means UUID was validated
     });
 
-    it('should accept valid slugs in playlist group endpoints', async () => {
-      const req = new Request('http://localhost/api/v1/playlist-groups/test-exhibition-5678', {
+    it('should accept valid slugs in channel endpoints', async () => {
+      const req = new Request('http://localhost/api/v1/channels/test-exhibition-5678', {
         headers: validAuth,
       });
       const response = await app.fetch(req, testEnv);
@@ -1146,14 +1146,14 @@ describe('DP-1 Feed Operator API', () => {
     });
   });
 
-  describe('Playlist Groups API', () => {
+  describe('Channels API', () => {
     const validAuth = {
       Authorization: 'Bearer test-secret-key',
       'Content-Type': 'application/json',
     };
 
-    it('GET /playlist-groups returns paginated result initially', async () => {
-      const req = new Request('http://localhost/api/v1/playlist-groups', {
+    it('GET /channels returns paginated result initially', async () => {
+      const req = new Request('http://localhost/api/v1/channels', {
         headers: validAuth,
       });
       const response = await app.fetch(req, testEnv);
@@ -1166,14 +1166,11 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.items).toHaveLength(0);
     });
 
-    it('GET /playlist-groups/:id returns 404 for non-existent group', async () => {
-      const nonExistentPlaylistGroupId = '550e8400-e29b-41d4-a716-446655440003';
-      const req = new Request(
-        `http://localhost/api/v1/playlist-groups/${nonExistentPlaylistGroupId}`,
-        {
-          headers: validAuth,
-        }
-      );
+    it('GET /channels/:id returns 404 for non-existent group', async () => {
+      const nonExistentChannelId = '550e8400-e29b-41d4-a716-446655440003';
+      const req = new Request(`http://localhost/api/v1/channels/${nonExistentChannelId}`, {
+        headers: validAuth,
+      });
       const response = await app.fetch(req, testEnv);
       expect(response.status).toBe(404);
 
@@ -1181,8 +1178,8 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.error).toBe('not_found');
     });
 
-    it('POST /playlist-groups with empty data returns 400', async () => {
-      const req = new Request('http://localhost/api/v1/playlist-groups', {
+    it('POST /channels with empty data returns 400', async () => {
+      const req = new Request('http://localhost/api/v1/channels', {
         method: 'POST',
         headers: validAuth,
         body: JSON.stringify({
@@ -1196,8 +1193,8 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.error).toBe('validation_error');
     });
 
-    it('POST /playlist-groups with invalid data returns 400', async () => {
-      const req = new Request('http://localhost/api/v1/playlist-groups', {
+    it('POST /channels with invalid data returns 400', async () => {
+      const req = new Request('http://localhost/api/v1/channels', {
         method: 'POST',
         headers: validAuth,
         body: 'not json',
@@ -1209,14 +1206,14 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.error).toBe('invalid_json');
     });
 
-    it('POST /playlist-groups should create group with server-generated ID and slug', async () => {
+    it('POST /channels should create group with server-generated ID and slug', async () => {
       // Mock fetch for external playlist validation
       mockStandardPlaylistFetch();
 
-      const req = new Request('http://localhost/api/v1/playlist-groups', {
+      const req = new Request('http://localhost/api/v1/channels', {
         method: 'POST',
         headers: validAuth,
-        body: JSON.stringify(validPlaylistGroup),
+        body: JSON.stringify(validChannel),
       });
       const response = await app.fetch(req, testEnv);
       expect(response.status).toBe(201);
@@ -1229,9 +1226,9 @@ describe('DP-1 Feed Operator API', () => {
       // Verify queue operation was called
       expect(queueWriteOperation).toHaveBeenCalledWith(
         expect.objectContaining({
-          operation: 'create_playlist_group',
+          operation: 'create_channel',
           data: expect.objectContaining({
-            playlistGroup: expect.objectContaining({
+            channel: expect.objectContaining({
               id: data.id,
               title: 'Test Exhibition',
             }),
@@ -1241,15 +1238,15 @@ describe('DP-1 Feed Operator API', () => {
       );
     });
 
-    it('PATCH /playlist-groups/:id should update group and preserve slug', async () => {
+    it('PATCH /channels/:id should update group and preserve slug', async () => {
       // Mock fetch for external playlist validation
       mockStandardPlaylistFetch();
 
-      // First create a playlist group
-      const createReq = new Request('http://localhost/api/v1/playlist-groups', {
+      // First create a channel
+      const createReq = new Request('http://localhost/api/v1/channels', {
         method: 'POST',
         headers: validAuth,
-        body: JSON.stringify(validPlaylistGroup),
+        body: JSON.stringify(validChannel),
       });
       const createResponse = await app.fetch(createReq, testEnv);
       expect(createResponse.status).toBe(201);
@@ -1262,7 +1259,7 @@ describe('DP-1 Feed Operator API', () => {
         title: 'Updated Exhibition Title',
       };
 
-      const updateReq = new Request(`http://localhost/api/v1/playlist-groups/${groupId}`, {
+      const updateReq = new Request(`http://localhost/api/v1/channels/${groupId}`, {
         method: 'PATCH',
         headers: validAuth,
         body: JSON.stringify(updatedGroup),
@@ -1278,10 +1275,10 @@ describe('DP-1 Feed Operator API', () => {
       // Verify queue operation was called for update
       expect(queueWriteOperation).toHaveBeenCalledWith(
         expect.objectContaining({
-          operation: 'update_playlist_group',
+          operation: 'update_channel',
           data: expect.objectContaining({
-            groupId: groupId,
-            playlistGroup: expect.objectContaining({
+            channelId: groupId,
+            channel: expect.objectContaining({
               id: groupId,
               title: 'Updated Exhibition Title',
             }),
@@ -1291,15 +1288,15 @@ describe('DP-1 Feed Operator API', () => {
       );
     });
 
-    it('PUT /playlist-groups/:id should update group and preserve slug', async () => {
+    it('PUT /channels/:id should update group and preserve slug', async () => {
       // Mock fetch for external playlist validation
       mockStandardPlaylistFetch();
 
-      // First create a playlist group
-      const createReq = new Request('http://localhost/api/v1/playlist-groups', {
+      // First create a channel
+      const createReq = new Request('http://localhost/api/v1/channels', {
         method: 'POST',
         headers: validAuth,
-        body: JSON.stringify(validPlaylistGroup),
+        body: JSON.stringify(validChannel),
       });
       const createResponse = await app.fetch(createReq, testEnv);
       expect(createResponse.status).toBe(201);
@@ -1309,11 +1306,11 @@ describe('DP-1 Feed Operator API', () => {
 
       // Then update it with new title
       const updatedGroup = {
-        ...validPlaylistGroup,
+        ...validChannel,
         title: 'Updated Exhibition Title',
       };
 
-      const updateReq = new Request(`http://localhost/api/v1/playlist-groups/${groupId}`, {
+      const updateReq = new Request(`http://localhost/api/v1/channels/${groupId}`, {
         method: 'PUT',
         headers: validAuth,
         body: JSON.stringify(updatedGroup),
@@ -1329,10 +1326,10 @@ describe('DP-1 Feed Operator API', () => {
       // Verify queue operation was called for update
       expect(queueWriteOperation).toHaveBeenCalledWith(
         expect.objectContaining({
-          operation: 'update_playlist_group',
+          operation: 'update_channel',
           data: expect.objectContaining({
-            groupId: groupId,
-            playlistGroup: expect.objectContaining({
+            channelId: groupId,
+            channel: expect.objectContaining({
               id: groupId,
               title: 'Updated Exhibition Title',
             }),
@@ -1342,21 +1339,21 @@ describe('DP-1 Feed Operator API', () => {
       );
     });
 
-    it('PUT /playlist-groups/:id with empty data returns 400', async () => {
+    it('PUT /channels/:id with empty data returns 400', async () => {
       // Mock fetch for external playlist validation
       mockStandardPlaylistFetch();
 
-      // First create a playlist group
-      const createReq = new Request('http://localhost/api/v1/playlist-groups', {
+      // First create a channel
+      const createReq = new Request('http://localhost/api/v1/channels', {
         method: 'POST',
         headers: validAuth,
-        body: JSON.stringify(validPlaylistGroup),
+        body: JSON.stringify(validChannel),
       });
       const createResponse = await app.fetch(createReq, testEnv);
       const createdGroup = await createResponse.json();
 
       // Try update with empty data (invalid for PUT)
-      const updateReq = new Request(`http://localhost/api/v1/playlist-groups/${createdGroup.id}`, {
+      const updateReq = new Request(`http://localhost/api/v1/channels/${createdGroup.id}`, {
         method: 'PUT',
         headers: validAuth,
         body: JSON.stringify({}),
@@ -1368,21 +1365,21 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.error).toBe('validation_error');
     });
 
-    it('PATCH /playlist-groups/:id with empty data should be a no-op and return 200', async () => {
+    it('PATCH /channels/:id with empty data should be a no-op and return 200', async () => {
       // Mock fetch for external playlist validation
       mockStandardPlaylistFetch();
 
-      // First create a playlist group
-      const createReq = new Request('http://localhost/api/v1/playlist-groups', {
+      // First create a channel
+      const createReq = new Request('http://localhost/api/v1/channels', {
         method: 'POST',
         headers: validAuth,
-        body: JSON.stringify(validPlaylistGroup),
+        body: JSON.stringify(validChannel),
       });
       const createResponse = await app.fetch(createReq, testEnv);
       const createdGroup = await createResponse.json();
 
       // No-op PATCH
-      const patchReq = new Request(`http://localhost/api/v1/playlist-groups/${createdGroup.id}`, {
+      const patchReq = new Request(`http://localhost/api/v1/channels/${createdGroup.id}`, {
         method: 'PATCH',
         headers: validAuth,
         body: JSON.stringify({}),
@@ -1398,21 +1395,21 @@ describe('DP-1 Feed Operator API', () => {
       expect(updated.playlists).toEqual(createdGroup.playlists);
     });
 
-    it('PUT /playlist-groups/:id with invalid data returns 400', async () => {
+    it('PUT /channels/:id with invalid data returns 400', async () => {
       // Mock fetch for external playlist validation
       mockStandardPlaylistFetch();
 
-      // First create a playlist group
-      const createReq = new Request('http://localhost/api/v1/playlist-groups', {
+      // First create a channel
+      const createReq = new Request('http://localhost/api/v1/channels', {
         method: 'POST',
         headers: validAuth,
-        body: JSON.stringify(validPlaylistGroup),
+        body: JSON.stringify(validChannel),
       });
       const createResponse = await app.fetch(createReq, testEnv);
       const createdGroup = await createResponse.json();
 
       // Try to update with invalid JSON
-      const updateReq = new Request(`http://localhost/api/v1/playlist-groups/${createdGroup.id}`, {
+      const updateReq = new Request(`http://localhost/api/v1/channels/${createdGroup.id}`, {
         method: 'PUT',
         headers: validAuth,
         body: 'invalid json',
@@ -1424,21 +1421,21 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.error).toBe('invalid_json');
     });
 
-    it('PATCH /playlist-groups/:id with invalid data returns 400', async () => {
+    it('PATCH /channels/:id with invalid data returns 400', async () => {
       // Mock fetch for external playlist validation
       mockStandardPlaylistFetch();
 
-      // First create a playlist group
-      const createReq = new Request('http://localhost/api/v1/playlist-groups', {
+      // First create a channel
+      const createReq = new Request('http://localhost/api/v1/channels', {
         method: 'POST',
         headers: validAuth,
-        body: JSON.stringify(validPlaylistGroup),
+        body: JSON.stringify(validChannel),
       });
       const createResponse = await app.fetch(createReq, testEnv);
       const createdGroup = await createResponse.json();
 
       // Try to update with invalid JSON
-      const updateReq = new Request(`http://localhost/api/v1/playlist-groups/${createdGroup.id}`, {
+      const updateReq = new Request(`http://localhost/api/v1/channels/${createdGroup.id}`, {
         method: 'PATCH',
         headers: validAuth,
         body: 'invalid json',
@@ -1450,8 +1447,8 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.error).toBe('invalid_json');
     });
 
-    it('PUT /playlist-groups/:id with invalid group ID returns 400', async () => {
-      const updateReq = new Request('http://localhost/api/v1/playlist-groups/invalid@group!id', {
+    it('PUT /channels/:id with invalid group ID returns 400', async () => {
+      const updateReq = new Request('http://localhost/api/v1/channels/invalid@group!id', {
         method: 'PUT',
         headers: validAuth,
         body: JSON.stringify({
@@ -1466,12 +1463,12 @@ describe('DP-1 Feed Operator API', () => {
       const data = await updateResponse.json();
       expect(data.error).toBe('invalid_id');
       expect(data.message).toBe(
-        'Playlist group ID must be a valid UUID or slug (alphanumeric with hyphens)'
+        'Channel ID must be a valid UUID or slug (alphanumeric with hyphens)'
       );
     });
 
-    it('PATCH /playlist-groups/:id with invalid group ID returns 400', async () => {
-      const updateReq = new Request('http://localhost/api/v1/playlist-groups/invalid@group!id', {
+    it('PATCH /channels/:id with invalid group ID returns 400', async () => {
+      const updateReq = new Request('http://localhost/api/v1/channels/invalid@group!id', {
         method: 'PATCH',
         headers: validAuth,
         body: JSON.stringify({
@@ -1486,12 +1483,12 @@ describe('DP-1 Feed Operator API', () => {
       const data = await updateResponse.json();
       expect(data.error).toBe('invalid_id');
       expect(data.message).toBe(
-        'Playlist group ID must be a valid UUID or slug (alphanumeric with hyphens)'
+        'Channel ID must be a valid UUID or slug (alphanumeric with hyphens)'
       );
     });
 
-    it('PUT /playlist-groups/:id with non-existent group ID returns 400', async () => {
-      const updateReq = new Request('http://localhost/api/v1/playlist-groups/test-group-abcwer', {
+    it('PUT /channels/:id with non-existent group ID returns 400', async () => {
+      const updateReq = new Request('http://localhost/api/v1/channels/test-group-abcwer', {
         method: 'PUT',
         headers: validAuth,
         body: JSON.stringify({
@@ -1505,11 +1502,11 @@ describe('DP-1 Feed Operator API', () => {
 
       const data = await updateResponse.json();
       expect(data.error).toBe('not_found');
-      expect(data.message).toBe('Playlist group not found');
+      expect(data.message).toBe('Channel not found');
     });
 
-    it('PATCH /playlist-groups/:id with non-existent group ID returns 400', async () => {
-      const updateReq = new Request('http://localhost/api/v1/playlist-groups/test-group-abcwer', {
+    it('PATCH /channels/:id with non-existent group ID returns 400', async () => {
+      const updateReq = new Request('http://localhost/api/v1/channels/test-group-abcwer', {
         method: 'PATCH',
         headers: validAuth,
         body: JSON.stringify({
@@ -1523,23 +1520,23 @@ describe('DP-1 Feed Operator API', () => {
 
       const data = await updateResponse.json();
       expect(data.error).toBe('not_found');
-      expect(data.message).toBe('Playlist group not found');
+      expect(data.message).toBe('Channel not found');
     });
 
-    it('GET /playlist-groups/:id with invalid group ID returns 400', async () => {
-      const req = new Request('http://localhost/api/v1/playlist-groups/invalid@group!id');
+    it('GET /channels/:id with invalid group ID returns 400', async () => {
+      const req = new Request('http://localhost/api/v1/channels/invalid@group!id');
       const response = await app.fetch(req, testEnv);
       expect(response.status).toBe(400);
 
       const data = await response.json();
       expect(data.error).toBe('invalid_id');
       expect(data.message).toBe(
-        'Playlist group ID must be a valid UUID or slug (alphanumeric with hyphens)'
+        'Channel ID must be a valid UUID or slug (alphanumeric with hyphens)'
       );
     });
 
-    it('GET /playlist-groups with limit below minimum returns 400', async () => {
-      const req = new Request('http://localhost/api/v1/playlist-groups?limit=0');
+    it('GET /channels with limit below minimum returns 400', async () => {
+      const req = new Request('http://localhost/api/v1/channels?limit=0');
       const response = await app.fetch(req, testEnv);
       expect(response.status).toBe(400);
 
@@ -1548,8 +1545,8 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.message).toBe('Limit must be between 1 and 100');
     });
 
-    it('GET /playlist-groups with limit above maximum returns 400', async () => {
-      const req = new Request('http://localhost/api/v1/playlist-groups?limit=101');
+    it('GET /channels with limit above maximum returns 400', async () => {
+      const req = new Request('http://localhost/api/v1/channels?limit=101');
       const response = await app.fetch(req, testEnv);
       expect(response.status).toBe(400);
 
@@ -1559,35 +1556,35 @@ describe('DP-1 Feed Operator API', () => {
     });
 
     describe('Queue Error Handling', () => {
-      it('should handle queue errors gracefully for playlist group creation', async () => {
+      it('should handle queue errors gracefully for channel creation', async () => {
         // Mock fetch for external playlist validation
         mockStandardPlaylistFetch();
 
         // Mock queueWriteOperation to fail
         vi.mocked(queueWriteOperation).mockRejectedValueOnce(new Error('Queue failure'));
 
-        const req = new Request('http://localhost/api/v1/playlist-groups', {
+        const req = new Request('http://localhost/api/v1/channels', {
           method: 'POST',
           headers: validAuth,
-          body: JSON.stringify(validPlaylistGroup),
+          body: JSON.stringify(validChannel),
         });
         const response = await app.fetch(req, testEnv);
         expect(response.status).toBe(500);
 
         const data = await response.json();
         expect(data.error).toBe('queue_error');
-        expect(data.message).toBe('Failed to queue playlist group for processing');
+        expect(data.message).toBe('Failed to queue channel for processing');
       });
 
-      it('should handle queue errors gracefully for playlist group updates', async () => {
+      it('should handle queue errors gracefully for channel updates', async () => {
         // Mock fetch for external playlist validation
         mockStandardPlaylistFetch();
 
-        // First create a playlist group
-        const createReq = new Request('http://localhost/api/v1/playlist-groups', {
+        // First create a channel
+        const createReq = new Request('http://localhost/api/v1/channels', {
           method: 'POST',
           headers: validAuth,
-          body: JSON.stringify(validPlaylistGroup),
+          body: JSON.stringify(validChannel),
         });
         const createResponse = await app.fetch(createReq, testEnv);
         const createdGroup = await createResponse.json();
@@ -1601,33 +1598,30 @@ describe('DP-1 Feed Operator API', () => {
           playlists: ['https://example.com/playlists/test-playlist-1'],
         };
 
-        const updateReq = new Request(
-          `http://localhost/api/v1/playlist-groups/${createdGroup.id}`,
-          {
-            method: 'PUT',
-            headers: validAuth,
-            body: JSON.stringify(updateData),
-          }
-        );
+        const updateReq = new Request(`http://localhost/api/v1/channels/${createdGroup.id}`, {
+          method: 'PUT',
+          headers: validAuth,
+          body: JSON.stringify(updateData),
+        });
         const updateResponse = await app.fetch(updateReq, testEnv);
         expect(updateResponse.status).toBe(500);
 
         const data = await updateResponse.json();
         expect(data.error).toBe('queue_error');
-        expect(data.message).toBe('Failed to queue playlist group for processing');
+        expect(data.message).toBe('Failed to queue channel for processing');
       });
     });
 
     describe('Unexpected Errors', () => {
-      it('should return internal_error for unexpected failure during playlist group update (PATCH)', async () => {
+      it('should return internal_error for unexpected failure during channel update (PATCH)', async () => {
         // Mock fetch for external playlist validation
         mockStandardPlaylistFetch();
 
-        // Create a playlist group first
-        const createReq = new Request('http://localhost/api/v1/playlist-groups', {
+        // Create a channel first
+        const createReq = new Request('http://localhost/api/v1/channels', {
           method: 'POST',
           headers: validAuth,
-          body: JSON.stringify(validPlaylistGroup),
+          body: JSON.stringify(validChannel),
         });
         const createResponse = await app.fetch(createReq, testEnv);
         const createdGroup = await createResponse.json();
@@ -1641,31 +1635,28 @@ describe('DP-1 Feed Operator API', () => {
           title: 'Updated Exhibition Title',
         };
 
-        const updateReq = new Request(
-          `http://localhost/api/v1/playlist-groups/${createdGroup.id}`,
-          {
-            method: 'PATCH',
-            headers: validAuth,
-            body: JSON.stringify(updateData),
-          }
-        );
+        const updateReq = new Request(`http://localhost/api/v1/channels/${createdGroup.id}`, {
+          method: 'PATCH',
+          headers: validAuth,
+          body: JSON.stringify(updateData),
+        });
         const updateResponse = await app.fetch(updateReq, testEnv);
         expect(updateResponse.status).toBe(500);
 
         const data = await updateResponse.json();
         expect(data.error).toBe('internal_error');
-        expect(data.message).toBe('Failed to update playlist group');
+        expect(data.message).toBe('Failed to update channel');
       });
 
-      it('should return internal_error for unexpected failure during playlist group update (PUT)', async () => {
+      it('should return internal_error for unexpected failure during channel update (PUT)', async () => {
         // Mock fetch for external playlist validation
         mockStandardPlaylistFetch();
 
-        // Create a playlist group first
-        const createReq = new Request('http://localhost/api/v1/playlist-groups', {
+        // Create a channel first
+        const createReq = new Request('http://localhost/api/v1/channels', {
           method: 'POST',
           headers: validAuth,
-          body: JSON.stringify(validPlaylistGroup),
+          body: JSON.stringify(validChannel),
         });
         const createResponse = await app.fetch(createReq, testEnv);
         const createdGroup = await createResponse.json();
@@ -1681,31 +1672,28 @@ describe('DP-1 Feed Operator API', () => {
           playlists: ['https://example.com/playlists/test-playlist-1'],
         };
 
-        const updateReq = new Request(
-          `http://localhost/api/v1/playlist-groups/${createdGroup.id}`,
-          {
-            method: 'PUT',
-            headers: validAuth,
-            body: JSON.stringify(updateData),
-          }
-        );
+        const updateReq = new Request(`http://localhost/api/v1/channels/${createdGroup.id}`, {
+          method: 'PUT',
+          headers: validAuth,
+          body: JSON.stringify(updateData),
+        });
         const updateResponse = await app.fetch(updateReq, testEnv);
         expect(updateResponse.status).toBe(500);
 
         const data = await updateResponse.json();
         expect(data.error).toBe('internal_error');
-        expect(data.message).toBe('Failed to update playlist group');
+        expect(data.message).toBe('Failed to update channel');
       });
     });
 
     describe('Queue Message Structure', () => {
-      it('should generate proper queue messages for playlist group creation', async () => {
+      it('should generate proper queue messages for channel creation', async () => {
         mockStandardPlaylistFetch();
 
-        const req = new Request('http://localhost/api/v1/playlist-groups', {
+        const req = new Request('http://localhost/api/v1/channels', {
           method: 'POST',
           headers: validAuth,
-          body: JSON.stringify(validPlaylistGroup),
+          body: JSON.stringify(validChannel),
         });
         await app.fetch(req, testEnv);
 
@@ -1713,9 +1701,9 @@ describe('DP-1 Feed Operator API', () => {
           expect.objectContaining({
             id: expect.any(String),
             timestamp: expect.any(String),
-            operation: 'create_playlist_group',
+            operation: 'create_channel',
             data: expect.objectContaining({
-              playlistGroup: expect.objectContaining({
+              channel: expect.objectContaining({
                 id: expect.any(String),
                 slug: expect.any(String),
                 title: 'Test Exhibition',
@@ -1806,18 +1794,18 @@ describe('DP-1 Feed Operator API', () => {
         expect(data2.cursor).toBeUndefined();
       });
 
-      it('should paginate playlist groups with limit and cursor', async () => {
+      it('should paginate channels with limit and cursor', async () => {
         // Mock fetch for external playlist validation
         mockStandardPlaylistFetch();
 
-        // Create multiple playlist groups
+        // Create multiple channels
         for (let i = 0; i < 5; i++) {
           const group = {
-            ...validPlaylistGroup,
+            ...validChannel,
             title: `Test Exhibition ${i}`,
           };
 
-          const req = new Request('http://localhost/api/v1/playlist-groups', {
+          const req = new Request('http://localhost/api/v1/channels', {
             method: 'POST',
             headers: validAuth,
             body: JSON.stringify(group),
@@ -1826,7 +1814,7 @@ describe('DP-1 Feed Operator API', () => {
         }
 
         // Test pagination
-        const req1 = new Request('http://localhost/api/v1/playlist-groups?limit=3');
+        const req1 = new Request('http://localhost/api/v1/channels?limit=3');
         const response1 = await app.fetch(req1, testEnv);
         expect(response1.status).toBe(200);
 
@@ -1867,21 +1855,21 @@ describe('DP-1 Feed Operator API', () => {
         expect(retrieved.slug).toBe(playlist.slug);
       });
 
-      it('should retrieve playlist group by slug', async () => {
+      it('should retrieve channel by slug', async () => {
         // Mock fetch for external playlist validation
         mockStandardPlaylistFetch();
 
-        // Create a playlist group
-        const req = new Request('http://localhost/api/v1/playlist-groups', {
+        // Create a channel
+        const req = new Request('http://localhost/api/v1/channels', {
           method: 'POST',
           headers: validAuth,
-          body: JSON.stringify(validPlaylistGroup),
+          body: JSON.stringify(validChannel),
         });
         const response = await app.fetch(req, testEnv);
         const group = await response.json();
 
         // Retrieve by slug
-        const getReq = new Request(`http://localhost/api/v1/playlist-groups/${group.slug}`);
+        const getReq = new Request(`http://localhost/api/v1/channels/${group.slug}`);
         const getResponse = await app.fetch(getReq, testEnv);
         expect(getResponse.status).toBe(200);
 
@@ -1925,11 +1913,11 @@ describe('DP-1 Feed Operator API', () => {
       });
     });
 
-    describe('Playlist Group Filtering', () => {
-      it('should filter playlists by playlist group', async () => {
+    describe('Channel Filtering', () => {
+      it('should filter playlists by channel', async () => {
         // Mock fetch for both initial and dynamic playlist URLs in this test
         global.fetch = vi.fn((url: string) => {
-          // Handle initial playlist group creation with test-playlist-1
+          // Handle initial channel creation with test-playlist-1
           if (url.includes('test-playlist-1')) {
             return Promise.resolve(createMockPlaylistResponse(playlistId1, playlistSlug1));
           }
@@ -1944,11 +1932,11 @@ describe('DP-1 Feed Operator API', () => {
           return Promise.resolve({ ok: false, status: 404 } as Response);
         }) as any;
 
-        // Create a playlist group first
-        const groupReq = new Request('http://localhost/api/v1/playlist-groups', {
+        // Create a channel first
+        const groupReq = new Request('http://localhost/api/v1/channels', {
           method: 'POST',
           headers: validAuth,
-          body: JSON.stringify(validPlaylistGroup),
+          body: JSON.stringify(validChannel),
         });
         const groupResponse = await app.fetch(groupReq, testEnv);
         const group = await groupResponse.json();
@@ -1988,17 +1976,15 @@ describe('DP-1 Feed Operator API', () => {
           ],
         };
 
-        const updateGroupReq = new Request(`http://localhost/api/v1/playlist-groups/${group.id}`, {
+        const updateGroupReq = new Request(`http://localhost/api/v1/channels/${group.id}`, {
           method: 'PUT',
           headers: validAuth,
           body: JSON.stringify(updatedGroup),
         });
         await app.fetch(updateGroupReq, testEnv);
 
-        // Test filtering playlists by playlist group
-        const filterReq = new Request(
-          `http://localhost/api/v1/playlists?playlist-group=${group.id}`
-        );
+        // Test filtering playlists by channel
+        const filterReq = new Request(`http://localhost/api/v1/playlists?channel=${group.id}`);
         const filterResponse = await app.fetch(filterReq, testEnv);
         expect(filterResponse.status).toBe(200);
 
@@ -2009,10 +1995,8 @@ describe('DP-1 Feed Operator API', () => {
         expect(filtered.items.map(p => p.id)).toContain(playlist2.id);
       });
 
-      it('should return empty result for non-existent playlist group filter', async () => {
-        const req = new Request(
-          'http://localhost/api/v1/playlists?playlist-group=non-existent-group'
-        );
+      it('should return empty result for non-existent channel filter', async () => {
+        const req = new Request('http://localhost/api/v1/playlists?channel=non-existent-group');
         const response = await app.fetch(req, testEnv);
         expect(response.status).toBe(200);
 
@@ -2089,13 +2073,13 @@ describe('DP-1 Feed Operator API', () => {
         expect(ascCreated).toBe(descCreated);
       });
 
-      it('GET /playlist-groups supports sort=asc|desc', async () => {
+      it('GET /channels supports sort=asc|desc', async () => {
         mockStandardPlaylistFetch();
         // Create two groups sequentially
-        const g1 = { ...validPlaylistGroup, title: 'G1' };
-        const g2 = { ...validPlaylistGroup, title: 'G2' };
+        const g1 = { ...validChannel, title: 'G1' };
+        const g2 = { ...validChannel, title: 'G2' };
         await app.fetch(
-          new Request('http://localhost/api/v1/playlist-groups', {
+          new Request('http://localhost/api/v1/channels', {
             method: 'POST',
             headers: validAuth,
             body: JSON.stringify(g1),
@@ -2103,7 +2087,7 @@ describe('DP-1 Feed Operator API', () => {
           testEnv
         );
         await app.fetch(
-          new Request('http://localhost/api/v1/playlist-groups', {
+          new Request('http://localhost/api/v1/channels', {
             method: 'POST',
             headers: validAuth,
             body: JSON.stringify(g2),
@@ -2112,7 +2096,7 @@ describe('DP-1 Feed Operator API', () => {
         );
 
         const ascRes = await app.fetch(
-          new Request('http://localhost/api/v1/playlist-groups?sort=asc&limit=10'),
+          new Request('http://localhost/api/v1/channels?sort=asc&limit=10'),
           testEnv
         );
         expect(ascRes.status).toBe(200);
@@ -2125,7 +2109,7 @@ describe('DP-1 Feed Operator API', () => {
         }
 
         const descRes = await app.fetch(
-          new Request('http://localhost/api/v1/playlist-groups?sort=desc&limit=10'),
+          new Request('http://localhost/api/v1/channels?sort=desc&limit=10'),
           testEnv
         );
         expect(descRes.status).toBe(200);
@@ -2144,7 +2128,7 @@ describe('DP-1 Feed Operator API', () => {
         expect(ascCreated).toBe(descCreated);
       });
 
-      it('GET /playlist-items supports sort=asc|desc with and without playlist-group filter', async () => {
+      it('GET /playlist-items supports sort=asc|desc with and without channel filter', async () => {
         // Create a playlist and a group that includes it
         const pr = await app.fetch(
           new Request('http://localhost/api/v1/playlists', {
@@ -2165,7 +2149,7 @@ describe('DP-1 Feed Operator API', () => {
         }) as any;
 
         const gr = await app.fetch(
-          new Request('http://localhost/api/v1/playlist-groups', {
+          new Request('http://localhost/api/v1/channels', {
             method: 'POST',
             headers: validAuth,
             body: JSON.stringify({
@@ -2187,9 +2171,7 @@ describe('DP-1 Feed Operator API', () => {
         expect(Array.isArray(asc.items)).toBe(true);
 
         const descRes = await app.fetch(
-          new Request(
-            `http://localhost/api/v1/playlist-items?playlist-group=${group.id}&sort=desc`
-          ),
+          new Request(`http://localhost/api/v1/playlist-items?channel=${group.id}&sort=desc`),
           testEnv
         );
         expect(descRes.status).toBe(200);
@@ -2206,7 +2188,7 @@ describe('DP-1 Feed Operator API', () => {
     };
 
     let createdPlaylist: any;
-    let createdPlaylistGroup: any;
+    let createdChannel: any;
 
     beforeEach(async () => {
       // Create a playlist first
@@ -2218,7 +2200,7 @@ describe('DP-1 Feed Operator API', () => {
       const playlistResponse = await app.fetch(playlistReq, testEnv);
       createdPlaylist = await playlistResponse.json();
 
-      // Mock fetch for playlist group validation to return the created playlist
+      // Mock fetch for channel validation to return the created playlist
       global.fetch = vi.fn((url: string) => {
         if (url.includes(createdPlaylist.id)) {
           return Promise.resolve({
@@ -2229,20 +2211,20 @@ describe('DP-1 Feed Operator API', () => {
         return Promise.resolve({ ok: false, status: 404 } as Response);
       }) as any;
 
-      // Create a playlist group that references the playlist
+      // Create a channel that references the playlist
       const groupData = {
         title: 'Test Exhibition',
         curator: 'Test Curator',
         playlists: [`https://example.com/playlists/${createdPlaylist.id}`],
       };
 
-      const groupReq = new Request('http://localhost/api/v1/playlist-groups', {
+      const groupReq = new Request('http://localhost/api/v1/channels', {
         method: 'POST',
         headers: validAuth,
         body: JSON.stringify(groupData),
       });
       const groupResponse = await app.fetch(groupReq, testEnv);
-      createdPlaylistGroup = await groupResponse.json();
+      createdChannel = await groupResponse.json();
     });
 
     describe('GET /playlist-items/:id', () => {
@@ -2284,10 +2266,10 @@ describe('DP-1 Feed Operator API', () => {
       });
     });
 
-    describe('GET /playlist-items?playlist-group=', () => {
-      it('should list playlist items by playlist group ID', async () => {
+    describe('GET /playlist-items?channel=', () => {
+      it('should list playlist items by channel ID', async () => {
         const req = new Request(
-          `http://localhost/api/v1/playlist-items?playlist-group=${createdPlaylistGroup.id}`
+          `http://localhost/api/v1/playlist-items?channel=${createdChannel.id}`
         );
         const response = await app.fetch(req, testEnv);
         expect(response.status).toBe(200);
@@ -2299,9 +2281,9 @@ describe('DP-1 Feed Operator API', () => {
         expect(result.hasMore).toBe(false);
       });
 
-      it('should return empty result for non-existent playlist group', async () => {
+      it('should return empty result for non-existent channel', async () => {
         const req = new Request(
-          `http://localhost/api/v1/playlist-items?playlist-group=550e8400-e29b-41d4-a716-446655440999`
+          `http://localhost/api/v1/playlist-items?channel=550e8400-e29b-41d4-a716-446655440999`
         );
         const response = await app.fetch(req, testEnv);
         expect(response.status).toBe(200);
@@ -2311,7 +2293,7 @@ describe('DP-1 Feed Operator API', () => {
         expect(result.hasMore).toBe(false);
       });
 
-      it('should not require playlist-group parameter', async () => {
+      it('should not require channel parameter', async () => {
         const req = new Request(`http://localhost/api/v1/playlist-items`);
         const response = await app.fetch(req, testEnv);
         expect(response.status).toBe(200);
@@ -2323,16 +2305,14 @@ describe('DP-1 Feed Operator API', () => {
         expect(result.hasMore).toBe(false);
       });
 
-      it('should validate playlist group ID format', async () => {
-        const req = new Request(
-          `http://localhost/api/v1/playlist-items?playlist-group=invalid@id!`
-        );
+      it('should validate channel ID format', async () => {
+        const req = new Request(`http://localhost/api/v1/playlist-items?channel=invalid@id!`);
         const response = await app.fetch(req, testEnv);
         expect(response.status).toBe(400);
 
         const data = await response.json();
-        expect(data.error).toBe('invalid_playlist_group_id');
-        expect(data.message).toBe('Playlist group ID must be a valid UUID or slug');
+        expect(data.error).toBe('invalid_channel_id');
+        expect(data.message).toBe('Channel ID must be a valid UUID or slug');
       });
 
       it('should support pagination', async () => {
@@ -2397,7 +2377,7 @@ describe('DP-1 Feed Operator API', () => {
           return Promise.resolve({ ok: false, status: 404 } as Response);
         }) as any;
 
-        // Create a new playlist group with multiple playlists that have multiple items
+        // Create a new channel with multiple playlists that have multiple items
         const groupWithMultiplePlaylists = {
           title: 'Pagination Test Group',
           curator: 'Test Curator',
@@ -2407,7 +2387,7 @@ describe('DP-1 Feed Operator API', () => {
           ],
         };
 
-        const groupReq = new Request('http://localhost/api/v1/playlist-groups', {
+        const groupReq = new Request('http://localhost/api/v1/channels', {
           method: 'POST',
           headers: validAuth,
           body: JSON.stringify(groupWithMultiplePlaylists),
@@ -2418,7 +2398,7 @@ describe('DP-1 Feed Operator API', () => {
 
         // Test pagination with limit=1 (should return hasMore: true since we have 3 total items)
         const req = new Request(
-          `http://localhost/api/v1/playlist-items?playlist-group=${testGroup.id}&limit=1`
+          `http://localhost/api/v1/playlist-items?channel=${testGroup.id}&limit=1`
         );
         const response = await app.fetch(req, testEnv);
         expect(response.status).toBe(200);
@@ -2431,7 +2411,7 @@ describe('DP-1 Feed Operator API', () => {
 
       it('should validate limit parameter', async () => {
         const req = new Request(
-          `http://localhost/api/v1/playlist-items?playlist-group=${createdPlaylistGroup.id}&limit=101`
+          `http://localhost/api/v1/playlist-items?channel=${createdChannel.id}&limit=101`
         );
         const response = await app.fetch(req, testEnv);
         expect(response.status).toBe(400);
@@ -2613,9 +2593,9 @@ describe('DP-1 Feed Operator API', () => {
         expect(result.errors).toBeUndefined();
       });
 
-      it('should process a valid create_playlist_group message', async () => {
-        const message = createValidMessage('create_playlist_group', {
-          playlistGroup: {
+      it('should process a valid create_channel message', async () => {
+        const message = createValidMessage('create_channel', {
+          channel: {
             id: '550e8400-e29b-41d4-a716-446655440001',
             slug: 'test-exhibition-5678',
             title: 'Test Exhibition',
@@ -2636,15 +2616,15 @@ describe('DP-1 Feed Operator API', () => {
         const result = await response.json();
         expect(result.success).toBe(true);
         expect(result.messageId).toBe('test-message-id');
-        expect(result.operation).toBe('create_playlist_group');
+        expect(result.operation).toBe('create_channel');
         expect(result.processedCount).toBe(1);
         expect(result.errors).toBeUndefined();
       });
 
-      it('should process a valid update_playlist_group message', async () => {
-        const message = createValidMessage('update_playlist_group', {
+      it('should process a valid update_channel message', async () => {
+        const message = createValidMessage('update_channel', {
           groupId: '550e8400-e29b-41d4-a716-446655440001',
-          playlistGroup: {
+          channel: {
             id: '550e8400-e29b-41d4-a716-446655440001',
             slug: 'test-exhibition-5678',
             title: 'Updated Test Exhibition',
@@ -2665,7 +2645,7 @@ describe('DP-1 Feed Operator API', () => {
         const result = await response.json();
         expect(result.success).toBe(true);
         expect(result.messageId).toBe('test-message-id');
-        expect(result.operation).toBe('update_playlist_group');
+        expect(result.operation).toBe('update_channel');
         expect(result.processedCount).toBe(1);
         expect(result.errors).toBeUndefined();
       });
@@ -2821,8 +2801,8 @@ describe('DP-1 Feed Operator API', () => {
               items: [],
             },
           }),
-          createValidMessage('create_playlist_group', {
-            playlistGroup: {
+          createValidMessage('create_channel', {
+            channel: {
               id: '550e8400-e29b-41d4-a716-446655440001',
               slug: 'test-exhibition-5678',
               title: 'Test Exhibition',
@@ -3142,18 +3122,18 @@ describe('DP-1 Feed Operator API', () => {
         expect(playlist.items[0].title).toBe('Test Artwork');
       });
 
-      it('should actually store data when processing create_playlist_group message', async () => {
+      it('should actually store data when processing create_channel message', async () => {
         // Set up mock fetch for external playlist URLs
         mockStandardPlaylistFetch();
 
         // Temporarily override the mock to actually process the data
         vi.mocked(processWriteOperations).mockImplementationOnce(
           async (messageBatch: any, env: any) => {
-            const { savePlaylistGroup } = await import('./storage');
+            const { saveChannel } = await import('./storage');
             for (const message of messageBatch.messages) {
               const body = message.body;
-              if (body.operation === 'create_playlist_group') {
-                await savePlaylistGroup(body.data.playlistGroup, env);
+              if (body.operation === 'create_channel') {
+                await saveChannel(body.data.channel, env);
               }
             }
             return {
@@ -3164,8 +3144,8 @@ describe('DP-1 Feed Operator API', () => {
           }
         );
 
-        const message = createValidMessage('create_playlist_group', {
-          playlistGroup: {
+        const message = createValidMessage('create_channel', {
+          channel: {
             id: '550e8400-e29b-41d4-a716-446655440001',
             slug: 'test-exhibition-5678',
             title: 'Test Exhibition',
@@ -3183,9 +3163,9 @@ describe('DP-1 Feed Operator API', () => {
         const response = await app.fetch(req, testEnv);
         expect(response.status).toBe(200);
 
-        // Verify the playlist group was actually stored
+        // Verify the channel was actually stored
         const getReq = new Request(
-          'http://localhost/api/v1/playlist-groups/550e8400-e29b-41d4-a716-446655440001'
+          'http://localhost/api/v1/channels/550e8400-e29b-41d4-a716-446655440001'
         );
         const getResponse = await app.fetch(getReq, testEnv);
         expect(getResponse.status).toBe(200);

@@ -1,4 +1,4 @@
-import type { Env, Playlist, PlaylistGroup, PlaylistItem } from './types';
+import type { Env, Playlist, Channel, PlaylistItem } from './types';
 import { StorageService, STORAGE_KEYS } from './storage/service';
 import type { PaginatedResult, ListOptions } from './storage/interfaces';
 
@@ -44,60 +44,54 @@ export async function listAllPlaylists(
 }
 
 /**
- * List playlists by playlist group ID with pagination
+ * List playlists by channel ID with pagination
  */
-export async function listPlaylistsByGroupId(
-  playlistGroupId: string,
+export async function listPlaylistsByChannelId(
+  channelId: string,
   env: Env,
   options: ListOptions = {}
 ): Promise<PaginatedResult<Playlist>> {
   const storageService = createStorageService(env);
-  return await storageService.listPlaylistsByGroupId(playlistGroupId, options);
+  return await storageService.listPlaylistsByChannelId(channelId, options);
 }
 
 /**
- * Save a playlist group with multiple indexes
+ * Save a channel with multiple indexes
  */
-export async function savePlaylistGroup(
-  playlistGroup: PlaylistGroup,
+export async function saveChannel(
+  channel: Channel,
   env: Env,
   update: boolean = false
 ): Promise<boolean> {
   const storageService = createStorageService(env);
-  return await storageService.savePlaylistGroup(playlistGroup, env, update);
+  return await storageService.saveChannel(channel, env, update);
 }
 
 /**
- * Get a playlist group by ID or slug
+ * Get a channel by ID or slug
  */
-export async function getPlaylistGroupByIdOrSlug(
-  identifier: string,
-  env: Env
-): Promise<PlaylistGroup | null> {
+export async function getChannelByIdOrSlug(identifier: string, env: Env): Promise<Channel | null> {
   const storageService = createStorageService(env);
-  return await storageService.getPlaylistGroupByIdOrSlug(identifier);
+  return await storageService.getChannelByIdOrSlug(identifier);
 }
 
 /**
- * List all playlist groups with pagination support
+ * List all channels with pagination support
  */
-export async function listAllPlaylistGroups(
+export async function listAllChannels(
   env: Env,
   options: ListOptions = {}
-): Promise<PaginatedResult<PlaylistGroup>> {
+): Promise<PaginatedResult<Channel>> {
   const storageService = createStorageService(env);
-  return await storageService.listAllPlaylistGroups(options);
+  return await storageService.listAllChannels(options);
 }
 
 /**
- * Get all playlist group IDs that a playlist belongs to (efficient reverse lookup)
+ * Get all channel IDs that a playlist belongs to (efficient reverse lookup)
  */
-export async function getPlaylistGroupsForPlaylist(
-  playlistId: string,
-  env: Env
-): Promise<string[]> {
+export async function getChannelsForPlaylist(playlistId: string, env: Env): Promise<string[]> {
   const storageService = createStorageService(env);
-  return await storageService.getPlaylistGroupsForPlaylist(playlistId);
+  return await storageService.getChannelsForPlaylist(playlistId);
 }
 
 /**
@@ -120,15 +114,15 @@ export async function listAllPlaylistItems(
 }
 
 /**
- * List playlist items by playlist group ID with pagination
+ * List playlist items by channel ID with pagination
  */
-export async function listPlaylistItemsByGroupId(
-  playlistGroupId: string,
+export async function listPlaylistItemsByChannelId(
+  channelId: string,
   env: Env,
   options: ListOptions = {}
 ): Promise<PaginatedResult<PlaylistItem>> {
   const storageService = createStorageService(env);
-  return await storageService.listPlaylistItemsByGroupId(playlistGroupId, options);
+  return await storageService.listPlaylistItemsByChannelId(channelId, options);
 }
 
 // Re-export types and constants for convenience

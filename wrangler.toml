@@ -14,8 +14,8 @@ binding = "DP1_PLAYLISTS"
 id = "local-playlist-id"
 
 [[kv_namespaces]]
-binding = "DP1_PLAYLIST_GROUPS"
-id = "local-group-id"
+binding = "DP1_CHANNELS"
+id = "local-channel-id"
 
 [[kv_namespaces]]
 binding = "DP1_PLAYLIST_ITEMS"
@@ -42,7 +42,7 @@ binding = "DP1_PLAYLISTS"
 id = "1da79f6f0f914529858468874d4834a2"
 
 [[env.dev.kv_namespaces]]
-binding = "DP1_PLAYLIST_GROUPS"
+binding = "DP1_CHANNELS"
 id = "7a34bb7347e54236b107f9077416c5ba"
 
 [[env.dev.kv_namespaces]]
@@ -72,7 +72,7 @@ binding = "DP1_PLAYLISTS"
 id = "d8dd2c9576964fd4832fd16dd3feceb8"
 
 [[env.production.kv_namespaces]]
-binding = "DP1_PLAYLIST_GROUPS"
+binding = "DP1_CHANNELS"
 id = "99d0a95fdb844df6bd01e688c014be26"
 
 [[env.production.kv_namespaces]]

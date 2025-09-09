@@ -152,12 +152,12 @@ export class MockQueue implements Queue {
 // Mock StorageProvider that uses our mock storage
 export class MockStorageProvider implements StorageProvider {
   private playlistStorage: MockKeyValueStorage;
-  private playlistGroupStorage: MockKeyValueStorage;
+  private channelStorage: MockKeyValueStorage;
   private playlistItemStorage: MockKeyValueStorage;
 
   constructor() {
     this.playlistStorage = new MockKeyValueStorage();
-    this.playlistGroupStorage = new MockKeyValueStorage();
+    this.channelStorage = new MockKeyValueStorage();
     this.playlistItemStorage = new MockKeyValueStorage();
   }
 
@@ -165,8 +165,8 @@ export class MockStorageProvider implements StorageProvider {
     return this.playlistStorage;
   }
 
-  getPlaylistGroupStorage(): KeyValueStorage {
-    return this.playlistGroupStorage;
+  getChannelStorage(): KeyValueStorage {
+    return this.channelStorage;
   }
 
   getPlaylistItemStorage(): KeyValueStorage {
@@ -177,7 +177,7 @@ export class MockStorageProvider implements StorageProvider {
   getMockStorages() {
     return {
       playlist: this.playlistStorage,
-      group: this.playlistGroupStorage,
+      group: this.channelStorage,
       item: this.playlistItemStorage,
     };
   }
