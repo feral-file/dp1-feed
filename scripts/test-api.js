@@ -34,6 +34,16 @@ const testPlaylist = {
   ],
   summary: 'A test playlist for testing the API',
   coverImage: 'https://example.com/test-playlist-cover.jpg',
+  dynamicQueries: [
+    {
+      endpoint: 'https://api.example.com/test-artworks',
+      params: {
+        category: 'digital-art',
+        status: 'featured',
+        limit: '20',
+      },
+    },
+  ],
   defaults: {
     display: {
       scaling: 'fit',
@@ -383,6 +393,19 @@ async function testCreatePlaylist() {
     }
     console.log('✅ Curators array preserved exactly');
 
+    // Deep comparison of dynamicQueries array
+    if (
+      JSON.stringify(response.data.dynamicQueries) !== JSON.stringify(testPlaylist.dynamicQueries)
+    ) {
+      console.log('❌ Dynamic queries array not preserved exactly');
+      console.log(`   Expected: ${JSON.stringify(testPlaylist.dynamicQueries)}`);
+      console.log(`   Received: ${JSON.stringify(response.data.dynamicQueries)}`);
+      return false;
+    }
+    console.log(
+      `✅ Dynamic queries preserved exactly (${response.data.dynamicQueries.length} queries)`
+    );
+
     if (response.data.summary !== testPlaylist.summary) {
       console.log('❌ Summary not preserved exactly');
       console.log(`   Expected: "${testPlaylist.summary}"`);
@@ -513,6 +536,17 @@ async function testUpdatePlaylist() {
     ],
     summary: 'Updated summary for the playlist with enhanced content',
     coverImage: 'https://example.com/updated-cover.jpg',
+    dynamicQueries: [
+      {
+        endpoint: 'https://api.example.com/updated-artworks',
+        params: {
+          category: 'contemporary',
+          year: '2025',
+          status: 'featured',
+          limit: '25',
+        },
+      },
+    ],
     items: [
       {
         ...testPlaylist.items[0],
@@ -591,6 +625,19 @@ async function testUpdatePlaylist() {
       console.log(`   Received: ${JSON.stringify(response.data.curators)}`);
       return false;
     }
+
+    // Verify dynamicQueries were updated correctly
+    if (
+      JSON.stringify(response.data.dynamicQueries) !== JSON.stringify(updatedData.dynamicQueries)
+    ) {
+      console.log('❌ Dynamic queries not updated correctly');
+      console.log(`   Expected: ${JSON.stringify(updatedData.dynamicQueries)}`);
+      console.log(`   Received: ${JSON.stringify(response.data.dynamicQueries)}`);
+      return false;
+    }
+    console.log(
+      `✅ Dynamic queries updated correctly (${response.data.dynamicQueries.length} queries)`
+    );
 
     if (response.data.summary !== updatedData.summary) {
       console.log('❌ Summary not updated correctly');
@@ -712,24 +759,6 @@ async function testCreateChannel() {
       key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
       url: 'https://artgallery.com/about',
     },
-    dynamicQueries: [
-      {
-        endpoint: 'https://api.artworks.com/search',
-        params: {
-          category: 'digital-art',
-          year: '2024',
-          status: 'featured',
-          limit: '50',
-        },
-      },
-      {
-        endpoint: 'https://api.exhibitions.com/current',
-        params: {
-          type: 'virtual',
-          featured: 'true',
-        },
-      },
-    ],
     coverImage: 'https://cdn.artgallery.com/showcase-2024-cover.jpg',
     summary:
       'A comprehensive exhibition showcasing the finest digital artworks from 2024, curated by leading experts in the field and featuring dynamic content from multiple sources.',
@@ -779,19 +808,6 @@ async function testCreateChannel() {
       return false;
     }
     console.log('✅ Publisher object preserved exactly');
-
-    // Deep comparison of dynamicQueries array
-    if (
-      JSON.stringify(response.data.dynamicQueries) !== JSON.stringify(channelData.dynamicQueries)
-    ) {
-      console.log('❌ Dynamic queries array not preserved exactly');
-      console.log(`   Expected: ${JSON.stringify(channelData.dynamicQueries)}`);
-      console.log(`   Received: ${JSON.stringify(response.data.dynamicQueries)}`);
-      return false;
-    }
-    console.log(
-      `✅ Dynamic queries preserved exactly (${response.data.dynamicQueries.length} queries)`
-    );
 
     // Verify playlists array
     if (JSON.stringify(response.data.playlists) !== JSON.stringify(channelData.playlists)) {

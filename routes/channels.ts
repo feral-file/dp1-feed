@@ -309,7 +309,6 @@ channels.put('/:id', async c => {
       playlists: validatedData.playlists,
       created: existingChannel.created,
       coverImage: validatedData.coverImage,
-      dynamicQueries: validatedData.dynamicQueries,
     };
 
     // Sign the channel
@@ -412,7 +411,6 @@ channels.patch('/:id', async c => {
       playlists: validatedData.playlists || existingChannel.playlists,
       created: existingChannel.created,
       coverImage: validatedData.coverImage || existingChannel.coverImage,
-      dynamicQueries: validatedData.dynamicQueries || existingChannel.dynamicQueries,
     };
 
     // Sign the channel

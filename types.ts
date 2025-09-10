@@ -270,6 +270,7 @@ export const PlaylistInputSchema = z.object({
     .max(1024)
     .optional(),
   items: z.array(PlaylistItemInputSchema).min(1).max(1024),
+  dynamicQueries: z.array(DynamicQuerySchema).optional(),
 });
 
 export const ChannelInputSchema = z.object({
@@ -292,7 +293,6 @@ export const ChannelInputSchema = z.object({
     .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
     .max(1024)
     .optional(),
-  dynamicQueries: z.array(DynamicQuerySchema).optional(),
 });
 
 // Update schemas that exclude protected fields
@@ -329,6 +329,7 @@ export const PlaylistUpdateSchema = z.object({
   title: z.string().max(256).optional(),
   curators: z.array(EntitySchema).optional(),
   summary: z.string().max(4096).optional(),
+  dynamicQueries: z.array(DynamicQuerySchema).optional(),
 });
 
 export const ChannelUpdateSchema = z.object({
@@ -352,7 +353,6 @@ export const ChannelUpdateSchema = z.object({
     .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
     .max(1024)
     .optional(),
-  dynamicQueries: z.array(DynamicQuerySchema).optional(),
 });
 
 // Complete schemas with server-generated fields for output
@@ -394,6 +394,7 @@ export const PlaylistSchema = z.object({
     .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
     .max(1024)
     .optional(),
+  dynamicQueries: z.array(DynamicQuerySchema).optional(),
   signature: z
     .string()
     .regex(/^ed25519:0x[a-fA-F0-9]+$/)
@@ -426,7 +427,6 @@ export const ChannelSchema = z.object({
     .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
     .max(1024)
     .optional(),
-  dynamicQueries: z.array(DynamicQuerySchema).optional(),
   signature: z
     .string()
     .regex(/^ed25519:0x[a-fA-F0-9]+$/)
@@ -509,6 +509,7 @@ export interface Playlist {
     duration?: number;
   };
   items: PlaylistItem[];
+  dynamicQueries?: DynamicQuery[];
   signature?: string;
 }
 
@@ -523,7 +524,6 @@ export interface Channel {
   playlists: string[];
   created?: string;
   coverImage?: string;
-  dynamicQueries?: DynamicQuery[];
   signature?: string;
 }
 
@@ -616,6 +616,7 @@ export function createPlaylistFromInput(input: PlaylistInput): Playlist {
     created: timestamp,
     defaults: input.defaults,
     items: itemsWithIds,
+    dynamicQueries: input.dynamicQueries,
   };
 }
 
@@ -632,7 +633,6 @@ export function createChannelFromInput(input: ChannelInput): Channel {
     curator: input.curator,
     curators: input.curators,
     publisher: input.publisher,
-    dynamicQueries: input.dynamicQueries,
     summary: input.summary,
     playlists: input.playlists,
     created: timestamp,
