@@ -40,6 +40,15 @@ const mockPlaylist: Playlist = {
   slug: 'test-playlist-1234',
   title: 'Test Playlist',
   created: '2024-01-01T00:00:00Z',
+  dynamicQueries: [
+    {
+      endpoint: 'https://api.example.com/test-queue-playlist',
+      params: {
+        type: 'queue-test',
+        limit: '5',
+      },
+    },
+  ],
   items: [
     {
       id: '550e8400-e29b-41d4-a716-446655440001',
@@ -73,14 +82,6 @@ const mockChannel: Channel = {
   playlists: ['https://example.com/playlists/test-playlist-1'],
   created: '2024-01-01T00:00:00Z',
   coverImage: 'https://example.com/cover.jpg',
-  dynamicQueries: [
-    {
-      endpoint: 'https://api.example.com/query',
-      params: {
-        filter: 'active',
-      },
-    },
-  ],
   signature:
     'ed25519:0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef',
 };

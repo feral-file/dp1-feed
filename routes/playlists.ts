@@ -330,6 +330,7 @@ playlists.put('/:id', async c => {
       coverImage: validatedData.coverImage,
       created: existingPlaylist.created,
       defaults: validatedData.defaults,
+      dynamicQueries: validatedData.dynamicQueries,
       items: itemsWithIds,
     };
 
@@ -444,6 +445,7 @@ playlists.patch('/:id', async c => {
       coverImage: validatedData.coverImage || existingPlaylist.coverImage,
       created: existingPlaylist.created,
       defaults: validatedData.defaults ?? existingPlaylist.defaults,
+      dynamicQueries: validatedData.dynamicQueries || existingPlaylist.dynamicQueries,
       items: itemsWithIds,
     };
 

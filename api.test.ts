@@ -101,6 +101,15 @@ const validPlaylist = {
   ],
   summary: 'A test playlist showcasing digital artworks',
   coverImage: 'https://example.com/playlist-cover.jpg',
+  dynamicQueries: [
+    {
+      endpoint: 'https://api.example.com/artworks',
+      params: {
+        category: 'digital',
+        year: '2024',
+      },
+    },
+  ],
   items: [
     {
       title: 'Test Artwork',
@@ -133,15 +142,6 @@ const validChannel = {
   },
   playlists: ['https://example.com/playlists/test-playlist-1'],
   coverImage: 'https://example.com/cover.jpg',
-  dynamicQueries: [
-    {
-      endpoint: 'https://api.example.com/artworks',
-      params: {
-        category: 'digital',
-        year: '2024',
-      },
-    },
-  ],
 };
 
 describe('DP-1 Feed Operator API', () => {
@@ -669,6 +669,41 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.message).toContain('curators');
     });
 
+    it('POST /playlists with invalid dynamicQueries returns 400', async () => {
+      const invalidPlaylist = {
+        dpVersion: '1.0.0',
+        title: 'Test Playlist',
+        dynamicQueries: [
+          {
+            endpoint: 'invalid-endpoint', // Invalid: not a valid URL
+            params: {
+              test: 'value',
+            },
+          },
+        ],
+        items: [
+          {
+            title: 'Test Artwork',
+            source: 'https://example.com/artwork.html',
+            duration: 300,
+            license: 'open' as const,
+          },
+        ],
+      };
+
+      const req = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(invalidPlaylist),
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(400);
+
+      const data = await response.json();
+      expect(data.error).toBe('validation_error');
+      expect(data.message).toContain('dynamicQueries');
+    });
+
     it('POST /playlists should create playlist with server-generated ID and slug', async () => {
       const req = new Request('http://localhost/api/v1/playlists', {
         method: 'POST',
@@ -685,6 +720,7 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.title).toBe('Test Playlist');
       expect(data.created).toBeTruthy();
       expect(data.signature).toBeTruthy();
+      expect(data.dynamicQueries).toEqual(validPlaylist.dynamicQueries);
       expect(data.items[0].id).toMatch(
         /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
       );
@@ -877,6 +913,16 @@ describe('DP-1 Feed Operator API', () => {
         dpVersion: '1.0.1',
         title: 'Updated Test Playlist',
         defaults: { license: 'token' as const },
+        dynamicQueries: [
+          {
+            endpoint: 'https://api.example.com/updated-artworks',
+            params: {
+              category: 'contemporary',
+              year: '2025',
+              status: 'featured',
+            },
+          },
+        ],
         items: [
           {
             title: 'Updated Artwork Title',
@@ -899,6 +945,7 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.id).toBe(playlistId); // ID should remain the same
       expect(data.dpVersion).toBe('1.0.1'); // Server should preserve client's dpVersion
       expect(data.slug).toBe(createdPlaylist.slug);
+      expect(data.dynamicQueries).toEqual(updatedPlaylist.dynamicQueries);
       expect(data.items[0].id).toMatch(
         /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
       );
@@ -1512,32 +1559,6 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.error).toBe('validation_error');
     });
 
-    it('POST /channels with invalid dynamicQueries returns 400', async () => {
-      const invalidChannel = {
-        ...validChannel,
-        dynamicQueries: [
-          {
-            endpoint: 'invalid-endpoint', // Invalid: not a valid URL
-            params: {
-              test: 'value',
-            },
-          },
-        ],
-      };
-
-      const req = new Request('http://localhost/api/v1/channels', {
-        method: 'POST',
-        headers: validAuth,
-        body: JSON.stringify(invalidChannel),
-      });
-      const response = await app.fetch(req, testEnv);
-      expect(response.status).toBe(400);
-
-      const data = await response.json();
-      expect(data.error).toBe('validation_error');
-      expect(data.message).toContain('dynamicQueries');
-    });
-
     it('POST /channels with invalid coverImage URL returns 400', async () => {
       const invalidChannel = {
         ...validChannel,
@@ -1646,7 +1667,6 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.created).toBeTruthy();
       expect(data.curators).toEqual(validChannel.curators);
       expect(data.publisher).toEqual(validChannel.publisher);
-      expect(data.dynamicQueries).toEqual(validChannel.dynamicQueries);
       expect(data.coverImage).toBe(validChannel.coverImage);
       expect(data.summary).toBe(validChannel.summary);
       expect(data.signature).toMatch(/^ed25519:0x[a-fA-F0-9]+$/);
@@ -1697,15 +1717,6 @@ describe('DP-1 Feed Operator API', () => {
           name: 'Updated Publisher',
           url: 'https://example.com/updated-publisher',
         },
-        dynamicQueries: [
-          {
-            endpoint: 'https://api.example.com/updated',
-            params: {
-              filter: 'updated',
-              status: 'active',
-            },
-          },
-        ],
         coverImage: 'https://example.com/updated-cover.jpg',
       };
 
@@ -1724,7 +1735,6 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.summary).toBe(updatedGroup.summary);
       expect(data.curators).toEqual(updatedGroup.curators);
       expect(data.publisher).toEqual(updatedGroup.publisher);
-      expect(data.dynamicQueries).toEqual(updatedGroup.dynamicQueries);
       expect(data.coverImage).toBe(updatedGroup.coverImage);
 
       // Verify queue operation was called for update

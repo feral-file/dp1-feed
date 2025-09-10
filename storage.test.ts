@@ -90,6 +90,15 @@ const testPlaylist: Playlist = {
   ],
   summary: 'A test playlist for storage validation',
   coverImage: 'https://example.com/test-playlist-cover.jpg',
+  dynamicQueries: [
+    {
+      endpoint: 'https://api.example.com/test-playlist',
+      params: {
+        type: 'test',
+        limit: '10',
+      },
+    },
+  ],
   created: '2024-01-01T00:00:00Z',
   items: [
     {
@@ -127,15 +136,6 @@ const testChannel: Channel = {
     `https://example.com/playlists/${playlistId2}`,
   ],
   coverImage: 'https://example.com/test-cover.jpg',
-  dynamicQueries: [
-    {
-      endpoint: 'https://api.example.com/test',
-      params: {
-        type: 'test',
-        limit: '10',
-      },
-    },
-  ],
   signature:
     'ed25519:0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef',
 };
@@ -331,7 +331,6 @@ describe('Storage Module', () => {
       // Verify fields are correct
       expect(retrieved!.curators).toEqual(testChannel.curators);
       expect(retrieved!.publisher).toEqual(testChannel.publisher);
-      expect(retrieved!.dynamicQueries).toEqual(testChannel.dynamicQueries);
       expect(retrieved!.coverImage).toBe(testChannel.coverImage);
       expect(retrieved!.summary).toBe(testChannel.summary);
       expect(retrieved!.signature).toBe(testChannel.signature);

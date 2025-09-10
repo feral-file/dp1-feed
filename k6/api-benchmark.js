@@ -110,14 +110,6 @@ function generateChannelData(index = 0) {
     },
     playlists: playlistUrls,
     coverImage: `https://example.com/k6-cover-${index + 1}.jpg`,
-    dynamicQueries: [
-      {
-        endpoint: `https://example.com/k6-dynamic-query-${index + 1}.html`,
-        params: {
-          filter: 'active',
-        },
-      },
-    ],
   };
 }
 
