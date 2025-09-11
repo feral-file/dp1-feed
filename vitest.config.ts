@@ -23,6 +23,15 @@ export default defineConfig({
         'test-helpers.ts',
         'worker.ts',
         'server.ts',
+        // Wrangler temporary files
+        '.wrangler/**',
+        '**/.wrangler/**',
+        // Interface-only files (type definitions only)
+        '**/interfaces.ts',
+        'env/types.ts',
+        // Additional exclusions
+        'docker/**',
+        'k6-results/**',
       ],
       thresholds: {
         global: {

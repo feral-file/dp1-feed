@@ -64,6 +64,7 @@ jobs:
           API_SECRET: test-api-secret
           ENVIRONMENT: self-hosted
           SELF_HOSTED_DOMAINS: localhost:8787
+          JWT_TEST_PRIVATE_KEY: ${{ secrets.JWT_TEST_PRIVATE_KEY }}
 
       - name: Stop development server
         run: pkill -f "wrangler dev" || true
@@ -116,6 +117,7 @@ jobs:
           API_SECRET: test-api-secret
           ENVIRONMENT: self-hosted
           SELF_HOSTED_DOMAINS: localhost:8787
+          JWT_TEST_PRIVATE_KEY: ${{ secrets.JWT_TEST_PRIVATE_KEY }}
 
       - name: Stop Docker Compose services
         if: always()
