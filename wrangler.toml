@@ -38,7 +38,20 @@ max_batch_timeout = 1
 [env.dev.vars]
 ENVIRONMENT = "development"
 SELF_HOSTED_DOMAINS = "dp1-feed-operator-api-dev.autonomy-system.workers.dev"
-JWT_PUBLIC_KEY = ""
+JWT_PUBLIC_KEY = "-----BEGIN PUBLIC KEY-----
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoKSzYr0c93zbx63XCNDI
+hvbYE116GSdwxK/grvr7VGx75CA9ZCWi4jtLkFFGuI1AqNE7lau6ENr2rjVYgfqh
+clszDxRTOWbA0WYP+FbYqzu2+tilXEPqLMixXWOtB4+F3IY1RfkxA30UwB+9CXru
+6waPJQRuiNTgu40wHxj0yyCThgWiT2UqVBf8CJf3cdsx5PYIqdwQZHByx5d7YVA/
+V16peuxI1Qy7BRpWGD5UG2Orj2cXXrtb1hn+BKyA0okY1ljilDCmudBjA8pf2w8w
+DV8BcU8dVXD4LaLN2YkA81T13c4hRJUJok3ZHJWSxEzzNTFQGxzBw1Cz3Boez9cB
+qHwhccezI3rkltzG/ojAaIrfBzelUdm5wJ5aharpTeSBF55hFjyCnGWtUITlOYF8
+XLaCfEviPS/KJ454sWftE2XlDmRl6ewhOBs9Qg3aae8CFTeyFLJJ8G8WSPLlNPx5
+bFXAmxMgEbwi1TnsnbQp0mIHW/GXy79kIy9duQkBpX0hHdvpDzOH5e/0pjQBkDeM
+g5QwI/OAEXES4aEonMEdKU2lfsqIHcbQK4LzbFPX2MMGwaLtJtbWSp4rlTrSB7Yv
+mzHjaijSQx8gzSqcnJL72eaVTZKendCytzQ4HP3m86OxU+KE6qM/QsaBEXV2eCZf
+cTXRi8UsShqst62rlrwOXnsCAwEAAQ==
+-----END PUBLIC KEY-----"
 
 # KV namespace bindings for storing JSON data
 [[env.dev.kv_namespaces]]
@@ -69,7 +82,20 @@ name = "dp1-feed-operator-api-prod"
 [env.production.vars]
 ENVIRONMENT = "production"
 SELF_HOSTED_DOMAINS = "feed.feralfile.com, dp1-feed-operator-api-prod.autonomy-system.workers.dev"
-JWT_PUBLIC_KEY = ""
+JWT_PUBLIC_KEY = "-----BEGIN PUBLIC KEY-----
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAs/tBze5kS9ca6Wa2ei8z
+WpK+uQivJdMui9AThzK8TACDmvD2+0D50HotOJOeYOVbaqcZsHGq0lNENkBydFBB
+4FtDFqMQnXxO6hp7sNktkj2XwcZO0ZcoMnFHN/To5BENYnAMo4hWWBiNgFonckYy
+edqp2ZznigFdxYzfwVjns5EujAuCTpG4Al4BFZgQbVMucPYIV4x7PyzspFlURG8f
+Lzj14P65Y17gNxAy58TX0BFBYKrkOscTEvcqSvYHkK71JvtkRPh1EXtNcVGY2vG2
+omwdwUOJTTcLajirbzx658VVzNsipwRBnWBgvsdNFYlnSimnmlCUVOZ8jGA4dmlE
+i2cU8f6PpsNELzQiCuEghYAGqVX1IFybXJ5Hzm7LTg68VtvHI8d5b8RsfFVNEmMP
+OlwM087uwwpRjunuGGD0mNv/gd10nwmp28r3Wn5ll0XfsVc7qB3HZFKC5M/3kdd8
+59Ad5e3GNMH7U864liCJmXitxXJOYwooZ/n+K9ZMzAFaFyH22rVZP0lqxJhRKD6a
+RUjTEd1AM3ZxzteMPIEYxwqoO/L7Mw0g2ikBCUanPm2KmYJQt7SBxToR7slB6zZX
+4EksVVCJTa/9e0zJRqsCOcNVm1v3ThFY669b2IoS78DWi7gyZ6B6ucpfqiNX3uNl
+31Y7fRwBZIYhxUdzFeABb9kCAwEAAQ==
+-----END PUBLIC KEY-----"
 
 # Production KV namespaces
 [[env.production.kv_namespaces]]
