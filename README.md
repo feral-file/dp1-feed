@@ -76,10 +76,45 @@ npm run lint && npm run format
 
 ### Authentication
 
-All write operations require Bearer token authentication:
+All write operations require Bearer token authentication. The API supports two authentication methods:
+
+#### 1. API Key Authentication (Admin Operations)
 
 ```bash
 Authorization: Bearer YOUR_API_SECRET
+```
+
+#### 2. JWT Authentication (User Operations)
+
+```bash
+Authorization: Bearer JWT_TOKEN
+```
+
+**JWT Configuration Environment Variables:**
+
+```bash
+# Required: Either public key or JWKS URL
+JWT_PUBLIC_KEY="-----BEGIN PUBLIC KEY-----..."  # PEM format public key
+JWT_JWKS_URL="https://your-auth-provider.com/.well-known/jwks.json"
+
+# Optional: Token validation
+JWT_ISSUER="your-issuer"      # Expected 'iss' claim
+JWT_AUDIENCE="your-audience"  # Expected 'aud' claim
+```
+
+**Authentication Priority:**
+
+- API key is checked first
+- If API key doesn't match, JWT is verified
+- Both methods provide the same permissions currently
+
+**Generate Test Keys:**
+
+```bash
+# Generate RSA key pair for testing
+npm run jwt:generate-keys
+# or directly:
+node scripts/generate-jwt-keys.js
 ```
 
 ### Core Endpoints

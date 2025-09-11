@@ -28,6 +28,12 @@ async function startServer() {
     API_SECRET: process.env.API_SECRET || '',
     ED25519_PRIVATE_KEY: process.env.ED25519_PRIVATE_KEY || '',
 
+    // JWT configuration
+    JWT_PUBLIC_KEY: process.env.JWT_PUBLIC_KEY,
+    JWT_JWKS_URL: process.env.JWT_JWKS_URL,
+    JWT_ISSUER: process.env.JWT_ISSUER,
+    JWT_AUDIENCE: process.env.JWT_AUDIENCE,
+
     // etcd configuration
     ETCD_ENDPOINT: process.env.ETCD_ENDPOINT || 'http://localhost:2379',
     ETCD_USERNAME: process.env.ETCD_USERNAME,

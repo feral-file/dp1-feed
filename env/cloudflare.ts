@@ -11,6 +11,12 @@ export interface CloudFlareBindings {
   API_SECRET: string;
   ED25519_PRIVATE_KEY: string;
 
+  // JWT configuration for user authentication (optional)
+  JWT_PUBLIC_KEY?: string; // PEM format public key
+  JWT_JWKS_URL?: string; // JWKS endpoint URL for remote key fetching
+  JWT_ISSUER?: string; // Expected issuer claim (iss)
+  JWT_AUDIENCE?: string; // Expected audience claim (aud)
+
   // CloudFlare KV bindings
   DP1_PLAYLISTS: KVNamespace;
   DP1_CHANNELS: KVNamespace;
@@ -52,6 +58,10 @@ export function initializeCloudFlareEnv(bindings: CloudFlareBindings): Env {
   return {
     API_SECRET: bindings.API_SECRET,
     ED25519_PRIVATE_KEY: bindings.ED25519_PRIVATE_KEY,
+    JWT_PUBLIC_KEY: bindings.JWT_PUBLIC_KEY,
+    JWT_JWKS_URL: bindings.JWT_JWKS_URL,
+    JWT_ISSUER: bindings.JWT_ISSUER,
+    JWT_AUDIENCE: bindings.JWT_AUDIENCE,
     storageProvider,
     queueProvider,
     ENVIRONMENT: bindings.ENVIRONMENT,

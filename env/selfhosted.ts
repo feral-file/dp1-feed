@@ -10,6 +10,12 @@ export interface SelfHostedBindings {
   API_SECRET: string;
   ED25519_PRIVATE_KEY: string;
 
+  // JWT configuration for user authentication (optional)
+  JWT_PUBLIC_KEY?: string; // PEM format public key
+  JWT_JWKS_URL?: string; // JWKS endpoint URL for remote key fetching
+  JWT_ISSUER?: string; // Expected issuer claim (iss)
+  JWT_AUDIENCE?: string; // Expected audience claim (aud)
+
   // etcd configuration
   ETCD_ENDPOINT: string;
   ETCD_USERNAME?: string;
@@ -71,6 +77,10 @@ export async function initializeSelfHostedEnv(bindings: SelfHostedBindings): Pro
   return {
     API_SECRET: bindings.API_SECRET,
     ED25519_PRIVATE_KEY: bindings.ED25519_PRIVATE_KEY,
+    JWT_PUBLIC_KEY: bindings.JWT_PUBLIC_KEY,
+    JWT_JWKS_URL: bindings.JWT_JWKS_URL,
+    JWT_ISSUER: bindings.JWT_ISSUER,
+    JWT_AUDIENCE: bindings.JWT_AUDIENCE,
     storageProvider,
     queueProvider,
     ENVIRONMENT: bindings.ENVIRONMENT,
