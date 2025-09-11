@@ -7,6 +7,9 @@ compatibility_flags = ["nodejs_compat"]
 [vars]
 ENVIRONMENT = "local"
 SELF_HOSTED_DOMAINS = "localhost:8787"
+JWT_ISSUER = ""
+JWT_AUDIENCE = ""
+JWT_PUBLIC_KEY = ""
 
 # KV namespace bindings for storing JSON data
 [[kv_namespaces]]
@@ -35,6 +38,7 @@ max_batch_timeout = 1
 [env.dev.vars]
 ENVIRONMENT = "development"
 SELF_HOSTED_DOMAINS = "dp1-feed-operator-api-dev.autonomy-system.workers.dev"
+JWT_PUBLIC_KEY = ""
 
 # KV namespace bindings for storing JSON data
 [[env.dev.kv_namespaces]]
@@ -65,6 +69,7 @@ name = "dp1-feed-operator-api-prod"
 [env.production.vars]
 ENVIRONMENT = "production"
 SELF_HOSTED_DOMAINS = "feed.feralfile.com, dp1-feed-operator-api-prod.autonomy-system.workers.dev"
+JWT_PUBLIC_KEY = ""
 
 # Production KV namespaces
 [[env.production.kv_namespaces]]

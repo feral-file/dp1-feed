@@ -66,6 +66,17 @@ services:
       - ED25519_PRIVATE_KEY=302e020100300506032b6570042204205e42cad90e34efb36d84b8dbbcf15777ac33f4126a80c087cdedfb030138ac6f
       - ENVIRONMENT=self-hosted
       - SELF_HOSTED_DOMAINS=localhost:8787
+      - JWT_PUBLIC_KEY=-----BEGIN PUBLIC KEY-----
+        MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxFdpUKFuGNOGHP8KTWik
+        VMoaz+c7nv8L+DZRqjxSksFUMSnvvy9j1jssjJ83o4SBhCic+kQ38/ZaleggJce7
+        h7yQTtPiWpBtHsz2xpdR9m+J9IhytCLUCi2JPeHIkCM3OIK1ZfdqZemqbGGRR0KH
+        0UMCPwI6gs4POn/pEherNEX541EmG3v7v8r1Nd24DpkykvAEoj4W0HFF7H5m2+1X
+        D7hzy+Td0oyGpZpko8f3fInlczpKPU9NNdCGfPQ0o3ERIj4bNphD3cmFDS6UXLbz
+        M0hUWhJjPxRxKyJvxfiu+fw5vu5G4EPakRWMV33ZNuw2JVPZW07iCkeAVSB8wJn4
+        CwIDAQAB
+        -----END PUBLIC KEY-----
+      - JWT_ISSUER=test-issuer
+      - JWT_AUDIENCE=test-audience
     ports:
       - '8787:8787'
     networks:

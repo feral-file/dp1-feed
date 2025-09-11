@@ -57,9 +57,37 @@ export function validateNoProtectedFields(
 import type { StorageProvider } from './storage/interfaces';
 import type { QueueProvider } from './queue/interfaces';
 
+/**
+ * JWT Configuration interface
+ */
+export interface JwtConfig {
+  publicKey?: string; // PEM format public key
+  jwksUrl?: string; // JWKS endpoint URL for remote key fetching
+  issuer?: string; // Expected issuer claim (iss)
+  audience?: string; // Expected audience claim (aud)
+}
+
+/**
+ * JWT payload interface for authenticated requests
+ */
+export interface JwtPayload {
+  sub?: string; // Subject (user ID)
+  iss?: string; // Issuer
+  aud?: string | string[]; // Audience
+  exp?: number; // Expiration time
+  iat?: number; // Issued at
+  [key: string]: any; // Additional claims
+}
+
 export interface Env {
   API_SECRET: string;
   ED25519_PRIVATE_KEY: string; // Required for playlist signing
+
+  // JWT configuration for user authentication (optional)
+  JWT_PUBLIC_KEY?: string; // PEM format public key
+  JWT_JWKS_URL?: string; // JWKS endpoint URL for remote key fetching
+  JWT_ISSUER?: string; // Expected issuer claim (iss)
+  JWT_AUDIENCE?: string; // Expected audience claim (aud)
 
   // Storage provider for data persistence (required)
   storageProvider: StorageProvider;

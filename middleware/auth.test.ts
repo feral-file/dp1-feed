@@ -7,6 +7,7 @@ import {
   validateJsonMiddleware,
 } from './auth';
 import { createTestEnv } from '../test-helpers';
+import * as jose from 'jose';
 
 describe('authMiddleware', () => {
   let mockContext: any;
@@ -25,6 +26,7 @@ describe('authMiddleware', () => {
       var: {
         env: testEnv.env,
       },
+      set: vi.fn(),
       res: undefined,
     };
 
@@ -134,11 +136,13 @@ describe('authMiddleware', () => {
       expect((mockContext.res as Response).status).toBe(401);
     });
 
-    it('should return 500 when API_SECRET is not configured', async () => {
+    it('should return 401 when API_SECRET is not configured and JWT is not configured', async () => {
       // Arrange
       mockContext.req.method = 'POST';
       mockContext.req.header.mockReturnValue('Bearer valid-token');
       mockContext.var.env.API_SECRET = undefined;
+      mockContext.var.env.JWT_PUBLIC_KEY = undefined;
+      mockContext.var.env.JWT_JWKS_URL = undefined;
 
       // Act
       await authMiddleware(mockContext, mockNext);
@@ -148,12 +152,12 @@ describe('authMiddleware', () => {
       expect(mockContext.res).toBeInstanceOf(Response);
 
       const response = mockContext.res as Response;
-      expect(response.status).toBe(500);
+      expect(response.status).toBe(401);
 
       const responseBody = await response.json();
       expect(responseBody).toEqual({
-        error: 'server_error',
-        message: 'Server configuration error',
+        error: 'unauthorized',
+        message: 'Authentication not configured',
       });
     });
 
@@ -175,7 +179,7 @@ describe('authMiddleware', () => {
       const responseBody = await response.json();
       expect(responseBody).toEqual({
         error: 'unauthorized',
-        message: 'Invalid API key',
+        message: 'Invalid credentials',
       });
     });
 
@@ -190,6 +194,7 @@ describe('authMiddleware', () => {
       // Assert
       expect(mockNext).toHaveBeenCalledOnce();
       expect(mockContext.res).toBeUndefined();
+      expect(mockContext.set).toHaveBeenCalledWith('authType', 'api_key');
     });
 
     it('should handle Bearer token with extra whitespace', async () => {
@@ -218,6 +223,277 @@ describe('authMiddleware', () => {
       expect(mockNext).not.toHaveBeenCalled();
       expect(mockContext.res).toBeInstanceOf(Response);
       expect((mockContext.res as Response).status).toBe(401);
+    });
+  });
+
+  describe('JWT authentication', () => {
+    let testKeyPair: { publicKey: jose.CryptoKey; privateKey: jose.CryptoKey };
+    let testPublicKeyPEM: string;
+
+    beforeEach(async () => {
+      // Generate test RSA key pair for JWT testing
+      testKeyPair = await jose.generateKeyPair('RS256');
+      testPublicKeyPEM = await jose.exportSPKI(testKeyPair.publicKey);
+    });
+
+    it('should accept valid JWT token with public key configuration', async () => {
+      // Arrange
+      mockContext.req.method = 'POST';
+      mockContext.var.env.API_SECRET = 'different-secret'; // Different from token
+      mockContext.var.env.JWT_PUBLIC_KEY = testPublicKeyPEM;
+      mockContext.var.env.JWT_ISSUER = 'test-issuer';
+      mockContext.var.env.JWT_AUDIENCE = 'test-audience';
+
+      // Create a valid JWT
+      const jwt = await new jose.SignJWT({
+        sub: 'user123',
+        name: 'Test User',
+        role: 'user',
+      })
+        .setProtectedHeader({ alg: 'RS256' })
+        .setIssuedAt()
+        .setIssuer('test-issuer')
+        .setAudience('test-audience')
+        .setExpirationTime('2h')
+        .sign(testKeyPair.privateKey);
+
+      mockContext.req.header.mockReturnValue(`Bearer ${jwt}`);
+
+      // Act
+      await authMiddleware(mockContext, mockNext);
+
+      // Assert
+      expect(mockNext).toHaveBeenCalledOnce();
+      expect(mockContext.res).toBeUndefined();
+      expect(mockContext.set).toHaveBeenCalledWith('authType', 'jwt');
+      expect(mockContext.set).toHaveBeenCalledWith(
+        'jwtPayload',
+        expect.objectContaining({
+          sub: 'user123',
+          iss: 'test-issuer',
+          aud: 'test-audience',
+          name: 'Test User',
+          role: 'user',
+        })
+      );
+    });
+
+    it('should reject expired JWT token', async () => {
+      // Arrange
+      mockContext.req.method = 'POST';
+      mockContext.var.env.API_SECRET = 'different-secret';
+      mockContext.var.env.JWT_PUBLIC_KEY = testPublicKeyPEM;
+
+      // Create an expired JWT (expired 1 hour ago)
+      const jwt = await new jose.SignJWT({
+        sub: 'user123',
+      })
+        .setProtectedHeader({ alg: 'RS256' })
+        .setIssuedAt(Math.floor(Date.now() / 1000) - 7200) // 2 hours ago
+        .setExpirationTime(Math.floor(Date.now() / 1000) - 3600) // 1 hour ago
+        .sign(testKeyPair.privateKey);
+
+      mockContext.req.header.mockReturnValue(`Bearer ${jwt}`);
+
+      // Act
+      await authMiddleware(mockContext, mockNext);
+
+      // Assert
+      expect(mockNext).not.toHaveBeenCalled();
+      expect(mockContext.res).toBeInstanceOf(Response);
+      expect((mockContext.res as Response).status).toBe(401);
+    });
+
+    it('should reject JWT with wrong signature', async () => {
+      // Arrange
+      mockContext.req.method = 'POST';
+      mockContext.var.env.API_SECRET = 'different-secret';
+      mockContext.var.env.JWT_PUBLIC_KEY = testPublicKeyPEM;
+
+      // Generate a different key pair and sign with it
+      const wrongKeyPair = await jose.generateKeyPair('RS256');
+      const jwt = await new jose.SignJWT({
+        sub: 'user123',
+      })
+        .setProtectedHeader({ alg: 'RS256' })
+        .setIssuedAt()
+        .setExpirationTime('2h')
+        .sign(wrongKeyPair.privateKey); // Wrong private key
+
+      mockContext.req.header.mockReturnValue(`Bearer ${jwt}`);
+
+      // Act
+      await authMiddleware(mockContext, mockNext);
+
+      // Assert
+      expect(mockNext).not.toHaveBeenCalled();
+      expect(mockContext.res).toBeInstanceOf(Response);
+      expect((mockContext.res as Response).status).toBe(401);
+    });
+
+    it('should reject JWT with wrong issuer', async () => {
+      // Arrange
+      mockContext.req.method = 'POST';
+      mockContext.var.env.API_SECRET = 'different-secret';
+      mockContext.var.env.JWT_PUBLIC_KEY = testPublicKeyPEM;
+      mockContext.var.env.JWT_ISSUER = 'expected-issuer';
+
+      const jwt = await new jose.SignJWT({
+        sub: 'user123',
+      })
+        .setProtectedHeader({ alg: 'RS256' })
+        .setIssuedAt()
+        .setIssuer('wrong-issuer') // Wrong issuer
+        .setExpirationTime('2h')
+        .sign(testKeyPair.privateKey);
+
+      mockContext.req.header.mockReturnValue(`Bearer ${jwt}`);
+
+      // Act
+      await authMiddleware(mockContext, mockNext);
+
+      // Assert
+      expect(mockNext).not.toHaveBeenCalled();
+      expect(mockContext.res).toBeInstanceOf(Response);
+      expect((mockContext.res as Response).status).toBe(401);
+    });
+
+    it('should reject JWT with wrong audience', async () => {
+      // Arrange
+      mockContext.req.method = 'POST';
+      mockContext.var.env.API_SECRET = 'different-secret';
+      mockContext.var.env.JWT_PUBLIC_KEY = testPublicKeyPEM;
+      mockContext.var.env.JWT_AUDIENCE = 'expected-audience';
+
+      const jwt = await new jose.SignJWT({
+        sub: 'user123',
+      })
+        .setProtectedHeader({ alg: 'RS256' })
+        .setIssuedAt()
+        .setAudience('wrong-audience') // Wrong audience
+        .setExpirationTime('2h')
+        .sign(testKeyPair.privateKey);
+
+      mockContext.req.header.mockReturnValue(`Bearer ${jwt}`);
+
+      // Act
+      await authMiddleware(mockContext, mockNext);
+
+      // Assert
+      expect(mockNext).not.toHaveBeenCalled();
+      expect(mockContext.res).toBeInstanceOf(Response);
+      expect((mockContext.res as Response).status).toBe(401);
+    });
+
+    it('should prefer API key over JWT when both are valid', async () => {
+      // Arrange
+      mockContext.req.method = 'POST';
+      mockContext.var.env.API_SECRET = 'test-secret-key'; // Same as token
+      mockContext.var.env.JWT_PUBLIC_KEY = testPublicKeyPEM;
+
+      // Use API key as token (should match API_SECRET)
+      mockContext.req.header.mockReturnValue('Bearer test-secret-key');
+
+      // Act
+      await authMiddleware(mockContext, mockNext);
+
+      // Assert
+      expect(mockNext).toHaveBeenCalledOnce();
+      expect(mockContext.res).toBeUndefined();
+      expect(mockContext.set).toHaveBeenCalledWith('authType', 'api_key');
+      expect(mockContext.set).not.toHaveBeenCalledWith('authType', 'jwt');
+    });
+
+    it('should fall back to JWT when API key does not match', async () => {
+      // Arrange
+      mockContext.req.method = 'POST';
+      mockContext.var.env.API_SECRET = 'different-secret';
+      mockContext.var.env.JWT_PUBLIC_KEY = testPublicKeyPEM;
+
+      const jwt = await new jose.SignJWT({
+        sub: 'user123',
+      })
+        .setProtectedHeader({ alg: 'RS256' })
+        .setIssuedAt()
+        .setExpirationTime('2h')
+        .sign(testKeyPair.privateKey);
+
+      mockContext.req.header.mockReturnValue(`Bearer ${jwt}`);
+
+      // Act
+      await authMiddleware(mockContext, mockNext);
+
+      // Assert
+      expect(mockNext).toHaveBeenCalledOnce();
+      expect(mockContext.res).toBeUndefined();
+      expect(mockContext.set).toHaveBeenCalledWith('authType', 'jwt');
+    });
+
+    it('should reject invalid JWT format', async () => {
+      // Arrange
+      mockContext.req.method = 'POST';
+      mockContext.var.env.API_SECRET = 'different-secret';
+      mockContext.var.env.JWT_PUBLIC_KEY = testPublicKeyPEM;
+
+      mockContext.req.header.mockReturnValue('Bearer invalid.jwt.format');
+
+      // Act
+      await authMiddleware(mockContext, mockNext);
+
+      // Assert
+      expect(mockNext).not.toHaveBeenCalled();
+      expect(mockContext.res).toBeInstanceOf(Response);
+      expect((mockContext.res as Response).status).toBe(401);
+    });
+
+    it('should handle JWT validation without issuer/audience configured', async () => {
+      // Arrange
+      mockContext.req.method = 'POST';
+      mockContext.var.env.API_SECRET = 'different-secret';
+      mockContext.var.env.JWT_PUBLIC_KEY = testPublicKeyPEM;
+      // No JWT_ISSUER or JWT_AUDIENCE configured
+
+      const jwt = await new jose.SignJWT({
+        sub: 'user123',
+      })
+        .setProtectedHeader({ alg: 'RS256' })
+        .setIssuedAt()
+        .setExpirationTime('2h')
+        .sign(testKeyPair.privateKey);
+
+      mockContext.req.header.mockReturnValue(`Bearer ${jwt}`);
+
+      // Act
+      await authMiddleware(mockContext, mockNext);
+
+      // Assert
+      expect(mockNext).toHaveBeenCalledOnce();
+      expect(mockContext.res).toBeUndefined();
+      expect(mockContext.set).toHaveBeenCalledWith('authType', 'jwt');
+    });
+
+    it('should reject when neither API key nor JWT configuration is available', async () => {
+      // Arrange
+      mockContext.req.method = 'POST';
+      mockContext.var.env.API_SECRET = undefined;
+      mockContext.var.env.JWT_PUBLIC_KEY = undefined;
+      mockContext.var.env.JWT_JWKS_URL = undefined;
+
+      mockContext.req.header.mockReturnValue('Bearer some-token');
+
+      // Act
+      await authMiddleware(mockContext, mockNext);
+
+      // Assert
+      expect(mockNext).not.toHaveBeenCalled();
+      expect(mockContext.res).toBeInstanceOf(Response);
+      expect((mockContext.res as Response).status).toBe(401);
+
+      const responseBody = await (mockContext.res as Response).json();
+      expect(responseBody).toEqual({
+        error: 'unauthorized',
+        message: 'Authentication not configured',
+      });
     });
   });
 });
