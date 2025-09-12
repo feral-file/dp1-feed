@@ -12,6 +12,8 @@ import {
 import { signObj, getServerKeyPair } from '../crypto';
 import { listAllPlaylists, getPlaylistByIdOrSlug, listPlaylistsByChannelId } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
+import { shouldUseAsyncPersistence } from '../rfc7240';
+import { StorageService } from '../storage/service';
 
 // Create playlist router
 const playlists = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();
@@ -198,7 +200,7 @@ playlists.get('/:id', async c => {
 
 /**
  * POST /playlists - Create new playlist (server-generated ID)
- * Fast response: validates, signs, queues for async processing
+ * Supports RFC 7240: synchronous by default, async if "Prefer: respond-async" header present
  */
 playlists.post('/', async c => {
   try {
@@ -224,32 +226,51 @@ playlists.post('/', async c => {
     // Sign the playlist
     playlist.signature = await signObj(playlist, keyPair.privateKey);
 
-    // Create queue message for async processing
-    const queueMessage: CreatePlaylistMessage = {
-      id: generateMessageId('create_playlist', playlist.id),
-      timestamp: new Date().toISOString(),
-      operation: 'create_playlist',
-      data: {
-        playlist: playlist,
-      },
-    };
+    // Check if client prefers async processing (RFC 7240)
+    const useAsync = shouldUseAsyncPersistence(c);
 
-    // Queue the save operation for async processing
-    try {
-      await queueWriteOperation(queueMessage, c.var.env);
-    } catch (queueError) {
-      console.error('Failed to queue playlist creation:', queueError);
-      return c.json(
-        {
-          error: 'queue_error',
-          message: 'Failed to queue playlist for processing',
+    if (useAsync) {
+      // Async processing: queue the operation and return 202 Accepted
+      const queueMessage: CreatePlaylistMessage = {
+        id: generateMessageId('create_playlist', playlist.id),
+        timestamp: new Date().toISOString(),
+        operation: 'create_playlist',
+        data: {
+          playlist: playlist,
         },
-        500
-      );
-    }
+      };
 
-    // Return immediately with the signed playlist (before saving)
-    return c.json(playlist, 201);
+      try {
+        await queueWriteOperation(queueMessage, c.var.env);
+        // Return 202 Accepted for async processing
+        return c.json(playlist, 202);
+      } catch (queueError) {
+        console.error('Failed to queue playlist creation:', queueError);
+        return c.json(
+          {
+            error: 'queue_error',
+            message: 'Failed to queue playlist for processing',
+          },
+          500
+        );
+      }
+    } else {
+      // Sync processing: persist immediately and return 201 Created
+      try {
+        const storageService = new StorageService(c.var.env.storageProvider);
+        await storageService.savePlaylist(playlist, false);
+        return c.json(playlist, 201);
+      } catch (storageError) {
+        console.error('Failed to save playlist synchronously:', storageError);
+        return c.json(
+          {
+            error: 'storage_error',
+            message: 'Failed to save playlist',
+          },
+          500
+        );
+      }
+    }
   } catch (error) {
     console.error('Error creating playlist:', error);
     return c.json(
@@ -338,32 +359,51 @@ playlists.put('/:id', async c => {
     const keyPair = await getServerKeyPair(c.var.env);
     updatedPlaylist.signature = await signObj(updatedPlaylist, keyPair.privateKey);
 
-    // Create queue message for async processing
-    const queueMessage: UpdatePlaylistMessage = {
-      id: generateMessageId('update_playlist', updatedPlaylist.id),
-      timestamp: new Date().toISOString(),
-      operation: 'update_playlist',
-      data: {
-        playlistId: updatedPlaylist.id,
-        playlist: updatedPlaylist,
-      },
-    };
+    // Check if client prefers async processing (RFC 7240)
+    const useAsync = shouldUseAsyncPersistence(c);
 
-    // Queue the update operation for async processing
-    try {
-      await queueWriteOperation(queueMessage, c.var.env);
-    } catch (queueError) {
-      console.error('Failed to queue playlist update:', queueError);
-      return c.json(
-        {
-          error: 'queue_error',
-          message: 'Failed to queue playlist for processing',
+    if (useAsync) {
+      // Async processing: queue the operation and return 202 Accepted
+      const queueMessage: UpdatePlaylistMessage = {
+        id: generateMessageId('update_playlist', updatedPlaylist.id),
+        timestamp: new Date().toISOString(),
+        operation: 'update_playlist',
+        data: {
+          playlistId: updatedPlaylist.id,
+          playlist: updatedPlaylist,
         },
-        500
-      );
-    }
+      };
 
-    return c.json(updatedPlaylist);
+      try {
+        await queueWriteOperation(queueMessage, c.var.env);
+        return c.json(updatedPlaylist, 202);
+      } catch (queueError) {
+        console.error('Failed to queue playlist update:', queueError);
+        return c.json(
+          {
+            error: 'queue_error',
+            message: 'Failed to queue playlist for processing',
+          },
+          500
+        );
+      }
+    } else {
+      // Sync processing: persist immediately and return 200 OK
+      try {
+        const storageService = new StorageService(c.var.env.storageProvider);
+        await storageService.savePlaylist(updatedPlaylist, true);
+        return c.json(updatedPlaylist, 200);
+      } catch (storageError) {
+        console.error('Failed to save playlist synchronously:', storageError);
+        return c.json(
+          {
+            error: 'storage_error',
+            message: 'Failed to save playlist',
+          },
+          500
+        );
+      }
+    }
   } catch (error) {
     console.error('Error updating playlist (PUT):', error);
     return c.json(
@@ -453,33 +493,51 @@ playlists.patch('/:id', async c => {
     const keyPair = await getServerKeyPair(c.var.env);
     updatedPlaylist.signature = await signObj(updatedPlaylist, keyPair.privateKey);
 
-    // Create queue message for async processing
-    const queueMessage: UpdatePlaylistMessage = {
-      id: generateMessageId('update_playlist', updatedPlaylist.id),
-      timestamp: new Date().toISOString(),
-      operation: 'update_playlist',
-      data: {
-        playlistId: updatedPlaylist.id,
-        playlist: updatedPlaylist,
-      },
-    };
+    // Check if client prefers async processing (RFC 7240)
+    const useAsync = shouldUseAsyncPersistence(c);
 
-    // Queue the update operation for async processing
-    try {
-      await queueWriteOperation(queueMessage, c.var.env);
-    } catch (queueError) {
-      console.error('Failed to queue playlist update:', queueError);
-      return c.json(
-        {
-          error: 'queue_error',
-          message: 'Failed to queue playlist for processing',
+    if (useAsync) {
+      // Async processing: queue the operation and return 202 Accepted
+      const queueMessage: UpdatePlaylistMessage = {
+        id: generateMessageId('update_playlist', updatedPlaylist.id),
+        timestamp: new Date().toISOString(),
+        operation: 'update_playlist',
+        data: {
+          playlistId: updatedPlaylist.id,
+          playlist: updatedPlaylist,
         },
-        500
-      );
-    }
+      };
 
-    // Return immediately with the signed playlist (before saving)
-    return c.json(updatedPlaylist);
+      try {
+        await queueWriteOperation(queueMessage, c.var.env);
+        return c.json(updatedPlaylist, 202);
+      } catch (queueError) {
+        console.error('Failed to queue playlist update:', queueError);
+        return c.json(
+          {
+            error: 'queue_error',
+            message: 'Failed to queue playlist for processing',
+          },
+          500
+        );
+      }
+    } else {
+      // Sync processing: persist immediately and return 200 OK
+      try {
+        const storageService = new StorageService(c.var.env.storageProvider);
+        await storageService.savePlaylist(updatedPlaylist, true);
+        return c.json(updatedPlaylist, 200);
+      } catch (storageError) {
+        console.error('Failed to save playlist synchronously:', storageError);
+        return c.json(
+          {
+            error: 'storage_error',
+            message: 'Failed to save playlist',
+          },
+          500
+        );
+      }
+    }
   } catch (error) {
     console.error('Error updating playlist (PATCH):', error);
     return c.json(
