@@ -7,11 +7,13 @@ This document describes the API flow for both Cloudflare Workers and self-hosted
 The DP-1 Feed API supports both synchronous and asynchronous persistence patterns:
 
 **Default Behavior (Synchronous):**
+
 1. API requests are validated and signed immediately
 2. Operations are persisted directly to storage
 3. A response is returned to the client after successful persistence
 
 **Optional Async Behavior (RFC 7240):**
+
 1. API requests are validated and signed immediately
 2. Operations are queued for async processing (when `Prefer: respond-async` header is present)
 3. A response is returned to the client before persistence

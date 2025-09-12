@@ -122,17 +122,20 @@ node scripts/generate-jwt-keys.js
 The API supports both synchronous and asynchronous persistence patterns:
 
 #### Default Behavior (Synchronous)
+
 - **Response**: Operations return `201 Created` or `200 OK` after successful persistence
 - **Persistence**: Data is saved immediately to storage before responding
 - **Use Case**: Most common scenario for immediate data availability
 
 #### Optional Async Behavior (RFC 7240)
+
 - **Header**: Include `Prefer: respond-async` in your request headers
 - **Response**: Operations return `202 Accepted` before persistence
 - **Persistence**: Data is queued for background processing
 - **Use Case**: High-throughput scenarios or when immediate persistence isn't required
 
 **Example Async Request:**
+
 ```bash
 curl -X POST https://your-api.workers.dev/api/v1/playlists \
   -H "Authorization: Bearer YOUR_API_SECRET" \
