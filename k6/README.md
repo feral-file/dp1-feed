@@ -134,7 +134,7 @@ The K6 tests cover all API endpoints:
 - **Real Data**: Uses actual playlist URLs for channel creation
 - **Data Reuse**: Cycles through created resources for realistic testing
 - **Authentication**: Automatically adds Bearer token for write operations
-- **Async Processing**: Tests reflect the new async queue-based write operations
+- **Persistence Testing**: Tests reflect both synchronous (default) and asynchronous (RFC 7240) write operations
 
 ## Metrics and Thresholds
 

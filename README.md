@@ -12,7 +12,7 @@ A modern API server implementing the DP-1 Feed Operator specification for blockc
 - **DP-1 Compliant**: Full OpenAPI 3.1.0 implementation of DP-1 v1.0.0
 - **Dual Deployment**: Cloudflare Workers (serverless) + Node.js (self-hosted)
 - **Type Safety**: End-to-end TypeScript with Zod validation
-- **Modern Stack**: Hono framework, Ed25519 signatures, async processing
+- **Modern Stack**: Hono framework, Ed25519 signatures, RFC 7240 async support
 - **Production Ready**: KV storage, queues, authentication, CORS, monitoring
 
 ## 📦 Quick Start
@@ -116,6 +116,32 @@ npm run jwt:generate-keys
 # or directly:
 node scripts/generate-jwt-keys.js
 ```
+
+### Persistence Behavior
+
+The API supports both synchronous and asynchronous persistence patterns:
+
+#### Default Behavior (Synchronous)
+- **Response**: Operations return `201 Created` or `200 OK` after successful persistence
+- **Persistence**: Data is saved immediately to storage before responding
+- **Use Case**: Most common scenario for immediate data availability
+
+#### Optional Async Behavior (RFC 7240)
+- **Header**: Include `Prefer: respond-async` in your request headers
+- **Response**: Operations return `202 Accepted` before persistence
+- **Persistence**: Data is queued for background processing
+- **Use Case**: High-throughput scenarios or when immediate persistence isn't required
+
+**Example Async Request:**
+```bash
+curl -X POST https://your-api.workers.dev/api/v1/playlists \
+  -H "Authorization: Bearer YOUR_API_SECRET" \
+  -H "Prefer: respond-async" \
+  -H "Content-Type: application/json" \
+  -d '{...}'
+```
+
+**Note:** Async operation tracking and status monitoring capabilities are planned for future releases.
 
 ### Core Endpoints
 

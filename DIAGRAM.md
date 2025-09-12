@@ -4,12 +4,20 @@ This document describes the API flow for both Cloudflare Workers and self-hosted
 
 ## Overview
 
-The DP-1 Feed API follows an asynchronous pattern where:
+The DP-1 Feed API supports both synchronous and asynchronous persistence patterns:
 
+**Default Behavior (Synchronous):**
 1. API requests are validated and signed immediately
-2. Operations are queued for async processing
+2. Operations are persisted directly to storage
+3. A response is returned to the client after successful persistence
+
+**Optional Async Behavior (RFC 7240):**
+1. API requests are validated and signed immediately
+2. Operations are queued for async processing (when `Prefer: respond-async` header is present)
 3. A response is returned to the client before persistence
 4. Message consumers process queued operations in the background
+
+**Note:** Async operation tracking and status monitoring capabilities are planned for future releases.
 
 ## Deployment Types
 
@@ -33,6 +41,29 @@ The DP-1 Feed API follows an asynchronous pattern where:
 
 ### Cloudflare Workers Deployment
 
+#### Synchronous Flow (Default)
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant CF_Worker as Cloudflare Worker
+    participant CF_KV as Cloudflare KV
+
+    Note over Client,CF_KV: Create/Update Playlist/Channel Flow - Synchronous (Default)
+
+    Client->>CF_Worker: POST/PUT/PATCH /playlists or /channels
+    Note right of Client: Request includes playlist/group data
+
+    CF_Worker->>CF_Worker: 1. Validate request body (Zod schema)
+    CF_Worker->>CF_Worker: 2. Generate server IDs (UUID, slug, timestamps)
+    CF_Worker->>CF_Worker: 3. Sign data with Ed25519 private key
+    CF_Worker->>CF_KV: 4. Persist directly to KV storage
+    CF_Worker->>Client: 5. Return signed playlist/group (201/200)
+    Note right of Client: Response includes signature, server-generated IDs
+```
+
+#### Asynchronous Flow (RFC 7240)
+
 ```mermaid
 sequenceDiagram
     participant Client
@@ -41,10 +72,10 @@ sequenceDiagram
     participant CF_Consumer as CF Queue Consumer
     participant CF_KV as Cloudflare KV
 
-    Note over Client,CF_KV: Create/Update Playlist/Channel Flow (Cloudflare Workers)
+    Note over Client,CF_KV: Create/Update Playlist/Channel Flow - Asynchronous (Prefer: respond-async)
 
     Client->>CF_Worker: POST/PUT/PATCH /playlists or /channels
-    Note right of Client: Request includes playlist/group data
+    Note right of Client: Request includes playlist/group data + Prefer: respond-async header
 
     CF_Worker->>CF_Worker: 1. Validate request body (Zod schema)
     CF_Worker->>CF_Worker: 2. Generate server IDs (UUID, slug, timestamps)
@@ -54,7 +85,7 @@ sequenceDiagram
     CF_Worker->>CF_Queue: 5. Queue write operation message
     Note right of CF_Queue: Message contains: {operation, id, timestamp, data}
 
-    CF_Worker->>Client: 6. Return signed playlist/group (201/200)
+    CF_Worker->>Client: 6. Return signed playlist/group (202 Accepted)
     Note right of Client: Response includes signature, server-generated IDs
 
     Note over CF_Queue,CF_KV: Async Processing (Cloudflare handles)
@@ -68,6 +99,29 @@ sequenceDiagram
 
 ### Self-Hosted Node.js Deployment
 
+#### Synchronous Flow (Default)
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Node_Server as Node.js Server
+    participant ETCD as etcd Storage
+
+    Note over Client,ETCD: Create/Update Playlist/Channel Flow - Synchronous (Default)
+
+    Client->>Node_Server: POST/PUT/PATCH /playlists or /channels
+    Note right of Client: Request includes playlist/group data
+
+    Node_Server->>Node_Server: 1. Validate request body (Zod schema)
+    Node_Server->>Node_Server: 2. Generate server IDs (UUID, slug, timestamps)
+    Node_Server->>Node_Server: 3. Sign data with Ed25519 private key
+    Node_Server->>ETCD: 4. Persist directly to etcd storage
+    Node_Server->>Client: 5. Return signed playlist/group (201/200)
+    Note right of Client: Response includes signature, server-generated IDs
+```
+
+#### Asynchronous Flow (RFC 7240)
+
 ```mermaid
 sequenceDiagram
     participant Client
@@ -77,10 +131,10 @@ sequenceDiagram
     participant Node_API as Node.js API (Internal)
     participant ETCD as etcd Storage
 
-    Note over Client,ETCD: Create/Update Playlist/Channel Flow (Self-Hosted)
+    Note over Client,ETCD: Create/Update Playlist/Channel Flow - Asynchronous (Prefer: respond-async)
 
     Client->>Node_Server: POST/PUT/PATCH /playlists or /channels
-    Note right of Client: Request includes playlist/group data
+    Note right of Client: Request includes playlist/group data + Prefer: respond-async header
 
     Node_Server->>Node_Server: 1. Validate request body (Zod schema)
     Node_Server->>Node_Server: 2. Generate server IDs (UUID, slug, timestamps)
@@ -90,7 +144,7 @@ sequenceDiagram
     Node_Server->>NATS_JS: 5. Publish message to JetStream
     Note right of NATS_JS: Message contains: {operation, id, timestamp, data}
 
-    Node_Server->>Client: 6. Return signed playlist/group (201/200)
+    Node_Server->>Client: 6. Return signed playlist/group (202 Accepted)
     Note right of Client: Response includes signature, server-generated IDs
 
     Note over NATS_JS,ETCD: Async Processing (Separate Consumer)
