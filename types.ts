@@ -266,40 +266,54 @@ export const PlaylistItemInputSchema = z.object({
   provenance: ProvenanceSchema,
 });
 
-export const PlaylistInputSchema = z.object({
-  dpVersion: z
-    .string()
-    .max(16)
-    .refine(
-      version => {
-        const validation = validateDpVersion(version);
-        return validation.isValid;
-      },
-      version => {
-        const validation = validateDpVersion(version);
-        return {
-          message: validation.error || 'Invalid dpVersion',
-        };
-      }
-    ),
-  defaults: z
-    .object({
-      display: DisplayPrefsSchema,
-      license: z.enum(['open', 'token', 'subscription']).optional(),
-      duration: z.number().min(1).optional(),
-    })
-    .optional(),
-  title: z.string().max(256),
-  curators: z.array(EntitySchema).optional(),
-  summary: z.string().max(4096).optional(),
-  coverImage: z
-    .string()
-    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
-    .max(1024)
-    .optional(),
-  items: z.array(PlaylistItemInputSchema).min(1).max(1024),
-  dynamicQueries: z.array(DynamicQuerySchema).optional(),
-});
+export const PlaylistInputSchema = z
+  .object({
+    dpVersion: z
+      .string()
+      .max(16)
+      .refine(
+        version => {
+          const validation = validateDpVersion(version);
+          return validation.isValid;
+        },
+        version => {
+          const validation = validateDpVersion(version);
+          return {
+            message: validation.error || 'Invalid dpVersion',
+          };
+        }
+      ),
+    defaults: z
+      .object({
+        display: DisplayPrefsSchema,
+        license: z.enum(['open', 'token', 'subscription']).optional(),
+        duration: z.number().min(1).optional(),
+      })
+      .optional(),
+    title: z.string().max(256),
+    curators: z.array(EntitySchema).optional(),
+    summary: z.string().max(4096).optional(),
+    coverImage: z
+      .string()
+      .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
+      .max(1024)
+      .optional(),
+    items: z.array(PlaylistItemInputSchema).max(1024),
+    dynamicQueries: z.array(DynamicQuerySchema).optional(),
+  })
+  .refine(
+    data => {
+      // Either items must have at least one item OR dynamicQueries must be present and non-empty
+      return (
+        (data.items && data.items.length > 0) ||
+        (data.dynamicQueries && data.dynamicQueries.length > 0)
+      );
+    },
+    {
+      message: 'Playlist must have either items or dynamicQueries (or both)',
+      path: ['items', 'dynamicQueries'],
+    }
+  );
 
 export const ChannelInputSchema = z.object({
   title: z.string().max(256),
@@ -324,41 +338,62 @@ export const ChannelInputSchema = z.object({
 });
 
 // Update schemas that exclude protected fields
-export const PlaylistUpdateSchema = z.object({
-  dpVersion: z
-    .string()
-    .max(16)
-    .refine(
-      version => {
-        const validation = validateDpVersion(version);
-        return validation.isValid;
-      },
-      version => {
-        const validation = validateDpVersion(version);
-        return {
-          message: validation.error || 'Invalid dpVersion',
-        };
+export const PlaylistUpdateSchema = z
+  .object({
+    dpVersion: z
+      .string()
+      .max(16)
+      .refine(
+        version => {
+          const validation = validateDpVersion(version);
+          return validation.isValid;
+        },
+        version => {
+          const validation = validateDpVersion(version);
+          return {
+            message: validation.error || 'Invalid dpVersion',
+          };
+        }
+      )
+      .optional(),
+    defaults: z
+      .object({
+        display: DisplayPrefsSchema,
+        license: z.enum(['open', 'token', 'subscription']).optional(),
+        duration: z.number().min(1).optional(),
+      })
+      .optional(),
+    items: z.array(PlaylistItemInputSchema).max(1024).optional(),
+    coverImage: z
+      .string()
+      .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
+      .max(1024)
+      .optional(),
+    title: z.string().max(256).optional(),
+    curators: z.array(EntitySchema).optional(),
+    summary: z.string().max(4096).optional(),
+    dynamicQueries: z.array(DynamicQuerySchema).optional(),
+  })
+  .refine(
+    data => {
+      // If both items and dynamicQueries are provided, at least one must be non-empty
+      // If only one is provided, it must be non-empty
+      const hasItems = data.items && data.items.length > 0;
+      const hasDynamicQueries = data.dynamicQueries && data.dynamicQueries.length > 0;
+
+      // If neither items nor dynamicQueries are provided, that's valid (partial update)
+      if (!data.items && !data.dynamicQueries) {
+        return true;
       }
-    )
-    .optional(),
-  defaults: z
-    .object({
-      display: DisplayPrefsSchema,
-      license: z.enum(['open', 'token', 'subscription']).optional(),
-      duration: z.number().min(1).optional(),
-    })
-    .optional(),
-  items: z.array(PlaylistItemInputSchema).min(1).max(1024).optional(),
-  coverImage: z
-    .string()
-    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
-    .max(1024)
-    .optional(),
-  title: z.string().max(256).optional(),
-  curators: z.array(EntitySchema).optional(),
-  summary: z.string().max(4096).optional(),
-  dynamicQueries: z.array(DynamicQuerySchema).optional(),
-});
+
+      // If either is provided, at least one must be non-empty
+      return hasItems || hasDynamicQueries;
+    },
+    {
+      message: 'If items or dynamicQueries are provided, at least one must be non-empty',
+      path: ['items', 'dynamicQueries'],
+    }
+  );
 
 export const ChannelUpdateSchema = z.object({
   title: z.string().max(256).optional(),
@@ -384,50 +419,64 @@ export const ChannelUpdateSchema = z.object({
 });
 
 // Complete schemas with server-generated fields for output
-export const PlaylistSchema = z.object({
-  dpVersion: z
-    .string()
-    .max(16)
-    .refine(
-      version => {
-        const validation = validateDpVersion(version);
-        return validation.isValid;
-      },
-      version => {
-        const validation = validateDpVersion(version);
-        return {
-          message: validation.error || 'Invalid dpVersion',
-        };
-      }
-    ),
-  id: z.string().uuid(),
-  slug: z
-    .string()
-    .regex(/^[a-zA-Z0-9-]+$/)
-    .max(64),
-  title: z.string().max(256),
-  curators: z.array(EntitySchema).optional(),
-  summary: z.string().max(4096).optional(),
-  created: z.string().datetime(),
-  defaults: z
-    .object({
-      display: DisplayPrefsSchema,
-      license: z.enum(['open', 'token', 'subscription']).optional(),
-      duration: z.number().min(1).optional(),
-    })
-    .optional(),
-  items: z.array(PlaylistItemSchema).min(1).max(1024),
-  coverImage: z
-    .string()
-    .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
-    .max(1024)
-    .optional(),
-  dynamicQueries: z.array(DynamicQuerySchema).optional(),
-  signature: z
-    .string()
-    .regex(/^ed25519:0x[a-fA-F0-9]+$/)
-    .max(150),
-});
+export const PlaylistSchema = z
+  .object({
+    dpVersion: z
+      .string()
+      .max(16)
+      .refine(
+        version => {
+          const validation = validateDpVersion(version);
+          return validation.isValid;
+        },
+        version => {
+          const validation = validateDpVersion(version);
+          return {
+            message: validation.error || 'Invalid dpVersion',
+          };
+        }
+      ),
+    id: z.string().uuid(),
+    slug: z
+      .string()
+      .regex(/^[a-zA-Z0-9-]+$/)
+      .max(64),
+    title: z.string().max(256),
+    curators: z.array(EntitySchema).optional(),
+    summary: z.string().max(4096).optional(),
+    created: z.string().datetime(),
+    defaults: z
+      .object({
+        display: DisplayPrefsSchema,
+        license: z.enum(['open', 'token', 'subscription']).optional(),
+        duration: z.number().min(1).optional(),
+      })
+      .optional(),
+    items: z.array(PlaylistItemSchema).max(1024),
+    coverImage: z
+      .string()
+      .regex(/^[a-zA-Z][a-zA-Z0-9+.-]*:[^\s]*$/)
+      .max(1024)
+      .optional(),
+    dynamicQueries: z.array(DynamicQuerySchema).optional(),
+    signature: z
+      .string()
+      .regex(/^ed25519:0x[a-fA-F0-9]+$/)
+      .max(150),
+  })
+  .refine(
+    data => {
+      // Either items must have at least one item OR dynamicQueries must be present and non-empty
+      return (
+        (data.items && data.items.length > 0) ||
+        (data.dynamicQueries && data.dynamicQueries.length > 0)
+      );
+    },
+    {
+      message: 'Playlist must have either items or dynamicQueries (or both)',
+      path: ['items', 'dynamicQueries'],
+    }
+  );
 
 export const ChannelSchema = z.object({
   id: z.string().uuid(),
@@ -620,7 +669,7 @@ export function createPlaylistFromInput(input: PlaylistInput): Playlist {
   const timestamp = new Date().toISOString();
 
   // Generate IDs for all playlist items with unique timestamps
-  const itemsWithIds = input.items.map((item, index) => {
+  const itemsWithIds = (input.items || []).map((item, index) => {
     // Create a unique timestamp for each item by adding milliseconds based on index
     const itemTimestamp = new Date(Date.now() + index).toISOString();
     return {

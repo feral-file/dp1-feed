@@ -704,6 +704,300 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.message).toContain('dynamicQueries');
     });
 
+    describe('Dynamic Playlists', () => {
+      it('POST /playlists should create dynamic playlist with only dynamicQueries (no items)', async () => {
+        const dynamicPlaylist = {
+          dpVersion: '1.0.0',
+          title: 'Dynamic Test Playlist',
+          dynamicQueries: [
+            {
+              endpoint: 'https://api.example.com/artworks',
+              params: {
+                category: 'generative',
+                limit: '10',
+              },
+            },
+            {
+              endpoint: 'https://api.another.com/items',
+              params: {
+                type: 'nft',
+                status: 'active',
+              },
+            },
+          ],
+          items: [], // Empty items array
+        };
+
+        const req = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(dynamicPlaylist),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(201);
+
+        const data = await response.json();
+        expect(data.id).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);
+        expect(data.dpVersion).toBe('1.0.0');
+        expect(data.slug).toMatch(/^dynamic-test-playlist-\d{4}$/);
+        expect(data.title).toBe('Dynamic Test Playlist');
+        expect(data.items).toEqual([]);
+        expect(data.dynamicQueries).toEqual([
+          {
+            endpoint: 'https://api.example.com/artworks',
+            params: {
+              category: 'generative',
+              limit: '10',
+            },
+          },
+          {
+            endpoint: 'https://api.another.com/items',
+            params: {
+              type: 'nft',
+              status: 'active',
+            },
+          },
+        ]);
+      });
+
+      it('POST /playlists should create hybrid playlist with both items and dynamicQueries', async () => {
+        const hybridPlaylist = {
+          dpVersion: '1.0.0',
+          title: 'Hybrid Test Playlist',
+          dynamicQueries: [
+            {
+              endpoint: 'https://api.example.com/artworks',
+              params: {
+                category: 'generative',
+                limit: '5',
+              },
+            },
+          ],
+          items: [
+            {
+              title: 'Static Test Artwork',
+              source: 'https://example.com/static-artwork.html',
+              duration: 300,
+              license: 'open' as const,
+            },
+          ],
+        };
+
+        const req = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(hybridPlaylist),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(201);
+
+        const data = await response.json();
+        expect(data.id).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);
+        expect(data.dpVersion).toBe('1.0.0');
+        expect(data.slug).toMatch(/^hybrid-test-playlist-\d{4}$/);
+        expect(data.title).toBe('Hybrid Test Playlist');
+        expect(data.items).toHaveLength(1);
+        expect(data.items[0].title).toBe('Static Test Artwork');
+        expect(data.dynamicQueries).toEqual([
+          {
+            endpoint: 'https://api.example.com/artworks',
+            params: {
+              category: 'generative',
+              limit: '5',
+            },
+          },
+        ]);
+      });
+
+      it('POST /playlists should reject playlist with neither items nor dynamicQueries', async () => {
+        const invalidPlaylist = {
+          dpVersion: '1.0.0',
+          title: 'Invalid Empty Playlist',
+          items: [], // Empty items
+          // No dynamicQueries
+        };
+
+        const req = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(invalidPlaylist),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(400);
+
+        const data = await response.json();
+        expect(data.error).toBe('validation_error');
+        expect(data.message).toContain('Playlist must have either items or dynamicQueries');
+      });
+
+      it('POST /playlists should reject playlist with empty dynamicQueries and no items', async () => {
+        const invalidPlaylist = {
+          dpVersion: '1.0.0',
+          title: 'Invalid Empty Dynamic Playlist',
+          items: [], // Empty items
+          dynamicQueries: [], // Empty dynamicQueries
+        };
+
+        const req = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(invalidPlaylist),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(400);
+
+        const data = await response.json();
+        expect(data.error).toBe('validation_error');
+        expect(data.message).toContain('Playlist must have either items or dynamicQueries');
+      });
+
+      it('PATCH /playlists should update dynamic playlist to add items', async () => {
+        // First create a dynamic playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify({
+            dpVersion: '1.0.0',
+            title: 'Dynamic Playlist to Update',
+            dynamicQueries: [
+              {
+                endpoint: 'https://api.example.com/artworks',
+                params: { category: 'generative' },
+              },
+            ],
+            items: [],
+          }),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        expect(createResponse.status).toBe(201);
+        const createdData = await createResponse.json();
+
+        // Update to add items
+        const updateReq = new Request(`http://localhost/api/v1/playlists/${createdData.id}`, {
+          method: 'PATCH',
+          headers: validAuth,
+          body: JSON.stringify({
+            items: [
+              {
+                title: 'New Static Item',
+                source: 'https://example.com/new-item.html',
+                duration: 200,
+                license: 'open' as const,
+              },
+            ],
+          }),
+        });
+        const updateResponse = await app.fetch(updateReq, testEnv);
+        expect(updateResponse.status).toBe(200);
+
+        const updateData = await updateResponse.json();
+        expect(updateData.items).toHaveLength(1);
+        expect(updateData.items[0].title).toBe('New Static Item');
+        expect(updateData.dynamicQueries).toEqual([
+          {
+            endpoint: 'https://api.example.com/artworks',
+            params: { category: 'generative' },
+          },
+        ]);
+      });
+
+      it('PATCH /playlists should update regular playlist to become dynamic', async () => {
+        // First create a regular playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify({
+            dpVersion: '1.0.0',
+            title: 'Regular Playlist to Make Dynamic',
+            items: [
+              {
+                title: 'Original Item',
+                source: 'https://example.com/original.html',
+                duration: 300,
+                license: 'open' as const,
+              },
+            ],
+          }),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        expect(createResponse.status).toBe(201);
+        const createdData = await createResponse.json();
+
+        // Update to add dynamicQueries and remove items
+        const updateReq = new Request(`http://localhost/api/v1/playlists/${createdData.id}`, {
+          method: 'PATCH',
+          headers: validAuth,
+          body: JSON.stringify({
+            items: [], // Remove all items
+            dynamicQueries: [
+              {
+                endpoint: 'https://api.example.com/artworks',
+                params: { category: 'generative' },
+              },
+            ],
+          }),
+        });
+        const updateResponse = await app.fetch(updateReq, testEnv);
+        expect(updateResponse.status).toBe(200);
+
+        const updateData = await updateResponse.json();
+        expect(updateData.items).toEqual([]);
+        expect(updateData.dynamicQueries).toEqual([
+          {
+            endpoint: 'https://api.example.com/artworks',
+            params: { category: 'generative' },
+          },
+        ]);
+      });
+
+      it('PATCH /playlists should reject update that removes both items and dynamicQueries', async () => {
+        // First create a hybrid playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify({
+            dpVersion: '1.0.0',
+            title: 'Hybrid Playlist to Break',
+            items: [
+              {
+                title: 'Test Item',
+                source: 'https://example.com/test.html',
+                duration: 300,
+                license: 'open' as const,
+              },
+            ],
+            dynamicQueries: [
+              {
+                endpoint: 'https://api.example.com/artworks',
+                params: { category: 'generative' },
+              },
+            ],
+          }),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        expect(createResponse.status).toBe(201);
+        const createdData = await createResponse.json();
+
+        // Try to update to remove both items and dynamicQueries
+        const updateReq = new Request(`http://localhost/api/v1/playlists/${createdData.id}`, {
+          method: 'PATCH',
+          headers: validAuth,
+          body: JSON.stringify({
+            items: [], // Remove all items
+            dynamicQueries: [], // Remove all dynamicQueries
+          }),
+        });
+        const updateResponse = await app.fetch(updateReq, testEnv);
+        expect(updateResponse.status).toBe(400);
+
+        const updateData = await updateResponse.json();
+        expect(updateData.error).toBe('validation_error');
+        expect(updateData.message).toContain(
+          'If items or dynamicQueries are provided, at least one must be non-empty'
+        );
+      });
+    });
+
     it('POST /playlists should create playlist with server-generated ID and slug', async () => {
       const req = new Request('http://localhost/api/v1/playlists', {
         method: 'POST',
