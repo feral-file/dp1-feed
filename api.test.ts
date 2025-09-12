@@ -1019,7 +1019,35 @@ describe('DP-1 Feed Operator API', () => {
         /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
       );
 
-      // Verify queue operation was called
+      // Verify synchronous persistence - data should be immediately available
+      const getReq = new Request(`http://localhost/api/v1/playlists/${data.id}`);
+      const getResponse = await app.fetch(getReq, testEnv);
+      expect(getResponse.status).toBe(200);
+
+      const savedPlaylist = await getResponse.json();
+      expect(savedPlaylist.id).toBe(data.id);
+      expect(savedPlaylist.title).toBe('Test Playlist');
+      expect(savedPlaylist.signature).toBe(data.signature);
+    });
+
+    it('POST /playlists should create playlist with async behavior when Prefer header is set', async () => {
+      const req = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior
+        body: JSON.stringify(validPlaylist),
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(202); // Accepted for async processing
+
+      const data = await response.json();
+      expect(data.id).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);
+      expect(data.dpVersion).toBe('1.0.0');
+      expect(data.slug).toMatch(/^test-playlist-\d{4}$/);
+      expect(data.title).toBe('Test Playlist');
+      expect(data.created).toBeTruthy();
+      expect(data.signature).toBeTruthy();
+
+      // Verify queueWriteOperation was called for async processing
       expect(queueWriteOperation).toHaveBeenCalledWith(
         expect.objectContaining({
           operation: 'create_playlist',
@@ -1080,22 +1108,17 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.created).toBeTruthy();
       expect(data.signature).toBeTruthy();
 
-      // Verify queue operation was called
-      expect(queueWriteOperation).toHaveBeenCalledWith(
-        expect.objectContaining({
-          operation: 'create_playlist',
-          data: expect.objectContaining({
-            playlist: expect.objectContaining({
-              id: data.id,
-              title: 'Test Playlist with Optional Fields',
-              curators: playlistWithOptionalFields.curators,
-              summary: playlistWithOptionalFields.summary,
-              coverImage: playlistWithOptionalFields.coverImage,
-            }),
-          }),
-        }),
-        testEnv
-      );
+      // Verify synchronous persistence - data should be immediately available
+      const getReq = new Request(`http://localhost/api/v1/playlists/${data.id}`);
+      const getResponse = await app.fetch(getReq, testEnv);
+      expect(getResponse.status).toBe(200);
+
+      const savedPlaylist = await getResponse.json();
+      expect(savedPlaylist.id).toBe(data.id);
+      expect(savedPlaylist.title).toBe('Test Playlist with Optional Fields');
+      expect(savedPlaylist.curators).toEqual(playlistWithOptionalFields.curators);
+      expect(savedPlaylist.summary).toBe(playlistWithOptionalFields.summary);
+      expect(savedPlaylist.coverImage).toBe(playlistWithOptionalFields.coverImage);
     });
 
     it('POST /playlists should create playlist without optional fields', async () => {
@@ -1173,7 +1196,52 @@ describe('DP-1 Feed Operator API', () => {
         expect(data.items[i].license).toBe(createdPlaylist.items[i].license);
       }
 
-      // Verify queue operation was called for update
+      // Verify synchronous persistence - updated data should be immediately available
+      const getReq = new Request(`http://localhost/api/v1/playlists/${playlistId}`);
+      const getResponse = await app.fetch(getReq, testEnv);
+      expect(getResponse.status).toBe(200);
+
+      const savedPlaylist = await getResponse.json();
+      expect(savedPlaylist.id).toBe(playlistId);
+      expect(savedPlaylist.title).toBe('Updated Test Playlist');
+      expect(savedPlaylist.dpVersion).toBe('1.0.1');
+      expect(savedPlaylist.defaults.license).toBe('token');
+    });
+
+    it('PATCH /playlists/:id should update playlist with async behavior when Prefer header is set', async () => {
+      // First create a playlist
+      const createReq = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(validPlaylist),
+      });
+      const createResponse = await app.fetch(createReq, testEnv);
+      expect(createResponse.status).toBe(201);
+
+      const createdPlaylist = await createResponse.json();
+      const playlistId = createdPlaylist.id;
+
+      // Then update it with async behavior
+      const updateData = {
+        dpVersion: '1.0.1',
+        title: 'Updated Test Playlist Async',
+        defaults: { license: 'token' as const },
+      };
+
+      const updateReq = new Request(`http://localhost/api/v1/playlists/${playlistId}`, {
+        method: 'PATCH',
+        headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior
+        body: JSON.stringify(updateData),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(202); // Accepted for async processing
+
+      const data = await updateResponse.json();
+      expect(data.id).toBe(playlistId);
+      expect(data.title).toBe('Updated Test Playlist Async');
+      expect(data.dpVersion).toBe('1.0.1');
+
+      // Verify queueWriteOperation was called for async processing
       expect(queueWriteOperation).toHaveBeenCalledWith(
         expect.objectContaining({
           operation: 'update_playlist',
@@ -1181,7 +1249,7 @@ describe('DP-1 Feed Operator API', () => {
             playlistId: playlistId,
             playlist: expect.objectContaining({
               id: playlistId,
-              title: 'Updated Test Playlist',
+              title: 'Updated Test Playlist Async',
             }),
           }),
         }),
@@ -1244,7 +1312,68 @@ describe('DP-1 Feed Operator API', () => {
         /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
       );
 
-      // Verify queue operation was called for update
+      // Verify synchronous persistence - updated data should be immediately available
+      const getReq = new Request(`http://localhost/api/v1/playlists/${playlistId}`);
+      const getResponse = await app.fetch(getReq, testEnv);
+      expect(getResponse.status).toBe(200);
+
+      const savedPlaylist = await getResponse.json();
+      expect(savedPlaylist.id).toBe(playlistId);
+      expect(savedPlaylist.title).toBe('Updated Test Playlist');
+      expect(savedPlaylist.dpVersion).toBe('1.0.1');
+    });
+
+    it('PUT /playlists/:id should update playlist with async behavior when Prefer header is set', async () => {
+      // First create a playlist
+      const createReq = new Request('http://localhost/api/v1/playlists', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(validPlaylist),
+      });
+      const createResponse = await app.fetch(createReq, testEnv);
+      expect(createResponse.status).toBe(201);
+
+      const createdPlaylist = await createResponse.json();
+      const playlistId = createdPlaylist.id;
+
+      // Then update it with async behavior (full replacement via PUT)
+      const updatedPlaylist = {
+        dpVersion: '1.0.1',
+        title: 'Updated Test Playlist Async PUT',
+        defaults: { license: 'token' as const },
+        dynamicQueries: [
+          {
+            endpoint: 'https://api.example.com/updated-artworks',
+            params: {
+              category: 'digital-art',
+              limit: '20',
+            },
+          },
+        ],
+        items: [
+          {
+            title: 'Updated Artwork',
+            source: 'https://example.com/updated.html',
+            duration: 400,
+            license: 'subscription' as const,
+          },
+        ],
+      };
+
+      const updateReq = new Request(`http://localhost/api/v1/playlists/${playlistId}`, {
+        method: 'PUT',
+        headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior
+        body: JSON.stringify(updatedPlaylist),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(202); // Accepted for async processing
+
+      const data = await updateResponse.json();
+      expect(data.id).toBe(playlistId);
+      expect(data.title).toBe('Updated Test Playlist Async PUT');
+      expect(data.dpVersion).toBe('1.0.1');
+
+      // Verify queueWriteOperation was called for async processing
       expect(queueWriteOperation).toHaveBeenCalledWith(
         expect.objectContaining({
           operation: 'update_playlist',
@@ -1252,7 +1381,7 @@ describe('DP-1 Feed Operator API', () => {
             playlistId: playlistId,
             playlist: expect.objectContaining({
               id: playlistId,
-              title: 'Updated Test Playlist',
+              title: 'Updated Test Playlist Async PUT',
             }),
           }),
         }),
@@ -1530,13 +1659,13 @@ describe('DP-1 Feed Operator API', () => {
     });
 
     describe('Queue Error Handling', () => {
-      it('should handle queue errors gracefully for playlist creation', async () => {
+      it('should handle queue errors gracefully for playlist creation with async preference', async () => {
         // Mock queueWriteOperation to fail
         vi.mocked(queueWriteOperation).mockRejectedValueOnce(new Error('Queue failure'));
 
         const req = new Request('http://localhost/api/v1/playlists', {
           method: 'POST',
-          headers: validAuth,
+          headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior
           body: JSON.stringify(validPlaylist),
         });
         const response = await app.fetch(req, testEnv);
@@ -1574,7 +1703,7 @@ describe('DP-1 Feed Operator API', () => {
 
         const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
           method: 'PATCH',
-          headers: validAuth,
+          headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior
           body: JSON.stringify(updateData),
         });
         const updateResponse = await app.fetch(updateReq, testEnv);
@@ -1613,7 +1742,7 @@ describe('DP-1 Feed Operator API', () => {
 
         const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
           method: 'PUT',
-          headers: validAuth,
+          headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior
           body: JSON.stringify(updateData),
         });
         const updateResponse = await app.fetch(updateReq, testEnv);
@@ -1622,6 +1751,116 @@ describe('DP-1 Feed Operator API', () => {
         const data = await updateResponse.json();
         expect(data.error).toBe('queue_error');
         expect(data.message).toBe('Failed to queue playlist for processing');
+      });
+    });
+
+    describe('Storage Service Failure Tests', () => {
+      it('should handle storage service failure during playlist creation', async () => {
+        // Mock StorageService.savePlaylist to fail for sync behavior
+        const { StorageService } = await import('./storage/service');
+        const savePlaylistSpy = vi
+          .spyOn(StorageService.prototype, 'savePlaylist')
+          .mockRejectedValue(new Error('Storage failure'));
+
+        const req = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth, // No Prefer header = sync behavior
+          body: JSON.stringify(validPlaylist),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(500);
+
+        const data = await response.json();
+        expect(data.error).toBe('storage_error');
+        expect(data.message).toBe('Failed to save playlist');
+
+        // Restore original implementation
+        savePlaylistSpy.mockRestore();
+      });
+
+      it('should handle storage service failure during playlist update (PATCH)', async () => {
+        // First create a playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        expect(createResponse.status).toBe(201);
+        const createdPlaylist = await createResponse.json();
+
+        // Now mock StorageService.savePlaylist to fail on update for sync behavior
+        const { StorageService } = await import('./storage/service');
+        const savePlaylistSpy = vi
+          .spyOn(StorageService.prototype, 'savePlaylist')
+          .mockRejectedValue(new Error('Storage failure'));
+
+        const updateData = {
+          title: 'Updated Playlist',
+        };
+
+        const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+          method: 'PATCH',
+          headers: validAuth, // No Prefer header = sync behavior
+          body: JSON.stringify(updateData),
+        });
+        const updateResponse = await app.fetch(updateReq, testEnv);
+        expect(updateResponse.status).toBe(500);
+
+        const data = await updateResponse.json();
+        expect(data.error).toBe('storage_error');
+        expect(data.message).toBe('Failed to save playlist');
+
+        // Restore original implementation
+        savePlaylistSpy.mockRestore();
+      });
+
+      it('should handle storage service failure during playlist update (PUT)', async () => {
+        // First create a playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        expect(createResponse.status).toBe(201);
+        const createdPlaylist = await createResponse.json();
+
+        // Now mock StorageService.savePlaylist to fail on update for sync behavior
+        const { StorageService } = await import('./storage/service');
+        const savePlaylistSpy = vi
+          .spyOn(StorageService.prototype, 'savePlaylist')
+          .mockRejectedValue(new Error('Storage failure'));
+
+        const updateData = {
+          dpVersion: '1.0.1',
+          title: 'Updated Playlist',
+          defaults: { license: 'token' as const },
+          dynamicQueries: [],
+          items: [
+            {
+              title: 'Updated Artwork',
+              source: 'https://example.com/updated.html',
+              duration: 400,
+              license: 'subscription' as const,
+            },
+          ],
+        };
+
+        const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+          method: 'PUT',
+          headers: validAuth, // No Prefer header = sync behavior
+          body: JSON.stringify(updateData),
+        });
+        const updateResponse = await app.fetch(updateReq, testEnv);
+        expect(updateResponse.status).toBe(500);
+
+        const data = await updateResponse.json();
+        expect(data.error).toBe('storage_error');
+        expect(data.message).toBe('Failed to save playlist');
+
+        // Restore original implementation
+        savePlaylistSpy.mockRestore();
       });
     });
 
@@ -1655,7 +1894,7 @@ describe('DP-1 Feed Operator API', () => {
 
         const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
           method: 'PATCH',
-          headers: validAuth,
+          headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior to trigger queue processing
           body: JSON.stringify(updateData),
         });
         const updateResponse = await app.fetch(updateReq, testEnv);
@@ -1696,7 +1935,7 @@ describe('DP-1 Feed Operator API', () => {
 
         const updateReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
           method: 'PUT',
-          headers: validAuth,
+          headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior to trigger queue processing
           body: JSON.stringify(updateData),
         });
         const updateResponse = await app.fetch(updateReq, testEnv);
@@ -1712,7 +1951,7 @@ describe('DP-1 Feed Operator API', () => {
       it('should generate proper queue messages for playlist creation', async () => {
         const req = new Request('http://localhost/api/v1/playlists', {
           method: 'POST',
-          headers: validAuth,
+          headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior to trigger queue
           body: JSON.stringify(validPlaylist),
         });
         await app.fetch(req, testEnv);
@@ -1965,7 +2204,40 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.summary).toBe(validChannel.summary);
       expect(data.signature).toMatch(/^ed25519:0x[a-fA-F0-9]+$/);
 
-      // Verify queue operation was called
+      // Verify synchronous persistence - data should be immediately available
+      const getReq = new Request(`http://localhost/api/v1/channels/${data.id}`);
+      const getResponse = await app.fetch(getReq, testEnv);
+      expect(getResponse.status).toBe(200);
+
+      const savedChannel = await getResponse.json();
+      expect(savedChannel.id).toBe(data.id);
+      expect(savedChannel.title).toBe('Test Exhibition');
+      expect(savedChannel.signature).toBe(data.signature);
+    });
+
+    it('POST /channels should create channel with async behavior when Prefer header is set', async () => {
+      // Mock fetch for external playlist validation
+      mockStandardPlaylistFetch();
+
+      const req = new Request('http://localhost/api/v1/channels', {
+        method: 'POST',
+        headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior
+        body: JSON.stringify(validChannel),
+      });
+      const response = await app.fetch(req, testEnv);
+      expect(response.status).toBe(202); // Accepted for async processing
+
+      const data = await response.json();
+      expect(data.id).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);
+      expect(data.slug).toMatch(/^test-exhibition-\d{4}$/);
+      expect(data.created).toBeTruthy();
+      expect(data.curators).toEqual(validChannel.curators);
+      expect(data.publisher).toEqual(validChannel.publisher);
+      expect(data.coverImage).toBe(validChannel.coverImage);
+      expect(data.summary).toBe(validChannel.summary);
+      expect(data.signature).toMatch(/^ed25519:0x[a-fA-F0-9]+$/);
+
+      // Verify queueWriteOperation was called for async processing
       expect(queueWriteOperation).toHaveBeenCalledWith(
         expect.objectContaining({
           operation: 'create_channel',
@@ -2031,20 +2303,15 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.publisher).toEqual(updatedGroup.publisher);
       expect(data.coverImage).toBe(updatedGroup.coverImage);
 
-      // Verify queue operation was called for update
-      expect(queueWriteOperation).toHaveBeenCalledWith(
-        expect.objectContaining({
-          operation: 'update_channel',
-          data: expect.objectContaining({
-            channelId: groupId,
-            channel: expect.objectContaining({
-              id: groupId,
-              title: 'Updated Exhibition Title',
-            }),
-          }),
-        }),
-        testEnv
-      );
+      // Verify synchronous persistence - updated data should be immediately available
+      const getReq = new Request(`http://localhost/api/v1/channels/${groupId}`);
+      const getResponse = await app.fetch(getReq, testEnv);
+      expect(getResponse.status).toBe(200);
+
+      const savedChannel = await getResponse.json();
+      expect(savedChannel.id).toBe(groupId);
+      expect(savedChannel.title).toBe('Updated Exhibition Title');
+      expect(savedChannel.summary).toBe(updatedGroup.summary);
     });
 
     it('PUT /channels/:id should update group and preserve slug', async () => {
@@ -2082,7 +2349,59 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.slug).toBe(createdGroup.slug); // Slug should be preserved, not regenerated
       expect(data.title).toBe('Updated Exhibition Title'); // Title should be updated
 
-      // Verify queue operation was called for update
+      // Verify synchronous persistence - updated data should be immediately available
+      const getReq = new Request(`http://localhost/api/v1/channels/${groupId}`);
+      const getResponse = await app.fetch(getReq, testEnv);
+      expect(getResponse.status).toBe(200);
+
+      const savedChannel = await getResponse.json();
+      expect(savedChannel.id).toBe(groupId);
+      expect(savedChannel.title).toBe('Updated Exhibition Title');
+    });
+
+    it('PATCH /channels/:id should update channel with async behavior when Prefer header is set', async () => {
+      // Mock fetch for external playlist validation
+      mockStandardPlaylistFetch();
+
+      // First create a channel
+      const createReq = new Request('http://localhost/api/v1/channels', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(validChannel),
+      });
+      const createResponse = await app.fetch(createReq, testEnv);
+      expect(createResponse.status).toBe(201);
+
+      const createdGroup = await createResponse.json();
+      const groupId = createdGroup.id;
+
+      // Then update it with async behavior
+      const updatedGroup = {
+        title: 'Updated Exhibition Title Async',
+        summary: 'Updated summary for async test',
+        curators: [
+          {
+            name: 'Updated Curator',
+            key: 'did:key:z6MkrJVnaZkeFzdQyQSrw2WJGmN2N8Qb3Kw8rVt9gUzEy3zA',
+            url: 'https://example.com/updated-curator',
+          },
+        ],
+      };
+
+      const updateReq = new Request(`http://localhost/api/v1/channels/${groupId}`, {
+        method: 'PATCH',
+        headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior
+        body: JSON.stringify(updatedGroup),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(202); // Accepted for async processing
+
+      const data = await updateResponse.json();
+      expect(data.id).toBe(groupId);
+      expect(data.title).toBe('Updated Exhibition Title Async');
+      expect(data.summary).toBe('Updated summary for async test');
+
+      // Verify queueWriteOperation was called for async processing
       expect(queueWriteOperation).toHaveBeenCalledWith(
         expect.objectContaining({
           operation: 'update_channel',
@@ -2090,7 +2409,59 @@ describe('DP-1 Feed Operator API', () => {
             channelId: groupId,
             channel: expect.objectContaining({
               id: groupId,
-              title: 'Updated Exhibition Title',
+              title: 'Updated Exhibition Title Async',
+            }),
+          }),
+        }),
+        testEnv
+      );
+    });
+
+    it('PUT /channels/:id should update channel with async behavior when Prefer header is set', async () => {
+      // Mock fetch for external playlist validation
+      mockStandardPlaylistFetch();
+
+      // First create a channel
+      const createReq = new Request('http://localhost/api/v1/channels', {
+        method: 'POST',
+        headers: validAuth,
+        body: JSON.stringify(validChannel),
+      });
+      const createResponse = await app.fetch(createReq, testEnv);
+      expect(createResponse.status).toBe(201);
+
+      const createdGroup = await createResponse.json();
+      const groupId = createdGroup.id;
+
+      // Then update it with async behavior (full replacement via PUT)
+      const updatedGroup = {
+        ...validChannel,
+        title: 'Updated Exhibition Title Async PUT',
+        summary: 'Updated summary for async PUT test',
+      };
+
+      const updateReq = new Request(`http://localhost/api/v1/channels/${groupId}`, {
+        method: 'PUT',
+        headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior
+        body: JSON.stringify(updatedGroup),
+      });
+      const updateResponse = await app.fetch(updateReq, testEnv);
+      expect(updateResponse.status).toBe(202); // Accepted for async processing
+
+      const data = await updateResponse.json();
+      expect(data.id).toBe(groupId);
+      expect(data.title).toBe('Updated Exhibition Title Async PUT');
+      expect(data.summary).toBe('Updated summary for async PUT test');
+
+      // Verify queueWriteOperation was called for async processing
+      expect(queueWriteOperation).toHaveBeenCalledWith(
+        expect.objectContaining({
+          operation: 'update_channel',
+          data: expect.objectContaining({
+            channelId: groupId,
+            channel: expect.objectContaining({
+              id: groupId,
+              title: 'Updated Exhibition Title Async PUT',
             }),
           }),
         }),
@@ -2351,6 +2722,115 @@ describe('DP-1 Feed Operator API', () => {
       expect(data.message).toBe('Limit must be between 1 and 100');
     });
 
+    describe('Storage Service Failure Tests', () => {
+      it('should handle storage service failure during channel creation', async () => {
+        // Mock fetch for external playlist validation
+        mockStandardPlaylistFetch();
+
+        // Mock StorageService.saveChannel to fail for sync behavior
+        const { StorageService } = await import('./storage/service');
+        const saveChannelSpy = vi
+          .spyOn(StorageService.prototype, 'saveChannel')
+          .mockRejectedValue(new Error('Storage failure'));
+
+        const req = new Request('http://localhost/api/v1/channels', {
+          method: 'POST',
+          headers: validAuth, // No Prefer header = sync behavior
+          body: JSON.stringify(validChannel),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(500);
+
+        const data = await response.json();
+        expect(data.error).toBe('storage_error');
+        expect(data.message).toBe('Failed to save channel');
+
+        // Restore original implementation
+        saveChannelSpy.mockRestore();
+      });
+
+      it('should handle storage service failure during channel update (PATCH)', async () => {
+        // Mock fetch for external playlist validation
+        mockStandardPlaylistFetch();
+
+        // First create a channel
+        const createReq = new Request('http://localhost/api/v1/channels', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validChannel),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        expect(createResponse.status).toBe(201);
+        const createdChannel = await createResponse.json();
+
+        // Now mock StorageService.saveChannel to fail on update for sync behavior
+        const { StorageService } = await import('./storage/service');
+        const saveChannelSpy = vi
+          .spyOn(StorageService.prototype, 'saveChannel')
+          .mockRejectedValue(new Error('Storage failure'));
+
+        const updateData = {
+          title: 'Updated Exhibition',
+        };
+
+        const updateReq = new Request(`http://localhost/api/v1/channels/${createdChannel.id}`, {
+          method: 'PATCH',
+          headers: validAuth, // No Prefer header = sync behavior
+          body: JSON.stringify(updateData),
+        });
+        const updateResponse = await app.fetch(updateReq, testEnv);
+        expect(updateResponse.status).toBe(500);
+
+        const data = await updateResponse.json();
+        expect(data.error).toBe('storage_error');
+        expect(data.message).toBe('Failed to save channel');
+
+        // Restore original implementation
+        saveChannelSpy.mockRestore();
+      });
+
+      it('should handle storage service failure during channel update (PUT)', async () => {
+        // Mock fetch for external playlist validation
+        mockStandardPlaylistFetch();
+
+        // First create a channel
+        const createReq = new Request('http://localhost/api/v1/channels', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validChannel),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        expect(createResponse.status).toBe(201);
+        const createdChannel = await createResponse.json();
+
+        // Now mock StorageService.saveChannel to fail on update for sync behavior
+        const { StorageService } = await import('./storage/service');
+        const saveChannelSpy = vi
+          .spyOn(StorageService.prototype, 'saveChannel')
+          .mockRejectedValue(new Error('Storage failure'));
+
+        const updateData = {
+          ...validChannel,
+          title: 'Updated Exhibition',
+        };
+
+        const updateReq = new Request(`http://localhost/api/v1/channels/${createdChannel.id}`, {
+          method: 'PUT',
+          headers: validAuth, // No Prefer header = sync behavior
+          body: JSON.stringify(updateData),
+        });
+        const updateResponse = await app.fetch(updateReq, testEnv);
+        expect(updateResponse.status).toBe(500);
+
+        const data = await updateResponse.json();
+        expect(data.error).toBe('storage_error');
+        expect(data.message).toBe('Failed to save channel');
+
+        // Restore original implementation
+        saveChannelSpy.mockRestore();
+      });
+    });
+
     describe('Queue Error Handling', () => {
       it('should handle queue errors gracefully for channel creation', async () => {
         // Mock fetch for external playlist validation
@@ -2361,7 +2841,7 @@ describe('DP-1 Feed Operator API', () => {
 
         const req = new Request('http://localhost/api/v1/channels', {
           method: 'POST',
-          headers: validAuth,
+          headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior
           body: JSON.stringify(validChannel),
         });
         const response = await app.fetch(req, testEnv);
@@ -2396,7 +2876,7 @@ describe('DP-1 Feed Operator API', () => {
 
         const updateReq = new Request(`http://localhost/api/v1/channels/${createdGroup.id}`, {
           method: 'PUT',
-          headers: validAuth,
+          headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior
           body: JSON.stringify(updateData),
         });
         const updateResponse = await app.fetch(updateReq, testEnv);
@@ -2433,7 +2913,7 @@ describe('DP-1 Feed Operator API', () => {
 
         const updateReq = new Request(`http://localhost/api/v1/channels/${createdGroup.id}`, {
           method: 'PATCH',
-          headers: validAuth,
+          headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior to trigger queue processing
           body: JSON.stringify(updateData),
         });
         const updateResponse = await app.fetch(updateReq, testEnv);
@@ -2470,7 +2950,7 @@ describe('DP-1 Feed Operator API', () => {
 
         const updateReq = new Request(`http://localhost/api/v1/channels/${createdGroup.id}`, {
           method: 'PUT',
-          headers: validAuth,
+          headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior to trigger queue processing
           body: JSON.stringify(updateData),
         });
         const updateResponse = await app.fetch(updateReq, testEnv);
@@ -2488,7 +2968,7 @@ describe('DP-1 Feed Operator API', () => {
 
         const req = new Request('http://localhost/api/v1/channels', {
           method: 'POST',
-          headers: validAuth,
+          headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior to trigger queue
           body: JSON.stringify(validChannel),
         });
         await app.fetch(req, testEnv);

@@ -12,6 +12,8 @@ import { listAllChannels, getChannelByIdOrSlug } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
 import type { EnvironmentBindings } from '../env/types';
 import { signObj, getServerKeyPair } from '../crypto';
+import { shouldUseAsyncPersistence } from '../rfc7240';
+import { StorageService } from '../storage/service';
 
 // Create channels router
 const channels = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();
@@ -188,7 +190,7 @@ channels.get('/:id', async c => {
 
 /**
  * POST /channels - Create new channel
- * Fast response: validates, queues for async processing
+ * Supports RFC 7240: synchronous by default, async if "Prefer: respond-async" header present
  */
 channels.post('/', async c => {
   try {
@@ -214,32 +216,50 @@ channels.post('/', async c => {
     // Sign the channel
     channel.signature = await signObj(channel, keyPair.privateKey);
 
-    // Create queue message for async processing
-    const queueMessage: CreateChannelMessage = {
-      id: generateMessageId('create_channel', channel.id),
-      timestamp: new Date().toISOString(),
-      operation: 'create_channel',
-      data: {
-        channel: channel,
-      },
-    };
+    // Check if client prefers async processing (RFC 7240)
+    const useAsync = shouldUseAsyncPersistence(c);
 
-    // Queue the save operation for async processing
-    try {
-      await queueWriteOperation(queueMessage, c.var.env);
-    } catch (queueError) {
-      console.error('Failed to queue channel creation:', queueError);
-      return c.json(
-        {
-          error: 'queue_error',
-          message: 'Failed to queue channel for processing',
+    if (useAsync) {
+      // Async processing: queue the operation and return 202 Accepted
+      const queueMessage: CreateChannelMessage = {
+        id: generateMessageId('create_channel', channel.id),
+        timestamp: new Date().toISOString(),
+        operation: 'create_channel',
+        data: {
+          channel: channel,
         },
-        500
-      );
-    }
+      };
 
-    // Return immediately with the channel (before saving)
-    return c.json(channel, 201);
+      try {
+        await queueWriteOperation(queueMessage, c.var.env);
+        return c.json(channel, 202);
+      } catch (queueError) {
+        console.error('Failed to queue channel creation:', queueError);
+        return c.json(
+          {
+            error: 'queue_error',
+            message: 'Failed to queue channel for processing',
+          },
+          500
+        );
+      }
+    } else {
+      // Sync processing: persist immediately and return 201 Created
+      try {
+        const storageService = new StorageService(c.var.env.storageProvider);
+        await storageService.saveChannel(channel, c.var.env, false);
+        return c.json(channel, 201);
+      } catch (storageError) {
+        console.error('Failed to save channel synchronously:', storageError);
+        return c.json(
+          {
+            error: 'storage_error',
+            message: 'Failed to save channel',
+          },
+          500
+        );
+      }
+    }
   } catch (error) {
     console.error('Error creating channel:', error);
     return c.json(
@@ -315,33 +335,51 @@ channels.put('/:id', async c => {
     const keyPair = await getServerKeyPair(c.var.env);
     updatedChannel.signature = await signObj(updatedChannel, keyPair.privateKey);
 
-    // Create queue message for async processing
-    const queueMessage: UpdateChannelMessage = {
-      id: generateMessageId('update_channel', updatedChannel.id),
-      timestamp: new Date().toISOString(),
-      operation: 'update_channel',
-      data: {
-        channelId: updatedChannel.id,
-        channel: updatedChannel,
-      },
-    };
+    // Check if client prefers async processing (RFC 7240)
+    const useAsync = shouldUseAsyncPersistence(c);
 
-    // Queue the update operation for async processing
-    try {
-      await queueWriteOperation(queueMessage, c.var.env);
-    } catch (queueError) {
-      console.error('Failed to queue channel update:', queueError);
-      return c.json(
-        {
-          error: 'queue_error',
-          message: 'Failed to queue channel for processing',
+    if (useAsync) {
+      // Async processing: queue the operation and return 202 Accepted
+      const queueMessage: UpdateChannelMessage = {
+        id: generateMessageId('update_channel', updatedChannel.id),
+        timestamp: new Date().toISOString(),
+        operation: 'update_channel',
+        data: {
+          channelId: updatedChannel.id,
+          channel: updatedChannel,
         },
-        500
-      );
-    }
+      };
 
-    // Return immediately with the updated channel (before saving)
-    return c.json(updatedChannel, 200);
+      try {
+        await queueWriteOperation(queueMessage, c.var.env);
+        return c.json(updatedChannel, 202);
+      } catch (queueError) {
+        console.error('Failed to queue channel update:', queueError);
+        return c.json(
+          {
+            error: 'queue_error',
+            message: 'Failed to queue channel for processing',
+          },
+          500
+        );
+      }
+    } else {
+      // Sync processing: persist immediately and return 200 OK
+      try {
+        const storageService = new StorageService(c.var.env.storageProvider);
+        await storageService.saveChannel(updatedChannel, c.var.env, true);
+        return c.json(updatedChannel, 200);
+      } catch (storageError) {
+        console.error('Failed to save channel synchronously:', storageError);
+        return c.json(
+          {
+            error: 'storage_error',
+            message: 'Failed to save channel',
+          },
+          500
+        );
+      }
+    }
   } catch (error) {
     console.error('Error updating channel (PUT):', error);
     return c.json(
@@ -417,33 +455,51 @@ channels.patch('/:id', async c => {
     const keyPair = await getServerKeyPair(c.var.env);
     updatedChannel.signature = await signObj(updatedChannel, keyPair.privateKey);
 
-    // Create queue message for async processing
-    const queueMessage: UpdateChannelMessage = {
-      id: generateMessageId('update_channel', updatedChannel.id),
-      timestamp: new Date().toISOString(),
-      operation: 'update_channel',
-      data: {
-        channelId: updatedChannel.id,
-        channel: updatedChannel,
-      },
-    };
+    // Check if client prefers async processing (RFC 7240)
+    const useAsync = shouldUseAsyncPersistence(c);
 
-    // Queue the update operation for async processing
-    try {
-      await queueWriteOperation(queueMessage, c.var.env);
-    } catch (queueError) {
-      console.error('Failed to queue channel update:', queueError);
-      return c.json(
-        {
-          error: 'queue_error',
-          message: 'Failed to queue channel for processing',
+    if (useAsync) {
+      // Async processing: queue the operation and return 202 Accepted
+      const queueMessage: UpdateChannelMessage = {
+        id: generateMessageId('update_channel', updatedChannel.id),
+        timestamp: new Date().toISOString(),
+        operation: 'update_channel',
+        data: {
+          channelId: updatedChannel.id,
+          channel: updatedChannel,
         },
-        500
-      );
-    }
+      };
 
-    // Return immediately with the updated channel (before saving)
-    return c.json(updatedChannel, 200);
+      try {
+        await queueWriteOperation(queueMessage, c.var.env);
+        return c.json(updatedChannel, 202);
+      } catch (queueError) {
+        console.error('Failed to queue channel update:', queueError);
+        return c.json(
+          {
+            error: 'queue_error',
+            message: 'Failed to queue channel for processing',
+          },
+          500
+        );
+      }
+    } else {
+      // Sync processing: persist immediately and return 200 OK
+      try {
+        const storageService = new StorageService(c.var.env.storageProvider);
+        await storageService.saveChannel(updatedChannel, c.var.env, true);
+        return c.json(updatedChannel, 200);
+      } catch (storageError) {
+        console.error('Failed to save channel synchronously:', storageError);
+        return c.json(
+          {
+            error: 'storage_error',
+            message: 'Failed to save channel',
+          },
+          500
+        );
+      }
+    }
   } catch (error) {
     console.error('Error updating channel (PATCH):', error);
     return c.json(
