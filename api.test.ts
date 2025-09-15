@@ -1752,6 +1752,31 @@ describe('DP-1 Feed Operator API', () => {
         expect(data.error).toBe('queue_error');
         expect(data.message).toBe('Failed to queue playlist for processing');
       });
+
+      it('should handle queue errors gracefully for playlist deletion', async () => {
+        // First create a playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        const createdPlaylist = await createResponse.json();
+
+        // Mock queueWriteOperation to fail for the deletion
+        vi.mocked(queueWriteOperation).mockRejectedValueOnce(new Error('Queue failure'));
+
+        const deleteReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+          method: 'DELETE',
+          headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior
+        });
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(500);
+
+        const data = await deleteResponse.json();
+        expect(data.error).toBe('queue_error');
+        expect(data.message).toBe('Failed to queue playlist for deletion');
+      });
     });
 
     describe('Storage Service Failure Tests', () => {
@@ -1862,6 +1887,38 @@ describe('DP-1 Feed Operator API', () => {
         // Restore original implementation
         savePlaylistSpy.mockRestore();
       });
+
+      it('should handle storage service failure during playlist deletion', async () => {
+        // First create a playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+
+        const createResponse = await app.fetch(createReq, testEnv);
+        const createdPlaylist = await createResponse.json();
+
+        // Now mock StorageService.deletePlaylist to fail for sync behavior
+        const { StorageService } = await import('./storage/service');
+        const deletePlaylistSpy = vi
+          .spyOn(StorageService.prototype, 'deletePlaylist')
+          .mockRejectedValue(new Error('Storage failure'));
+
+        const deleteReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+          method: 'DELETE',
+          headers: validAuth, // No Prefer header = sync behavior
+        });
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(500);
+
+        const data = await deleteResponse.json();
+        expect(data.error).toBe('storage_error');
+        expect(data.message).toBe('Failed to delete playlist');
+
+        // Restore original implementation
+        deletePlaylistSpy.mockRestore();
+      });
     });
 
     describe('Unexpected Errors', () => {
@@ -1944,6 +2001,34 @@ describe('DP-1 Feed Operator API', () => {
         const data = await updateResponse.json();
         expect(data.error).toBe('internal_error');
         expect(data.message).toBe('Failed to update playlist');
+      });
+
+      it('should return internal_error for unexpected failure during playlist deletion', async () => {
+        // First create a playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+
+        const createResponse = await app.fetch(createReq, testEnv);
+        const createdPlaylist = await createResponse.json();
+
+        // Simulate unexpected error (e.g., ID generation)
+        vi.mocked(generateMessageId).mockImplementationOnce(() => {
+          throw new Error('Unexpected failure');
+        });
+
+        const deleteReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+          method: 'DELETE',
+          headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior to trigger queue processing
+        });
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(500);
+
+        const data = await deleteResponse.json();
+        expect(data.error).toBe('internal_error');
+        expect(data.message).toBe('Failed to delete playlist');
       });
     });
 
