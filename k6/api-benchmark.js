@@ -328,7 +328,6 @@ function testPlaylistOperations() {
   if (!listSuccess) errorRate.add(1);
 
   // Create playlist (if authenticated) - test creation only
-  let createdPlaylist = null;
   if (API_SECRET) {
     const playlistData = generatePlaylistData(Math.floor(Math.random() * 1000));
     const createResponse = makeRequest('/api/v1/playlists', 'POST', playlistData, {
