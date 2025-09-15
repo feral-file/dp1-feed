@@ -393,6 +393,54 @@ function testPlaylistOperations() {
       if (!updateSuccess) errorRate.add(1);
     }
   }
+
+  // Test DELETE operations using cached playlists (occasionally)
+  if (API_SECRET && cachedPlaylists.length > 5 && Math.random() < 0.1) {
+    // Only delete occasionally to preserve test data
+    const playlistToDelete = cachedPlaylists[Math.floor(Math.random() * cachedPlaylists.length)];
+
+    // Delete playlist by ID
+    const deleteResponse = makeRequest(`/api/v1/playlists/${playlistToDelete.id}`, 'DELETE', null, {
+      endpoint: 'delete_playlist',
+    });
+
+    const deleteSuccess = check(deleteResponse, {
+      'Delete Playlist: status is 204': r => r.status === 204,
+      'Delete Playlist: no response body': r => r.body === '' || r.body === null,
+    });
+
+    if (!deleteSuccess) errorRate.add(1);
+
+    // Remove from cache if successfully deleted
+    if (deleteSuccess) {
+      cachedPlaylists = cachedPlaylists.filter(p => p.id !== playlistToDelete.id);
+    }
+
+    // Test deletion of non-existent playlist (should return 404)
+    const nonExistentId = '550e8400-e29b-41d4-a716-446655440999';
+    const deleteNonExistentResponse = makeRequest(
+      `/api/v1/playlists/${nonExistentId}`,
+      'DELETE',
+      null,
+      {
+        endpoint: 'delete_nonexistent_playlist',
+      }
+    );
+
+    const deleteNonExistentSuccess = check(deleteNonExistentResponse, {
+      'Delete Non-existent Playlist: status is 404': r => r.status === 404,
+      'Delete Non-existent Playlist: has error message': r => {
+        try {
+          const data = JSON.parse(r.body);
+          return data.error === 'not_found';
+        } catch {
+          return false;
+        }
+      },
+    });
+
+    if (!deleteNonExistentSuccess) errorRate.add(1);
+  }
 }
 
 function testChannelOperations() {

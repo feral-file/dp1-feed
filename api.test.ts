@@ -1752,6 +1752,31 @@ describe('DP-1 Feed Operator API', () => {
         expect(data.error).toBe('queue_error');
         expect(data.message).toBe('Failed to queue playlist for processing');
       });
+
+      it('should handle queue errors gracefully for playlist deletion', async () => {
+        // First create a playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        const createdPlaylist = await createResponse.json();
+
+        // Mock queueWriteOperation to fail for the deletion
+        vi.mocked(queueWriteOperation).mockRejectedValueOnce(new Error('Queue failure'));
+
+        const deleteReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+          method: 'DELETE',
+          headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior
+        });
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(500);
+
+        const data = await deleteResponse.json();
+        expect(data.error).toBe('queue_error');
+        expect(data.message).toBe('Failed to queue playlist for deletion');
+      });
     });
 
     describe('Storage Service Failure Tests', () => {
@@ -1862,6 +1887,38 @@ describe('DP-1 Feed Operator API', () => {
         // Restore original implementation
         savePlaylistSpy.mockRestore();
       });
+
+      it('should handle storage service failure during playlist deletion', async () => {
+        // First create a playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+
+        const createResponse = await app.fetch(createReq, testEnv);
+        const createdPlaylist = await createResponse.json();
+
+        // Now mock StorageService.deletePlaylist to fail for sync behavior
+        const { StorageService } = await import('./storage/service');
+        const deletePlaylistSpy = vi
+          .spyOn(StorageService.prototype, 'deletePlaylist')
+          .mockRejectedValue(new Error('Storage failure'));
+
+        const deleteReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+          method: 'DELETE',
+          headers: validAuth, // No Prefer header = sync behavior
+        });
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(500);
+
+        const data = await deleteResponse.json();
+        expect(data.error).toBe('storage_error');
+        expect(data.message).toBe('Failed to delete playlist');
+
+        // Restore original implementation
+        deletePlaylistSpy.mockRestore();
+      });
     });
 
     describe('Unexpected Errors', () => {
@@ -1945,6 +2002,34 @@ describe('DP-1 Feed Operator API', () => {
         expect(data.error).toBe('internal_error');
         expect(data.message).toBe('Failed to update playlist');
       });
+
+      it('should return internal_error for unexpected failure during playlist deletion', async () => {
+        // First create a playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+
+        const createResponse = await app.fetch(createReq, testEnv);
+        const createdPlaylist = await createResponse.json();
+
+        // Simulate unexpected error (e.g., ID generation)
+        vi.mocked(generateMessageId).mockImplementationOnce(() => {
+          throw new Error('Unexpected failure');
+        });
+
+        const deleteReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+          method: 'DELETE',
+          headers: { ...validAuth, Prefer: 'respond-async' }, // Request async behavior to trigger queue processing
+        });
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(500);
+
+        const data = await deleteResponse.json();
+        expect(data.error).toBe('internal_error');
+        expect(data.message).toBe('Failed to delete playlist');
+      });
     });
 
     describe('Queue Message Structure', () => {
@@ -1979,6 +2064,123 @@ describe('DP-1 Feed Operator API', () => {
                   }),
                 ]),
               }),
+            }),
+          }),
+          testEnv
+        );
+      });
+    });
+
+    describe('DELETE /playlists/:id', () => {
+      it('should delete playlist by ID and return 204', async () => {
+        // First create a playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        expect(createResponse.status).toBe(201);
+        const createdPlaylist = await createResponse.json();
+
+        // Then delete it
+        const deleteReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+          method: 'DELETE',
+          headers: validAuth,
+        });
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(204);
+
+        // Verify playlist is actually deleted
+        const getReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`);
+        const getResponse = await app.fetch(getReq, testEnv);
+        expect(getResponse.status).toBe(404);
+      });
+
+      it('should delete playlist by slug and return 204', async () => {
+        // First create a playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        expect(createResponse.status).toBe(201);
+        const createdPlaylist = await createResponse.json();
+
+        // Then delete it by slug
+        const deleteReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.slug}`, {
+          method: 'DELETE',
+          headers: validAuth,
+        });
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(204);
+
+        // Verify playlist is actually deleted
+        const getReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`);
+        const getResponse = await app.fetch(getReq, testEnv);
+        expect(getResponse.status).toBe(404);
+      });
+
+      it('should return 404 for non-existent playlist', async () => {
+        const deleteReq = new Request(
+          'http://localhost/api/v1/playlists/550e8400-e29b-41d4-a716-446655440999',
+          {
+            method: 'DELETE',
+            headers: validAuth,
+          }
+        );
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(404);
+
+        const data = await deleteResponse.json();
+        expect(data.error).toBe('not_found');
+        expect(data.message).toBe('Playlist not found');
+      });
+
+      it('should return 400 for invalid playlist ID format', async () => {
+        const deleteReq = new Request('http://localhost/api/v1/playlists/invalid@id!', {
+          method: 'DELETE',
+          headers: validAuth,
+        });
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(400);
+
+        const data = await deleteResponse.json();
+        expect(data.error).toBe('invalid_id');
+        expect(data.message).toBe(
+          'Playlist ID must be a valid UUID or slug (alphanumeric with hyphens)'
+        );
+      });
+
+      it('should support async deletion with Prefer header', async () => {
+        // First create a playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        expect(createResponse.status).toBe(201);
+        const createdPlaylist = await createResponse.json();
+
+        // Then delete it with async preference
+        const deleteReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+          method: 'DELETE',
+          headers: { ...validAuth, Prefer: 'respond-async' },
+        });
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(202);
+
+        const data = await deleteResponse.json();
+        expect(data.message).toBe('Playlist deletion queued for processing');
+
+        // Verify queueWriteOperation was called for async processing
+        expect(queueWriteOperation).toHaveBeenCalledWith(
+          expect.objectContaining({
+            operation: 'delete_playlist',
+            data: expect.objectContaining({
+              playlistId: createdPlaylist.id,
             }),
           }),
           testEnv
@@ -3926,6 +4128,27 @@ describe('DP-1 Feed Operator API', () => {
         expect(result.errors).toBeUndefined();
       });
 
+      it('should process a valid delete_playlist message', async () => {
+        const message = createValidMessage('delete_playlist', {
+          playlistId: '550e8400-e29b-41d4-a716-446655440000',
+        });
+
+        const req = new Request('http://localhost/queues/process-message', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(message),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(200);
+
+        const result = await response.json();
+        expect(result.success).toBe(true);
+        expect(result.messageId).toBe('test-message-id');
+        expect(result.operation).toBe('delete_playlist');
+        expect(result.processedCount).toBe(1);
+        expect(result.errors).toBeUndefined();
+      });
+
       it('should return 400 for message missing operation field', async () => {
         const invalidMessage = {
           id: 'test-message-id',
@@ -4087,6 +4310,9 @@ describe('DP-1 Feed Operator API', () => {
               playlists: ['https://example.com/playlists/test-playlist-1'],
             },
           }),
+          createValidMessage('delete_playlist', {
+            playlistId: '550e8400-e29b-41d4-a716-446655440002',
+          }),
         ];
 
         const req = new Request('http://localhost/queues/process-batch', {
@@ -4099,8 +4325,12 @@ describe('DP-1 Feed Operator API', () => {
 
         const result = await response.json();
         expect(result.success).toBe(true);
-        expect(result.processedCount).toBe(2);
-        expect(result.messageIds).toEqual(['test-message-id', 'test-message-id']);
+        expect(result.processedCount).toBe(3);
+        expect(result.messageIds).toEqual([
+          'test-message-id',
+          'test-message-id',
+          'test-message-id',
+        ]);
         expect(result.errors).toBeUndefined();
       });
 

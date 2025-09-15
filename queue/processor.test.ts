@@ -3,12 +3,14 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 // Mock the StorageService methods BEFORE importing anything that uses them
 const mockSavePlaylist = vi.fn();
 const mockSaveChannel = vi.fn();
+const mockDeletePlaylist = vi.fn();
 
 vi.mock('../storage/service', () => {
   return {
     StorageService: vi.fn().mockImplementation(() => ({
       savePlaylist: mockSavePlaylist,
       saveChannel: mockSaveChannel,
+      deletePlaylist: mockDeletePlaylist,
     })),
   };
 });
@@ -20,6 +22,7 @@ import type {
   UpdatePlaylistMessage,
   CreateChannelMessage,
   UpdateChannelMessage,
+  DeletePlaylistMessage,
 } from './interfaces';
 import {
   createTestEnv,
@@ -416,6 +419,54 @@ describe('Queue Processor', () => {
           true
         );
         expect(batch.ackAll).not.toHaveBeenCalled();
+      });
+    });
+
+    describe('delete_playlist operations', () => {
+      it('should successfully process playlist deletion', async () => {
+        const message: DeletePlaylistMessage = {
+          id: generateMessageId('delete_playlist', mockPlaylist.id),
+          timestamp: new Date().toISOString(),
+          operation: 'delete_playlist',
+          data: { playlistId: mockPlaylist.id },
+        };
+
+        const batch = createMockMessageBatch([message]);
+        mockDeletePlaylist.mockResolvedValueOnce(true);
+
+        await processWriteOperations(batch, testEnv);
+
+        expect(mockDeletePlaylist).toHaveBeenCalledWith(mockPlaylist.id, testEnv);
+        expect(batch.ackAll).not.toHaveBeenCalled();
+        expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining(`Processed message`));
+      });
+
+      it('should handle playlist deletion failure', async () => {
+        const message: DeletePlaylistMessage = {
+          id: generateMessageId('delete_playlist', mockPlaylist.id),
+          timestamp: new Date().toISOString(),
+          operation: 'delete_playlist',
+          data: { playlistId: mockPlaylist.id },
+        };
+
+        const batch = createMockMessageBatch([message]);
+        mockDeletePlaylist.mockRejectedValueOnce(new Error('Playlist deletion failed'));
+
+        const result = await processWriteOperations(batch, testEnv);
+        expect(result.success).toBe(false);
+        expect(result.errors).toHaveLength(1);
+        expect(result.errors![0].error).toBe('Playlist deletion failed');
+
+        expect(mockDeletePlaylist).toHaveBeenCalledWith(mockPlaylist.id, testEnv);
+        expect(batch.ackAll).not.toHaveBeenCalled();
+        expect(consoleErrorSpy).toHaveBeenCalledWith(
+          expect.stringContaining('Error processing message'),
+          expect.any(Error)
+        );
+        expect(consoleErrorSpy).toHaveBeenCalledWith(
+          expect.stringContaining('Error processing message'),
+          expect.any(Error)
+        );
       });
     });
 

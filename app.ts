@@ -107,6 +107,7 @@ export function createApp<TBindings extends Record<string, any> = any>(envMiddle
       'GET /api/v1/playlists/:id',
       'PUT /api/v1/playlists/:id',
       'PATCH /api/v1/playlists/:id',
+      'DELETE /api/v1/playlists/:id',
       'GET /api/v1/channels',
       'POST /api/v1/channels',
       'GET /api/v1/channels/:id',
