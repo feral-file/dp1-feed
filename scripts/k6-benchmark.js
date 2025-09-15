@@ -10,9 +10,10 @@ const DEFAULT_BASE_URL = 'https://dp1-feed-operator-api-dev.autonomy-system.work
 const RESULTS_DIR = 'k6-results';
 
 class K6BenchmarkRunner {
-  constructor(baseUrl = DEFAULT_BASE_URL, testType = 'light') {
+  constructor(baseUrl = DEFAULT_BASE_URL, testType = 'light', asyncResponse = false) {
     this.baseUrl = baseUrl;
     this.testType = testType;
+    this.asyncResponse = asyncResponse;
     this.timestamp = new Date().toISOString();
   }
 
@@ -28,6 +29,7 @@ class K6BenchmarkRunner {
     console.log(chalk.bold.green(`\n🚀 Starting K6 Performance Tests`));
     console.log(chalk.gray(`Target URL: ${this.baseUrl}`));
     console.log(chalk.gray(`Test Type: ${this.testType}`));
+    console.log(chalk.gray(`Async response: ${this.asyncResponse}`));
     console.log(chalk.gray(`Timestamp: ${this.timestamp}`));
 
     await this.ensureDirectories();
@@ -77,6 +79,7 @@ class K6BenchmarkRunner {
         BASE_URL: this.baseUrl,
         K6_WEB_DASHBOARD: 'true',
         K6_WEB_DASHBOARD_EXPORT: htmlReport,
+        ASYNC_RESPONSE: this.asyncResponse,
       };
 
       console.log(chalk.blue('\n🔄 Running K6 tests...'));
@@ -285,8 +288,9 @@ async function main() {
   const testType =
     args.find(arg => ['light', 'normal', 'stress', 'spike', 'soak'].includes(arg)) || 'light';
   const reportOnly = args.includes('--report');
+  const asyncResponse = args.includes('--async');
 
-  const runner = new K6BenchmarkRunner(baseUrl, testType);
+  const runner = new K6BenchmarkRunner(baseUrl, testType, asyncResponse);
 
   try {
     if (reportOnly) {

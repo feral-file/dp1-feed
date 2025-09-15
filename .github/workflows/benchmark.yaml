@@ -58,7 +58,7 @@ jobs:
           TYPE=${TEST_TYPE:-'light'}
 
           # Run K6 benchmarks
-          npm run benchmark $URL $TYPE
+          npm run benchmark $URL $TYPE --async
 
       - name: Upload K6 results
         uses: actions/upload-artifact@v4

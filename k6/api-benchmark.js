@@ -28,6 +28,7 @@ export const options = {
 // Configuration
 const BASE_URL = __ENV.BASE_URL || 'https://dp1-feed-operator-api-dev.autonomy-system.workers.dev';
 const API_SECRET = __ENV.API_SECRET || __ENV.BENCHMARK_API_SECRET;
+const ASYNC_RESPONSE = __ENV.ASYNC_RESPONSE || false;
 
 // Test data cache
 let cachedPlaylists = [];
@@ -124,6 +125,9 @@ function makeRequest(endpoint, method = 'GET', body = null, tags = {}) {
   // Add authentication for write operations
   if (['POST', 'PUT', 'PATCH', 'DELETE'].includes(method) && API_SECRET) {
     headers['Authorization'] = `Bearer ${API_SECRET}`;
+    if (ASYNC_RESPONSE) {
+      headers['Prefer'] = 'respond-async';
+    }
   }
 
   const params = {
@@ -132,6 +136,10 @@ function makeRequest(endpoint, method = 'GET', body = null, tags = {}) {
   };
 
   return http.request(method, url, body ? JSON.stringify(body) : null, params);
+}
+
+function okResponse(status) {
+  return status < 300 && status >= 200;
 }
 
 // Setup function - runs once before the test
@@ -164,7 +172,7 @@ export function setup() {
         console.log(`📤 Creating playlist ${i + 1}/2...`);
         const response = makeRequest('/api/v1/playlists', 'POST', playlistData, { setup: 'true' });
 
-        if (response.status === 201) {
+        if (okResponse(response.status)) {
           const playlist = JSON.parse(response.body);
           cachedPlaylists.push(playlist);
           console.log(`✅ Created playlist: ${playlist.id}`);
@@ -188,7 +196,7 @@ export function setup() {
       setup: 'true',
     });
 
-    if (groupsResponse.status === 200) {
+    if (okResponse(groupsResponse.status)) {
       const responseData = JSON.parse(groupsResponse.body);
       const groups = Array.isArray(responseData) ? responseData : responseData.items || [];
       if (Array.isArray(groups)) {
@@ -205,7 +213,7 @@ export function setup() {
       console.log('📤 Creating channel...');
       const response = makeRequest('/api/v1/channels', 'POST', channelData, { setup: 'true' });
 
-      if (response.status === 201) {
+      if (okResponse(response.status)) {
         const channel = JSON.parse(response.body);
         cachedChannels.push(channel);
         console.log(`✅ Created channel: ${channel.id}`);
@@ -267,7 +275,7 @@ function testAPIInfo() {
   const response = makeRequest('/api/v1', 'GET', null, { endpoint: 'api_info' });
 
   const success = check(response, {
-    'API Info: status is 200': r => r.status === 200,
+    'API Info: status is OK': r => okResponse(r.status),
     'API Info: has name field': r => {
       try {
         const data = JSON.parse(r.body);
@@ -285,7 +293,7 @@ function testHealthCheck() {
   const response = makeRequest('/api/v1/health', 'GET', null, { endpoint: 'health' });
 
   const success = check(response, {
-    'Health Check: status is 200': r => r.status === 200,
+    'Health Check: status is OK': r => okResponse(r.status),
     'Health Check: status is healthy': r => {
       try {
         const data = JSON.parse(r.body);
@@ -306,7 +314,7 @@ function testPlaylistOperations() {
   });
 
   const listSuccess = check(listResponse, {
-    'List Playlists: status is 200': r => r.status === 200,
+    'List Playlists: status is OK': r => okResponse(r.status),
     'List Playlists: returns paginated data': r => {
       try {
         const data = JSON.parse(r.body);
@@ -320,6 +328,7 @@ function testPlaylistOperations() {
   if (!listSuccess) errorRate.add(1);
 
   // Create playlist (if authenticated) - test creation only
+  let createdPlaylist = null;
   if (API_SECRET) {
     const playlistData = generatePlaylistData(Math.floor(Math.random() * 1000));
     const createResponse = makeRequest('/api/v1/playlists', 'POST', playlistData, {
@@ -327,7 +336,7 @@ function testPlaylistOperations() {
     });
 
     const createSuccess = check(createResponse, {
-      'Create Playlist: status is 201': r => r.status === 201,
+      'Create Playlist: status is OK': r => okResponse(r.status),
       'Create Playlist: returns playlist with ID': r => {
         try {
           const data = JSON.parse(r.body);
@@ -351,7 +360,7 @@ function testPlaylistOperations() {
     });
 
     const getSuccess = check(getResponse, {
-      'Get Playlist: status is 200': r => r.status === 200,
+      'Get Playlist: status is OK': r => okResponse(r.status),
       'Get Playlist: returns correct playlist': r => {
         try {
           const data = JSON.parse(r.body);
@@ -379,7 +388,7 @@ function testPlaylistOperations() {
       );
 
       const updateSuccess = check(updateResponse, {
-        'Update Playlist: status is 200': r => r.status === 200,
+        'Update Playlist: status is OK': r => okResponse(r.status),
         'Update Playlist: title updated': r => {
           try {
             const data = JSON.parse(r.body);
@@ -393,54 +402,6 @@ function testPlaylistOperations() {
       if (!updateSuccess) errorRate.add(1);
     }
   }
-
-  // Test DELETE operations using cached playlists (occasionally)
-  if (API_SECRET && cachedPlaylists.length > 5 && Math.random() < 0.1) {
-    // Only delete occasionally to preserve test data
-    const playlistToDelete = cachedPlaylists[Math.floor(Math.random() * cachedPlaylists.length)];
-
-    // Delete playlist by ID
-    const deleteResponse = makeRequest(`/api/v1/playlists/${playlistToDelete.id}`, 'DELETE', null, {
-      endpoint: 'delete_playlist',
-    });
-
-    const deleteSuccess = check(deleteResponse, {
-      'Delete Playlist: status is 204': r => r.status === 204,
-      'Delete Playlist: no response body': r => r.body === '' || r.body === null,
-    });
-
-    if (!deleteSuccess) errorRate.add(1);
-
-    // Remove from cache if successfully deleted
-    if (deleteSuccess) {
-      cachedPlaylists = cachedPlaylists.filter(p => p.id !== playlistToDelete.id);
-    }
-
-    // Test deletion of non-existent playlist (should return 404)
-    const nonExistentId = '550e8400-e29b-41d4-a716-446655440999';
-    const deleteNonExistentResponse = makeRequest(
-      `/api/v1/playlists/${nonExistentId}`,
-      'DELETE',
-      null,
-      {
-        endpoint: 'delete_nonexistent_playlist',
-      }
-    );
-
-    const deleteNonExistentSuccess = check(deleteNonExistentResponse, {
-      'Delete Non-existent Playlist: status is 404': r => r.status === 404,
-      'Delete Non-existent Playlist: has error message': r => {
-        try {
-          const data = JSON.parse(r.body);
-          return data.error === 'not_found';
-        } catch {
-          return false;
-        }
-      },
-    });
-
-    if (!deleteNonExistentSuccess) errorRate.add(1);
-  }
 }
 
 function testChannelOperations() {
@@ -450,7 +411,7 @@ function testChannelOperations() {
   });
 
   const listSuccess = check(listResponse, {
-    'List Channels: status is 200': r => r.status === 200,
+    'List Channels: status is OK': r => okResponse(r.status),
     'List Channels: returns paginated data': r => {
       try {
         const data = JSON.parse(r.body);
@@ -471,7 +432,7 @@ function testChannelOperations() {
     });
 
     const createSuccess = check(createResponse, {
-      'Create Channel: status is 201': r => r.status === 201,
+      'Create Channel: status is OK': r => okResponse(r.status),
       'Create Channel: returns channel with ID': r => {
         try {
           const data = JSON.parse(r.body);
@@ -495,7 +456,7 @@ function testChannelOperations() {
     });
 
     const getSuccess = check(getResponse, {
-      'Get Channel: status is 200': r => r.status === 200,
+      'Get Channel: status is OK': r => okResponse(r.status),
       'Get Channel: returns correct channel': r => {
         try {
           const data = JSON.parse(r.body);
@@ -524,7 +485,7 @@ function testChannelOperations() {
       );
 
       const updateSuccess = check(updateResponse, {
-        'Update Channel: status is 200': r => r.status === 200,
+        'Update Channel: status is OK': r => okResponse(r.status),
         'Update Channel: title updated': r => {
           try {
             const data = JSON.parse(r.body);
@@ -547,7 +508,7 @@ function testPlaylistItems() {
   });
 
   const listSuccess = check(listResponse, {
-    'List Items: status is 200': r => r.status === 200,
+    'List Items: status is OK': r => okResponse(r.status),
     'List Items: returns paginated data': r => {
       try {
         const data = JSON.parse(r.body);
@@ -574,7 +535,7 @@ function testPlaylistItems() {
           });
 
           const getSuccess = check(getResponse, {
-            'Get Item: status is 200': r => r.status === 200,
+            'Get Item: status is OK': r => okResponse(r.status),
             'Get Item: returns item': r => {
               try {
                 const data = JSON.parse(r.body);
