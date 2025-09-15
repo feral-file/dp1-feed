@@ -774,13 +774,132 @@ async function testUpdatePlaylist() {
   return response.ok;
 }
 
+async function testDeletePlaylist() {
+  if (!createdPlaylistId) {
+    console.log('\n⚠️  Skipping delete test - no playlist ID available');
+    return true;
+  }
+
+  console.log('\n🗑️  Testing DELETE /api/v1/playlists/{id} (playlist deletion)...');
+
+  // First verify the playlist exists
+  const getResponse = await makeRequest('GET', `/api/v1/playlists/${createdPlaylistId}`);
+  if (!getResponse.ok) {
+    console.log('❌ Playlist to delete not found');
+    return false;
+  }
+  console.log('✅ Playlist exists before deletion');
+
+  // Test DELETE request
+  const deleteResponse = await makeRequest(
+    'DELETE',
+    `/api/v1/playlists/${createdPlaylistId}`,
+    null,
+    true
+  );
+
+  if (deleteResponse.ok && deleteResponse.status === 204) {
+    console.log('✅ Playlist deleted successfully (204 No Content)');
+
+    // Verify playlist is actually deleted
+    const verifyResponse = await makeRequest('GET', `/api/v1/playlists/${createdPlaylistId}`);
+    if (verifyResponse.status === 404) {
+      console.log('✅ Playlist properly removed (404 Not Found)');
+    } else {
+      console.log(`❌ Playlist still exists after deletion: ${verifyResponse.status}`);
+      return false;
+    }
+
+    // Clear the global playlist ID since it's been deleted
+    createdPlaylistId = null;
+    console.log('✅ Playlist deletion test completed successfully');
+
+    return true;
+  } else {
+    console.log(
+      `❌ Delete failed: ${deleteResponse.status} - ${JSON.stringify(deleteResponse.data)}`
+    );
+    return false;
+  }
+}
+
+async function testDeletePlaylistBySlug() {
+  console.log('\n🗑️  Testing DELETE /api/v1/playlists/{slug} (deletion by slug)...');
+
+  // Create a new playlist for this test
+  const createResponse = await makeRequest('POST', '/api/v1/playlists', testPlaylist, true);
+  if (!createResponse.ok) {
+    console.log('❌ Failed to create playlist for slug deletion test');
+    return false;
+  }
+
+  const createdPlaylist = createResponse.data;
+  console.log(`✅ Created playlist with slug: ${createdPlaylist.slug}`);
+
+  // Delete by slug
+  const deleteResponse = await makeRequest(
+    'DELETE',
+    `/api/v1/playlists/${createdPlaylist.slug}`,
+    null,
+    true
+  );
+
+  if (deleteResponse.ok && deleteResponse.status === 204) {
+    console.log('✅ Playlist deleted by slug successfully (204 No Content)');
+
+    // Verify playlist is actually deleted
+    const verifyResponse = await makeRequest('GET', `/api/v1/playlists/${createdPlaylist.id}`);
+    if (verifyResponse.status === 404) {
+      console.log('✅ Playlist properly removed (404 Not Found)');
+      return true;
+    } else {
+      console.log(`❌ Playlist still exists after deletion: ${verifyResponse.status}`);
+      return false;
+    }
+  } else {
+    console.log(
+      `❌ Delete by slug failed: ${deleteResponse.status} - ${JSON.stringify(deleteResponse.data)}`
+    );
+    return false;
+  }
+}
+
+async function testDeleteNonExistentPlaylist() {
+  console.log('\n🗑️  Testing DELETE /api/v1/playlists/{id} (non-existent playlist)...');
+
+  const nonExistentId = '550e8400-e29b-41d4-a716-446655440999';
+  const deleteResponse = await makeRequest(
+    'DELETE',
+    `/api/v1/playlists/${nonExistentId}`,
+    null,
+    true
+  );
+
+  if (deleteResponse.status === 404) {
+    console.log('✅ Correctly returned 404 for non-existent playlist');
+    return true;
+  } else {
+    console.log(
+      `❌ Expected 404, got: ${deleteResponse.status} - ${JSON.stringify(deleteResponse.data)}`
+    );
+    return false;
+  }
+}
+
 async function testCreateChannel() {
   console.log('\n📝 Testing POST /api/v1/channels (data integrity with new fields)...');
 
-  // Ensure we have a playlist to reference
+  // Ensure we have a playlist to reference - create one if needed
   if (!createdPlaylistId) {
-    console.log('❌ No playlist available to reference in channel. Create a playlist first.');
-    return false;
+    console.log('🔧 No playlist available to reference in channel. Creating a playlist first...');
+    const createResponse = await makeRequest('POST', '/api/v1/playlists', testPlaylist, true);
+    if (!createResponse.ok) {
+      console.log('❌ Failed to create playlist for channel test');
+      return false;
+    }
+    createdPlaylistId = createResponse.data.id;
+    createdPlaylistSlug = createResponse.data.slug;
+    console.log(`✅ Created playlist for channel test: ${createdPlaylistId}`);
   }
   console.log(`🔍 Using playlist ID: ${createdPlaylistId}`);
 
@@ -1937,6 +2056,9 @@ async function runTests() {
     { name: 'Get Playlist by UUID', fn: testGetPlaylistByUUID },
     { name: 'Get Playlist by Slug', fn: testGetPlaylistBySlug },
     { name: 'Update Playlist (Data Integrity)', fn: testUpdatePlaylist },
+    { name: 'Delete Playlist', fn: testDeletePlaylist },
+    { name: 'Delete Playlist by Slug', fn: testDeletePlaylistBySlug },
+    { name: 'Delete Non-Existent Playlist', fn: testDeleteNonExistentPlaylist },
     { name: 'Create Channel (New Fields Integrity)', fn: testCreateChannel },
     { name: 'List Channels', fn: testListChannels },
     { name: 'Get Channel by UUID', fn: testGetChannelByUUID },

@@ -1985,6 +1985,123 @@ describe('DP-1 Feed Operator API', () => {
         );
       });
     });
+
+    describe('DELETE /playlists/:id', () => {
+      it('should delete playlist by ID and return 204', async () => {
+        // First create a playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        expect(createResponse.status).toBe(201);
+        const createdPlaylist = await createResponse.json();
+
+        // Then delete it
+        const deleteReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+          method: 'DELETE',
+          headers: validAuth,
+        });
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(204);
+
+        // Verify playlist is actually deleted
+        const getReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`);
+        const getResponse = await app.fetch(getReq, testEnv);
+        expect(getResponse.status).toBe(404);
+      });
+
+      it('should delete playlist by slug and return 204', async () => {
+        // First create a playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        expect(createResponse.status).toBe(201);
+        const createdPlaylist = await createResponse.json();
+
+        // Then delete it by slug
+        const deleteReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.slug}`, {
+          method: 'DELETE',
+          headers: validAuth,
+        });
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(204);
+
+        // Verify playlist is actually deleted
+        const getReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`);
+        const getResponse = await app.fetch(getReq, testEnv);
+        expect(getResponse.status).toBe(404);
+      });
+
+      it('should return 404 for non-existent playlist', async () => {
+        const deleteReq = new Request(
+          'http://localhost/api/v1/playlists/550e8400-e29b-41d4-a716-446655440999',
+          {
+            method: 'DELETE',
+            headers: validAuth,
+          }
+        );
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(404);
+
+        const data = await deleteResponse.json();
+        expect(data.error).toBe('not_found');
+        expect(data.message).toBe('Playlist not found');
+      });
+
+      it('should return 400 for invalid playlist ID format', async () => {
+        const deleteReq = new Request('http://localhost/api/v1/playlists/invalid@id!', {
+          method: 'DELETE',
+          headers: validAuth,
+        });
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(400);
+
+        const data = await deleteResponse.json();
+        expect(data.error).toBe('invalid_id');
+        expect(data.message).toBe(
+          'Playlist ID must be a valid UUID or slug (alphanumeric with hyphens)'
+        );
+      });
+
+      it('should support async deletion with Prefer header', async () => {
+        // First create a playlist
+        const createReq = new Request('http://localhost/api/v1/playlists', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validPlaylist),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        expect(createResponse.status).toBe(201);
+        const createdPlaylist = await createResponse.json();
+
+        // Then delete it with async preference
+        const deleteReq = new Request(`http://localhost/api/v1/playlists/${createdPlaylist.id}`, {
+          method: 'DELETE',
+          headers: { ...validAuth, Prefer: 'respond-async' },
+        });
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(202);
+
+        const data = await deleteResponse.json();
+        expect(data.message).toBe('Playlist deletion queued for processing');
+
+        // Verify queueWriteOperation was called for async processing
+        expect(queueWriteOperation).toHaveBeenCalledWith(
+          expect.objectContaining({
+            operation: 'delete_playlist',
+            data: expect.objectContaining({
+              playlistId: createdPlaylist.id,
+            }),
+          }),
+          testEnv
+        );
+      });
+    });
   });
 
   describe('Channels API', () => {
@@ -3926,6 +4043,27 @@ describe('DP-1 Feed Operator API', () => {
         expect(result.errors).toBeUndefined();
       });
 
+      it('should process a valid delete_playlist message', async () => {
+        const message = createValidMessage('delete_playlist', {
+          playlistId: '550e8400-e29b-41d4-a716-446655440000',
+        });
+
+        const req = new Request('http://localhost/queues/process-message', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(message),
+        });
+        const response = await app.fetch(req, testEnv);
+        expect(response.status).toBe(200);
+
+        const result = await response.json();
+        expect(result.success).toBe(true);
+        expect(result.messageId).toBe('test-message-id');
+        expect(result.operation).toBe('delete_playlist');
+        expect(result.processedCount).toBe(1);
+        expect(result.errors).toBeUndefined();
+      });
+
       it('should return 400 for message missing operation field', async () => {
         const invalidMessage = {
           id: 'test-message-id',
@@ -4087,6 +4225,9 @@ describe('DP-1 Feed Operator API', () => {
               playlists: ['https://example.com/playlists/test-playlist-1'],
             },
           }),
+          createValidMessage('delete_playlist', {
+            playlistId: '550e8400-e29b-41d4-a716-446655440002',
+          }),
         ];
 
         const req = new Request('http://localhost/queues/process-batch', {
@@ -4099,8 +4240,12 @@ describe('DP-1 Feed Operator API', () => {
 
         const result = await response.json();
         expect(result.success).toBe(true);
-        expect(result.processedCount).toBe(2);
-        expect(result.messageIds).toEqual(['test-message-id', 'test-message-id']);
+        expect(result.processedCount).toBe(3);
+        expect(result.messageIds).toEqual([
+          'test-message-id',
+          'test-message-id',
+          'test-message-id',
+        ]);
         expect(result.errors).toBeUndefined();
       });
 

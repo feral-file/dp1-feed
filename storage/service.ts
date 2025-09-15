@@ -140,15 +140,18 @@ export class StorageService {
   }
 
   /**
-   * Extract playlist identifier (ID or slug) from a self-hosted playlist URL
+   * Extract playlist identifier (ID or slug) from a playlist URL
    */
   private extractPlaylistIdentifierFromUrl(url: string): string | null {
     const urlObj = new URL(url);
-    // Updated regex to handle both UUIDs and slugs
-    // Matches: /api/v1/playlists/{identifier} where identifier can be:
+    // Updated regex to handle both URL formats and both UUIDs and slugs
+    // Matches:
+    // - /api/v1/playlists/{identifier} (self-hosted format)
+    // - /playlists/{identifier} (external format)
+    // where identifier can be:
     // - UUIDs: 79856015-edf8-4145-8be9-135222d4157d
     // - Slugs: my-awesome-playlist-slug, playlist_123, etc.
-    const pathMatch = urlObj.pathname.match(/^\/api\/v1\/playlists\/([a-zA-Z0-9\-_]+)$/);
+    const pathMatch = urlObj.pathname.match(/^\/(?:api\/v1\/)?playlists\/([a-zA-Z0-9\-_]+)$/);
     return pathMatch ? (pathMatch[1] ?? null) : null;
   }
 
@@ -522,28 +525,33 @@ export class StorageService {
    * Save a channel with multiple indexes
    */
   async saveChannel(channel: Channel, env: Env, update: boolean = false): Promise<boolean> {
-    if (channel.playlists.length === 0) {
+    // Allow empty playlists during updates (e.g., when deleting playlists)
+    if (channel.playlists.length === 0 && !update) {
       console.error('Channel has no playlists');
       return false;
     }
 
-    // First, fetch and validate all external playlists in parallel
-    const playlistValidationPromises = channel.playlists.map(async playlistUrl => {
-      // If it's an external URL, fetch and validate it
-      if (playlistUrl.startsWith('http://') || playlistUrl.startsWith('https://')) {
-        return await this.fetchAndValidatePlaylist(playlistUrl, env);
-      } else {
-        throw new Error(`Invalid playlist URL: ${playlistUrl}`);
-      }
-    });
+    // Handle empty playlists case during updates
+    let validatedPlaylists: any[] = [];
+    let validatedPlaylistsMap = new Map();
 
-    // Validate all playlists in parallel
-    const validatedPlaylists = await Promise.all(playlistValidationPromises);
+    if (channel.playlists.length > 0) {
+      // First, fetch and validate all external playlists in parallel
+      const playlistValidationPromises = channel.playlists.map(async playlistUrl => {
+        // If it's an external URL, fetch and validate it
+        if (playlistUrl.startsWith('http://') || playlistUrl.startsWith('https://')) {
+          return await this.fetchAndValidatePlaylist(playlistUrl, env);
+        } else {
+          throw new Error(`Invalid playlist URL: ${playlistUrl}`);
+        }
+      });
 
-    // Turn the validated playlists into a map for quick lookup
-    const validatedPlaylistsMap = new Map(
-      validatedPlaylists.map(playlist => [playlist.id, playlist])
-    );
+      // Validate all playlists in parallel
+      validatedPlaylists = await Promise.all(playlistValidationPromises);
+
+      // Turn the validated playlists into a map for quick lookup
+      validatedPlaylistsMap = new Map(validatedPlaylists.map(playlist => [playlist.id, playlist]));
+    }
 
     // Core channel operations
     const channelData = JSON.stringify(channel);
@@ -934,5 +942,150 @@ export class StorageService {
       cursor: response.list_complete ? undefined : response.cursor,
       hasMore: !response.list_complete,
     };
+  }
+
+  /**
+   * Delete a playlist and all its related indexes and associations
+   * This will:
+   * 1. Remove the playlist from all channels that reference it
+   * 2. Delete all playlist items and their indexes
+   * 3. Delete all bidirectional channel-playlist associations
+   * 4. Delete the playlist itself and its indexes
+   */
+  async deletePlaylist(playlistId: string, env: any): Promise<boolean> {
+    // First, get the playlist to ensure it exists and get its data
+    const playlist = await this.getPlaylistByIdOrSlug(playlistId);
+    if (!playlist) {
+      throw new Error(`Playlist ${playlistId} not found`);
+    }
+
+    const operations: Promise<void>[] = [];
+
+    // 1. Get all channels that reference this playlist
+    const channelIds = await this.getChannelsForPlaylist(playlist.id);
+
+    // 2. Fetch all channels in parallel, then update them
+    const channelKeys = channelIds.map(id => `${STORAGE_KEYS.CHANNEL_ID_PREFIX}${id}`);
+    const channels = await this.batchFetchFromStorage<Channel>(
+      channelKeys,
+      this.channelStorage,
+      'channel'
+    );
+
+    // Process channel updates in parallel and wait for them to complete
+    const channelUpdatePromises = channels.map(async channel => {
+      // Filter out the playlist URL that references this playlist
+      const updatedPlaylists = channel.playlists.filter(playlistUrl => {
+        // Extract playlist identifier from URL
+        const playlistIdentifier = this.extractPlaylistIdentifierFromUrl(playlistUrl);
+        return playlistIdentifier !== playlist.id && playlistIdentifier !== playlist.slug;
+      });
+
+      // Always update the channel (either with remaining playlists or empty array)
+      const updatedChannel = { ...channel, playlists: updatedPlaylists };
+      return this.saveChannel(updatedChannel, env, true);
+    });
+
+    // Wait for all channel updates to complete before proceeding
+    await Promise.all(channelUpdatePromises);
+
+    // 3. Delete all playlist items and their indexes
+    for (const item of playlist.items) {
+      // Delete main playlist item record
+      operations.push(
+        this.playlistItemStorage.delete(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`)
+      );
+
+      // Delete global created-time indexes for items
+      if (item.created) {
+        const ts = this.toSortableTimestamps(item.created);
+        operations.push(
+          this.playlistItemStorage.delete(
+            `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`
+          ),
+          this.playlistItemStorage.delete(
+            `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${ts.desc}:${item.id}`
+          )
+        );
+      }
+
+      // Delete channel-specific playlist item indexes
+      for (const channelId of channelIds) {
+        operations.push(
+          this.playlistItemStorage.delete(
+            `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channelId}:${item.id}`
+          )
+        );
+
+        // Delete channel-created indexes for items
+        if (item.created) {
+          const ts = this.toSortableTimestamps(item.created);
+          operations.push(
+            this.playlistItemStorage.delete(
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channelId}:${ts.asc}:${item.id}`
+            ),
+            this.playlistItemStorage.delete(
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channelId}:${ts.desc}:${item.id}`
+            )
+          );
+        }
+      }
+    }
+
+    // 4. Delete bidirectional channel-playlist associations
+    for (const channelId of channelIds) {
+      // Delete playlist-to-channel associations
+      operations.push(
+        this.playlistStorage.delete(
+          `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${playlist.id}:${channelId}`
+        )
+      );
+
+      // Delete channel-to-playlist associations
+      operations.push(
+        this.playlistStorage.delete(
+          `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${channelId}:${playlist.id}`
+        )
+      );
+
+      // Delete created-time channel-playlist indexes
+      if (playlist.created) {
+        const ts = this.toSortableTimestamps(playlist.created);
+        operations.push(
+          this.playlistStorage.delete(
+            `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_ASC_PREFIX}${channelId}:${ts.asc}:${playlist.id}`
+          ),
+          this.playlistStorage.delete(
+            `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_DESC_PREFIX}${channelId}:${ts.desc}:${playlist.id}`
+          )
+        );
+      }
+    }
+
+    // 5. Delete the playlist itself and its indexes
+    operations.push(
+      // Main playlist record
+      this.playlistStorage.delete(`${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${playlist.id}`),
+      // Slug index
+      this.playlistStorage.delete(`${STORAGE_KEYS.PLAYLIST_SLUG_PREFIX}${playlist.slug}`)
+    );
+
+    // Delete created-time indexes for playlist
+    if (playlist.created) {
+      const ts = this.toSortableTimestamps(playlist.created);
+      operations.push(
+        this.playlistStorage.delete(
+          `${STORAGE_KEYS.PLAYLIST_CREATED_ASC_PREFIX}${ts.asc}:${playlist.id}`
+        ),
+        this.playlistStorage.delete(
+          `${STORAGE_KEYS.PLAYLIST_CREATED_DESC_PREFIX}${ts.desc}:${playlist.id}`
+        )
+      );
+    }
+
+    // Execute all operations in parallel
+    await Promise.all(operations);
+
+    return true;
   }
 }

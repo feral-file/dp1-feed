@@ -11,6 +11,7 @@ import {
   getPlaylistItemById,
   listAllPlaylistItems,
   listPlaylistItemsByChannelId,
+  deletePlaylist,
   STORAGE_KEYS,
 } from './storage';
 import type { Env, Playlist, Channel } from './types';
@@ -20,8 +21,8 @@ const playlistId1 = '550e8400-e29b-41d4-a716-446655440000';
 const playlistId2 = '550e8400-e29b-41d4-a716-446655440002';
 const itemId1 = '550e8400-e29b-41d4-a716-446655440001';
 const itemId2 = '550e8400-e29b-41d4-a716-446655440003';
-const playlistSlug1 = 'test-playlist-1';
-const playlistSlug2 = 'test-playlist-2';
+const playlistSlug1 = 'test-playlist-1234';
+const playlistSlug2 = 'test-playlist-1234-2';
 
 // Helper function to create a simple mock playlist response
 const createMockPlaylistResponse = (id: string, slug: string) => {
@@ -435,7 +436,7 @@ describe('Storage Module', () => {
       }) as any;
 
       // Create initial channel with two playlists
-      const initialGroup: Channel = {
+      const initialChannel: Channel = {
         id: 'test-group-update',
         slug: 'test-group-update-slug',
         title: 'Initial Group',
@@ -449,26 +450,26 @@ describe('Storage Module', () => {
       };
 
       // Save initial group
-      const saved = await saveChannel(initialGroup, testEnv);
+      const saved = await saveChannel(initialChannel, testEnv);
       expect(saved).toBe(true);
 
       // Verify bidirectional mappings exist for both playlists
-      const mapping1Key = `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${initialGroup.id}:${playlistId1}`;
-      const mapping2Key = `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${initialGroup.id}:${playlistId2}`;
+      const mapping1Key = `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${initialChannel.id}:${playlistId1}`;
+      const mapping2Key = `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${initialChannel.id}:${playlistId2}`;
 
       expect(mockStorages.playlist.storage.has(mapping1Key)).toBe(true);
       expect(mockStorages.playlist.storage.has(mapping2Key)).toBe(true);
 
-      // Update group to only include first playlist (remove second)
-      const updatedGroup: Channel = {
-        ...initialGroup,
+      // Update channel to only include first playlist (remove second)
+      const updatedChannel: Channel = {
+        ...initialChannel,
         playlists: [
           `https://example.com/playlists/${playlistId1}`, // Keep this one
         ],
       };
 
       // Update the group
-      const updated = await saveChannel(updatedGroup, testEnv, true);
+      const updated = await saveChannel(updatedChannel, testEnv, true);
       expect(updated).toBe(true);
 
       // Verify first mapping still exists
@@ -478,8 +479,245 @@ describe('Storage Module', () => {
       expect(mockStorages.playlist.storage.has(mapping2Key)).toBe(false);
 
       // Verify reverse mappings are also cleaned up
-      const reverseMapping2Key = `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${playlistId2}:${initialGroup.id}`;
+      const reverseMapping2Key = `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${playlistId2}:${initialChannel.id}`;
       expect(mockStorages.playlist.storage.has(reverseMapping2Key)).toBe(false);
+    });
+
+    it('should delete playlist and clean up all related data', async () => {
+      // Mock fetch for external playlist validation
+      mockStandardPlaylistFetch();
+
+      // Save a playlist
+      await savePlaylist(testPlaylist, testEnv);
+
+      // Save the channel that already references the playlist
+      await saveChannel(testChannel, testEnv);
+
+      // Verify playlist and related data exist before deletion
+      const playlistKey = `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${testPlaylist.id}`;
+      const slugKey = `${STORAGE_KEYS.PLAYLIST_SLUG_PREFIX}${testPlaylist.slug}`;
+      const itemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${testPlaylist.items[0].id}`;
+      const channelToPlaylistKey = `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${testChannel.id}:${testPlaylist.id}`;
+      const playlistToChannelKey = `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${testPlaylist.id}:${testChannel.id}`;
+
+      expect(mockStorages.playlist.storage.has(playlistKey)).toBe(true);
+      expect(mockStorages.playlist.storage.has(slugKey)).toBe(true);
+      expect(mockStorages.item.storage.has(itemKey)).toBe(true);
+      expect(mockStorages.playlist.storage.has(channelToPlaylistKey)).toBe(true);
+      expect(mockStorages.playlist.storage.has(playlistToChannelKey)).toBe(true);
+
+      // Delete the playlist
+      const deleted = await deletePlaylist(testPlaylist.id, testEnv);
+      expect(deleted).toBe(true);
+
+      // Verify playlist and all related data are deleted
+      expect(mockStorages.playlist.storage.has(playlistKey)).toBe(false);
+      expect(mockStorages.playlist.storage.has(slugKey)).toBe(false);
+      expect(mockStorages.item.storage.has(itemKey)).toBe(false);
+      expect(mockStorages.playlist.storage.has(channelToPlaylistKey)).toBe(false);
+      expect(mockStorages.playlist.storage.has(playlistToChannelKey)).toBe(false);
+
+      // Verify playlist can no longer be retrieved
+      const retrievedPlaylist = await getPlaylistByIdOrSlug(testPlaylist.id, testEnv);
+      expect(retrievedPlaylist).toBeNull();
+
+      // Verify channel was updated to remove the deleted playlist
+      const updatedChannel = await getChannelByIdOrSlug(testChannel.id, testEnv);
+      expect(updatedChannel).toBeDefined();
+      expect(updatedChannel!.playlists).toEqual([`https://example.com/playlists/${playlistId2}`]);
+    });
+
+    it('should delete playlist by slug', async () => {
+      // Save a playlist
+      await savePlaylist(testPlaylist, testEnv);
+
+      // Verify playlist exists
+      const retrieved = await getPlaylistByIdOrSlug(testPlaylist.slug, testEnv);
+      expect(retrieved).toEqual(testPlaylist);
+
+      // Delete by slug
+      const deleted = await deletePlaylist(testPlaylist.slug, testEnv);
+      expect(deleted).toBe(true);
+
+      // Verify playlist is deleted
+      const retrievedAfterDelete = await getPlaylistByIdOrSlug(testPlaylist.slug, testEnv);
+      expect(retrievedAfterDelete).toBeNull();
+    });
+
+    it('should completely clean up all secondary indexes when deleting playlist', async () => {
+      // Mock fetch for external playlist validation
+      mockStandardPlaylistFetch();
+
+      await savePlaylist(testPlaylist, testEnv);
+
+      // Save the channel that references the playlist
+      await saveChannel(testChannel, testEnv);
+
+      // Helper function to calculate sortable timestamps (same as service)
+      const toSortableTimestamps = (isoTimestamp: string): { asc: string; desc: string } => {
+        const ms = Number.isFinite(Number(isoTimestamp))
+          ? Number(isoTimestamp)
+          : Date.parse(isoTimestamp);
+        const padded = String(ms).padStart(13, '0');
+        const maxMs = 9999999999999; // ~ Sat Nov 20 2286
+        const inv = String(maxMs - ms).padStart(13, '0');
+        return { asc: padded, desc: inv };
+      };
+
+      const playlistTimestamps = toSortableTimestamps(testPlaylist.created!);
+      const item1Timestamps = toSortableTimestamps(testPlaylist.items[0].created);
+
+      // === VERIFY ALL INDEXES EXIST BEFORE DELETION ===
+
+      // 1. Main playlist records
+      const playlistIdKey = `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${testPlaylist.id}`;
+      const playlistSlugKey = `${STORAGE_KEYS.PLAYLIST_SLUG_PREFIX}${testPlaylist.slug}`;
+      expect(mockStorages.playlist.storage.has(playlistIdKey)).toBe(true);
+      expect(mockStorages.playlist.storage.has(playlistSlugKey)).toBe(true);
+
+      // 2. Playlist created-time indexes
+      const playlistCreatedAscKey = `${STORAGE_KEYS.PLAYLIST_CREATED_ASC_PREFIX}${playlistTimestamps.asc}:${testPlaylist.id}`;
+      const playlistCreatedDescKey = `${STORAGE_KEYS.PLAYLIST_CREATED_DESC_PREFIX}${playlistTimestamps.desc}:${testPlaylist.id}`;
+      expect(mockStorages.playlist.storage.has(playlistCreatedAscKey)).toBe(true);
+      expect(mockStorages.playlist.storage.has(playlistCreatedDescKey)).toBe(true);
+
+      // 3. Playlist item main records
+      const item1IdKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${testPlaylist.items[0].id}`;
+      expect(mockStorages.item.storage.has(item1IdKey)).toBe(true);
+
+      // 4. Global playlist item created-time indexes
+      const item1CreatedAscKey = `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${item1Timestamps.asc}:${testPlaylist.items[0].id}`;
+      const item1CreatedDescKey = `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${item1Timestamps.desc}:${testPlaylist.items[0].id}`;
+      expect(mockStorages.item.storage.has(item1CreatedAscKey)).toBe(true);
+      expect(mockStorages.item.storage.has(item1CreatedDescKey)).toBe(true);
+
+      // 5. Channel-specific playlist item indexes
+      const channelItem1Key = `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${testChannel.id}:${testPlaylist.items[0].id}`;
+      expect(mockStorages.item.storage.has(channelItem1Key)).toBe(true);
+
+      // 6. Channel-specific playlist item created-time indexes
+      const channelItem1CreatedAscKey = `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${testChannel.id}:${item1Timestamps.asc}:${testPlaylist.items[0].id}`;
+      const channelItem1CreatedDescKey = `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${testChannel.id}:${item1Timestamps.desc}:${testPlaylist.items[0].id}`;
+
+      expect(mockStorages.item.storage.has(channelItem1CreatedAscKey)).toBe(true);
+      expect(mockStorages.item.storage.has(channelItem1CreatedDescKey)).toBe(true);
+
+      // 7. Bidirectional channel-playlist associations
+      const channelToPlaylistKey = `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${testChannel.id}:${testPlaylist.id}`;
+      const playlistToChannelKey = `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${testPlaylist.id}:${testChannel.id}`;
+      expect(mockStorages.playlist.storage.has(channelToPlaylistKey)).toBe(true);
+      expect(mockStorages.playlist.storage.has(playlistToChannelKey)).toBe(true);
+
+      // 8. Channel-playlist created-time association indexes
+      const channelPlaylistCreatedAscKey = `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_ASC_PREFIX}${testChannel.id}:${playlistTimestamps.asc}:${testPlaylist.id}`;
+      const channelPlaylistCreatedDescKey = `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_DESC_PREFIX}${testChannel.id}:${playlistTimestamps.desc}:${testPlaylist.id}`;
+
+      expect(mockStorages.playlist.storage.has(channelPlaylistCreatedAscKey)).toBe(true);
+      expect(mockStorages.playlist.storage.has(channelPlaylistCreatedDescKey)).toBe(true);
+
+      // === DELETE THE PLAYLIST ===
+      const deleted = await deletePlaylist(testPlaylist.id, testEnv);
+      expect(deleted).toBe(true);
+
+      // === VERIFY ALL INDEXES ARE COMPLETELY CLEANED UP ===
+
+      // 1. Main playlist records should be deleted
+      expect(mockStorages.playlist.storage.has(playlistIdKey)).toBe(false);
+      expect(mockStorages.playlist.storage.has(playlistSlugKey)).toBe(false);
+
+      // 2. Playlist created-time indexes should be deleted
+      expect(mockStorages.playlist.storage.has(playlistCreatedAscKey)).toBe(false);
+      expect(mockStorages.playlist.storage.has(playlistCreatedDescKey)).toBe(false);
+
+      // 3. All playlist item main records should be deleted
+      expect(mockStorages.item.storage.has(item1IdKey)).toBe(false);
+
+      // 4. All global playlist item created-time indexes should be deleted
+      expect(mockStorages.item.storage.has(item1CreatedAscKey)).toBe(false);
+      expect(mockStorages.item.storage.has(item1CreatedDescKey)).toBe(false);
+
+      // 5. All channel-specific playlist item indexes should be deleted
+      expect(mockStorages.item.storage.has(channelItem1Key)).toBe(false);
+
+      // 6. All channel-specific playlist item created-time indexes should be deleted
+      expect(mockStorages.item.storage.has(channelItem1CreatedAscKey)).toBe(false);
+      expect(mockStorages.item.storage.has(channelItem1CreatedDescKey)).toBe(false);
+
+      // 7. All bidirectional channel-playlist associations should be deleted
+      expect(mockStorages.playlist.storage.has(channelToPlaylistKey)).toBe(false);
+      expect(mockStorages.playlist.storage.has(playlistToChannelKey)).toBe(false);
+
+      // 8. All channel-playlist created-time association indexes should be deleted
+      expect(mockStorages.playlist.storage.has(channelPlaylistCreatedAscKey)).toBe(false);
+      expect(mockStorages.playlist.storage.has(channelPlaylistCreatedDescKey)).toBe(false);
+
+      // === VERIFY CHANNEL WAS PROPERLY UPDATED ===
+      const updatedChannel = await getChannelByIdOrSlug(testChannel.id, testEnv);
+      expect(updatedChannel!.playlists).toEqual([`https://example.com/playlists/${playlistId2}`]); // Should retain the other playlist
+
+      // === VERIFY NO ORPHANED INDEXES REMAIN ===
+      // Count all keys that could be related to our deleted playlist
+      const allPlaylistKeys = Array.from(mockStorages.playlist.storage.keys());
+      const allItemKeys = Array.from(mockStorages.item.storage.keys());
+
+      // No keys should contain our deleted playlist ID or item IDs
+      const orphanedPlaylistKeys = allPlaylistKeys.filter(key => key.includes(testPlaylist.id));
+      const orphanedItemKeys = allItemKeys.filter(key => key.includes(testPlaylist.items[0].id));
+
+      expect(orphanedPlaylistKeys).toEqual([]);
+      expect(orphanedItemKeys).toEqual([]);
+    });
+
+    it('should throw error when trying to delete non-existent playlist', async () => {
+      await expect(deletePlaylist('non-existent-id', testEnv)).rejects.toThrow(
+        'Playlist non-existent-id not found'
+      );
+
+      await expect(deletePlaylist('non-existent-slug', testEnv)).rejects.toThrow(
+        'Playlist non-existent-slug not found'
+      );
+    });
+
+    it('should handle deletion of playlist with no associated channels', async () => {
+      // Save a playlist without any channels referencing it
+      await savePlaylist(testPlaylist, testEnv);
+
+      // Verify playlist exists
+      const retrieved = await getPlaylistByIdOrSlug(testPlaylist.id, testEnv);
+      expect(retrieved).toEqual(testPlaylist);
+
+      // Delete the playlist
+      const deleted = await deletePlaylist(testPlaylist.id, testEnv);
+      expect(deleted).toBe(true);
+
+      // Verify playlist is deleted
+      const retrievedAfterDelete = await getPlaylistByIdOrSlug(testPlaylist.id, testEnv);
+      expect(retrievedAfterDelete).toBeNull();
+    });
+
+    it('should handle deletion of playlist with empty items array', async () => {
+      // Create playlist with no items
+      const emptyPlaylist: Playlist = {
+        ...testPlaylist,
+        id: '550e8400-e29b-41d4-a716-446655440099',
+        slug: 'empty-playlist-slug',
+        items: [],
+      };
+
+      const saved = await savePlaylist(emptyPlaylist, testEnv);
+      expect(saved).toBe(true);
+
+      // Verify playlist exists
+      const retrieved = await getPlaylistByIdOrSlug(emptyPlaylist.id, testEnv);
+      expect(retrieved).toEqual(emptyPlaylist);
+
+      // Delete the playlist
+      const deleted = await deletePlaylist(emptyPlaylist.id, testEnv);
+      expect(deleted).toBe(true);
+
+      // Verify playlist is deleted
+      const retrievedAfterDelete = await getPlaylistByIdOrSlug(emptyPlaylist.id, testEnv);
+      expect(retrievedAfterDelete).toBeNull();
     });
   });
 

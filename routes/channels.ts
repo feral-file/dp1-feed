@@ -13,7 +13,7 @@ import { queueWriteOperation, generateMessageId } from '../queue/processor';
 import type { EnvironmentBindings } from '../env/types';
 import { signObj, getServerKeyPair } from '../crypto';
 import { shouldUseAsyncPersistence } from '../rfc7240';
-import { StorageService } from '../storage/service';
+import { saveChannel } from '../storage';
 
 // Create channels router
 const channels = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();
@@ -246,8 +246,7 @@ channels.post('/', async c => {
     } else {
       // Sync processing: persist immediately and return 201 Created
       try {
-        const storageService = new StorageService(c.var.env.storageProvider);
-        await storageService.saveChannel(channel, c.var.env, false);
+        await saveChannel(channel, c.var.env, false);
         return c.json(channel, 201);
       } catch (storageError) {
         console.error('Failed to save channel synchronously:', storageError);
@@ -366,8 +365,7 @@ channels.put('/:id', async c => {
     } else {
       // Sync processing: persist immediately and return 200 OK
       try {
-        const storageService = new StorageService(c.var.env.storageProvider);
-        await storageService.saveChannel(updatedChannel, c.var.env, true);
+        await saveChannel(updatedChannel, c.var.env, true);
         return c.json(updatedChannel, 200);
       } catch (storageError) {
         console.error('Failed to save channel synchronously:', storageError);
@@ -486,8 +484,7 @@ channels.patch('/:id', async c => {
     } else {
       // Sync processing: persist immediately and return 200 OK
       try {
-        const storageService = new StorageService(c.var.env.storageProvider);
-        await storageService.saveChannel(updatedChannel, c.var.env, true);
+        await saveChannel(updatedChannel, c.var.env, true);
         return c.json(updatedChannel, 200);
       } catch (storageError) {
         console.error('Failed to save channel synchronously:', storageError);

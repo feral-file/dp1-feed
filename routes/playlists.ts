@@ -13,7 +13,7 @@ import { signObj, getServerKeyPair } from '../crypto';
 import { listAllPlaylists, getPlaylistByIdOrSlug, listPlaylistsByChannelId } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
 import { shouldUseAsyncPersistence } from '../rfc7240';
-import { StorageService } from '../storage/service';
+import { savePlaylist, deletePlaylist } from '../storage';
 
 // Create playlist router
 const playlists = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();
@@ -257,8 +257,7 @@ playlists.post('/', async c => {
     } else {
       // Sync processing: persist immediately and return 201 Created
       try {
-        const storageService = new StorageService(c.var.env.storageProvider);
-        await storageService.savePlaylist(playlist, false);
+        await savePlaylist(playlist, c.var.env, false);
         return c.json(playlist, 201);
       } catch (storageError) {
         console.error('Failed to save playlist synchronously:', storageError);
@@ -390,8 +389,7 @@ playlists.put('/:id', async c => {
     } else {
       // Sync processing: persist immediately and return 200 OK
       try {
-        const storageService = new StorageService(c.var.env.storageProvider);
-        await storageService.savePlaylist(updatedPlaylist, true);
+        await savePlaylist(updatedPlaylist, c.var.env, true);
         return c.json(updatedPlaylist, 200);
       } catch (storageError) {
         console.error('Failed to save playlist synchronously:', storageError);
@@ -524,8 +522,7 @@ playlists.patch('/:id', async c => {
     } else {
       // Sync processing: persist immediately and return 200 OK
       try {
-        const storageService = new StorageService(c.var.env.storageProvider);
-        await storageService.savePlaylist(updatedPlaylist, true);
+        await savePlaylist(updatedPlaylist, c.var.env, true);
         return c.json(updatedPlaylist, 200);
       } catch (storageError) {
         console.error('Failed to save playlist synchronously:', storageError);
@@ -544,6 +541,95 @@ playlists.patch('/:id', async c => {
       {
         error: 'internal_error',
         message: 'Failed to update playlist',
+      },
+      500
+    );
+  }
+});
+
+/**
+ * DELETE /playlists/:id - Delete playlist by UUID or slug
+ * Supports RFC 7240: synchronous by default, async if "Prefer: respond-async" header present
+ */
+playlists.delete('/:id', async c => {
+  try {
+    const playlistId = c.req.param('id');
+
+    // Validate ID format (UUID or slug)
+    const validation = validateIdentifier(playlistId);
+
+    if (!playlistId || !validation.isValid) {
+      return c.json(
+        {
+          error: 'invalid_id',
+          message: 'Playlist ID must be a valid UUID or slug (alphanumeric with hyphens)',
+        },
+        400
+      );
+    }
+
+    // Check if playlist exists first
+    const existingPlaylist = await getPlaylistByIdOrSlug(playlistId, c.var.env);
+    if (!existingPlaylist) {
+      return c.json(
+        {
+          error: 'not_found',
+          message: 'Playlist not found',
+        },
+        404
+      );
+    }
+
+    // Check if client prefers async processing (RFC 7240)
+    const useAsync = shouldUseAsyncPersistence(c);
+
+    if (useAsync) {
+      // Async processing: queue the operation and return 202 Accepted
+      const queueMessage: import('../queue/interfaces').DeletePlaylistMessage = {
+        id: generateMessageId('delete_playlist', existingPlaylist.id),
+        timestamp: new Date().toISOString(),
+        operation: 'delete_playlist',
+        data: {
+          playlistId: existingPlaylist.id,
+        },
+      };
+
+      try {
+        await queueWriteOperation(queueMessage, c.var.env);
+        // Return 202 Accepted for async processing
+        return c.json({ message: 'Playlist deletion queued for processing' }, 202);
+      } catch (queueError) {
+        console.error('Failed to queue playlist deletion:', queueError);
+        return c.json(
+          {
+            error: 'queue_error',
+            message: 'Failed to queue playlist for deletion',
+          },
+          500
+        );
+      }
+    } else {
+      // Sync processing: delete immediately and return 204 No Content
+      try {
+        await deletePlaylist(existingPlaylist.id, c.var.env);
+        return new Response(null, { status: 204 });
+      } catch (storageError) {
+        console.error('Failed to delete playlist synchronously:', storageError);
+        return c.json(
+          {
+            error: 'storage_error',
+            message: 'Failed to delete playlist',
+          },
+          500
+        );
+      }
+    }
+  } catch (error) {
+    console.error('Error deleting playlist:', error);
+    return c.json(
+      {
+        error: 'internal_error',
+        message: 'Failed to delete playlist',
       },
       500
     );
