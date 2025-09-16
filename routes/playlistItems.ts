@@ -83,7 +83,7 @@ playlistItems.get('/', async c => {
     // Parse query parameters
     const limit = parseInt(c.req.query('limit') || '100');
     const cursor = c.req.query('cursor') || undefined;
-    const channelId = c.req.query('channel');
+    const channelId = c.req.query('channel') || c.req.query('playlist-group');
     const sortParam = (c.req.query('sort') || '').toLowerCase();
     const sort: 'asc' | 'desc' = sortParam === 'desc' ? 'desc' : 'asc'; // Default to 'asc' when no sort or invalid sort
 
