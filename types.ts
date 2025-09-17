@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import * as semver from 'semver';
+import canonicalize from 'canonicalize';
 
 // Minimum DP-1 protocol version supported by this server
 export const MIN_DP_VERSION = '1.0.0';
@@ -661,6 +662,42 @@ export function generateSlug(title: string): string {
     baseSlug.length > maxBaseLength ? baseSlug.substring(0, maxBaseLength) : baseSlug;
 
   return `${trimmedBase}-${randomSuffix}`;
+}
+
+/**
+ * Create a deterministic content hash for playlist items using JCS (RFC 8785) and SHA-256
+ * This allows us to detect changes in playlist items regardless of field order
+ */
+export async function createItemContentHash(item: PlaylistItemInput): Promise<string> {
+  // Create a content object with only the fields that matter for change detection
+  // Exclude server-generated fields like id and created
+  const content = {
+    title: item.title,
+    source: item.source,
+    duration: item.duration,
+    license: item.license,
+    ref: item.ref,
+    override: item.override,
+    display: item.display,
+    repro: item.repro,
+    provenance: item.provenance,
+  };
+
+  // Use JCS canonicalization for deterministic ordering
+  const canonical = canonicalize(content);
+  if (!canonical) {
+    throw new Error('Failed to canonicalize playlist item content');
+  }
+
+  // Create SHA-256 hash of the canonical form
+  // This works in both Node.js and Cloudflare Workers
+  const encoder = new TextEncoder();
+  const data = encoder.encode(canonical);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+
+  // Convert to hex string
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
 // Utility function to transform input to complete playlist with server-generated fields

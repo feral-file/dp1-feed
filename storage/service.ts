@@ -1,5 +1,5 @@
 import type { Env, Playlist, Channel, PlaylistItem } from '../types';
-import { PlaylistSchema } from '../types';
+import { PlaylistSchema, createItemContentHash } from '../types';
 import type { StorageProvider, KeyValueStorage, PaginatedResult, ListOptions } from './interfaces';
 
 // KV Storage Keys - using original prefixes to avoid data migration
@@ -237,6 +237,166 @@ export class StorageService {
   }
 
   /**
+   * Calculate what items have changed between old and new playlists
+   * Uses JCS-based content hashing to detect changes regardless of field order
+   * Note: Items with same content (regardless of ID) are treated as unchanged
+   * and require no KV operations, solving the Cloudflare Workers subrequest limit issue
+   */
+  private async calculateItemChanges(
+    oldItems: PlaylistItem[],
+    newItems: PlaylistItem[]
+  ): Promise<{
+    unchanged: PlaylistItem[];
+    added: PlaylistItem[];
+    deleted: PlaylistItem[];
+  }> {
+    const oldHashes = new Map<string, PlaylistItem>();
+    const newHashes = new Map<string, PlaylistItem>();
+
+    // Create content hashes for old items
+    for (const item of oldItems) {
+      const hash = await createItemContentHash(item);
+      oldHashes.set(hash, item);
+    }
+
+    // Create content hashes for new items
+    for (const item of newItems) {
+      const hash = await createItemContentHash(item);
+      newHashes.set(hash, item);
+    }
+
+    const unchanged: PlaylistItem[] = [];
+    const added: PlaylistItem[] = [];
+    const deleted: PlaylistItem[] = [];
+
+    // Find items with same content (regardless of ID)
+    for (const [hash, oldItem] of oldHashes) {
+      if (newHashes.has(hash)) {
+        // Same content means unchanged - no KV operations needed
+        // Even if IDs are different, the content is the same so we skip processing
+        unchanged.push(oldItem);
+        newHashes.delete(hash); // Remove from newHashes to avoid double processing
+      }
+    }
+
+    // Remaining items in newHashes are additions
+    for (const newItem of newHashes.values()) {
+      added.push(newItem);
+    }
+
+    // Remaining items in oldHashes are deletions
+    for (const oldItem of oldHashes.values()) {
+      if (!unchanged.includes(oldItem)) {
+        deleted.push(oldItem);
+      }
+    }
+
+    return { unchanged, added, deleted };
+  }
+
+  /**
+   * Create KV operations to delete a playlist item and all its indexes
+   */
+  private createItemDeletionOperations(item: PlaylistItem, channelIds: string[]): Promise<void>[] {
+    const operations: Promise<void>[] = [];
+
+    // Delete main item record
+    operations.push(
+      this.playlistItemStorage.delete(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`)
+    );
+
+    // Delete global created-time indexes
+    if (item.created) {
+      const ts = this.toSortableTimestamps(item.created);
+      operations.push(
+        this.playlistItemStorage.delete(
+          `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`
+        ),
+        this.playlistItemStorage.delete(
+          `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${ts.desc}:${item.id}`
+        )
+      );
+    }
+
+    // Delete channel associations
+    for (const channelId of channelIds) {
+      operations.push(
+        this.playlistItemStorage.delete(
+          `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channelId}:${item.id}`
+        )
+      );
+
+      if (item.created) {
+        const ts = this.toSortableTimestamps(item.created);
+        operations.push(
+          this.playlistItemStorage.delete(
+            `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channelId}:${ts.asc}:${item.id}`
+          ),
+          this.playlistItemStorage.delete(
+            `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channelId}:${ts.desc}:${item.id}`
+          )
+        );
+      }
+    }
+
+    return operations;
+  }
+
+  /**
+   * Create KV operations to insert a playlist item and all its indexes
+   */
+  private createItemInsertionOperations(item: PlaylistItem, channelIds: string[]): Promise<void>[] {
+    const operations: Promise<void>[] = [];
+    const itemData = JSON.stringify(item);
+
+    // Insert main item record
+    operations.push(
+      this.playlistItemStorage.put(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`, itemData)
+    );
+
+    // Insert global created-time indexes
+    if (item.created) {
+      const ts = this.toSortableTimestamps(item.created);
+      operations.push(
+        this.playlistItemStorage.put(
+          `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`,
+          item.id
+        ),
+        this.playlistItemStorage.put(
+          `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${ts.desc}:${item.id}`,
+          item.id
+        )
+      );
+    }
+
+    // Insert channel associations
+    for (const channelId of channelIds) {
+      operations.push(
+        this.playlistItemStorage.put(
+          `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channelId}:${item.id}`,
+          item.id
+        )
+      );
+
+      if (item.created) {
+        const ts = this.toSortableTimestamps(item.created);
+        operations.push(
+          this.playlistItemStorage.put(
+            `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channelId}:${ts.asc}:${item.id}`,
+            item.id
+          ),
+          this.playlistItemStorage.put(
+            `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channelId}:${ts.desc}:${item.id}`,
+            item.id
+          )
+        );
+      }
+    }
+
+    return operations;
+  }
+
+  /**
    * Get all channel IDs that a playlist belongs to (efficient reverse lookup)
    */
   async getChannelsForPlaylist(playlistId: string): Promise<string[]> {
@@ -306,97 +466,31 @@ export class StorageService {
       );
     }
 
-    // Handle old items deletion (if updating)
-    // FIXME this assumes that the playlist items always be updated, which is not the case.
-    // We need to handle the case where the playlist items are not updated.
     if (update && existingPlaylist) {
-      // Get the channel IDs
+      // SMART UPDATE: Only process changed items using JCS-based content hashing
       const channelIds = await this.getChannelsForPlaylist(playlist.id);
+      const itemChanges = await this.calculateItemChanges(existingPlaylist.items, playlist.items);
 
-      // Delete all items and their channel associations (if any)
-      for (const item of existingPlaylist.items) {
-        operations.push(
-          this.playlistItemStorage.delete(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`)
-        );
-        // Delete created-time indexes for items using item's created
-        if (item.created) {
-          const oldTs = this.toSortableTimestamps(item.created);
-          operations.push(
-            this.playlistItemStorage.delete(
-              `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${oldTs.asc}:${item.id}`
-            ),
-            this.playlistItemStorage.delete(
-              `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${oldTs.desc}:${item.id}`
-            )
-          );
-        }
-        for (const channelId of channelIds) {
-          operations.push(
-            this.playlistItemStorage.delete(
-              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channelId}:${item.id}`
-            )
-          );
-          // Delete channel-created indexes for items using item's created
-          if (item.created) {
-            const oldTs = this.toSortableTimestamps(item.created);
-            operations.push(
-              this.playlistItemStorage.delete(
-                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channelId}:${oldTs.asc}:${item.id}`
-              ),
-              this.playlistItemStorage.delete(
-                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channelId}:${oldTs.desc}:${item.id}`
-              )
-            );
-          }
-        }
-      }
-
-      // Add new items to the channel associations
-      for (const item of playlist.items) {
-        for (const channelId of channelIds) {
-          operations.push(
-            this.playlistItemStorage.put(
-              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channelId}:${item.id}`,
-              item.id
-            )
-          );
-          // Add created-time channel indexes for items using item's created
-          if (item.created) {
-            const ts = this.toSortableTimestamps(item.created);
-            operations.push(
-              this.playlistItemStorage.put(
-                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channelId}:${ts.asc}:${item.id}`,
-                item.id
-              ),
-              this.playlistItemStorage.put(
-                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channelId}:${ts.desc}:${item.id}`,
-                item.id
-              )
-            );
-          }
-        }
-      }
-    }
-
-    // Add new items
-    for (const item of playlist.items) {
-      const itemData = JSON.stringify(item);
-      operations.push(
-        this.playlistItemStorage.put(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`, itemData)
+      console.log(
+        `Playlist update: ${itemChanges.unchanged.length} unchanged, ${itemChanges.added.length} added, ${itemChanges.deleted.length} deleted`
       );
-      // Global created-time indexes for items using item's created
-      if (item.created) {
-        const ts = this.toSortableTimestamps(item.created);
-        operations.push(
-          this.playlistItemStorage.put(
-            `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`,
-            item.id
-          ),
-          this.playlistItemStorage.put(
-            `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${ts.desc}:${item.id}`,
-            item.id
-          )
-        );
+
+      // Process deletions
+      for (const deletedItem of itemChanges.deleted) {
+        operations.push(...this.createItemDeletionOperations(deletedItem, channelIds));
+      }
+
+      // Process additions
+      for (const newItem of itemChanges.added) {
+        operations.push(...this.createItemInsertionOperations(newItem, channelIds));
+      }
+
+      // Note: unchanged items require no KV operations - they're skipped entirely
+    } else {
+      // Initial creation - add all items
+      for (const item of playlist.items) {
+        const channelIds = await this.getChannelsForPlaylist(playlist.id);
+        operations.push(...this.createItemInsertionOperations(item, channelIds));
       }
     }
 

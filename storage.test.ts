@@ -280,6 +280,264 @@ describe('Storage Module', () => {
       const oldItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${testPlaylist.items[0].id}`;
       expect(mockStorages.item.storage.has(oldItemKey)).toBe(false);
     });
+
+    it('should use smart change detection to only process changed items', async () => {
+      // Create initial playlist with multiple items
+      const initialPlaylist: Playlist = {
+        ...testPlaylist,
+        items: [
+          {
+            id: 'item-1',
+            title: 'Item 1',
+            source: 'https://example.com/item1.html',
+            duration: 300,
+            license: 'open' as const,
+            created: '2024-01-01T00:00:00.001Z',
+          },
+          {
+            id: 'item-2',
+            title: 'Item 2',
+            source: 'https://example.com/item2.html',
+            duration: 400,
+            license: 'token' as const,
+            created: '2024-01-01T00:00:00.002Z',
+          },
+          {
+            id: 'item-3',
+            title: 'Item 3',
+            source: 'https://example.com/item3.html',
+            duration: 500,
+            license: 'subscription' as const,
+            created: '2024-01-01T00:00:00.003Z',
+          },
+        ],
+      };
+
+      // Save initial playlist
+      await savePlaylist(initialPlaylist, testEnv);
+
+      // Count initial KV operations
+      const initialOperationCount = mockStorages.item.storage.size;
+
+      // Create updated playlist with:
+      // - item-1: unchanged (same content, different ID)
+      // - item-2: modified content
+      // - item-3: deleted
+      // - item-4: new item
+      const updatedPlaylist: Playlist = {
+        ...initialPlaylist,
+        items: [
+          {
+            id: 'item-1-new', // New ID but same content as item-1
+            title: 'Item 1',
+            source: 'https://example.com/item1.html',
+            duration: 300,
+            license: 'open' as const,
+            created: '2024-01-01T00:00:00.001Z',
+          },
+          {
+            id: 'item-2-new', // New ID and modified content
+            title: 'Item 2 Modified',
+            source: 'https://example.com/item2.html',
+            duration: 450, // Changed duration
+            license: 'token' as const,
+            created: '2024-01-01T00:00:00.002Z',
+          },
+          {
+            id: 'item-4', // Completely new item
+            title: 'Item 4',
+            source: 'https://example.com/item4.html',
+            duration: 600,
+            license: 'open' as const,
+            created: '2024-01-01T00:00:00.004Z',
+          },
+        ],
+      };
+
+      // Update playlist
+      const updated = await savePlaylist(updatedPlaylist, testEnv, true);
+      expect(updated).toBe(true);
+
+      // Verify the playlist was updated correctly
+      const retrieved = await getPlaylistByIdOrSlug(initialPlaylist.id, testEnv);
+      expect(retrieved).toEqual(updatedPlaylist);
+
+      // Verify smart change detection worked:
+      // - item-1 (unchanged content): should remain unchanged (no KV operations)
+      // - item-2 (modified content): should be deleted and recreated with new ID
+      // - item-3 (deleted): should be deleted
+      // - item-4 (new): should be created
+
+      // Verify unchanged item still exists (no operations performed)
+      expect(mockStorages.item.storage.has(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}item-1`)).toBe(
+        true
+      );
+
+      // Verify modified item was processed (deleted and recreated)
+      expect(mockStorages.item.storage.has(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}item-2`)).toBe(
+        false
+      );
+      expect(
+        mockStorages.item.storage.has(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}item-2-new`)
+      ).toBe(true);
+
+      // Verify deleted item was removed
+      expect(mockStorages.item.storage.has(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}item-3`)).toBe(
+        false
+      );
+
+      // Verify new item was created
+      expect(mockStorages.item.storage.has(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}item-4`)).toBe(
+        true
+      );
+    });
+
+    it('should handle playlist updates with no item changes efficiently', async () => {
+      // Create initial playlist
+      const initialPlaylist: Playlist = {
+        ...testPlaylist,
+        items: [
+          {
+            id: 'item-1',
+            title: 'Item 1',
+            source: 'https://example.com/item1.html',
+            duration: 300,
+            license: 'open' as const,
+            created: '2024-01-01T00:00:00.001Z',
+          },
+          {
+            id: 'item-2',
+            title: 'Item 2',
+            source: 'https://example.com/item2.html',
+            duration: 400,
+            license: 'token' as const,
+            created: '2024-01-01T00:00:00.002Z',
+          },
+        ],
+      };
+
+      // Save initial playlist
+      await savePlaylist(initialPlaylist, testEnv);
+
+      // Create updated playlist with same items but different IDs (simulating API behavior)
+      const updatedPlaylist: Playlist = {
+        ...initialPlaylist,
+        title: 'Updated Title', // Only playlist metadata changed
+        items: [
+          {
+            id: 'item-1-new', // New ID but same content
+            title: 'Item 1',
+            source: 'https://example.com/item1.html',
+            duration: 300,
+            license: 'open' as const,
+            created: '2024-01-01T00:00:00.001Z',
+          },
+          {
+            id: 'item-2-new', // New ID but same content
+            title: 'Item 2',
+            source: 'https://example.com/item2.html',
+            duration: 400,
+            license: 'token' as const,
+            created: '2024-01-01T00:00:00.002Z',
+          },
+        ],
+      };
+
+      // Update playlist
+      const updated = await savePlaylist(updatedPlaylist, testEnv, true);
+      expect(updated).toBe(true);
+
+      // Verify the playlist was updated correctly
+      const retrieved = await getPlaylistByIdOrSlug(initialPlaylist.id, testEnv);
+      expect(retrieved).toEqual(updatedPlaylist);
+
+      // Verify items with same content were NOT processed (no KV operations)
+      // Since the content is identical, they should remain unchanged
+      expect(mockStorages.item.storage.has(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}item-1`)).toBe(
+        true
+      );
+      expect(mockStorages.item.storage.has(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}item-2`)).toBe(
+        true
+      );
+      // New items should not exist since no operations were performed
+      expect(
+        mockStorages.item.storage.has(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}item-1-new`)
+      ).toBe(false);
+      expect(
+        mockStorages.item.storage.has(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}item-2-new`)
+      ).toBe(false);
+    });
+
+    it('should handle playlist updates with field order changes correctly', async () => {
+      // Create initial playlist item with specific field order
+      const initialItem = {
+        id: 'item-1',
+        title: 'Item 1',
+        source: 'https://example.com/item1.html',
+        duration: 300,
+        license: 'open' as const,
+        created: '2024-01-01T00:00:00.001Z',
+        display: {
+          scaling: 'fit' as const,
+          autoplay: true,
+        },
+        repro: {
+          engineVersion: { engine: '1.0.0' },
+          assetsSHA256: ['0x123'],
+          frameHash: { sha256: '0x456' },
+        },
+      };
+
+      const initialPlaylist: Playlist = {
+        ...testPlaylist,
+        items: [initialItem],
+      };
+
+      // Save initial playlist
+      await savePlaylist(initialPlaylist, testEnv);
+
+      // Create updated playlist item with different field order but same content
+      const updatedItem = {
+        id: 'item-1-new', // New ID
+        duration: 300, // Different order
+        license: 'open' as const,
+        title: 'Item 1',
+        source: 'https://example.com/item1.html',
+        created: '2024-01-01T00:00:00.001Z',
+        repro: {
+          frameHash: { sha256: '0x456' }, // Different order
+          engineVersion: { engine: '1.0.0' },
+          assetsSHA256: ['0x123'],
+        },
+        display: {
+          autoplay: true, // Different order
+          scaling: 'fit' as const,
+        },
+      };
+
+      const updatedPlaylist: Playlist = {
+        ...initialPlaylist,
+        items: [updatedItem],
+      };
+
+      // Update playlist
+      const updated = await savePlaylist(updatedPlaylist, testEnv, true);
+      expect(updated).toBe(true);
+
+      // Verify the playlist was updated correctly
+      const retrieved = await getPlaylistByIdOrSlug(initialPlaylist.id, testEnv);
+      expect(retrieved).toEqual(updatedPlaylist);
+
+      // The JCS-based content hash should detect that the content is the same
+      // even though field order is different, so the item should be treated
+      // as unchanged (no KV operations performed)
+      expect(mockStorages.item.storage.has(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}item-1`)).toBe(
+        true
+      );
+      expect(
+        mockStorages.item.storage.has(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}item-1-new`)
+      ).toBe(false);
+    });
   });
 
   describe('Channel Storage', () => {
