@@ -1,0 +1,1667 @@
+openapi: 3.1.0
+info:
+  title: DP-1 Feed Operator API
+  version: 1.1.0
+  description: |
+    REST interface for creating, updating, and retrieving DP-1 playlists and channels.
+    
+    This API implements the DP-1 (Display Protocol v1) specification for managing digital content playlists and channels.
+    
+    ## Authentication
+    
+    Write operations (POST, PUT, PATCH, DELETE) require authentication using one of:
+    - **API Key**: Bearer token matching the configured `API_SECRET`
+    - **JWT**: Valid JWT token signed with configured key/JWKS
+    
+    Read operations (GET) are publicly accessible without authentication.
+    
+    ## Async Processing (RFC 7240)
+    
+    Write operations support RFC 7240 "Prefer: respond-async" header:
+    - Without header: Synchronous processing (default)
+    - With header: Asynchronous processing via queue, returns 202 Accepted
+    
+    ## Identifiers
+    
+    Resources can be identified by:
+    - **UUID**: Server-generated unique identifier
+    - **Slug**: Human-readable alphanumeric identifier with hyphens
+    
+    ## Error Handling
+    
+    All error responses follow a consistent structure with `error` and `message` fields.
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+  - url: https://feed.feralfile.com
+    description: Production server
+  - url: http://localhost:8787
+    description: Local development server
+
+security:
+  - ApiKeyAuth: []
+  - BearerJWT: []
+  - {}  # Some endpoints allow unauthenticated access
+
+paths:
+  /api/v1:
+    get:
+      summary: Get API information
+      description: Returns API version, endpoints, and deployment information
+      operationId: getApiInfo
+      security: []  # Public endpoint
+      responses:
+        '200':
+          description: API information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiInfo'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/health:
+    get:
+      summary: Health check
+      description: Returns API health status and runtime information
+      operationId: healthCheck
+      security: []  # Public endpoint
+      responses:
+        '200':
+          description: Health status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthStatus'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/playlists:
+    get:
+      summary: List playlists
+      description: Retrieve a paginated list of playlists with optional filtering and sorting
+      operationId: listPlaylists
+      security: []  # Public endpoint
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Cursor'
+        - $ref: '#/components/parameters/Sort'
+        - name: channel
+          in: query
+          description: Filter playlists by channel ID or slug
+          schema:
+            type: string
+            example: "550e8400-e29b-41d4-a716-446655440000"
+        - name: playlist-group
+          in: query
+          description: Legacy parameter name for channel filtering
+          deprecated: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of playlists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlaylistListResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+    post:
+      summary: Create playlist
+      description: Create a new playlist with server-generated ID and signature
+      operationId: createPlaylist
+      security:
+        - ApiKeyAuth: []
+        - BearerJWT: []
+      parameters:
+        - $ref: '#/components/parameters/PreferAsync'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlaylistInput'
+      responses:
+        '201':
+          description: Playlist created successfully (synchronous)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Playlist'
+        '202':
+          description: Playlist creation queued (asynchronous)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Playlist'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/playlists/{id}:
+    get:
+      summary: Get playlist
+      description: Retrieve a specific playlist by ID or slug
+      operationId: getPlaylist
+      security: []  # Public endpoint
+      parameters:
+        - $ref: '#/components/parameters/PlaylistId'
+      responses:
+        '200':
+          description: Playlist found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Playlist'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+    put:
+      summary: Replace playlist
+      description: Replace an existing playlist with new data (requires full resource)
+      operationId: replacePlaylist
+      security:
+        - ApiKeyAuth: []
+        - BearerJWT: []
+      parameters:
+        - $ref: '#/components/parameters/PlaylistId'
+        - $ref: '#/components/parameters/PreferAsync'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlaylistInput'
+      responses:
+        '200':
+          description: Playlist updated successfully (synchronous)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Playlist'
+        '202':
+          description: Playlist update queued (asynchronous)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Playlist'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+    patch:
+      summary: Update playlist
+      description: Partially update a playlist (excludes protected fields)
+      operationId: updatePlaylist
+      security:
+        - ApiKeyAuth: []
+        - BearerJWT: []
+      parameters:
+        - $ref: '#/components/parameters/PlaylistId'
+        - $ref: '#/components/parameters/PreferAsync'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlaylistUpdate'
+      responses:
+        '200':
+          description: Playlist updated successfully (synchronous)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Playlist'
+        '202':
+          description: Playlist update queued (asynchronous)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Playlist'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+    delete:
+      summary: Delete playlist
+      description: Delete a playlist by ID or slug
+      operationId: deletePlaylist
+      security:
+        - ApiKeyAuth: []
+        - BearerJWT: []
+      parameters:
+        - $ref: '#/components/parameters/PlaylistId'
+        - $ref: '#/components/parameters/PreferAsync'
+      responses:
+        '204':
+          description: Playlist deleted successfully (synchronous)
+        '202':
+          description: Playlist deletion queued (asynchronous)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Playlist deletion queued for processing"
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/channels:
+    get:
+      summary: List channels
+      description: Retrieve a paginated list of channels with optional sorting
+      operationId: listChannels
+      security: []  # Public endpoint
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Cursor'
+        - $ref: '#/components/parameters/Sort'
+      responses:
+        '200':
+          description: List of channels
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChannelListResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+    post:
+      summary: Create channel
+      description: Create a new channel with server-generated ID and signature
+      operationId: createChannel
+      security:
+        - ApiKeyAuth: []
+        - BearerJWT: []
+      parameters:
+        - $ref: '#/components/parameters/PreferAsync'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChannelInput'
+      responses:
+        '201':
+          description: Channel created successfully (synchronous)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Channel'
+        '202':
+          description: Channel creation queued (asynchronous)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Channel'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/channels/{id}:
+    get:
+      summary: Get channel
+      description: Retrieve a specific channel by ID or slug
+      operationId: getChannel
+      security: []  # Public endpoint
+      parameters:
+        - $ref: '#/components/parameters/ChannelId'
+      responses:
+        '200':
+          description: Channel found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Channel'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+    put:
+      summary: Replace channel
+      description: Replace an existing channel with new data (requires full resource)
+      operationId: replaceChannel
+      security:
+        - ApiKeyAuth: []
+        - BearerJWT: []
+      parameters:
+        - $ref: '#/components/parameters/ChannelId'
+        - $ref: '#/components/parameters/PreferAsync'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChannelInput'
+      responses:
+        '200':
+          description: Channel updated successfully (synchronous)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Channel'
+        '202':
+          description: Channel update queued (asynchronous)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Channel'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+    patch:
+      summary: Update channel
+      description: Partially update a channel (excludes protected fields)
+      operationId: updateChannel
+      security:
+        - ApiKeyAuth: []
+        - BearerJWT: []
+      parameters:
+        - $ref: '#/components/parameters/ChannelId'
+        - $ref: '#/components/parameters/PreferAsync'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChannelUpdate'
+      responses:
+        '200':
+          description: Channel updated successfully (synchronous)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Channel'
+        '202':
+          description: Channel update queued (asynchronous)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Channel'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/playlist-items:
+    get:
+      summary: List playlist items
+      description: Retrieve a paginated list of playlist items with optional channel filtering
+      operationId: listPlaylistItems
+      security: []  # Public endpoint
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Cursor'
+        - $ref: '#/components/parameters/Sort'
+        - name: channel
+          in: query
+          description: Filter playlist items by channel ID or slug
+          schema:
+            type: string
+            example: "550e8400-e29b-41d4-a716-446655440000"
+        - name: playlist-group
+          in: query
+          description: Legacy parameter name for channel filtering
+          deprecated: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of playlist items
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlaylistItemListResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/playlist-items/{id}:
+    get:
+      summary: Get playlist item
+      description: Retrieve a specific playlist item by UUID
+      operationId: getPlaylistItem
+      security: []  # Public endpoint
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Playlist item UUID
+          schema:
+            type: string
+            format: uuid
+            example: "550e8400-e29b-41d4-a716-446655440000"
+      responses:
+        '200':
+          description: Playlist item found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlaylistItem'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  # Legacy endpoint for backward compatibility
+  /api/v1/playlist-groups:
+    get:
+      summary: List channels (legacy)
+      description: Legacy endpoint for listing channels (use /api/v1/channels instead)
+      operationId: listChannelsLegacy
+      deprecated: true
+      security: []  # Public endpoint
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Cursor'
+        - $ref: '#/components/parameters/Sort'
+      responses:
+        '200':
+          description: List of channels
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChannelListResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  # Queue processing endpoints (self-hosted only)
+  /queues/process-message:
+    post:
+      summary: Process single queue message
+      description: Process a single write operation message (self-hosted deployment only)
+      operationId: processQueueMessage
+      security:
+        - ApiKeyAuth: []
+        - BearerJWT: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WriteOperationMessage'
+      responses:
+        '200':
+          description: Message processed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueueProcessResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /queues/process-batch:
+    post:
+      summary: Process queue message batch
+      description: Process multiple write operation messages in batch (self-hosted deployment only)
+      operationId: processQueueBatch
+      security:
+        - ApiKeyAuth: []
+        - BearerJWT: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - messages
+              properties:
+                messages:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/WriteOperationMessage'
+                  minItems: 1
+      responses:
+        '200':
+          description: Batch processed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueueBatchProcessResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: http
+      scheme: bearer
+      description: API key authentication using Bearer token
+
+    BearerJWT:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT authentication with RS256 signed token
+
+  parameters:
+    Limit:
+      name: limit
+      in: query
+      description: Number of items to return (1-100)
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 100
+      example: 50
+
+    Cursor:
+      name: cursor
+      in: query
+      description: Pagination cursor from previous response
+      schema:
+        type: string
+      example: "eyJsYXN0X2lkIjoiMTIzNDUifQ=="
+
+    Sort:
+      name: sort
+      in: query
+      description: Sort order by creation time
+      schema:
+        type: string
+        enum: [asc, desc]
+        default: asc
+      example: desc
+
+    PreferAsync:
+      name: Prefer
+      in: header
+      description: RFC 7240 preference for asynchronous processing
+      schema:
+        type: string
+        enum: ["respond-async"]
+      example: "respond-async"
+
+    PlaylistId:
+      name: id
+      in: path
+      required: true
+      description: Playlist identifier (UUID or slug)
+      schema:
+        type: string
+        pattern: '^([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-zA-Z0-9-]+)$'
+      examples:
+        uuid:
+          value: "550e8400-e29b-41d4-a716-446655440000"
+          summary: UUID identifier
+        slug:
+          value: "my-awesome-playlist-1234"
+          summary: Slug identifier
+
+    ChannelId:
+      name: id
+      in: path
+      required: true
+      description: Channel identifier (UUID or slug)
+      schema:
+        type: string
+        pattern: '^([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-zA-Z0-9-]+)$'
+      examples:
+        uuid:
+          value: "550e8400-e29b-41d4-a716-446655440000"
+          summary: UUID identifier
+        slug:
+          value: "my-channel-5678"
+          summary: Slug identifier
+
+  responses:
+    BadRequest:
+      description: Invalid request parameters or body
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          examples:
+            validation_error:
+              value:
+                error: "validation_error"
+                message: "Invalid playlist data: title: String must contain at most 256 character(s)"
+            invalid_limit:
+              value:
+                error: "invalid_limit"
+                message: "Limit must be between 1 and 100"
+            protected_fields:
+              value:
+                error: "protected_fields"
+                message: "Cannot update protected fields: id, signature. Protected fields are read-only."
+
+    Unauthorized:
+      description: Authentication required or invalid credentials
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          examples:
+            missing_auth:
+              value:
+                error: "unauthorized"
+                message: "Authorization header is required for write operations"
+            invalid_credentials:
+              value:
+                error: "unauthorized"
+                message: "Invalid credentials"
+
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          examples:
+            playlist_not_found:
+              value:
+                error: "not_found"
+                message: "Playlist not found"
+            channel_not_found:
+              value:
+                error: "not_found"
+                message: "Channel not found"
+
+    InternalError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          examples:
+            internal_error:
+              value:
+                error: "internal_error"
+                message: "An unexpected error occurred"
+            storage_error:
+              value:
+                error: "storage_error"
+                message: "Failed to save playlist"
+
+  schemas:
+    ApiInfo:
+      type: object
+      required:
+        - name
+        - version
+        - description
+        - specification
+        - openapi
+        - deployment
+        - runtime
+        - endpoints
+        - documentation
+      properties:
+        name:
+          type: string
+          example: "DP-1 Feed Operator API"
+        version:
+          type: string
+          example: "1.0.0"
+        description:
+          type: string
+          example: "REST interface for creating, updating, and retrieving DP-1 playlists and channels"
+        specification:
+          type: string
+          example: "DP-1 v1.1.0"
+        openapi:
+          type: string
+          example: "3.1.0"
+        deployment:
+          type: string
+          enum: [cloudflare-worker, self-hosted]
+          example: "cloudflare-worker"
+        runtime:
+          type: string
+          enum: [workerd, node.js]
+          example: "workerd"
+        endpoints:
+          type: object
+          properties:
+            playlists:
+              type: string
+              example: "/api/v1/playlists"
+            channels:
+              type: string
+              example: "/api/v1/channels"
+            playlistItems:
+              type: string
+              example: "/api/v1/playlist-items"
+            health:
+              type: string
+              example: "/api/v1/health"
+            queues:
+              type: string
+              example: "/queues"
+              description: "Only available in self-hosted deployment"
+        documentation:
+          type: string
+          format: uri
+          example: "https://github.com/display-protocol/dp1/blob/main/docs/spec.md"
+
+    HealthStatus:
+      type: object
+      required:
+        - status
+        - timestamp
+        - version
+        - environment
+        - runtime
+      properties:
+        status:
+          type: string
+          enum: [healthy]
+          example: "healthy"
+        timestamp:
+          type: string
+          format: date-time
+          example: "2024-01-15T10:30:00.000Z"
+        version:
+          type: string
+          example: "1.0.0"
+        environment:
+          type: string
+          example: "production"
+        runtime:
+          type: string
+          enum: [workerd, node.js]
+          example: "workerd"
+
+    ErrorResponse:
+      type: object
+      required:
+        - error
+        - message
+      properties:
+        error:
+          type: string
+          description: Error code identifier
+          example: "validation_error"
+        message:
+          type: string
+          description: Human-readable error message
+          example: "Invalid playlist data: title is required"
+
+    Entity:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          maxLength: 128
+          example: "John Doe"
+        key:
+          type: string
+          pattern: '^did:key:z[1-9A-HJ-NP-Za-km-z]+$'
+          example: "did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK"
+        url:
+          type: string
+          format: uri
+          maxLength: 1024
+          example: "https://example.com/profile/johndoe"
+
+    DisplayPrefs:
+      type: object
+      properties:
+        scaling:
+          type: string
+          enum: [fit, fill, stretch, auto]
+          example: "fit"
+        margin:
+          oneOf:
+            - type: number
+              minimum: 0
+            - type: string
+              pattern: '^[0-9]+(\.[0-9]+)?(px|%|vw|vh)$'
+          example: "10px"
+        background:
+          type: string
+          pattern: '^(#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})|transparent)$'
+          example: "#ffffff"
+        autoplay:
+          type: boolean
+          example: true
+        loop:
+          type: boolean
+          example: false
+        interaction:
+          type: object
+          properties:
+            keyboard:
+              type: array
+              items:
+                type: string
+              example: ["space", "enter"]
+            mouse:
+              type: object
+              properties:
+                click:
+                  type: boolean
+                  example: true
+                scroll:
+                  type: boolean
+                  example: true
+                drag:
+                  type: boolean
+                  example: false
+                hover:
+                  type: boolean
+                  example: true
+
+    Repro:
+      type: object
+      required:
+        - engineVersion
+        - assetsSHA256
+        - frameHash
+      properties:
+        engineVersion:
+          type: object
+          additionalProperties:
+            type: string
+          example:
+            p5js: "1.4.0"
+            processing: "4.0"
+        seed:
+          type: string
+          pattern: '^0x[a-fA-F0-9]+$'
+          maxLength: 130
+          example: "0x1234567890abcdef"
+        assetsSHA256:
+          type: array
+          items:
+            type: string
+            pattern: '^0x[a-fA-F0-9]+$'
+            maxLength: 66
+          maxItems: 1024
+          example: ["0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890"]
+        frameHash:
+          type: object
+          required:
+            - sha256
+          properties:
+            sha256:
+              type: string
+              pattern: '^0x[a-fA-F0-9]+$'
+              maxLength: 66
+              example: "0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890"
+            phash:
+              type: string
+              pattern: '^0x[a-fA-F0-9]+$'
+              maxLength: 18
+              example: "0x1234567890abcdef"
+
+    Provenance:
+      type: object
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          enum: [onChain, seriesRegistry, offChainURI]
+          example: "onChain"
+        contract:
+          type: object
+          properties:
+            chain:
+              type: string
+              enum: [evm, tezos, bitmark, other]
+              example: "evm"
+            standard:
+              type: string
+              enum: [erc721, erc1155, fa2, other]
+              example: "erc721"
+            address:
+              type: string
+              maxLength: 48
+              example: "0x1234567890123456789012345678901234567890"
+            seriesId:
+              oneOf:
+                - type: integer
+                  minimum: 0
+                  maximum: 4294967295
+                - type: string
+                  maxLength: 128
+              example: 1
+            tokenId:
+              type: string
+              maxLength: 128
+              example: "123"
+            uri:
+              type: string
+              format: uri
+              maxLength: 1024
+              example: "https://api.example.com/token/123"
+            metaHash:
+              type: string
+              pattern: '^0x[a-fA-F0-9]+$'
+              maxLength: 66
+              example: "0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890"
+        dependencies:
+          type: array
+          maxItems: 1024
+          items:
+            type: object
+            required:
+              - chain
+              - uri
+            properties:
+              chain:
+                type: string
+                enum: [evm, tezos, bitmark, other]
+                example: "evm"
+              standard:
+                type: string
+                enum: [erc721, erc1155, fa2, other]
+                example: "erc721"
+              uri:
+                type: string
+                format: uri
+                maxLength: 1024
+                example: "https://api.example.com/dependency/456"
+
+    DynamicQuery:
+      type: object
+      required:
+        - endpoint
+        - params
+      properties:
+        endpoint:
+          type: string
+          format: uri
+          maxLength: 1024
+          example: "https://api.example.com/content/query"
+        params:
+          type: object
+          additionalProperties:
+            type: string
+            maxLength: 1024
+          example:
+            category: "art"
+            limit: "10"
+
+    PlaylistItem:
+      type: object
+      required:
+        - id
+        - source
+        - duration
+        - license
+        - created
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        title:
+          type: string
+          maxLength: 256
+          example: "Amazing Digital Art Piece"
+        source:
+          type: string
+          format: uri
+          maxLength: 1024
+          example: "https://example.com/artwork/123"
+        duration:
+          type: number
+          minimum: 1
+          example: 30000
+          description: "Duration in milliseconds"
+        license:
+          type: string
+          enum: [open, token, subscription]
+          example: "open"
+        ref:
+          type: string
+          format: uri
+          maxLength: 1024
+          example: "https://example.com/reference/123"
+        override:
+          type: object
+          additionalProperties: {}
+          example:
+            customProperty: "customValue"
+        display:
+          $ref: '#/components/schemas/DisplayPrefs'
+        repro:
+          $ref: '#/components/schemas/Repro'
+        provenance:
+          $ref: '#/components/schemas/Provenance'
+        created:
+          type: string
+          format: date-time
+          example: "2024-01-15T10:30:00.000Z"
+
+    PlaylistItemInput:
+      type: object
+      required:
+        - source
+        - duration
+        - license
+      properties:
+        title:
+          type: string
+          maxLength: 256
+          example: "Amazing Digital Art Piece"
+        source:
+          type: string
+          format: uri
+          maxLength: 1024
+          example: "https://example.com/artwork/123"
+        duration:
+          type: number
+          minimum: 1
+          example: 30000
+          description: "Duration in milliseconds"
+        license:
+          type: string
+          enum: [open, token, subscription]
+          example: "open"
+        ref:
+          type: string
+          format: uri
+          maxLength: 1024
+          example: "https://example.com/reference/123"
+        override:
+          type: object
+          additionalProperties: {}
+          example:
+            customProperty: "customValue"
+        display:
+          $ref: '#/components/schemas/DisplayPrefs'
+        repro:
+          $ref: '#/components/schemas/Repro'
+        provenance:
+          $ref: '#/components/schemas/Provenance'
+
+    Playlist:
+      type: object
+      required:
+        - dpVersion
+        - id
+        - slug
+        - title
+        - created
+        - items
+        - signature
+      properties:
+        dpVersion:
+          type: string
+          maxLength: 16
+          pattern: '^[0-9]+\.[0-9]+\.[0-9]+.*$'
+          example: "1.0.0"
+          description: "DP-1 protocol version (semantic versioning)"
+        id:
+          type: string
+          format: uuid
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        slug:
+          type: string
+          pattern: '^[a-zA-Z0-9-]+$'
+          maxLength: 64
+          example: "my-awesome-playlist-1234"
+        title:
+          type: string
+          maxLength: 256
+          example: "My Awesome Playlist"
+        curators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+        summary:
+          type: string
+          maxLength: 4096
+          example: "A collection of amazing digital art pieces"
+        coverImage:
+          type: string
+          format: uri
+          maxLength: 1024
+          example: "https://example.com/covers/playlist-123.jpg"
+        created:
+          type: string
+          format: date-time
+          example: "2024-01-15T10:30:00.000Z"
+        defaults:
+          type: object
+          properties:
+            display:
+              $ref: '#/components/schemas/DisplayPrefs'
+            license:
+              type: string
+              enum: [open, token, subscription]
+              example: "open"
+            duration:
+              type: number
+              minimum: 1
+              example: 30000
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlaylistItem'
+          maxItems: 1024
+          minItems: 0
+          description: "Must have items OR dynamicQueries (or both)"
+        dynamicQueries:
+          type: array
+          items:
+            $ref: '#/components/schemas/DynamicQuery'
+          description: "Must have items OR dynamicQueries (or both)"
+        signature:
+          type: string
+          pattern: '^ed25519:0x[a-fA-F0-9]+$'
+          maxLength: 150
+          example: "ed25519:0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+
+    PlaylistInput:
+      type: object
+      required:
+        - dpVersion
+        - title
+        - items
+      properties:
+        dpVersion:
+          type: string
+          maxLength: 16
+          pattern: '^[0-9]+\.[0-9]+\.[0-9]+.*$'
+          example: "1.0.0"
+          description: "DP-1 protocol version (semantic versioning, minimum 1.0.0)"
+        title:
+          type: string
+          maxLength: 256
+          example: "My Awesome Playlist"
+        curators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+        summary:
+          type: string
+          maxLength: 4096
+          example: "A collection of amazing digital art pieces"
+        coverImage:
+          type: string
+          format: uri
+          maxLength: 1024
+          example: "https://example.com/covers/playlist-123.jpg"
+        defaults:
+          type: object
+          properties:
+            display:
+              $ref: '#/components/schemas/DisplayPrefs'
+            license:
+              type: string
+              enum: [open, token, subscription]
+              example: "open"
+            duration:
+              type: number
+              minimum: 1
+              example: 30000
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlaylistItemInput'
+          maxItems: 1024
+          minItems: 0
+          description: "Must have items OR dynamicQueries (or both)"
+        dynamicQueries:
+          type: array
+          items:
+            $ref: '#/components/schemas/DynamicQuery'
+          description: "Must have items OR dynamicQueries (or both)"
+
+    PlaylistUpdate:
+      type: object
+      properties:
+        dpVersion:
+          type: string
+          maxLength: 16
+          pattern: '^[0-9]+\.[0-9]+\.[0-9]+.*$'
+          example: "1.0.0"
+          description: "DP-1 protocol version (semantic versioning, minimum 1.0.0)"
+        title:
+          type: string
+          maxLength: 256
+          example: "My Updated Playlist"
+        curators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+        summary:
+          type: string
+          maxLength: 4096
+          example: "An updated collection of digital art pieces"
+        coverImage:
+          type: string
+          format: uri
+          maxLength: 1024
+          example: "https://example.com/covers/playlist-456.jpg"
+        defaults:
+          type: object
+          properties:
+            display:
+              $ref: '#/components/schemas/DisplayPrefs'
+            license:
+              type: string
+              enum: [open, token, subscription]
+              example: "token"
+            duration:
+              type: number
+              minimum: 1
+              example: 45000
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlaylistItemInput'
+          maxItems: 1024
+          minItems: 0
+          description: "If provided along with dynamicQueries, at least one must be non-empty"
+        dynamicQueries:
+          type: array
+          items:
+            $ref: '#/components/schemas/DynamicQuery'
+          description: "If provided along with items, at least one must be non-empty"
+      description: "Partial update object - excludes protected fields (id, slug, created, signature)"
+
+    Channel:
+      type: object
+      required:
+        - id
+        - slug
+        - title
+        - playlists
+        - created
+        - signature
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        slug:
+          type: string
+          pattern: '^[a-zA-Z0-9-]+$'
+          maxLength: 64
+          example: "my-channel-5678"
+        title:
+          type: string
+          maxLength: 256
+          example: "My Art Channel"
+        curator:
+          type: string
+          maxLength: 128
+          example: "John Doe"
+          deprecated: true
+          description: "Deprecated - use curators array instead"
+        curators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+        summary:
+          type: string
+          maxLength: 4096
+          example: "A curated collection of digital art playlists"
+        publisher:
+          $ref: '#/components/schemas/Entity'
+        playlists:
+          type: array
+          items:
+            type: string
+            format: uri
+            pattern: '^https:\/\/[^\s]+$'
+            maxLength: 1024
+          minItems: 1
+          maxItems: 1024
+          example: ["https://api.example.com/playlists/550e8400-e29b-41d4-a716-446655440000"]
+        created:
+          type: string
+          format: date-time
+          example: "2024-01-15T10:30:00.000Z"
+        coverImage:
+          type: string
+          format: uri
+          maxLength: 1024
+          example: "https://example.com/covers/channel-123.jpg"
+        signature:
+          type: string
+          pattern: '^ed25519:0x[a-fA-F0-9]+$'
+          maxLength: 150
+          example: "ed25519:0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+
+    ChannelInput:
+      type: object
+      required:
+        - title
+        - playlists
+      properties:
+        title:
+          type: string
+          maxLength: 256
+          example: "My Art Channel"
+        curator:
+          type: string
+          maxLength: 128
+          example: "John Doe"
+          deprecated: true
+          description: "Deprecated - use curators array instead"
+        curators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+        summary:
+          type: string
+          maxLength: 4096
+          example: "A curated collection of digital art playlists"
+        publisher:
+          $ref: '#/components/schemas/Entity'
+        playlists:
+          type: array
+          items:
+            type: string
+            format: uri
+            pattern: '^http[s]?:\/\/[^\s]+$'
+            maxLength: 1024
+          minItems: 1
+          maxItems: 1024
+          example: ["https://api.example.com/playlists/550e8400-e29b-41d4-a716-446655440000"]
+        coverImage:
+          type: string
+          format: uri
+          maxLength: 1024
+          example: "https://example.com/covers/channel-123.jpg"
+
+    ChannelUpdate:
+      type: object
+      properties:
+        title:
+          type: string
+          maxLength: 256
+          example: "My Updated Art Channel"
+        curator:
+          type: string
+          maxLength: 128
+          example: "Jane Smith"
+          deprecated: true
+          description: "Deprecated - use curators array instead"
+        curators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+        summary:
+          type: string
+          maxLength: 4096
+          example: "An updated collection of digital art playlists"
+        publisher:
+          $ref: '#/components/schemas/Entity'
+        playlists:
+          type: array
+          items:
+            type: string
+            format: uri
+            pattern: '^http[s]?:\/\/[^\s]+$'
+            maxLength: 1024
+          minItems: 1
+          maxItems: 1024
+          example: ["https://api.example.com/playlists/550e8400-e29b-41d4-a716-446655440001"]
+        coverImage:
+          type: string
+          format: uri
+          maxLength: 1024
+          example: "https://example.com/covers/channel-456.jpg"
+      description: "Partial update object - excludes protected fields (id, slug, created, signature)"
+
+    PlaylistListResponse:
+      type: object
+      required:
+        - items
+        - hasMore
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Playlist'
+        cursor:
+          type: string
+          description: "Cursor for next page (only present if hasMore is true)"
+          example: "eyJsYXN0X2lkIjoiMTIzNDUifQ=="
+        hasMore:
+          type: boolean
+          description: "Whether there are more items available"
+          example: true
+
+    ChannelListResponse:
+      type: object
+      required:
+        - items
+        - hasMore
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Channel'
+        cursor:
+          type: string
+          description: "Cursor for next page (only present if hasMore is true)"
+          example: "eyJsYXN0X2lkIjoiNTY3ODkifQ=="
+        hasMore:
+          type: boolean
+          description: "Whether there are more items available"
+          example: false
+
+    PlaylistItemListResponse:
+      type: object
+      required:
+        - items
+        - hasMore
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlaylistItem'
+        cursor:
+          type: string
+          description: "Cursor for next page (only present if hasMore is true)"
+          example: "eyJsYXN0X2lkIjoiOTAxMjMifQ=="
+        hasMore:
+          type: boolean
+          description: "Whether there are more items available"
+          example: true
+
+    WriteOperationMessage:
+      type: object
+      required:
+        - id
+        - timestamp
+        - operation
+        - data
+      properties:
+        id:
+          type: string
+          description: "Unique message identifier"
+          example: "create_playlist_550e8400-e29b-41d4-a716-446655440000_1642248600000"
+        timestamp:
+          type: string
+          format: date-time
+          example: "2024-01-15T10:30:00.000Z"
+        operation:
+          type: string
+          enum: [create_playlist, update_playlist, delete_playlist, create_channel, update_channel, delete_channel]
+          example: "create_playlist"
+        retryCount:
+          type: integer
+          minimum: 0
+          default: 0
+          example: 0
+        data:
+          type: object
+          description: "Operation-specific data"
+          oneOf:
+            - type: object
+              title: "Create Playlist Data"
+              required:
+                - playlist
+              properties:
+                playlist:
+                  $ref: '#/components/schemas/Playlist'
+            - type: object
+              title: "Update Playlist Data"
+              required:
+                - playlistId
+                - playlist
+              properties:
+                playlistId:
+                  type: string
+                  format: uuid
+                playlist:
+                  $ref: '#/components/schemas/Playlist'
+            - type: object
+              title: "Delete Playlist Data"
+              required:
+                - playlistId
+              properties:
+                playlistId:
+                  type: string
+                  format: uuid
+            - type: object
+              title: "Create Channel Data"
+              required:
+                - channel
+              properties:
+                channel:
+                  $ref: '#/components/schemas/Channel'
+            - type: object
+              title: "Update Channel Data"
+              required:
+                - channelId
+                - channel
+              properties:
+                channelId:
+                  type: string
+                  format: uuid
+                channel:
+                  $ref: '#/components/schemas/Channel'
+            - type: object
+              title: "Delete Channel Data"
+              required:
+                - channelId
+              properties:
+                channelId:
+                  type: string
+                  format: uuid
+
+    QueueProcessResult:
+      type: object
+      required:
+        - success
+        - messageId
+        - operation
+        - processedCount
+        - errors
+      properties:
+        success:
+          type: boolean
+          example: true
+        messageId:
+          type: string
+          example: "create_playlist_550e8400-e29b-41d4-a716-446655440000_1642248600000"
+        operation:
+          type: string
+          example: "create_playlist"
+        processedCount:
+          type: integer
+          example: 1
+        errors:
+          type: array
+          items:
+            type: string
+          example: []
+
+    QueueBatchProcessResult:
+      type: object
+      required:
+        - success
+        - processedCount
+        - messageIds
+        - errors
+      properties:
+        success:
+          type: boolean
+          example: true
+        processedCount:
+          type: integer
+          example: 3
+        messageIds:
+          type: array
+          items:
+            type: string
+          example: [
+            "create_playlist_550e8400-e29b-41d4-a716-446655440000_1642248600000",
+            "update_playlist_550e8400-e29b-41d4-a716-446655440001_1642248601000",
+            "create_channel_550e8400-e29b-41d4-a716-446655440002_1642248602000"
+          ]
+        errors:
+          type: array
+          items:
+            type: string
+          example: []
+
