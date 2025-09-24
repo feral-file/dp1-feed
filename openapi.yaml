@@ -4,31 +4,31 @@ info:
   version: 1.1.0
   description: |
     REST interface for creating, updating, and retrieving DP-1 playlists and channels.
-    
+
     This API implements the DP-1 (Display Protocol v1) specification for managing digital content playlists and channels.
-    
+
     ## Authentication
-    
+
     Write operations (POST, PUT, PATCH, DELETE) require authentication using one of:
     - **API Key**: Bearer token matching the configured `API_SECRET`
     - **JWT**: Valid JWT token signed with configured key/JWKS
-    
+
     Read operations (GET) are publicly accessible without authentication.
-    
+
     ## Async Processing (RFC 7240)
-    
+
     Write operations support RFC 7240 "Prefer: respond-async" header:
     - Without header: Synchronous processing (default)
     - With header: Asynchronous processing via queue, returns 202 Accepted
-    
+
     ## Identifiers
-    
+
     Resources can be identified by:
     - **UUID**: Server-generated unique identifier
     - **Slug**: Human-readable alphanumeric identifier with hyphens
-    
+
     ## Error Handling
-    
+
     All error responses follow a consistent structure with `error` and `message` fields.
   license:
     name: MIT
@@ -42,7 +42,7 @@ servers:
 security:
   - ApiKeyAuth: []
   - BearerJWT: []
-  - {}  # Some endpoints allow unauthenticated access
+  - {} # Some endpoints allow unauthenticated access
 
 paths:
   /api/v1:
@@ -50,7 +50,7 @@ paths:
       summary: Get API information
       description: Returns API version, endpoints, and deployment information
       operationId: getApiInfo
-      security: []  # Public endpoint
+      security: [] # Public endpoint
       responses:
         '200':
           description: API information
@@ -68,7 +68,7 @@ paths:
       summary: Health check
       description: Returns API health status and runtime information
       operationId: healthCheck
-      security: []  # Public endpoint
+      security: [] # Public endpoint
       responses:
         '200':
           description: Health status
@@ -86,7 +86,7 @@ paths:
       summary: List playlists
       description: Retrieve a paginated list of playlists with optional filtering and sorting
       operationId: listPlaylists
-      security: []  # Public endpoint
+      security: [] # Public endpoint
       parameters:
         - $ref: '#/components/parameters/Limit'
         - $ref: '#/components/parameters/Cursor'
@@ -96,7 +96,7 @@ paths:
           description: Filter playlists by channel ID or slug
           schema:
             type: string
-            example: "550e8400-e29b-41d4-a716-446655440000"
+            example: '550e8400-e29b-41d4-a716-446655440000'
         - name: playlist-group
           in: query
           description: Legacy parameter name for channel filtering
@@ -155,7 +155,7 @@ paths:
       summary: Get playlist
       description: Retrieve a specific playlist by ID or slug
       operationId: getPlaylist
-      security: []  # Public endpoint
+      security: [] # Public endpoint
       parameters:
         - $ref: '#/components/parameters/PlaylistId'
       responses:
@@ -270,7 +270,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: "Playlist deletion queued for processing"
+                    example: 'Playlist deletion queued for processing'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -285,7 +285,7 @@ paths:
       summary: List channels
       description: Retrieve a paginated list of channels with optional sorting
       operationId: listChannels
-      security: []  # Public endpoint
+      security: [] # Public endpoint
       parameters:
         - $ref: '#/components/parameters/Limit'
         - $ref: '#/components/parameters/Cursor'
@@ -342,7 +342,7 @@ paths:
       summary: Get channel
       description: Retrieve a specific channel by ID or slug
       operationId: getChannel
-      security: []  # Public endpoint
+      security: [] # Public endpoint
       parameters:
         - $ref: '#/components/parameters/ChannelId'
       responses:
@@ -440,7 +440,7 @@ paths:
       summary: List playlist items
       description: Retrieve a paginated list of playlist items with optional channel filtering
       operationId: listPlaylistItems
-      security: []  # Public endpoint
+      security: [] # Public endpoint
       parameters:
         - $ref: '#/components/parameters/Limit'
         - $ref: '#/components/parameters/Cursor'
@@ -450,7 +450,7 @@ paths:
           description: Filter playlist items by channel ID or slug
           schema:
             type: string
-            example: "550e8400-e29b-41d4-a716-446655440000"
+            example: '550e8400-e29b-41d4-a716-446655440000'
         - name: playlist-group
           in: query
           description: Legacy parameter name for channel filtering
@@ -474,7 +474,7 @@ paths:
       summary: Get playlist item
       description: Retrieve a specific playlist item by UUID
       operationId: getPlaylistItem
-      security: []  # Public endpoint
+      security: [] # Public endpoint
       parameters:
         - name: id
           in: path
@@ -483,7 +483,7 @@ paths:
           schema:
             type: string
             format: uuid
-            example: "550e8400-e29b-41d4-a716-446655440000"
+            example: '550e8400-e29b-41d4-a716-446655440000'
       responses:
         '200':
           description: Playlist item found
@@ -505,7 +505,7 @@ paths:
       description: Legacy endpoint for listing channels (use /api/v1/channels instead)
       operationId: listChannelsLegacy
       deprecated: true
-      security: []  # Public endpoint
+      security: [] # Public endpoint
       parameters:
         - $ref: '#/components/parameters/Limit'
         - $ref: '#/components/parameters/Cursor'
@@ -618,7 +618,7 @@ components:
       description: Pagination cursor from previous response
       schema:
         type: string
-      example: "eyJsYXN0X2lkIjoiMTIzNDUifQ=="
+      example: 'eyJsYXN0X2lkIjoiMTIzNDUifQ=='
 
     Sort:
       name: sort
@@ -636,8 +636,8 @@ components:
       description: RFC 7240 preference for asynchronous processing
       schema:
         type: string
-        enum: ["respond-async"]
-      example: "respond-async"
+        enum: ['respond-async']
+      example: 'respond-async'
 
     PlaylistId:
       name: id
@@ -649,10 +649,10 @@ components:
         pattern: '^([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-zA-Z0-9-]+)$'
       examples:
         uuid:
-          value: "550e8400-e29b-41d4-a716-446655440000"
+          value: '550e8400-e29b-41d4-a716-446655440000'
           summary: UUID identifier
         slug:
-          value: "my-awesome-playlist-1234"
+          value: 'my-awesome-playlist-1234'
           summary: Slug identifier
 
     ChannelId:
@@ -665,10 +665,10 @@ components:
         pattern: '^([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-zA-Z0-9-]+)$'
       examples:
         uuid:
-          value: "550e8400-e29b-41d4-a716-446655440000"
+          value: '550e8400-e29b-41d4-a716-446655440000'
           summary: UUID identifier
         slug:
-          value: "my-channel-5678"
+          value: 'my-channel-5678'
           summary: Slug identifier
 
   responses:
@@ -681,16 +681,16 @@ components:
           examples:
             validation_error:
               value:
-                error: "validation_error"
-                message: "Invalid playlist data: title: String must contain at most 256 character(s)"
+                error: 'validation_error'
+                message: 'Invalid playlist data: title: String must contain at most 256 character(s)'
             invalid_limit:
               value:
-                error: "invalid_limit"
-                message: "Limit must be between 1 and 100"
+                error: 'invalid_limit'
+                message: 'Limit must be between 1 and 100'
             protected_fields:
               value:
-                error: "protected_fields"
-                message: "Cannot update protected fields: id, signature. Protected fields are read-only."
+                error: 'protected_fields'
+                message: 'Cannot update protected fields: id, signature. Protected fields are read-only.'
 
     Unauthorized:
       description: Authentication required or invalid credentials
@@ -701,12 +701,12 @@ components:
           examples:
             missing_auth:
               value:
-                error: "unauthorized"
-                message: "Authorization header is required for write operations"
+                error: 'unauthorized'
+                message: 'Authorization header is required for write operations'
             invalid_credentials:
               value:
-                error: "unauthorized"
-                message: "Invalid credentials"
+                error: 'unauthorized'
+                message: 'Invalid credentials'
 
     NotFound:
       description: Resource not found
@@ -717,12 +717,12 @@ components:
           examples:
             playlist_not_found:
               value:
-                error: "not_found"
-                message: "Playlist not found"
+                error: 'not_found'
+                message: 'Playlist not found'
             channel_not_found:
               value:
-                error: "not_found"
-                message: "Channel not found"
+                error: 'not_found'
+                message: 'Channel not found'
 
     InternalError:
       description: Internal server error
@@ -733,12 +733,12 @@ components:
           examples:
             internal_error:
               value:
-                error: "internal_error"
-                message: "An unexpected error occurred"
+                error: 'internal_error'
+                message: 'An unexpected error occurred'
             storage_error:
               value:
-                error: "storage_error"
-                message: "Failed to save playlist"
+                error: 'storage_error'
+                message: 'Failed to save playlist'
 
   schemas:
     ApiInfo:
@@ -756,50 +756,50 @@ components:
       properties:
         name:
           type: string
-          example: "DP-1 Feed Operator API"
+          example: 'DP-1 Feed Operator API'
         version:
           type: string
-          example: "1.0.0"
+          example: '1.0.0'
         description:
           type: string
-          example: "REST interface for creating, updating, and retrieving DP-1 playlists and channels"
+          example: 'REST interface for creating, updating, and retrieving DP-1 playlists and channels'
         specification:
           type: string
-          example: "DP-1 v1.1.0"
+          example: 'DP-1 v1.1.0'
         openapi:
           type: string
-          example: "3.1.0"
+          example: '3.1.0'
         deployment:
           type: string
           enum: [cloudflare-worker, self-hosted]
-          example: "cloudflare-worker"
+          example: 'cloudflare-worker'
         runtime:
           type: string
           enum: [workerd, node.js]
-          example: "workerd"
+          example: 'workerd'
         endpoints:
           type: object
           properties:
             playlists:
               type: string
-              example: "/api/v1/playlists"
+              example: '/api/v1/playlists'
             channels:
               type: string
-              example: "/api/v1/channels"
+              example: '/api/v1/channels'
             playlistItems:
               type: string
-              example: "/api/v1/playlist-items"
+              example: '/api/v1/playlist-items'
             health:
               type: string
-              example: "/api/v1/health"
+              example: '/api/v1/health'
             queues:
               type: string
-              example: "/queues"
-              description: "Only available in self-hosted deployment"
+              example: '/queues'
+              description: 'Only available in self-hosted deployment'
         documentation:
           type: string
           format: uri
-          example: "https://github.com/display-protocol/dp1/blob/main/docs/spec.md"
+          example: 'https://github.com/display-protocol/dp1/blob/main/docs/spec.md'
 
     HealthStatus:
       type: object
@@ -813,21 +813,21 @@ components:
         status:
           type: string
           enum: [healthy]
-          example: "healthy"
+          example: 'healthy'
         timestamp:
           type: string
           format: date-time
-          example: "2024-01-15T10:30:00.000Z"
+          example: '2024-01-15T10:30:00.000Z'
         version:
           type: string
-          example: "1.0.0"
+          example: '1.0.0'
         environment:
           type: string
-          example: "production"
+          example: 'production'
         runtime:
           type: string
           enum: [workerd, node.js]
-          example: "workerd"
+          example: 'workerd'
 
     ErrorResponse:
       type: object
@@ -838,11 +838,11 @@ components:
         error:
           type: string
           description: Error code identifier
-          example: "validation_error"
+          example: 'validation_error'
         message:
           type: string
           description: Human-readable error message
-          example: "Invalid playlist data: title is required"
+          example: 'Invalid playlist data: title is required'
 
     Entity:
       type: object
@@ -852,16 +852,16 @@ components:
         name:
           type: string
           maxLength: 128
-          example: "John Doe"
+          example: 'John Doe'
         key:
           type: string
           pattern: '^did:key:z[1-9A-HJ-NP-Za-km-z]+$'
-          example: "did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK"
+          example: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK'
         url:
           type: string
           format: uri
           maxLength: 1024
-          example: "https://example.com/profile/johndoe"
+          example: 'https://example.com/profile/johndoe'
 
     DisplayPrefs:
       type: object
@@ -869,18 +869,18 @@ components:
         scaling:
           type: string
           enum: [fit, fill, stretch, auto]
-          example: "fit"
+          example: 'fit'
         margin:
           oneOf:
             - type: number
               minimum: 0
             - type: string
               pattern: '^[0-9]+(\.[0-9]+)?(px|%|vw|vh)$'
-          example: "10px"
+          example: '10px'
         background:
           type: string
           pattern: '^(#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})|transparent)$'
-          example: "#ffffff"
+          example: '#ffffff'
         autoplay:
           type: boolean
           example: true
@@ -894,7 +894,7 @@ components:
               type: array
               items:
                 type: string
-              example: ["space", "enter"]
+              example: ['space', 'enter']
             mouse:
               type: object
               properties:
@@ -923,13 +923,13 @@ components:
           additionalProperties:
             type: string
           example:
-            p5js: "1.4.0"
-            processing: "4.0"
+            p5js: '1.4.0'
+            processing: '4.0'
         seed:
           type: string
           pattern: '^0x[a-fA-F0-9]+$'
           maxLength: 130
-          example: "0x1234567890abcdef"
+          example: '0x1234567890abcdef'
         assetsSHA256:
           type: array
           items:
@@ -937,7 +937,7 @@ components:
             pattern: '^0x[a-fA-F0-9]+$'
             maxLength: 66
           maxItems: 1024
-          example: ["0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890"]
+          example: ['0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890']
         frameHash:
           type: object
           required:
@@ -947,12 +947,12 @@ components:
               type: string
               pattern: '^0x[a-fA-F0-9]+$'
               maxLength: 66
-              example: "0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890"
+              example: '0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890'
             phash:
               type: string
               pattern: '^0x[a-fA-F0-9]+$'
               maxLength: 18
-              example: "0x1234567890abcdef"
+              example: '0x1234567890abcdef'
 
     Provenance:
       type: object
@@ -962,22 +962,22 @@ components:
         type:
           type: string
           enum: [onChain, seriesRegistry, offChainURI]
-          example: "onChain"
+          example: 'onChain'
         contract:
           type: object
           properties:
             chain:
               type: string
               enum: [evm, tezos, bitmark, other]
-              example: "evm"
+              example: 'evm'
             standard:
               type: string
               enum: [erc721, erc1155, fa2, other]
-              example: "erc721"
+              example: 'erc721'
             address:
               type: string
               maxLength: 48
-              example: "0x1234567890123456789012345678901234567890"
+              example: '0x1234567890123456789012345678901234567890'
             seriesId:
               oneOf:
                 - type: integer
@@ -989,17 +989,17 @@ components:
             tokenId:
               type: string
               maxLength: 128
-              example: "123"
+              example: '123'
             uri:
               type: string
               format: uri
               maxLength: 1024
-              example: "https://api.example.com/token/123"
+              example: 'https://api.example.com/token/123'
             metaHash:
               type: string
               pattern: '^0x[a-fA-F0-9]+$'
               maxLength: 66
-              example: "0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890"
+              example: '0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890'
         dependencies:
           type: array
           maxItems: 1024
@@ -1012,16 +1012,16 @@ components:
               chain:
                 type: string
                 enum: [evm, tezos, bitmark, other]
-                example: "evm"
+                example: 'evm'
               standard:
                 type: string
                 enum: [erc721, erc1155, fa2, other]
-                example: "erc721"
+                example: 'erc721'
               uri:
                 type: string
                 format: uri
                 maxLength: 1024
-                example: "https://api.example.com/dependency/456"
+                example: 'https://api.example.com/dependency/456'
 
     DynamicQuery:
       type: object
@@ -1033,15 +1033,15 @@ components:
           type: string
           format: uri
           maxLength: 1024
-          example: "https://api.example.com/content/query"
+          example: 'https://api.example.com/content/query'
         params:
           type: object
           additionalProperties:
             type: string
             maxLength: 1024
           example:
-            category: "art"
-            limit: "10"
+            category: 'art'
+            limit: '10'
 
     PlaylistItem:
       type: object
@@ -1055,35 +1055,35 @@ components:
         id:
           type: string
           format: uuid
-          example: "550e8400-e29b-41d4-a716-446655440000"
+          example: '550e8400-e29b-41d4-a716-446655440000'
         title:
           type: string
           maxLength: 256
-          example: "Amazing Digital Art Piece"
+          example: 'Amazing Digital Art Piece'
         source:
           type: string
           format: uri
           maxLength: 1024
-          example: "https://example.com/artwork/123"
+          example: 'https://example.com/artwork/123'
         duration:
           type: number
           minimum: 1
           example: 30000
-          description: "Duration in milliseconds"
+          description: 'Duration in milliseconds'
         license:
           type: string
           enum: [open, token, subscription]
-          example: "open"
+          example: 'open'
         ref:
           type: string
           format: uri
           maxLength: 1024
-          example: "https://example.com/reference/123"
+          example: 'https://example.com/reference/123'
         override:
           type: object
           additionalProperties: {}
           example:
-            customProperty: "customValue"
+            customProperty: 'customValue'
         display:
           $ref: '#/components/schemas/DisplayPrefs'
         repro:
@@ -1093,7 +1093,7 @@ components:
         created:
           type: string
           format: date-time
-          example: "2024-01-15T10:30:00.000Z"
+          example: '2024-01-15T10:30:00.000Z'
 
     PlaylistItemInput:
       type: object
@@ -1105,31 +1105,31 @@ components:
         title:
           type: string
           maxLength: 256
-          example: "Amazing Digital Art Piece"
+          example: 'Amazing Digital Art Piece'
         source:
           type: string
           format: uri
           maxLength: 1024
-          example: "https://example.com/artwork/123"
+          example: 'https://example.com/artwork/123'
         duration:
           type: number
           minimum: 1
           example: 30000
-          description: "Duration in milliseconds"
+          description: 'Duration in milliseconds'
         license:
           type: string
           enum: [open, token, subscription]
-          example: "open"
+          example: 'open'
         ref:
           type: string
           format: uri
           maxLength: 1024
-          example: "https://example.com/reference/123"
+          example: 'https://example.com/reference/123'
         override:
           type: object
           additionalProperties: {}
           example:
-            customProperty: "customValue"
+            customProperty: 'customValue'
         display:
           $ref: '#/components/schemas/DisplayPrefs'
         repro:
@@ -1152,21 +1152,21 @@ components:
           type: string
           maxLength: 16
           pattern: '^[0-9]+\.[0-9]+\.[0-9]+.*$'
-          example: "1.0.0"
-          description: "DP-1 protocol version (semantic versioning)"
+          example: '1.0.0'
+          description: 'DP-1 protocol version (semantic versioning)'
         id:
           type: string
           format: uuid
-          example: "550e8400-e29b-41d4-a716-446655440000"
+          example: '550e8400-e29b-41d4-a716-446655440000'
         slug:
           type: string
           pattern: '^[a-zA-Z0-9-]+$'
           maxLength: 64
-          example: "my-awesome-playlist-1234"
+          example: 'my-awesome-playlist-1234'
         title:
           type: string
           maxLength: 256
-          example: "My Awesome Playlist"
+          example: 'My Awesome Playlist'
         curators:
           type: array
           items:
@@ -1174,16 +1174,16 @@ components:
         summary:
           type: string
           maxLength: 4096
-          example: "A collection of amazing digital art pieces"
+          example: 'A collection of amazing digital art pieces'
         coverImage:
           type: string
           format: uri
           maxLength: 1024
-          example: "https://example.com/covers/playlist-123.jpg"
+          example: 'https://example.com/covers/playlist-123.jpg'
         created:
           type: string
           format: date-time
-          example: "2024-01-15T10:30:00.000Z"
+          example: '2024-01-15T10:30:00.000Z'
         defaults:
           type: object
           properties:
@@ -1192,7 +1192,7 @@ components:
             license:
               type: string
               enum: [open, token, subscription]
-              example: "open"
+              example: 'open'
             duration:
               type: number
               minimum: 1
@@ -1203,17 +1203,17 @@ components:
             $ref: '#/components/schemas/PlaylistItem'
           maxItems: 1024
           minItems: 0
-          description: "Must have items OR dynamicQueries (or both)"
+          description: 'Must have items OR dynamicQueries (or both)'
         dynamicQueries:
           type: array
           items:
             $ref: '#/components/schemas/DynamicQuery'
-          description: "Must have items OR dynamicQueries (or both)"
+          description: 'Must have items OR dynamicQueries (or both)'
         signature:
           type: string
           pattern: '^ed25519:0x[a-fA-F0-9]+$'
           maxLength: 150
-          example: "ed25519:0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+          example: 'ed25519:0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef'
 
     PlaylistInput:
       type: object
@@ -1226,12 +1226,12 @@ components:
           type: string
           maxLength: 16
           pattern: '^[0-9]+\.[0-9]+\.[0-9]+.*$'
-          example: "1.0.0"
-          description: "DP-1 protocol version (semantic versioning, minimum 1.0.0)"
+          example: '1.0.0'
+          description: 'DP-1 protocol version (semantic versioning, minimum 1.0.0)'
         title:
           type: string
           maxLength: 256
-          example: "My Awesome Playlist"
+          example: 'My Awesome Playlist'
         curators:
           type: array
           items:
@@ -1239,12 +1239,12 @@ components:
         summary:
           type: string
           maxLength: 4096
-          example: "A collection of amazing digital art pieces"
+          example: 'A collection of amazing digital art pieces'
         coverImage:
           type: string
           format: uri
           maxLength: 1024
-          example: "https://example.com/covers/playlist-123.jpg"
+          example: 'https://example.com/covers/playlist-123.jpg'
         defaults:
           type: object
           properties:
@@ -1253,7 +1253,7 @@ components:
             license:
               type: string
               enum: [open, token, subscription]
-              example: "open"
+              example: 'open'
             duration:
               type: number
               minimum: 1
@@ -1264,12 +1264,12 @@ components:
             $ref: '#/components/schemas/PlaylistItemInput'
           maxItems: 1024
           minItems: 0
-          description: "Must have items OR dynamicQueries (or both)"
+          description: 'Must have items OR dynamicQueries (or both)'
         dynamicQueries:
           type: array
           items:
             $ref: '#/components/schemas/DynamicQuery'
-          description: "Must have items OR dynamicQueries (or both)"
+          description: 'Must have items OR dynamicQueries (or both)'
 
     PlaylistUpdate:
       type: object
@@ -1278,12 +1278,12 @@ components:
           type: string
           maxLength: 16
           pattern: '^[0-9]+\.[0-9]+\.[0-9]+.*$'
-          example: "1.0.0"
-          description: "DP-1 protocol version (semantic versioning, minimum 1.0.0)"
+          example: '1.0.0'
+          description: 'DP-1 protocol version (semantic versioning, minimum 1.0.0)'
         title:
           type: string
           maxLength: 256
-          example: "My Updated Playlist"
+          example: 'My Updated Playlist'
         curators:
           type: array
           items:
@@ -1291,12 +1291,12 @@ components:
         summary:
           type: string
           maxLength: 4096
-          example: "An updated collection of digital art pieces"
+          example: 'An updated collection of digital art pieces'
         coverImage:
           type: string
           format: uri
           maxLength: 1024
-          example: "https://example.com/covers/playlist-456.jpg"
+          example: 'https://example.com/covers/playlist-456.jpg'
         defaults:
           type: object
           properties:
@@ -1305,7 +1305,7 @@ components:
             license:
               type: string
               enum: [open, token, subscription]
-              example: "token"
+              example: 'token'
             duration:
               type: number
               minimum: 1
@@ -1316,13 +1316,13 @@ components:
             $ref: '#/components/schemas/PlaylistItemInput'
           maxItems: 1024
           minItems: 0
-          description: "If provided along with dynamicQueries, at least one must be non-empty"
+          description: 'If provided along with dynamicQueries, at least one must be non-empty'
         dynamicQueries:
           type: array
           items:
             $ref: '#/components/schemas/DynamicQuery'
-          description: "If provided along with items, at least one must be non-empty"
-      description: "Partial update object - excludes protected fields (id, slug, created, signature)"
+          description: 'If provided along with items, at least one must be non-empty'
+      description: 'Partial update object - excludes protected fields (id, slug, created, signature)'
 
     Channel:
       type: object
@@ -1337,22 +1337,22 @@ components:
         id:
           type: string
           format: uuid
-          example: "550e8400-e29b-41d4-a716-446655440000"
+          example: '550e8400-e29b-41d4-a716-446655440000'
         slug:
           type: string
           pattern: '^[a-zA-Z0-9-]+$'
           maxLength: 64
-          example: "my-channel-5678"
+          example: 'my-channel-5678'
         title:
           type: string
           maxLength: 256
-          example: "My Art Channel"
+          example: 'My Art Channel'
         curator:
           type: string
           maxLength: 128
-          example: "John Doe"
+          example: 'John Doe'
           deprecated: true
-          description: "Deprecated - use curators array instead"
+          description: 'Deprecated - use curators array instead'
         curators:
           type: array
           items:
@@ -1360,7 +1360,7 @@ components:
         summary:
           type: string
           maxLength: 4096
-          example: "A curated collection of digital art playlists"
+          example: 'A curated collection of digital art playlists'
         publisher:
           $ref: '#/components/schemas/Entity'
         playlists:
@@ -1372,21 +1372,21 @@ components:
             maxLength: 1024
           minItems: 1
           maxItems: 1024
-          example: ["https://api.example.com/playlists/550e8400-e29b-41d4-a716-446655440000"]
+          example: ['https://api.example.com/playlists/550e8400-e29b-41d4-a716-446655440000']
         created:
           type: string
           format: date-time
-          example: "2024-01-15T10:30:00.000Z"
+          example: '2024-01-15T10:30:00.000Z'
         coverImage:
           type: string
           format: uri
           maxLength: 1024
-          example: "https://example.com/covers/channel-123.jpg"
+          example: 'https://example.com/covers/channel-123.jpg'
         signature:
           type: string
           pattern: '^ed25519:0x[a-fA-F0-9]+$'
           maxLength: 150
-          example: "ed25519:0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+          example: 'ed25519:0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef'
 
     ChannelInput:
       type: object
@@ -1397,13 +1397,13 @@ components:
         title:
           type: string
           maxLength: 256
-          example: "My Art Channel"
+          example: 'My Art Channel'
         curator:
           type: string
           maxLength: 128
-          example: "John Doe"
+          example: 'John Doe'
           deprecated: true
-          description: "Deprecated - use curators array instead"
+          description: 'Deprecated - use curators array instead'
         curators:
           type: array
           items:
@@ -1411,7 +1411,7 @@ components:
         summary:
           type: string
           maxLength: 4096
-          example: "A curated collection of digital art playlists"
+          example: 'A curated collection of digital art playlists'
         publisher:
           $ref: '#/components/schemas/Entity'
         playlists:
@@ -1423,12 +1423,12 @@ components:
             maxLength: 1024
           minItems: 1
           maxItems: 1024
-          example: ["https://api.example.com/playlists/550e8400-e29b-41d4-a716-446655440000"]
+          example: ['https://api.example.com/playlists/550e8400-e29b-41d4-a716-446655440000']
         coverImage:
           type: string
           format: uri
           maxLength: 1024
-          example: "https://example.com/covers/channel-123.jpg"
+          example: 'https://example.com/covers/channel-123.jpg'
 
     ChannelUpdate:
       type: object
@@ -1436,13 +1436,13 @@ components:
         title:
           type: string
           maxLength: 256
-          example: "My Updated Art Channel"
+          example: 'My Updated Art Channel'
         curator:
           type: string
           maxLength: 128
-          example: "Jane Smith"
+          example: 'Jane Smith'
           deprecated: true
-          description: "Deprecated - use curators array instead"
+          description: 'Deprecated - use curators array instead'
         curators:
           type: array
           items:
@@ -1450,7 +1450,7 @@ components:
         summary:
           type: string
           maxLength: 4096
-          example: "An updated collection of digital art playlists"
+          example: 'An updated collection of digital art playlists'
         publisher:
           $ref: '#/components/schemas/Entity'
         playlists:
@@ -1462,13 +1462,13 @@ components:
             maxLength: 1024
           minItems: 1
           maxItems: 1024
-          example: ["https://api.example.com/playlists/550e8400-e29b-41d4-a716-446655440001"]
+          example: ['https://api.example.com/playlists/550e8400-e29b-41d4-a716-446655440001']
         coverImage:
           type: string
           format: uri
           maxLength: 1024
-          example: "https://example.com/covers/channel-456.jpg"
-      description: "Partial update object - excludes protected fields (id, slug, created, signature)"
+          example: 'https://example.com/covers/channel-456.jpg'
+      description: 'Partial update object - excludes protected fields (id, slug, created, signature)'
 
     PlaylistListResponse:
       type: object
@@ -1482,11 +1482,11 @@ components:
             $ref: '#/components/schemas/Playlist'
         cursor:
           type: string
-          description: "Cursor for next page (only present if hasMore is true)"
-          example: "eyJsYXN0X2lkIjoiMTIzNDUifQ=="
+          description: 'Cursor for next page (only present if hasMore is true)'
+          example: 'eyJsYXN0X2lkIjoiMTIzNDUifQ=='
         hasMore:
           type: boolean
-          description: "Whether there are more items available"
+          description: 'Whether there are more items available'
           example: true
 
     ChannelListResponse:
@@ -1501,11 +1501,11 @@ components:
             $ref: '#/components/schemas/Channel'
         cursor:
           type: string
-          description: "Cursor for next page (only present if hasMore is true)"
-          example: "eyJsYXN0X2lkIjoiNTY3ODkifQ=="
+          description: 'Cursor for next page (only present if hasMore is true)'
+          example: 'eyJsYXN0X2lkIjoiNTY3ODkifQ=='
         hasMore:
           type: boolean
-          description: "Whether there are more items available"
+          description: 'Whether there are more items available'
           example: false
 
     PlaylistItemListResponse:
@@ -1520,11 +1520,11 @@ components:
             $ref: '#/components/schemas/PlaylistItem'
         cursor:
           type: string
-          description: "Cursor for next page (only present if hasMore is true)"
-          example: "eyJsYXN0X2lkIjoiOTAxMjMifQ=="
+          description: 'Cursor for next page (only present if hasMore is true)'
+          example: 'eyJsYXN0X2lkIjoiOTAxMjMifQ=='
         hasMore:
           type: boolean
-          description: "Whether there are more items available"
+          description: 'Whether there are more items available'
           example: true
 
     WriteOperationMessage:
@@ -1537,16 +1537,24 @@ components:
       properties:
         id:
           type: string
-          description: "Unique message identifier"
-          example: "create_playlist_550e8400-e29b-41d4-a716-446655440000_1642248600000"
+          description: 'Unique message identifier'
+          example: 'create_playlist_550e8400-e29b-41d4-a716-446655440000_1642248600000'
         timestamp:
           type: string
           format: date-time
-          example: "2024-01-15T10:30:00.000Z"
+          example: '2024-01-15T10:30:00.000Z'
         operation:
           type: string
-          enum: [create_playlist, update_playlist, delete_playlist, create_channel, update_channel, delete_channel]
-          example: "create_playlist"
+          enum:
+            [
+              create_playlist,
+              update_playlist,
+              delete_playlist,
+              create_channel,
+              update_channel,
+              delete_channel,
+            ]
+          example: 'create_playlist'
         retryCount:
           type: integer
           minimum: 0
@@ -1554,17 +1562,17 @@ components:
           example: 0
         data:
           type: object
-          description: "Operation-specific data"
+          description: 'Operation-specific data'
           oneOf:
             - type: object
-              title: "Create Playlist Data"
+              title: 'Create Playlist Data'
               required:
                 - playlist
               properties:
                 playlist:
                   $ref: '#/components/schemas/Playlist'
             - type: object
-              title: "Update Playlist Data"
+              title: 'Update Playlist Data'
               required:
                 - playlistId
                 - playlist
@@ -1575,7 +1583,7 @@ components:
                 playlist:
                   $ref: '#/components/schemas/Playlist'
             - type: object
-              title: "Delete Playlist Data"
+              title: 'Delete Playlist Data'
               required:
                 - playlistId
               properties:
@@ -1583,14 +1591,14 @@ components:
                   type: string
                   format: uuid
             - type: object
-              title: "Create Channel Data"
+              title: 'Create Channel Data'
               required:
                 - channel
               properties:
                 channel:
                   $ref: '#/components/schemas/Channel'
             - type: object
-              title: "Update Channel Data"
+              title: 'Update Channel Data'
               required:
                 - channelId
                 - channel
@@ -1601,7 +1609,7 @@ components:
                 channel:
                   $ref: '#/components/schemas/Channel'
             - type: object
-              title: "Delete Channel Data"
+              title: 'Delete Channel Data'
               required:
                 - channelId
               properties:
@@ -1623,10 +1631,10 @@ components:
           example: true
         messageId:
           type: string
-          example: "create_playlist_550e8400-e29b-41d4-a716-446655440000_1642248600000"
+          example: 'create_playlist_550e8400-e29b-41d4-a716-446655440000_1642248600000'
         operation:
           type: string
-          example: "create_playlist"
+          example: 'create_playlist'
         processedCount:
           type: integer
           example: 1
@@ -1654,14 +1662,14 @@ components:
           type: array
           items:
             type: string
-          example: [
-            "create_playlist_550e8400-e29b-41d4-a716-446655440000_1642248600000",
-            "update_playlist_550e8400-e29b-41d4-a716-446655440001_1642248601000",
-            "create_channel_550e8400-e29b-41d4-a716-446655440002_1642248602000"
-          ]
+          example:
+            [
+              'create_playlist_550e8400-e29b-41d4-a716-446655440000_1642248600000',
+              'update_playlist_550e8400-e29b-41d4-a716-446655440001_1642248601000',
+              'create_channel_550e8400-e29b-41d4-a716-446655440002_1642248602000',
+            ]
         errors:
           type: array
           items:
             type: string
           example: []
-
