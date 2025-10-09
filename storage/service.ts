@@ -1235,8 +1235,7 @@ export class StorageService {
         // Delete channel-created indexes for this item
         // We need to get the item to check its created timestamp
         const itemData = await this.playlistItemStorage.get(
-          `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${itemId}`,
-          { type: 'json' }
+          `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${itemId}`
         );
         if (itemData) {
           const item = JSON.parse(itemData) as PlaylistItem;
@@ -1273,8 +1272,7 @@ export class StorageService {
 
       // We need to get the playlist to check its created timestamp
       const playlistData = await this.playlistStorage.get(
-        `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${playlistId}`,
-        { type: 'json' }
+        `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${playlistId}`
       );
       if (playlistData) {
         const playlist = JSON.parse(playlistData) as Playlist;
