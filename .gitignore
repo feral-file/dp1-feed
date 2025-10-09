@@ -14,7 +14,11 @@ build/
 .env.local
 .env.development.local
 .env.test.local
+.env.production
 .env.production.local
+
+# Custom wrangler configs
+wrangler.production.toml
 
 # Testing
 coverage/

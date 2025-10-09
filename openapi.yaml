@@ -435,6 +435,61 @@ paths:
         '500':
           $ref: '#/components/responses/InternalError'
 
+    delete:
+      summary: Delete channel
+      description: |
+        Delete a channel by its UUID or slug. This operation cascades to:
+        - All playlist items associated with the channel
+        - All bidirectional channel-playlist associations
+        - All time-based indexes for the channel
+
+        The channel's playlists are preserved but will no longer be associated with this channel.
+
+        Supports RFC 7240 async processing with `Prefer: respond-async` header.
+      operationId: deleteChannel
+      tags:
+        - Channels
+      security:
+        - ApiKeyAuth: []
+        - BearerJWT: []
+      parameters:
+        - $ref: '#/components/parameters/ChannelId'
+        - $ref: '#/components/parameters/PreferAsync'
+      responses:
+        '204':
+          description: Channel deleted successfully (synchronous)
+        '202':
+          description: Channel deletion queued (asynchronous with Prefer header)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'Channel deletion queued'
+                  channelId:
+                    type: string
+                    example: '550e8400-e29b-41d4-a716-446655440000'
+                  status:
+                    type: string
+                    example: 'queued'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          description: Channel not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                error: 'not_found'
+                message: 'Channel not found: my-channel-123'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
   /api/v1/playlist-items:
     get:
       summary: List playlist items

@@ -133,6 +133,14 @@ export async function deletePlaylist(playlistId: string, env: Env): Promise<bool
   return await storageService.deletePlaylist(playlistId, env);
 }
 
+/**
+ * Delete a channel and all its related indexes and associations
+ */
+export async function deleteChannel(channelId: string, env: Env): Promise<boolean> {
+  const storageService = createStorageService(env);
+  return await storageService.deleteChannel(channelId, env);
+}
+
 // Re-export types and constants for convenience
 export type { PaginatedResult, ListOptions };
 export { STORAGE_KEYS };
