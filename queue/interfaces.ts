@@ -109,9 +109,17 @@ export interface DeletePlaylistMessage extends QueueMessage {
   };
 }
 
+export interface DeleteChannelMessage extends QueueMessage {
+  operation: 'delete_channel';
+  data: {
+    channelId: string;
+  };
+}
+
 export type WriteOperationMessage =
   | CreatePlaylistMessage
   | UpdatePlaylistMessage
   | CreateChannelMessage
   | UpdateChannelMessage
-  | DeletePlaylistMessage;
+  | DeletePlaylistMessage
+  | DeleteChannelMessage;

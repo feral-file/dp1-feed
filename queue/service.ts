@@ -9,6 +9,7 @@ import type {
   CreateChannelMessage,
   UpdateChannelMessage,
   DeletePlaylistMessage,
+  DeleteChannelMessage,
   ProcessingResult,
 } from './interfaces';
 import { StorageService } from '../storage/service';
@@ -79,6 +80,9 @@ export class QueueProcessorService implements QueueProcessor<WriteOperationMessa
       case 'delete_playlist':
         await this.handleDeletePlaylist(message as DeletePlaylistMessage, env);
         break;
+      case 'delete_channel':
+        await this.handleDeleteChannel(message as DeleteChannelMessage, env);
+        break;
       default:
         throw new Error(`Unknown message operation: ${(message as any).operation}`);
     }
@@ -107,6 +111,11 @@ export class QueueProcessorService implements QueueProcessor<WriteOperationMessa
   private async handleDeletePlaylist(message: DeletePlaylistMessage, env: any): Promise<void> {
     console.log(`Deleting playlist ${message.data.playlistId}`);
     await this.storageService.deletePlaylist(message.data.playlistId, env);
+  }
+
+  private async handleDeleteChannel(message: DeleteChannelMessage, env: any): Promise<void> {
+    console.log(`Deleting channel ${message.data.channelId}`);
+    await this.storageService.deleteChannel(message.data.channelId, env);
   }
 }
 
@@ -152,6 +161,8 @@ export class QueueService {
         return (message as UpdateChannelMessage).data.channel.id;
       case 'delete_playlist':
         return (message as DeletePlaylistMessage).data.playlistId;
+      case 'delete_channel':
+        return (message as DeleteChannelMessage).data.channelId;
       default:
         return 'unknown';
     }

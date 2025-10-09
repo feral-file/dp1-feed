@@ -1182,4 +1182,140 @@ export class StorageService {
 
     return true;
   }
+
+  /**
+   * Delete a channel and all its related indexes and associations
+   * This will:
+   * 1. Get all playlists that belong to this channel
+   * 2. Delete all playlist items associated with this channel
+   * 3. Delete all bidirectional channel-playlist associations
+   * 4. Delete the channel itself and its indexes
+   * Note: Playlists themselves are preserved (channels don't own playlists)
+   */
+  async deleteChannel(channelId: string, _env: any): Promise<boolean> {
+    // First, get the channel to ensure it exists and get its data
+    const channel = await this.getChannelByIdOrSlug(channelId);
+    if (!channel) {
+      throw new Error(`Channel ${channelId} not found`);
+    }
+
+    const operations: Promise<void>[] = [];
+
+    // 1. Get all playlists that belong to this channel
+    const playlistIds: string[] = [];
+    for (const playlistUrl of channel.playlists) {
+      const playlistIdentifier = this.extractPlaylistIdentifierFromUrl(playlistUrl);
+      if (playlistIdentifier) {
+        // Resolve identifier to actual ID
+        const resolvedId = await this.resolveIdentifierToId(
+          playlistIdentifier,
+          STORAGE_KEYS.PLAYLIST_SLUG_PREFIX,
+          this.playlistStorage
+        );
+        if (resolvedId) {
+          playlistIds.push(resolvedId);
+        }
+      }
+    }
+
+    // 2. Get all playlist items for this channel and delete them
+    // We need to iterate through all items to find those associated with this channel
+    const channelItemsPrefix = `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channel.id}:`;
+    const channelItemKeys = await this.playlistItemStorage.list({
+      prefix: channelItemsPrefix,
+    });
+
+    for (const key of channelItemKeys.keys) {
+      // Extract item ID from key (format: "playlist-item:group-id:${channelId}:${itemId}")
+      const itemId = key.name.split(':').pop();
+      if (itemId) {
+        // Delete the channel-specific item index
+        operations.push(this.playlistItemStorage.delete(key.name));
+
+        // Delete channel-created indexes for this item
+        // We need to get the item to check its created timestamp
+        const itemData = await this.playlistItemStorage.get(
+          `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${itemId}`,
+          { type: 'json' }
+        );
+        if (itemData) {
+          const item = JSON.parse(itemData) as PlaylistItem;
+          if (item.created) {
+            const ts = this.toSortableTimestamps(item.created);
+            operations.push(
+              this.playlistItemStorage.delete(
+                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${itemId}`
+              ),
+              this.playlistItemStorage.delete(
+                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${itemId}`
+              )
+            );
+          }
+        }
+      }
+    }
+
+    // 3. Delete bidirectional channel-playlist associations
+    for (const playlistId of playlistIds) {
+      // Delete playlist-to-channel associations
+      operations.push(
+        this.playlistStorage.delete(
+          `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${playlistId}:${channel.id}`
+        )
+      );
+
+      // Delete channel-to-playlist associations
+      operations.push(
+        this.playlistStorage.delete(
+          `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${channel.id}:${playlistId}`
+        )
+      );
+
+      // We need to get the playlist to check its created timestamp
+      const playlistData = await this.playlistStorage.get(
+        `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${playlistId}`,
+        { type: 'json' }
+      );
+      if (playlistData) {
+        const playlist = JSON.parse(playlistData) as Playlist;
+        if (playlist.created) {
+          const ts = this.toSortableTimestamps(playlist.created);
+          operations.push(
+            this.playlistStorage.delete(
+              `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${playlistId}`
+            ),
+            this.playlistStorage.delete(
+              `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${playlistId}`
+            )
+          );
+        }
+      }
+    }
+
+    // 4. Delete the channel itself and its indexes
+    operations.push(
+      // Main channel record
+      this.channelStorage.delete(`${STORAGE_KEYS.CHANNEL_ID_PREFIX}${channel.id}`),
+      // Slug index
+      this.channelStorage.delete(`${STORAGE_KEYS.CHANNEL_SLUG_PREFIX}${channel.slug}`)
+    );
+
+    // Delete created-time indexes for channel
+    if (channel.created) {
+      const ts = this.toSortableTimestamps(channel.created);
+      operations.push(
+        this.channelStorage.delete(
+          `${STORAGE_KEYS.CHANNEL_CREATED_ASC_PREFIX}${ts.asc}:${channel.id}`
+        ),
+        this.channelStorage.delete(
+          `${STORAGE_KEYS.CHANNEL_CREATED_DESC_PREFIX}${ts.desc}:${channel.id}`
+        )
+      );
+    }
+
+    // Execute all operations in parallel
+    await Promise.all(operations);
+
+    return true;
+  }
 }
