@@ -1,4 +1,6 @@
-import type { Env, Playlist, Channel, PlaylistItem } from './types';
+import type { Env, Playlist, Channel } from './types';
+import { PlaylistItem } from 'dp1-js';
+
 import { StorageService, STORAGE_KEYS } from './storage/service';
 import type { PaginatedResult, ListOptions } from './storage/interfaces';
 

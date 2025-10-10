@@ -1,4 +1,5 @@
-import type { Env, Playlist, Channel, PlaylistItem } from '../types';
+import type { Env, Playlist, Channel } from '../types';
+import { PlaylistItem } from 'dp1-js';
 import { PlaylistSchema, createItemContentHash } from '../types';
 import type { StorageProvider, KeyValueStorage, PaginatedResult, ListOptions } from './interfaces';
 

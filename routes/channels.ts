@@ -11,9 +11,10 @@ import {
 import { listAllChannels, getChannelByIdOrSlug } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
 import type { EnvironmentBindings } from '../env/types';
-import { signObj, getServerKeyPair } from '../crypto';
+import { getServerKeyPair } from '../crypto';
 import { shouldUseAsyncPersistence } from '../rfc7240';
 import { saveChannel } from '../storage';
+import { signDP1Playlist } from 'dp1-js';
 
 // Create channels router
 const channels = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();
@@ -214,8 +215,7 @@ channels.post('/', async c => {
     const keyPair = await getServerKeyPair(c.var.env);
 
     // Sign the channel
-    channel.signature = await signObj(channel, keyPair.privateKey);
-
+    channel.signature = await signDP1Playlist(channel as any, keyPair.privateKey);
     // Check if client prefers async processing (RFC 7240)
     const useAsync = shouldUseAsyncPersistence(c);
 
@@ -332,7 +332,7 @@ channels.put('/:id', async c => {
 
     // Sign the channel
     const keyPair = await getServerKeyPair(c.var.env);
-    updatedChannel.signature = await signObj(updatedChannel, keyPair.privateKey);
+    updatedChannel.signature = await signDP1Playlist(updatedChannel as any, keyPair.privateKey);
 
     // Check if client prefers async processing (RFC 7240)
     const useAsync = shouldUseAsyncPersistence(c);
@@ -451,7 +451,7 @@ channels.patch('/:id', async c => {
 
     // Sign the channel
     const keyPair = await getServerKeyPair(c.var.env);
-    updatedChannel.signature = await signObj(updatedChannel, keyPair.privateKey);
+    updatedChannel.signature = await signDP1Playlist(updatedChannel as any, keyPair.privateKey);
 
     // Check if client prefers async processing (RFC 7240)
     const useAsync = shouldUseAsyncPersistence(c);
