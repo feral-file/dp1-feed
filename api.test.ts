@@ -3,13 +3,17 @@ import app from './worker';
 import { generateSlug, validateDpVersion, MIN_DP_VERSION } from './types';
 import { createTestEnv } from './test-helpers';
 
-// Mock the crypto module to avoid ED25519 key issues in tests
-vi.mock('./crypto', () => ({
-  signObj: vi
+// Mock the dp1-js library to avoid ED25519 key issues in tests
+vi.mock('dp1-js', () => ({
+  signDP1Playlist: vi
     .fn()
     .mockResolvedValue(
       'ed25519:0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef'
     ),
+}));
+
+// Mock the crypto module
+vi.mock('./crypto', () => ({
   getServerKeyPair: vi.fn().mockResolvedValue({
     publicKey: new Uint8Array(32),
     privateKey: new Uint8Array(32),

@@ -1,6 +1,6 @@
 import { webcrypto } from 'node:crypto';
 import canonicalize from 'canonicalize';
-import type { KeyPair, Playlist, Env } from './types';
+import type { KeyPair, Env } from './types';
 
 /**
  * Cryptographic utilities for DP-1 protocol
@@ -116,90 +116,4 @@ export function createCanonicalForm(obj: Omit<any, 'signature'>): string {
   }
 
   return canonical;
-}
-
-/**
- * Sign an object using ed25519 as per DP-1 specification
- */
-export async function signObj(
-  obj: Omit<any, 'signature'>,
-  privateKey: Uint8Array
-): Promise<string> {
-  const canonicalForm = createCanonicalForm(obj);
-  const encoder = new TextEncoder();
-  const data = encoder.encode(canonicalForm);
-
-  // Hash with SHA-256 first
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-
-  // Import the private key for signing
-  const cryptoKey = await crypto.subtle.importKey(
-    'pkcs8',
-    privateKey,
-    {
-      name: 'Ed25519',
-      namedCurve: 'Ed25519',
-    },
-    false,
-    ['sign']
-  );
-
-  // Sign the hash
-  const signature = await crypto.subtle.sign('Ed25519', cryptoKey, hashBuffer);
-  const signatureBytes = new Uint8Array(signature);
-
-  // Convert to hex and format as per DP-1 spec
-  const hex = Array.from(signatureBytes)
-    .map(b => b.toString(16).padStart(2, '0'))
-    .join('');
-
-  return `ed25519:0x${hex}`;
-}
-
-/**
- * Verify a playlist signature
- */
-export async function verifyPlaylistSignature(
-  playlist: Playlist,
-  publicKey: Uint8Array
-): Promise<boolean> {
-  if (!playlist.signature) {
-    return false;
-  }
-
-  try {
-    // Extract hex from signature
-    const signatureHex = playlist.signature.replace(/^ed25519:0x/, '');
-    const signatureBytes = new Uint8Array(
-      signatureHex.match(/.{2}/g)?.map(byte => parseInt(byte, 16)) || []
-    );
-
-    // Create canonical form without signature
-    const playlistWithoutSignature = { ...playlist };
-    delete playlistWithoutSignature.signature;
-    const canonicalForm = createCanonicalForm(playlistWithoutSignature);
-    const encoder = new TextEncoder();
-    const data = encoder.encode(canonicalForm);
-
-    // Hash with SHA-256
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-
-    // Import public key for verification
-    const cryptoKey = await crypto.subtle.importKey(
-      'raw',
-      publicKey,
-      {
-        name: 'Ed25519',
-        namedCurve: 'Ed25519',
-      },
-      false,
-      ['verify']
-    );
-
-    // Verify signature
-    return await crypto.subtle.verify('Ed25519', cryptoKey, signatureBytes, hashBuffer);
-  } catch (error) {
-    console.error('Signature verification failed:', error);
-    return false;
-  }
 }
