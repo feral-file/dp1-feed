@@ -1,6 +1,6 @@
 import { Hono, Context } from 'hono';
 import { z } from 'zod';
-import type { Env, PlaylistInput, PlaylistUpdate, Playlist } from '../types';
+import type { Env, PlaylistInput, PlaylistUpdate } from '../types';
 import type { EnvironmentBindings } from '../env/types';
 import type { CreatePlaylistMessage, UpdatePlaylistMessage } from '../queue/interfaces';
 import {
@@ -9,10 +9,10 @@ import {
   createPlaylistFromInput,
   validateNoProtectedFields,
 } from '../types';
-import { signPlaylist, getServerKeyPair } from '../crypto';
+import { getServerKeyPair } from '../crypto';
 import { listAllPlaylists, getPlaylistByIdOrSlug } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
-
+import { signDP1Playlist, Playlist } from 'dp1-js';
 // Create playlist router
 const playlists = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();
 
@@ -214,7 +214,7 @@ playlists.post('/', async c => {
     const keyPair = await getServerKeyPair(c.var.env);
 
     // Sign the playlist
-    playlist.signature = await signPlaylist(playlist, keyPair.privateKey);
+    playlist.signature = await signDP1Playlist(playlist, keyPair.privateKey);
 
     // Create queue message for async processing
     const queueMessage: CreatePlaylistMessage = {
@@ -324,7 +324,7 @@ playlists.put('/:id', async c => {
 
     // Re-sign the playlist
     const keyPair = await getServerKeyPair(c.var.env);
-    updatedPlaylist.signature = await signPlaylist(updatedPlaylist, keyPair.privateKey);
+    updatedPlaylist.signature = await signDP1Playlist(updatedPlaylist, keyPair.privateKey);
 
     // Create queue message for async processing
     const queueMessage: UpdatePlaylistMessage = {
@@ -435,7 +435,7 @@ playlists.patch('/:id', async c => {
 
     // Re-sign the playlist
     const keyPair = await getServerKeyPair(c.var.env);
-    updatedPlaylist.signature = await signPlaylist(updatedPlaylist, keyPair.privateKey);
+    updatedPlaylist.signature = await signDP1Playlist(updatedPlaylist, keyPair.privateKey);
 
     // Create queue message for async processing
     const queueMessage: UpdatePlaylistMessage = {

@@ -1,4 +1,4 @@
-import type { Playlist, PlaylistItem } from '../types';
+import { Playlist, PlaylistItem } from 'dp1-js';
 import type { StorageProvider, KeyValueStorage, PaginatedResult, ListOptions } from './interfaces';
 
 // Updated KV Storage Keys with consistent prefixes
