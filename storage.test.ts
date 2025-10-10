@@ -7,8 +7,8 @@ import {
   listAllPlaylistItems,
   STORAGE_KEYS,
 } from './storage';
-import type { Env, Playlist } from './types';
 import { createTestEnv, MockKeyValueStorage, MockQueue } from './test-helpers';
+import { Playlist } from 'dp1-js';
 
 const playlistId1 = '550e8400-e29b-41d4-a716-446655440000';
 const itemId1 = '550e8400-e29b-41d4-a716-446655440001';

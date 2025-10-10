@@ -12,7 +12,7 @@ vi.mock('../storage/service', () => {
 });
 
 import { processWriteOperations, queueWriteOperation, generateMessageId } from './processor';
-import type { Env, Playlist } from '../types';
+import type { Env } from '../types';
 import type { CreatePlaylistMessage, UpdatePlaylistMessage } from './interfaces';
 import {
   createTestEnv,
@@ -21,6 +21,7 @@ import {
   MockQueue,
   MockKeyValueStorage,
 } from '../test-helpers';
+import { Playlist } from 'dp1-js';
 
 // Mock console methods to avoid noise in tests
 const consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
