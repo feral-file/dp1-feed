@@ -1,6 +1,7 @@
 import { webcrypto } from 'node:crypto';
 import canonicalize from 'canonicalize';
 import type { KeyPair, Env } from './types';
+import { signDP1Playlist } from 'dp1-js';
 
 /**
  * Cryptographic utilities for DP-1 protocol
@@ -116,4 +117,14 @@ export function createCanonicalForm(obj: Omit<any, 'signature'>): string {
   }
 
   return canonical;
+}
+
+/**
+ * Sign an object using dp1-js, does not specifically support Playlist only
+ */
+export async function signObj(
+  obj: Omit<any, 'signature'>,
+  privateKey: Uint8Array
+): Promise<string> {
+  return await signDP1Playlist(obj, privateKey);
 }

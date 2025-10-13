@@ -9,12 +9,11 @@ import {
   createPlaylistFromInput,
   validateNoProtectedFields,
 } from '../types';
-import { getServerKeyPair } from '../crypto';
+import { signObj, getServerKeyPair } from '../crypto';
 import { listAllPlaylists, getPlaylistByIdOrSlug, listPlaylistsByChannelId } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
 import { shouldUseAsyncPersistence } from '../rfc7240';
 import { savePlaylist, deletePlaylist } from '../storage';
-import { signDP1Playlist } from 'dp1-js';
 
 // Create playlist router
 const playlists = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();
@@ -225,7 +224,7 @@ playlists.post('/', async c => {
     const keyPair = await getServerKeyPair(c.var.env);
 
     // Sign the playlist
-    playlist.signature = await signDP1Playlist(playlist, keyPair.privateKey);
+    playlist.signature = await signObj(playlist, keyPair.privateKey);
 
     // Check if client prefers async processing (RFC 7240)
     const useAsync = shouldUseAsyncPersistence(c);
@@ -357,7 +356,7 @@ playlists.put('/:id', async c => {
 
     // Re-sign the playlist
     const keyPair = await getServerKeyPair(c.var.env);
-    updatedPlaylist.signature = await signDP1Playlist(updatedPlaylist, keyPair.privateKey);
+    updatedPlaylist.signature = await signObj(updatedPlaylist, keyPair.privateKey);
 
     // Check if client prefers async processing (RFC 7240)
     const useAsync = shouldUseAsyncPersistence(c);
@@ -490,7 +489,7 @@ playlists.patch('/:id', async c => {
 
     // Re-sign the playlist
     const keyPair = await getServerKeyPair(c.var.env);
-    updatedPlaylist.signature = await signDP1Playlist(updatedPlaylist, keyPair.privateKey);
+    updatedPlaylist.signature = await signObj(updatedPlaylist, keyPair.privateKey);
 
     // Check if client prefers async processing (RFC 7240)
     const useAsync = shouldUseAsyncPersistence(c);
