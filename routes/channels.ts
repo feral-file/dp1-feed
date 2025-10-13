@@ -215,6 +215,7 @@ channels.post('/', async c => {
 
     // Sign the channel
     channel.signature = await signObj(channel, keyPair.privateKey);
+
     // Check if client prefers async processing (RFC 7240)
     const useAsync = shouldUseAsyncPersistence(c);
 

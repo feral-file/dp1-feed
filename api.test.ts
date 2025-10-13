@@ -3,7 +3,7 @@ import app from './worker';
 import { generateSlug, validateDpVersion, MIN_DP_VERSION } from './types';
 import { createTestEnv } from './test-helpers';
 
-// Mock the crypto module
+// Mock the crypto module to avoid ED25519 key issues in tests
 vi.mock('./crypto', () => ({
   signObj: vi
     .fn()
