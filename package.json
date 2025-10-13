@@ -59,9 +59,9 @@
     "worker:kv:list": "wrangler kv namespace list",
     "worker:kv:get": "wrangler kv key get",
     "worker:kv:put": "wrangler kv key put",
-    "node:dev": "tsx --watch server.ts",
-    "node:start": "node dist/server.js",
-    "node:start:dev": "tsx server.ts",
+    "node:dev": "tsx --env-file=.env --watch server.ts",
+    "node:start": "node --env-file=.env dist/server.js",
+    "node:start:dev": "tsx --env-file=.env server.ts",
     "node:build": "esbuild server.ts --bundle --platform=node --format=esm --outfile=dist/server.js --external:@hono/node-server --external:nats --external:canonicalize --external:semver --external:zod --external:dp1-js"
   },
   "keywords": [

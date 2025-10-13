@@ -15,6 +15,9 @@ services:
       - ETCD_INITIAL_CLUSTER_TOKEN=etcd-cluster-1
       - ETCD_INITIAL_CLUSTER_STATE=new
       - ETCD_AUTO_COMPACTION_RETENTION=1
+    ports:
+      - '2379:2379' # etcd client port (for local development)
+      - '2380:2380' # etcd peer port
     volumes:
       - etcd_data:/etcd-data
     networks:
@@ -37,6 +40,7 @@ services:
       - nats_data:/data
       - ./docker/nats/nats.conf:/etc/nats/nats.conf:ro
     ports:
+      - '4222:4222' # NATS client port (for local development)
       - '8222:8222' # NATS HTTP monitoring port
     networks:
       - dp1-network
