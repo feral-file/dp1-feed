@@ -3283,6 +3283,70 @@ describe('DP-1 Feed Operator API', () => {
           testEnv
         );
       });
+
+      it('should return 500 when queue fails during async deletion', async () => {
+        mockStandardPlaylistFetch();
+
+        // Create a channel first
+        const createReq = new Request('http://localhost/api/v1/channels', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validChannel),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        expect(createResponse.status).toBe(201);
+        const createdChannel = await createResponse.json();
+
+        // Mock queue failure
+        queueWriteOperation.mockRejectedValueOnce(new Error('Queue service unavailable'));
+
+        // Delete with async preference
+        const deleteReq = new Request(`http://localhost/api/v1/channels/${createdChannel.id}`, {
+          method: 'DELETE',
+          headers: { ...validAuth, Prefer: 'respond-async' },
+        });
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(500);
+
+        const data = await deleteResponse.json();
+        expect(data.error).toBe('queue_error');
+        expect(data.message).toBe('Failed to queue channel for deletion');
+      });
+
+      it('should return 500 when storage fails during sync deletion', async () => {
+        mockStandardPlaylistFetch();
+
+        // Create a channel first
+        const createReq = new Request('http://localhost/api/v1/channels', {
+          method: 'POST',
+          headers: validAuth,
+          body: JSON.stringify(validChannel),
+        });
+        const createResponse = await app.fetch(createReq, testEnv);
+        expect(createResponse.status).toBe(201);
+        const createdChannel = await createResponse.json();
+
+        // Mock storage failure for deleteChannel
+        const { StorageService } = await import('./storage/service');
+        const deleteChannelSpy = vi
+          .spyOn(StorageService.prototype, 'deleteChannel')
+          .mockRejectedValueOnce(new Error('Storage service unavailable'));
+
+        // Delete synchronously (no Prefer header)
+        const deleteReq = new Request(`http://localhost/api/v1/channels/${createdChannel.id}`, {
+          method: 'DELETE',
+          headers: validAuth,
+        });
+        const deleteResponse = await app.fetch(deleteReq, testEnv);
+        expect(deleteResponse.status).toBe(500);
+
+        const data = await deleteResponse.json();
+        expect(data.error).toBe('storage_error');
+        expect(data.message).toBe('Failed to delete channel');
+
+        // Restore spy
+        deleteChannelSpy.mockRestore();
+      });
     });
 
     describe('Queue Message Structure', () => {
