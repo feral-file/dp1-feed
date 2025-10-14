@@ -173,24 +173,15 @@ The `docker-compose.yml` file includes pre-configured environment variables for 
 
 **Option B: Manual Setup (without Docker)**
 
-Create `.env` file:
+Copy the sample environment file to create your own `.env`:
 
 ```bash
-# Required
-API_SECRET=dev-api-secret
-ED25519_PRIVATE_KEY=dev-ed25519-private-key
-
-# etcd configuration
-ETCD_ENDPOINT=http://localhost:2379
-
-# NATS JetStream configuration
-NATS_ENDPOINT=nats://localhost:4222
-NATS_STREAM_NAME=DP1_WRITE_OPERATIONS
-NATS_SUBJECT_NAME=dp1.write.operations
-
-# Optional
-ENVIRONMENT=development
+cp .env.sample .env
 ```
+
+Then, edit `.env` to set the required secrets and configuration for development, such as `API_SECRET`, `ED25519_PRIVATE_KEY`, etc.
+
+> **Note:** Make sure your `.env` file is ready before running the development server locally with `npm run node:dev`.
 
 #### 3. Start Development Server
 
