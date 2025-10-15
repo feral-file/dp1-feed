@@ -15,7 +15,7 @@ import {
 import { listAllChannels, getChannelByIdOrSlug, deleteChannel } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
 import type { EnvironmentBindings } from '../env/types';
-import { signObj, getServerKeyPair } from '../crypto';
+import { signChannel, getServerKeyPair } from '../crypto';
 import { shouldUseAsyncPersistence } from '../rfc7240';
 import { saveChannel } from '../storage';
 
@@ -218,7 +218,7 @@ channels.post('/', async c => {
     const keyPair = await getServerKeyPair(c.var.env);
 
     // Sign the channel
-    channel.signature = await signObj(channel, keyPair.privateKey);
+    channel.signature = await signChannel(channel, keyPair.privateKey);
 
     // Check if client prefers async processing (RFC 7240)
     const useAsync = shouldUseAsyncPersistence(c);
@@ -336,7 +336,7 @@ channels.put('/:id', async c => {
 
     // Sign the channel
     const keyPair = await getServerKeyPair(c.var.env);
-    updatedChannel.signature = await signObj(updatedChannel, keyPair.privateKey);
+    updatedChannel.signature = await signChannel(updatedChannel, keyPair.privateKey);
 
     // Check if client prefers async processing (RFC 7240)
     const useAsync = shouldUseAsyncPersistence(c);
@@ -455,7 +455,7 @@ channels.patch('/:id', async c => {
 
     // Sign the channel
     const keyPair = await getServerKeyPair(c.var.env);
-    updatedChannel.signature = await signObj(updatedChannel, keyPair.privateKey);
+    updatedChannel.signature = await signChannel(updatedChannel, keyPair.privateKey);
 
     // Check if client prefers async processing (RFC 7240)
     const useAsync = shouldUseAsyncPersistence(c);

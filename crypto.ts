@@ -1,6 +1,6 @@
 import { webcrypto } from 'node:crypto';
 import canonicalize from 'canonicalize';
-import type { KeyPair, Playlist, Env } from './types';
+import type { KeyPair, Env, Channel } from './types';
 
 /**
  * Cryptographic utilities for DP-1 protocol
@@ -99,10 +99,10 @@ export async function getServerKeyPair(env: Env): Promise<KeyPair> {
 }
 
 /**
- * Create canonical form of playlist or channel for signing (RFC 8785 compliant)
+ * Create canonical form of channel for signing (RFC 8785 compliant)
  * Uses the canonicalize library which implements the official RFC 8785 standard
  */
-export function createCanonicalForm(obj: Omit<any, 'signature'>): string {
+export function createCanonicalForm(obj: Omit<Channel, 'signature'>): string {
   // Use the canonicalize library which is RFC 8785 compliant
   const canonical = canonicalize(obj);
 
@@ -119,13 +119,13 @@ export function createCanonicalForm(obj: Omit<any, 'signature'>): string {
 }
 
 /**
- * Sign an object using ed25519 as per DP-1 specification
+ * Sign a channel using ed25519 as per DP-1 specification
  */
-export async function signObj(
-  obj: Omit<any, 'signature'>,
+export async function signChannel(
+  channel: Omit<Channel, 'signature'>,
   privateKey: Uint8Array
 ): Promise<string> {
-  const canonicalForm = createCanonicalForm(obj);
+  const canonicalForm = createCanonicalForm(channel);
   const encoder = new TextEncoder();
   const data = encoder.encode(canonicalForm);
 
@@ -157,27 +157,27 @@ export async function signObj(
 }
 
 /**
- * Verify a playlist signature
+ * Verify a channel signature
  */
-export async function verifyPlaylistSignature(
-  playlist: Playlist,
+export async function verifyChannelSignature(
+  channel: Channel,
   publicKey: Uint8Array
 ): Promise<boolean> {
-  if (!playlist.signature) {
+  if (!channel.signature) {
     return false;
   }
 
   try {
     // Extract hex from signature
-    const signatureHex = playlist.signature.replace(/^ed25519:0x/, '');
+    const signatureHex = channel.signature.replace(/^ed25519:0x/, '');
     const signatureBytes = new Uint8Array(
       signatureHex.match(/.{2}/g)?.map(byte => parseInt(byte, 16)) || []
     );
 
     // Create canonical form without signature
-    const playlistWithoutSignature = { ...playlist };
-    delete playlistWithoutSignature.signature;
-    const canonicalForm = createCanonicalForm(playlistWithoutSignature);
+    const channelWithoutSignature = { ...channel };
+    delete channelWithoutSignature.signature;
+    const canonicalForm = createCanonicalForm(channelWithoutSignature);
     const encoder = new TextEncoder();
     const data = encoder.encode(canonicalForm);
 
