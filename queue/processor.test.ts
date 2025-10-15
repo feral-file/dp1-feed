@@ -4,6 +4,7 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 const mockSavePlaylist = vi.fn();
 const mockSaveChannel = vi.fn();
 const mockDeletePlaylist = vi.fn();
+const mockDeleteChannel = vi.fn();
 
 vi.mock('../storage/service', () => {
   return {
@@ -11,6 +12,7 @@ vi.mock('../storage/service', () => {
       savePlaylist: mockSavePlaylist,
       saveChannel: mockSaveChannel,
       deletePlaylist: mockDeletePlaylist,
+      deleteChannel: mockDeleteChannel,
     })),
   };
 });
@@ -23,6 +25,7 @@ import type {
   CreateChannelMessage,
   UpdateChannelMessage,
   DeletePlaylistMessage,
+  DeleteChannelMessage,
 } from './interfaces';
 import {
   createTestEnv,
@@ -458,6 +461,54 @@ describe('Queue Processor', () => {
         expect(result.errors![0].error).toBe('Playlist deletion failed');
 
         expect(mockDeletePlaylist).toHaveBeenCalledWith(mockPlaylist.id, testEnv);
+        expect(batch.ackAll).not.toHaveBeenCalled();
+        expect(consoleErrorSpy).toHaveBeenCalledWith(
+          expect.stringContaining('Error processing message'),
+          expect.any(Error)
+        );
+        expect(consoleErrorSpy).toHaveBeenCalledWith(
+          expect.stringContaining('Error processing message'),
+          expect.any(Error)
+        );
+      });
+    });
+
+    describe('delete_channel operations', () => {
+      it('should successfully process channel deletion', async () => {
+        const message: DeleteChannelMessage = {
+          id: generateMessageId('delete_channel', mockChannel.id),
+          timestamp: new Date().toISOString(),
+          operation: 'delete_channel',
+          data: { channelId: mockChannel.id },
+        };
+
+        const batch = createMockMessageBatch([message]);
+        mockDeleteChannel.mockResolvedValueOnce(true);
+
+        await processWriteOperations(batch, testEnv);
+
+        expect(mockDeleteChannel).toHaveBeenCalledWith(mockChannel.id, testEnv);
+        expect(batch.ackAll).not.toHaveBeenCalled();
+        expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining(`Processed message`));
+      });
+
+      it('should handle channel deletion failure', async () => {
+        const message: DeleteChannelMessage = {
+          id: generateMessageId('delete_channel', mockChannel.id),
+          timestamp: new Date().toISOString(),
+          operation: 'delete_channel',
+          data: { channelId: mockChannel.id },
+        };
+
+        const batch = createMockMessageBatch([message]);
+        mockDeleteChannel.mockRejectedValueOnce(new Error('Channel deletion failed'));
+
+        const result = await processWriteOperations(batch, testEnv);
+        expect(result.success).toBe(false);
+        expect(result.errors).toHaveLength(1);
+        expect(result.errors![0].error).toBe('Channel deletion failed');
+
+        expect(mockDeleteChannel).toHaveBeenCalledWith(mockChannel.id, testEnv);
         expect(batch.ackAll).not.toHaveBeenCalled();
         expect(consoleErrorSpy).toHaveBeenCalledWith(
           expect.stringContaining('Error processing message'),

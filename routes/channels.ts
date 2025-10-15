@@ -1,14 +1,18 @@
 import { Hono, Context } from 'hono';
 import { z } from 'zod';
 import type { Env, ChannelInput, ChannelUpdate, Channel } from '../types';
-import type { CreateChannelMessage, UpdateChannelMessage } from '../queue/interfaces';
+import type {
+  CreateChannelMessage,
+  UpdateChannelMessage,
+  DeleteChannelMessage,
+} from '../queue/interfaces';
 import {
   ChannelInputSchema,
   ChannelUpdateSchema,
   createChannelFromInput,
   validateNoProtectedFields,
 } from '../types';
-import { listAllChannels, getChannelByIdOrSlug } from '../storage';
+import { listAllChannels, getChannelByIdOrSlug, deleteChannel } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
 import type { EnvironmentBindings } from '../env/types';
 import { signObj, getServerKeyPair } from '../crypto';
@@ -506,6 +510,92 @@ channels.patch('/:id', async c => {
       },
       500
     );
+  }
+});
+
+/**
+ * DELETE /channels/:id - Delete channel by UUID or slug
+ * Requires authentication
+ */
+channels.delete('/:id', async c => {
+  const env = c.get('env');
+
+  // 1. Validate identifier
+  const identifier = c.req.param('id');
+  const validation = validateIdentifier(identifier);
+
+  if (!validation.isValid) {
+    return c.json(
+      {
+        error: 'invalid_identifier',
+        message: 'Channel identifier must be a valid UUID or slug',
+      },
+      400
+    );
+  }
+
+  // 2. Get existing channel
+  const existingChannel = await getChannelByIdOrSlug(identifier, env);
+
+  if (!existingChannel) {
+    return c.json(
+      {
+        error: 'not_found',
+        message: `Channel not found: ${identifier}`,
+      },
+      404
+    );
+  }
+
+  // 3. Check for async preference (RFC 7240)
+  const useAsync = shouldUseAsyncPersistence(c);
+
+  if (useAsync) {
+    // Async processing via queue
+    const queueMessage: DeleteChannelMessage = {
+      id: generateMessageId('delete_channel', existingChannel.id),
+      timestamp: new Date().toISOString(),
+      operation: 'delete_channel',
+      data: {
+        channelId: existingChannel.id,
+      },
+    };
+
+    try {
+      await queueWriteOperation(queueMessage, c.var.env);
+      return c.json(
+        {
+          message: 'Channel deletion queued',
+          channelId: existingChannel.id,
+          status: 'queued',
+        },
+        202
+      );
+    } catch (queueError) {
+      console.error('Failed to queue channel deletion:', queueError);
+      return c.json(
+        {
+          error: 'queue_error',
+          message: 'Failed to queue channel for deletion',
+        },
+        500
+      );
+    }
+  } else {
+    // Sync processing: delete immediately and return 204 No Content
+    try {
+      await deleteChannel(existingChannel.id, env);
+      return c.body(null, 204);
+    } catch (storageError) {
+      console.error('Failed to delete channel synchronously:', storageError);
+      return c.json(
+        {
+          error: 'storage_error',
+          message: 'Failed to delete channel',
+        },
+        500
+      );
+    }
   }
 });
 
