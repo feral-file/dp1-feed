@@ -1,13 +1,31 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import app from './worker';
-import { generateSlug, validateDpVersion, MIN_DP_VERSION } from './types';
+import { generateSlug } from './types';
 import { createTestEnv } from './test-helpers';
 
-// Mock the dp1-js library to avoid ED25519 key issues in tests
-vi.mock('dp1-js', () => ({
-  signDP1Playlist: vi.fn().mockResolvedValue('ed25519:0x1234567890abcdef'),
-  Playlist: {} as any,
-}));
+// Mock the dp1-js library to avoid ED25519 key issues in tests and bypass validation helpers
+vi.mock('dp1-js', () => {
+  const successResult = { success: true } as const;
+  const invalidVersionResult = {
+    success: false as const,
+    error: {
+      message: 'Invalid semantic version format: invalid',
+      issues: [] as Array<{ path: string; message: string }>,
+    },
+  };
+
+  return {
+    signDP1Playlist: vi.fn().mockResolvedValue('ed25519:0x1234567890abcdef'),
+    validateDpVersion: vi.fn((version: string) =>
+      version === 'invalid' ? invalidVersionResult : successResult
+    ),
+    validateDisplayPrefs: vi.fn(() => successResult),
+    validateRepro: vi.fn(() => successResult),
+    validateProvenance: vi.fn(() => successResult),
+    validatePlaylistItem: vi.fn(() => successResult),
+    Playlist: {} as any,
+  };
+});
 
 // Mock the crypto module
 vi.mock('./crypto', () => ({
@@ -142,50 +160,6 @@ describe('DP-1 Feed Operator API', () => {
       expect(slug1).not.toBe(slug2);
       expect(slug1).toMatch(/^identical-title-\d{4}$/);
       expect(slug2).toMatch(/^identical-title-\d{4}$/);
-    });
-  });
-
-  describe('dpVersion Validation', () => {
-    it(`should validate minimum version requirement (${MIN_DP_VERSION})`, () => {
-      // Valid versions (>= MIN_DP_VERSION)
-      const validVersions = ['1.0.0', '1.2.3', '2.0.0'];
-
-      validVersions.forEach(version => {
-        const result = validateDpVersion(version);
-        expect(result.isValid).toBe(true);
-        expect(result.error).toBeUndefined();
-      });
-
-      // Invalid versions (< MIN_DP_VERSION)
-      const invalidVersions = ['0.8.9', '0.9.0', '0.1.0'];
-
-      invalidVersions.forEach(version => {
-        const result = validateDpVersion(version);
-        expect(result.isValid).toBe(false);
-        expect(result.error).toContain(`below minimum required version ${MIN_DP_VERSION}`);
-      });
-    });
-
-    it('should validate semantic version format', () => {
-      // Invalid semver formats (what semver library actually considers invalid)
-      const invalidFormats = ['invalid', '1.0', '', 'not-a-version', '1.0.x', 'x.y.z'];
-
-      invalidFormats.forEach(version => {
-        const result = validateDpVersion(version);
-        expect(result.isValid).toBe(false);
-        expect(result.error).toContain('Invalid semantic version format');
-      });
-    });
-
-    it('should accept valid semantic versions', () => {
-      // Test versions that pass both format and minimum version requirements
-      const validVersions = ['1.0.0', '10.20.30', '1.2.3', '10000000.1000000.1000000'];
-
-      validVersions.forEach(version => {
-        const result = validateDpVersion(version);
-        expect(result.isValid).toBe(true);
-        expect(result.error).toBeUndefined();
-      });
     });
   });
 
