@@ -1,5 +1,5 @@
-import type { Env, Playlist, Channel } from './types';
-import { PlaylistItem } from 'dp1-js';
+import type { Env } from './types';
+import { Playlist, Channel, PlaylistItem } from 'ff-dp1-js';
 
 import { StorageService, STORAGE_KEYS } from './storage/service';
 import type { PaginatedResult, ListOptions } from './storage/interfaces';

@@ -1,6 +1,7 @@
 import { Hono, Context } from 'hono';
 import { z } from 'zod';
-import type { Env, ChannelInput, ChannelUpdate, Channel } from '../types';
+import type { Env, ChannelInput, ChannelUpdate } from '../types';
+import type { Channel } from 'ff-dp1-js';
 import type {
   CreateChannelMessage,
   UpdateChannelMessage,
@@ -15,7 +16,8 @@ import {
 import { listAllChannels, getChannelByIdOrSlug, deleteChannel } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
 import type { EnvironmentBindings } from '../env/types';
-import { signChannel, getServerKeyPair } from '../crypto';
+import { getServerKeyPair } from '../crypto';
+import { signChannel } from 'ff-dp1-js';
 import { shouldUseAsyncPersistence } from '../rfc7240';
 import { saveChannel } from '../storage';
 

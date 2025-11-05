@@ -69,7 +69,7 @@ export interface QueueProcessor<T = unknown> {
   processBatch(batch: MessageBatch<T>, env?: any): Promise<ProcessingResult>;
 }
 
-import type { Playlist, Channel } from '../types';
+import type { Playlist, Channel } from 'ff-dp1-js';
 
 // Write operation message types (borrowing CloudFlare format but generic)
 export interface CreatePlaylistMessage extends QueueMessage {

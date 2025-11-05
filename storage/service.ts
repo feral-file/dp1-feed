@@ -1,5 +1,5 @@
-import type { Env, Playlist, Channel } from '../types';
-import { PlaylistItem } from 'dp1-js';
+import type { Env } from '../types';
+import { PlaylistItem, Playlist, Channel } from 'ff-dp1-js';
 import { PlaylistSchema, createItemContentHash } from '../types';
 import type { StorageProvider, KeyValueStorage, PaginatedResult, ListOptions } from './interfaces';
 
@@ -470,7 +470,10 @@ export class StorageService {
     if (update && existingPlaylist) {
       // SMART UPDATE: Only process changed items using JCS-based content hashing
       const channelIds = await this.getChannelsForPlaylist(playlist.id);
-      const itemChanges = await this.calculateItemChanges(existingPlaylist.items, playlist.items);
+      const itemChanges = await this.calculateItemChanges(
+        existingPlaylist.items || [],
+        playlist.items || []
+      );
 
       console.log(
         `Playlist update: ${itemChanges.unchanged.length} unchanged, ${itemChanges.added.length} added, ${itemChanges.deleted.length} deleted`
@@ -489,7 +492,7 @@ export class StorageService {
       // Note: unchanged items require no KV operations - they're skipped entirely
     } else {
       // Initial creation - add all items
-      for (const item of playlist.items) {
+      for (const item of playlist.items || []) {
         const channelIds = await this.getChannelsForPlaylist(playlist.id);
         operations.push(...this.createItemInsertionOperations(item, channelIds));
       }
@@ -722,7 +725,7 @@ export class StorageService {
         'playlist'
       );
       for (const playlist of playlists) {
-        for (const item of playlist.items) {
+        for (const item of playlist.items || []) {
           operations.push(
             this.playlistItemStorage.delete(
               `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channel.id}:${item.id}`
@@ -805,7 +808,7 @@ export class StorageService {
     // Create channel-to-playlist-item indexes for ALL playlists (both local and external)
     for (const validPlaylist of validatedPlaylists) {
       if (validPlaylist.playlist && validPlaylist.playlist.items.length > 0) {
-        for (const item of validPlaylist.playlist.items) {
+        for (const item of validPlaylist.playlist.items || ([] as PlaylistItem[])) {
           // For external playlists, store the item data (since it's not stored elsewhere)
           if (validPlaylist.external) {
             const itemData = JSON.stringify(item);
@@ -1085,7 +1088,7 @@ export class StorageService {
     await Promise.all(channelUpdatePromises);
 
     // 3. Delete all playlist items and their indexes
-    for (const item of playlist.items) {
+    for (const item of playlist.items || []) {
       // Delete main playlist item record
       operations.push(
         this.playlistItemStorage.delete(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`)
