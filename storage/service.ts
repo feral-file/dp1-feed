@@ -807,7 +807,11 @@ export class StorageService {
     // Add playlist item operations to the same batch
     // Create channel-to-playlist-item indexes for ALL playlists (both local and external)
     for (const validPlaylist of validatedPlaylists) {
-      if (validPlaylist.playlist && validPlaylist.playlist.items.length > 0) {
+      if (
+        validPlaylist.playlist &&
+        validPlaylist.playlist.items &&
+        validPlaylist.playlist.items.length > 0
+      ) {
         for (const item of validPlaylist.playlist.items || ([] as PlaylistItem[])) {
           // For external playlists, store the item data (since it's not stored elsewhere)
           if (validPlaylist.external) {
