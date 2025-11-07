@@ -1,7 +1,6 @@
 import { Hono, Context } from 'hono';
 import { z } from 'zod';
-import type { Env, PlaylistInput, PlaylistUpdate } from '../types';
-import { Playlist } from 'ff-dp1-js';
+import type { Env, PlaylistInput, PlaylistUpdate, Playlist } from '../types';
 import type { EnvironmentBindings } from '../env/types';
 import type { CreatePlaylistMessage, UpdatePlaylistMessage } from '../queue/interfaces';
 import {
@@ -15,7 +14,7 @@ import { listAllPlaylists, getPlaylistByIdOrSlug, listPlaylistsByChannelId } fro
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
 import { shouldUseAsyncPersistence } from '../rfc7240';
 import { savePlaylist, deletePlaylist } from '../storage';
-import { signDP1Playlist } from 'ff-dp1-js';
+import { signDP1Playlist } from 'dp1-js';
 
 // Create playlist router
 const playlists = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();

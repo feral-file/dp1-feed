@@ -277,28 +277,3 @@ export const setupStandardPlaylistFetch = () => {
     return Promise.resolve({ ok: false, status: 404 } as Response);
   }) as any;
 };
-
-// Reusable helpers to force ff-dp1-js validator failures in specific tests
-export async function failEntityOnce(path: string, message: string) {
-  const ff = await import('ff-dp1-js');
-  (vi.mocked as any)(ff.validateEntity).mockImplementationOnce(() => ({
-    success: false as const,
-    error: { message: 'Invalid entity', issues: [{ path, message }] },
-  }));
-}
-
-export async function failDynamicQueryOnce(path: string, message: string) {
-  const ff = await import('ff-dp1-js');
-  (vi.mocked as any)(ff.validateDynamicQuery).mockImplementationOnce(() => ({
-    success: false as const,
-    error: { message: 'Invalid dynamic query', issues: [{ path, message }] },
-  }));
-}
-
-export async function failChannelOnce(path: string, message: string) {
-  const ff = await import('ff-dp1-js');
-  (vi.mocked as any)(ff.validateChannel).mockImplementationOnce(() => ({
-    success: false as const,
-    error: { message: 'Invalid channel', issues: [{ path, message }] },
-  }));
-}
