@@ -17,6 +17,12 @@ export async function authMiddleware(
     return;
   }
 
+  // Skip auth for registry webhook (uses HMAC verification via X-Signature header)
+  if (c.req.path.includes('/registry-webhook')) {
+    await next();
+    return;
+  }
+
   const authorization = c.req.header('Authorization');
 
   if (!authorization) {

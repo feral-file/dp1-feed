@@ -23,12 +23,23 @@ export class CloudFlareQueue implements Queue {
  */
 export class CloudFlareQueueProvider implements QueueProvider {
   private writeQueue: CloudFlareQueue;
+  private factsQueue: CloudFlareQueue;
 
-  constructor(writeQueue: any, queueName: string = 'DP1_WRITE_QUEUE') {
-    this.writeQueue = new CloudFlareQueue(writeQueue, queueName);
+  constructor(
+    writeQueue: any,
+    factsQueue: any,
+    writeQueueName: string = 'DP1_WRITE_QUEUE',
+    factsQueueName: string = 'FACTS_INGEST_QUEUE'
+  ) {
+    this.writeQueue = new CloudFlareQueue(writeQueue, writeQueueName);
+    this.factsQueue = new CloudFlareQueue(factsQueue, factsQueueName);
   }
 
   getWriteQueue(): Queue {
     return this.writeQueue;
+  }
+
+  getFactsQueue(): Queue {
+    return this.factsQueue;
   }
 }

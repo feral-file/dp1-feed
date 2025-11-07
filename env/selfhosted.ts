@@ -16,13 +16,20 @@ export interface SelfHostedBindings {
   ETCD_PASSWORD?: string;
   ETCD_PREFIX?: string;
 
-  // NATS JetStream configuration
+  // NATS JetStream configuration for write operations
   NATS_ENDPOINT: string;
   NATS_USERNAME?: string;
   NATS_PASSWORD?: string;
   NATS_TOKEN?: string;
   NATS_STREAM_NAME: string;
   NATS_SUBJECT_NAME: string;
+
+  // NATS JetStream configuration for facts ingest (optional, defaults to separate stream/subject)
+  NATS_FACTS_STREAM_NAME?: string;
+  NATS_FACTS_SUBJECT_NAME?: string;
+
+  // Registry webhook secret for HMAC verification
+  REGISTRY_WEBHOOK_SECRET?: string;
 
   // Optional environment variables
   ENVIRONMENT?: string;
@@ -54,8 +61,8 @@ export async function initializeSelfHostedEnv(bindings: SelfHostedBindings): Pro
   };
   const storageProvider = new EtcdStorageProvider(etcdConfig);
 
-  // Create NATS JetStream queue provider
-  const natsConfig = {
+  // Create NATS JetStream queue provider for write operations
+  const writeConfig = {
     endpoint: bindings.NATS_ENDPOINT,
     username: bindings.NATS_USERNAME,
     password: bindings.NATS_PASSWORD,
@@ -63,9 +70,22 @@ export async function initializeSelfHostedEnv(bindings: SelfHostedBindings): Pro
     stream: bindings.NATS_STREAM_NAME,
     subject: bindings.NATS_SUBJECT_NAME,
   };
-  const queueProvider = new NatsJetStreamQueueProvider(natsConfig);
 
-  // Initialize the queue provider to create the stream
+  // Create facts ingest config (use separate stream/subject if provided, otherwise defaults)
+  const factsConfig = bindings.NATS_FACTS_STREAM_NAME && bindings.NATS_FACTS_SUBJECT_NAME
+    ? {
+        endpoint: bindings.NATS_ENDPOINT,
+        username: bindings.NATS_USERNAME,
+        password: bindings.NATS_PASSWORD,
+        token: bindings.NATS_TOKEN,
+        stream: bindings.NATS_FACTS_STREAM_NAME,
+        subject: bindings.NATS_FACTS_SUBJECT_NAME,
+      }
+    : undefined;
+
+  const queueProvider = new NatsJetStreamQueueProvider(writeConfig, factsConfig);
+
+  // Initialize the queue provider to create the streams
   await queueProvider.initialize();
 
   return {
@@ -73,6 +93,7 @@ export async function initializeSelfHostedEnv(bindings: SelfHostedBindings): Pro
     ED25519_PRIVATE_KEY: bindings.ED25519_PRIVATE_KEY,
     storageProvider,
     queueProvider,
+    REGISTRY_WEBHOOK_SECRET: bindings.REGISTRY_WEBHOOK_SECRET,
     ENVIRONMENT: bindings.ENVIRONMENT,
     SELF_HOSTED_DOMAINS: bindings.SELF_HOSTED_DOMAINS,
   };

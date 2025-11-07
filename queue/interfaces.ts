@@ -57,6 +57,11 @@ export interface QueueProvider {
    * Get the write operations queue
    */
   getWriteQueue(): Queue;
+
+  /**
+   * Get the facts ingest queue (for registry webhook processing)
+   */
+  getFactsQueue(): Queue;
 }
 
 /**

@@ -186,13 +186,26 @@ export class NatsJetStreamQueue implements Queue {
  */
 export class NatsJetStreamQueueProvider implements QueueProvider {
   private writeQueue: NatsJetStreamQueue;
+  private factsQueue: NatsJetStreamQueue;
 
-  constructor(config: NatsConfig) {
-    this.writeQueue = new NatsJetStreamQueue(config, 'DP1_WRITE_QUEUE');
+  constructor(writeConfig: NatsConfig, factsConfig?: NatsConfig) {
+    this.writeQueue = new NatsJetStreamQueue(writeConfig, 'DP1_WRITE_QUEUE');
+
+    // Use provided facts config, or create default config with separate stream/subject
+    const factsQueueConfig = factsConfig || {
+      ...writeConfig,
+      stream: 'DP1_FACTS_INGEST',
+      subject: 'dp1.facts.ingest',
+    };
+    this.factsQueue = new NatsJetStreamQueue(factsQueueConfig, 'FACTS_INGEST_QUEUE');
   }
 
   getWriteQueue(): Queue {
     return this.writeQueue;
+  }
+
+  getFactsQueue(): Queue {
+    return this.factsQueue;
   }
 
   /**
@@ -201,6 +214,9 @@ export class NatsJetStreamQueueProvider implements QueueProvider {
   async initialize(): Promise<void> {
     await this.writeQueue.connect();
     await this.writeQueue.ensureStream();
+
+    await this.factsQueue.connect();
+    await this.factsQueue.ensureStream();
   }
 
   /**
@@ -208,5 +224,6 @@ export class NatsJetStreamQueueProvider implements QueueProvider {
    */
   async close(): Promise<void> {
     await this.writeQueue.close();
+    await this.factsQueue.close();
   }
 }

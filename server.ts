@@ -42,6 +42,13 @@ async function startServer() {
     NATS_STREAM_NAME: process.env.NATS_STREAM_NAME || 'DP1_WRITE_OPERATIONS',
     NATS_SUBJECT_NAME: process.env.NATS_SUBJECT_NAME || 'dp1.write.operations',
 
+    // NATS JetStream configuration for facts ingest (optional)
+    NATS_FACTS_STREAM_NAME: process.env.NATS_FACTS_STREAM_NAME,
+    NATS_FACTS_SUBJECT_NAME: process.env.NATS_FACTS_SUBJECT_NAME,
+
+    // Registry webhook secret for HMAC verification
+    REGISTRY_WEBHOOK_SECRET: process.env.REGISTRY_WEBHOOK_SECRET,
+
     // Optional environment variables
     ENVIRONMENT: process.env.ENVIRONMENT || 'self-hosted',
     SELF_HOSTED_DOMAINS: process.env.SELF_HOSTED_DOMAINS,

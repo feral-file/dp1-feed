@@ -15,8 +15,12 @@ export interface CloudFlareBindings {
   DP1_PLAYLISTS: KVNamespace;
   DP1_PLAYLIST_ITEMS: KVNamespace;
 
-  // CloudFlare Queue binding
+  // CloudFlare Queue bindings
   DP1_WRITE_QUEUE: Queue;
+  FACTS_INGEST_QUEUE: Queue;
+
+  // Registry webhook secret for HMAC verification
+  REGISTRY_WEBHOOK_SECRET?: string;
 
   // Optional environment variables
   ENVIRONMENT?: string;
@@ -37,19 +41,27 @@ export function initializeCloudFlareEnv(bindings: CloudFlareBindings): Env {
     throw new Error('Missing required Queue binding: DP1_WRITE_QUEUE');
   }
 
+  if (!bindings.FACTS_INGEST_QUEUE) {
+    throw new Error('Missing required Queue binding: FACTS_INGEST_QUEUE');
+  }
+
   // Create providers from bindings
   const storageProvider = new CloudFlareStorageProvider(
     bindings.DP1_PLAYLISTS,
     bindings.DP1_PLAYLIST_ITEMS
   );
 
-  const queueProvider = new CloudFlareQueueProvider(bindings.DP1_WRITE_QUEUE);
+  const queueProvider = new CloudFlareQueueProvider(
+    bindings.DP1_WRITE_QUEUE,
+    bindings.FACTS_INGEST_QUEUE
+  );
 
   return {
     API_SECRET: bindings.API_SECRET,
     ED25519_PRIVATE_KEY: bindings.ED25519_PRIVATE_KEY,
     storageProvider,
     queueProvider,
+    REGISTRY_WEBHOOK_SECRET: bindings.REGISTRY_WEBHOOK_SECRET,
     ENVIRONMENT: bindings.ENVIRONMENT,
     SELF_HOSTED_DOMAINS: bindings.SELF_HOSTED_DOMAINS,
   };

@@ -45,6 +45,9 @@ export interface Env {
   // Queue provider for async processing (required)
   queueProvider: QueueProvider;
 
+  // Registry webhook secret for HMAC verification (required for webhook endpoint)
+  REGISTRY_WEBHOOK_SECRET?: string;
+
   // Optional environment variables
   ENVIRONMENT?: string;
   SELF_HOSTED_DOMAINS?: string; // Comma-separated list of domains this worker is deployed to

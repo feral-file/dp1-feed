@@ -11,6 +11,7 @@ import { testEnvMiddleware } from './middleware/env-cloudflare';
 import { playlists } from './routes/playlists';
 import playlistItems from './routes/playlistItems';
 import { queues as queueRoutes } from './routes/queues';
+import { registryWebhook } from './routes/registry-webhook';
 
 // Check if the runtime is self-hosted (Node.js)
 const isSelfHosted =
@@ -85,6 +86,9 @@ export function createApp<TBindings extends Record<string, any> = any>(envMiddle
   app.route('/api/v1/playlists', playlists);
   app.route('/api/v1/playlist-items', playlistItems);
 
+  // Mount registry webhook route (no auth required, uses HMAC verification)
+  app.route('/', registryWebhook);
+
   if (isSelfHosted) {
     // Mount queue API routes for self-hosted deployment
     app.route('/queues', queueRoutes);
@@ -102,11 +106,17 @@ export function createApp<TBindings extends Record<string, any> = any>(envMiddle
       'PATCH /api/v1/playlists/:id',
       'GET /api/v1/playlist-items',
       'GET /api/v1/playlist-items/:id',
+      'POST /registry-webhook',
     ];
 
     // Add queue endpoints for Node.js (self-hosted) deployment
     if (isSelfHosted) {
-      endpoints.push('POST /queues/process-message', 'POST /queues/process-batch');
+      endpoints.push(
+        'POST /queues/process-message',
+        'POST /queues/process-batch',
+        'POST /queues/process-fact-message',
+        'POST /queues/process-facts-batch'
+      );
     }
 
     return c.json(
