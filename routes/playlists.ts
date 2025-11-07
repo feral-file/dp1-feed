@@ -10,7 +10,7 @@ import {
   validateNoProtectedFields,
 } from '../types';
 import { getServerKeyPair } from '../crypto';
-import { listAllPlaylists, getPlaylistByIdOrSlug } from '../storage';
+import { listAllPlaylists, listStarredPlaylists, getPlaylistByIdOrSlug } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
 import { signDP1Playlist, Playlist } from 'dp1-js';
 // Create playlist router
@@ -115,6 +115,8 @@ playlists.get('/', async c => {
     const cursor = c.req.query('cursor') || undefined;
     const sortParam = (c.req.query('sort') || '').toLowerCase();
     const sort: 'asc' | 'desc' = sortParam === 'desc' ? 'desc' : 'asc'; // Default to 'asc' when no sort or invalid sort
+    const starParam = (c.req.query('star') || '').toLowerCase();
+    const filterStar = starParam === 'true';
 
     // Validate limit
     if (limit < 1 || limit > 100) {
@@ -127,7 +129,13 @@ playlists.get('/', async c => {
       );
     }
 
-    // List all playlists
+    // If star=true, list only starred playlists using storage service
+    if (filterStar) {
+      const result = await listStarredPlaylists(c.var.env, { limit, cursor, sort });
+      return c.json(result);
+    }
+
+    // Otherwise list all playlists
     const result = await listAllPlaylists(c.var.env, { limit, cursor, sort });
 
     return c.json(result);
@@ -175,7 +183,16 @@ playlists.get('/:id', async c => {
       );
     }
 
-    return c.json(playlist);
+    // Attach star flag from KV (materialized facts)
+    try {
+      const playlistKV = c.var.env.storageProvider.getPlaylistStorage();
+      const starVal = await playlistKV.get(`star:${playlist.id}`);
+      const withStar = { ...playlist, star: Boolean(starVal) } as any;
+      return c.json(withStar);
+    } catch {
+      // Fallback without star flag on error
+      return c.json(playlist);
+    }
   } catch (error) {
     console.error('Error retrieving playlist:', error);
     return c.json(

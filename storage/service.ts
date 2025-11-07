@@ -261,6 +261,41 @@ export class StorageService {
   }
 
   /**
+   * List starred playlists using materialized star indexes
+   */
+  async listStarredPlaylists(options: ListOptions = {}): Promise<PaginatedResult<Playlist>> {
+    const limit = options.limit || 1000;
+
+    const prefix = options.sort === 'desc' ? 'star:created:desc:' : 'star:created:asc:';
+
+    const response = await this.playlistStorage.list({
+      prefix,
+      limit,
+      cursor: options.cursor,
+    });
+
+    const playlistIdKeys: string[] = [];
+    for (const key of response.keys) {
+      // Key format: star:created:(asc|desc):${ts}:${playlistId}
+      const parts = key.name.split(':');
+      const playlistId = parts[parts.length - 1];
+      playlistIdKeys.push(`${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${playlistId}`);
+    }
+
+    const playlists = await this.batchFetchFromStorage<Playlist>(
+      playlistIdKeys,
+      this.playlistStorage,
+      'starred playlist'
+    );
+
+    return {
+      items: playlists,
+      cursor: response.list_complete ? undefined : response.cursor,
+      hasMore: !response.list_complete,
+    };
+  }
+
+  /**
    * Get a playlist item by ID
    */
   async getPlaylistItemById(itemId: string): Promise<PlaylistItem | null> {
