@@ -63,7 +63,7 @@
     "node:dev": "tsx --env-file .env --watch server.ts",
     "node:start": "node --env-file .env dist/server.js",
     "node:start:dev": "tsx --env-file .env server.ts",
-    "node:build": "esbuild server.ts --bundle --platform=node --format=esm --outfile=dist/server.js --external:@hono/node-server --external:nats --external:canonicalize --external:semver --external:zod --external:ff-dp1-js"
+    "node:build": "esbuild server.ts --bundle --platform=node --format=esm --outfile=dist/server.js --external:@hono/node-server --external:nats --external:canonicalize --external:semver --external:zod --external:dp1-js"
   },
   "keywords": [
     "dp1",
