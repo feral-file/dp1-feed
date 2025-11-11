@@ -1,10 +1,15 @@
 import type { Env } from '../types';
-import type { MessageBatch, WriteOperationMessage, ProcessingResult } from './interfaces';
-import { QueueProcessorService, QueueService } from './service';
+import type {
+  MessageBatch,
+  WriteOperationMessage,
+  FactOperationMessage,
+  ProcessingResult,
+} from './interfaces';
+import { QueueProcessorService, FactQueueProcessorService, QueueService } from './service';
 import { StorageService } from '../storage/service';
 
 /**
- * Create and configure the queue processor service from environment
+ * Create and configure the write queue processor service from environment
  */
 function createQueueProcessorService(env: Env): QueueProcessorService {
   const storageService = new StorageService(env.storageProvider);
@@ -12,10 +17,21 @@ function createQueueProcessorService(env: Env): QueueProcessorService {
 }
 
 /**
+ * Create and configure the fact queue processor service from environment
+ */
+function createFactQueueProcessorService(env: Env): FactQueueProcessorService {
+  const storageService = new StorageService(env.storageProvider);
+  return new FactQueueProcessorService(storageService);
+}
+
+/**
  * Create and configure the queue service from environment
  */
 function createQueueService(env: Env): QueueService {
-  return new QueueService(env.queueProvider.getWriteQueue());
+  return new QueueService(
+    env.queueProvider.getWriteQueue(),
+    env.queueProvider.getFactsQueue()
+  );
 }
 
 /**
@@ -27,6 +43,17 @@ export async function processWriteOperations(
 ): Promise<ProcessingResult> {
   const processorService = createQueueProcessorService(env);
   return await processorService.processBatch(batch as MessageBatch<WriteOperationMessage>);
+}
+
+/**
+ * Process fact operations from the queue
+ */
+export async function processFactOperations(
+  batch: MessageBatch,
+  env: Env
+): Promise<ProcessingResult> {
+  const processorService = createFactQueueProcessorService(env);
+  return await processorService.processBatch(batch as MessageBatch<FactOperationMessage>);
 }
 
 /**
@@ -44,4 +71,16 @@ export function generateMessageId(operation: string, resourceId: string): string
 export async function queueWriteOperation(message: WriteOperationMessage, env: Env): Promise<void> {
   const queueService = createQueueService(env);
   await queueService.queueWriteOperation(message);
+}
+
+/**
+ * Queue a fact operation for async processing
+ * The message should be built by the caller (e.g., using buildFactQueueMessage in registry-webhook.ts)
+ */
+export async function queueFactsOperation(
+  message: FactOperationMessage,
+  env: Env
+): Promise<void> {
+  const queueService = createQueueService(env);
+  await queueService.queueFactOperation(message);
 }

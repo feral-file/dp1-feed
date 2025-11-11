@@ -1,9 +1,8 @@
 import { Hono } from 'hono';
 import type { Env } from '../types';
-import type { WriteOperationMessage } from '../queue/interfaces';
+import type { WriteOperationMessage, FactOperationMessage } from '../queue/interfaces';
 import { processWriteOperations } from '../queue/processor';
-import { processFactsBatch } from '../queue/facts-processor';
-import type { RegistryWebhookPayload } from './registry-webhook';
+import { processFactOperations } from '../queue/processor';
 
 /**
  * Queue processing API routes for self-hosted deployment
@@ -151,31 +150,30 @@ export { queues };
 queues.post('/process-fact-message', async c => {
   try {
     const body = await c.req.json();
-    // Expect shape: { id, timestamp, payload }
-    const { id, timestamp, payload } = body as {
-      id: string;
-      timestamp: string;
-      payload: RegistryWebhookPayload;
-    };
+    const message = body as FactOperationMessage;
 
-    if (!id || !timestamp || !payload) {
+    // Validate message structure
+    if (!message.id || !message.timestamp || !message.operation || !message.data) {
       return c.json(
         {
           error: 'invalid_message',
-          message: 'Message must contain id, timestamp and payload',
+          message:
+            'Message must be a valid FactOperationMessage with id, timestamp, operation, and data',
         },
         400
       );
     }
 
+    // Process the message using the existing queue processor
+    // Create a simple message batch with single message
     const messageBatch = {
-      queue: 'dp1-facts-ingest',
+      queue: 'dp1-facts-operations',
       messages: [
         {
-          id,
-          timestamp: new Date(timestamp),
-          body: { payload },
-          attempts: 0,
+          id: message.id,
+          timestamp: new Date(message.timestamp),
+          body: message,
+          attempts: message.retryCount || 0,
           ack: () => {},
           retry: () => {},
         },
@@ -184,9 +182,15 @@ queues.post('/process-fact-message', async c => {
       ackAll: () => {},
     };
 
-    const result = await processFactsBatch(messageBatch as any, c.var.env);
+    const result = await processFactOperations(messageBatch as any, c.var.env);
 
-    return c.json({ success: result.success, processedCount: result.processedCount });
+    return c.json({
+      success: result.success,
+      messageId: message.id,
+      operation: message.operation,
+      processedCount: result.processedCount,
+      errors: result.errors,
+    });
   } catch (error) {
     console.error('Error processing fact message:', error);
     return c.json(
@@ -204,10 +208,7 @@ queues.post('/process-fact-message', async c => {
 queues.post('/process-facts-batch', async c => {
   try {
     const body = await c.req.json();
-    // Expect shape: { messages: Array<{ id, timestamp, payload }> }
-    const { messages } = body as {
-      messages: Array<{ id: string; timestamp: string; payload: RegistryWebhookPayload }>;
-    };
+    const messages = body.messages as FactOperationMessage[];
 
     if (!Array.isArray(messages) || messages.length === 0) {
       return c.json(
@@ -216,22 +217,27 @@ queues.post('/process-facts-batch', async c => {
       );
     }
 
-    for (const m of messages) {
-      if (!m.id || !m.timestamp || !m.payload) {
+    // Validate all messages are valid FactOperationMessage
+    for (const message of messages) {
+      if (!message.id || !message.timestamp || !message.operation || !message.data) {
         return c.json(
-          { error: 'invalid_message', message: 'Each message must contain id, timestamp, payload' },
+          {
+            error: 'invalid_message',
+            message:
+              'All messages must be valid FactOperationMessage with id, timestamp, operation, and data',
+          },
           400
         );
       }
     }
 
     const messageBatch = {
-      queue: 'dp1-facts-ingest',
-      messages: messages.map(m => ({
-        id: m.id,
-        timestamp: new Date(m.timestamp),
-        body: { payload: m.payload },
-        attempts: 0,
+      queue: 'dp1-facts-operations',
+      messages: messages.map(message => ({
+        id: message.id,
+        timestamp: new Date(message.timestamp),
+        body: message,
+        attempts: message.retryCount || 0,
         ack: () => {},
         retry: () => {},
       })),
@@ -239,9 +245,14 @@ queues.post('/process-facts-batch', async c => {
       ackAll: () => {},
     };
 
-    const result = await processFactsBatch(messageBatch as any, c.var.env);
+    const result = await processFactOperations(messageBatch as any, c.var.env);
 
-    return c.json({ success: result.success, processedCount: result.processedCount });
+    return c.json({
+      success: result.success,
+      processedCount: result.processedCount,
+      messageIds: messages.map(m => m.id),
+      errors: result.errors,
+    });
   } catch (error) {
     console.error('Error processing facts batch:', error);
     return c.json(

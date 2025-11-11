@@ -2,7 +2,7 @@ import { type CloudFlareBindings, initializeCloudFlareEnv } from './env/cloudfla
 import { cloudflareEnvMiddleware } from './middleware/env-cloudflare';
 import { createApp, createTestApp } from './app';
 import { processWriteOperations } from './queue/processor';
-import { processFactsBatch } from './queue/facts-processor';
+import { processFactOperations } from './queue/processor';
 import { MessageBatch, ExecutionContext } from '@cloudflare/workers-types';
 
 /**
@@ -29,12 +29,12 @@ async function queue(
   const env = initializeCloudFlareEnv(bindings);
 
   try {
-    // Route based on queue name: write ops vs facts ingest
+    // Route based on queue name: write ops vs fact ops
     const queueName = (batch as any).queue || 'unknown';
     const isFactsQueue = typeof queueName === 'string' && queueName.toLowerCase().includes('facts');
 
     const result = isFactsQueue
-      ? await processFactsBatch(batch as any, env)
+      ? await processFactOperations(batch as any, env)
       : await processWriteOperations(batch, env);
 
     if (result.success) {

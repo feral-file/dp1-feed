@@ -75,6 +75,7 @@ export interface QueueProcessor<T = unknown> {
 }
 
 import { Playlist } from 'dp1-js';
+import type { RegistryWebhookPayload } from '../routes/registry-webhook';
 
 // Write operation message types (borrowing CloudFlare format but generic)
 export interface CreatePlaylistMessage extends QueueMessage {
@@ -93,3 +94,13 @@ export interface UpdatePlaylistMessage extends QueueMessage {
 }
 
 export type WriteOperationMessage = CreatePlaylistMessage | UpdatePlaylistMessage;
+
+// Facts operation message types (for registry webhook processing)
+export interface EndorsementStarMessage extends QueueMessage {
+  operation: 'endorsement_star';
+  data: {
+    payload: RegistryWebhookPayload;
+  };
+}
+
+export type FactOperationMessage = EndorsementStarMessage;

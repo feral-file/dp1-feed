@@ -1,5 +1,7 @@
 import { Hono } from 'hono';
 import type { Env } from '../types';
+import { generateMessageId, queueFactsOperation } from '../queue/processor';
+import type { FactOperationMessage, EndorsementStarMessage } from '../queue/interfaces';
 
 /**
  * Registry webhook payload structure
@@ -15,6 +17,42 @@ export interface RegistryWebhookPayload {
   issuer_did: string;
   status: 'active' | 'revoked';
   issued_at: string;
+}
+
+/**
+ * Build a QueueMessage based on the payload kind
+ * Currently supports: endorsement.star
+ * Future support: rights.grant, identity.link
+ */
+export function buildFactQueueMessage(payload: RegistryWebhookPayload): FactOperationMessage {
+  const timestamp = new Date().toISOString();
+  const resourceId = payload.id.toString();
+
+  switch (payload.kind) {
+    case 'endorsement.star': {
+      const message: EndorsementStarMessage = {
+        id: generateMessageId('endorsement_star', resourceId),
+        timestamp,
+        operation: 'endorsement_star',
+        data: {
+          payload,
+        },
+      };
+      return message;
+    }
+
+    // Future kinds - to be implemented
+    case 'rights.grant':
+      // TODO: Implement when Registry supports rights.grant
+      throw new Error(`Unsupported fact kind: ${payload.kind}. Not yet implemented.`);
+
+    case 'identity.link':
+      // TODO: Implement when Registry supports identity.link
+      throw new Error(`Unsupported fact kind: ${payload.kind}. Not yet implemented.`);
+
+    default:
+      throw new Error(`Unknown or unsupported fact kind: ${payload.kind}`);
+  }
 }
 
 /**
@@ -252,7 +290,13 @@ registryWebhook.post('/registry-webhook', async c => {
     }
 
     // Validate payload structure
-    if (!payload.id || !payload.kind || !payload.subject || !payload.issuer_did || !payload.status) {
+    if (
+      !payload.id ||
+      !payload.kind ||
+      !payload.subject ||
+      !payload.issuer_did ||
+      !payload.status
+    ) {
       return c.json(
         {
           error: 'invalid_payload',
@@ -262,26 +306,41 @@ registryWebhook.post('/registry-webhook', async c => {
       );
     }
 
-    // Get facts-ingest queue
-    const factsQueue = env.queueProvider.getFactsQueue();
-    if (!factsQueue) {
-      console.error('Facts ingest queue not available');
+    // Build queue message based on payload kind
+    let message: FactOperationMessage;
+    try {
+      message = buildFactQueueMessage(payload);
+    } catch (error) {
+      console.error('Error building queue message:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+
+      // Check if it's an unsupported kind error
+      if (
+        errorMessage.includes('Unsupported fact kind') ||
+        errorMessage.includes('Unknown or unsupported fact kind')
+      ) {
+        return c.json(
+          {
+            error: 'unsupported_fact_kind',
+            message: errorMessage,
+            kind: payload.kind,
+          },
+          422 // Unprocessable Entity - the request is valid but we don't support this kind yet
+        );
+      }
+
       return c.json(
         {
-          error: 'queue_unavailable',
-          message: 'Facts ingest queue is not configured',
+          error: 'invalid_message',
+          message: 'Failed to build queue message',
         },
-        500
+        400
       );
     }
 
     // Enqueue to facts-ingest queue
     try {
-      await factsQueue.send({
-        id: `fact:${payload.id}`,
-        timestamp: new Date().toISOString(),
-        payload,
-      });
+      await queueFactsOperation(message, env);
       console.log(`Enqueued fact ${payload.id} (${payload.kind}) to facts-ingest queue`);
     } catch (error) {
       console.error('Error enqueueing fact:', error);
@@ -309,4 +368,3 @@ registryWebhook.post('/registry-webhook', async c => {
 });
 
 export { registryWebhook };
-

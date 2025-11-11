@@ -26,6 +26,20 @@ export class StorageService {
   }
 
   /**
+   * Get the underlying playlist storage (for advanced operations)
+   */
+  getPlaylistStorage(): KeyValueStorage {
+    return this.playlistStorage;
+  }
+
+  /**
+   * Get a playlist by ID (shorthand for getPlaylistByIdOrSlug)
+   */
+  async getPlaylist(id: string): Promise<Playlist | null> {
+    return await this.getPlaylistByIdOrSlug(id);
+  }
+
+  /**
    * Generic helper function to batch fetch data from storage
    */
   private async batchFetchFromStorage<T>(
@@ -293,6 +307,69 @@ export class StorageService {
       cursor: response.list_complete ? undefined : response.cursor,
       hasMore: !response.list_complete,
     };
+  }
+
+  /**
+   * Update the materialized star status for a playlist
+   * Handles creating/removing the flag and created-time indexes
+   */
+  async updatePlaylistStarStatus(playlistId: string, status: 'active' | 'revoked'): Promise<void> {
+    const playlistStorage = this.getPlaylistStorage();
+    const playlist = await this.getPlaylist(playlistId);
+    const created = playlist?.created;
+
+    const flagKey = `star:${playlistId}`;
+
+    if (status === 'active') {
+      const ops: Promise<void>[] = [playlistStorage.put(flagKey, playlistId)];
+      if (created) {
+        const { asc, desc } = this.toSortableTimestamps(created);
+        ops.push(playlistStorage.put(`star:created:asc:${asc}:${playlistId}`, playlistId));
+        ops.push(playlistStorage.put(`star:created:desc:${desc}:${playlistId}`, playlistId));
+      }
+      await Promise.all(ops);
+      return;
+    }
+
+    if (status === 'revoked') {
+      const ops: Promise<void>[] = [playlistStorage.delete(flagKey)];
+      if (created) {
+        const { asc, desc } = this.toSortableTimestamps(created);
+        ops.push(playlistStorage.delete(`star:created:asc:${asc}:${playlistId}`));
+        ops.push(playlistStorage.delete(`star:created:desc:${desc}:${playlistId}`));
+      } else {
+        await this.deleteStarIndexBySuffix(playlistStorage, 'star:created:asc:', playlistId);
+        await this.deleteStarIndexBySuffix(playlistStorage, 'star:created:desc:', playlistId);
+      }
+      await Promise.all(ops);
+      return;
+    }
+
+    throw new Error(`Unsupported star status: ${status}`);
+  }
+
+  /**
+   * Delete star index entries by suffix (used when created timestamp is unknown)
+   */
+  private async deleteStarIndexBySuffix(
+    kv: KeyValueStorage,
+    prefix: string,
+    playlistId: string
+  ): Promise<void> {
+    let cursor: string | undefined = undefined;
+    // Paginate to find any keys ending with :playlistId
+    do {
+      const res: { keys: Array<{ name: string }>; list_complete: boolean; cursor?: string } =
+        await kv.list({ prefix, cursor });
+      const tasks: Promise<void>[] = [];
+      for (const k of res.keys as Array<{ name: string }>) {
+        if (k.name.endsWith(`:${playlistId}`)) {
+          tasks.push(kv.delete(k.name));
+        }
+      }
+      await Promise.all(tasks);
+      cursor = res.list_complete ? undefined : res.cursor;
+    } while (cursor);
   }
 
   /**

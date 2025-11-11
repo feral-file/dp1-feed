@@ -42,7 +42,7 @@ async function startServer() {
     NATS_STREAM_NAME: process.env.NATS_STREAM_NAME || 'DP1_WRITE_OPERATIONS',
     NATS_SUBJECT_NAME: process.env.NATS_SUBJECT_NAME || 'dp1.write.operations',
 
-    // NATS JetStream configuration for facts ingest (optional)
+    // NATS JetStream configuration for facts (optional)
     NATS_FACTS_STREAM_NAME: process.env.NATS_FACTS_STREAM_NAME,
     NATS_FACTS_SUBJECT_NAME: process.env.NATS_FACTS_SUBJECT_NAME,
 
