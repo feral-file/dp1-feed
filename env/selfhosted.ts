@@ -24,9 +24,9 @@ export interface SelfHostedBindings {
   NATS_STREAM_NAME: string;
   NATS_SUBJECT_NAME: string;
 
-  // NATS JetStream configuration for facts ingest (optional, defaults to separate stream/subject)
-  NATS_FACTS_STREAM_NAME?: string;
-  NATS_FACTS_SUBJECT_NAME?: string;
+  // NATS JetStream configuration for facts ingest
+  NATS_FACTS_STREAM_NAME: string;
+  NATS_FACTS_SUBJECT_NAME: string;
 
   // Registry webhook secret for HMAC verification
   REGISTRY_WEBHOOK_SECRET?: string;
@@ -46,9 +46,15 @@ export async function initializeSelfHostedEnv(bindings: SelfHostedBindings): Pro
     throw new Error('Missing required etcd endpoint: ETCD_ENDPOINT');
   }
 
-  if (!bindings.NATS_ENDPOINT || !bindings.NATS_STREAM_NAME || !bindings.NATS_SUBJECT_NAME) {
+  if (
+    !bindings.NATS_ENDPOINT ||
+    !bindings.NATS_STREAM_NAME ||
+    !bindings.NATS_SUBJECT_NAME ||
+    !bindings.NATS_FACTS_STREAM_NAME ||
+    !bindings.NATS_FACTS_SUBJECT_NAME
+  ) {
     throw new Error(
-      'Missing required NATS configuration: NATS_ENDPOINT, NATS_STREAM_NAME, NATS_SUBJECT_NAME'
+      'Missing required NATS configuration: NATS_ENDPOINT, NATS_STREAM_NAME, NATS_SUBJECT_NAME, NATS_FACTS_STREAM_NAME, NATS_FACTS_SUBJECT_NAME'
     );
   }
 
@@ -71,17 +77,15 @@ export async function initializeSelfHostedEnv(bindings: SelfHostedBindings): Pro
     subject: bindings.NATS_SUBJECT_NAME,
   };
 
-  // Create facts ingest config (use separate stream/subject if provided, otherwise defaults)
-  const factsConfig = bindings.NATS_FACTS_STREAM_NAME && bindings.NATS_FACTS_SUBJECT_NAME
-    ? {
-        endpoint: bindings.NATS_ENDPOINT,
-        username: bindings.NATS_USERNAME,
-        password: bindings.NATS_PASSWORD,
-        token: bindings.NATS_TOKEN,
-        stream: bindings.NATS_FACTS_STREAM_NAME,
-        subject: bindings.NATS_FACTS_SUBJECT_NAME,
-      }
-    : undefined;
+  // Create facts ingest config
+  const factsConfig = {
+    endpoint: bindings.NATS_ENDPOINT,
+    username: bindings.NATS_USERNAME,
+    password: bindings.NATS_PASSWORD,
+    token: bindings.NATS_TOKEN,
+    stream: bindings.NATS_FACTS_STREAM_NAME,
+    subject: bindings.NATS_FACTS_SUBJECT_NAME,
+  };
 
   const queueProvider = new NatsJetStreamQueueProvider(writeConfig, factsConfig);
 

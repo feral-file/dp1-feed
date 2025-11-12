@@ -326,6 +326,7 @@ describe('NatsJetStreamQueue', () => {
 describe('NatsJetStreamQueueProvider', () => {
   let provider: NatsJetStreamQueueProvider;
   let mockConfig: NatsConfig;
+  let mockFactsConfig: NatsConfig;
 
   beforeEach(() => {
     vi.clearAllMocks();
@@ -336,7 +337,13 @@ describe('NatsJetStreamQueueProvider', () => {
       subject: 'dp1.write.operations',
     };
 
-    provider = new NatsJetStreamQueueProvider(mockConfig);
+    mockFactsConfig = {
+      endpoint: 'nats://localhost:4222',
+      stream: 'DP1_FACTS_INGEST',
+      subject: 'dp1.facts.ingest',
+    };
+
+    provider = new NatsJetStreamQueueProvider(mockConfig, mockFactsConfig);
   });
 
   describe('constructor', () => {
@@ -363,14 +370,19 @@ describe('NatsJetStreamQueueProvider', () => {
 
   describe('initialize', () => {
     it('should initialize the queue provider by connecting and ensuring streams exist', async () => {
-      const queue = provider.getWriteQueue() as NatsJetStreamQueue;
-      const connectSpy = vi.spyOn(queue, 'connect').mockResolvedValue(undefined);
-      const ensureStreamSpy = vi.spyOn(queue, 'ensureStream').mockResolvedValue(undefined);
+      const writeQueue = provider.getWriteQueue() as NatsJetStreamQueue;
+      const factsQueue = provider.getFactsQueue() as NatsJetStreamQueue;
+      const writeConnectSpy = vi.spyOn(writeQueue, 'connect').mockResolvedValue(undefined);
+      const writeEnsureStreamSpy = vi.spyOn(writeQueue, 'ensureStream').mockResolvedValue(undefined);
+      const factsConnectSpy = vi.spyOn(factsQueue, 'connect').mockResolvedValue(undefined);
+      const factsEnsureStreamSpy = vi.spyOn(factsQueue, 'ensureStream').mockResolvedValue(undefined);
 
       await provider.initialize();
 
-      expect(connectSpy).toHaveBeenCalled();
-      expect(ensureStreamSpy).toHaveBeenCalled();
+      expect(writeConnectSpy).toHaveBeenCalled();
+      expect(writeEnsureStreamSpy).toHaveBeenCalled();
+      expect(factsConnectSpy).toHaveBeenCalled();
+      expect(factsEnsureStreamSpy).toHaveBeenCalled();
     });
 
     it('should handle connection errors during initialization', async () => {
@@ -444,7 +456,12 @@ describe('NatsJetStreamQueueProvider', () => {
         username: 'test-user',
         password: 'test-pass',
       };
-      const authProvider = new NatsJetStreamQueueProvider(configWithAuth);
+      const factsConfigWithAuth = {
+        ...mockFactsConfig,
+        username: 'test-user',
+        password: 'test-pass',
+      };
+      const authProvider = new NatsJetStreamQueueProvider(configWithAuth, factsConfigWithAuth);
       const queue = authProvider.getWriteQueue() as NatsJetStreamQueue;
 
       // Initialize the provider to establish connection

@@ -188,16 +188,9 @@ export class NatsJetStreamQueueProvider implements QueueProvider {
   private writeQueue: NatsJetStreamQueue;
   private factsQueue: NatsJetStreamQueue;
 
-  constructor(writeConfig: NatsConfig, factsConfig?: NatsConfig) {
+  constructor(writeConfig: NatsConfig, factsConfig: NatsConfig) {
     this.writeQueue = new NatsJetStreamQueue(writeConfig, 'DP1_WRITE_QUEUE');
-
-    // Use provided facts config, or create default config with separate stream/subject
-    const factsQueueConfig = factsConfig || {
-      ...writeConfig,
-      stream: 'DP1_FACTS_INGEST',
-      subject: 'dp1.facts.ingest',
-    };
-    this.factsQueue = new NatsJetStreamQueue(factsQueueConfig, 'FACTS_INGEST_QUEUE');
+    this.factsQueue = new NatsJetStreamQueue(factsConfig, 'FACTS_INGEST_QUEUE');
   }
 
   getWriteQueue(): Queue {
