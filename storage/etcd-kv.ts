@@ -260,10 +260,12 @@ export class EtcdKVStorage implements KeyValueStorage {
 export class EtcdStorageProvider implements StorageProvider {
   private playlistStorage: EtcdKVStorage;
   private playlistItemStorage: EtcdKVStorage;
+  private starStorage: EtcdKVStorage;
 
   constructor(config: EtcdConfig) {
     this.playlistStorage = new EtcdKVStorage(config, 'playlists');
     this.playlistItemStorage = new EtcdKVStorage(config, 'playlist-items');
+    this.starStorage = new EtcdKVStorage(config, 'stars');
   }
 
   getPlaylistStorage(): KeyValueStorage {
@@ -272,6 +274,10 @@ export class EtcdStorageProvider implements StorageProvider {
 
   getPlaylistItemStorage(): KeyValueStorage {
     return this.playlistItemStorage;
+  }
+
+  getStarStorage(): KeyValueStorage {
+    return this.starStorage;
   }
 }
 

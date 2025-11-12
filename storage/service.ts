@@ -11,6 +11,9 @@ export const STORAGE_KEYS = {
   PLAYLIST_CREATED_DESC_PREFIX: 'playlist:created:desc:', // playlist:created:desc:${invTimestampMs}:${playlistId} => ${playlistId}
   PLAYLIST_ITEM_CREATED_ASC_PREFIX: 'playlist-item:created:asc:', // playlist-item:created:asc:${timestampMs}:${itemId} => ${itemId}
   PLAYLIST_ITEM_CREATED_DESC_PREFIX: 'playlist-item:created:desc:', // playlist-item:created:desc:${invTimestampMs}:${itemId} => ${itemId}
+  STAR_PREFIX: 'star:', // star:${playlistId}=>${playlistId}
+  STAR_PLAYLIST_CREATED_ASC_PREFIX: 'star:created:asc:', // star:created:asc:${timestampMs}:${playlistId} => ${playlistId}
+  STAR_PLAYLIST_CREATED_DESC_PREFIX: 'star:created:desc:', // star:created:desc:${invTimestampMs}:${playlistId} => ${playlistId}
 } as const;
 
 /**
@@ -19,24 +22,19 @@ export const STORAGE_KEYS = {
 export class StorageService {
   private playlistStorage: KeyValueStorage;
   private playlistItemStorage: KeyValueStorage;
+  private starStorage: KeyValueStorage;
 
   constructor(private readonly storageProvider: StorageProvider) {
     this.playlistStorage = this.storageProvider.getPlaylistStorage();
     this.playlistItemStorage = this.storageProvider.getPlaylistItemStorage();
+    this.starStorage = this.storageProvider.getStarStorage();
   }
 
   /**
-   * Get the underlying playlist storage (for advanced operations)
+   * Get the underlying star storage (for advanced operations)
    */
-  getPlaylistStorage(): KeyValueStorage {
-    return this.playlistStorage;
-  }
-
-  /**
-   * Get a playlist by ID (shorthand for getPlaylistByIdOrSlug)
-   */
-  async getPlaylist(id: string): Promise<Playlist | null> {
-    return await this.getPlaylistByIdOrSlug(id);
+  getStarStorage(): KeyValueStorage {
+    return this.starStorage;
   }
 
   /**
@@ -280,9 +278,12 @@ export class StorageService {
   async listStarredPlaylists(options: ListOptions = {}): Promise<PaginatedResult<Playlist>> {
     const limit = options.limit || 1000;
 
-    const prefix = options.sort === 'desc' ? 'star:created:desc:' : 'star:created:asc:';
+    const prefix =
+      options.sort === 'desc'
+        ? STORAGE_KEYS.STAR_PLAYLIST_CREATED_DESC_PREFIX
+        : STORAGE_KEYS.STAR_PLAYLIST_CREATED_ASC_PREFIX;
 
-    const response = await this.playlistStorage.list({
+    const response = await this.starStorage.list({
       prefix,
       limit,
       cursor: options.cursor,
@@ -310,36 +311,70 @@ export class StorageService {
   }
 
   /**
+   * Check if a playlist is starred
+   */
+  async isPlaylistStarred(playlistId: string): Promise<boolean> {
+    const flagKey = `${STORAGE_KEYS.STAR_PREFIX}${playlistId}`;
+    const starVal = await this.starStorage.get(flagKey);
+    return Boolean(starVal);
+  }
+
+  /**
    * Update the materialized star status for a playlist
    * Handles creating/removing the flag and created-time indexes
    */
   async updatePlaylistStarStatus(playlistId: string, status: 'active' | 'revoked'): Promise<void> {
-    const playlistStorage = this.getPlaylistStorage();
-    const playlist = await this.getPlaylist(playlistId);
+    const playlist = await this.getPlaylistByIdOrSlug(playlistId);
     const created = playlist?.created;
 
-    const flagKey = `star:${playlistId}`;
+    const flagKey = `${STORAGE_KEYS.STAR_PREFIX}${playlistId}`;
 
     if (status === 'active') {
-      const ops: Promise<void>[] = [playlistStorage.put(flagKey, playlistId)];
+      const ops: Promise<void>[] = [this.starStorage.put(flagKey, playlistId)];
       if (created) {
         const { asc, desc } = this.toSortableTimestamps(created);
-        ops.push(playlistStorage.put(`star:created:asc:${asc}:${playlistId}`, playlistId));
-        ops.push(playlistStorage.put(`star:created:desc:${desc}:${playlistId}`, playlistId));
+        ops.push(
+          this.starStorage.put(
+            `${STORAGE_KEYS.STAR_PLAYLIST_CREATED_ASC_PREFIX}${asc}:${playlistId}`,
+            playlistId
+          )
+        );
+        ops.push(
+          this.starStorage.put(
+            `${STORAGE_KEYS.STAR_PLAYLIST_CREATED_DESC_PREFIX}${desc}:${playlistId}`,
+            playlistId
+          )
+        );
       }
       await Promise.all(ops);
       return;
     }
 
     if (status === 'revoked') {
-      const ops: Promise<void>[] = [playlistStorage.delete(flagKey)];
+      const ops: Promise<void>[] = [this.starStorage.delete(flagKey)];
       if (created) {
         const { asc, desc } = this.toSortableTimestamps(created);
-        ops.push(playlistStorage.delete(`star:created:asc:${asc}:${playlistId}`));
-        ops.push(playlistStorage.delete(`star:created:desc:${desc}:${playlistId}`));
+        ops.push(
+          this.starStorage.delete(
+            `${STORAGE_KEYS.STAR_PLAYLIST_CREATED_ASC_PREFIX}${asc}:${playlistId}`
+          )
+        );
+        ops.push(
+          this.starStorage.delete(
+            `${STORAGE_KEYS.STAR_PLAYLIST_CREATED_DESC_PREFIX}${desc}:${playlistId}`
+          )
+        );
       } else {
-        await this.deleteStarIndexBySuffix(playlistStorage, 'star:created:asc:', playlistId);
-        await this.deleteStarIndexBySuffix(playlistStorage, 'star:created:desc:', playlistId);
+        await this.deleteStarIndexBySuffix(
+          this.starStorage,
+          STORAGE_KEYS.STAR_PLAYLIST_CREATED_ASC_PREFIX,
+          playlistId
+        );
+        await this.deleteStarIndexBySuffix(
+          this.starStorage,
+          STORAGE_KEYS.STAR_PLAYLIST_CREATED_DESC_PREFIX,
+          playlistId
+        );
       }
       await Promise.all(ops);
       return;

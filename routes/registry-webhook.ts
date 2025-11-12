@@ -20,6 +20,21 @@ export interface RegistryWebhookPayload {
 }
 
 /**
+ * Parsed signature header
+ */
+interface ParsedSignature {
+  timestamp: number;
+  v1: string;
+  nonce: string;
+}
+
+/**
+ * Registry webhook route handler
+ * Validates HMAC signature and enqueues facts to facts-ingest queue
+ */
+const registryWebhook = new Hono<{ Variables: { env: Env } }>();
+
+/**
  * Build a QueueMessage based on the payload kind
  * Currently supports: endorsement.star
  * Future support: rights.grant, identity.link
@@ -54,21 +69,6 @@ export function buildFactQueueMessage(payload: RegistryWebhookPayload): FactOper
       throw new Error(`Unknown or unsupported fact kind: ${payload.kind}`);
   }
 }
-
-/**
- * Parsed signature header
- */
-interface ParsedSignature {
-  timestamp: number;
-  v1: string;
-  nonce: string;
-}
-
-/**
- * Registry webhook route handler
- * Validates HMAC signature and enqueues facts to facts-ingest queue
- */
-const registryWebhook = new Hono<{ Variables: { env: Env } }>();
 
 /**
  * Parse X-Signature header

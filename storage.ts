@@ -56,6 +56,14 @@ export async function listStarredPlaylists(
 }
 
 /**
+ * Check if a playlist is starred
+ */
+export async function isPlaylistStarred(playlistId: string, env: Env): Promise<boolean> {
+  const storageService = createStorageService(env);
+  return await storageService.isPlaylistStarred(playlistId);
+}
+
+/**
  * Get a playlist item by ID
  */
 export async function getPlaylistItemById(itemId: string, env: Env): Promise<PlaylistItem | null> {

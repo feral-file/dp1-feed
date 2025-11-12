@@ -10,7 +10,7 @@ import {
   validateNoProtectedFields,
 } from '../types';
 import { getServerKeyPair } from '../crypto';
-import { listAllPlaylists, listStarredPlaylists, getPlaylistByIdOrSlug } from '../storage';
+import { listAllPlaylists, listStarredPlaylists, getPlaylistByIdOrSlug, isPlaylistStarred } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
 import { signDP1Playlist, Playlist } from 'dp1-js';
 // Create playlist router
@@ -183,14 +183,11 @@ playlists.get('/:id', async c => {
       );
     }
 
-    // Attach star flag from KV (materialized facts)
+    // Attach star flag from star storage
     try {
-      const playlistKV = c.var.env.storageProvider.getPlaylistStorage();
-      const starVal = await playlistKV.get(`star:${playlist.id}`);
-      const withStar = { ...playlist, star: Boolean(starVal) } as any;
-      return c.json(withStar);
+      const starred = await isPlaylistStarred(playlist.id, c.var.env);
+      return c.json({ ...playlist, star: starred });
     } catch {
-      // Fallback without star flag on error
       return c.json(playlist);
     }
   } catch (error) {

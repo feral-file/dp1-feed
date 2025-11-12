@@ -58,6 +58,11 @@ export interface StorageProvider {
    * Get the playlist items storage namespace
    */
   getPlaylistItemStorage(): KeyValueStorage;
+
+  /**
+   * Get the star storage namespace
+   */
+  getStarStorage(): KeyValueStorage;
 }
 
 export interface PaginatedResult<T> {

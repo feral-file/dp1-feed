@@ -16,7 +16,7 @@ export interface SelfHostedBindings {
   ETCD_PASSWORD?: string;
   ETCD_PREFIX?: string;
 
-  // NATS JetStream configuration for write operations
+  // NATS JetStream configuration
   NATS_ENDPOINT: string;
   NATS_USERNAME?: string;
   NATS_PASSWORD?: string;

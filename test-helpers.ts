@@ -153,10 +153,12 @@ export class MockQueue implements Queue {
 export class MockStorageProvider implements StorageProvider {
   private playlistStorage: MockKeyValueStorage;
   private playlistItemStorage: MockKeyValueStorage;
+  private starStorage: MockKeyValueStorage;
 
   constructor() {
     this.playlistStorage = new MockKeyValueStorage();
     this.playlistItemStorage = new MockKeyValueStorage();
+    this.starStorage = new MockKeyValueStorage();
   }
 
   getPlaylistStorage(): KeyValueStorage {
@@ -167,11 +169,16 @@ export class MockStorageProvider implements StorageProvider {
     return this.playlistItemStorage;
   }
 
+  getStarStorage(): KeyValueStorage {
+    return this.starStorage;
+  }
+
   // Expose the underlying storage for test assertions
   getMockStorages() {
     return {
       playlist: this.playlistStorage,
       item: this.playlistItemStorage,
+      star: this.starStorage,
     };
   }
 }
