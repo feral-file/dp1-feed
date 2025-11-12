@@ -45,6 +45,17 @@ export async function listAllPlaylists(
 }
 
 /**
+ * List starred playlist IDs using materialized star indexes
+ */
+export async function listStarredPlaylistIds(
+  env: Env,
+  options: ListOptions = {}
+): Promise<PaginatedResult<string>> {
+  const storageService = createStorageService(env);
+  return await storageService.listStarredPlaylistIds(options);
+}
+
+/**
  * List starred playlists using materialized star indexes
  */
 export async function listStarredPlaylists(

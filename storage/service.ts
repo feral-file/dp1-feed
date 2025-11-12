@@ -273,6 +273,40 @@ export class StorageService {
   }
 
   /**
+   * List starred playlist IDs using materialized star indexes
+   */
+  async listStarredPlaylistIds(options: ListOptions = {}): Promise<PaginatedResult<string>> {
+    const limit = options.limit || 1000;
+
+    const prefix =
+      options.sort === 'desc'
+        ? STORAGE_KEYS.STAR_PLAYLIST_CREATED_DESC_PREFIX
+        : STORAGE_KEYS.STAR_PLAYLIST_CREATED_ASC_PREFIX;
+
+    const response = await this.starStorage.list({
+      prefix,
+      limit,
+      cursor: options.cursor,
+    });
+
+    const playlistIds: string[] = [];
+    for (const key of response.keys) {
+      // Key format: star:created:(asc|desc):${ts}:${playlistId}
+      const parts = key.name.split(':');
+      const playlistId = parts[parts.length - 1];
+      if (playlistId) {
+        playlistIds.push(playlistId);
+      }
+    }
+
+    return {
+      items: playlistIds,
+      cursor: response.list_complete ? undefined : response.cursor,
+      hasMore: !response.list_complete,
+    };
+  }
+
+  /**
    * List starred playlists using materialized star indexes
    */
   async listStarredPlaylists(options: ListOptions = {}): Promise<PaginatedResult<Playlist>> {

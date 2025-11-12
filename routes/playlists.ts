@@ -10,7 +10,7 @@ import {
   validateNoProtectedFields,
 } from '../types';
 import { getServerKeyPair } from '../crypto';
-import { listAllPlaylists, listStarredPlaylists, getPlaylistByIdOrSlug, isPlaylistStarred } from '../storage';
+import { listAllPlaylists, listStarredPlaylists, listStarredPlaylistIds, getPlaylistByIdOrSlug, isPlaylistStarred } from '../storage';
 import { queueWriteOperation, generateMessageId } from '../queue/processor';
 import { signDP1Playlist, Playlist } from 'dp1-js';
 // Create playlist router
@@ -145,6 +145,46 @@ playlists.get('/', async c => {
       {
         error: 'internal_error',
         message: 'Failed to retrieve playlists',
+      },
+      500
+    );
+  }
+});
+
+/**
+ * GET /playlists/starred - List all starred playlist IDs
+ * Query params:
+ * - limit: number of items per page (max 100)
+ * - cursor: pagination cursor from previous response
+ * - sort: asc | desc (by created time)
+ */
+playlists.get('/starred', async c => {
+  try {
+    // Parse query parameters
+    const limit = parseInt(c.req.query('limit') || '100');
+    const cursor = c.req.query('cursor') || undefined;
+    const sortParam = (c.req.query('sort') || '').toLowerCase();
+    const sort: 'asc' | 'desc' = sortParam === 'desc' ? 'desc' : 'asc'; // Default to 'asc' when no sort or invalid sort
+
+    // Validate limit
+    if (limit < 1 || limit > 100) {
+      return c.json(
+        {
+          error: 'invalid_limit',
+          message: 'Limit must be between 1 and 100',
+        },
+        400
+      );
+    }
+
+    const result = await listStarredPlaylistIds(c.var.env, { limit, cursor, sort });
+    return c.json(result);
+  } catch (error) {
+    console.error('Error retrieving starred playlist IDs:', error);
+    return c.json(
+      {
+        error: 'internal_error',
+        message: 'Failed to retrieve starred playlist IDs',
       },
       500
     );
