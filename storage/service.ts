@@ -354,6 +354,36 @@ export class StorageService {
   }
 
   /**
+   * Check if nonce has been used (replay protection)
+   */
+  async isNonceUsed(nonce: string): Promise<boolean> {
+    try {
+      const nonceKey = `nonce:${nonce}`;
+      const existing = await this.starStorage.get(nonceKey);
+      return existing !== null;
+    } catch (error) {
+      console.error('Error checking nonce:', error);
+      // If we can't check, fail safe and reject
+      return true;
+    }
+  }
+
+  /**
+   * Store nonce to prevent replay attacks
+   * Nonces expire after 24 hours (we'll use TTL if supported, or manual cleanup)
+   */
+  async storeNonce(nonce: string, timestamp: number): Promise<void> {
+    try {
+      const nonceKey = `nonce:${nonce}`;
+      // Store with timestamp as value for potential cleanup
+      await this.starStorage.put(nonceKey, timestamp.toString());
+    } catch (error) {
+      console.error('Error storing nonce:', error);
+      // Don't throw - nonce storage failure shouldn't block the webhook
+    }
+  }
+
+  /**
    * Update the materialized star status for a playlist
    * Handles creating/removing the flag and created-time indexes
    */

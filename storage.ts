@@ -75,6 +75,22 @@ export async function isPlaylistStarred(playlistId: string, env: Env): Promise<b
 }
 
 /**
+ * Check if nonce has been used (replay protection)
+ */
+export async function isNonceUsed(nonce: string, env: Env): Promise<boolean> {
+  const storageService = createStorageService(env);
+  return await storageService.isNonceUsed(nonce);
+}
+
+/**
+ * Store nonce to prevent replay attacks
+ */
+export async function storeNonce(nonce: string, timestamp: number, env: Env): Promise<void> {
+  const storageService = createStorageService(env);
+  return await storageService.storeNonce(nonce, timestamp);
+}
+
+/**
  * Get a playlist item by ID
  */
 export async function getPlaylistItemById(itemId: string, env: Env): Promise<PlaylistItem | null> {

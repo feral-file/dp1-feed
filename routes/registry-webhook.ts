@@ -2,6 +2,7 @@ import { Hono } from 'hono';
 import type { Env } from '../types';
 import { generateMessageId, queueFactsOperation } from '../queue/processor';
 import type { FactOperationMessage, EndorsementStarMessage } from '../queue/interfaces';
+import { isNonceUsed, storeNonce } from '../storage';
 
 /**
  * Registry webhook payload structure
@@ -133,37 +134,6 @@ async function verifyHMAC(
   return computedSignature === expectedSignature;
 }
 
-/**
- * Check if nonce has been used (replay protection)
- */
-async function isNonceUsed(env: Env, nonce: string): Promise<boolean> {
-  try {
-    // Use a KV namespace for nonces - we'll use playlist storage as a temporary solution
-    // In production, you might want a dedicated KV namespace
-    const nonceKey = `nonce:${nonce}`;
-    const existing = await env.storageProvider.getPlaylistStorage().get(nonceKey);
-    return existing !== null;
-  } catch (error) {
-    console.error('Error checking nonce:', error);
-    // If we can't check, fail safe and reject
-    return true;
-  }
-}
-
-/**
- * Store nonce to prevent replay attacks
- * Nonces expire after 24 hours (we'll use TTL if supported, or manual cleanup)
- */
-async function storeNonce(env: Env, nonce: string, timestamp: number): Promise<void> {
-  try {
-    const nonceKey = `nonce:${nonce}`;
-    // Store with timestamp as value for potential cleanup
-    await env.storageProvider.getPlaylistStorage().put(nonceKey, timestamp.toString());
-  } catch (error) {
-    console.error('Error storing nonce:', error);
-    // Don't throw - nonce storage failure shouldn't block the webhook
-  }
-}
 
 /**
  * POST /registry-webhook
@@ -225,7 +195,7 @@ registryWebhook.post('/registry-webhook', async c => {
     }
 
     // Check nonce (replay protection)
-    if (await isNonceUsed(env, signature.nonce)) {
+    if (await isNonceUsed(signature.nonce, env)) {
       return c.json(
         {
           error: 'nonce_reused',
@@ -272,7 +242,7 @@ registryWebhook.post('/registry-webhook', async c => {
     }
 
     // Store nonce to prevent replay
-    await storeNonce(env, signature.nonce, signature.timestamp);
+    await storeNonce(signature.nonce, signature.timestamp, env);
 
     // Parse payload
     let payload: RegistryWebhookPayload;
