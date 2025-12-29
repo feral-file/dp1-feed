@@ -2,6 +2,7 @@ import type { Env } from '../types';
 import { PlaylistItem, Playlist, Channel } from 'ff-dp1-js';
 import { PlaylistSchema, createItemContentHash } from '../types';
 import type { StorageProvider, KeyValueStorage, PaginatedResult, ListOptions } from './interfaces';
+import { isValidUUID } from '../helper';
 
 // KV Storage Keys - using original prefixes to avoid data migration
 export const STORAGE_KEYS = {
@@ -110,9 +111,7 @@ export class StorageService {
     storage: KeyValueStorage
   ): Promise<string | null> {
     // Check if it's a UUID (if not, assume it's a slug)
-    const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
-      identifier
-    );
+    const isUuid = isValidUUID(identifier);
 
     if (isUuid) {
       return identifier;

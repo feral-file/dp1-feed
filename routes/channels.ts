@@ -20,27 +20,10 @@ import { getServerKeyPair } from '../crypto';
 import { signChannel } from 'ff-dp1-js';
 import { shouldUseAsyncPersistence } from '../rfc7240';
 import { saveChannel } from '../storage';
+import { validateIdentifier } from '../helper';
 
 // Create channels router
 const channels = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();
-
-/**
- * Validate identifier format (UUID or slug)
- */
-function validateIdentifier(identifier: string): {
-  isValid: boolean;
-  isUuid: boolean;
-  isSlug: boolean;
-} {
-  const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(identifier);
-  const isSlug = /^[a-zA-Z0-9-]+$/.test(identifier);
-
-  return {
-    isValid: isUuid || isSlug,
-    isUuid,
-    isSlug,
-  };
-}
 
 /**
  * Validate request body against Zod schema
