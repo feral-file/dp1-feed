@@ -156,6 +156,7 @@ docker compose ps
 ```
 
 **Services:**
+
 - `etcd` - Key-value store (port 2379)
 - `nats` - Message queue (port 4222)
 - `dp1-server` - API server (port 8787)

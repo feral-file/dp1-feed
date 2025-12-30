@@ -30,6 +30,7 @@ npm run test:coverage  # Generate coverage report
 **Coverage targets:** >90% statements, >85% branches
 
 **Test files:**
+
 - `api.test.ts` - API endpoint tests
 - `crypto.test.ts` - Cryptography tests
 - `storage.test.ts` - Storage layer tests
@@ -50,6 +51,7 @@ npm run test:api
 ```
 
 Tests cover:
+
 - Full request/response cycles
 - Authentication flows
 - Data persistence
@@ -86,6 +88,7 @@ npm run benchmark https://your-api.workers.dev stress
 ```
 
 **Performance criteria:**
+
 - GET requests: P95 ≤ 300ms
 - POST/PUT requests: P95 ≤ 450ms
 - Success rate: ≥ 99%
@@ -121,15 +124,17 @@ describe('Playlist Creation', () => {
     const data = {
       dpVersion: '1.0.0',
       id: 'test-playlist',
-      items: [{
-        source: 'https://example.com/art.html',
-        duration: 300,
-        license: 'open'
-      }]
+      items: [
+        {
+          source: 'https://example.com/art.html',
+          duration: 300,
+          license: 'open',
+        },
+      ],
     };
 
     const result = await createPlaylist(data);
-    
+
     expect(result).toHaveProperty('id', 'test-playlist');
     expect(result).toHaveProperty('signature');
     expect(result.items).toHaveLength(1);
@@ -138,7 +143,7 @@ describe('Playlist Creation', () => {
   it('should reject invalid data', async () => {
     const invalid = {
       dpVersion: '1.0.0',
-      items: [{ duration: 'invalid' }] // Should be number
+      items: [{ duration: 'invalid' }], // Should be number
     };
 
     await expect(createPlaylist(invalid)).rejects.toThrow();
@@ -153,17 +158,19 @@ describe('Playlist Creation', () => {
 export const createTestPlaylist = () => ({
   dpVersion: '1.0.0',
   id: `test-playlist-${Date.now()}`,
-  items: [{
-    source: 'https://example.com/art.html',
-    duration: 300,
-    license: 'open'
-  }]
+  items: [
+    {
+      source: 'https://example.com/art.html',
+      duration: 300,
+      license: 'open',
+    },
+  ],
 });
 
 export const createTestChannel = (playlistIds: string[]) => ({
   dpVersion: '1.0.0',
   id: `test-channel-${Date.now()}`,
-  playlists: playlistIds
+  playlists: playlistIds,
 });
 ```
 
@@ -180,6 +187,7 @@ The project includes automated GitHub Actions workflows:
 ```
 
 **Workflows:**
+
 - **test.yaml** - Unit tests and coverage
 - **lint.yaml** - Code quality checks
 - **benchmark.yaml** - Performance tests
@@ -224,9 +232,9 @@ export default defineConfig({
     environment: 'node',
     coverage: {
       provider: 'v8',
-      reporter: ['text', 'json', 'html']
-    }
-  }
+      reporter: ['text', 'json', 'html'],
+    },
+  },
 });
 ```
 

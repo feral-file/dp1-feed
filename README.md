@@ -83,22 +83,22 @@ Generate test keys: `npm run jwt:generate-keys`
 
 ### Endpoints
 
-| Method | Endpoint | Description | Auth |
-|--------|----------|-------------|------|
-| `GET` | `/api/v1` | API info | No |
-| `GET` | `/api/v1/health` | Health check | No |
-| `GET` | `/api/v1/playlists` | List playlists | No |
-| `POST` | `/api/v1/playlists` | Create playlist | Yes |
-| `GET` | `/api/v1/playlists/{id}` | Get playlist | No |
-| `PUT` | `/api/v1/playlists/{id}` | Update playlist | Yes |
-| `DELETE` | `/api/v1/playlists/{id}` | Delete playlist | Yes |
-| `GET` | `/api/v1/channels` | List channels | No |
-| `POST` | `/api/v1/channels` | Create channel | Yes |
-| `GET` | `/api/v1/channels/{id}` | Get channel | No |
-| `PUT` | `/api/v1/channels/{id}` | Update channel | Yes |
-| `DELETE` | `/api/v1/channels/{id}` | Delete channel | Yes |
-| `GET` | `/api/v1/playlist-items` | List items | No |
-| `GET` | `/api/v1/playlist-items/{id}` | Get item | No |
+| Method   | Endpoint                      | Description     | Auth |
+| -------- | ----------------------------- | --------------- | ---- |
+| `GET`    | `/api/v1`                     | API info        | No   |
+| `GET`    | `/api/v1/health`              | Health check    | No   |
+| `GET`    | `/api/v1/playlists`           | List playlists  | No   |
+| `POST`   | `/api/v1/playlists`           | Create playlist | Yes  |
+| `GET`    | `/api/v1/playlists/{id}`      | Get playlist    | No   |
+| `PUT`    | `/api/v1/playlists/{id}`      | Update playlist | Yes  |
+| `DELETE` | `/api/v1/playlists/{id}`      | Delete playlist | Yes  |
+| `GET`    | `/api/v1/channels`            | List channels   | No   |
+| `POST`   | `/api/v1/channels`            | Create channel  | Yes  |
+| `GET`    | `/api/v1/channels/{id}`       | Get channel     | No   |
+| `PUT`    | `/api/v1/channels/{id}`       | Update channel  | Yes  |
+| `DELETE` | `/api/v1/channels/{id}`       | Delete channel  | Yes  |
+| `GET`    | `/api/v1/playlist-items`      | List items      | No   |
+| `GET`    | `/api/v1/playlist-items/{id}` | Get item        | No   |
 
 ### Examples
 
