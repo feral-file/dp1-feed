@@ -2229,10 +2229,6 @@ async function testBulkChannelCreate() {
     console.log('✅ All 100 playlists associated with channel');
     console.log('✅ All returned playlists match input playlists');
 
-    // Wait for queue processing
-    console.log('   ⏳ Waiting 2s for queue processing...');
-    await new Promise(resolve => setTimeout(resolve, 2000));
-
     return true;
   } else {
     console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
@@ -2285,9 +2281,6 @@ async function testBulkChannelUpdate() {
 
   console.log(`✅ Created all 100 new playlists`);
 
-  // Wait for queue processing
-  await new Promise(resolve => setTimeout(resolve, 1000));
-
   const updateData = {
     title: 'Updated Bulk Test Channel - 100 New Playlists',
     summary: 'Updated: Testing bulk write operations with 100 playlists',
@@ -2330,10 +2323,6 @@ async function testBulkChannelUpdate() {
 
     console.log('✅ All 100 playlists updated in channel');
     console.log('✅ All returned playlists match input playlists');
-
-    // Wait for queue processing
-    console.log('   ⏳ Waiting 2s for queue processing...');
-    await new Promise(resolve => setTimeout(resolve, 2000));
 
     return true;
   } else {
@@ -2476,41 +2465,41 @@ async function runTests() {
   console.log('🚀 Starting DP-1 Feed Operator API Tests (UUID + Slug Support + Bulk Write)\n');
 
   const tests = [
-    // { name: 'Empty Listings', fn: testEmptyListing },
-    // { name: 'List Playlists', fn: testListPlaylists },
-    // { name: 'Pagination (Real Data Behavior)', fn: testPagination },
-    // { name: 'Create Playlist (Data Integrity)', fn: testCreatePlaylist },
-    // { name: 'Get Playlist by UUID', fn: testGetPlaylistByUUID },
-    // { name: 'Get Playlist by Slug', fn: testGetPlaylistBySlug },
-    // { name: 'Update Playlist (Data Integrity)', fn: testUpdatePlaylist },
-    // { name: 'Delete Playlist', fn: testDeletePlaylist },
-    // { name: 'Delete Playlist by Slug', fn: testDeletePlaylistBySlug },
-    // { name: 'Delete Non-Existent Playlist', fn: testDeleteNonExistentPlaylist },
-    // { name: 'Create Channel (New Fields Integrity)', fn: testCreateChannel },
-    // { name: 'List Channels', fn: testListChannels },
-    // { name: 'Get Channel by UUID', fn: testGetChannelByUUID },
-    // { name: 'Get Channel by Slug', fn: testGetChannelBySlug },
-    // { name: 'Data Consistency Across Endpoints', fn: testDataConsistencyAcrossEndpoints },
-    // { name: 'Channels Filtering', fn: testChannelFiltering },
-    // { name: 'Get Playlist Item by ID', fn: testPlaylistItemById },
-    // { name: 'List Playlist Items by Group', fn: testPlaylistItemsByGroup },
-    // {
-    //   name: 'Playlist Items Does Not Required Parameter',
-    //   fn: testPlaylistItemsDoesNotRequiredParameter,
-    // },
-    // { name: 'Playlist Items Invalid IDs', fn: testPlaylistItemsInvalidIds },
-    // { name: 'Playlist Items Pagination', fn: testPlaylistItemsPagination },
-    // { name: 'Playlist Items Update via Playlist', fn: testPlaylistItemsUpdate },
-    // { name: 'Identifier Validation (400/404)', fn: testInvalidIdentifiers },
-    // { name: 'Authentication Failure', fn: testAuthenticationFailure },
-    // { name: 'JWT Authentication', fn: testJwtAuthentication },
-    // { name: 'Invalid JWT Authentication', fn: testInvalidJwtAuthentication },
-    // { name: 'Sorting Setup', fn: testSortingSetup },
-    // { name: 'Playlist Sorting (Ascending)', fn: testPlaylistSortingAscending },
-    // { name: 'Playlist Sorting (Descending)', fn: testPlaylistSortingDescending },
-    // { name: 'Playlist Sorting (Default)', fn: testPlaylistSortingDefault },
-    // { name: 'Channels Sorting', fn: testChannelSorting },
-    // { name: 'Playlist Item Sorting', fn: testPlaylistItemSorting },
+    { name: 'Empty Listings', fn: testEmptyListing },
+    { name: 'List Playlists', fn: testListPlaylists },
+    { name: 'Pagination (Real Data Behavior)', fn: testPagination },
+    { name: 'Create Playlist (Data Integrity)', fn: testCreatePlaylist },
+    { name: 'Get Playlist by UUID', fn: testGetPlaylistByUUID },
+    { name: 'Get Playlist by Slug', fn: testGetPlaylistBySlug },
+    { name: 'Update Playlist (Data Integrity)', fn: testUpdatePlaylist },
+    { name: 'Delete Playlist', fn: testDeletePlaylist },
+    { name: 'Delete Playlist by Slug', fn: testDeletePlaylistBySlug },
+    { name: 'Delete Non-Existent Playlist', fn: testDeleteNonExistentPlaylist },
+    { name: 'Create Channel (New Fields Integrity)', fn: testCreateChannel },
+    { name: 'List Channels', fn: testListChannels },
+    { name: 'Get Channel by UUID', fn: testGetChannelByUUID },
+    { name: 'Get Channel by Slug', fn: testGetChannelBySlug },
+    { name: 'Data Consistency Across Endpoints', fn: testDataConsistencyAcrossEndpoints },
+    { name: 'Channels Filtering', fn: testChannelFiltering },
+    { name: 'Get Playlist Item by ID', fn: testPlaylistItemById },
+    { name: 'List Playlist Items by Group', fn: testPlaylistItemsByGroup },
+    {
+      name: 'Playlist Items Does Not Required Parameter',
+      fn: testPlaylistItemsDoesNotRequiredParameter,
+    },
+    { name: 'Playlist Items Invalid IDs', fn: testPlaylistItemsInvalidIds },
+    { name: 'Playlist Items Pagination', fn: testPlaylistItemsPagination },
+    { name: 'Playlist Items Update via Playlist', fn: testPlaylistItemsUpdate },
+    { name: 'Identifier Validation (400/404)', fn: testInvalidIdentifiers },
+    { name: 'Authentication Failure', fn: testAuthenticationFailure },
+    { name: 'JWT Authentication', fn: testJwtAuthentication },
+    { name: 'Invalid JWT Authentication', fn: testInvalidJwtAuthentication },
+    { name: 'Sorting Setup', fn: testSortingSetup },
+    { name: 'Playlist Sorting (Ascending)', fn: testPlaylistSortingAscending },
+    { name: 'Playlist Sorting (Descending)', fn: testPlaylistSortingDescending },
+    { name: 'Playlist Sorting (Default)', fn: testPlaylistSortingDefault },
+    { name: 'Channels Sorting', fn: testChannelSorting },
+    { name: 'Playlist Item Sorting', fn: testPlaylistItemSorting },
     // Bulk write tests
     { name: 'Bulk Write: Create Playlist (1000 items)', fn: testBulkPlaylistCreate },
     { name: 'Bulk Write: Update Playlist (1000 items)', fn: testBulkPlaylistUpdate },
