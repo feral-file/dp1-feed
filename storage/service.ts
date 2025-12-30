@@ -29,6 +29,174 @@ export const STORAGE_KEYS = {
 } as const;
 
 /**
+ * Helper class to collect and execute bulk storage operations with retry logic
+ */
+class BulkOperationCollector {
+  private putOps: Map<KeyValueStorage, Array<{ key: string; value: string }>> = new Map();
+  private deleteOps: Map<KeyValueStorage, string[]> = new Map();
+  private readonly maxRetries: number;
+  private readonly baseDelayMs: number;
+
+  constructor(maxRetries: number = 3, baseDelayMs: number = 200) {
+    this.maxRetries = maxRetries;
+    this.baseDelayMs = baseDelayMs;
+  }
+
+  addPut(storage: KeyValueStorage, key: string, value: string): void {
+    if (!this.putOps.has(storage)) {
+      this.putOps.set(storage, []);
+    }
+    this.putOps.get(storage)!.push({ key, value });
+  }
+
+  addDelete(storage: KeyValueStorage, key: string): void {
+    if (!this.deleteOps.has(storage)) {
+      this.deleteOps.set(storage, []);
+    }
+    this.deleteOps.get(storage)!.push(key);
+  }
+
+  /**
+   * Execute all bulk operations with retry logic and exponential backoff
+   * Throws error if operations fail after all retries
+   */
+  async execute(): Promise<void> {
+    // Execute bulk deletes with retries
+    for (const [storage, keys] of this.deleteOps.entries()) {
+      if (keys.length > 0) {
+        await this.executeDeleteWithRetry(storage, keys);
+      }
+    }
+
+    // Execute bulk puts with retries
+    for (const [storage, entries] of this.putOps.entries()) {
+      if (entries.length > 0) {
+        await this.executePutWithRetry(storage, entries);
+      }
+    }
+  }
+
+  /**
+   * Sleep for exponential backoff
+   */
+  private async sleep(attempt: number): Promise<void> {
+    const delayMs = this.baseDelayMs * Math.pow(2, attempt - 1);
+    await new Promise(resolve => globalThis.setTimeout(resolve, delayMs));
+  }
+
+  /**
+   * Execute putMultiple with retry logic and exponential backoff
+   * Always retries on any error (API errors or unsuccessful keys)
+   */
+  private async executePutWithRetry(
+    storage: KeyValueStorage,
+    entries: Array<{ key: string; value: string }>
+  ): Promise<void> {
+    let remainingEntries = entries;
+    let attempt = 0;
+    let lastError: Error | null = null;
+
+    while (attempt < this.maxRetries && remainingEntries.length > 0) {
+      attempt++;
+
+      try {
+        // Call the bulk API
+        const unsuccessfulKeys = await storage.putMultiple(remainingEntries);
+
+        if (unsuccessfulKeys.length === 0) {
+          // All successful
+          return;
+        }
+
+        // Some keys failed, prepare for retry
+        const unsuccessfulSet = new Set(unsuccessfulKeys);
+        remainingEntries = remainingEntries.filter(entry => unsuccessfulSet.has(entry.key));
+
+        if (attempt < this.maxRetries && remainingEntries.length > 0) {
+          console.warn(
+            `Bulk put attempt ${attempt}/${this.maxRetries}: ${unsuccessfulKeys.length} keys unsuccessful, retrying after backoff...`
+          );
+          await this.sleep(attempt);
+        } else if (remainingEntries.length > 0) {
+          // Final attempt failed
+          throw new Error(
+            `Bulk put failed after ${this.maxRetries} attempts: ${remainingEntries.length} keys still unsuccessful`
+          );
+        }
+      } catch (error) {
+        lastError = error instanceof Error ? error : new Error(String(error));
+        console.error(`Bulk put attempt ${attempt}/${this.maxRetries} failed:`, lastError.message);
+
+        if (attempt < this.maxRetries) {
+          console.warn(`Retrying after exponential backoff...`);
+          await this.sleep(attempt);
+        } else {
+          // All retries exhausted
+          throw new Error(
+            `Bulk put failed after ${this.maxRetries} attempts: ${lastError.message}`
+          );
+        }
+      }
+    }
+  }
+
+  /**
+   * Execute deleteMultiple with retry logic and exponential backoff
+   * Always retries on any error (API errors or unsuccessful keys)
+   */
+  private async executeDeleteWithRetry(storage: KeyValueStorage, keys: string[]): Promise<void> {
+    let remainingKeys = keys;
+    let attempt = 0;
+    let lastError: Error | null = null;
+
+    while (attempt < this.maxRetries && remainingKeys.length > 0) {
+      attempt++;
+
+      try {
+        // Call the bulk API
+        const unsuccessfulKeys = await storage.deleteMultiple(remainingKeys);
+
+        if (unsuccessfulKeys.length === 0) {
+          // All successful
+          return;
+        }
+
+        // Some keys failed, prepare for retry
+        remainingKeys = unsuccessfulKeys;
+
+        if (attempt < this.maxRetries && remainingKeys.length > 0) {
+          console.warn(
+            `Bulk delete attempt ${attempt}/${this.maxRetries}: ${unsuccessfulKeys.length} keys unsuccessful, retrying after backoff...`
+          );
+          await this.sleep(attempt);
+        } else if (remainingKeys.length > 0) {
+          // Final attempt failed
+          throw new Error(
+            `Bulk delete failed after ${this.maxRetries} attempts: ${remainingKeys.length} keys still unsuccessful`
+          );
+        }
+      } catch (error) {
+        lastError = error instanceof Error ? error : new Error(String(error));
+        console.error(
+          `Bulk delete attempt ${attempt}/${this.maxRetries} failed:`,
+          lastError.message
+        );
+
+        if (attempt < this.maxRetries) {
+          console.warn(`Retrying after exponential backoff...`);
+          await this.sleep(attempt);
+        } else {
+          // All retries exhausted
+          throw new Error(
+            `Bulk delete failed after ${this.maxRetries} attempts: ${lastError.message}`
+          );
+        }
+      }
+    }
+  }
+}
+
+/**
  * Storage service that provides high-level operations using storage abstractions
  */
 export class StorageService {
@@ -295,105 +463,107 @@ export class StorageService {
   }
 
   /**
-   * Create KV operations to delete a playlist item and all its indexes
+   * Add item deletion operations to bulk collector
    */
-  private createItemDeletionOperations(item: PlaylistItem, channelIds: string[]): Promise<void>[] {
-    const operations: Promise<void>[] = [];
-
+  private addItemDeletionOperations(
+    collector: BulkOperationCollector,
+    item: PlaylistItem,
+    channelIds: string[]
+  ): void {
     // Delete main item record
-    operations.push(
-      this.playlistItemStorage.delete(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`)
+    collector.addDelete(
+      this.playlistItemStorage,
+      `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`
     );
 
     // Delete global created-time indexes
     if (item.created) {
       const ts = this.toSortableTimestamps(item.created);
-      operations.push(
-        this.playlistItemStorage.delete(
-          `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`
-        ),
-        this.playlistItemStorage.delete(
-          `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${ts.desc}:${item.id}`
-        )
+      collector.addDelete(
+        this.playlistItemStorage,
+        `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`
+      );
+      collector.addDelete(
+        this.playlistItemStorage,
+        `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${ts.desc}:${item.id}`
       );
     }
 
     // Delete channel associations
     for (const channelId of channelIds) {
-      operations.push(
-        this.playlistItemStorage.delete(
-          `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channelId}:${item.id}`
-        )
+      collector.addDelete(
+        this.playlistItemStorage,
+        `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channelId}:${item.id}`
       );
 
       if (item.created) {
         const ts = this.toSortableTimestamps(item.created);
-        operations.push(
-          this.playlistItemStorage.delete(
-            `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channelId}:${ts.asc}:${item.id}`
-          ),
-          this.playlistItemStorage.delete(
-            `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channelId}:${ts.desc}:${item.id}`
-          )
+        collector.addDelete(
+          this.playlistItemStorage,
+          `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channelId}:${ts.asc}:${item.id}`
+        );
+        collector.addDelete(
+          this.playlistItemStorage,
+          `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channelId}:${ts.desc}:${item.id}`
         );
       }
     }
-
-    return operations;
   }
 
   /**
-   * Create KV operations to insert a playlist item and all its indexes
+   * Add item insertion operations to bulk collector
    */
-  private createItemInsertionOperations(item: PlaylistItem, channelIds: string[]): Promise<void>[] {
-    const operations: Promise<void>[] = [];
+  private addItemInsertionOperations(
+    collector: BulkOperationCollector,
+    item: PlaylistItem,
+    channelIds: string[]
+  ): void {
     const itemData = JSON.stringify(item);
 
     // Insert main item record
-    operations.push(
-      this.playlistItemStorage.put(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`, itemData)
+    collector.addPut(
+      this.playlistItemStorage,
+      `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`,
+      itemData
     );
 
     // Insert global created-time indexes
     if (item.created) {
       const ts = this.toSortableTimestamps(item.created);
-      operations.push(
-        this.playlistItemStorage.put(
-          `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`,
-          item.id
-        ),
-        this.playlistItemStorage.put(
-          `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${ts.desc}:${item.id}`,
-          item.id
-        )
+      collector.addPut(
+        this.playlistItemStorage,
+        `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`,
+        item.id
+      );
+      collector.addPut(
+        this.playlistItemStorage,
+        `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${ts.desc}:${item.id}`,
+        item.id
       );
     }
 
     // Insert channel associations
     for (const channelId of channelIds) {
-      operations.push(
-        this.playlistItemStorage.put(
-          `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channelId}:${item.id}`,
-          item.id
-        )
+      collector.addPut(
+        this.playlistItemStorage,
+        `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channelId}:${item.id}`,
+        item.id
       );
 
       if (item.created) {
         const ts = this.toSortableTimestamps(item.created);
-        operations.push(
-          this.playlistItemStorage.put(
-            `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channelId}:${ts.asc}:${item.id}`,
-            item.id
-          ),
-          this.playlistItemStorage.put(
-            `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channelId}:${ts.desc}:${item.id}`,
-            item.id
-          )
+        collector.addPut(
+          this.playlistItemStorage,
+          `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channelId}:${ts.asc}:${item.id}`,
+          item.id
+        );
+        collector.addPut(
+          this.playlistItemStorage,
+          `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channelId}:${ts.desc}:${item.id}`,
+          item.id
         );
       }
     }
-
-    return operations;
   }
 
   /**
@@ -433,8 +603,7 @@ export class StorageService {
    * Save a playlist with multiple indexes for efficient retrieval
    */
   async savePlaylist(playlist: Playlist, update: boolean = false): Promise<boolean> {
-    // Prepare all operations in a single batch
-    const operations: Promise<void>[] = [];
+    const collector = new BulkOperationCollector();
     const playlistData = JSON.stringify(playlist);
     let existingPlaylist: Playlist | null = null;
 
@@ -446,23 +615,29 @@ export class StorageService {
     }
 
     // Core playlist operations
-    operations.push(
-      this.playlistStorage.put(`${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${playlist.id}`, playlistData),
-      this.playlistStorage.put(`${STORAGE_KEYS.PLAYLIST_SLUG_PREFIX}${playlist.slug}`, playlist.id)
+    collector.addPut(
+      this.playlistStorage,
+      `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${playlist.id}`,
+      playlistData
+    );
+    collector.addPut(
+      this.playlistStorage,
+      `${STORAGE_KEYS.PLAYLIST_SLUG_PREFIX}${playlist.slug}`,
+      playlist.id
     );
 
     // Created-time indexes for playlists
     if (playlist.created) {
       const ts = this.toSortableTimestamps(playlist.created);
-      operations.push(
-        this.playlistStorage.put(
-          `${STORAGE_KEYS.PLAYLIST_CREATED_ASC_PREFIX}${ts.asc}:${playlist.id}`,
-          playlist.id
-        ),
-        this.playlistStorage.put(
-          `${STORAGE_KEYS.PLAYLIST_CREATED_DESC_PREFIX}${ts.desc}:${playlist.id}`,
-          playlist.id
-        )
+      collector.addPut(
+        this.playlistStorage,
+        `${STORAGE_KEYS.PLAYLIST_CREATED_ASC_PREFIX}${ts.asc}:${playlist.id}`,
+        playlist.id
+      );
+      collector.addPut(
+        this.playlistStorage,
+        `${STORAGE_KEYS.PLAYLIST_CREATED_DESC_PREFIX}${ts.desc}:${playlist.id}`,
+        playlist.id
       );
     }
 
@@ -480,12 +655,12 @@ export class StorageService {
 
       // Process deletions
       for (const deletedItem of itemChanges.deleted) {
-        operations.push(...this.createItemDeletionOperations(deletedItem, channelIds));
+        this.addItemDeletionOperations(collector, deletedItem, channelIds);
       }
 
       // Process additions
       for (const newItem of itemChanges.added) {
-        operations.push(...this.createItemInsertionOperations(newItem, channelIds));
+        this.addItemInsertionOperations(collector, newItem, channelIds);
       }
 
       // Note: unchanged items require no KV operations - they're skipped entirely
@@ -493,12 +668,12 @@ export class StorageService {
       // Initial creation - add all items
       for (const item of playlist.items || []) {
         const channelIds = await this.getChannelsForPlaylist(playlist.id);
-        operations.push(...this.createItemInsertionOperations(item, channelIds));
+        this.addItemInsertionOperations(collector, item, channelIds);
       }
     }
 
-    // Execute all operations in parallel
-    await Promise.all(operations);
+    // Execute all bulk operations (throws on failure after retries)
+    await collector.execute();
 
     return true;
   }
@@ -652,25 +827,33 @@ export class StorageService {
 
     // Core channel operations
     const channelData = JSON.stringify(channel);
-    const operations = [
-      // Main record by ID
-      this.channelStorage.put(`${STORAGE_KEYS.CHANNEL_ID_PREFIX}${channel.id}`, channelData),
-      // Index by slug
-      this.channelStorage.put(`${STORAGE_KEYS.CHANNEL_SLUG_PREFIX}${channel.slug}`, channel.id),
-    ];
+    const collector = new BulkOperationCollector();
+
+    // Main record by ID
+    collector.addPut(
+      this.channelStorage,
+      `${STORAGE_KEYS.CHANNEL_ID_PREFIX}${channel.id}`,
+      channelData
+    );
+    // Index by slug
+    collector.addPut(
+      this.channelStorage,
+      `${STORAGE_KEYS.CHANNEL_SLUG_PREFIX}${channel.slug}`,
+      channel.id
+    );
 
     // Created-time indexes for channels
     if (channel.created) {
       const ts = this.toSortableTimestamps(channel.created);
-      operations.push(
-        this.channelStorage.put(
-          `${STORAGE_KEYS.CHANNEL_CREATED_ASC_PREFIX}${ts.asc}:${channel.id}`,
-          channel.id
-        ),
-        this.channelStorage.put(
-          `${STORAGE_KEYS.CHANNEL_CREATED_DESC_PREFIX}${ts.desc}:${channel.id}`,
-          channel.id
-        )
+      collector.addPut(
+        this.channelStorage,
+        `${STORAGE_KEYS.CHANNEL_CREATED_ASC_PREFIX}${ts.asc}:${channel.id}`,
+        channel.id
+      );
+      collector.addPut(
+        this.channelStorage,
+        `${STORAGE_KEYS.CHANNEL_CREATED_DESC_PREFIX}${ts.desc}:${channel.id}`,
+        channel.id
       );
     }
 
@@ -692,26 +875,24 @@ export class StorageService {
 
       // Clean up the old bidirectional indexes
       for (const playlistId of playlistIdsToUnlink) {
-        operations.push(
-          this.playlistStorage.delete(
-            `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${playlistId}:${channel.id}`
-          )
+        collector.addDelete(
+          this.playlistStorage,
+          `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${playlistId}:${channel.id}`
         );
-        operations.push(
-          this.playlistStorage.delete(
-            `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${channel.id}:${playlistId}`
-          )
+        collector.addDelete(
+          this.playlistStorage,
+          `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${channel.id}:${playlistId}`
         );
         // Also remove created-time channel playlist indexes
         if (channel.created) {
           const ts = this.toSortableTimestamps(channel.created);
-          operations.push(
-            this.playlistStorage.delete(
-              `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${playlistId}`
-            ),
-            this.playlistStorage.delete(
-              `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${playlistId}`
-            )
+          collector.addDelete(
+            this.playlistStorage,
+            `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${playlistId}`
+          );
+          collector.addDelete(
+            this.playlistStorage,
+            `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${playlistId}`
           );
         }
       }
@@ -725,20 +906,19 @@ export class StorageService {
       );
       for (const playlist of playlists) {
         for (const item of playlist.items || []) {
-          operations.push(
-            this.playlistItemStorage.delete(
-              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channel.id}:${item.id}`
-            )
+          collector.addDelete(
+            this.playlistItemStorage,
+            `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channel.id}:${item.id}`
           );
           if (playlist.created) {
             const ts = this.toSortableTimestamps(playlist.created);
-            operations.push(
-              this.playlistItemStorage.delete(
-                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${item.id}`
-              ),
-              this.playlistItemStorage.delete(
-                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${item.id}`
-              )
+            collector.addDelete(
+              this.playlistItemStorage,
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${item.id}`
+            );
+            collector.addDelete(
+              this.playlistItemStorage,
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${item.id}`
             );
           }
         }
@@ -749,56 +929,56 @@ export class StorageService {
     for (const validPlaylist of validatedPlaylists) {
       // If it's an external playlist with data, store it
       if (validPlaylist.external) {
-        operations.push(
-          this.playlistStorage.put(
-            `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${validPlaylist.id}`,
-            JSON.stringify(validPlaylist.playlist)
-          ),
-          this.playlistStorage.put(
-            `${STORAGE_KEYS.PLAYLIST_SLUG_PREFIX}${validPlaylist.playlist.slug}`,
-            validPlaylist.id
-          )
+        collector.addPut(
+          this.playlistStorage,
+          `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${validPlaylist.id}`,
+          JSON.stringify(validPlaylist.playlist)
+        );
+        collector.addPut(
+          this.playlistStorage,
+          `${STORAGE_KEYS.PLAYLIST_SLUG_PREFIX}${validPlaylist.playlist.slug}`,
+          validPlaylist.id
         );
         // Ensure playlist created-time indexes exist
         if (validPlaylist.playlist.created) {
           const ts = this.toSortableTimestamps(validPlaylist.playlist.created);
-          operations.push(
-            this.playlistStorage.put(
-              `${STORAGE_KEYS.PLAYLIST_CREATED_ASC_PREFIX}${ts.asc}:${validPlaylist.id}`,
-              validPlaylist.id
-            ),
-            this.playlistStorage.put(
-              `${STORAGE_KEYS.PLAYLIST_CREATED_DESC_PREFIX}${ts.desc}:${validPlaylist.id}`,
-              validPlaylist.id
-            )
+          collector.addPut(
+            this.playlistStorage,
+            `${STORAGE_KEYS.PLAYLIST_CREATED_ASC_PREFIX}${ts.asc}:${validPlaylist.id}`,
+            validPlaylist.id
+          );
+          collector.addPut(
+            this.playlistStorage,
+            `${STORAGE_KEYS.PLAYLIST_CREATED_DESC_PREFIX}${ts.desc}:${validPlaylist.id}`,
+            validPlaylist.id
           );
         }
       }
 
       // Add bidirectional indexes for efficient lookups
-      operations.push(
-        this.playlistStorage.put(
-          `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${validPlaylist.id}:${channel.id}`,
-          channel.id
-        ),
-        this.playlistStorage.put(
-          `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${channel.id}:${validPlaylist.id}`,
-          validPlaylist.id
-        )
+      collector.addPut(
+        this.playlistStorage,
+        `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${validPlaylist.id}:${channel.id}`,
+        channel.id
+      );
+      collector.addPut(
+        this.playlistStorage,
+        `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${channel.id}:${validPlaylist.id}`,
+        validPlaylist.id
       );
 
       // Created-time channel->playlists indexes (based on playlist created time)
       if (validPlaylist.playlist.created) {
         const ts = this.toSortableTimestamps(validPlaylist.playlist.created);
-        operations.push(
-          this.playlistStorage.put(
-            `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${validPlaylist.id}`,
-            validPlaylist.id
-          ),
-          this.playlistStorage.put(
-            `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${validPlaylist.id}`,
-            validPlaylist.id
-          )
+        collector.addPut(
+          this.playlistStorage,
+          `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${validPlaylist.id}`,
+          validPlaylist.id
+        );
+        collector.addPut(
+          this.playlistStorage,
+          `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${validPlaylist.id}`,
+          validPlaylist.id
         );
       }
     }
@@ -817,56 +997,56 @@ export class StorageService {
             const itemData = JSON.stringify(item);
 
             // Main record by playlist item ID
-            operations.push(
-              this.playlistItemStorage.put(
-                `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`,
-                itemData
-              )
+            collector.addPut(
+              this.playlistItemStorage,
+              `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`,
+              itemData
             );
 
             // Global created-time indexes for items using item's created
             if (item.created) {
               const ts = this.toSortableTimestamps(item.created);
-              operations.push(
-                this.playlistItemStorage.put(
-                  `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`,
-                  item.id
-                ),
-                this.playlistItemStorage.put(
-                  `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${ts.desc}:${item.id}`,
-                  item.id
-                )
+              collector.addPut(
+                this.playlistItemStorage,
+                `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`,
+                item.id
+              );
+              collector.addPut(
+                this.playlistItemStorage,
+                `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${ts.desc}:${item.id}`,
+                item.id
               );
             }
           }
 
           // Create channel-to-playlist-item indexes for ALL playlists (local and external)
-          operations.push(
-            this.playlistItemStorage.put(
-              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channel.id}:${item.id}`,
-              item.id
-            )
+          collector.addPut(
+            this.playlistItemStorage,
+            `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channel.id}:${item.id}`,
+            item.id
           );
 
           // Secondary index by channel ID + created time using item's created
           if (item.created) {
             const ts = this.toSortableTimestamps(item.created);
-            operations.push(
-              this.playlistItemStorage.put(
-                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${item.id}`,
-                item.id
-              ),
-              this.playlistItemStorage.put(
-                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${item.id}`,
-                item.id
-              )
+            collector.addPut(
+              this.playlistItemStorage,
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${item.id}`,
+              item.id
+            );
+            collector.addPut(
+              this.playlistItemStorage,
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${item.id}`,
+              item.id
             );
           }
         }
       }
     }
 
-    await Promise.all(operations);
+    // Execute all bulk operations (throws on failure after retries)
+    await collector.execute();
+
     return true;
   }
 
@@ -1060,7 +1240,7 @@ export class StorageService {
       throw new Error(`Playlist ${playlistId} not found`);
     }
 
-    const operations: Promise<void>[] = [];
+    const collector = new BulkOperationCollector();
 
     // 1. Get all channels that reference this playlist
     const channelIds = await this.getChannelsForPlaylist(playlist.id);
@@ -1092,100 +1272,62 @@ export class StorageService {
 
     // 3. Delete all playlist items and their indexes
     for (const item of playlist.items || []) {
-      // Delete main playlist item record
-      operations.push(
-        this.playlistItemStorage.delete(`${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${item.id}`)
-      );
-
-      // Delete global created-time indexes for items
-      if (item.created) {
-        const ts = this.toSortableTimestamps(item.created);
-        operations.push(
-          this.playlistItemStorage.delete(
-            `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${ts.asc}:${item.id}`
-          ),
-          this.playlistItemStorage.delete(
-            `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${ts.desc}:${item.id}`
-          )
-        );
-      }
-
-      // Delete channel-specific playlist item indexes
-      for (const channelId of channelIds) {
-        operations.push(
-          this.playlistItemStorage.delete(
-            `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channelId}:${item.id}`
-          )
-        );
-
-        // Delete channel-created indexes for items
-        if (item.created) {
-          const ts = this.toSortableTimestamps(item.created);
-          operations.push(
-            this.playlistItemStorage.delete(
-              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channelId}:${ts.asc}:${item.id}`
-            ),
-            this.playlistItemStorage.delete(
-              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channelId}:${ts.desc}:${item.id}`
-            )
-          );
-        }
-      }
+      // Use helper method to add item deletion operations
+      this.addItemDeletionOperations(collector, item, channelIds);
     }
 
     // 4. Delete bidirectional channel-playlist associations
     for (const channelId of channelIds) {
       // Delete playlist-to-channel associations
-      operations.push(
-        this.playlistStorage.delete(
-          `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${playlist.id}:${channelId}`
-        )
+      collector.addDelete(
+        this.playlistStorage,
+        `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${playlist.id}:${channelId}`
       );
 
       // Delete channel-to-playlist associations
-      operations.push(
-        this.playlistStorage.delete(
-          `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${channelId}:${playlist.id}`
-        )
+      collector.addDelete(
+        this.playlistStorage,
+        `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${channelId}:${playlist.id}`
       );
 
       // Delete created-time channel-playlist indexes
       if (playlist.created) {
         const ts = this.toSortableTimestamps(playlist.created);
-        operations.push(
-          this.playlistStorage.delete(
-            `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_ASC_PREFIX}${channelId}:${ts.asc}:${playlist.id}`
-          ),
-          this.playlistStorage.delete(
-            `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_DESC_PREFIX}${channelId}:${ts.desc}:${playlist.id}`
-          )
+        collector.addDelete(
+          this.playlistStorage,
+          `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_ASC_PREFIX}${channelId}:${ts.asc}:${playlist.id}`
+        );
+        collector.addDelete(
+          this.playlistStorage,
+          `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_DESC_PREFIX}${channelId}:${ts.desc}:${playlist.id}`
         );
       }
     }
 
     // 5. Delete the playlist itself and its indexes
-    operations.push(
-      // Main playlist record
-      this.playlistStorage.delete(`${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${playlist.id}`),
-      // Slug index
-      this.playlistStorage.delete(`${STORAGE_KEYS.PLAYLIST_SLUG_PREFIX}${playlist.slug}`)
+    // Main playlist record
+    collector.addDelete(this.playlistStorage, `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${playlist.id}`);
+    // Slug index
+    collector.addDelete(
+      this.playlistStorage,
+      `${STORAGE_KEYS.PLAYLIST_SLUG_PREFIX}${playlist.slug}`
     );
 
     // Delete created-time indexes for playlist
     if (playlist.created) {
       const ts = this.toSortableTimestamps(playlist.created);
-      operations.push(
-        this.playlistStorage.delete(
-          `${STORAGE_KEYS.PLAYLIST_CREATED_ASC_PREFIX}${ts.asc}:${playlist.id}`
-        ),
-        this.playlistStorage.delete(
-          `${STORAGE_KEYS.PLAYLIST_CREATED_DESC_PREFIX}${ts.desc}:${playlist.id}`
-        )
+      collector.addDelete(
+        this.playlistStorage,
+        `${STORAGE_KEYS.PLAYLIST_CREATED_ASC_PREFIX}${ts.asc}:${playlist.id}`
+      );
+      collector.addDelete(
+        this.playlistStorage,
+        `${STORAGE_KEYS.PLAYLIST_CREATED_DESC_PREFIX}${ts.desc}:${playlist.id}`
       );
     }
 
-    // Execute all operations in parallel
-    await Promise.all(operations);
+    // Execute all bulk operations (throws on failure after retries)
+    await collector.execute();
 
     return true;
   }
@@ -1206,7 +1348,7 @@ export class StorageService {
       throw new Error(`Channel ${channelId} not found`);
     }
 
-    const operations: Promise<void>[] = [];
+    const collector = new BulkOperationCollector();
 
     // 1. Get all playlists that belong to this channel
     const playlistIds: string[] = [];
@@ -1237,7 +1379,7 @@ export class StorageService {
       const itemId = key.name.split(':').pop();
       if (itemId) {
         // Delete the channel-specific item index
-        operations.push(this.playlistItemStorage.delete(key.name));
+        collector.addDelete(this.playlistItemStorage, key.name);
 
         // Delete channel-created indexes for this item
         // We need to get the item to check its created timestamp
@@ -1248,13 +1390,13 @@ export class StorageService {
           const item = JSON.parse(itemData) as PlaylistItem;
           if (item.created) {
             const ts = this.toSortableTimestamps(item.created);
-            operations.push(
-              this.playlistItemStorage.delete(
-                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${itemId}`
-              ),
-              this.playlistItemStorage.delete(
-                `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${itemId}`
-              )
+            collector.addDelete(
+              this.playlistItemStorage,
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${itemId}`
+            );
+            collector.addDelete(
+              this.playlistItemStorage,
+              `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${itemId}`
             );
           }
         }
@@ -1264,17 +1406,15 @@ export class StorageService {
     // 3. Delete bidirectional channel-playlist associations
     for (const playlistId of playlistIds) {
       // Delete playlist-to-channel associations
-      operations.push(
-        this.playlistStorage.delete(
-          `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${playlistId}:${channel.id}`
-        )
+      collector.addDelete(
+        this.playlistStorage,
+        `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${playlistId}:${channel.id}`
       );
 
       // Delete channel-to-playlist associations
-      operations.push(
-        this.playlistStorage.delete(
-          `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${channel.id}:${playlistId}`
-        )
+      collector.addDelete(
+        this.playlistStorage,
+        `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${channel.id}:${playlistId}`
       );
 
       // We need to get the playlist to check its created timestamp
@@ -1285,41 +1425,39 @@ export class StorageService {
         const playlist = JSON.parse(playlistData) as Playlist;
         if (playlist.created) {
           const ts = this.toSortableTimestamps(playlist.created);
-          operations.push(
-            this.playlistStorage.delete(
-              `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${playlistId}`
-            ),
-            this.playlistStorage.delete(
-              `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${playlistId}`
-            )
+          collector.addDelete(
+            this.playlistStorage,
+            `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${playlistId}`
+          );
+          collector.addDelete(
+            this.playlistStorage,
+            `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_CREATED_DESC_PREFIX}${channel.id}:${ts.desc}:${playlistId}`
           );
         }
       }
     }
 
     // 4. Delete the channel itself and its indexes
-    operations.push(
-      // Main channel record
-      this.channelStorage.delete(`${STORAGE_KEYS.CHANNEL_ID_PREFIX}${channel.id}`),
-      // Slug index
-      this.channelStorage.delete(`${STORAGE_KEYS.CHANNEL_SLUG_PREFIX}${channel.slug}`)
-    );
+    // Main channel record
+    collector.addDelete(this.channelStorage, `${STORAGE_KEYS.CHANNEL_ID_PREFIX}${channel.id}`);
+    // Slug index
+    collector.addDelete(this.channelStorage, `${STORAGE_KEYS.CHANNEL_SLUG_PREFIX}${channel.slug}`);
 
     // Delete created-time indexes for channel
     if (channel.created) {
       const ts = this.toSortableTimestamps(channel.created);
-      operations.push(
-        this.channelStorage.delete(
-          `${STORAGE_KEYS.CHANNEL_CREATED_ASC_PREFIX}${ts.asc}:${channel.id}`
-        ),
-        this.channelStorage.delete(
-          `${STORAGE_KEYS.CHANNEL_CREATED_DESC_PREFIX}${ts.desc}:${channel.id}`
-        )
+      collector.addDelete(
+        this.channelStorage,
+        `${STORAGE_KEYS.CHANNEL_CREATED_ASC_PREFIX}${ts.asc}:${channel.id}`
+      );
+      collector.addDelete(
+        this.channelStorage,
+        `${STORAGE_KEYS.CHANNEL_CREATED_DESC_PREFIX}${ts.desc}:${channel.id}`
       );
     }
 
-    // Execute all operations in parallel
-    await Promise.all(operations);
+    // Execute all bulk operations (throws on failure after retries)
+    await collector.execute();
 
     return true;
   }

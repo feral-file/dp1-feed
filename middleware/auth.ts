@@ -30,12 +30,27 @@ async function verifyJWT(
       const { payload } = await jose.jwtVerify(token, JWKS, verifyOptions);
       return { isValid: true, payload };
     } else if (env.JWT_PUBLIC_KEY) {
+      // Try to decode base64, but if it fails, assume it's already a PEM string
+      let publicKeyPem: string;
+      try {
+        publicKeyPem = atob(env.JWT_PUBLIC_KEY).trim();
+        // Validate that it's a proper PEM by checking for headers
+        if (!publicKeyPem.includes('-----BEGIN')) {
+          // If decoded result doesn't look like PEM, use original value
+          publicKeyPem = env.JWT_PUBLIC_KEY.trim();
+        }
+      } catch {
+        // If base64 decoding fails, assume it's already a PEM string
+        publicKeyPem = env.JWT_PUBLIC_KEY.trim();
+      }
+
       // Use PEM format public key with Web Crypto API + JWK conversion for Cloudflare Workers compatibility
       try {
         // Convert PEM to ArrayBuffer for Web Crypto API
         const pemHeader = '-----BEGIN PUBLIC KEY-----';
         const pemFooter = '-----END PUBLIC KEY-----';
-        const pemContents = env.JWT_PUBLIC_KEY.replace(pemHeader, '')
+        const pemContents = publicKeyPem
+          .replace(pemHeader, '')
           .replace(pemFooter, '')
           .replace(/\s/g, '');
 
@@ -64,7 +79,7 @@ async function verifyJWT(
         return { isValid: true, payload };
       } catch (error) {
         console.error('Error verifying JWT with Web Crypto API:', error);
-        const publicKey = await jose.importSPKI(env.JWT_PUBLIC_KEY, 'RS256');
+        const publicKey = await jose.importSPKI(publicKeyPem, 'RS256');
         const { payload } = await jose.jwtVerify(token, publicKey, verifyOptions);
         return { isValid: true, payload };
       }

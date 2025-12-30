@@ -167,19 +167,44 @@ nats-server -js
 
 **Option A: Docker Compose Setup**
 
-The `docker-compose.yml` file includes pre-configured environment variables for development. No additional `.env` file is needed for Docker Compose.
+Docker Compose uses a two-layer environment configuration:
 
-**Note**: The Docker Compose setup uses hardcoded development values. For production, you should modify the environment variables in `docker-compose.yml`.
+1. **`.env.sample`** - Default configuration (committed to git)
+2. **`.env`** - Local overrides (gitignored, optional)
+
+No setup is required to use the defaults. To customize:
+
+```bash
+# Optional: Create .env for local overrides
+cp .env.sample .env
+# Edit .env with your custom values
+```
+
+Docker Compose will automatically:
+
+- Load defaults from `.env.sample`
+- Override with values from `.env` (if it exists)
+
+**Common customizations:**
+
+```bash
+# .env
+API_SECRET=my-custom-secret
+ETCD_ENDPOINT=http://localhost:2379
+JWT_ISSUER=my-custom-issuer
+```
 
 **Option B: Manual Setup (without Docker)**
 
-Copy the sample environment file to create your own `.env`:
+For running services manually outside Docker:
 
 ```bash
+# Use the same environment files
 cp .env.sample .env
+# Edit .env with your configuration
 ```
 
-Then, edit `.env` to set the required secrets and configuration for development, such as `API_SECRET`, `ED25519_PRIVATE_KEY`, etc.
+Then export the variables or use a tool like `dotenv` to load them.
 
 > **Note:** Make sure your `.env` file is ready before running the development server locally with `npm run node:dev`.
 

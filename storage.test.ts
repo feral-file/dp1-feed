@@ -15,8 +15,9 @@ import {
   deleteChannel,
   STORAGE_KEYS,
 } from './storage';
-import type { Env, Playlist, Channel } from './types';
+import type { Env } from './types';
 import { createTestEnv, MockKeyValueStorage, MockQueue } from './test-helpers';
+import { Playlist, Channel } from 'ff-dp1-js';
 
 const playlistId1 = '550e8400-e29b-41d4-a716-446655440000';
 const playlistId2 = '550e8400-e29b-41d4-a716-446655440002';
@@ -247,7 +248,7 @@ describe('Storage Module', () => {
       await savePlaylist(testPlaylist, testEnv);
 
       // Verify initial item exists
-      const initialItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${testPlaylist.items[0].id}`;
+      const initialItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${testPlaylist.items?.[0]?.id}`;
       expect(mockStorages.item.storage.has(initialItemKey)).toBe(true);
 
       // Create updated playlist with different items
@@ -278,7 +279,7 @@ describe('Storage Module', () => {
       expect(mockStorages.item.storage.has(newItemKey)).toBe(true);
 
       // Verify old item is deleted
-      const oldItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${testPlaylist.items[0].id}`;
+      const oldItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${testPlaylist.items?.[0]?.id}`;
       expect(mockStorages.item.storage.has(oldItemKey)).toBe(false);
     });
 
@@ -755,7 +756,7 @@ describe('Storage Module', () => {
       // Verify playlist and related data exist before deletion
       const playlistKey = `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${testPlaylist.id}`;
       const slugKey = `${STORAGE_KEYS.PLAYLIST_SLUG_PREFIX}${testPlaylist.slug}`;
-      const itemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${testPlaylist.items[0].id}`;
+      const itemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${testPlaylist.items?.[0]?.id}`;
       const channelToPlaylistKey = `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${testChannel.id}:${testPlaylist.id}`;
       const playlistToChannelKey = `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${testPlaylist.id}:${testChannel.id}`;
 
@@ -824,7 +825,7 @@ describe('Storage Module', () => {
       };
 
       const playlistTimestamps = toSortableTimestamps(testPlaylist.created!);
-      const item1Timestamps = toSortableTimestamps(testPlaylist.items[0].created);
+      const item1Timestamps = toSortableTimestamps(testPlaylist.items?.[0]?.created!);
 
       // === VERIFY ALL INDEXES EXIST BEFORE DELETION ===
 
@@ -841,22 +842,22 @@ describe('Storage Module', () => {
       expect(mockStorages.playlist.storage.has(playlistCreatedDescKey)).toBe(true);
 
       // 3. Playlist item main records
-      const item1IdKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${testPlaylist.items[0].id}`;
+      const item1IdKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${testPlaylist.items?.[0]?.id}`;
       expect(mockStorages.item.storage.has(item1IdKey)).toBe(true);
 
       // 4. Global playlist item created-time indexes
-      const item1CreatedAscKey = `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${item1Timestamps.asc}:${testPlaylist.items[0].id}`;
-      const item1CreatedDescKey = `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${item1Timestamps.desc}:${testPlaylist.items[0].id}`;
+      const item1CreatedAscKey = `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_ASC_PREFIX}${item1Timestamps.asc}:${testPlaylist.items?.[0]?.id}`;
+      const item1CreatedDescKey = `${STORAGE_KEYS.PLAYLIST_ITEM_CREATED_DESC_PREFIX}${item1Timestamps.desc}:${testPlaylist.items?.[0]?.id}`;
       expect(mockStorages.item.storage.has(item1CreatedAscKey)).toBe(true);
       expect(mockStorages.item.storage.has(item1CreatedDescKey)).toBe(true);
 
       // 5. Channel-specific playlist item indexes
-      const channelItem1Key = `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${testChannel.id}:${testPlaylist.items[0].id}`;
+      const channelItem1Key = `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${testChannel.id}:${testPlaylist.items?.[0]?.id}`;
       expect(mockStorages.item.storage.has(channelItem1Key)).toBe(true);
 
       // 6. Channel-specific playlist item created-time indexes
-      const channelItem1CreatedAscKey = `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${testChannel.id}:${item1Timestamps.asc}:${testPlaylist.items[0].id}`;
-      const channelItem1CreatedDescKey = `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${testChannel.id}:${item1Timestamps.desc}:${testPlaylist.items[0].id}`;
+      const channelItem1CreatedAscKey = `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${testChannel.id}:${item1Timestamps.asc}:${testPlaylist.items?.[0]?.id}`;
+      const channelItem1CreatedDescKey = `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${testChannel.id}:${item1Timestamps.desc}:${testPlaylist.items?.[0]?.id}`;
 
       expect(mockStorages.item.storage.has(channelItem1CreatedAscKey)).toBe(true);
       expect(mockStorages.item.storage.has(channelItem1CreatedDescKey)).toBe(true);
@@ -921,7 +922,9 @@ describe('Storage Module', () => {
 
       // No keys should contain our deleted playlist ID or item IDs
       const orphanedPlaylistKeys = allPlaylistKeys.filter(key => key.includes(testPlaylist.id));
-      const orphanedItemKeys = allItemKeys.filter(key => key.includes(testPlaylist.items[0].id));
+      const orphanedItemKeys = allItemKeys.filter(key =>
+        key.includes(testPlaylist.items?.[0]?.id!)
+      );
 
       expect(orphanedPlaylistKeys).toEqual([]);
       expect(orphanedItemKeys).toEqual([]);
@@ -1065,7 +1068,7 @@ describe('Storage Module', () => {
 
       const channelTimestamps = toSortableTimestamps(testChannel.created!);
       const playlistTimestamps = toSortableTimestamps(testPlaylist.created!);
-      const item1Timestamps = toSortableTimestamps(testPlaylist.items[0].created);
+      const item1Timestamps = toSortableTimestamps(testPlaylist.items?.[0]?.created!);
 
       // === VERIFY ALL INDEXES EXIST BEFORE DELETION ===
 
@@ -1094,12 +1097,12 @@ describe('Storage Module', () => {
       expect(mockStorages.playlist.storage.has(channelPlaylistCreatedDescKey)).toBe(true);
 
       // 5. Channel-specific playlist item indexes
-      const channelItem1Key = `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${testChannel.id}:${testPlaylist.items[0].id}`;
+      const channelItem1Key = `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${testChannel.id}:${testPlaylist.items?.[0]?.id}`;
       expect(mockStorages.item.storage.has(channelItem1Key)).toBe(true);
 
       // 6. Channel-specific playlist item created-time indexes
-      const channelItem1CreatedAscKey = `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${testChannel.id}:${item1Timestamps.asc}:${testPlaylist.items[0].id}`;
-      const channelItem1CreatedDescKey = `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${testChannel.id}:${item1Timestamps.desc}:${testPlaylist.items[0].id}`;
+      const channelItem1CreatedAscKey = `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${testChannel.id}:${item1Timestamps.asc}:${testPlaylist.items?.[0]?.id}`;
+      const channelItem1CreatedDescKey = `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_DESC_PREFIX}${testChannel.id}:${item1Timestamps.desc}:${testPlaylist.items?.[0]?.id}`;
       expect(mockStorages.item.storage.has(channelItem1CreatedAscKey)).toBe(true);
       expect(mockStorages.item.storage.has(channelItem1CreatedDescKey)).toBe(true);
 
@@ -1196,8 +1199,8 @@ describe('Storage Module', () => {
       await savePlaylist(testPlaylist, testEnv);
 
       // Retrieve item by ID
-      const item = await getPlaylistItemById(testPlaylist.items[0].id, testEnv);
-      expect(item).toEqual(testPlaylist.items[0]);
+      const item = await getPlaylistItemById(testPlaylist.items?.[0]?.id!, testEnv);
+      expect(item).toEqual(testPlaylist.items?.[0]!);
     });
 
     it('should list all playlist items with pagination', async () => {
@@ -1631,9 +1634,9 @@ describe('Storage Module', () => {
       const p1 = { ...testPlaylist, id: 'pp-1', slug: 'pp-1', created: '2024-01-01T00:00:00Z' };
       const p2 = { ...testPlaylist, id: 'pp-2', slug: 'pp-2', created: '2024-01-02T00:00:00Z' };
       const p3 = { ...testPlaylist, id: 'pp-3', slug: 'pp-3', created: '2024-01-03T00:00:00Z' };
-      p1.items = [{ ...p1.items[0], id: 'i-1', created: '2024-01-01T00:00:00.001Z' }];
-      p2.items = [{ ...p2.items[0], id: 'i-2', created: '2024-01-02T00:00:00.001Z' }];
-      p3.items = [{ ...p3.items[0], id: 'i-3', created: '2024-01-03T00:00:00.001Z' }];
+      p1.items = [{ ...p1.items?.[0]!, id: 'i-1', created: '2024-01-01T00:00:00.001Z' }];
+      p2.items = [{ ...p2.items?.[0]!, id: 'i-2', created: '2024-01-02T00:00:00.001Z' }];
+      p3.items = [{ ...p3.items?.[0]!, id: 'i-3', created: '2024-01-03T00:00:00.001Z' }];
       await savePlaylist(p1, testEnv);
       await savePlaylist(p2, testEnv);
       await savePlaylist(p3, testEnv);
@@ -1653,8 +1656,8 @@ describe('Storage Module', () => {
       const p2 = { ...testPlaylist, id: gp2, slug: 'gp-2', created: '2024-01-02T00:00:00Z' };
       const gi1 = '550e8400-e29b-41d4-a716-446655443111';
       const gi2 = '550e8400-e29b-41d4-a716-446655443112';
-      p1.items = [{ ...p1.items[0], id: gi1, created: '2024-01-01T00:00:00.001Z' }];
-      p2.items = [{ ...p2.items[0], id: gi2, created: '2024-01-02T00:00:00.001Z' }];
+      p1.items = [{ ...p1.items?.[0]!, id: gi1, created: '2024-01-01T00:00:00.001Z' }];
+      p2.items = [{ ...p2.items?.[0]!, id: gi2, created: '2024-01-02T00:00:00.001Z' }];
       await savePlaylist(p1, testEnv);
       await savePlaylist(p2, testEnv);
 
@@ -2062,62 +2065,70 @@ describe('Storage Module', () => {
       const mockPlaylistKV = envWithSelfHostedDomains.storageProvider.getPlaylistStorage() as any;
       const mockItemsKV = envWithSelfHostedDomains.storageProvider.getPlaylistItemStorage() as any;
 
-      // Spy on KV put operations to track what gets written
-      const kvPutSpy = vi.spyOn(mockPlaylistKV, 'put');
-      const kvItemsPutSpy = vi.spyOn(mockItemsKV, 'put');
+      // Spy on KV putMultiple operations to track what gets written
+      const kvPutMultipleSpy = vi.spyOn(mockPlaylistKV, 'putMultiple');
+      const kvItemsPutMultipleSpy = vi.spyOn(mockItemsKV, 'putMultiple');
 
       // Record the state of self-hosted playlist storage before saveChannel
       const selfHostedStorageKey = `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${selfHostedPlaylistId}`;
       const externalStorageKey = `${STORAGE_KEYS.PLAYLIST_ID_PREFIX}${externalPlaylistId}`;
-      const preExistingPlaylistData = mockPlaylistKV.get(selfHostedStorageKey);
+      const preExistingPlaylistData = await mockPlaylistKV.get(selfHostedStorageKey);
       expect(preExistingPlaylistData).toBeTruthy(); // Should exist from pre-population
 
       // Clear the spies to only track saveChannel operations
-      kvPutSpy.mockClear();
-      kvItemsPutSpy.mockClear();
+      kvPutMultipleSpy.mockClear();
+      kvItemsPutMultipleSpy.mockClear();
 
       // Save the mixed channel
       const saved = await saveChannel(mixedGroup, envWithSelfHostedDomains);
       expect(saved).toBe(true);
 
-      // Verify KV put operations: external playlist SHOULD be saved, self-hosted should NOT
-      const putCalls = kvPutSpy.mock.calls;
+      // Verify KV putMultiple operations: external playlist SHOULD be saved, self-hosted should NOT
+      // Collect all entries from all putMultiple calls
+      const allPutEntries: Array<{ key: string; value: string }> = [];
+      for (const call of kvPutMultipleSpy.mock.calls) {
+        allPutEntries.push(...(call[0] as Array<{ key: string; value: string }>));
+      }
 
       // Check that external playlist data was written
-      const externalPlaylistDataCall = putCalls.find(call => call[0] === externalStorageKey);
-      expect(externalPlaylistDataCall).toBeTruthy();
-      expect(externalPlaylistDataCall![1]).toContain('External Playlist');
+      const externalPlaylistDataEntry = allPutEntries.find(
+        entry => entry.key === externalStorageKey
+      );
+      expect(externalPlaylistDataEntry).toBeTruthy();
+      expect(externalPlaylistDataEntry!.value).toContain('External Playlist');
 
       // Check that external playlist slug index was written
-      const externalSlugCall = putCalls.find(
-        call => call[0] === `${STORAGE_KEYS.PLAYLIST_SLUG_PREFIX}external-playlist`
+      const externalSlugEntry = allPutEntries.find(
+        entry => entry.key === `${STORAGE_KEYS.PLAYLIST_SLUG_PREFIX}external-playlist`
       );
-      expect(externalSlugCall).toBeTruthy();
-      expect(externalSlugCall![1]).toBe(externalPlaylistId);
+      expect(externalSlugEntry).toBeTruthy();
+      expect(externalSlugEntry!.value).toBe(externalPlaylistId);
 
-      // Verify that self-hosted playlist data was NOT written (no put call for its storage key)
-      const selfHostedPlaylistDataCall = putCalls.find(call => call[0] === selfHostedStorageKey);
-      expect(selfHostedPlaylistDataCall).toBeUndefined();
+      // Verify that self-hosted playlist data was NOT written (no entry for its storage key)
+      const selfHostedPlaylistDataEntry = allPutEntries.find(
+        entry => entry.key === selfHostedStorageKey
+      );
+      expect(selfHostedPlaylistDataEntry).toBeUndefined();
 
       // Verify that self-hosted playlist slug index was also NOT written (optimization skips this too)
-      const selfHostedSlugCall = putCalls.find(
-        call => call[0] === `${STORAGE_KEYS.PLAYLIST_SLUG_PREFIX}${selfHostedPlaylist.slug}`
+      const selfHostedSlugEntry = allPutEntries.find(
+        entry => entry.key === `${STORAGE_KEYS.PLAYLIST_SLUG_PREFIX}${selfHostedPlaylist.slug}`
       );
-      expect(selfHostedSlugCall).toBeUndefined();
+      expect(selfHostedSlugEntry).toBeUndefined();
 
       // Verify that bidirectional mappings were created for BOTH playlists
-      const selfHostedToGroupCall = putCalls.find(
-        call =>
-          call[0] ===
+      const selfHostedToGroupEntry = allPutEntries.find(
+        entry =>
+          entry.key ===
           `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${selfHostedPlaylistId}:${mixedGroup.id}`
       );
-      const externalToGroupCall = putCalls.find(
-        call =>
-          call[0] ===
+      const externalToGroupEntry = allPutEntries.find(
+        entry =>
+          entry.key ===
           `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${externalPlaylistId}:${mixedGroup.id}`
       );
-      expect(selfHostedToGroupCall).toBeTruthy();
-      expect(externalToGroupCall).toBeTruthy();
+      expect(selfHostedToGroupEntry).toBeTruthy();
+      expect(externalToGroupEntry).toBeTruthy();
 
       // Verify storage state: both playlists should be accessible
       const storedSelfHosted = await mockPlaylistKV.get(selfHostedStorageKey);
@@ -2131,32 +2142,32 @@ describe('Storage Module', () => {
       expect(parsedExternal.title).toBe('External Playlist');
 
       // Verify that group-to-playlists mappings were also created for both
-      const groupToSelfHostedCall = putCalls.find(
-        call =>
-          call[0] ===
+      const groupToSelfHostedEntry = allPutEntries.find(
+        entry =>
+          entry.key ===
           `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${mixedGroup.id}:${selfHostedPlaylistId}`
       );
-      const groupToExternalCall = putCalls.find(
-        call =>
-          call[0] ===
+      const groupToExternalEntry = allPutEntries.find(
+        entry =>
+          entry.key ===
           `${STORAGE_KEYS.CHANNEL_TO_PLAYLISTS_PREFIX}${mixedGroup.id}:${externalPlaylistId}`
       );
-      expect(groupToSelfHostedCall).toBeTruthy();
-      expect(groupToExternalCall).toBeTruthy();
+      expect(groupToSelfHostedEntry).toBeTruthy();
+      expect(groupToExternalEntry).toBeTruthy();
 
       // Verify that playlist-to-groups mappings were also created for both
-      const playlistToSelfHostedCall = putCalls.find(
-        call =>
-          call[0] ===
+      const playlistToSelfHostedEntry = allPutEntries.find(
+        entry =>
+          entry.key ===
           `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${selfHostedPlaylistId}:${mixedGroup.id}`
       );
-      const playlistToExternalCall = putCalls.find(
-        call =>
-          call[0] ===
+      const playlistToExternalEntry = allPutEntries.find(
+        entry =>
+          entry.key ===
           `${STORAGE_KEYS.PLAYLIST_TO_CHANNELS_PREFIX}${externalPlaylistId}:${mixedGroup.id}`
       );
-      expect(playlistToSelfHostedCall).toBeTruthy();
-      expect(playlistToExternalCall).toBeTruthy();
+      expect(playlistToSelfHostedEntry).toBeTruthy();
+      expect(playlistToExternalEntry).toBeTruthy();
 
       // Verify logging behavior
       expect(logSpy).toHaveBeenCalledWith(expect.stringContaining('Detected self-hosted URL'));
@@ -2172,26 +2183,32 @@ describe('Storage Module', () => {
       );
 
       // Verify playlist items: external items should be saved, self-hosted should remain from pre-population
-      const externalItemCall = kvItemsPutSpy.mock.calls.find(
-        call => call[0] === `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${itemId2}`
+      // Collect all item entries from all putMultiple calls
+      const allItemEntries: Array<{ key: string; value: string }> = [];
+      for (const call of kvItemsPutMultipleSpy.mock.calls) {
+        allItemEntries.push(...(call[0] as Array<{ key: string; value: string }>));
+      }
+
+      const externalItemEntry = allItemEntries.find(
+        entry => entry.key === `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${itemId2}`
       );
-      expect(externalItemCall).toBeTruthy();
+      expect(externalItemEntry).toBeTruthy();
 
       // Check that self-hosted playlist item was NOT written by saveChannel
-      const selfHostedItemCall = kvItemsPutSpy.mock.calls.find(
-        call => call[0] === `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${itemId1}`
+      const selfHostedItemEntry = allItemEntries.find(
+        entry => entry.key === `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${itemId1}`
       );
-      expect(selfHostedItemCall).toBeUndefined();
+      expect(selfHostedItemEntry).toBeUndefined();
 
       // Both items should exist in storage (external from saveChannel, self-hosted from pre-population)
       const selfHostedItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${itemId1}`;
       const externalItemKey = `${STORAGE_KEYS.PLAYLIST_ITEM_ID_PREFIX}${itemId2}`;
-      expect(mockItemsKV.get(selfHostedItemKey)).toBeTruthy();
-      expect(mockItemsKV.get(externalItemKey)).toBeTruthy();
+      expect(await mockItemsKV.get(selfHostedItemKey)).toBeTruthy();
+      expect(await mockItemsKV.get(externalItemKey)).toBeTruthy();
 
       logSpy.mockRestore();
-      kvPutSpy.mockRestore();
-      kvItemsPutSpy.mockRestore();
+      kvPutMultipleSpy.mockRestore();
+      kvItemsPutMultipleSpy.mockRestore();
     });
   });
 
@@ -2220,9 +2237,9 @@ describe('Storage Module', () => {
     });
 
     it('should handle KV operation failures', async () => {
-      // Mock KV failure
+      // Mock KV failure for bulk operations
       const failingStorage = new MockKeyValueStorage();
-      failingStorage.put = vi.fn().mockRejectedValue(new Error('KV operation failed'));
+      failingStorage.putMultiple = vi.fn().mockRejectedValue(new Error('KV operation failed'));
 
       const { env: envWithFailingKV } = createTestEnv();
       // Replace the playlist storage with the failing one

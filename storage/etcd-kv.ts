@@ -39,6 +39,20 @@ interface EtcdRangeResponse {
   count?: string;
 }
 
+interface EtcdTxnResponse {
+  header?: {
+    cluster_id?: string;
+    member_id?: string;
+    revision?: string;
+    raft_term?: string;
+  };
+  succeeded?: boolean;
+  responses?: Array<{
+    response_put?: any;
+    response_delete_range?: any;
+  }>;
+}
+
 /**
  * etcd v3 implementation of the KeyValueStorage interface using REST API
  * Compatible with workerd runtime (no Node.js dependencies)
@@ -46,6 +60,7 @@ interface EtcdRangeResponse {
 export class EtcdKVStorage implements KeyValueStorage {
   private config: EtcdConfig;
   private namespace: string;
+  private readonly BULK_WRITE_LIMIT = 128; // etcd transaction limit (conservative)
 
   constructor(config: EtcdConfig, namespace: string = '') {
     this.config = config;
@@ -179,6 +194,110 @@ export class EtcdKVStorage implements KeyValueStorage {
       console.error(`Error deleting key ${key} from etcd:`, error);
       throw error;
     }
+  }
+
+  /**
+   * Bulk write operation uses etcd transaction API
+   * Handles chunking for requests exceeding 128 items
+   */
+  async putMultiple(entries: Array<{ key: string; value: string }>): Promise<string[]> {
+    if (entries.length === 0) return [];
+
+    // If there is only one entry, use the single write operation
+    if (entries.length === 1) {
+      await this.put(entries[0]!.key, entries[0]!.value);
+      return [];
+    }
+
+    const unsuccessfulKeys: string[] = [];
+    const chunks = this.chunkArray(entries, this.BULK_WRITE_LIMIT);
+
+    for (const chunk of chunks) {
+      // Build transaction with put operations
+      const ops = chunk.map(entry => ({
+        request_put: {
+          key: encodeBase64(this.getKey(entry.key)),
+          value: encodeBase64(entry.value),
+        },
+      }));
+
+      const response = await this.makeRequest('/v3/kv/txn', {
+        method: 'POST',
+        body: JSON.stringify({
+          success: ops,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`etcd txn failed: ${response.status} ${response.statusText}`);
+      }
+
+      const result = (await response.json()) as EtcdTxnResponse;
+
+      if (!result.succeeded) {
+        // If transaction failed, add all keys from this chunk
+        unsuccessfulKeys.push(...chunk.map(e => e.key));
+      }
+    }
+
+    return unsuccessfulKeys;
+  }
+
+  /**
+   * Bulk delete operation uses etcd transaction API
+   * Handles chunking for requests exceeding 500 items
+   */
+  async deleteMultiple(keys: string[]): Promise<string[]> {
+    if (keys.length === 0) return [];
+
+    // If there is only one key, use the single delete operation
+    if (keys.length === 1) {
+      await this.delete(keys[0]!);
+      return [];
+    }
+
+    const unsuccessfulKeys: string[] = [];
+    const chunks = this.chunkArray(keys, this.BULK_WRITE_LIMIT);
+
+    for (const chunk of chunks) {
+      // Build transaction with delete operations
+      const ops = chunk.map(key => ({
+        request_delete_range: {
+          key: encodeBase64(this.getKey(key)),
+        },
+      }));
+
+      const response = await this.makeRequest('/v3/kv/txn', {
+        method: 'POST',
+        body: JSON.stringify({
+          success: ops,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`etcd txn failed: ${response.status} ${response.statusText}`);
+      }
+
+      const result = (await response.json()) as EtcdTxnResponse;
+
+      if (!result.succeeded) {
+        // If transaction failed, add all keys from this chunk
+        unsuccessfulKeys.push(...chunk);
+      }
+    }
+
+    return unsuccessfulKeys;
+  }
+
+  /**
+   * Chunk an array into smaller arrays
+   */
+  private chunkArray<T>(array: T[], size: number): T[][] {
+    const chunks: T[][] = [];
+    for (let i = 0; i < array.length; i += size) {
+      chunks.push(array.slice(i, i + size));
+    }
+    return chunks;
   }
 
   async list(options?: KVListOptions): Promise<KVListResult> {

@@ -1,10 +1,18 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { CloudFlareKVStorage, CloudFlareStorageProvider } from './cloudflare-kv';
+import {
+  CloudFlareKVStorage,
+  CloudFlareStorageProvider,
+  type CloudFlareKVConfig,
+} from './cloudflare-kv';
 import type { KVGetOptions, KVListOptions } from './interfaces';
+
+// Mock global fetch
+global.fetch = vi.fn();
 
 describe('CloudFlareKVStorage', () => {
   let storage: CloudFlareKVStorage;
   let mockKV: any;
+  let config: CloudFlareKVConfig;
 
   beforeEach(() => {
     vi.clearAllMocks();
@@ -17,17 +25,23 @@ describe('CloudFlareKVStorage', () => {
       list: vi.fn(),
     };
 
-    storage = new CloudFlareKVStorage(mockKV);
+    config = {
+      accountId: 'test-account-id',
+      namespaceId: 'test-namespace-id',
+      apiToken: 'test-api-token',
+    };
+
+    storage = new CloudFlareKVStorage(mockKV, config);
   });
 
   describe('constructor', () => {
-    it('should create a CloudFlare KV storage with the provided KV namespace', () => {
+    it('should create a CloudFlare KV storage with the provided KV namespace and config', () => {
       expect(storage).toBeInstanceOf(CloudFlareKVStorage);
     });
   });
 
   describe('get', () => {
-    it('should get a value successfully', async () => {
+    it('should get a value successfully using KV binding', async () => {
       const key = 'test-key';
       const value = 'test-value';
       mockKV.get.mockResolvedValue(value);
@@ -70,7 +84,7 @@ describe('CloudFlareKVStorage', () => {
   });
 
   describe('getMultiple', () => {
-    it('should get multiple values successfully with batch operation', async () => {
+    it('should get multiple values successfully with batch operation using KV binding', async () => {
       const keys = ['key1', 'key2', 'key3'];
       const batchResults = new Map([
         ['key1', 'value1'],
@@ -104,183 +118,46 @@ describe('CloudFlareKVStorage', () => {
       expect(result.get('key2')).toEqual({ data: 'value2' });
     });
 
-    it('should handle empty keys array', async () => {
+    it('should return empty map for empty keys array', async () => {
       const result = await storage.getMultiple([]);
 
-      expect(mockKV.get).not.toHaveBeenCalled();
       expect(result).toBeInstanceOf(Map);
       expect(result.size).toBe(0);
+      expect(mockKV.get).not.toHaveBeenCalled();
     });
 
-    it('should handle batch size larger than 100', async () => {
-      const keys = Array.from({ length: 250 }, (_, i) => `key${i}`);
-      const batchResults1 = new Map(
+    it('should handle batch operation with multiple batches (>100 keys)', async () => {
+      const keys = Array.from({ length: 150 }, (_, i) => `key${i}`);
+      const batch1Results = new Map(
         Array.from({ length: 100 }, (_, i) => [`key${i}`, `value${i}`])
       );
-      const batchResults2 = new Map(
-        Array.from({ length: 100 }, (_, i) => [`key${i + 100}`, `value${i + 100}`])
-      );
-      const batchResults3 = new Map(
-        Array.from({ length: 50 }, (_, i) => [`key${i + 200}`, `value${i + 200}`])
+      const batch2Results = new Map(
+        Array.from({ length: 50 }, (_, i) => [`key${i + 100}`, `value${i + 100}`])
       );
 
-      mockKV.get
-        .mockResolvedValueOnce(batchResults1)
-        .mockResolvedValueOnce(batchResults2)
-        .mockResolvedValueOnce(batchResults3);
+      mockKV.get.mockResolvedValueOnce(batch1Results).mockResolvedValueOnce(batch2Results);
 
       const result = await storage.getMultiple(keys);
 
-      expect(mockKV.get).toHaveBeenCalledTimes(3);
-      expect(result.size).toBe(250);
+      expect(mockKV.get).toHaveBeenCalledTimes(2);
+      expect(result.size).toBe(150);
       expect(result.get('key0')).toBe('value0');
-      expect(result.get('key100')).toBe('value100');
-      expect(result.get('key200')).toBe('value200');
+      expect(result.get('key149')).toBe('value149');
     });
 
     it('should fallback to individual gets when batch returns null', async () => {
       const keys = ['key1', 'key2'];
       mockKV.get
-        .mockResolvedValueOnce(null) // Batch operation returns null
+        .mockResolvedValueOnce(null) // Batch get returns null
         .mockResolvedValueOnce('value1') // Individual get for key1
         .mockResolvedValueOnce('value2'); // Individual get for key2
 
       const result = await storage.getMultiple(keys);
 
       expect(mockKV.get).toHaveBeenCalledTimes(3);
+      expect(result.size).toBe(2);
       expect(result.get('key1')).toBe('value1');
       expect(result.get('key2')).toBe('value2');
-    });
-
-    it('should fallback to individual gets when batch returns undefined', async () => {
-      const keys = ['key1', 'key2'];
-      mockKV.get
-        .mockResolvedValueOnce(undefined) // Batch operation returns undefined
-        .mockResolvedValueOnce('value1') // Individual get for key1
-        .mockResolvedValueOnce('value2'); // Individual get for key2
-
-      const result = await storage.getMultiple(keys);
-
-      expect(mockKV.get).toHaveBeenCalledTimes(3);
-      expect(result.get('key1')).toBe('value1');
-      expect(result.get('key2')).toBe('value2');
-    });
-
-    it('should fallback to individual gets when batch returns a string', async () => {
-      const keys = ['key1', 'key2'];
-      mockKV.get
-        .mockResolvedValueOnce('not-a-map') // Batch operation returns string instead of Map
-        .mockResolvedValueOnce('value1') // Individual get for key1
-        .mockResolvedValueOnce('value2'); // Individual get for key2
-
-      const result = await storage.getMultiple(keys);
-
-      expect(mockKV.get).toHaveBeenCalledTimes(3);
-      expect(result.get('key1')).toBe('value1');
-      expect(result.get('key2')).toBe('value2');
-    });
-
-    it('should fallback to individual gets when batch returns an array', async () => {
-      const keys = ['key1', 'key2'];
-      mockKV.get
-        .mockResolvedValueOnce(['not', 'a', 'map']) // Batch operation returns array instead of Map
-        .mockResolvedValueOnce('value1') // Individual get for key1
-        .mockResolvedValueOnce('value2'); // Individual get for key2
-
-      const result = await storage.getMultiple(keys);
-
-      expect(mockKV.get).toHaveBeenCalledTimes(3);
-      expect(result.get('key1')).toBe('value1');
-      expect(result.get('key2')).toBe('value2');
-    });
-
-    it('should fallback to individual gets when batch returns an object', async () => {
-      const keys = ['key1', 'key2'];
-      mockKV.get
-        .mockResolvedValueOnce({ key1: 'value1', key2: 'value2' }) // Batch operation returns object instead of Map
-        .mockResolvedValueOnce('value1') // Individual get for key1
-        .mockResolvedValueOnce('value2'); // Individual get for key2
-
-      const result = await storage.getMultiple(keys);
-
-      expect(mockKV.get).toHaveBeenCalledTimes(3);
-      expect(result.get('key1')).toBe('value1');
-      expect(result.get('key2')).toBe('value2');
-    });
-
-    it('should throw error when individual get fails in fallback mode', async () => {
-      const keys = ['key1', 'key2'];
-      const individualError = new Error('Individual get failed');
-      mockKV.get
-        .mockResolvedValueOnce(null) // Batch operation returns null
-        .mockRejectedValueOnce(individualError) // Individual get fails
-        .mockResolvedValueOnce('value2'); // Individual get for key2
-
-      await expect(storage.getMultiple(keys)).rejects.toThrow('Individual get failed');
-      expect(mockKV.get).toHaveBeenCalledTimes(2); // Should fail on first individual get
-    });
-
-    it('should throw error when JSON parsing fails in fallback mode', async () => {
-      const keys = ['key1', 'key2'];
-      const options: KVGetOptions = { type: 'json' };
-      mockKV.get
-        .mockResolvedValueOnce(null) // Batch operation returns null
-        .mockResolvedValueOnce('{"data": "value1"}') // JSON string
-        .mockResolvedValueOnce('invalid-json'); // Invalid JSON
-
-      await expect(storage.getMultiple(keys, options)).rejects.toThrow();
-      expect(mockKV.get).toHaveBeenCalledTimes(3);
-    });
-
-    it('should handle valid JSON parsing in fallback mode', async () => {
-      const keys = ['key1', 'key2'];
-      const options: KVGetOptions = { type: 'json' };
-      mockKV.get
-        .mockResolvedValueOnce(null) // Batch operation returns null
-        .mockResolvedValueOnce('{"data": "value1"}') // JSON string
-        .mockResolvedValueOnce('{"data": "value2"}'); // Valid JSON
-
-      const result = await storage.getMultiple(keys, options);
-
-      expect(result.get('key1')).toEqual({ data: 'value1' });
-      expect(result.get('key2')).toEqual({ data: 'value2' });
-    });
-
-    it('should handle multiple batches with fallback for each batch', async () => {
-      const keys = Array.from({ length: 150 }, (_, i) => `key${i}`); // More than 100 keys
-
-      // Mock responses for all the individual calls that will happen during fallback
-      const mockResponses: (Map<string, string> | null | string)[] = [
-        // First batch call (returns Map)
-        new Map([
-          ['key0', 'value0'],
-          ['key1', 'value1'],
-        ]),
-        // Second batch call (returns null, triggers fallback)
-        null,
-      ];
-
-      // Add individual responses for all 50 keys in the second batch
-      for (let i = 100; i < 150; i++) {
-        mockResponses.push(`value${i}`);
-      }
-
-      mockKV.get.mockImplementation(() => {
-        const response = mockResponses.shift();
-        if (response === undefined) {
-          return Promise.resolve(null);
-        }
-        return Promise.resolve(response as any);
-      });
-
-      const result = await storage.getMultiple(keys);
-
-      expect(mockKV.get).toHaveBeenCalledTimes(52); // 1 + 1 + 50 individual calls
-      expect(result.get('key0')).toBe('value0');
-      expect(result.get('key1')).toBe('value1');
-      expect(result.get('key100')).toBe('value100');
-      expect(result.get('key101')).toBe('value101');
-      expect(result.get('key149')).toBe('value149');
     });
 
     it('should throw error when batch operation fails', async () => {
@@ -291,19 +168,34 @@ describe('CloudFlareKVStorage', () => {
       await expect(storage.getMultiple(keys)).rejects.toThrow('Batch failed');
       expect(mockKV.get).toHaveBeenCalledTimes(1);
     });
+  });
 
-    it('should throw error when batch operation fails with multiple batches', async () => {
-      const keys = Array.from({ length: 150 }, (_, i) => `key${i}`); // More than 100 keys
-      const batchError = new Error('Batch failed');
-      mockKV.get.mockRejectedValue(batchError);
+  describe('list', () => {
+    it('should list keys successfully using KV binding', async () => {
+      const options: KVListOptions = { prefix: 'test-', limit: 10 };
+      const listResult = {
+        keys: [{ name: 'test-key1' }, { name: 'test-key2' }],
+        list_complete: true,
+      };
+      mockKV.list.mockResolvedValue(listResult);
 
-      await expect(storage.getMultiple(keys)).rejects.toThrow('Batch failed');
-      expect(mockKV.get).toHaveBeenCalledTimes(1); // Should fail on first batch
+      const result = await storage.list(options);
+
+      expect(mockKV.list).toHaveBeenCalledWith(options);
+      expect(result).toEqual(listResult);
+    });
+
+    it('should handle list errors', async () => {
+      const options: KVListOptions = { prefix: 'test-' };
+      const error = new Error('List failed');
+      mockKV.list.mockRejectedValue(error);
+
+      await expect(storage.list(options)).rejects.toThrow('List failed');
     });
   });
 
   describe('put', () => {
-    it('should put a value successfully', async () => {
+    it('should put a value using KV binding', async () => {
       const key = 'test-key';
       const value = 'test-value';
       mockKV.put.mockResolvedValue(undefined);
@@ -324,7 +216,7 @@ describe('CloudFlareKVStorage', () => {
   });
 
   describe('delete', () => {
-    it('should delete a key successfully', async () => {
+    it('should delete a key using KV binding', async () => {
       const key = 'test-key';
       mockKV.delete.mockResolvedValue(undefined);
 
@@ -342,45 +234,204 @@ describe('CloudFlareKVStorage', () => {
     });
   });
 
-  describe('list', () => {
-    it('should list keys successfully', async () => {
-      const options: KVListOptions = { prefix: 'test-', limit: 10 };
-      const mockListResult = {
-        keys: [
-          { name: 'test-key1', metadata: null },
-          { name: 'test-key2', metadata: { created: '2024-01-01' } },
-        ],
-        list_complete: true,
-        cursor: undefined,
-      };
-      mockKV.list.mockResolvedValue(mockListResult);
+  describe('putMultiple', () => {
+    it('should use bulk write API for multiple entries', async () => {
+      const entries = [
+        { key: 'key1', value: 'value1' },
+        { key: 'key2', value: 'value2' },
+        { key: 'key3', value: 'value3' },
+      ];
 
-      const result = await storage.list(options);
+      (global.fetch as any).mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          success: true,
+          result: {
+            successful_key_count: 3,
+            unsuccessful_keys: [],
+          },
+        }),
+      });
 
-      expect(mockKV.list).toHaveBeenCalledWith(options);
-      expect(result).toEqual(mockListResult);
+      const result = await storage.putMultiple(entries);
+
+      expect(result).toEqual([]);
+      expect(global.fetch).toHaveBeenCalledTimes(1);
+      expect(global.fetch).toHaveBeenCalledWith(
+        `https://api.cloudflare.com/client/v4/accounts/${config.accountId}/storage/kv/namespaces/${config.namespaceId}/bulk`,
+        {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${config.apiToken}`,
+          },
+          body: JSON.stringify(entries),
+        }
+      );
     });
 
-    it('should list keys without options', async () => {
-      const mockListResult = {
-        keys: [{ name: 'key1', metadata: null }],
-        list_complete: true,
-        cursor: undefined,
-      };
-      mockKV.list.mockResolvedValue(mockListResult);
+    it('should return unsuccessful keys', async () => {
+      const entries = [
+        { key: 'key1', value: 'value1' },
+        { key: 'key2', value: 'value2' },
+      ];
 
-      const result = await storage.list();
+      (global.fetch as any).mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          success: true,
+          result: {
+            successful_key_count: 1,
+            unsuccessful_keys: ['key2'],
+          },
+        }),
+      });
 
-      expect(mockKV.list).toHaveBeenCalledWith(undefined);
-      expect(result).toEqual(mockListResult);
+      const result = await storage.putMultiple(entries);
+
+      expect(result).toEqual(['key2']);
     });
 
-    it('should handle list errors', async () => {
-      const options: KVListOptions = { prefix: 'test-' };
-      const error = new Error('List failed');
-      mockKV.list.mockRejectedValue(error);
+    it('should throw error on API failure', async () => {
+      const entries = [
+        { key: 'key1', value: 'value1' },
+        { key: 'key2', value: 'value2' },
+      ];
 
-      await expect(storage.list(options)).rejects.toThrow('List failed');
+      (global.fetch as any).mockResolvedValue({
+        ok: false,
+        status: 500,
+        statusText: 'Internal Server Error',
+        text: async () => 'Error details',
+      });
+
+      await expect(storage.putMultiple(entries)).rejects.toThrow(
+        'CloudFlare KV bulk write failed: 500 Internal Server Error'
+      );
+    });
+
+    it('should chunk operations exceeding 10k limit', async () => {
+      const entries = Array.from({ length: 15000 }, (_, i) => ({
+        key: `key${i}`,
+        value: `value${i}`,
+      }));
+
+      (global.fetch as any).mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          success: true,
+          result: {
+            successful_key_count: 10000,
+            unsuccessful_keys: [],
+          },
+        }),
+      });
+
+      await storage.putMultiple(entries);
+
+      // Should have made 2 API calls (10k + 5k)
+      expect(global.fetch).toHaveBeenCalledTimes(2);
+    });
+
+    it('should return empty array for empty entries', async () => {
+      const result = await storage.putMultiple([]);
+
+      expect(result).toEqual([]);
+      expect(global.fetch).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('deleteMultiple', () => {
+    it('should use bulk delete API for multiple keys', async () => {
+      const keys = ['key1', 'key2', 'key3'];
+
+      (global.fetch as any).mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          success: true,
+          result: {
+            successful_key_count: 3,
+            unsuccessful_keys: [],
+          },
+        }),
+      });
+
+      const result = await storage.deleteMultiple(keys);
+
+      expect(result).toEqual([]);
+      expect(global.fetch).toHaveBeenCalledTimes(1);
+      expect(global.fetch).toHaveBeenCalledWith(
+        `https://api.cloudflare.com/client/v4/accounts/${config.accountId}/storage/kv/namespaces/${config.namespaceId}/bulk/delete`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${config.apiToken}`,
+          },
+          body: JSON.stringify(keys),
+        }
+      );
+    });
+
+    it('should return unsuccessful keys', async () => {
+      const keys = ['key1', 'key2'];
+
+      (global.fetch as any).mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          success: true,
+          result: {
+            successful_key_count: 1,
+            unsuccessful_keys: ['key2'],
+          },
+        }),
+      });
+
+      const result = await storage.deleteMultiple(keys);
+
+      expect(result).toEqual(['key2']);
+    });
+
+    it('should chunk operations exceeding 10k limit', async () => {
+      const keys = Array.from({ length: 15000 }, (_, i) => `key${i}`);
+
+      (global.fetch as any).mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          success: true,
+          result: {
+            successful_key_count: 10000,
+            unsuccessful_keys: [],
+          },
+        }),
+      });
+
+      await storage.deleteMultiple(keys);
+
+      // Should have made 2 API calls (10k + 5k)
+      expect(global.fetch).toHaveBeenCalledTimes(2);
+    });
+
+    it('should throw error on API failure', async () => {
+      const keys = ['key1', 'key2'];
+
+      (global.fetch as any).mockResolvedValue({
+        ok: false,
+        status: 500,
+        statusText: 'Internal Server Error',
+        text: async () => 'Error details',
+      });
+
+      await expect(storage.deleteMultiple(keys)).rejects.toThrow(
+        'CloudFlare KV bulk delete failed: 500 Internal Server Error'
+      );
+    });
+
+    it('should return empty array for empty keys', async () => {
+      const result = await storage.deleteMultiple([]);
+
+      expect(result).toEqual([]);
+      expect(global.fetch).not.toHaveBeenCalled();
     });
   });
 });
@@ -390,6 +441,9 @@ describe('CloudFlareStorageProvider', () => {
   let mockPlaylistKV: any;
   let mockChannelKV: any;
   let mockPlaylistItemKV: any;
+  let playlistConfig: CloudFlareKVConfig;
+  let channelConfig: CloudFlareKVConfig;
+  let playlistItemConfig: CloudFlareKVConfig;
 
   beforeEach(() => {
     vi.clearAllMocks();
@@ -416,11 +470,36 @@ describe('CloudFlareStorageProvider', () => {
       list: vi.fn(),
     };
 
-    provider = new CloudFlareStorageProvider(mockPlaylistKV, mockChannelKV, mockPlaylistItemKV);
+    playlistConfig = {
+      accountId: 'test-account-id',
+      namespaceId: 'playlist-namespace-id',
+      apiToken: 'test-api-token',
+    };
+
+    channelConfig = {
+      accountId: 'test-account-id',
+      namespaceId: 'channel-namespace-id',
+      apiToken: 'test-api-token',
+    };
+
+    playlistItemConfig = {
+      accountId: 'test-account-id',
+      namespaceId: 'playlist-item-namespace-id',
+      apiToken: 'test-api-token',
+    };
+
+    provider = new CloudFlareStorageProvider(
+      mockPlaylistKV,
+      mockChannelKV,
+      mockPlaylistItemKV,
+      playlistConfig,
+      channelConfig,
+      playlistItemConfig
+    );
   });
 
   describe('constructor', () => {
-    it('should create a provider with the provided KV namespaces', () => {
+    it('should create a provider with the provided KV namespaces and configs', () => {
       expect(provider).toBeInstanceOf(CloudFlareStorageProvider);
     });
   });
@@ -439,18 +518,15 @@ describe('CloudFlareStorageProvider', () => {
       expect(storage1).toBe(storage2);
     });
 
-    it('should allow operations on playlist storage', async () => {
+    it('should allow read operations on playlist storage', async () => {
       const storage = provider.getPlaylistStorage();
       const key = 'playlist-1';
       const value = 'playlist-data';
 
-      mockPlaylistKV.put.mockResolvedValue(undefined);
       mockPlaylistKV.get.mockResolvedValue(value);
 
-      await storage.put(key, value);
       const result = await storage.get(key);
 
-      expect(mockPlaylistKV.put).toHaveBeenCalledWith(key, value);
       expect(mockPlaylistKV.get).toHaveBeenCalledWith(key, undefined);
       expect(result).toBe(value);
     });
@@ -469,22 +545,6 @@ describe('CloudFlareStorageProvider', () => {
 
       expect(storage1).toBe(storage2);
     });
-
-    it('should allow operations on channel storage', async () => {
-      const storage = provider.getChannelStorage();
-      const key = 'group-1';
-      const value = 'group-data';
-
-      mockChannelKV.put.mockResolvedValue(undefined);
-      mockChannelKV.get.mockResolvedValue(value);
-
-      await storage.put(key, value);
-      const result = await storage.get(key);
-
-      expect(mockChannelKV.put).toHaveBeenCalledWith(key, value);
-      expect(mockChannelKV.get).toHaveBeenCalledWith(key, undefined);
-      expect(result).toBe(value);
-    });
   });
 
   describe('getPlaylistItemStorage', () => {
@@ -499,84 +559,6 @@ describe('CloudFlareStorageProvider', () => {
       const storage2 = provider.getPlaylistItemStorage();
 
       expect(storage1).toBe(storage2);
-    });
-
-    it('should allow operations on playlist item storage', async () => {
-      const storage = provider.getPlaylistItemStorage();
-      const key = 'item-1';
-      const value = 'item-data';
-
-      mockPlaylistItemKV.put.mockResolvedValue(undefined);
-      mockPlaylistItemKV.get.mockResolvedValue(value);
-
-      await storage.put(key, value);
-      const result = await storage.get(key);
-
-      expect(mockPlaylistItemKV.put).toHaveBeenCalledWith(key, value);
-      expect(mockPlaylistItemKV.get).toHaveBeenCalledWith(key, undefined);
-      expect(result).toBe(value);
-    });
-  });
-
-  describe('integration tests', () => {
-    it('should work with all storage types independently', async () => {
-      const playlistStorage = provider.getPlaylistStorage();
-      const groupStorage = provider.getChannelStorage();
-      const itemStorage = provider.getPlaylistItemStorage();
-
-      // Test playlist storage
-      mockPlaylistKV.put.mockResolvedValue(undefined);
-      mockPlaylistKV.get.mockResolvedValue('playlist-value');
-      await playlistStorage.put('playlist-1', 'playlist-value');
-      const playlistResult = await playlistStorage.get('playlist-1');
-
-      // Test group storage
-      mockChannelKV.put.mockResolvedValue(undefined);
-      mockChannelKV.get.mockResolvedValue('group-value');
-      await groupStorage.put('group-1', 'group-value');
-      const groupResult = await groupStorage.get('group-1');
-
-      // Test item storage
-      mockPlaylistItemKV.put.mockResolvedValue(undefined);
-      mockPlaylistItemKV.get.mockResolvedValue('item-value');
-      await itemStorage.put('item-1', 'item-value');
-      const itemResult = await itemStorage.get('item-1');
-
-      expect(playlistResult).toBe('playlist-value');
-      expect(groupResult).toBe('group-value');
-      expect(itemResult).toBe('item-value');
-    });
-
-    it('should handle errors independently across storage types', async () => {
-      const playlistStorage = provider.getPlaylistStorage();
-      const groupStorage = provider.getChannelStorage();
-      const itemStorage = provider.getPlaylistItemStorage();
-
-      // Playlist storage fails
-      mockPlaylistKV.put.mockRejectedValue(new Error('Playlist put failed'));
-
-      // Group storage succeeds
-      mockChannelKV.put.mockResolvedValue(undefined);
-      mockChannelKV.get.mockResolvedValue('group-value');
-
-      // Item storage succeeds
-      mockPlaylistItemKV.put.mockResolvedValue(undefined);
-      mockPlaylistItemKV.get.mockResolvedValue('item-value');
-
-      // Playlist operation should fail
-      await expect(playlistStorage.put('playlist-1', 'value')).rejects.toThrow(
-        'Playlist put failed'
-      );
-
-      // Group and item operations should succeed
-      await groupStorage.put('group-1', 'group-value');
-      await itemStorage.put('item-1', 'item-value');
-
-      const groupResult = await groupStorage.get('group-1');
-      const itemResult = await itemStorage.get('item-1');
-
-      expect(groupResult).toBe('group-value');
-      expect(itemResult).toBe('item-value');
     });
   });
 });

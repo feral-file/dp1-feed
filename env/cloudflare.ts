@@ -22,6 +22,13 @@ export interface CloudFlareBindings {
   DP1_CHANNELS: KVNamespace;
   DP1_PLAYLIST_ITEMS: KVNamespace;
 
+  // CloudFlare KV API credentials (for bulk write operations)
+  CLOUDFLARE_API_TOKEN: string;
+  CLOUDFLARE_ACCOUNT_ID: string;
+  CLOUDFLARE_PLAYLISTS_NAMESPACE_ID: string;
+  CLOUDFLARE_CHANNELS_NAMESPACE_ID: string;
+  CLOUDFLARE_PLAYLIST_ITEMS_NAMESPACE_ID: string;
+
   // CloudFlare Queue binding
   DP1_WRITE_QUEUE: Queue;
 
@@ -46,11 +53,46 @@ export function initializeCloudFlareEnv(bindings: CloudFlareBindings): Env {
     throw new Error('Missing required Queue binding: DP1_WRITE_QUEUE');
   }
 
+  // Detect local environment for miniflare compatibility
+  const isLocal = bindings.ENVIRONMENT === 'local' || !bindings.ENVIRONMENT;
+
+  // Validate required API credentials for bulk operations (skip for local dev)
+  if (
+    !isLocal &&
+    (!bindings.CLOUDFLARE_API_TOKEN ||
+      !bindings.CLOUDFLARE_ACCOUNT_ID ||
+      !bindings.CLOUDFLARE_PLAYLISTS_NAMESPACE_ID ||
+      !bindings.CLOUDFLARE_CHANNELS_NAMESPACE_ID ||
+      !bindings.CLOUDFLARE_PLAYLIST_ITEMS_NAMESPACE_ID)
+  ) {
+    throw new Error(
+      'Missing required CloudFlare API credentials: CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, and namespace IDs'
+    );
+  }
+
   // Create providers from bindings
   const storageProvider = new CloudFlareStorageProvider(
     bindings.DP1_PLAYLISTS,
     bindings.DP1_CHANNELS,
-    bindings.DP1_PLAYLIST_ITEMS
+    bindings.DP1_PLAYLIST_ITEMS,
+    {
+      accountId: bindings.CLOUDFLARE_ACCOUNT_ID,
+      namespaceId: bindings.CLOUDFLARE_PLAYLISTS_NAMESPACE_ID,
+      apiToken: bindings.CLOUDFLARE_API_TOKEN,
+      localBinding: isLocal, // Use bindings for bulk ops in local dev
+    },
+    {
+      accountId: bindings.CLOUDFLARE_ACCOUNT_ID,
+      namespaceId: bindings.CLOUDFLARE_CHANNELS_NAMESPACE_ID,
+      apiToken: bindings.CLOUDFLARE_API_TOKEN,
+      localBinding: isLocal,
+    },
+    {
+      accountId: bindings.CLOUDFLARE_ACCOUNT_ID,
+      namespaceId: bindings.CLOUDFLARE_PLAYLIST_ITEMS_NAMESPACE_ID,
+      apiToken: bindings.CLOUDFLARE_API_TOKEN,
+      localBinding: isLocal,
+    }
   );
 
   const queueProvider = new CloudFlareQueueProvider(bindings.DP1_WRITE_QUEUE);

@@ -11,6 +11,13 @@ JWT_ISSUER = ""
 JWT_AUDIENCE = ""
 JWT_PUBLIC_KEY = ""
 
+# CloudFlare KV API credentials for bulk operations
+# Note: For local dev with miniflare, these are placeholders - bulk ops will use bindings instead
+CLOUDFLARE_ACCOUNT_ID = "local-dev-account"
+CLOUDFLARE_PLAYLISTS_NAMESPACE_ID = "local-playlist-id"
+CLOUDFLARE_CHANNELS_NAMESPACE_ID = "local-channel-id"
+CLOUDFLARE_PLAYLIST_ITEMS_NAMESPACE_ID = "local-item-id"
+
 # KV namespace bindings for storing JSON data
 [[kv_namespaces]]
 binding = "DP1_PLAYLISTS"
@@ -38,6 +45,13 @@ max_batch_timeout = 1
 [env.dev.vars]
 ENVIRONMENT = "development"
 SELF_HOSTED_DOMAINS = "dp1-feed-operator-api-dev.autonomy-system.workers.dev"
+
+# CloudFlare KV API credentials for bulk operations
+CLOUDFLARE_ACCOUNT_ID = "ef12e2e53d135e51a45afab861740134"
+CLOUDFLARE_PLAYLISTS_NAMESPACE_ID = "1da79f6f0f914529858468874d4834a2"
+CLOUDFLARE_CHANNELS_NAMESPACE_ID = "7a34bb7347e54236b107f9077416c5ba"
+CLOUDFLARE_PLAYLIST_ITEMS_NAMESPACE_ID = "796f0a4b1e7541f48df8e0d744c77b98"
+
 JWT_PUBLIC_KEY = """
 -----BEGIN PUBLIC KEY-----
 MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoKSzYr0c93zbx63XCNDI
@@ -84,6 +98,13 @@ name = "dp1-feed-operator-api-prod"
 [env.production.vars]
 ENVIRONMENT = "production"
 SELF_HOSTED_DOMAINS = "feed.feralfile.com, dp1-feed-operator-api-prod.autonomy-system.workers.dev"
+
+# CloudFlare KV API credentials for bulk operations
+CLOUDFLARE_ACCOUNT_ID = "ef12e2e53d135e51a45afab861740134"
+CLOUDFLARE_PLAYLISTS_NAMESPACE_ID = "d8dd2c9576964fd4832fd16dd3feceb8"
+CLOUDFLARE_CHANNELS_NAMESPACE_ID = "99d0a95fdb844df6bd01e688c014be26"
+CLOUDFLARE_PLAYLIST_ITEMS_NAMESPACE_ID = "97e0151430994b37b443eda4260f07d7"
+
 JWT_PUBLIC_KEY = """
 -----BEGIN PUBLIC KEY-----
 MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAs/tBze5kS9ca6Wa2ei8z
@@ -146,6 +167,10 @@ cpu_ms = 30000
 command = "npm run worker:build"
 
 # Secrets (set via wrangler secret put)
-# API_SECRET - Bearer token secret
+# API_SECRET - Bearer token secret for API authentication
 # ED25519_PRIVATE_KEY - Server signing key (REQUIRED)
+# CLOUDFLARE_API_TOKEN - Cloudflare API token for bulk KV operations (REQUIRED for dev/prod, optional for local)
+#   Create at: https://dash.cloudflare.com/profile/api-tokens
+#   Required permissions: Account.Workers KV Storage:Edit
+#   Local dev: Not needed - bulk operations will use KV bindings instead
 # IPFS_GATEWAY_TOKEN - IPFS access token (optional) 

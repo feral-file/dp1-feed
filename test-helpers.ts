@@ -113,8 +113,34 @@ export class MockKeyValueStorage implements KeyValueStorage {
     return this.kv.put(key, value);
   }
 
+  async putMultiple(entries: Array<{ key: string; value: string }>): Promise<string[]> {
+    // Mock implementation: just put each entry individually
+    const unsuccessfulKeys: string[] = [];
+    for (const entry of entries) {
+      try {
+        await this.kv.put(entry.key, entry.value);
+      } catch {
+        unsuccessfulKeys.push(entry.key);
+      }
+    }
+    return unsuccessfulKeys;
+  }
+
   async delete(key: string): Promise<void> {
     return this.kv.delete(key);
+  }
+
+  async deleteMultiple(keys: string[]): Promise<string[]> {
+    // Mock implementation: just delete each key individually
+    const unsuccessfulKeys: string[] = [];
+    for (const key of keys) {
+      try {
+        await this.kv.delete(key);
+      } catch {
+        unsuccessfulKeys.push(key);
+      }
+    }
+    return unsuccessfulKeys;
   }
 
   async list(options?: { prefix?: string; limit?: number; cursor?: string }) {
