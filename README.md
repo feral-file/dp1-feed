@@ -5,24 +5,22 @@
 [![Code Coverage](https://img.shields.io/codecov/c/github/feral-file/dp1-feed/main?label=code%20coverage&logo=codecov)](https://codecov.io/gh/feral-file/dp1-feed)
 [![Benchmark](https://img.shields.io/github/actions/workflow/status/feral-file/dp1-feed/benchmark.yaml?branch=main&label=benchmark%20status&logo=github)](https://github.com/feral-file/dp1-feed/actions/workflows/benchmark.yaml)
 
-A modern API server implementing the DP-1 Feed Operator specification for blockchain-native digital art playlists. Supports both **Cloudflare Workers** (serverless) and **Node.js** (self-hosted) deployments.
+A REST API server implementing the [DP-1 specification](https://github.com/display-protocol/dp1/blob/main/docs/spec.md) for managing blockchain-native digital art playlists. Deploy as serverless (Cloudflare Workers) or self-hosted (Node.js).
 
-## 🚀 Features
+## Features
 
-- **DP-1 Compliant**: Full OpenAPI 3.1.0 implementation of DP-1 v1.0.0
-- **Dual Deployment**: Cloudflare Workers (serverless) + Node.js (self-hosted)
-- **Type Safety**: End-to-end TypeScript with Zod validation
-- **Modern Stack**: Hono framework, Ed25519 signatures, RFC 7240 async support
-- **Production Ready**: KV storage, queues, authentication, CORS, monitoring
+- **DP-1 v1.1.0 Compliant** - Full OpenAPI 3.1.0 implementation
+- **Dual Deployment** - Cloudflare Workers (serverless) or Node.js (self-hosted)
+- **Type-Safe** - TypeScript with Zod validation
+- **Production Ready** - Ed25519 signatures, JWT auth, async processing (RFC 7240)
 
-## 📦 Quick Start
+## Quick Start
 
 ### Prerequisites
 
 - Node.js 22+
-- npm or yarn
-- For Cloudflare Workers: Cloudflare account + Wrangler CLI
-- For Node.js: etcd + NATS JetStream
+- **Cloudflare Workers**: Cloudflare account + Wrangler CLI
+- **Node.js**: Docker or etcd + NATS JetStream
 
 ### Installation
 
@@ -32,259 +30,154 @@ cd dp1-feed
 npm install
 ```
 
-### Quick Deploy
+### Deploy
 
-**Cloudflare Workers:**
+**Cloudflare Workers (Serverless)**
 
 ```bash
+# Setup and deploy
 npm run worker:setup:kv
 npm run worker:setup:secrets
 npm run worker:deploy
 ```
 
-**Node.js Server:**
+**Node.js (Self-Hosted)**
 
 ```bash
-npm run node:build
-npm run node:start:dev
-```
+# Option 1: Docker Compose (recommended)
+docker compose up -d
 
-## 🛠️ Development
-
-```bash
-# Cloudflare Workers development
-npm run worker:dev
-
-# Node.js development
+# Option 2: Local development
 npm run node:dev
-
-# Run tests
-npm test
-
-# Code quality
-npm run lint && npm run format
 ```
 
-📖 **For detailed development guide, see [DEVELOPMENT.md](DEVELOPMENT.md)**
+Server runs on `http://localhost:8787` by default.
 
-## 📡 API Reference
-
-### Base URL
-
-- **Cloudflare Workers**: `https://your-worker.your-subdomain.workers.dev`
-- **Node.js**: `http://localhost:8787` (default)
+## API Reference
 
 ### Authentication
 
-All write operations require Bearer token authentication. The API supports two authentication methods:
-
-#### 1. API Key Authentication (Admin Operations)
+Write operations (`POST`, `PUT`, `DELETE`) require authentication:
 
 ```bash
+# API Key
 Authorization: Bearer YOUR_API_SECRET
-```
 
-#### 2. JWT Authentication (User Operations)
-
-```bash
+# JWT Token (RS256)
 Authorization: Bearer JWT_TOKEN
 ```
 
-**JWT Configuration Environment Variables:**
+**JWT Configuration:**
 
 ```bash
-# Required: Either public key or JWKS URL
-JWT_PUBLIC_KEY="-----BEGIN PUBLIC KEY-----..."  # PEM format public key
-JWT_JWKS_URL="https://your-auth-provider.com/.well-known/jwks.json"
+# Use either JWT_PUBLIC_KEY or JWT_JWKS_URL (not both)
+JWT_PUBLIC_KEY="-----BEGIN PUBLIC KEY-----..."  # PEM format or base64 encoded
+JWT_JWKS_URL="https://auth.example.com/.well-known/jwks.json"  # Or JWKS URL
 
-# Optional: Token validation
-JWT_ISSUER="your-issuer"      # Expected 'iss' claim
-JWT_AUDIENCE="your-audience"  # Expected 'aud' claim
+# Optional validation
+JWT_ISSUER="your-issuer"       # Expected 'iss' claim
+JWT_AUDIENCE="your-audience"   # Expected 'aud' claim
 ```
 
-**Authentication Priority:**
+Generate test keys: `npm run jwt:generate-keys`
 
-- API key is checked first
-- If API key doesn't match, JWT is verified
-- Both methods provide the same permissions currently
+### Endpoints
 
-**Generate Test Keys:**
+| Method | Endpoint | Description | Auth |
+|--------|----------|-------------|------|
+| `GET` | `/api/v1` | API info | No |
+| `GET` | `/api/v1/health` | Health check | No |
+| `GET` | `/api/v1/playlists` | List playlists | No |
+| `POST` | `/api/v1/playlists` | Create playlist | Yes |
+| `GET` | `/api/v1/playlists/{id}` | Get playlist | No |
+| `PUT` | `/api/v1/playlists/{id}` | Update playlist | Yes |
+| `DELETE` | `/api/v1/playlists/{id}` | Delete playlist | Yes |
+| `GET` | `/api/v1/channels` | List channels | No |
+| `POST` | `/api/v1/channels` | Create channel | Yes |
+| `GET` | `/api/v1/channels/{id}` | Get channel | No |
+| `PUT` | `/api/v1/channels/{id}` | Update channel | Yes |
+| `DELETE` | `/api/v1/channels/{id}` | Delete channel | Yes |
+| `GET` | `/api/v1/playlist-items` | List items | No |
+| `GET` | `/api/v1/playlist-items/{id}` | Get item | No |
+
+### Examples
+
+**Create Playlist**
 
 ```bash
-# Generate RSA key pair for testing
-npm run jwt:generate-keys
-# or directly:
-node scripts/generate-jwt-keys.js
+curl -X POST http://localhost:8787/api/v1/playlists \
+  -H "Authorization: Bearer YOUR_API_SECRET" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "dpVersion": "1.0.0",
+    "title": "my-playlist",
+    "items": [{
+      "source": "https://example.com/art.html",
+      "duration": 300,
+      "license": "open"
+    }]
+  }'
 ```
 
-### Persistence Behavior
-
-The API supports both synchronous and asynchronous persistence patterns:
-
-#### Default Behavior (Synchronous)
-
-- **Response**: Operations return `201 Created` or `200 OK` after successful persistence
-- **Persistence**: Data is saved immediately to storage before responding
-- **Use Case**: Most common scenario for immediate data availability
-
-#### Optional Async Behavior (RFC 7240)
-
-- **Header**: Include `Prefer: respond-async` in your request headers
-- **Response**: Operations return `202 Accepted` before persistence
-- **Persistence**: Data is queued for background processing
-- **Use Case**: High-throughput scenarios or when immediate persistence isn't required
-
-**Example Async Request:**
+**List Playlists**
 
 ```bash
-curl -X POST https://your-api.workers.dev/api/v1/playlists \
+curl "http://localhost:8787/api/v1/playlists?sort=desc&limit=10"
+```
+
+### Async Processing
+
+Add `Prefer: respond-async` header for background processing:
+
+```bash
+curl -X POST http://localhost:8787/api/v1/playlists \
   -H "Authorization: Bearer YOUR_API_SECRET" \
   -H "Prefer: respond-async" \
   -H "Content-Type: application/json" \
   -d '{...}'
 ```
 
-**Note:** Async operation tracking and status monitoring capabilities are planned for future releases.
+- **Synchronous** (default): Returns `201` after data is persisted
+- **Asynchronous**: Returns `202` immediately, queues for background processing
 
-### Core Endpoints
-
-| Method   | Endpoint                      | Description     | Auth Required |
-| -------- | ----------------------------- | --------------- | ------------- |
-| `GET`    | `/api/v1`                     | API information | No            |
-| `GET`    | `/api/v1/health`              | Health check    | No            |
-| `GET`    | `/api/v1/playlists`           | List playlists  | No            |
-| `GET`    | `/api/v1/playlists/{id}`      | Get playlist    | No            |
-| `POST`   | `/api/v1/playlists`           | Create playlist | Yes           |
-| `PUT`    | `/api/v1/playlists/{id}`      | Update playlist | Yes           |
-| `DELETE` | `/api/v1/playlists/{id}`      | Delete playlist | Yes           |
-| `GET`    | `/api/v1/channels`            | List groups     | No            |
-| `GET`    | `/api/v1/channels/{id}`       | Get group       | No            |
-| `POST`   | `/api/v1/channels`            | Create group    | Yes           |
-| `PUT`    | `/api/v1/channels/{id}`       | Update group    | Yes           |
-| `DELETE` | `/api/v1/channels/{id}`       | Delete channel  | Yes           |
-| `GET`    | `/api/v1/playlist-items`      | List items      | No            |
-| `GET`    | `/api/v1/playlist-items/{id}` | Get item        | No            |
-
-### Example Requests
-
-#### Create Playlist
+## Development
 
 ```bash
-curl -X POST https://your-api.workers.dev/api/v1/playlists \
-  -H "Authorization: Bearer YOUR_API_SECRET" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "dpVersion": "1.0.0",
-    "title": "my-first-playlist",
-    "items": [
-      {
-        "source": "https://example.com/art.html",
-        "duration": 300,
-        "license": "open"
-      }
-    ]
-  }'
-```
+# Cloudflare Workers
+npm run worker:dev
 
-#### Get Playlists
+# Node.js
+npm run node:dev
 
-```bash
-curl -X GET "https://your-api.workers.dev/api/v1/playlists?sort=desc&limit=10"
-```
-
-#### Health Check
-
-```bash
-curl -X GET https://your-api.workers.dev/api/v1/health
-```
-
-### Response Format
-
-**Success Response:**
-
-```json
-{
-  "dpVersion": "1.0.0",
-  "id": "playlist-id",
-  "items": [...],
-  "signature": "ed25519-signature",
-  "created": "2024-01-15T14:30:00.000Z"
-}
-```
-
-**Error Response:**
-
-```json
-{
-  "error": "validation_error",
-  "message": "Invalid playlist data: items.0.duration: Expected number, received string"
-}
-```
-
-### Error Codes
-
-| Code  | Description                          |
-| ----- | ------------------------------------ |
-| `400` | Bad Request (validation error)       |
-| `401` | Unauthorized (missing/invalid token) |
-| `404` | Not Found                            |
-| `500` | Internal Server Error                |
-
-## 🧪 Testing
-
-```bash
-# Unit tests
+# Tests
 npm test
+npm run test:api         # Integration tests
+npm run benchmark        # Performance tests
 
-# Integration tests
-npm run test:api
-
-# Performance benchmarks
-npm run benchmark
-
-# Coverage report
-npm run test:coverage
+# Code quality
+npm run validate         # Run all checks
 ```
 
-📖 **For detailed testing guide, see [TESTING.md](TESTING.md)**
+See [DEVELOPMENT.md](DEVELOPMENT.md) for detailed setup and [TESTING.md](TESTING.md) for testing guide.
 
-## 📚 Documentation
+## Documentation
 
-- **[DEVELOPMENT.md](DEVELOPMENT.md)** - Local development setup and project structure
-- **[TESTING.md](TESTING.md)** - Testing strategies and performance benchmarking
-- **[k6/README.md](k6/README.md)** - Performance testing with K6
+- **[DEVELOPMENT.md](DEVELOPMENT.md)** - Setup, configuration, and project structure
+- **[TESTING.md](TESTING.md)** - Testing strategies and benchmarking
+- **[OpenAPI Spec](openapi.yaml)** - Full API specification
+- **[DP-1 Specification](https://github.com/display-protocol/dp1/blob/main/docs/spec.md)** - Protocol documentation
 
-## 🔗 References
-
-- [DP-1 Specification](https://github.com/display-protocol/dp1/blob/main/docs/spec.md)
-- [OpenAPI Schema](https://github.com/display-protocol/dp1/blob/main/docs/feed-api.yaml)
-- [Hono Framework](https://hono.dev/)
-- [Zod Validation](https://zod.dev/)
-- [Cloudflare Workers](https://developers.cloudflare.com/workers/)
-
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes with proper TypeScript types
-4. Add Zod validation for new fields
-5. Update tests and documentation
-6. Run validation: `npm run validate`
-7. Submit a pull request
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Write tests and ensure they pass (`npm run validate`)
+4. Commit changes (`git commit -m 'Add amazing feature'`)
+5. Push to branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
 
-### Code Standards
+## License
 
-- **TypeScript**: Strict mode with comprehensive typing
-- **Zod Schemas**: All API inputs must be validated
-- **ESLint + Prettier**: Consistent code formatting
-- **DP-1 Compliance**: Maintain DP-1 specification compliance
-
-## 📄 License
-
-Mozilla Public License 2.0
+Mozilla Public License 2.0 - See [LICENSE](LICENSE)
 
 Copyright (c) 2025 Feral File
-
----
-
-**Built with ❤️ by Feral File for the DP-1 ecosystem.**
