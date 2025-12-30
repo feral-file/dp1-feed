@@ -6,24 +6,10 @@ import {
   listAllPlaylistItems,
   listPlaylistItemsByChannelId,
 } from '../storage';
+import { validateIdentifier, isValidUUID } from '../helper';
 
 // Create playlist items router
 const playlistItems = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();
-
-/**
- * Validate identifier format (UUID only for playlist items)
- */
-function validatePlaylistItemId(identifier: string): {
-  isValid: boolean;
-  isUuid: boolean;
-} {
-  const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(identifier);
-
-  return {
-    isValid: isUuid,
-    isUuid,
-  };
-}
 
 /**
  * GET /playlist-items/:id - Get specific playlist item by UUID
@@ -33,9 +19,9 @@ playlistItems.get('/:id', async c => {
     const itemId = c.req.param('id');
 
     // Validate ID format (UUID only)
-    const validation = validatePlaylistItemId(itemId);
+    const isValid = isValidUUID(itemId);
 
-    if (!itemId || !validation.isValid) {
+    if (!itemId || !isValid) {
       return c.json(
         {
           error: 'invalid_id',
@@ -102,11 +88,8 @@ playlistItems.get('/', async c => {
     let result;
     if (channelId) {
       // Validate channel ID format
-      const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
-        channelId
-      );
-      const isSlug = /^[a-zA-Z0-9-]+$/.test(channelId);
-      if (!isUuid && !isSlug) {
+      const validation = validateIdentifier(channelId);
+      if (!validation.isValid) {
         return c.json(
           {
             error: 'invalid_channel_id',

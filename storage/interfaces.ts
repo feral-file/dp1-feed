@@ -30,14 +30,26 @@ export interface KeyValueStorage {
   getMultiple(keys: string[], options?: KVGetOptions): Promise<Map<string, any>>;
 
   /**
-   * Put a value with a key
+   * Put a value with a key (single operation)
    */
   put(key: string, value: string): Promise<void>;
 
   /**
-   * Delete a value by key
+   * Put multiple key-value pairs (bulk operation)
+   * Returns array of keys that failed to write
+   */
+  putMultiple(entries: Array<{ key: string; value: string }>): Promise<string[]>;
+
+  /**
+   * Delete a value by key (single operation)
    */
   delete(key: string): Promise<void>;
+
+  /**
+   * Delete multiple keys (bulk operation)
+   * Returns array of keys that failed to delete
+   */
+  deleteMultiple(keys: string[]): Promise<string[]>;
 
   /**
    * List keys with optional prefix filtering and pagination

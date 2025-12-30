@@ -628,6 +628,287 @@ describe('EtcdKVStorage', () => {
       });
     });
   });
+
+  describe('putMultiple', () => {
+    it('should use bulk write transaction API for multiple entries', async () => {
+      const entries = [
+        { key: 'key1', value: 'value1' },
+        { key: 'key2', value: 'value2' },
+        { key: 'key3', value: 'value3' },
+      ];
+
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            succeeded: true,
+            responses: [{}, {}, {}],
+          }),
+      });
+
+      const result = await storage.putMultiple(entries);
+
+      expect(result).toEqual([]);
+      expect(mockFetch).toHaveBeenCalledTimes(1);
+      expect(mockFetch).toHaveBeenCalledWith(
+        'http://localhost:2379/v3/kv/txn',
+        expect.objectContaining({
+          method: 'POST',
+          body: expect.stringContaining('request_put'),
+        })
+      );
+
+      // Verify the transaction body contains all entries
+      const callBody = JSON.parse(mockFetch.mock.calls[0][1].body);
+      expect(callBody.success).toHaveLength(3);
+      expect(callBody.success[0]).toHaveProperty('request_put');
+    });
+
+    it('should return unsuccessful keys when transaction fails', async () => {
+      const entries = [
+        { key: 'key1', value: 'value1' },
+        { key: 'key2', value: 'value2' },
+      ];
+
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            succeeded: false,
+          }),
+      });
+
+      const result = await storage.putMultiple(entries);
+
+      expect(result).toEqual(['key1', 'key2']);
+    });
+
+    it('should throw error on API failure', async () => {
+      const entries = [
+        { key: 'key1', value: 'value1' },
+        { key: 'key2', value: 'value2' },
+      ];
+
+      mockFetch.mockResolvedValue({
+        ok: false,
+        status: 500,
+        statusText: 'Internal Server Error',
+      });
+
+      await expect(storage.putMultiple(entries)).rejects.toThrow(
+        'etcd txn failed: 500 Internal Server Error'
+      );
+    });
+
+    it('should chunk operations exceeding 128 item limit', async () => {
+      const entries = Array.from({ length: 200 }, (_, i) => ({
+        key: `key${i}`,
+        value: `value${i}`,
+      }));
+
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            succeeded: true,
+            responses: [],
+          }),
+      });
+
+      await storage.putMultiple(entries);
+
+      // Should have made 2 API calls (128 + 72)
+      expect(mockFetch).toHaveBeenCalledTimes(2);
+
+      // Verify first chunk has 128 operations
+      const firstCallBody = JSON.parse(mockFetch.mock.calls[0][1].body);
+      expect(firstCallBody.success).toHaveLength(128);
+
+      // Verify second chunk has 72 operations
+      const secondCallBody = JSON.parse(mockFetch.mock.calls[1][1].body);
+      expect(secondCallBody.success).toHaveLength(72);
+    });
+
+    it('should use single put operation for single entry', async () => {
+      const entries = [{ key: 'key1', value: 'value1' }];
+
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: () => Promise.resolve({}),
+      });
+
+      const result = await storage.putMultiple(entries);
+
+      expect(result).toEqual([]);
+      // Should call the single put endpoint, not transaction
+      expect(mockFetch).toHaveBeenCalledWith('http://localhost:2379/v3/kv/put', expect.any(Object));
+    });
+
+    it('should return empty array for empty entries', async () => {
+      const result = await storage.putMultiple([]);
+
+      expect(result).toEqual([]);
+      expect(mockFetch).not.toHaveBeenCalled();
+    });
+
+    it('should properly encode keys and values in base64', async () => {
+      const entries = [
+        { key: 'test-key', value: 'test-value' },
+        { key: 'test-key-2', value: 'test-value-2' },
+      ];
+
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            succeeded: true,
+          }),
+      });
+
+      await storage.putMultiple(entries);
+
+      const callBody = JSON.parse(mockFetch.mock.calls[0][1].body);
+      const putOp = callBody.success[0].request_put;
+
+      // Key should be base64 encoded with namespace prefix
+      expect(putOp.key).toBe(encodeBase64('dp1/test-namespace/test-key'));
+      // Value should be base64 encoded
+      expect(putOp.value).toBe(encodeBase64('test-value'));
+    });
+  });
+
+  describe('deleteMultiple', () => {
+    it('should use bulk delete transaction API for multiple keys', async () => {
+      const keys = ['key1', 'key2', 'key3'];
+
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            succeeded: true,
+            responses: [{}, {}, {}],
+          }),
+      });
+
+      const result = await storage.deleteMultiple(keys);
+
+      expect(result).toEqual([]);
+      expect(mockFetch).toHaveBeenCalledTimes(1);
+      expect(mockFetch).toHaveBeenCalledWith(
+        'http://localhost:2379/v3/kv/txn',
+        expect.objectContaining({
+          method: 'POST',
+          body: expect.stringContaining('request_delete_range'),
+        })
+      );
+
+      // Verify the transaction body contains all keys
+      const callBody = JSON.parse(mockFetch.mock.calls[0][1].body);
+      expect(callBody.success).toHaveLength(3);
+      expect(callBody.success[0]).toHaveProperty('request_delete_range');
+    });
+
+    it('should return unsuccessful keys when transaction fails', async () => {
+      const keys = ['key1', 'key2'];
+
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            succeeded: false,
+          }),
+      });
+
+      const result = await storage.deleteMultiple(keys);
+
+      expect(result).toEqual(['key1', 'key2']);
+    });
+
+    it('should throw error on API failure', async () => {
+      const keys = ['key1', 'key2'];
+
+      mockFetch.mockResolvedValue({
+        ok: false,
+        status: 500,
+        statusText: 'Internal Server Error',
+      });
+
+      await expect(storage.deleteMultiple(keys)).rejects.toThrow(
+        'etcd txn failed: 500 Internal Server Error'
+      );
+    });
+
+    it('should chunk operations exceeding 128 item limit', async () => {
+      const keys = Array.from({ length: 200 }, (_, i) => `key${i}`);
+
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            succeeded: true,
+            responses: [],
+          }),
+      });
+
+      await storage.deleteMultiple(keys);
+
+      // Should have made 2 API calls (128 + 72)
+      expect(mockFetch).toHaveBeenCalledTimes(2);
+
+      // Verify first chunk has 128 operations
+      const firstCallBody = JSON.parse(mockFetch.mock.calls[0][1].body);
+      expect(firstCallBody.success).toHaveLength(128);
+
+      // Verify second chunk has 72 operations
+      const secondCallBody = JSON.parse(mockFetch.mock.calls[1][1].body);
+      expect(secondCallBody.success).toHaveLength(72);
+    });
+
+    it('should use single delete operation for single key', async () => {
+      const keys = ['key1'];
+
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: () => Promise.resolve({}),
+      });
+
+      const result = await storage.deleteMultiple(keys);
+
+      expect(result).toEqual([]);
+      // Should call the single delete endpoint, not transaction
+      expect(mockFetch).toHaveBeenCalledWith(
+        'http://localhost:2379/v3/kv/deleterange',
+        expect.any(Object)
+      );
+    });
+
+    it('should return empty array for empty keys', async () => {
+      const result = await storage.deleteMultiple([]);
+
+      expect(result).toEqual([]);
+      expect(mockFetch).not.toHaveBeenCalled();
+    });
+
+    it('should properly encode keys in base64', async () => {
+      const keys = ['test-key', 'test-key-2'];
+
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            succeeded: true,
+          }),
+      });
+
+      await storage.deleteMultiple(keys);
+
+      const callBody = JSON.parse(mockFetch.mock.calls[0][1].body);
+      const deleteOp = callBody.success[0].request_delete_range;
+
+      // Key should be base64 encoded with namespace prefix
+      expect(deleteOp.key).toBe(encodeBase64('dp1/test-namespace/test-key'));
+    });
+  });
 });
 
 describe('EtcdStorageProvider', () => {

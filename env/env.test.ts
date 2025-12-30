@@ -36,6 +36,11 @@ describe('env.ts', () => {
         DP1_WRITE_QUEUE: mockQueue,
         API_SECRET: 'test-secret',
         ED25519_PRIVATE_KEY: 'test-key',
+        CLOUDFLARE_API_TOKEN: 'test-api-token',
+        CLOUDFLARE_ACCOUNT_ID: 'test-account-id',
+        CLOUDFLARE_PLAYLISTS_NAMESPACE_ID: 'playlists-namespace-id',
+        CLOUDFLARE_CHANNELS_NAMESPACE_ID: 'channels-namespace-id',
+        CLOUDFLARE_PLAYLIST_ITEMS_NAMESPACE_ID: 'playlist-items-namespace-id',
       };
 
       // Act
@@ -83,6 +88,11 @@ describe('env.ts', () => {
         DP1_PLAYLIST_ITEMS: mockKVNamespace,
         API_SECRET: 'test-secret',
         ED25519_PRIVATE_KEY: 'test-key',
+        CLOUDFLARE_API_TOKEN: 'test-api-token',
+        CLOUDFLARE_ACCOUNT_ID: 'test-account-id',
+        CLOUDFLARE_PLAYLISTS_NAMESPACE_ID: 'playlists-namespace-id',
+        CLOUDFLARE_CHANNELS_NAMESPACE_ID: 'channels-namespace-id',
+        CLOUDFLARE_PLAYLIST_ITEMS_NAMESPACE_ID: 'playlist-items-namespace-id',
         // Missing Queue binding
       };
 
@@ -90,6 +100,68 @@ describe('env.ts', () => {
       expect(() => initializeCloudFlareEnv(mockBindings as any)).toThrow(
         'Missing required Queue binding: DP1_WRITE_QUEUE'
       );
+    });
+
+    it('should throw error when CloudFlare API credentials are missing in non-local environment', () => {
+      // Arrange
+      const mockKVNamespace = {
+        get: vi.fn(),
+        put: vi.fn(),
+        delete: vi.fn(),
+        list: vi.fn(),
+        getWithMetadata: vi.fn(),
+      } as any;
+      const mockQueue = {
+        send: vi.fn(),
+        sendBatch: vi.fn(),
+      } as any;
+      const mockBindings = {
+        DP1_PLAYLISTS: mockKVNamespace,
+        DP1_CHANNELS: mockKVNamespace,
+        DP1_PLAYLIST_ITEMS: mockKVNamespace,
+        DP1_WRITE_QUEUE: mockQueue,
+        API_SECRET: 'test-secret',
+        ED25519_PRIVATE_KEY: 'test-key',
+        ENVIRONMENT: 'development', // Non-local environment requires API credentials
+        // Missing CloudFlare API credentials
+      };
+
+      // Act & Assert
+      expect(() => initializeCloudFlareEnv(mockBindings as any)).toThrow(
+        'Missing required CloudFlare API credentials: CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, and namespace IDs'
+      );
+    });
+
+    it('should not throw error when CloudFlare API credentials are missing in local environment', () => {
+      // Arrange
+      const mockKVNamespace = {
+        get: vi.fn(),
+        put: vi.fn(),
+        delete: vi.fn(),
+        list: vi.fn(),
+        getWithMetadata: vi.fn(),
+      } as any;
+      const mockQueue = {
+        send: vi.fn(),
+        sendBatch: vi.fn(),
+      } as any;
+      const mockBindings = {
+        DP1_PLAYLISTS: mockKVNamespace,
+        DP1_CHANNELS: mockKVNamespace,
+        DP1_PLAYLIST_ITEMS: mockKVNamespace,
+        DP1_WRITE_QUEUE: mockQueue,
+        API_SECRET: 'test-secret',
+        ED25519_PRIVATE_KEY: 'test-key',
+        ENVIRONMENT: 'local', // Local environment uses bindings for bulk operations
+        // Missing CloudFlare API credentials - OK for local dev
+        CLOUDFLARE_ACCOUNT_ID: 'local-dev-account',
+        CLOUDFLARE_PLAYLISTS_NAMESPACE_ID: 'local-playlist-id',
+        CLOUDFLARE_CHANNELS_NAMESPACE_ID: 'local-channel-id',
+        CLOUDFLARE_PLAYLIST_ITEMS_NAMESPACE_ID: 'local-item-id',
+      };
+
+      // Act & Assert
+      expect(() => initializeCloudFlareEnv(mockBindings as any)).not.toThrow();
     });
   });
 

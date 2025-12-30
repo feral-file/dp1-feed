@@ -48,8 +48,8 @@
     "worker:setup:kv:dev": "wrangler kv namespace create DP1_PLAYLISTS --preview && wrangler kv namespace create DP1_CHANNELS --preview && wrangler kv namespace create DP1_PLAYLIST_ITEMS --preview",
     "worker:setup:kv:production": "wrangler kv namespace create DP1_PLAYLISTS --env production && wrangler kv namespace create DP1_CHANNELS --env production && wrangler kv namespace create DP1_PLAYLIST_ITEMS --env production",
     "worker:setup:secrets": "npm run worker:setup:secrets:dev",
-    "worker:setup:secrets:dev": "wrangler secret put API_SECRET --env dev && wrangler secret put ED25519_PRIVATE_KEY --env dev",
-    "worker:setup:secrets:production": "wrangler secret put API_SECRET --env production && wrangler secret put ED25519_PRIVATE_KEY --env production",
+    "worker:setup:secrets:dev": "wrangler secret put API_SECRET --env dev && wrangler secret put ED25519_PRIVATE_KEY --env dev && wrangler secret put CLOUDFLARE_API_TOKEN --env dev",
+    "worker:setup:secrets:production": "wrangler secret put API_SECRET --env production && wrangler secret put ED25519_PRIVATE_KEY --env production && wrangler secret put CLOUDFLARE_API_TOKEN --env production",
     "worker:setup:queues:dev": "wrangler queues create dp1-write-operations --env dev",
     "worker:setup:queues:production": "wrangler queues create dp1-write-operations-prod --env production",
     "worker:init:data": "node scripts/init-kv-data.js",
@@ -60,9 +60,9 @@
     "worker:kv:list": "wrangler kv namespace list",
     "worker:kv:get": "wrangler kv key get",
     "worker:kv:put": "wrangler kv key put",
-    "node:dev": "tsx --env-file .env --watch server.ts",
-    "node:start": "node --env-file .env dist/server.js",
-    "node:start:dev": "tsx --env-file .env server.ts",
+    "node:dev": "tsx --env-file .env.sample --env-file .env --watch server.ts",
+    "node:start": "node --env-file .env.sample --env-file .env dist/server.js",
+    "node:start:dev": "tsx --env-file .env.sample --env-file .env server.ts",
     "node:build": "esbuild server.ts --bundle --platform=node --format=esm --outfile=dist/server.js --external:@hono/node-server --external:nats --external:canonicalize --external:semver --external:zod --external:ff-dp1-js"
   },
   "keywords": [

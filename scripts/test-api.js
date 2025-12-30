@@ -795,7 +795,7 @@ async function testDeletePlaylist() {
     'DELETE',
     `/api/v1/playlists/${createdPlaylistId}`,
     null,
-    true
+    false
   );
 
   if (deleteResponse.ok && deleteResponse.status === 204) {
@@ -827,7 +827,7 @@ async function testDeletePlaylistBySlug() {
   console.log('\n🗑️  Testing DELETE /api/v1/playlists/{slug} (deletion by slug)...');
 
   // Create a new playlist for this test
-  const createResponse = await makeRequest('POST', '/api/v1/playlists', testPlaylist, true);
+  const createResponse = await makeRequest('POST', '/api/v1/playlists', testPlaylist, false);
   if (!createResponse.ok) {
     console.log('❌ Failed to create playlist for slug deletion test');
     return false;
@@ -841,7 +841,7 @@ async function testDeletePlaylistBySlug() {
     'DELETE',
     `/api/v1/playlists/${createdPlaylist.slug}`,
     null,
-    true
+    false
   );
 
   if (deleteResponse.ok && deleteResponse.status === 204) {
@@ -872,7 +872,7 @@ async function testDeleteNonExistentPlaylist() {
     'DELETE',
     `/api/v1/playlists/${nonExistentId}`,
     null,
-    true
+    false
   );
 
   if (deleteResponse.status === 404) {
@@ -892,7 +892,7 @@ async function testCreateChannel() {
   // Ensure we have a playlist to reference - create one if needed
   if (!createdPlaylistId) {
     console.log('🔧 No playlist available to reference in channel. Creating a playlist first...');
-    const createResponse = await makeRequest('POST', '/api/v1/playlists', testPlaylist, true);
+    const createResponse = await makeRequest('POST', '/api/v1/playlists', testPlaylist, false);
     if (!createResponse.ok) {
       console.log('❌ Failed to create playlist for channel test');
       return false;
@@ -1951,6 +1951,427 @@ async function testPlaylistItemSorting() {
   return true;
 }
 
+// Test bulk write: Playlist with 1000 items
+let bulkTestPlaylistId = null;
+let bulkTestChannelId = null;
+
+async function testBulkPlaylistCreate() {
+  console.log('\n📦 Testing bulk write - Creating playlist with 1000 items...');
+
+  // Generate 1000 items
+  const items = [];
+  for (let i = 1; i <= 1000; i++) {
+    items.push({
+      title: `Bulk Test Artwork ${i}`,
+      source: `https://example.com/bulk-test-${i}.html`,
+      duration: 300 + (i % 100), // Vary duration
+      license: ['open', 'token', 'subscription'][i % 3], // Rotate licenses
+    });
+  }
+
+  const bulkPlaylist = {
+    dpVersion: '1.0.0',
+    title: 'Bulk Test Playlist - 1000 Items',
+    summary: 'Testing bulk write operations with 1000 playlist items',
+    defaults: {
+      display: {
+        scaling: 'fit',
+        background: '#000000',
+      },
+      license: 'open',
+      duration: 300,
+    },
+    items: items,
+  };
+
+  console.log(`   Creating playlist with ${items.length} items...`);
+  const startTime = Date.now();
+
+  const response = await makeRequest('POST', '/api/v1/playlists', bulkPlaylist);
+
+  const duration = Date.now() - startTime;
+
+  if (response.ok) {
+    console.log(`✅ Playlist with 1000 items created successfully in ${duration}ms`);
+    console.log(`   ID: ${response.data.id}`);
+    console.log(`   Items count: ${response.data.items?.length || 0}`);
+
+    // Store ID for further tests
+    bulkTestPlaylistId = response.data.id;
+
+    // Verify all items were created
+    if (response.data.items.length !== 1000) {
+      console.log(`❌ Expected 1000 items, got ${response.data.items.length}`);
+      return false;
+    }
+
+    // Verify each item has server-generated fields
+    const sampleItem = response.data.items[0];
+    if (!sampleItem.id || !sampleItem.created) {
+      console.log('❌ Items missing server-generated fields');
+      return false;
+    }
+
+    console.log('✅ All 1000 items have server-generated IDs and timestamps');
+
+    return true;
+  } else {
+    console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
+    return false;
+  }
+}
+
+async function testBulkPlaylistUpdate() {
+  if (!bulkTestPlaylistId) {
+    console.log('\n⚠️  Skipping bulk playlist update test - no bulk playlist ID available');
+    return true;
+  }
+
+  console.log('\n🔄 Testing bulk write - Updating playlist with 1000 items...');
+
+  // Generate 1000 different items
+  const updatedItems = [];
+  for (let i = 1; i <= 1000; i++) {
+    updatedItems.push({
+      title: `Updated Bulk Artwork ${i}`,
+      source: `https://example.com/updated-bulk-${i}.html`,
+      duration: 400 + (i % 150),
+      license: ['token', 'subscription', 'open'][i % 3],
+    });
+  }
+
+  const updateData = {
+    title: 'Updated Bulk Test Playlist - 1000 Items',
+    summary: 'Updated: Testing bulk write operations with 1000 playlist items',
+    items: updatedItems,
+  };
+
+  console.log(`   Updating playlist with ${updatedItems.length} new items...`);
+  const startTime = Date.now();
+
+  const response = await makeRequest(
+    'PATCH',
+    `/api/v1/playlists/${bulkTestPlaylistId}`,
+    updateData
+  );
+
+  const duration = Date.now() - startTime;
+
+  if (response.ok) {
+    console.log(`✅ Playlist with 1000 items updated successfully in ${duration}ms`);
+    console.log(`   Items count: ${response.data.items?.length || 0}`);
+
+    // Verify all items were updated
+    if (response.data.items.length !== 1000) {
+      console.log(`❌ Expected 1000 items, got ${response.data.items.length}`);
+      return false;
+    }
+
+    // Verify items have new data
+    const sampleItem = response.data.items[0];
+    if (!sampleItem.title.startsWith('Updated Bulk Artwork')) {
+      console.log('❌ Items not updated correctly');
+      return false;
+    }
+
+    console.log('✅ All 1000 items updated with new data');
+
+    return true;
+  } else {
+    console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
+    return false;
+  }
+}
+
+async function testBulkPlaylistDelete() {
+  if (!bulkTestPlaylistId) {
+    console.log('\n⚠️  Skipping bulk playlist delete test - no bulk playlist ID available');
+    return true;
+  }
+
+  console.log('\n🗑️  Testing bulk write - Deleting playlist with 1000 items...');
+
+  const startTime = Date.now();
+
+  const response = await makeRequest(
+    'DELETE',
+    `/api/v1/playlists/${bulkTestPlaylistId}`,
+    null,
+    false
+  );
+
+  const duration = Date.now() - startTime;
+
+  if (response.ok && response.status === 204) {
+    console.log(`✅ Playlist with 1000 items deleted successfully in ${duration}ms`);
+
+    // Verify playlist is actually deleted
+    const verifyResponse = await makeRequest('GET', `/api/v1/playlists/${bulkTestPlaylistId}`);
+    if (verifyResponse.status === 404) {
+      console.log('✅ Playlist and all 1000 items properly removed');
+    } else {
+      console.log(`❌ Playlist still exists after deletion: ${verifyResponse.status}`);
+      return false;
+    }
+
+    // Clear the ID
+    bulkTestPlaylistId = null;
+
+    return true;
+  } else {
+    console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
+    return false;
+  }
+}
+
+async function testBulkChannelCreate() {
+  console.log('\n📦 Testing bulk write - Creating channel with 100 playlists...');
+
+  // First, create 100 playlists to reference
+  console.log('   🔧 Creating 100 playlists for channel test...');
+  const playlistUrls = [];
+
+  for (let i = 1; i <= 100; i++) {
+    const miniPlaylist = {
+      dpVersion: '1.0.0',
+      title: `Bulk Channel Test Playlist ${i}`,
+      defaults: {
+        license: 'open',
+        duration: 300,
+      },
+      items: [
+        {
+          title: `Bulk Channel Test Item ${i}`,
+          source: `https://example.com/bulk-channel-${i}.html`,
+          duration: 300,
+          license: 'open',
+        },
+      ],
+    };
+
+    const playlistResponse = await makeRequest('POST', '/api/v1/playlists', miniPlaylist);
+    if (playlistResponse.ok) {
+      playlistUrls.push(`${baseUrl}/api/v1/playlists/${playlistResponse.data.id}`);
+
+      // Progress indicator every 20 playlists
+      if (i % 20 === 0) {
+        console.log(`   📝 Created ${i}/100 playlists...`);
+      }
+    } else {
+      console.log(`❌ Failed to create playlist ${i} for channel test`);
+      return false;
+    }
+  }
+
+  console.log(`✅ Created all 100 playlists`);
+
+  // Wait for queue processing
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  // Now create the channel with 100 playlists
+  const bulkChannel = {
+    title: 'Bulk Test Channel - 100 Playlists',
+    curator: 'Bulk Test Curator',
+    curators: [
+      {
+        name: 'Bulk Test Curator',
+        key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+        url: 'https://example.com/bulk-curator',
+      },
+    ],
+    publisher: {
+      name: 'Bulk Test Publisher',
+      key: 'did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK',
+      url: 'https://example.com/bulk-publisher',
+    },
+    summary: 'Testing bulk write operations with 100 playlists in a channel',
+    playlists: playlistUrls,
+  };
+
+  console.log(`   Creating channel with ${playlistUrls.length} playlists...`);
+  const startTime = Date.now();
+
+  const response = await makeRequest('POST', '/api/v1/channels', bulkChannel);
+
+  const duration = Date.now() - startTime;
+
+  if (response.ok) {
+    console.log(`✅ Channel with 100 playlists created successfully in ${duration}ms`);
+    console.log(`   ID: ${response.data.id}`);
+    console.log(`   Playlists count: ${response.data.playlists?.length || 0}`);
+
+    // Store ID for further tests
+    bulkTestChannelId = response.data.id;
+
+    // Verify all playlists were added
+    if (response.data.playlists.length !== 100) {
+      console.log(`❌ Expected 100 playlists, got ${response.data.playlists.length}`);
+      return false;
+    }
+
+    // Verify returned playlists match the input playlists
+    const returnedPlaylists = response.data.playlists;
+    const missingPlaylists = playlistUrls.filter(url => !returnedPlaylists.includes(url));
+    const extraPlaylists = returnedPlaylists.filter(url => !playlistUrls.includes(url));
+
+    if (missingPlaylists.length > 0) {
+      console.log(`❌ ${missingPlaylists.length} playlists from input missing in response`);
+      console.log(`   First missing: ${missingPlaylists[0]}`);
+      return false;
+    }
+
+    if (extraPlaylists.length > 0) {
+      console.log(`❌ ${extraPlaylists.length} extra playlists in response not in input`);
+      console.log(`   First extra: ${extraPlaylists[0]}`);
+      return false;
+    }
+
+    console.log('✅ All 100 playlists associated with channel');
+    console.log('✅ All returned playlists match input playlists');
+
+    return true;
+  } else {
+    console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
+    return false;
+  }
+}
+
+async function testBulkChannelUpdate() {
+  if (!bulkTestChannelId) {
+    console.log('\n⚠️  Skipping bulk channel update test - no bulk channel ID available');
+    return true;
+  }
+
+  console.log('\n🔄 Testing bulk write - Updating channel with 100 playlists...');
+
+  // Create 100 new playlists for update
+  console.log('   🔧 Creating 100 new playlists for channel update...');
+  const newPlaylistUrls = [];
+
+  for (let i = 1; i <= 100; i++) {
+    const miniPlaylist = {
+      dpVersion: '1.0.0',
+      title: `Updated Bulk Channel Playlist ${i}`,
+      defaults: {
+        license: 'token',
+        duration: 400,
+      },
+      items: [
+        {
+          title: `Updated Bulk Channel Item ${i}`,
+          source: `https://example.com/updated-bulk-channel-${i}.html`,
+          duration: 400,
+          license: 'token',
+        },
+      ],
+    };
+
+    const playlistResponse = await makeRequest('POST', '/api/v1/playlists', miniPlaylist);
+    if (playlistResponse.ok) {
+      newPlaylistUrls.push(`${baseUrl}/api/v1/playlists/${playlistResponse.data.id}`);
+
+      if (i % 20 === 0) {
+        console.log(`   📝 Created ${i}/100 new playlists...`);
+      }
+    } else {
+      console.log(`❌ Failed to create new playlist ${i} for channel update`);
+      return false;
+    }
+  }
+
+  console.log(`✅ Created all 100 new playlists`);
+
+  const updateData = {
+    title: 'Updated Bulk Test Channel - 100 New Playlists',
+    summary: 'Updated: Testing bulk write operations with 100 playlists',
+    playlists: newPlaylistUrls,
+  };
+
+  console.log(`   Updating channel with ${newPlaylistUrls.length} new playlists...`);
+  const startTime = Date.now();
+
+  const response = await makeRequest('PATCH', `/api/v1/channels/${bulkTestChannelId}`, updateData);
+
+  const duration = Date.now() - startTime;
+
+  if (response.ok) {
+    console.log(`✅ Channel with 100 playlists updated successfully in ${duration}ms`);
+    console.log(`   Playlists count: ${response.data.playlists?.length || 0}`);
+
+    // Verify all playlists were updated
+    if (response.data.playlists.length !== 100) {
+      console.log(`❌ Expected 100 playlists, got ${response.data.playlists.length}`);
+      return false;
+    }
+
+    // Verify returned playlists match the input playlists
+    const returnedPlaylists = response.data.playlists;
+    const missingPlaylists = newPlaylistUrls.filter(url => !returnedPlaylists.includes(url));
+    const extraPlaylists = returnedPlaylists.filter(url => !newPlaylistUrls.includes(url));
+
+    if (missingPlaylists.length > 0) {
+      console.log(`❌ ${missingPlaylists.length} playlists from input missing in response`);
+      console.log(`   First missing: ${missingPlaylists[0]}`);
+      return false;
+    }
+
+    if (extraPlaylists.length > 0) {
+      console.log(`❌ ${extraPlaylists.length} extra playlists in response not in input`);
+      console.log(`   First extra: ${extraPlaylists[0]}`);
+      return false;
+    }
+
+    console.log('✅ All 100 playlists updated in channel');
+    console.log('✅ All returned playlists match input playlists');
+
+    return true;
+  } else {
+    console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
+    return false;
+  }
+}
+
+async function testBulkChannelDelete() {
+  if (!bulkTestChannelId) {
+    console.log('\n⚠️  Skipping bulk channel delete test - no bulk channel ID available');
+    return true;
+  }
+
+  console.log('\n🗑️  Testing bulk write - Deleting channel with 100 playlists...');
+
+  const startTime = Date.now();
+
+  const response = await makeRequest(
+    'DELETE',
+    `/api/v1/channels/${bulkTestChannelId}`,
+    null,
+    false
+  );
+
+  const duration = Date.now() - startTime;
+
+  if (response.ok && response.status === 204) {
+    console.log(`✅ Channel with 100 playlists deleted successfully in ${duration}ms`);
+
+    // Verify channel is actually deleted
+    const verifyResponse = await makeRequest('GET', `/api/v1/channels/${bulkTestChannelId}`);
+    if (verifyResponse.status === 404) {
+      console.log('✅ Channel and all playlist associations properly removed');
+    } else {
+      console.log(`❌ Channel still exists after deletion: ${verifyResponse.status}`);
+      return false;
+    }
+
+    // Clear the ID
+    bulkTestChannelId = null;
+
+    return true;
+  } else {
+    console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
+    return false;
+  }
+}
+
 // Test JWT authentication
 async function testJwtAuthentication() {
   if (!jwtTestConfig) {
@@ -2046,7 +2467,7 @@ async function testInvalidJwtAuthentication() {
 
 // Main test runner
 async function runTests() {
-  console.log('🚀 Starting DP-1 Feed Operator API Tests (UUID + Slug Support)\n');
+  console.log('🚀 Starting DP-1 Feed Operator API Tests (UUID + Slug Support + Bulk Write)\n');
 
   const tests = [
     { name: 'Empty Listings', fn: testEmptyListing },
@@ -2084,6 +2505,13 @@ async function runTests() {
     { name: 'Playlist Sorting (Default)', fn: testPlaylistSortingDefault },
     { name: 'Channels Sorting', fn: testChannelSorting },
     { name: 'Playlist Item Sorting', fn: testPlaylistItemSorting },
+    // Bulk write tests
+    { name: 'Bulk Write: Create Playlist (1000 items)', fn: testBulkPlaylistCreate },
+    { name: 'Bulk Write: Update Playlist (1000 items)', fn: testBulkPlaylistUpdate },
+    { name: 'Bulk Write: Delete Playlist (1000 items)', fn: testBulkPlaylistDelete },
+    { name: 'Bulk Write: Create Channel (100 playlists)', fn: testBulkChannelCreate },
+    { name: 'Bulk Write: Update Channel (100 playlists)', fn: testBulkChannelUpdate },
+    { name: 'Bulk Write: Delete Channel (100 playlists)', fn: testBulkChannelDelete },
   ];
 
   const results = [];
@@ -2117,7 +2545,7 @@ async function runTests() {
 
   if (passed === total) {
     console.log(
-      '\n🎉 All tests passed! Your DP-1 Feed Operator API is working correctly with UUID, slug support, and queue-based processing.'
+      '\n🎉 All tests passed! Your DP-1 Feed Operator API is working correctly with UUID, slug support, queue-based processing, and bulk write operations (1000 items, 100 playlists).'
     );
   } else {
     console.log('\n⚠️  Some tests failed. Please check the output above for details.');

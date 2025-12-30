@@ -16,27 +16,10 @@ import { queueWriteOperation, generateMessageId } from '../queue/processor';
 import { shouldUseAsyncPersistence } from '../rfc7240';
 import { savePlaylist, deletePlaylist } from '../storage';
 import { signDP1Playlist } from 'ff-dp1-js';
+import { validateIdentifier } from '../helper';
 
 // Create playlist router
 const playlists = new Hono<{ Bindings: EnvironmentBindings; Variables: { env: Env } }>();
-
-/**
- * Validate identifier format (UUID or slug)
- */
-function validateIdentifier(identifier: string): {
-  isValid: boolean;
-  isUuid: boolean;
-  isSlug: boolean;
-} {
-  const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(identifier);
-  const isSlug = /^[a-zA-Z0-9-]+$/.test(identifier);
-
-  return {
-    isValid: isUuid || isSlug,
-    isUuid,
-    isSlug,
-  };
-}
 
 /**
  * Validate request body against Zod schema (input schema without server-generated fields)

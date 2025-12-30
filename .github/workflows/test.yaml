@@ -61,8 +61,8 @@ jobs:
       - name: Run integration tests
         run: npm run test:api
         env:
-          API_SECRET: test-api-secret
-          ENVIRONMENT: self-hosted
+          API_SECRET: dev-api-secret
+          ENVIRONMENT: cloudflare-workers
           SELF_HOSTED_DOMAINS: localhost:8787
           JWT_TEST_PRIVATE_KEY: ${{ secrets.JWT_TEST_PRIVATE_KEY }}
 
@@ -114,7 +114,7 @@ jobs:
       - name: Run integration tests
         run: npm run test:api
         env:
-          API_SECRET: test-api-secret
+          API_SECRET: dev-api-secret
           ENVIRONMENT: self-hosted
           SELF_HOSTED_DOMAINS: localhost:8787
           JWT_TEST_PRIVATE_KEY: ${{ secrets.JWT_TEST_PRIVATE_KEY }}
