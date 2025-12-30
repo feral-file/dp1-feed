@@ -6,7 +6,8 @@ services:
     restart: unless-stopped
     env_file:
       - .env.sample
-      - .env # Optional: override with local values
+      - path: .env # Optional: override with local values
+        required: false
     volumes:
       - etcd_data:/etcd-data
     ports:
@@ -53,7 +54,8 @@ services:
     restart: unless-stopped
     env_file:
       - .env.sample
-      - .env # Optional: override with local values
+      - path: .env # Optional: override with local values
+        required: false
     ports:
       - '8787:8787'
     networks:
@@ -74,7 +76,8 @@ services:
     user: '1000:1000'
     env_file:
       - .env.sample
-      - .env # Optional: override with local values
+      - path: .env # Optional: override with local values
+        required: false
     networks:
       - dp1-network
     depends_on:
@@ -109,7 +112,8 @@ services:
     restart: unless-stopped
     env_file:
       - .env.sample
-      - .env # Optional: override with local values
+      - path: .env # Optional: override with local values
+        required: false
     ports:
       - '8080:8080'
     networks:
