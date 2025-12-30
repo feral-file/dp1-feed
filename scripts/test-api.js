@@ -795,7 +795,7 @@ async function testDeletePlaylist() {
     'DELETE',
     `/api/v1/playlists/${createdPlaylistId}`,
     null,
-    true
+    false
   );
 
   if (deleteResponse.ok && deleteResponse.status === 204) {
@@ -827,7 +827,7 @@ async function testDeletePlaylistBySlug() {
   console.log('\n🗑️  Testing DELETE /api/v1/playlists/{slug} (deletion by slug)...');
 
   // Create a new playlist for this test
-  const createResponse = await makeRequest('POST', '/api/v1/playlists', testPlaylist, true);
+  const createResponse = await makeRequest('POST', '/api/v1/playlists', testPlaylist, false);
   if (!createResponse.ok) {
     console.log('❌ Failed to create playlist for slug deletion test');
     return false;
@@ -841,7 +841,7 @@ async function testDeletePlaylistBySlug() {
     'DELETE',
     `/api/v1/playlists/${createdPlaylist.slug}`,
     null,
-    true
+    false
   );
 
   if (deleteResponse.ok && deleteResponse.status === 204) {
@@ -872,7 +872,7 @@ async function testDeleteNonExistentPlaylist() {
     'DELETE',
     `/api/v1/playlists/${nonExistentId}`,
     null,
-    true
+    false
   );
 
   if (deleteResponse.status === 404) {
@@ -892,7 +892,7 @@ async function testCreateChannel() {
   // Ensure we have a playlist to reference - create one if needed
   if (!createdPlaylistId) {
     console.log('🔧 No playlist available to reference in channel. Creating a playlist first...');
-    const createResponse = await makeRequest('POST', '/api/v1/playlists', testPlaylist, true);
+    const createResponse = await makeRequest('POST', '/api/v1/playlists', testPlaylist, false);
     if (!createResponse.ok) {
       console.log('❌ Failed to create playlist for channel test');
       return false;
@@ -2097,7 +2097,7 @@ async function testBulkPlaylistDelete() {
     'DELETE',
     `/api/v1/playlists/${bulkTestPlaylistId}`,
     null,
-    true
+    false
   );
 
   const duration = Date.now() - startTime;
@@ -2341,7 +2341,12 @@ async function testBulkChannelDelete() {
 
   const startTime = Date.now();
 
-  const response = await makeRequest('DELETE', `/api/v1/channels/${bulkTestChannelId}`, null, true);
+  const response = await makeRequest(
+    'DELETE',
+    `/api/v1/channels/${bulkTestChannelId}`,
+    null,
+    false
+  );
 
   const duration = Date.now() - startTime;
 

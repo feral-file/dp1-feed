@@ -218,7 +218,7 @@ echo $ED25519_PRIVATE_KEY
 
 ```bash
 # .env for testing
-API_SECRET=test-api-secret
+API_SECRET=dev-api-secret
 ED25519_PRIVATE_KEY=test-key
 ENVIRONMENT=test
 ```
