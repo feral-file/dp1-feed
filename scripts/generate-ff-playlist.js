@@ -19,6 +19,7 @@ import { randomUUID } from 'crypto';
 
 const FF_API_BASE = 'https://feralfile.com/api';
 const CDN_BASE = 'https://cdn.feralfileassets.com';
+const MAX_PLAYLIST_ITEMS = 1024;
 
 /**
  * Fetch data from Feral File API
@@ -387,6 +388,12 @@ async function generatePlaylist(exhibitionIdOrSlug) {
         }
         
         playlistItems.push(item);
+        
+        // Cap playlist items at MAX_PLAYLIST_ITEMS
+        if (playlistItems.length >= MAX_PLAYLIST_ITEMS) {
+          console.log(`\n⚠️  Reached maximum playlist item limit of ${MAX_PLAYLIST_ITEMS}. Stopping item creation.`);
+          break;
+        }
       } catch (error) {
         console.error(`Error creating playlist item for ${title}:`, error.message);
         continue;
