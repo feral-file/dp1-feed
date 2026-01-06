@@ -19,7 +19,9 @@ const args = process.argv.slice(2);
 if (args.length < 2) {
   console.error('❌ Error: Missing required arguments');
   console.error('Usage: node scripts/cast-playlist.js <playlist-file-path> <device-id>');
-  console.error('Example: node scripts/cast-playlist.js playlists/primordium-i8m.json FF1-HTXIER6J');
+  console.error(
+    'Example: node scripts/cast-playlist.js playlists/primordium-i8m.json FF1-HTXIER6J'
+  );
   process.exit(1);
 }
 
@@ -105,4 +107,3 @@ try {
   }
   process.exit(1);
 }
-
