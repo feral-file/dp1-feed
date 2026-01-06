@@ -54,6 +54,7 @@
     "worker:setup:queues:production": "wrangler queues create dp1-write-operations-prod --env production",
     "worker:init:data": "node scripts/init-kv-data.js",
     "worker:init:data:production": "node scripts/init-kv-data.js --env production",
+    "generate:ff-playlist": "node scripts/generate-ff-playlist.js",
     "jwt:generate-keys": "node scripts/generate-jwt-keys.js",
     "worker:logs": "wrangler tail --env dev",
     "worker:logs:production": "wrangler tail --env production",
