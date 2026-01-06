@@ -1,0 +1,866 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "98fb85ff-04f9-431c-ab5c-79ee3fac19ff",
+  "slug": "colors-of-noise",
+  "title": "COLORS OF NOISE",
+  "summary": "Kim Asendorf turns the entire spectrum of noise into an artistic experience in his series COLORS OF NOISE. Using an algorithm to generate the color of noise in real-time, he presents the diversity of the sound spectrum, visualizing its waves in abstract pixelated lines. Asendorf creates a mesmerizing display of visual and auditory art that subtly draws the audience into the experience and allows them to become the object of the work.\n\nIn the context of sound and signal processing, the “color” of noise relates to spectral characteristics or frequency distributions that describe a specific spectral property. This concept is analogous to the idea of the color of light and refers, for example, to white, pink, blue, violet, red, or brown noise. The effect of each color depends on how it is used and the context in which it is applied. In audio applications or communication systems, for instance, different colors may be used to achieve specific soundscapes or to mask unwanted sounds. They affect our sonic perception of the environment. \n\nAt the same time, different tones trigger different effects in the listener’s sensation. While white noise generates a flat spectrum on a frequency graph, helping a person to sleep, the sonic pink noise hue is deeper and promotes concentration, while brown noise enhances relaxation, to name just a few examples. Through a conscious application, the color of noise can provide distinct benefits and affect our bodies in unique ways that potentially optimize our lives in terms of sleep, relaxation, or concentration. \n\nCOLORS OF SOUND lies at the intersection of art and technology, combining Asendorf’s artistic practice with new technologies and physical laws. Drawing upon his expertise in programming, the artist has developed an algorithm that generates intricate and dynamic patterns of color-based noises. The algorithm processes these noises by shaping different frequencies, creating different properties of different colors. Their sonic qualities are translated into an artistic display of vibrant meshes of lines that evolve and transform with the changing soundscape. By transforming the immaterial sound waves into pixelated lines in black and white, an abstract flickering image appears that forms a moiré pattern. It becomes an extension of the sonic experience. The network of lines visualizes the audio, emphasizing its characteristics and materializing the colored noise of the sound. \n\nThe result is an immersive experience that moves the recipient into an audio-reactive artwork. As you surround yourself with the generative sound, you dive into the soundscape created by the algorithm. A moment of deceleration emerges that refers entirely to the moment of being in the noise of technology. Exposing the audience to the effects of each color, Asendorf’s work series becomes a physical, multisensory experience with an impact that goes beyond the auditory. A human-machine relationship develops, the form and course of which is unpredictable because it is bound to the randomness of the algorithm. Through one’s own physical experience and the effects of the colored noise, the body in its technological extension comes into focus through the work, creating an awareness of one’s own state of being.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/3b31eba0-2f2a-4795-8e7e-f7eb98113800/raw",
+  "created": "2026-01-06T10:51:25.210Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "cb2394a1-970c-4db9-9af1-98e41d244439",
+      "title": "COLORS OF NOISE #1",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=0&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698893&token_id_hash=0x54860535dbd52fbfa7275d472c77d743c342d2210e684febe1d65f3dac6e0702",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.199Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698893"
+        }
+      }
+    },
+    {
+      "id": "e594c119-102a-4ce9-8b4c-314384b325ba",
+      "title": "COLORS OF NOISE #2",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=1&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698894&token_id_hash=0x425b494fa964a49bfb598ffed766ca7efa512dd2c6ae747465e62508898c3ea1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.206Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698894"
+        }
+      }
+    },
+    {
+      "id": "d1c73c50-cf7a-490b-b2f6-12a0f64ad36d",
+      "title": "COLORS OF NOISE #3",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=2&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698895&token_id_hash=0x238426ac7e1359ec981216cee630b2593a4bd4d3c68676b8e0930a24fbb20fbe",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.207Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698895"
+        }
+      }
+    },
+    {
+      "id": "42900889-4f00-4318-a256-c49e9bcbfb44",
+      "title": "COLORS OF NOISE #4",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=3&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698896&token_id_hash=0x1e25b631bcd70ceb483edbabf743a8a28ed8b842bdcaa3f660d27409c52d0331",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.207Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698896"
+        }
+      }
+    },
+    {
+      "id": "199d91f8-468f-4823-a632-0b79e4c42403",
+      "title": "COLORS OF NOISE #5",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=4&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698897&token_id_hash=0x95663b9aeea55c7364f07aca2efc91739f648dcdecb100afd9848b84cbfaf6c5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.207Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698897"
+        }
+      }
+    },
+    {
+      "id": "fa215948-921a-44ea-aaf7-decf74b4ffec",
+      "title": "COLORS OF NOISE #6",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=5&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698898&token_id_hash=0x3dbf4c8a43b8ba61499a39f4fac6791a517e02c07bfd1b9b63cc4cc6007c1d9a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.207Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698898"
+        }
+      }
+    },
+    {
+      "id": "2b8695f8-0076-4afb-9164-94720c7cdbf0",
+      "title": "COLORS OF NOISE #7",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=6&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698899&token_id_hash=0x608e44d64d88e4b3d445b6830182188b0d7ed46b956cb9ac1de3af3338a5e754",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.207Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698899"
+        }
+      }
+    },
+    {
+      "id": "5bdfcd28-1154-46fd-83ef-d0a6919540aa",
+      "title": "COLORS OF NOISE #8",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=7&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698900&token_id_hash=0x040b3c0766e1307384f9d2b4c81a088d2e1a848699b7065e2da69dcb7102c1cb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.207Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698900"
+        }
+      }
+    },
+    {
+      "id": "5784e590-7637-49a9-bb08-582867401e52",
+      "title": "COLORS OF NOISE #9",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=8&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698901&token_id_hash=0xb4bf944c3aa7019660ecfbacf1318e92faf665e75c532fe32ebf6a19c68617cc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.208Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698901"
+        }
+      }
+    },
+    {
+      "id": "79dd36ab-2c4f-47bf-b87a-18191d9e7d37",
+      "title": "COLORS OF NOISE #10",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=9&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698902&token_id_hash=0xc943981b558f6719df8bb30bafbb19148fbd0c151ee714a8c6889a0b1455ec2d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.208Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698902"
+        }
+      }
+    },
+    {
+      "id": "ae2a37c9-138d-4862-aca8-8e77906d514c",
+      "title": "COLORS OF NOISE #11",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=10&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698903&token_id_hash=0x6137efa4b5c9717038e2f0e295fa85b9d9928faa2c3b8a97a0bd73e70cc325d1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.208Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698903"
+        }
+      }
+    },
+    {
+      "id": "a188e7f5-b96c-4649-8eab-cd64d246ce29",
+      "title": "COLORS OF NOISE #12",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=11&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698904&token_id_hash=0x2bbe9ecb645627b7b0d29ad1ce2b801995450b3ef6594e0008e279335b8168a6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.208Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698904"
+        }
+      }
+    },
+    {
+      "id": "db35d547-7da5-4dc0-9500-5da702a797e5",
+      "title": "COLORS OF NOISE #13",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=12&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698905&token_id_hash=0xc01dda0b36cdcd93c21dc386b92ea33747815074fa6335be03983154db27f8b8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.208Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698905"
+        }
+      }
+    },
+    {
+      "id": "5f27497e-429a-48d3-b2d5-e12ff8c3a164",
+      "title": "COLORS OF NOISE #14",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=13&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698906&token_id_hash=0xf750d045bb9557126578bde7d695254df85b8f96ee92619d8a92c8e69431a5b1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.208Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698906"
+        }
+      }
+    },
+    {
+      "id": "e43d6611-6f08-4cee-bb6c-fe4b753af75f",
+      "title": "COLORS OF NOISE #15",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=14&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698907&token_id_hash=0x5930f3217e7e242c7a0214463535f6dbf9378a2e8cf6c52250cf646a114c34bf",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.208Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698907"
+        }
+      }
+    },
+    {
+      "id": "fac2750a-e6c8-486c-a608-d2b55a6aa242",
+      "title": "COLORS OF NOISE #16",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=15&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698908&token_id_hash=0xa86d4bdd9b77a02673a73188dbe6d483636c791d2bd07ae43e70bf02599fffce",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.208Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698908"
+        }
+      }
+    },
+    {
+      "id": "b936479a-01c0-4649-ade1-5f4c15bcc0c9",
+      "title": "COLORS OF NOISE #17",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=16&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698909&token_id_hash=0xe4f98267dfd02b074533491420a04b60206325fda433bb20b383e1adb339ca5e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.208Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698909"
+        }
+      }
+    },
+    {
+      "id": "0f0caddb-b3ba-43bc-b163-4579bc0d2369",
+      "title": "COLORS OF NOISE #18",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=17&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698910&token_id_hash=0xede06e6b7ca08065f1c87a8a37dfe84d745ab7a1640f05a2d94fd1ce26025587",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.208Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698910"
+        }
+      }
+    },
+    {
+      "id": "5c0e8257-f3cd-4678-ba9b-86a269b5a4f3",
+      "title": "COLORS OF NOISE #19",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=18&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698911&token_id_hash=0x5e829529b352528427b8da6c0b9e45d48c003b9be5dd557010f7916c86486373",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.208Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698911"
+        }
+      }
+    },
+    {
+      "id": "df7a84e6-494e-4e52-8856-1734bb4a8b09",
+      "title": "COLORS OF NOISE #20",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=19&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698912&token_id_hash=0x631cb88b43c2555fd3de2ffc23f1d69abea3d5981500bf562fa4237d71120939",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.208Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698912"
+        }
+      }
+    },
+    {
+      "id": "eaab6093-80e8-4377-99be-de95a8ceb916",
+      "title": "COLORS OF NOISE #21",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=20&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698913&token_id_hash=0x169593bd57bebe3a4bbb83890d6973eafd39b6ce20257470ee5e216b0e670fe5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.208Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698913"
+        }
+      }
+    },
+    {
+      "id": "360cb6a6-9d67-4094-b850-512360bbd877",
+      "title": "COLORS OF NOISE #22",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=21&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698914&token_id_hash=0xfef069504549eda43ba450854f3efdba0e2807bf30977ae93a965e84120b978b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.208Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698914"
+        }
+      }
+    },
+    {
+      "id": "938cb5d1-3f14-4f76-b0f3-89a872900227",
+      "title": "COLORS OF NOISE #23",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=22&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698915&token_id_hash=0x791ac511dc5ea01a682734351cc03d5f0a0a8710f3e572c54f00d3080f18c6ab",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.208Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698915"
+        }
+      }
+    },
+    {
+      "id": "534eaba9-3b27-49eb-80f1-343162857919",
+      "title": "COLORS OF NOISE #24",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=23&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698916&token_id_hash=0x6086c9f572c73fd437e1e788eba21f21a437bca436edda840a3f93df4a60929a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.208Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698916"
+        }
+      }
+    },
+    {
+      "id": "75b7145d-06ee-42b1-966e-c0abf49c5a81",
+      "title": "COLORS OF NOISE #25",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=24&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698917&token_id_hash=0xd07b3c483f831be31dc944bde06b4fa6cd8a0222d3c3ae23b01eb2726b5cbc0e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698917"
+        }
+      }
+    },
+    {
+      "id": "990ce9f4-cd8d-474f-99e3-c16f9c06d0fe",
+      "title": "COLORS OF NOISE #26",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=25&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698918&token_id_hash=0x1f1dfb6de7839ccb048c6436435fa29d1a6c3a32c4d39660f15494d5548198f5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698918"
+        }
+      }
+    },
+    {
+      "id": "680003dd-c555-4610-8ee5-1fb551aa26d7",
+      "title": "COLORS OF NOISE #27",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=26&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698919&token_id_hash=0xb050ce074ba4d56f38a3198ab37409154582afddc45a5b2d29d401403c75d562",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698919"
+        }
+      }
+    },
+    {
+      "id": "2684bc3a-655b-4881-b3ed-09de84abf1d7",
+      "title": "COLORS OF NOISE #28",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=27&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698920&token_id_hash=0x44743def0e1660c79bc9e52ba141bfa45ac331013721da4cc82e63e2f11a44c2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698920"
+        }
+      }
+    },
+    {
+      "id": "ee7a3bbd-c89b-4c8b-8091-6312d2c6c6ef",
+      "title": "COLORS OF NOISE #29",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=28&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698921&token_id_hash=0x35a0ff30d049fc699ca614cd4d963b3da82dc68d778cb35abdefe7ec10e0692f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698921"
+        }
+      }
+    },
+    {
+      "id": "45698c95-88fb-4007-81d5-1476548a7993",
+      "title": "COLORS OF NOISE #30",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=29&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698922&token_id_hash=0xc827b3466f2a1716650b889ebc74d21bbcdfbc61b14d18749c6e2c7557fa3b44",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698922"
+        }
+      }
+    },
+    {
+      "id": "f9faed94-367f-4cb3-8ed9-3613e6f7a0bb",
+      "title": "COLORS OF NOISE #31",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=30&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698923&token_id_hash=0x8d654c7ebef9a5eb5220e05e4cceaee47b055135c4cd3dc855f19b282e3c9c61",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698923"
+        }
+      }
+    },
+    {
+      "id": "287ca7be-fd3f-451a-b76b-502ae185240f",
+      "title": "COLORS OF NOISE #32",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=31&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698924&token_id_hash=0x45afb28ad44e2e4aa0f5e02ceffbebf37c75721d01aa0692eb7971e8371014ef",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698924"
+        }
+      }
+    },
+    {
+      "id": "70cb0f37-de5b-4b13-88af-5331b998e44e",
+      "title": "COLORS OF NOISE #33",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=32&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698925&token_id_hash=0x540199aa7f5b70c75b7f88d3c11407d2bbd4ba987000470133b5b55d644fe93c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698925"
+        }
+      }
+    },
+    {
+      "id": "1b431b07-169a-4547-9016-2bedde322708",
+      "title": "COLORS OF NOISE #34",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=33&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698926&token_id_hash=0x4d64529dbf8ff0febdad1a67d86dd82052a4085bd902056278d36d685f6b77a0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698926"
+        }
+      }
+    },
+    {
+      "id": "b2be53de-d954-4436-803e-04a90974c503",
+      "title": "COLORS OF NOISE #35",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=34&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698927&token_id_hash=0x508d71832627eae6d515ce608cc6b8ad7676ca9e2bf200a8da032d67489a42e3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698927"
+        }
+      }
+    },
+    {
+      "id": "82f7b5c8-f900-4914-8ced-2d79d087529c",
+      "title": "COLORS OF NOISE #36",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=35&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698928&token_id_hash=0xd3412994ef5b36e29b5dc7bdbf9a95af2c5007e1eba04a86ab3dc550c15db6ad",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698928"
+        }
+      }
+    },
+    {
+      "id": "1030a3f1-44e1-4859-9ad9-4e3ba2cff0d5",
+      "title": "COLORS OF NOISE #37",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=36&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698929&token_id_hash=0xba104097f8b12305f7635dd1bbc7da5e9f747c939951bf7e85a1255926e1f6b6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698929"
+        }
+      }
+    },
+    {
+      "id": "6f33192e-32af-452f-8b52-45ba091bb9db",
+      "title": "COLORS OF NOISE #38",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=37&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698930&token_id_hash=0x02a82efccd4a43065cc2454dc380d3389531c337119e79cf1c6b8f9b9b8af8db",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698930"
+        }
+      }
+    },
+    {
+      "id": "e000447a-9124-4707-96ba-f67de8e8691e",
+      "title": "COLORS OF NOISE #39",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=38&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698931&token_id_hash=0x3c8624282cb3be524e855707433b320d28574a650c2176d35bbd210a268030d7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698931"
+        }
+      }
+    },
+    {
+      "id": "bb0e700d-2d73-4833-b643-2e2d7d537afb",
+      "title": "COLORS OF NOISE #40",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=39&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698932&token_id_hash=0xf719dd8ea8e885a06b832bf5805ecc7613529c390deb36c1d81e9a48a49478cf",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698932"
+        }
+      }
+    },
+    {
+      "id": "d87ccaab-356b-426a-9484-b2db067d196c",
+      "title": "COLORS OF NOISE #41",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=40&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698933&token_id_hash=0x64c3e661ecc2b23647c725317d9fa6eab166c66285275ecbbf0126f33b12bf7b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698933"
+        }
+      }
+    },
+    {
+      "id": "d2486e1f-0a77-4125-8efb-07a4baf1f7a9",
+      "title": "COLORS OF NOISE #42",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=41&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698934&token_id_hash=0xf5506e6c064aa15b3c92e7da44a12904fde0b4ec8e7973c25f96ac96373580a4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698934"
+        }
+      }
+    },
+    {
+      "id": "d99472e9-5a8a-4e5a-bf74-15928206d459",
+      "title": "COLORS OF NOISE #43",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=42&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698935&token_id_hash=0xf380ac32fc19a53d9fcb2ef38b6e951499bc69cd2be38e610dec6e10077b166d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698935"
+        }
+      }
+    },
+    {
+      "id": "5eb30783-3551-4b6b-8be1-ecbad33ca7ad",
+      "title": "COLORS OF NOISE #44",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=43&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698936&token_id_hash=0x1fb29d9ff6b4d890c436b69bcd080f71f8ea60deb385808f51a87c592c3aa1cd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698936"
+        }
+      }
+    },
+    {
+      "id": "18634d0e-23a5-4d51-9948-a63771f29dab",
+      "title": "COLORS OF NOISE #45",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=44&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698937&token_id_hash=0x53418eb212dacf61a86baa85c27992477c2ed3c227ca59af9fceded3f1dffc53",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698937"
+        }
+      }
+    },
+    {
+      "id": "c45fe5ba-4844-47dd-9ed4-06418d0f445d",
+      "title": "COLORS OF NOISE #46",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=45&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698938&token_id_hash=0x15fe033e724cbe13127dd9c21c1a4ba0e576fb5ae11b60301908cab05846eefe",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698938"
+        }
+      }
+    },
+    {
+      "id": "6eb53c48-aaef-4969-bd1c-c65a615b4cdb",
+      "title": "COLORS OF NOISE #47",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=46&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698939&token_id_hash=0x83d6ef5ea1b0612b99b5be4cc51dd2d65c5d19e94df578069d84a5bdbaf75512",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.209Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698939"
+        }
+      }
+    },
+    {
+      "id": "ed810362-de43-4be0-b79f-732a2804113e",
+      "title": "COLORS OF NOISE #48",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=47&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698940&token_id_hash=0x371ca387203e4cda5eecaf43ba4cd3baf45a7aca7b797fbef399e41b4dcf18e4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.210Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698940"
+        }
+      }
+    },
+    {
+      "id": "df32994d-b26d-4693-8288-4e86a16ac0f5",
+      "title": "COLORS OF NOISE #49",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=48&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698941&token_id_hash=0xcf3d461351354e9540d20348a3a4e73448cb267f57f70668862b60aab80c4d52",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.210Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698941"
+        }
+      }
+    },
+    {
+      "id": "ab4ed321-09bb-49fc-87f4-8aa0424a40eb",
+      "title": "COLORS OF NOISE #50",
+      "source": "https://cdn.feralfileassets.com/previews/87d406ed-010f-4b76-91a2-41bcec98f51a/1684027409/index.html?edition_number=49&blockchain=ethereum&contract=0xD156b0297f33Ddd706Ddeb018371FFDf02868e79&token_id=37847030808823349563907102097979397284732682243657619279198386116874638698942&token_id_hash=0xdd2fda91f4623cefc4ee80feb08e2c8dfb632a10d68cde95b535b38f73c29f22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:51:25.210Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD156b0297f33Ddd706Ddeb018371FFDf02868e79",
+          "tokenId": "37847030808823349563907102097979397284732682243657619279198386116874638698942"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

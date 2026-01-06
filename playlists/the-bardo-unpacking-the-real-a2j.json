@@ -1,0 +1,135 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "5eef0569-0e69-4931-8aea-7712d408064c",
+  "slug": "the-bardo-unpacking-the-real",
+  "title": "The Bardo: Unpacking the Real",
+  "summary": "The Bardo: Unpacking the Real is an international exhibition featuring artists from Vienna, Rome, Los Angeles, and New York that quantifies the ephemeral as it relates to the liminal landscape of sculptural art in the digital age. The exhibit examines, 1) the real and (un)real in digital sculpture; 2) questions about what it means to view and collect digital sculptures; and 3) the role of NFTs (in this case, Bitmark NFTs) in the creation of the featured artists' work.\n\nWhen I was three years old my mother began her studies with a high Tibetan lama who lectured from the Kagyu-Nyimgma lineages. While most of my friends were being taught about Western ideas of heaven and hell, I was learning about being &ldquo;mindful.&rdquo; As part of my upbringing, I also learned about a concept from The Tibetan Book of the Dead called &ldquo;the Bardo.&rdquo; The Bardo is conceived of as a liminal state of being after death, in which you are presented at first with total darkness and empty space as your senses of hearing and sight leave you. Then you see colors, and ultimately you are exposed to images and sounds that you must identify as real or illusion. In this process of unpacking the real, you choose what is real and what is (un)real. If you have spent your life meditating, then you are able to see these images and sounds as emanating from within you, not &ldquo;real.&rdquo; Thus, you are able to transcend illusion, the (un)real, and follow a bright light toward reincarnation. If you become afraid of what you see and hear, you assume it is &ldquo;real,&rdquo; and you become trapped.\n\nIn life, fooled by our delusions and illusions, because we are not in touch with what is real, we may arrive in a state which is not dualistic. Buddhism also explores concepts of &ldquo;relative reality&rdquo; (the grind of our daily lives) versus &ldquo;absolute reality,&rdquo; which is your real self. As my mother often said, &ldquo;We are always in a Bardo.&rdquo; In other words, we are always in a state of becoming. These concepts inspired the title of this exhibition for Feral File. Just as we are always in a state of becoming, so could one say that the recreation of sculpture in a digital format is also in an exciting state of flux.\n\nWhen I first began to conceptualize this exhibition of digital art, I had quite a different idea of the real and the (un)real. My idea was to curate a digital sculpture show in which each artwork would incorporate a unique NFT and be sold. During the last month, as a result of the absurd media hype given to NFTs and digital art, I reflected more deeply on how to create a show with the depth and substance that truly resonates with each artist's &ldquo;absolute reality.&rdquo; The explosion of sudden interest in NFTs seemed dreamlike and unreal to me. Because of this, the show needed a conceptual reboot. Thus, I reflected on the most dreamlike, unreal, and liminal state of being I could think of-the Bardo.\n\nIn a recent conversation with my 87-year-old mother, she said that after attending one of my social VR exhibitions, &ldquo;No art is real. It is all a construct.&rdquo; If no art is real, then traditional art and digital art become equally constructs, or (un)real. What is digital sculpture? Is it real sculpture? How do you own something that is ephemeral? What is ownership in digital art, anyway?\n\nIn the Bardo, we each have the opportunity to choose what we believe is real or (un)real. Similarly, one can choose to think about whether digital art is real or not. With questions like these, the artists and I reconceptualized the show as a digital sculpture exhibition where the concept of what and how NFTs are used would become central to the creation and thinking behind the work. &ldquo;Don't just show your digital art on Feral File; figure out how the NFTs can be more like a medium to be explored.&rdquo; The question generated a conceptual leap that the artists were eager to explore. To put it another way, we decided to think of using NFTs in the conception of the artworks as being closer in nature to creating site...",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/41ccf21d-e60e-4257-97f0-c71260113d00/raw",
+  "created": "2026-01-06T11:09:58.850Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "47b69263-4294-46b8-badf-2eaaaea580a7",
+      "title": "Kiki.object AP",
+      "source": "https://cdn.feralfileassets.com/previews/adc4221c-4f00-4193-ac82-c4d9b1a0b681/1620671843/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:58.842Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaa02CC02F4531Ee75d1b78Cb5A155d4F3B54f830",
+          "tokenId": "96771943360785186741996452302073966236579300824111140539788543630792641248244"
+        }
+      }
+    },
+    {
+      "id": "6878ea8a-9b90-4d34-8d49-44d1f5043dcf",
+      "title": "peep-o-rama #1",
+      "source": "https://cdn.feralfileassets.com/previews/6bcc9b62-0ca3-4fdc-8232-0a3f2d4adf13/1620666173/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:58.849Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaa02CC02F4531Ee75d1b78Cb5A155d4F3B54f830",
+          "tokenId": "114970431608051395943569876850935771953364586808023858895883676728184077500171"
+        }
+      }
+    },
+    {
+      "id": "525ab67c-17e6-492e-91b4-823151e89c7b",
+      "title": "The Mystery [v5-dv1]  AP",
+      "source": "https://cdn.feralfileassets.com/previews/2a57c29f-fa5b-440d-8dee-2d58cdb9238c/1620669376/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:58.850Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaa02CC02F4531Ee75d1b78Cb5A155d4F3B54f830",
+          "tokenId": "81098335648093680823259892135140949280760206716406137867581119940294251436938"
+        }
+      }
+    },
+    {
+      "id": "1079325d-f47a-415c-86f2-0a44d79badff",
+      "title": "it's a matter of perspective AP",
+      "source": "https://cdn.feralfileassets.com/previews/faa504eb-868c-4134-a7b2-eef051b9abbc/1620642833/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:58.850Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaa02CC02F4531Ee75d1b78Cb5A155d4F3B54f830",
+          "tokenId": "54722755304295715071303490412783260724331317655569627566902660358523551367614"
+        }
+      }
+    },
+    {
+      "id": "ccaa0ee1-db73-4aca-80c7-ef8a8d6d1d7a",
+      "title": "Spectrality (from The Divers, IX) #1",
+      "source": "https://cdn.feralfileassets.com/previews/3a9f6d14-d53d-4d5c-b55a-f0e5793d5d0e/1620350770/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:58.850Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaa02CC02F4531Ee75d1b78Cb5A155d4F3B54f830",
+          "tokenId": "69822369579579992440644516414785738093541892787964403178330236084957086484278"
+        }
+      }
+    },
+    {
+      "id": "06ff6a2a-6948-4dce-b40e-cc1af86e210b",
+      "title": "Slipstream 001 AP",
+      "source": "https://cdn.feralfileassets.com/previews/e9aab828-96ae-4d16-b155-6bb9fded9f34/1620621299/compressed.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:58.850Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaa02CC02F4531Ee75d1b78Cb5A155d4F3B54f830",
+          "tokenId": "86097417832866893814481914419505665823253627313598434259730738896504147347536"
+        }
+      }
+    },
+    {
+      "id": "82524cc5-17f0-4762-8b18-76892959a4a8",
+      "title": "Earmark #1",
+      "source": "https://cdn.feralfileassets.com/previews/7764ae91-0392-48fb-b68c-796d701bed08/1620416013/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:58.850Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaa02CC02F4531Ee75d1b78Cb5A155d4F3B54f830",
+          "tokenId": "78546631552134914423968274408176321960666687886495895645569015375081417961802"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

@@ -1,0 +1,186 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "f5340cb4-0695-4455-964a-47c97e434427",
+  "slug": "p1-3l",
+  "title": "P1×3L",
+  "summary": "A P1&times;3L is the atomic unit of digital and generative art. It can&rsquo;t be quantified. A P1&times;3L is vibrant and alive. Artists choreograph P1&times;3Ls and P1&times;3Ls possess artists. P1&times;3Ls are ideas about image-making that transcend the technology they flow through.\n\n<hr style=\"height: 1px;border: 0;border-top: 1px solid #c4c4c4;\">\nI&rsquo;m thrilled to bring together Nicolas Sassoon, Francoise Gamma, Andreas Gysin (aka ertdfgcvb), Raquel Meyers, and p1xelfool for the P1&times;3L exhibition. This is a remarkable group of artists, and each has pushed the boundaries of the fields of digital and generative art in their own ways. As a counterpoint to the stream of technology being developed to make itself invisible, these artists foreground the materiality of their medium. I&rsquo;ve been looking at their work on sites across the network for a long time, and I felt it was necessary to see it all together.\n\nEach of the artists in the P1&times;3L exhibition use digital media at the core of their practice, but many also have experience making art prior to working with software. When I was speaking with Raquel last month, she began the conversation with a story about her early experiences with photography. Vision through an analog camera of this era is a hybrid analog/digital sight&mdash; looking at the world through a glass lens, but with the image divided into crisp grid units. It doesn&rsquo;t take a stretch of the imagination to see how this early experience informed Rachel&rsquo;s work from the last decade, in which she creates uniform grids of text and symbols with vintage Commodore 64 computers and Teletext systems. She performs these images live by adding text and symbols from the upper-left corner of a computer screen to the lower right, one symbol at a time. The machines focus her energy and attention &mdash; they require her complete concentration. There&rsquo;s no undo and no distraction from social media notifications or emails coming through. Older computers are her instruments and she is a virtuoso. Yet, even though Raquel uses retro computers to create her work, these actions aren&rsquo;t performed through the haze of nostalgia.\n\nertdfgcvb also creates works that refer to bygone decades of computing, and he also does so without feelings of sentimentality. His works are contemporary; they feel unlike anything made before. ertdfgcvb has written code as long as he can remember and has worked for many years within a visual arts practice that spans design and media arts. In the last year, his work has evolved down a few different paths within the growing network of NFT platforms. His long history of sharing sketches and experiments online has transitioned into finalizing works, recording them onto blockchains, and moving on to the next idea. All of ertdfgcvb&rsquo; work starts with graphic symbols such as the characters of the Latin alphabet or marks like + and *. These symbols are combined into undulating textures and architectural forms, or deconstructed into smaller pieces of geometry. In all of ertdfgcvb&rsquo;s work, there&rsquo;s a strong focus on movement and choreography, and the work is always striking and incredibly well crafted. For Feral File, ertdfgcvb is premiering two new generative software works.\n\nEven though Francoise and I have had an ongoing text conversation for the last couple of months, he remains an enigma. He is a &ldquo;digitally embodied entity&rdquo; who emerged from Computers Club, an online art collective founded in 2008 by Krist Wood. Francoise and I have never met and we likely won&rsquo;t (or maybe we have?), but the work speaks to me with clarity. Francoise&rsquo;s work has manifested in many different ways over the years, including as low-resolution text displays similar to those of Raquel and ertdfgcvb. The pieces Francoise is exhibiting on Feral File are grounded in drawing, but they represent two distinct lines of visual exploration presented as GIF files. In both, there&rsquo;s a paradox with jittering lines coexisting with subtle, smooth movement. This di...",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/57dd9325-2b58-49b5-40ed-0a7d8102db00/raw",
+  "created": "2026-01-06T11:08:09.085Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "8f717dcb-3b5d-41f3-94d9-35b9b81ede9e",
+      "title": "3 ORBS AP",
+      "source": "https://cdn.feralfileassets.com/previews/ebe3df0f-f765-410e-b2fa-edd39dcf5369/1631817212/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:09.073Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE5163c74fFE6563D75d750E5d767122500a1c337",
+          "tokenId": "1982142444428207150540790152954285579034622660492491181160941165640986713537"
+        }
+      }
+    },
+    {
+      "id": "a0d2b2bb-d680-45ac-9deb-56af9efa273c",
+      "title": "4 ORBS AP",
+      "source": "https://cdn.feralfileassets.com/previews/6862d0b4-252f-469d-8327-c0d79f8b4a67/1631208788/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:09.082Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE5163c74fFE6563D75d750E5d767122500a1c337",
+          "tokenId": "91855458526945298708150706222724755710777598255848949820121191342597544813890"
+        }
+      }
+    },
+    {
+      "id": "1b6dc751-6cea-4283-81ed-3031a624a429",
+      "title": "Mirror Arm AP",
+      "source": "https://cdn.feralfileassets.com/previews/f6d4f5f8-7f31-48c9-871e-b2cf4d4270aa/1631260875/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:09.083Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE5163c74fFE6563D75d750E5d767122500a1c337",
+          "tokenId": "107758526672441256891277994701277580194739367183403564015665252403427263518758"
+        }
+      }
+    },
+    {
+      "id": "696a83d8-b449-4afb-afda-56954df6d508",
+      "title": "Hatless AP",
+      "source": "https://cdn.feralfileassets.com/previews/4f6816b5-3d84-4715-b025-c8a837030b49/1631260821/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:09.083Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE5163c74fFE6563D75d750E5d767122500a1c337",
+          "tokenId": "23539813904923401488731829639056055063633307823941105936385429154970558232802"
+        }
+      }
+    },
+    {
+      "id": "f5e6390a-01d6-43b8-8444-18193c5b9539",
+      "title": "k.f0 AP",
+      "source": "https://cdn.feralfileassets.com/previews/26433d62-bb36-46f8-bc8e-ed7214967cc2/1631214206/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:09.083Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE5163c74fFE6563D75d750E5d767122500a1c337",
+          "tokenId": "47896422095579711099185835491703333438573086439509639910123685376750831346255"
+        }
+      }
+    },
+    {
+      "id": "a100ce80-51a7-424b-98a5-dd53d50cab87",
+      "title": "Picnic 001 AP",
+      "source": "https://cdn.feralfileassets.com/previews/f548cb77-a829-42ea-b097-3b54603a0d8f/1631287550/preview.gif",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:09.084Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE5163c74fFE6563D75d750E5d767122500a1c337",
+          "tokenId": "109306892524557668562611376466566141821456642481863638052963541895447922445942"
+        }
+      }
+    },
+    {
+      "id": "dad33ad7-75c2-4b2b-b3a6-229b070b5ad3",
+      "title": "POST 1 AP",
+      "source": "https://cdn.feralfileassets.com/previews/5d7e9132-059f-44d9-a6a9-3c8a9b688965/1632387593/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:09.084Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE5163c74fFE6563D75d750E5d767122500a1c337",
+          "tokenId": "49343618154684871155946424463360241913698617254930957613875244917599572983619"
+        }
+      }
+    },
+    {
+      "id": "9fd2173b-defa-47f6-b597-81d4af16f4c6",
+      "title": "Picnic 002 AP",
+      "source": "https://cdn.feralfileassets.com/previews/af4fe2af-67bb-4440-9885-621d5c3bf965/1631287161/preview.gif",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:09.084Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE5163c74fFE6563D75d750E5d767122500a1c337",
+          "tokenId": "4768033689500491239571182329245737464774884961374789940985316154356260180914"
+        }
+      }
+    },
+    {
+      "id": "f55149df-6534-46b6-af36-087bbf15d01f",
+      "title": "POST 2 AP",
+      "source": "https://cdn.feralfileassets.com/previews/18125d2a-d424-496f-9949-9c3e625f114e/1632387574/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:09.084Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE5163c74fFE6563D75d750E5d767122500a1c337",
+          "tokenId": "38622232778044864544569085641792553318552889992573744648587777959046129258035"
+        }
+      }
+    },
+    {
+      "id": "6f22f0e4-9787-4136-a940-e47e0c6bbd17",
+      "title": "k.a9 AP",
+      "source": "https://cdn.feralfileassets.com/previews/3620d7ce-0677-4c59-be8e-0638632dc43b/1631214470/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:09.084Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE5163c74fFE6563D75d750E5d767122500a1c337",
+          "tokenId": "43792463560781556265569689858463143429649243267448038556726932312834463981159"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

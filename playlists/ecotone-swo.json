@@ -1,0 +1,152 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "a42ddac8-06db-4da5-999b-09b0abdfad0a",
+  "slug": "ecotone",
+  "title": "Ecotone",
+  "summary": "<em>An “ecotone” is a region of transition between two biological communities which is richer in species than both.</em><sup>1</sup> \r\n\r\nOur exhibition Ecotone distills the creative outflows of the Glitch community of artists and technologists. This growing network considers digital and natural ecologies to be innately entangled, with cross-border collaboration a vital means of generating new social realities. Involving over 60 participants from around the world, Glitch is a spectrum of strategies and a model for a new creator ecology — artistic, poetic, and human-machinic. \r\n\r\nFor this show with Feral File, Glitch is represented by a number of leading artists, whose range of approaches reflects the plurality of the community. Their works are the product of cross-pollination, and so a number of non-exhibitors have chosen to share their words here.\r\n\r\n<hr>\r\nGlitch is the scientists’ explanation of how life came into existence by a series of progressive chemical reactions and not by an act of God. But then, observe how we come together and merge creativity, our will, and the power of love to make the world a better place. Suddenly, we realize that we have created something new that survives us. The unpredictable timing of creative completion is proof of a divine force at play: it must be the Glitch.\r\n \r\n— Yessin Schiegg\r\n\r\n<hr>\r\nGlitch means multi-species connections, re-imagining nature and cities, and how we can find common ground in both our physical and digital states, in our cyborg bodies, aware of our own viscosity and our uncanniness, to form a network of solidarity. Glitch urges every cell of our anti-body to move and create in a constant state of interconnectivity. To me, that means restlessly sharing knowledge and creating experiences which encourage radical and sensual play.\r\n\r\n— Leonie Schramm\r\n\r\n<hr>\r\nÉcotone,\r\n \r\nNotre monde, notre climat, \r\nNotre communauté, Notre Écosystèmes,\r\nNotre Flux, Notre énergie, \r\nNotre Union, Notre harmonie,\r\nNotre conviction, Notre Ambition,\r\n \r\nL’utopie.\r\n \r\nL’imagination, Le rêve,\r\nLa transformation, La transition,\r\nLa réinventions, L’evolution,\r\n \r\nL’Amour.\r\n \r\nSoigner, \r\nComprendre, Apprendre, \r\nCorriger,\r\n \r\nLe présent.\r\n \r\n— Vanille Verloës\r\n\r\n<hr>\r\nBioGlitch\r\n \r\nCo-created mechanisms for life and connection,\r\nBionomic interfaces for collective manifestation, \r\nExtitutional relationships transcending isolation, \r\nArchitected porosity and sovereign identification:\r\nFor trees and animals, mountains and rivers,\r\nEvery multiplicity of I, and us.\r\n \r\nData and Wisdom Oracles align our resonance,\r\nBioGlitch NFTs amplify our experience,\r\nWith artists and musicians weaving into our presence,\r\nVitals and knowledge of ecological elements:\r\nThat these rhizomes might glitch in us \r\nEncoded, physical, legal, chemical, spiritual: Technoetic \r\nAwareness of, by, and for all life.\r\n\r\n— Tony Lai\r\n \r\n<hr>\r\npragma solidity ^0.8.0;\r\n\r\ncontract GlitchText {\r\n\r\n    /*\r\n\r\n    contract for the glitch collective fill-in hypertext\r\n    creates a living participatory record of lived glitch x-perience\r\n    --\r\n    There are 80 blankspaces, indexed 0-79\r\n    Each blankspace can be filled in with text (a string) by calling the changeWord function\r\n    changeWord takes an index value (0-79) and changes the text at that index\r\n    changeWord costs ETH to run\r\n    Starting minimum price to run changeWord is .01 ETH\r\n    The next minimum price is double the amount of eth spent to previously run the function on a particular index\r\n\r\n    @dev forgoing safemath given hard monetary limits on abuse of multiplication\r\n\r\n    */\r\n\r\n    mapping(uint256 => Word) public index;\r\n\r\n    struct Word {\r\n        // price == 0 indicates Word is not initialized\r\n        uint256 price;\r\n        uint256 spent;\r\n        string text;\r\n        // iteration also indexes from 0\r\n        uint256 iteration;\r\n    }\r\n\r\n    // 80 total words as we index starting with 0\r\n    uint256 constant public WORD_COUNT = 79;\r\n    uint256 constant public INIT_PRICE = 10**16;\r\n\r\n    address payable GlitchPayout;\r\n\r\n    event wordUpdated(uint256 index...",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/f7e3db56-ba70-431c-7165-7438d7aa9200/raw",
+  "created": "2026-01-06T11:00:28.669Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "098fe02b-93cc-4e5c-9e93-4cff37925665",
+      "title": "Becoming Illegible (Mirror Studies #1) AP",
+      "source": "https://cdn.feralfileassets.com/previews/d42c5a19-de37-4e59-b355-6d7395d32c52/1659609680/?edition_number=0&blockchain=tezos&contract=KT1WgvCKC8vvjbAYEgaXHo9A6GprKDyaw7N3&token_id=28489099385516508783229193276444364282803332919563732123661946867761270378310&token_id_hash=0xb7c455c5cc7a772067cfa64c9a6f8bee7618c46c20b158d9b517959203cb9e58",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:00:28.661Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1WgvCKC8vvjbAYEgaXHo9A6GprKDyaw7N3",
+          "tokenId": "28489099385516508783229193276444364282803332919563732123661946867761270378310"
+        }
+      }
+    },
+    {
+      "id": "a0828e69-13ee-432a-b896-5dc415fecce4",
+      "title": "Frozen Fern Genitalia, 52 03'08.7\"N 13 52'34.4\"E AP",
+      "source": "https://cdn.feralfileassets.com/previews/e15363ce-0f61-43c5-aa87-614e22beb0ba/1659955197/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:00:28.668Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1WgvCKC8vvjbAYEgaXHo9A6GprKDyaw7N3",
+          "tokenId": "100094439018912416671576246105661949894600337716585383716490129321481365258776"
+        }
+      }
+    },
+    {
+      "id": "dc780dd5-30f7-461e-b790-53b830ec4d42",
+      "title": "Interplanetary AP",
+      "source": "https://cdn.feralfileassets.com/previews/429a6406-c083-48c5-af5f-ff37b6302fce/1659680430/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:00:28.668Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1WgvCKC8vvjbAYEgaXHo9A6GprKDyaw7N3",
+          "tokenId": "8025887743325863900888997294445826078514320965164806439759165492418769060258"
+        }
+      }
+    },
+    {
+      "id": "63ae65b3-46b6-4bd9-9f48-c4e9a80cb861",
+      "title": "Littor[alter]ms AP",
+      "source": "https://cdn.feralfileassets.com/previews/4bfb1dba-0c21-4f54-98f7-ed5b331192e0/1660932039/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:00:28.668Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1WgvCKC8vvjbAYEgaXHo9A6GprKDyaw7N3",
+          "tokenId": "75631412844661948998956251590372667892199055027172503009675125054587323383210"
+        }
+      }
+    },
+    {
+      "id": "ae0c2c88-d5ea-4766-ac0c-458010228a5f",
+      "title": "element/tr33/obj (AV-2022-U-274) AP",
+      "source": "https://cdn.feralfileassets.com/previews/11b78a63-6a4c-4267-9b80-e4c09c2ba201/1662020016/?edition_number=0&blockchain=tezos&contract=KT1WgvCKC8vvjbAYEgaXHo9A6GprKDyaw7N3&token_id=6945160633982525180673748490859544170988406411704518093822637999128734359151&token_id_hash=0x1d576f5eb3bbee80663df125f32307862f32ed052b9d3fc1932c616ffa5d1b03",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:00:28.669Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1WgvCKC8vvjbAYEgaXHo9A6GprKDyaw7N3",
+          "tokenId": "6945160633982525180673748490859544170988406411704518093822637999128734359151"
+        }
+      }
+    },
+    {
+      "id": "c022644e-4a49-4a26-8f24-8912437fd8b5",
+      "title": "Diagrammatic Formaform V AP",
+      "source": "https://cdn.feralfileassets.com/previews/18b58f96-f188-4580-b523-1d334d49d7ee/1661227430/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:00:28.669Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1WgvCKC8vvjbAYEgaXHo9A6GprKDyaw7N3",
+          "tokenId": "94815370513902673830052615125633082815629595251789191266462621961975574595514"
+        }
+      }
+    },
+    {
+      "id": "7d063b21-e114-4e24-9263-54b7fa068a66",
+      "title": "Kopfschlag - Ants over the City AP",
+      "source": "https://cdn.feralfileassets.com/previews/482d52c6-a0cf-4e4d-84f8-2139ab425885/1660781417/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:00:28.669Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1WgvCKC8vvjbAYEgaXHo9A6GprKDyaw7N3",
+          "tokenId": "59037027859455850203872646125124408758122846848802741854421777879201604646609"
+        }
+      }
+    },
+    {
+      "id": "b57c2f95-2be3-4370-8a88-aa77e058fabf",
+      "title": "ORLAN’s avatar juggling with the masks of the Beijing opera AP",
+      "source": "https://cdn.feralfileassets.com/previews/8c4c67da-9f35-4c93-9165-0caca11a8b61/1661361483/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:00:28.669Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1WgvCKC8vvjbAYEgaXHo9A6GprKDyaw7N3",
+          "tokenId": "60060580017880624770962627646403302072539318246431997060261798457870575375835"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

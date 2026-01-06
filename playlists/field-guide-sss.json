@@ -1,0 +1,186 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "451948c3-4d91-4240-a2cf-d9083c95a1e8",
+  "slug": "field-guide",
+  "title": "Field Guide",
+  "summary": "Before they go into the water, a diver cannot know what they will bring back. —Max Ernst\n\nDigital art, and specifically generative art, is exciting for its ability to dramatically open up possibilities for artists looking to discover and share new worlds. Exploring hundreds of variations of a single image or theme using analog tools for drawing and painting can take years or decades. With computing and digital tools, we have the ability to rapidly generate near-infinite variations, exploring ideas faster and deeper through systems of our own design.\n\nRather than act as a mirror, dutifully recreating or reporting back on the world around us, these artists often act as a portal to an entirely new universe. A universe where the artist has crafted unique entities from scratch through many compressed cycles of evolution. A universe where fascinating beings and impossible environments blend the foreign and the familiar, giving us a sense that there is life here, but perhaps not life as we’ve known it. \n\nFor Field Guide, I’ve curated a selection of artists, each with their own distinct aesthetic, but all of whom I believe share a circuitous process of artistic discovery and a remarkable ability to breathe life into new forms. As a curator’s prompt, and in a nod to the new life and habitats created with generative art, I’ve asked the five artists to create a set of two new works around the ideas of “specimen” and “ecosystem.” \n\nIn this show I wanted to focus on the artistic process for each artist, highlighting how the proliferation of work afforded by digital tools often leads the artist to spend as much time curating as creating. However, it can be hard for the viewer to gather much context when looking at just one or two works by an artist. So as part of my prompt, I also asked them to leverage Edward Tufte’s concept of small multiples. Small multiples display a set of images in close proximity together, typically in a grid-like pattern, to facilitate comparisons across the full group of images at a glance. \n\nWhile small multiples is a concept borrowed from the field of data visualization and information design, it is a technique often adopted knowingly or otherwise by artists seeking to share process and evolution in a single image. From an interview I conducted with Jared S Tarbell in 2020:\n\n<p class=\"m-l-56 display-inline-block\">“Another particularly powerful lesson I learned from Tufte was small multiples, which applies to generative systems. You can build this machine that generates an infinite number of forms, but all very similar forms. But how do you show what the machine is doing to people? The way to do that is by just laying small multiples right next to each other. When the outputs of the machine are all next to each other, you get an idea that this is a system — this isn’t a single image.”</p>  \n\nWith Field Guide, I was hoping the simple prompt around “specimen” and “ecosystem” combined with the display of small multiples would provide unifying conceptual and aesthetic guardrails without dampening the artists’ creativity. I couldn’t be more thrilled with the work the artists came back with.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/1dbe6f7f-9a90-41a4-1cbf-83a973780e00/raw",
+  "created": "2026-01-06T11:05:35.596Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "10582933-7f86-48cd-9401-8a681fc21d4e",
+      "title": "Entity AP",
+      "source": "https://cdn.feralfileassets.com/previews/0698273e-13fc-43e9-910e-0f6d81827a01/1641571880/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:05:35.585Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD8eed224E1B358fa6f7b167124C2c1AFe42275b4",
+          "tokenId": "84663873992476681896122431947515231738045062356454585024952296645344409704036"
+        }
+      }
+    },
+    {
+      "id": "12aa5d1a-da62-4d55-9bc7-3a31b4736cf7",
+      "title": "Environment AP",
+      "source": "https://cdn.feralfileassets.com/previews/c6b9fe72-76f2-4c2e-93b5-5251a5b222f6/1641572535/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:05:35.594Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD8eed224E1B358fa6f7b167124C2c1AFe42275b4",
+          "tokenId": "56500304251424247299231557031304680013993449913439903766939127668302172797278"
+        }
+      }
+    },
+    {
+      "id": "38e16469-468f-4605-9a2a-ca1ff5fb0e3e",
+      "title": "Hypothetically Micro AP",
+      "source": "https://cdn.feralfileassets.com/previews/412f980a-0fbc-4458-983a-85a1d81b6371/1641576053/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:05:35.595Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD8eed224E1B358fa6f7b167124C2c1AFe42275b4",
+          "tokenId": "90629504741648891045967311606610790721802606446848006781824902718029662476020"
+        }
+      }
+    },
+    {
+      "id": "929b520e-c945-40db-961f-aa1b7c82e690",
+      "title": "Hypothetically Macro AP",
+      "source": "https://cdn.feralfileassets.com/previews/d137c01a-2c3b-427e-8de4-a7e5677aaeda/1641575908/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:05:35.595Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD8eed224E1B358fa6f7b167124C2c1AFe42275b4",
+          "tokenId": "90025810073515732549863384525796209691362515123885013679658679257905756773920"
+        }
+      }
+    },
+    {
+      "id": "56982cbb-5935-404d-be7c-31a9bc790e4b",
+      "title": "In Search of Your Digital Self AP",
+      "source": "https://cdn.feralfileassets.com/previews/de90a7b8-c71c-4ffd-8f3f-365796469bc0/1641505428/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:05:35.595Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1CnEoyTFyJaLR3CB6N5Avw91fp4Q6bvS8x",
+          "tokenId": "22395219674726773894181833906972318946681413807594209600512204701485461083250"
+        }
+      }
+    },
+    {
+      "id": "0c980db4-ff1a-44cf-b47c-7cdb2ececff4",
+      "title": "The Future of Your Digital Space AP",
+      "source": "https://cdn.feralfileassets.com/previews/a7d428ec-48e2-492b-a6f1-36d7cadf3da7/1641750802/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:05:35.595Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1CnEoyTFyJaLR3CB6N5Avw91fp4Q6bvS8x",
+          "tokenId": "42393512985501099525853569974493904590620482969634269919870984545865112941869"
+        }
+      }
+    },
+    {
+      "id": "f327d4d9-947c-4c24-84fc-afc38c490b1e",
+      "title": "Blooming Valetudinarian AP",
+      "source": "https://cdn.feralfileassets.com/previews/e6041b92-79ff-4ebe-a9b1-b9e7b089046d/1641843555/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:05:35.595Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD8eed224E1B358fa6f7b167124C2c1AFe42275b4",
+          "tokenId": "93847516120293182858492244050798566295034238446962857386322940669760602478742"
+        }
+      }
+    },
+    {
+      "id": "6c0ce72c-bca0-41d5-93ea-2786a825b7b6",
+      "title": "Malade Imaginaire AP",
+      "source": "https://cdn.feralfileassets.com/previews/c35a9579-e93c-4c57-9b02-7a923d8fd66a/1641965916/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:05:35.595Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD8eed224E1B358fa6f7b167124C2c1AFe42275b4",
+          "tokenId": "52270439985421560151397797932545915425157246523503698873142298718862202806203"
+        }
+      }
+    },
+    {
+      "id": "971db47f-0318-47c7-8ee7-147f56d5ae61",
+      "title": "neural swarm AP",
+      "source": "https://cdn.feralfileassets.com/previews/de81b4e2-0ece-4969-bb0f-2adb62cb2d4e/1641984679/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:05:35.596Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD8eed224E1B358fa6f7b167124C2c1AFe42275b4",
+          "tokenId": "114477584698109787014182233821648672164137156052659061687276654365584890953848"
+        }
+      }
+    },
+    {
+      "id": "a269a754-ef25-4be0-99fc-cd4274a7278f",
+      "title": "hedgerow still life AP",
+      "source": "https://cdn.feralfileassets.com/previews/8d97e575-0837-4092-bca1-10d58195e414/1641297333/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:05:35.596Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xD8eed224E1B358fa6f7b167124C2c1AFe42275b4",
+          "tokenId": "36359572939881421518752223955591915296944221520764335320136695463598652596213"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

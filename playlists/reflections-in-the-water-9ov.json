@@ -1,0 +1,220 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "6a471d48-f5a9-488f-ab9a-f16b03a4d676",
+  "slug": "reflections-in-the-water",
+  "title": "Reflections in the Water",
+  "summary": "Working with AI art sometimes feels like gazing into a pond of water&mdash;we are not sure what we will get as a reflection. The exhibition artists&rsquo; continued explorations into the natural form and its possibilities of representation with AI over the years have encouraged me to consider what distinguishes this type of art practice from the myriad other ways of depicting humans and the natural world. \n\nLooking into a still pond, we see a clear, gently blurred version of ourselves staring back at us, while turbulent waters return mere rippled echoes of our shape. These changing reflections of ourselves are similar to images generated from data, which can be hyperrealistic depictions of the original, or images that are surreal and barely recognizable, as flaws and errors creep in.\n\nReflections in the Water looks at the way artists represent nature and humans, using the latest machine learning technologies to conjure seascapes, imaginary marine creatures, autumn leaves as well as musing on the human form, its shapes and possibilities. Masks and faces akin to the grotesque rear their heads, reminding us both of the early errors of these technologies and the eternal human fascination with depicting ourselves. These artists present AI as a tool to both craft new reflections on perennial subject matters as well as a creative partner, conjuring new landscapes, creatures, and human forms. \n\nThe focus on nature and human form was because of my desire to present a show that is accessible, tangible, and relatable to the human experience: AI provides ample opportunities for developing artwork that is rooted in technology and its concerns, yet it is also a tool for dealing with our ever present preoccupations and fascinations. As my curatorial practice has been about showcasing the latest AI artworks to broad audiences, it felt right to theme this exhibition on humans and nature&mdash;here, after all, technological progress can be most easily measured: humans, creatures, and natural powers are all around us in real life and as art historical subject matter.\n\nMy time in creative AI began with the rush of excitement occasioned by DeepDream, a neural network that brought out slugs, puppies, and hypnotic colors out of mundane images. Many scientists and emerging artists of the time experimented with DeepDream and related technologies that followed, most notably the GAN, a superior form of generating images by using two neural networks, one that creates and another that judges. GAN technologies have improved much over the years, from producing &nbsp;lopsided faces and limbs in wrong places to photorealistic images. In a way, this has presented a surprising challenge to AI art practitioners&mdash;what to do now that perfect realism is within reach? This limitation has led to an increased focus on the development of individual, non-technology reliant artistic styles as well as more thought out conceptual developments. \n\nReflections in the Water is relevant now. Partly, because the water is becoming increasingly polluted, the algae is blooming, the climate is warming, and therefore the commonplace aesthetics and visual properties of what we know as water may change drastically soon. And partly, because working with AI has the potential to change too, as the technology becomes more predictable and controllable, rendering blurry reflections, distorted forms and uncertain outcomes a thing of the past. The exhibition artists provide a snapshot of the current point in the evolution of our artistic relationship with AI technology, bringing out its occasional formal confusions, distinctive textures and ever present aspects of realism.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/2def21ec-37a8-4bc8-d630-7250c2b22400/raw",
+  "created": "2026-01-06T11:07:36.343Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "3f8323d0-7faf-4fb5-b6f9-4ec8816a95fd",
+      "title": "There once was a jellyfish ... AP",
+      "source": "https://cdn.feralfileassets.com/previews/7462201d-7fd6-4ee9-83f6-4e4b35c39de1/1632297823/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:36.332Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1Q3GCiWndMUWBjeUt12crnDFF9PFohhfmZ",
+          "tokenId": "48885253734310901996659558313632398996651385749398413959931495410500490485700"
+        }
+      }
+    },
+    {
+      "id": "72b2ccce-bb0e-423c-ad50-b440e289664e",
+      "title": "Fragments:30.2051 N, 90.1121 W AP",
+      "source": "https://cdn.feralfileassets.com/previews/e1b87ae6-d871-4e70-8df1-f9cd7dbd09f9/1632751432/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:36.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1Q3GCiWndMUWBjeUt12crnDFF9PFohhfmZ",
+          "tokenId": "32099334805983447258866551994105878902360061489704626123683001823138466386161"
+        }
+      }
+    },
+    {
+      "id": "511a679f-ea10-4a4b-8a0a-ae91f300bf45",
+      "title": "Vague Recollection AP",
+      "source": "https://cdn.feralfileassets.com/previews/d7f80e10-a227-4272-bd58-2da08703d460/1632732499/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:36.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1Q3GCiWndMUWBjeUt12crnDFF9PFohhfmZ",
+          "tokenId": "94186457776527967053970378473105398943926084681415948811694628567454162496662"
+        }
+      }
+    },
+    {
+      "id": "e7812231-9b02-41c9-9fa0-5e9b86d9677f",
+      "title": "Contemplating Motion AP",
+      "source": "https://cdn.feralfileassets.com/previews/6ceb34ad-a8e2-40af-ada7-121a778ec352/1632752834/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:36.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x29C9E04E05c5d261836e458BC5B779a7dE3C58D6",
+          "tokenId": "39268874706162972973073452756546436351555450496488933620292243754276447986671"
+        }
+      }
+    },
+    {
+      "id": "dbca29e7-1640-4022-96b8-72089aacdbc7",
+      "title": "Solstice Sky Dream AP",
+      "source": "https://cdn.feralfileassets.com/previews/f27c6217-e4c0-4f82-b8b7-d38c8653b0dd/1632474304/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:36.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x29C9E04E05c5d261836e458BC5B779a7dE3C58D6",
+          "tokenId": "66768636378376097047702060324449050956931912246977172022478401746681657931493"
+        }
+      }
+    },
+    {
+      "id": "bb57b478-a3f1-4a49-a627-9a089ca40f16",
+      "title": "Pixie AP",
+      "source": "https://cdn.feralfileassets.com/previews/8718cfaf-3a37-4112-bc66-c3654d2fb302/1632771101/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:36.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1Q3GCiWndMUWBjeUt12crnDFF9PFohhfmZ",
+          "tokenId": "79568488134303915841900859844030126604594604746041452671933316381247346860398"
+        }
+      }
+    },
+    {
+      "id": "71c82ed9-f604-4105-96b6-618de46c65e4",
+      "title": "Fragments of Self AP",
+      "source": "https://cdn.feralfileassets.com/previews/83c776c3-262e-4f1d-95f9-97f6d2ccb7cd/1632574381/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:36.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1Q3GCiWndMUWBjeUt12crnDFF9PFohhfmZ",
+          "tokenId": "80692239583680033368815605110691333128786508257847812065080211904733049634598"
+        }
+      }
+    },
+    {
+      "id": "b4ca069e-510e-41d4-b359-86c975bb7355",
+      "title": "Venuses (quantum bodies watched by Open Pose algorithm) #1",
+      "source": "https://cdn.feralfileassets.com/previews/4a58d6e4-d014-4ea3-9837-f7892fd48157/1632512625/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:36.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1Q3GCiWndMUWBjeUt12crnDFF9PFohhfmZ",
+          "tokenId": "75747731665689965407902221511726863463013349916962479906701106709260396584884"
+        }
+      }
+    },
+    {
+      "id": "c04a0fe1-b17c-4b18-bcad-19774f0ed28f",
+      "title": "Strange Fruit AP",
+      "source": "https://cdn.feralfileassets.com/previews/063ccfde-866d-4dbd-95ed-5213336cfbca/1632743139/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:36.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x29C9E04E05c5d261836e458BC5B779a7dE3C58D6",
+          "tokenId": "105407197227404785108315597710184983582473381433138657116787723337294696803947"
+        }
+      }
+    },
+    {
+      "id": "d0d59c71-5e06-4091-8962-096b954d5dd5",
+      "title": "Neighbors #1",
+      "source": "https://cdn.feralfileassets.com/previews/d26432cc-df0d-42c3-94db-098332b438b6/1632998045/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:36.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1Q3GCiWndMUWBjeUt12crnDFF9PFohhfmZ",
+          "tokenId": "64341266089255334162810533713095127882920054599483430324509055910570834329756"
+        }
+      }
+    },
+    {
+      "id": "8c2826a4-4cdb-48f1-980f-c57a59af2dcf",
+      "title": "Leaves of Manifold, of Red and Gold #1",
+      "source": "https://cdn.feralfileassets.com/previews/92a0c691-c281-4a93-ae1f-48d5eacd0ee3/1632824880/preview.gif",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:36.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x29C9E04E05c5d261836e458BC5B779a7dE3C58D6",
+          "tokenId": "44454718090882994093426117371750302173177614072300164086807993220170969920394"
+        }
+      }
+    },
+    {
+      "id": "ddd3ba1a-cf54-47d3-af07-6b334c40314b",
+      "title": "CUSP - Marsh Birds AP",
+      "source": "https://cdn.feralfileassets.com/previews/3224d677-f521-415d-86c0-1f2f9c47abef/1632440301/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:36.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x29C9E04E05c5d261836e458BC5B779a7dE3C58D6",
+          "tokenId": "39572472606789710047615029395828155353486011854843958752751124670424911688553"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

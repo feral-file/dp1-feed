@@ -1,0 +1,203 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "0fd3a1be-de74-4ea1-a31c-91f614a73894",
+  "slug": "fragments-of-a-hologram-rose",
+  "title": "Fragments of a Hologram Rose",
+  "summary": "This exhibition borrows its name from Willliam Gibson&rsquo;s first published short story, &ldquo;Fragments of a Hologram Rose&rdquo; (1977). As the story notes, when a hologram is cut into pieces, even the smallest section still contains the whole of the image. In a similar way, plant cuttings and an edition of digital works can both hold these mirroring elements of origin and multiplicity.\n\nThe artists featured in the exhibition were asked to imagine and create their own sci-fi plants, and to interpret this prompt however they like&mdash;whether it be by rendering an alien pollen, some photosynthetic architecture, or a flower whose weirdness is only revealed by its description. I invited these particular artists to this exhibition because their work already pointed towards these speculative notions of nature and time. They were also invited because of their experimental use, and creative misuse, of 3D modeling and animation. A 3D program&rsquo;s workspace is by default an infinite space, since as you navigate the viewport you are surrounded by a void on all sides&mdash;beyond which a sublime vastness awaits. In this way, the artists who choose to work in these programs are negotiating the infinite potentials of space and time whenever they start a new project.\n\nLike botanists from a parallel future or an unknown world, these artists cultivate their fictions into existence. They sub-scatter seed pods, prune polygon cuttings, give their models plenty of volumetric lighting, and soak with fluid simulations. The 3D objects in this exhibition have secret pathways and telepathic tendrils. They bloom on neon skins and disperse nano mold spores through LCD screens. Like an ikebana of poisonous flowers in zero gravity, they hover in the expanse as a collection of fragmented flora files.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/6a6515ed-f6c1-4942-78c2-e75d86604d00/raw",
+  "created": "2026-01-06T11:09:27.695Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "03cd053a-426d-487b-9731-657724deee0d",
+      "title": "Blue Veil AP",
+      "source": "https://cdn.feralfileassets.com/previews/c974b77f-3734-4952-9cea-1dcd591cc48d/1624186582/compressed.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:27.688Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x979316F5b3f3d8db956Af519553c853525A5b1Af",
+          "tokenId": "112327165864328605214780140867906700972042550799136203077961123286011617949745"
+        }
+      }
+    },
+    {
+      "id": "99d77d74-5c7f-4974-8259-aa5bbb2bc967",
+      "title": "Mutant Bagua #1",
+      "source": "https://cdn.feralfileassets.com/previews/89c348c1-6e78-4e00-ac3f-f58c9e732731/1624234006/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:27.694Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x979316F5b3f3d8db956Af519553c853525A5b1Af",
+          "tokenId": "60376207215736547451168424924260687305243902308116219208599052892200982633699"
+        }
+      }
+    },
+    {
+      "id": "fb777103-2a37-4446-9b7c-4f52ed65d70c",
+      "title": "D. Flagellum #1",
+      "source": "https://cdn.feralfileassets.com/previews/c40d0e81-c8dd-44a3-9fc8-2caa36101516/1624041254/compressed.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:27.694Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x979316F5b3f3d8db956Af519553c853525A5b1Af",
+          "tokenId": "24464211475253544142247344694917082453292871811282922939810423860461543911074"
+        }
+      }
+    },
+    {
+      "id": "99eb3eaf-5143-4186-ae27-dc2292b85a90",
+      "title": "Rose AP",
+      "source": "https://cdn.feralfileassets.com/previews/b3dacae7-dcc3-40e1-9dd4-9e2047398c01/1624255151/compressed.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:27.694Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x979316F5b3f3d8db956Af519553c853525A5b1Af",
+          "tokenId": "61597698234799203345339339493550343239959538565077715461614059946090805630889"
+        }
+      }
+    },
+    {
+      "id": "8f70f28e-8ad9-4733-be31-c3e081279b8b",
+      "title": "Forest Transmission AP",
+      "source": "https://cdn.feralfileassets.com/previews/48f6b892-d3aa-4eae-87db-040e195e00a5/1624340822/compressed.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:27.694Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x979316F5b3f3d8db956Af519553c853525A5b1Af",
+          "tokenId": "110114752152540371887409529388929910022808799500120602240695433637723919708647"
+        }
+      }
+    },
+    {
+      "id": "492193be-2e66-4451-bc62-645616315217",
+      "title": "Temple Lily AP",
+      "source": "https://cdn.feralfileassets.com/previews/ce7c5624-af01-4a1d-ad77-eee51cb54327/1624200329/compressed.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:27.694Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x979316F5b3f3d8db956Af519553c853525A5b1Af",
+          "tokenId": "52890545178984107233010252335843901677733841828576548989562413436929399359700"
+        }
+      }
+    },
+    {
+      "id": "40d85e2e-d96d-445f-ba11-4d5d9e6fec9d",
+      "title": "Caylx #1",
+      "source": "https://cdn.feralfileassets.com/previews/50aa02eb-dccf-4003-99a2-69a1f62cb337/1624343623/compressed.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:27.695Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x979316F5b3f3d8db956Af519553c853525A5b1Af",
+          "tokenId": "75042946480313672171500136693219929921605198490900503320741478797598186727852"
+        }
+      }
+    },
+    {
+      "id": "b802996b-9e7b-47de-9349-30efecae97ab",
+      "title": "COUNT ZERO FOUR AP",
+      "source": "https://cdn.feralfileassets.com/previews/1b205395-6654-4174-b170-45c82866270b/1624043512/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:27.695Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x979316F5b3f3d8db956Af519553c853525A5b1Af",
+          "tokenId": "165325811143305924095244232836109005706401101678251165564751721130722506624"
+        }
+      }
+    },
+    {
+      "id": "51f31df0-107a-4ac9-96ed-e60909b2443f",
+      "title": "The Shredded Hologram Rose AP",
+      "source": "https://cdn.feralfileassets.com/previews/6053b698-2016-4c05-9353-6941635c1609/1624467464/compressed.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:27.695Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x979316F5b3f3d8db956Af519553c853525A5b1Af",
+          "tokenId": "80293004185993315229961265750178126430939810844219749205334856951927038992852"
+        }
+      }
+    },
+    {
+      "id": "4e59dd14-9d15-4971-9b2a-994c683c5519",
+      "title": "Floralia II #1",
+      "source": "https://cdn.feralfileassets.com/previews/ca471793-baf8-43db-bf1a-b811f4608297/1624296713/compressed.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:27.695Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x979316F5b3f3d8db956Af519553c853525A5b1Af",
+          "tokenId": "90030517998886336964182753065636157373955844525653880512706154948462778305032"
+        }
+      }
+    },
+    {
+      "id": "abba5c1d-1e0a-44d7-b366-ad6daef3d821",
+      "title": "Plants are everywhere you can’t see them AP",
+      "source": "https://cdn.feralfileassets.com/previews/685f39aa-f9ca-4bfd-84af-d69ad3f8b2c3/1624118288/compressed.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:09:27.695Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x979316F5b3f3d8db956Af519553c853525A5b1Af",
+          "tokenId": "11099514349916357724051036428569677406815568142134691321232943996482542628401"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

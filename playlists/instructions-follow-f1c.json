@@ -1,0 +1,220 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "b5d72fc5-f550-4da2-bff5-c1237b35dba3",
+  "slug": "instructions-follow",
+  "title": "Instructions Follow",
+  "summary": "Over the last year, our daily environment has taken the shape of a video game tutorial: everywhere, lines of security tape delimit the spaces we can go to, or where we can sit. Arrows show the directions to follow in corridors and entrances, and protocols are put in place to establish what we must do in public spaces. At the same time, disembodied synthetic female voices emanate from home speakers and smartphones, providing us with information and instructions. Smart objects remind us to walk more, sit up straight, drink water, meditate, or learn a new language.\n\nWe are increasingly used to following instructions&mdash;not only those given to us by the authorities, but also by those written on signs, and by the constant reminders from apps we&rsquo;ve signed up for. The pandemic has only increased our need to be told what to do. While we navigate a changing environment, looking for directions and adapting to the circumstances, we try to improve, to learn something new, to keep calm, to do more exercise. Meanwhile, the platforms and apps we use apply the algorithms designed by their developers to cater to our needs, customize our experiences, and gently influence our behavior.\n\nInstructions follow: As we move into the future, there will continue to be more indications, regulations, and control placed over us. Some of these will be as obvious as road signs, while others will surreptitiously infiltrate our everyday activities, online or on the street. The artworks in Instructions Follow explore our relationships with digital devices and information systems from the perspectives of both humans and machines as a way to reflect on how our present time is governed by codes, regulations, and defaults.\n\nInspired by the interactions with voice assistants and artificially intelligent agents, Lauren Lee McCarthy and Thierry Fournier both create experiences of otherness in which the viewer is confronted with a digital clone of the artist&rsquo;s voice (McCarthy) or an automated system that seems to question their humanity (Fournier). These artworks allude to the fear of being replaced by a machine, or of having to adapt to increasingly inhuman and profit-oriented technological systems. In turn, these systems are criticized by Joana Moll and Guido Segni, both of whose work exposes the authoritarian undertones of techno-solutionism (Moll) and the unequal labor conditions of cloudworkers (Segni).\n\nConversely, the works of Alba G. Corral, Disnovation.org, and Martin John Callanan all address the forms of creativity enabled by software, and the open possibilities of algorithmic serendipity. In one instance, a generative visual composition explores the concept of emergence (Corral), incorporating the program as a co-author of the piece, while in another work, a bot creates descriptions of artworks using keywords extracted from online news articles (Disnovation.org). Finally, a log of every action carried out in the image editing program Photoshop over the course of 15 years is presented as a diary of the artist&rsquo;s creative process (Callanan).\n\nInstructions and codes have always been a part of our societies. The current gamification of our daily habits is but another example of how we have always followed explicit or unspoken rules to behave in the company of others. Alix Desaubliaux and Antoine Schmitt direct our attention to these rules using the language of games, either by connecting the notion of the “Magic Circle” to physical environments (Desaubliaux), or by developing an interactive game in which we experience the world as an invisible maze (Schmitt). Desaubliaux’s work also connects with the occult and the belief that we can shape reality through incantations, just as programming code can shape virtual worlds. Similarly, Solimán López, Irma Marco, and Varvara & Mar tackle the connection between digital technologies and ancient rituals by playfully addressing the supernatural. Images posted on Instagram by the Brazilian beauty blogger Camila Coelho are transformed into a futuristic altar piece, suggesting her condition as a ...",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/f73a3860-bde8-4c3a-9e0f-488cc20e4b00/raw",
+  "created": "2026-01-06T11:08:39.704Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "9772c886-1117-4a14-8572-5658cc3dbcf4",
+      "title": "What do you want me to say? AP",
+      "source": "https://cdn.feralfileassets.com/previews/f2db8c40-a2fb-4a93-be03-75ce3b3133f3/1630436182/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:39.693Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1d5bdC75918600541C115b74b81a404C9E4AF7D4",
+          "tokenId": "12840682995913677806001798836709465389866153646272085769634026756001512030506"
+        }
+      }
+    },
+    {
+      "id": "4cd854fc-53df-44c4-825a-8a95bb6a8803",
+      "title": "Just in case #1",
+      "source": "https://cdn.feralfileassets.com/previews/91a3ea94-f606-40a9-9e39-611bdcb46fdd/1629977054/preview.gif",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:39.701Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1d5bdC75918600541C115b74b81a404C9E4AF7D4",
+          "tokenId": "65701061192416629647091860341813823518299396124148428848093552523919884889905"
+        }
+      }
+    },
+    {
+      "id": "1254de03-30bb-4a85-8de1-2497fa966166",
+      "title": "Ultimate Solvers AP",
+      "source": "https://cdn.feralfileassets.com/previews/51a53d4e-c60f-4582-8edc-c9998ed40a24/1629968561/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:39.702Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1d5bdC75918600541C115b74b81a404C9E4AF7D4",
+          "tokenId": "13843231308003667629763411009854807364049237540643953179739929600368051091847"
+        }
+      }
+    },
+    {
+      "id": "2fe12808-81ac-4cc1-b599-04eda3ad9122",
+      "title": "24/7 AP",
+      "source": "https://cdn.feralfileassets.com/previews/cf435a8a-c4df-4606-9acc-809217ab367b/1630268462/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:39.702Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1d5bdC75918600541C115b74b81a404C9E4AF7D4",
+          "tokenId": "49680436437337850500957598925994160948465521154464009609768089907101356076688"
+        }
+      }
+    },
+    {
+      "id": "992a21a4-5595-43ed-b220-fc7eeb914c2f",
+      "title": "Emergence AP",
+      "source": "https://cdn.feralfileassets.com/previews/a1b6689f-5236-471a-97a6-70ea0879dd42/1630583755/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:39.703Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1d5bdC75918600541C115b74b81a404C9E4AF7D4",
+          "tokenId": "29675870761587803123850255772014231519473951568011717151584536753918684144705"
+        }
+      }
+    },
+    {
+      "id": "c99d7f67-a8e6-4a4e-b85c-1772c16486bb",
+      "title": "Predictive Art Bot AP",
+      "source": "https://cdn.feralfileassets.com/previews/47db4cae-c786-4bb3-8735-e932ab81ed7f/1630258818/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:39.703Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1d5bdC75918600541C115b74b81a404C9E4AF7D4",
+          "tokenId": "72831279254957510195555145377250501155718231347682912715173209101067739974718"
+        }
+      }
+    },
+    {
+      "id": "c8c97b82-7118-419c-9e39-1db2cecb5ce8",
+      "title": "Each and Every Command AP",
+      "source": "https://cdn.feralfileassets.com/previews/6b095c1c-b367-4f4c-b583-6f0ae975e463/1630649915/preview.txt",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:39.703Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1d5bdC75918600541C115b74b81a404C9E4AF7D4",
+          "tokenId": "90379567454205647636033329874469847986296395573646273342206903320923923053717"
+        }
+      }
+    },
+    {
+      "id": "29a06187-6840-491d-85ed-b18a8e069248",
+      "title": "Minos AP",
+      "source": "https://cdn.feralfileassets.com/previews/6e0b8c01-5b11-4ceb-b40a-c1d8efa4a66a/1629980523/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:39.703Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1d5bdC75918600541C115b74b81a404C9E4AF7D4",
+          "tokenId": "71476444588005777011178902025495148361331893381891419132241003166976552058050"
+        }
+      }
+    },
+    {
+      "id": "7cc4ad59-92e7-47b3-a91f-0c9656564a33",
+      "title": "Sigils #1",
+      "source": "https://cdn.feralfileassets.com/previews/746f680d-9a6c-4125-9486-3271bdbe7e6e/1630315151/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:39.703Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1d5bdC75918600541C115b74b81a404C9E4AF7D4",
+          "tokenId": "70585773858598475291209973498859065267624231135253536894691595122958978116706"
+        }
+      }
+    },
+    {
+      "id": "cdb0825f-e579-4824-ad4d-22bd0449e23e",
+      "title": "Neonumens #1",
+      "source": "https://cdn.feralfileassets.com/previews/fe63cbf2-7377-4497-919b-853dd22c63e7/1629999287/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:39.704Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1d5bdC75918600541C115b74b81a404C9E4AF7D4",
+          "tokenId": "88065805420627234584524446777167433688187033905063730310714169570369193825419"
+        }
+      }
+    },
+    {
+      "id": "80993345-2bf7-4f79-926b-54ca4c52178e",
+      "title": "Are Smart Machines Alive? AP",
+      "source": "https://cdn.feralfileassets.com/previews/4f3fe912-d226-48b1-8120-56566426d110/1630004919/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:39.704Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1d5bdC75918600541C115b74b81a404C9E4AF7D4",
+          "tokenId": "56118370897972180535083884653105777704508589841726951274442774583420870303320"
+        }
+      }
+    },
+    {
+      "id": "32e75c4e-49aa-4646-ac4b-b64622fa2eb1",
+      "title": "Signal of the World AP",
+      "source": "https://cdn.feralfileassets.com/previews/496bd7c1-d524-44fd-b8d6-9eb03fb9f320/1629962649/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:08:39.704Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1d5bdC75918600541C115b74b81a404C9E4AF7D4",
+          "tokenId": "114134603993208105336569614100180464145718343141944688776188492901127728944492"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

@@ -1,0 +1,186 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "a37aaeb5-61f5-44c4-8f41-9c95a9000e54",
+  "slug": "ten-whistlegraphs",
+  "title": "Ten Whistlegraphs",
+  "summary": "In Whistlegraph's first solo show and exhibition, the artist group (Jeffrey Scudder, Camille Klein, Alex Freundlich) presents a new body of work featuring creative documentation of a selection of \"whistlegraphs\" — an art form of scored musical drawings they created, beloved by a growing online community. Whistlegraphs are memorizable lyrical poems that double as graphic scores, resulting in reproducible drawings. \n\nBlending drawing with live performance documentation is Whistlegraph's bread and butter; and it is this evasion of capture that also makes artifacts of their work so limitless. A set of files make up each of the ten whistlegraphs curated for Feral File — a high definition video performance and graphic score made for the exhibition, in addition to a curated selection of TikToks of that same work, accessible through a custom interactive player. Each whistlegraph piece by the group has generated countless media artifacts and recordings in the form of social media posts (by Whistlegraph and fans alike), works on paper, and live recitals. Part of the beauty of this format is that once you grok it, you can make a whistlegraph yourself. Indeed many do write their own whistlegraphs — or interact with the group's in the form of duets, mashups, and sing-alongs to the tune of digital folk.\n\nLike Harold and the Purple Crayon, Whistlegraph draws a world into existence. Their work is a refreshing reminder that the inner child's creative light needn't be dimmed with age. Friendship radiates through everything the trio does, whether colorful chalk art on a park basketball court, or candid-yet-choreographed performances recorded on their iPhones. But Whistlegraph is also hip to Fluxus and other traditions of contemporary visual art that wrestle with philosophical questions more often taken on by composers, such as the abstract qualities of graphical notation, or art as language. In their practice, they dwell in the noise of moving from analog to digital and back again. \n\n***\nIn an exclusive Feral File \"<a href=\"https://feralfile.com/journal/close-up/whistlegraph-doodling-clockwork-in-lore-and-score\" target=\"_blank\" class=\"link\">Close-Up</a>\" text accompanying the exhibition, writer Dorothy Rose Howard discusses Whistlegraph's musical vernacular and digital folklore.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/48c40d4f-e015-4760-2081-a01655e5a200/raw",
+  "created": "2026-01-06T11:03:26.909Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "31612dc1-9109-4f60-86c1-59b8fb270557",
+      "title": "Butterfly Cosplayer #1",
+      "source": "https://aesthetic.computer/wg~imab",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:03:26.902Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x9294c5787f5BC7462E991fE8B6FeaC75F433ac39",
+          "tokenId": "24298776145658945174247534552747357352865717842153506789353982151598247785045"
+        }
+      }
+    },
+    {
+      "id": "93ba5517-a47e-4ec5-80b0-592710ea4e0a",
+      "title": "Time To Grow #1",
+      "source": "https://aesthetic.computer/wg~grow",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:03:26.907Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x9294c5787f5BC7462E991fE8B6FeaC75F433ac39",
+          "tokenId": "50781673747654174516923144225176619745350592720897459998062260049775886871853"
+        }
+      }
+    },
+    {
+      "id": "4e321b27-4e1c-4dc9-9f80-cd2281349ce2",
+      "title": "Loner #1",
+      "source": "https://aesthetic.computer/wg~lonr",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:03:26.907Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x9294c5787f5BC7462E991fE8B6FeaC75F433ac39",
+          "tokenId": "48863705250211320275622564439647195889824043854931170294905496688084877045403"
+        }
+      }
+    },
+    {
+      "id": "8ea6f145-9a98-41bd-9cdd-76c3eca52921",
+      "title": "I Don’t Need an iPhone #1",
+      "source": "https://aesthetic.computer/wg~idni",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:03:26.908Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x9294c5787f5BC7462E991fE8B6FeaC75F433ac39",
+          "tokenId": "106617214819159678257385672898805288300932347841372762354364063342458165013558"
+        }
+      }
+    },
+    {
+      "id": "931a61d9-5fae-4d31-9099-0806dd845b66",
+      "title": "Lately When I Fly #1",
+      "source": "https://aesthetic.computer/wg~l8ly",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:03:26.908Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x9294c5787f5BC7462E991fE8B6FeaC75F433ac39",
+          "tokenId": "43440340913191970997055432036860088166881864832930550389106931634251630631799"
+        }
+      }
+    },
+    {
+      "id": "fddd8fdf-4cac-4233-9f78-768eef9374f1",
+      "title": "Puzzle #1",
+      "source": "https://aesthetic.computer/wg~puzz",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:03:26.908Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x9294c5787f5BC7462E991fE8B6FeaC75F433ac39",
+          "tokenId": "48627848289168186202030308937714736044114237960234647429111876172184646170839"
+        }
+      }
+    },
+    {
+      "id": "97a8406b-ac3f-40e9-9376-fc1eeed62cc6",
+      "title": "Slinky Dog #1",
+      "source": "https://aesthetic.computer/wg~sdog",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:03:26.908Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x9294c5787f5BC7462E991fE8B6FeaC75F433ac39",
+          "tokenId": "68974134701855428354182141599600792533566538025482641696241806564154388734490"
+        }
+      }
+    },
+    {
+      "id": "60307323-45c4-4326-b086-c42fb5f78ab1",
+      "title": "Mommy Wow #1",
+      "source": "https://aesthetic.computer/wg~w0w",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:03:26.908Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x9294c5787f5BC7462E991fE8B6FeaC75F433ac39",
+          "tokenId": "86538852424518247587746376800362690666100157706322679248233552625902012024334"
+        }
+      }
+    },
+    {
+      "id": "c22d3966-1e77-47cd-846e-039cac9170e5",
+      "title": "People Pleaser #1",
+      "source": "https://aesthetic.computer/wg~ppl",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:03:26.908Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x9294c5787f5BC7462E991fE8B6FeaC75F433ac39",
+          "tokenId": "60482846104413848287324598659494249655072542489687088459959218169946856246651"
+        }
+      }
+    },
+    {
+      "id": "404b2fa7-3b0b-4b0f-afbe-46dd191ddae1",
+      "title": "What’s Inside Your Heart? #1",
+      "source": "https://aesthetic.computer/wg~wiyh",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:03:26.909Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x9294c5787f5BC7462E991fE8B6FeaC75F433ac39",
+          "tokenId": "83514432246577316979638673645814160012988148299041711046662933236138898072367"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

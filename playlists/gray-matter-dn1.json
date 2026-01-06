@@ -1,0 +1,220 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "5c33d1d9-6a1f-4f07-9fd5-c1b60f55eca9",
+  "slug": "gray-matter",
+  "title": "Gray Matter",
+  "summary": "Auriea Harvey’s solo show Gray Matter presents a body of work emerging from an undefined and fluid ambient, where mud-like protoplasm is molded from a neutral background, solidifying into metaphysical apparitions. These data-based objects are marked by the memory of their material roots, similarly to archeological artifacts or witnesses. Indeed, the artist plays with the tools of archaeological research in the creation of her mythology and methodology. Auriea uses polygons in place of plaster, staging a non-literal and paradoxical practice of casting in a ping-ponging circularity from the sensual world to the digital one and back again. As in Pompeii’s casts, where the transition from the void left by an incinerated body is impressed into the durable matter of a plaster form, the artist seeks that continuum in the tension between ethereal and corporal, attempting to answer the question: what is this void made of?\r\n\r\nTracing back to the genesis of her sculptural process, Auriea’s digital scans are made of reality, whether that be parts of her body or cultural artifacts. Their form is then subjected to a process of digital manipulation. Modeled, assembled, and re-signified, the virtual outcomes either remain digital sculptures or are 3D printed in different materials such as resin or plastic, combined with other organic materials. Nevertheless, behind every finished work is a trail of discarded experiments and misprinted fragments that she equally sees as raw material to re-compose into multi-material assemblages. As in the case of Gray Matter, the rejects are subjected to further processes of being scanned, digitally re-manipulated, staged, and animated. And again, the sculptures are given the possibility to exist independently when printed by the person who owns them. Auriea manages to treat substances at any stage of their materiality as malleable mixtures, be they made of data or polymers. Overcoming their finiteness, forms become moldable blobs in her hands, losing their univocal eloquence. The open chain of the process she establishes, empowered by the means of digital sculpture, allows her to boldly stand in front of the Western artifacts she confronts, both absorbing them and twisting their common sense for the creation of new non-hegemonic narratives.\r\n\r\nThe paradigm of casting turns out to be particularly relevant not only as a mere synthesis of the artist’s creative method, but also to affirm the potential of reproduction as a speculative act. In Auriea’s process, each pass between realities emphasizes the essence of the previous material, yet also denies it. As if to reach the final outcome of the digital or physical works, the form needs to be filtered and purified through the layering of different technical procedures, connecting the artist’s practice to the process of Neoclassical and Romantic sculpture. Traditionally, in fact, casting is a key part of the process that transforms the instinctive molding of terracotta into the ethereal perfection of a marble or bronze. In this frame, the artist manages to affirm the substantial relevance of digital matter in contemporary sculpture by retracing its historical references, such as the echoing of Auguste Rodin’s <em>marcottage</em>, the practice of recombining and reusing different elements of previous works for the formulation of new ones. Through the reiteration of her imagery, Auriea leads an ontological inquiry on the practice of sculpting, challenging the notion of materiality through a labyrinthine circuit of transitions.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/4e02db1e-a061-4305-7dd7-2626f8f64100/raw",
+  "created": "2026-01-06T10:57:37.844Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "19fb917e-4f9d-44b1-b76e-b4d97a729a40",
+      "title": "Gray Matter: Material/Immaterial AE",
+      "source": "https://cdn.feralfileassets.com/previews/7ad7ee07-883a-4989-a087-e3b03fd4a69d/1666536695/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:37.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5",
+          "tokenId": "57926226797054930816703082712960451066245365004697088168355518074723893138537"
+        }
+      }
+    },
+    {
+      "id": "d7cf422f-4246-4ef4-b73b-0d2e959baf0b",
+      "title": "Gray Matter AE",
+      "source": "https://cdn.feralfileassets.com/previews/8323eb9a-b406-4fbc-8550-fcd12213440a/1667584931/?edition_number=0&blockchain=ethereum&contract=0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5&token_id=83546164136789563436808252890115554093142535498547881756265405968490982747232&token_id_hash=0xdb25101523fdbe9491a3fffcf7bdfae3184ddf70965db4ae949dc68faa3d60a2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:37.842Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5",
+          "tokenId": "83546164136789563436808252890115554093142535498547881756265405968490982747232"
+        }
+      }
+    },
+    {
+      "id": "8d97c0d4-aaff-47eb-a3f9-ab84b8e36698",
+      "title": "AlleluiaAlleluia AE",
+      "source": "https://cdn.feralfileassets.com/previews/32f1b099-448d-4e6d-8358-70a64e005903/1667585109/?edition_number=0&blockchain=ethereum&contract=0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5&token_id=31658398539211567249775841645446054699032188246536879923555153674548343085940&token_id_hash=0xa7198469cdc4247d4ef1b8da3ba89721c0eeb1615740b94dd74c223edd5233d4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:37.843Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5",
+          "tokenId": "31658398539211567249775841645446054699032188246536879923555153674548343085940"
+        }
+      }
+    },
+    {
+      "id": "6f26bf86-7e77-4c13-a279-22653b07e95a",
+      "title": "Messenger (fragment) AE",
+      "source": "https://cdn.feralfileassets.com/previews/d90151ff-0159-4973-a7a6-724b04c01547/1667585771/?edition_number=0&blockchain=ethereum&contract=0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5&token_id=38691948804591133143284137495105900800364423599931822770633671069054284343615&token_id_hash=0xf9bc13b7aa71063b5bef8f2a78929dd22b79121fe93732b4f5fac90666dc875e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:37.843Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5",
+          "tokenId": "38691948804591133143284137495105900800364423599931822770633671069054284343615"
+        }
+      }
+    },
+    {
+      "id": "9be95b41-c40c-4d5c-b6a2-4911ff46c42c",
+      "title": "White Rest AE",
+      "source": "https://cdn.feralfileassets.com/previews/7f70faea-dc2a-4613-b758-b53b9bd6d00d/1667638386/?edition_number=0&blockchain=ethereum&contract=0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5&token_id=101018397861100865329114328924892815187623142272647927988588693624037353186253&token_id_hash=0xba4c915efedfaffe1b7836cbdfd6ba009e10e2bd4b9c772eb699e662a867307f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:37.843Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5",
+          "tokenId": "101018397861100865329114328924892815187623142272647927988588693624037353186253"
+        }
+      }
+    },
+    {
+      "id": "e2a1d27d-0d96-4025-afc0-ea724406bdab",
+      "title": "Dagger AE",
+      "source": "https://cdn.feralfileassets.com/previews/bd0c4207-f8e7-49db-919e-e2913f39d59c/1667599797/?edition_number=0&blockchain=ethereum&contract=0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5&token_id=92208933710796125770590251699325730336243064425460091178260788340701093768779&token_id_hash=0x8f1ab2c8b8dc683984093fa2c3cf6a62fb9856d5de28db5d358ea4db803d81f3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:37.843Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5",
+          "tokenId": "92208933710796125770590251699325730336243064425460091178260788340701093768779"
+        }
+      }
+    },
+    {
+      "id": "b44b5a50-2320-4cae-8bae-a918925ff02a",
+      "title": "Faunette AE",
+      "source": "https://cdn.feralfileassets.com/previews/527a291d-49f5-4ddc-81f6-0331f9e08be9/1667600061/?edition_number=0&blockchain=ethereum&contract=0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5&token_id=103670424291181108903021494306982394267978572499721974093211453159646661892321&token_id_hash=0x107eb9a062458fff10e95f5acd4e3e3e5ad9842d0a4d7318878293c237ebc2c8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:37.843Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5",
+          "tokenId": "103670424291181108903021494306982394267978572499721974093211453159646661892321"
+        }
+      }
+    },
+    {
+      "id": "2295d6c0-2bb4-460d-95b7-9459b1c956fa",
+      "title": "Haristory AE",
+      "source": "https://cdn.feralfileassets.com/previews/cc86cf63-6b79-4bba-9613-e362851cbbdc/1667587386/?edition_number=0&blockchain=ethereum&contract=0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5&token_id=67884599743201988766725462649025530234665379733525547672892980733959710599814&token_id_hash=0x5410a5928fc7eabf1125dc0623cff8cb3f8681b13ceafe805a9c858d5de4868e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:37.844Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5",
+          "tokenId": "67884599743201988766725462649025530234665379733525547672892980733959710599814"
+        }
+      }
+    },
+    {
+      "id": "bd6604f1-9521-473c-b41e-109a1617800d",
+      "title": "Mumble AE",
+      "source": "https://cdn.feralfileassets.com/previews/5d67190d-28d7-493c-85c8-563c32de44ff/1667592434/?edition_number=0&blockchain=ethereum&contract=0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5&token_id=26784186576786734221113338868184730699905253695798607540572045023095617009768&token_id_hash=0x08474338c56195e0c547ee2ff97bcbc199c749bf44c446b83649c676e9b8324b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:37.844Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5",
+          "tokenId": "26784186576786734221113338868184730699905253695798607540572045023095617009768"
+        }
+      }
+    },
+    {
+      "id": "4f45f8ec-705f-4a7b-9e16-d11e1f808372",
+      "title": "The Hand-Heart Problem AE",
+      "source": "https://cdn.feralfileassets.com/previews/f15bce66-da54-4f05-bc29-7ef15202b0c3/1667592496/?edition_number=0&blockchain=ethereum&contract=0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5&token_id=34718018818869922919370887279228907780982832976222422378720431113664518558578&token_id_hash=0xebbce12810c9887fa181dd3254b4955ad309f0e1210d11aad0e2e080defb0c55",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:37.844Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5",
+          "tokenId": "34718018818869922919370887279228907780982832976222422378720431113664518558578"
+        }
+      }
+    },
+    {
+      "id": "b52d5503-a453-405c-8836-e35042112702",
+      "title": "Curse Tablet AE",
+      "source": "https://cdn.feralfileassets.com/previews/a6463015-af79-43cf-ab25-84074828ac4b/1667592704/?edition_number=0&blockchain=ethereum&contract=0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5&token_id=18508392712335859217281546756689095982136889956180325835747044186697182425048&token_id_hash=0x108ca24174a039a9295615185518cf78a18ef4c692f71e9e3bfe2a7e00411547",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:37.844Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5",
+          "tokenId": "18508392712335859217281546756689095982136889956180325835747044186697182425048"
+        }
+      }
+    },
+    {
+      "id": "0c939596-2d40-4ab5-873d-38b1a55d1486",
+      "title": "ba-eye AE",
+      "source": "https://cdn.feralfileassets.com/previews/9c797f06-41e2-4aa4-abfe-489485bea17e/1667593413/?edition_number=0&blockchain=ethereum&contract=0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5&token_id=104398116994341825170426578498298630082738464392540213104738174707054719211556&token_id_hash=0x8de25e3929d4e0fa95f7850ef9d0106aef4fab976a469cb68c9dfbf4f611ffe8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:37.844Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5",
+          "tokenId": "104398116994341825170426578498298630082738464392540213104738174707054719211556"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

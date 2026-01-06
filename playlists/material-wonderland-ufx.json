@@ -1,0 +1,169 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "b85fbacc-3354-4862-829a-d18f0e08343f",
+  "slug": "material-wonderland",
+  "title": "Material Wonderland",
+  "summary": "Material Wonderland is the first solo exhibition of NFT-backed work by internationally acclaimed Chinese multimedia artist Lu Yang, co-curated by Alice Scope and Barry Threw for Vellum LA and Feral File.\r\n\r\nThe exhibition includes eight new works taken from “The Great Adventure of Material World,” Lu Yang’s second piece from the \"Material World\" series created in 2019, arguably known to be his most ambitious game work thus far. \r\n\r\nThis fresh presentation of Lu Yang’s metamorphic world comes at a critical time when shared online spaces are increasingly conditioning the possibilities for defining our own modes of being. The avatars, actions, and settings in the Material Wonderland exhibition gesture toward the transformative potential of video games to serve as sites of enactment and exploration, while also demonstrating the vital role of artists in anticipating cultural traumas and envisioning expansive responses. Resisting the myopic view of virtual worlds as escapism, Material Wonderland presents an interactive open narrative as a transcendental technology-of-the-self, providing a toolkit for reconstructing identity back in the physical world.\r\n\r\n“The Great Adventure of Material World” consists of six levels structured in direct reference to the six reincarnations in Buddhism. Through gameplay as “The Knight,” viewers are invited to explore multiple identity transformations, moving beyond tropes of popular manga culture while growing in power and abilities. Through this journey of observation the Knight goes through internal struggles amongst various emotions and desires, while players are challenged to reflect on their conventional views of contemporary society, and invited to explore alternate paths of being. Many characters from Lu Yang's previous works can be seen in the Material Wonderland and together they form a game world which offers infinite possibilities to build one’s existence liberated from the rigid confines of nationality, gender, and sexuality. \r\n\r\nThe NFT-backed video loops in this collection are rendered from within the game world, and include both different enactments of The Knight, as well as transformative scenes from the game world. These moments were chosen by the artist as evocative actions and settings in the journey of The Knight as they serve as avatar for the ultimate metamorphosis of the player.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/ba6f7ed4-e3a2-43d4-afbb-ada16c679f00/raw",
+  "created": "2026-01-06T10:54:55.527Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "e9ea6a80-239d-497e-b118-dfe7ad5db451",
+      "title": "Material World Knight: Fighting Mode PP",
+      "source": "https://cdn.feralfileassets.com/previews/b45f236a-f29f-4e0a-94b4-e894cb7566e7/1675926395/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:54:55.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "37405486248744233930716135614171504735129073536868819020061938488135423751467"
+        }
+      }
+    },
+    {
+      "id": "8ceb8712-7bf8-4e9e-b59c-95ef32e62fb5",
+      "title": "Material World Knight: Flying Mode PP",
+      "source": "https://cdn.feralfileassets.com/previews/c570b9bd-d434-4e95-8295-801cc9458b03/1675925666/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:54:55.526Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "71410372871747443489515838479889316636126954869602511437783803458556682723748"
+        }
+      }
+    },
+    {
+      "id": "30f6d227-4986-4ad3-86cc-2e6862390666",
+      "title": "Material World Knight: Fight the Universe PP",
+      "source": "https://cdn.feralfileassets.com/previews/ce6dc4ca-13d5-4cda-ba15-9d3201873384/1675927167/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:54:55.526Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "2492964552115222111455723893464644415786209733158740338236313478633292903956"
+        }
+      }
+    },
+    {
+      "id": "c24e0ed0-0fd6-473a-8255-894223b5776d",
+      "title": "Material World Knight: Giant Heart PP",
+      "source": "https://cdn.feralfileassets.com/previews/c281ce58-3507-4f6f-bb15-540a88ee553f/1675927590/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:54:55.527Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "49331212307299913695431248663336053857151499231527615863517194291341458754529"
+        }
+      }
+    },
+    {
+      "id": "4116563e-15d9-48f1-84b4-00a153fbb756",
+      "title": "Material World Knight: Full Armed Fighting Mode PP",
+      "source": "https://cdn.feralfileassets.com/previews/866f3fab-e74a-46fe-ba92-651b95e356e9/1675928540/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:54:55.527Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "31830990513774020773856075078173769724056013930901601507946534590488789174621"
+        }
+      }
+    },
+    {
+      "id": "3ca78f72-ec23-4c28-b8a7-b15875c42399",
+      "title": "Material World Knight: Head Forest PP",
+      "source": "https://cdn.feralfileassets.com/previews/af10361f-ee39-4e5b-88d0-6c43e8d9bab5/1675929058/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:54:55.527Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "65218211541065683149590553991882510753504416247622639219453290930292260922908"
+        }
+      }
+    },
+    {
+      "id": "4095d8ef-2905-427b-9849-eecf3779fdc2",
+      "title": "Material World Knight: Vajra Power PP",
+      "source": "https://cdn.feralfileassets.com/previews/412568f3-8e46-4058-baa8-b2d907578f0c/1675929748/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:54:55.527Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "86092054222848149411274226430384902086016540654465058178380214564830543514781"
+        }
+      }
+    },
+    {
+      "id": "6cce1f14-ccf7-400f-b04a-d6e4de79f721",
+      "title": "Material World Knight: Bardo Tunnel PP",
+      "source": "https://cdn.feralfileassets.com/previews/07f145a0-1131-4366-a422-a6e18999d054/1675930114/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:54:55.527Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "30557345746184669595663040401756320711447993718270973898970391747135121472976"
+        }
+      }
+    },
+    {
+      "id": "de516317-ccfc-4918-bec3-725768f6a42f",
+      "title": "Material World Knight: Poster AE",
+      "source": "https://cdn.feralfileassets.com/previews/f2cabb51-5eae-48a7-ba16-fc847c23e0fe/1675931007/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:54:55.527Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "64083282194581793942215293811836391478974900789963845024963281200227193839067"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

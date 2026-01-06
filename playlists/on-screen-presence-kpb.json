@@ -1,0 +1,186 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "b7709a04-d57b-4f20-8bf3-9d1bdf508469",
+  "slug": "on-screen-presence",
+  "title": "On Screen Presence",
+  "summary": "The computer monitor has been a viewing apparatus for the public exchange and exhibition of art since the early 1970s. When, for example, the first publicly accessible bulletin board system, Community Memory, was launched in Berkeley, California, it was not long until the digital sharing of computerized creative expression took hold.<sup>1</sup> Yet, after 50 years, a majority of art galleries and institutions only recently, and due to the forced hand of SARS-CoV-2, collectively scrambled to adapt to virtual, public exhibition. With multifarious projects, webpages, and organized shows to learn from, galleries and museums at large instead resorted to ubiquitous OVRs, or “online viewing rooms.” Often displayed as flat, glorified e-commerce pages, OVRs only helped to emphasize galleries as luxury goods retailers. This is not to say that an individual is incapable of having a visceral, intimate experience with a particular configuration of materials and ideas, distilled into an image from a photoshoot in an off-limits location, but it remains an independent experience from standing with the same work in the flesh.\r\n\r\nHow can objects intended to live in the “real” recreate the reflexivity of shared space while simultaneously being scaled down and represented as a thumbnail in a row of other thumbnails waiting to be clicked? OVRs have come to represent inaccessibility — a reminder that the glass, glowing screen is a mediator that blocks the corporeal experience of standing among objects with weight and dimension. And simulated, 3D-modeled virtual environments for art exhibition, which also have a multi-decade history, could not save anyone from the fate of isolation, as it could never be a satisfying replacement for sudden absence of fleshy, biological presence that the world had to face. Furthermore, many 3D-modeled environments built for exhibition promise comparative relationships between art objects but often fail by relying on skeuomorphic white cube or physics-compliant architectural space, which barely render as uncanny and do not take variability of medium specificity and intent into account. \r\n\r\nWith little choice, in April 2020, the New York Times began highlighting online exhibitions on Sundays with a column titled “Art Gallery Shows to Explore From Home,” which included web pages hosted by bitforms and Silicon Valet. Although many of these shows were thoughtfully organized and broke from standard OVR configuration, they still failed to address a flattened, screen mediated experience that was no longer a choice but an obligatory compromise. It seemed there was no hope that the art world would reconcile reversion and isolation from the Steinbergian picture plane as flatbed<sup>2</sup> to <a href=\"https://feralfile.com/close-ups/screen-time\" target=\"_blank\" class=\"link\">simply flat</a>, but there was little interest in addressing the emotional and corporeal loss that came with inaccessibility to the tangible experience of embodiment, space, and its relationship to material.\r\n\r\nLike most of the working world, arts workers were also spending more time in front of the screen on video conferencing software. The most intimate, bodied experience one could have was through a webcam in real-time. Although translated to ones and zeros, webcam video has the capacity to create a portal into “real” space beyond the screen, a space that doesn’t exist in polygon modeling but organic compounds. Access to another’s brick and mortar interior has the capacity to psychologically break through the flatness and connect onlookers to the “other side.” Even with a rich 30-year history of what has been referred to as cyberformance, a dated term to describe performance art that often happens live and over the internet, these practices during the global lockdown remained on the fringes. \r\n\r\nOn Screen Presence began as a frustrated retaliation against scrolling through thumbnails of decontextualized artwork, both digitized and digitally native. This exhibition offers up live streamed presence of artists in their studio among tangible componen...",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/47a61fca-7702-4319-f978-05c1b5c1c600/raw",
+  "created": "2026-01-06T11:02:47.032Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "fd9d3ffb-5e05-4976-8409-305dddb96664",
+      "title": "Sketches in Iron AP",
+      "source": "https://cdn.feralfileassets.com/previews/725023bf-1604-4f3b-8e57-100500682b29/1654766580/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:02:47.024Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaDB387798599f5777CD0531c2ECb36007C1D1a51",
+          "tokenId": "67033993986025596160049965660026091489034296871524499497586228166286106566810"
+        }
+      }
+    },
+    {
+      "id": "3f5f3361-e5c9-49a9-9ba0-ee9bd9640e65",
+      "title": "Sketches in Iron #1",
+      "source": "https://cdn.feralfileassets.com/previews/abf1fd61-b911-402b-9e2e-d7dcf96c4d82/1654769374/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:02:47.031Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaDB387798599f5777CD0531c2ECb36007C1D1a51",
+          "tokenId": "51810762618327284440585296992102066213321412238822184011646144664068171452716"
+        }
+      }
+    },
+    {
+      "id": "5f564902-1426-4096-b8e5-d6006872b7ca",
+      "title": "Every Icon: BlockPrint AP",
+      "source": "https://cdn.feralfileassets.com/previews/c328998f-27d4-496f-acea-7c971416110e/1651621817/preview.mov",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:02:47.031Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaDB387798599f5777CD0531c2ECb36007C1D1a51",
+          "tokenId": "88382476355344623856629371528612093380120156796134516390221029509011885779057"
+        }
+      }
+    },
+    {
+      "id": "9e5211b7-3d4e-4a3e-a8cd-f5d98fa14038",
+      "title": "Every Icon: BlockPrint #1",
+      "source": "https://cdn.feralfileassets.com/previews/df0fce01-b539-4e05-8087-68f3b371c8a8/1655374303/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:02:47.032Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaDB387798599f5777CD0531c2ECb36007C1D1a51",
+          "tokenId": "17219822618029360679113202717145900865064646780843742817008568209031009012206"
+        }
+      }
+    },
+    {
+      "id": "43e95ddc-7e36-4555-ad50-64c9e0482baa",
+      "title": "Rewilded Topography #1  AP",
+      "source": "https://cdn.feralfileassets.com/previews/7b77f5d5-fefc-4a77-a40c-e9e8e5f8f9cb/1679631642/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:02:47.032Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaDB387798599f5777CD0531c2ECb36007C1D1a51",
+          "tokenId": "97339798142417990651546655250958447204136795354879494670137097919969032689459"
+        }
+      }
+    },
+    {
+      "id": "815fa98a-0c1d-4000-b1b3-c16a1a5ab52b",
+      "title": "Rewilded Topography #1  #1",
+      "source": "https://cdn.feralfileassets.com/previews/d0a3c28f-7e45-4a53-bb8a-ea8677f1da91/1679392375/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:02:47.032Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaDB387798599f5777CD0531c2ECb36007C1D1a51",
+          "tokenId": "65273699543536893274668575396892995279079704414353225613057267396753118787631"
+        }
+      }
+    },
+    {
+      "id": "7507b07e-7b53-410a-ab95-9dc3101ddcd9",
+      "title": "The Interfered Microscopy Plot AP",
+      "source": "https://cdn.feralfileassets.com/previews/0c3fa80b-712a-4688-b01a-fb904c658b76/1655634363/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:02:47.032Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaDB387798599f5777CD0531c2ECb36007C1D1a51",
+          "tokenId": "68289716947622595321016826804075533259584785262104064357370445923624791483982"
+        }
+      }
+    },
+    {
+      "id": "dac536f9-6140-48d3-9a52-3712a192eb67",
+      "title": "The Interfered Microscopy Plot #1",
+      "source": "https://cdn.feralfileassets.com/previews/5440b100-26fe-41b6-b55e-96ff06b5a94a/1655362048/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:02:47.032Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaDB387798599f5777CD0531c2ECb36007C1D1a51",
+          "tokenId": "60365463100404720998232274459491086159169278487215612923397773559832780204386"
+        }
+      }
+    },
+    {
+      "id": "a51d44a1-d0f0-417b-ac4f-2aa484f6612a",
+      "title": "Movie on 06-03-22 at 1.00 PM #1",
+      "source": "https://cdn.feralfileassets.com/previews/fd2cbf3b-152e-4ed1-b2ae-21f65b2e2d0f/1655634158/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:02:47.032Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaDB387798599f5777CD0531c2ECb36007C1D1a51",
+          "tokenId": "61159305339113441985817533060594473710734401475288473968922067998918381350826"
+        }
+      }
+    },
+    {
+      "id": "2eba319a-7b7f-4c96-b3fb-0c1469312ffd",
+      "title": "Movie on 06-03-22 at 1.00 PM #1",
+      "source": "https://cdn.feralfileassets.com/previews/90b82f85-dda3-417b-8af3-7e2d9a8756ba/1655449061/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:02:47.032Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaDB387798599f5777CD0531c2ECb36007C1D1a51",
+          "tokenId": "323008893006128574654935401748967611007890420556477141289708567210799779636"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

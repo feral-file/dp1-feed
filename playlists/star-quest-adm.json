@@ -1,0 +1,1903 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "d4cf541a-1228-4b08-80ff-2bb7bfa5c31b",
+  "slug": "starquest",
+  "title": "StarQuest",
+  "summary": "<p>These days, we live inside of images. We move through them, performing them and learning to measure ourselves against the worlds they construct. In our obsession with them, everyday life has become a stage—an environment where reality is continuously assembled and endlessly rehearsed. Training to be an image is training for a life lived in rehearsal: perfecting gestures and smoothing emotions to align yourself with the expectations of systems that measure what can be seen. In this way, the perfect image becomes a moving target that requires constant maintenance to capture attention or risk disappearing.</p><br><p>It would seem that images no longer simply condition our daily lives; instead, they have become central to producing the reality we now inhabit. It is a reality shaped by the ambient pressures of contemporary life, where performance is perpetual, engagement is mechanized, and visibility is both the aim and the threat. As these pressures intensify, images no longer behave as representations. They act as systems—quiet infrastructures that filter, route, and optimize behavior long before anything appears on a screen. These images don’t describe the world; they simply insist on themselves, circulating as fragments, signals, and prompts—optimized not to reveal reality but to keep us inside it. Under this regime, visibility becomes a form of labor that must be managed, repeated, and endlessly fine-tuned.</p><br><p>It is inside this terrain that artist Maya Man positions <em>StarQuest</em>. Turning to the highly disciplined world of American competitive dance, she recognizes a structure that both mirrors and anticipates the demands of contemporary digital life. Competition dance is driven by precision, repetition, and the constant obligation to appear composed. It is a world where performance is not a singular act but an ongoing state—where expression is shaped by the expectation of being watched, evaluated, and ranked. Man takes this atmosphere of managed visibility and treats it as material, translating the grammar of competitive dance into a dataset. Each gesture, each catchphrase, and each movement becomes part of a system—fragmented, learned, and reassembled through generative AI. In doing so, she exposes something essential about the contemporary image: that it is increasingly constructed from training data and behavioral patterns, and from the operational needs of systems that decide what can be seen, circulated, and sustained.</p><br><p>Out of this process emerges <em>StarQuest</em>’s central figure: the “AI default girl.” Despite her main-character energy, she is not a character in any traditional sense. Instead, she is an artefact of training—shaped by the biases, aesthetics, and technical expectations embedded in generative models. Built to perform charm, clarity, and composure, she is optimized to win, turning  performance into something she must constantly compute and maintain. Her movements are not her own; instead, they are inherited from a dataset of gestures that have been extracted, learned, and recombined. Making this process visible, <em>StarQuest</em> presents 111 AI-generated dance scenes, each eight seconds long and accompanied by its own synthetic music and captioned lyrics. These clips become the building blocks of Man’s larger <em>StarQuest</em> system: fragments of expression detached from their origins, behaving like components in a workflow. Exposing the technical system at work, Man calls attention to the logic that underpins so many of our contemporary images. Showing how visibility has become a learned pattern, Man reduces choreography to its computation, and the dancer to an interface.</p><br><p>Echoing the world of the cult series Dance Moms, <em>StarQuest</em> imposes a regime where expression must be legible and affect must be performed with clarity. By situating her work within the shared ethos of competitive dance and generative AI, Man captures the uncanny alignment between human rehearsal and algorithmic training, each of which are shaped by systems that promise recognition...",
+  "coverImage": "https://cdn.feralfileassets.com/exhibition-thumbnails/da0f0fce-1ff9-4550-ae72-b01755f0fbfa/1763349992",
+  "created": "2026-01-06T10:14:06.753Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "424574bb-5801-4fd7-9d00-56bb20313ed5",
+      "title": "S1: StarQuest Dance Competition",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=0&artwork_number=1&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896896&token_id_hash=0xb78c3c041a3d245717d5e3de89aa25e278991a804c437c138fdbe3b6867bcee8&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.738Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896896"
+        }
+      }
+    },
+    {
+      "id": "3dba777e-5995-481d-bff4-1fa674256f8b",
+      "title": "S2: Facial Expressions",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=1&artwork_number=2&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896897&token_id_hash=0xe881a3dbe2fcda4b12064f3b36c5e5170c12de1b9a58a254ae305e7a67324989&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.746Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896897"
+        }
+      }
+    },
+    {
+      "id": "8e50e9d3-21ec-44d6-9d93-4b00731cc5e1",
+      "title": "S3: Beautiful",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=2&artwork_number=3&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896898&token_id_hash=0x374e00d749731818aa0995c6e1f23258ab882bf1c364a1ff7df2369fd4c6b912&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.747Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896898"
+        }
+      }
+    },
+    {
+      "id": "ff06b64b-a059-4444-9b5f-be14cec53b53",
+      "title": "S4: Crashing Down",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=3&artwork_number=4&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896899&token_id_hash=0xc5983215391aabd22830b3276429f63905c87a0f6c12fc054da3817d5c40addf&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.747Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896899"
+        }
+      }
+    },
+    {
+      "id": "57bce75f-aa1a-43fd-8747-5c222714c184",
+      "title": "S5: Crown",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=4&artwork_number=5&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896900&token_id_hash=0xb385f2d67f86b6694aeae657a16330594fa8d3e54c3c765da5afe7def2e257eb&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.747Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896900"
+        }
+      }
+    },
+    {
+      "id": "d3f34f5e-2b3e-4445-8c1b-c2229f7ad8b9",
+      "title": "S6: Stuck Here Forever",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=5&artwork_number=6&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896901&token_id_hash=0xa447fd834507e1f4781f5e97e7eb9066009ec35b407e5a37342031973868f255&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.747Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896901"
+        }
+      }
+    },
+    {
+      "id": "8f84a901-bdf9-4c25-ae6f-59ae52b8fb07",
+      "title": "S7: Broken Glass",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=6&artwork_number=7&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896902&token_id_hash=0x089b36d228bcc78ecf0542d49aedbc010067b6d78a8217ebaf4ce24b623f3cfb&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.747Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896902"
+        }
+      }
+    },
+    {
+      "id": "bf782db8-31c8-4add-ac19-39f57af59b8f",
+      "title": "S8: Flawless",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=7&artwork_number=8&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896903&token_id_hash=0x531390341e94fc1faeb760897f4417651127da909c09d091bccbb160e7907e77&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.747Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896903"
+        }
+      }
+    },
+    {
+      "id": "526d253b-6ade-4a02-9152-12416d21ba97",
+      "title": "S9: Lost Myself",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=8&artwork_number=9&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896904&token_id_hash=0xee72431ab70e60e78224f80adfd2e471dcc15ed999857de8cf31156430fbd6f4&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896904"
+        }
+      }
+    },
+    {
+      "id": "5531874d-591c-4d77-8369-ae92bc6e6df9",
+      "title": "S10: I Did It!",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=9&artwork_number=10&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896905&token_id_hash=0x0f524c3f43040d599941ce95cbc3deb394b8bc86881b22d1a8459dbf62916b32&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896905"
+        }
+      }
+    },
+    {
+      "id": "a7f2a8ad-4791-4fe5-a0ef-1a2fab11bb9e",
+      "title": "S11: Mother",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=10&artwork_number=11&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896906&token_id_hash=0xb5ef9979036cae2d575bb33df37e1b82568fea32271ac000548842d5908f639a&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896906"
+        }
+      }
+    },
+    {
+      "id": "19b1ab00-2645-4a10-82fa-69162d7694e7",
+      "title": "S12: Scoring",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=11&artwork_number=12&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896907&token_id_hash=0xd89c1af5aef1a84326ee135188d6add042b4c0f62ee9a3bdd32f4fe9facaee0e&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896907"
+        }
+      }
+    },
+    {
+      "id": "200d4ba5-30c2-417c-ab6e-5bda09d8a23b",
+      "title": "S13: Be Happy",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=12&artwork_number=13&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896908&token_id_hash=0xcee04b72c4691a8c7a6aa4decd91d15614f9456049b9a0d6765f17e9f37634c4&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896908"
+        }
+      }
+    },
+    {
+      "id": "6c7cde2c-f4d3-4c8b-aafa-5e79e2144b2d",
+      "title": "S14: Moved On",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=13&artwork_number=14&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896909&token_id_hash=0xed79e4e5d5e3c40a4dea5259b92c5f16c92e824b5cc0b0d4615cd35aba152faf&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896909"
+        }
+      }
+    },
+    {
+      "id": "66cda6b2-359f-4e4b-ba92-86f93576e839",
+      "title": "S15: Do This Right!",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=14&artwork_number=15&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896910&token_id_hash=0x2275bb65f038631155d7ad1f45d46d162ca6fffe86916d3cc415ac87c4639388&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896910"
+        }
+      }
+    },
+    {
+      "id": "479c92bd-f67c-43ca-b2e2-ee21a8343c44",
+      "title": "S16: Put Your Hands Up",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=15&artwork_number=16&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896911&token_id_hash=0x5b7eaa47445576bcdb5a0bf27541d1831d081a10fc09f7e27dbc5176db8cfb2e&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896911"
+        }
+      }
+    },
+    {
+      "id": "d4fd1a80-250d-4ce1-ae08-09e1ee0db49c",
+      "title": "S17: Gonna Win",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=16&artwork_number=17&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896912&token_id_hash=0xb61b1929231eee70895eb1c6071591716345c6209755fbb3a0db9bed1495e0b1&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896912"
+        }
+      }
+    },
+    {
+      "id": "df31c7cd-8f77-4817-aae0-80919de3b06b",
+      "title": "S18: We Can Do It",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=17&artwork_number=18&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896913&token_id_hash=0x146340b203431256ba8bcba0101bfae6d4a5d7c8dcffc806bb222b784231ae69&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896913"
+        }
+      }
+    },
+    {
+      "id": "d6315c41-3f14-40f0-8841-67f09e7949bf",
+      "title": "S19: Piece of My Heart",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=18&artwork_number=19&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896914&token_id_hash=0x5ab29941e692870e9eae4966f406210fb5f46ed0180e4d78c014e0b098f51dcb&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896914"
+        }
+      }
+    },
+    {
+      "id": "1b05757a-58d9-4adc-b81a-5e6d4083145d",
+      "title": "S20: Could’ve Done Better",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=19&artwork_number=20&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896915&token_id_hash=0x774ddfbdbc3847d267735d91764611ba1b8f8ca8ab597c34ce8761eb734ec6d6&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896915"
+        }
+      }
+    },
+    {
+      "id": "43c2ce50-80c3-4f23-99c0-b41b08e66c9b",
+      "title": "S21: Telling Myself",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=20&artwork_number=21&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896916&token_id_hash=0x266a257fd713d43ce7b9bc40d36427f41440a670da94fc91dd1b0d74c9ec21b0&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896916"
+        }
+      }
+    },
+    {
+      "id": "5f731680-88c2-4b9e-a81b-c120d10224c2",
+      "title": "S22: You Did Fine",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=21&artwork_number=22&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896917&token_id_hash=0x2f459d4893c7297a42859718b6d52ee62035613c5f0436e8f623a94c9979e18d&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896917"
+        }
+      }
+    },
+    {
+      "id": "4737dcc3-bc6e-4184-b38e-d0a8b6091dc8",
+      "title": "S23: Electricity",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=22&artwork_number=23&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896918&token_id_hash=0xa66b6d766092afb571bf9d93a306c436f116d6c9e32c3aae0e1fce815b59d3ea&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896918"
+        }
+      }
+    },
+    {
+      "id": "a22a83a1-6693-470e-8d4a-c5d4104f7a22",
+      "title": "S24: Work Harder",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=23&artwork_number=24&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896919&token_id_hash=0x8506280fad952176c4bf7d25b20e23fca70677825932a4b14f950d6f6d13c35c&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896919"
+        }
+      }
+    },
+    {
+      "id": "c4c397f3-087e-4d87-bfa6-1c7d4aa0d4f1",
+      "title": "S25: Nervous",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=24&artwork_number=25&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896920&token_id_hash=0x0e5d49b3102df791976c6ed00f6817544c516b32708d96448991acea6a348c41&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896920"
+        }
+      }
+    },
+    {
+      "id": "8daaa199-b6d8-45e9-8f9f-297cdfb2a6a4",
+      "title": "S26: Sugar and Spice",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=25&artwork_number=26&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896921&token_id_hash=0x28aa455a059f9b3c060360d6bb088acc110938e36539fcd0bd6b5747b5679c50&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.748Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896921"
+        }
+      }
+    },
+    {
+      "id": "e41ccaab-5d08-48f1-b348-8b5aaec03cec",
+      "title": "S27: Heartwarming",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=26&artwork_number=27&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896922&token_id_hash=0x83aa9525f06336c1a53736ae02609a69ae2b160ee6efe73cb083c25fe228a5c1&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896922"
+        }
+      }
+    },
+    {
+      "id": "43b76cdb-f8d3-4fd3-9a4d-0c15f11e0df6",
+      "title": "S28: Do My Best",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=27&artwork_number=28&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896923&token_id_hash=0x074096a7dfd289c76c5b70e3d8771bbd5a2f5e513ebaabbd69645ac15d27467f&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896923"
+        }
+      }
+    },
+    {
+      "id": "c4784e54-10a7-49c0-8ea4-3dee6868c0dd",
+      "title": "S29: Exceptional",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=28&artwork_number=29&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896924&token_id_hash=0x979c354c04edd7dc3ead958cd8d1edbaf64ea0a720f5478d2593b86703c49b93&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896924"
+        }
+      }
+    },
+    {
+      "id": "b0ef64cb-efdc-4b99-b71b-dfbc94338255",
+      "title": "S30: Another Dream",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=29&artwork_number=30&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896925&token_id_hash=0xf671287a7feb64bbacfd33d76bb9cd58762a056742119b45d5909c0511f56102&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896925"
+        }
+      }
+    },
+    {
+      "id": "944dc2d5-5116-4361-ab6a-ad08c4b8fd1c",
+      "title": "S31: Beaming",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=30&artwork_number=31&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896926&token_id_hash=0xceecddbd1008e4b3421e1c87790f19c1c0cdcf2672c6fce240e87acdd68b6cee&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896926"
+        }
+      }
+    },
+    {
+      "id": "bd26dacb-d2ce-4240-a41e-e65ee65be745",
+      "title": "S32: Not Just You",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=31&artwork_number=32&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896927&token_id_hash=0xc2a1a9170f38fd86a5aa46e8e486517180b2c54c9e0c7367fa37bfa6631979a2&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896927"
+        }
+      }
+    },
+    {
+      "id": "be40f504-321d-45d4-ae53-b70ed3dc82b8",
+      "title": "S33: Reach Out",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=32&artwork_number=33&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896928&token_id_hash=0x36f337b3aa73d3f04487ebccc3f869d644d253d7a1fce8936d34b8abeaf163a9&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896928"
+        }
+      }
+    },
+    {
+      "id": "f370547a-0784-4814-ae5e-fe115de37cc6",
+      "title": "S34: Lipstick",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=33&artwork_number=34&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896929&token_id_hash=0x7da4f4998a69f98cd741fdac649855af16e68fc5752388f3a3789b71e6d0a139&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896929"
+        }
+      }
+    },
+    {
+      "id": "e48dc985-aee5-44a8-8327-a384008325f8",
+      "title": "S35: Superstar",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=34&artwork_number=35&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896930&token_id_hash=0xf053ca7fdac2294e6f22f762ecfed11fb4bace73abd3b91e2bbf021c0fe12984&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896930"
+        }
+      }
+    },
+    {
+      "id": "ddbb5710-cbb1-45ec-91ac-2b6f75dc26f1",
+      "title": "S36: Deception",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=35&artwork_number=36&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896931&token_id_hash=0xa2e04b150ff8694cde455690028f8a7de44586e98fd4f43607ec34cb4f38ba44&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896931"
+        }
+      }
+    },
+    {
+      "id": "e48d161f-bdae-4e52-922e-6d57cd0ea3d8",
+      "title": "S37: Awards",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=36&artwork_number=37&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896932&token_id_hash=0x803146ad8f3b84740ccd9f3ec45db93b8fbbc69286f65e64caeac86011cfab7a&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896932"
+        }
+      }
+    },
+    {
+      "id": "2dfd5a51-d01c-4315-a301-d17cb5cf1010",
+      "title": "S38: Shimmer Dance Studio",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=37&artwork_number=38&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896933&token_id_hash=0x6a3cd0391173297a46f5d2c502289d9aad9ee1abef56c9956b6e4ea0b80739e6&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896933"
+        }
+      }
+    },
+    {
+      "id": "1de2263b-90fd-4e2b-a0d2-63fe68fa4aca",
+      "title": "S39: Don’t Panic",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=38&artwork_number=39&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896934&token_id_hash=0x44fa054d16cc19d2865811b160f976c487174356473b931129cd4c2157f924c4&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896934"
+        }
+      }
+    },
+    {
+      "id": "c11b3ed1-68f1-4f6d-bad3-49c0493b7170",
+      "title": "S40: Angel",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=39&artwork_number=40&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896935&token_id_hash=0xdeb5a83ed7e2fef6ff98ef12f5edc7917ad3521521f0230c7960ac60640daccc&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896935"
+        }
+      }
+    },
+    {
+      "id": "fe995f26-3372-4f9e-a10c-112742c0f530",
+      "title": "S41: Perfect Dream",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=40&artwork_number=41&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896936&token_id_hash=0x3f090bfae7ed89a768933771214679e4b9807968386652cd844cee595c59b33f&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896936"
+        }
+      }
+    },
+    {
+      "id": "653d42fe-dcb5-40ef-a0cf-8caf3f720a31",
+      "title": "S42: Fool the Devil",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=41&artwork_number=42&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896937&token_id_hash=0x8a1036d63d1b0905fa98a653a177a85ed62b237669023dabbdc425abc7113c15&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896937"
+        }
+      }
+    },
+    {
+      "id": "4cc02d81-354f-4eea-a570-adb3c803560f",
+      "title": "S43: Foot Hurts",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=42&artwork_number=43&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896938&token_id_hash=0xf88bc6e406a8de3dd394a174f03f3153b47021cb0a0f73021e1553b0c32b697f&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896938"
+        }
+      }
+    },
+    {
+      "id": "8a9b6fdc-705a-46ab-8ce2-2f125f4d80cf",
+      "title": "S44: Kiss, Kiss",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=43&artwork_number=44&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896939&token_id_hash=0x2ef7f2ca0b00b06db7252b755a76df52da2a1103ac468f571dda5694a8661eeb&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896939"
+        }
+      }
+    },
+    {
+      "id": "b767ce1e-3819-444b-aae4-9913881420b0",
+      "title": "S45: Make Them Love You",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=44&artwork_number=45&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896940&token_id_hash=0xc487ace28593d974e1d8c49bbbccf47eaa276446abfb9cbc7829ae9bc232bb5c&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.749Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896940"
+        }
+      }
+    },
+    {
+      "id": "1a50c6b7-410c-41d4-8ea9-f68175090a33",
+      "title": "S46: Perfect Day",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=45&artwork_number=46&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896941&token_id_hash=0x4163eaa320f3f73e032a87a6ea07297a68d3a84324a56522f007a0c571d0cbb9&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896941"
+        }
+      }
+    },
+    {
+      "id": "c29fe321-edc9-49a1-9ee4-6af126280c4b",
+      "title": "S47: It’s Okay",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=46&artwork_number=47&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896942&token_id_hash=0xc2989c5827011ae91f2b61932a21308103a4400d6a675441704d06465f676ff1&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896942"
+        }
+      }
+    },
+    {
+      "id": "d18f6b14-fffc-4e1f-90d8-964e6002c91a",
+      "title": "S48: Almost Time",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=47&artwork_number=48&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896943&token_id_hash=0xc3813819e56942d5880d89f958d4b7c73939d7148b5aee86ff2541ad74f0d5f9&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896943"
+        }
+      }
+    },
+    {
+      "id": "105cfe9e-cd87-4c9b-a768-cc51b2309b1c",
+      "title": "S49: Spinning",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=48&artwork_number=49&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896944&token_id_hash=0xdd36fc36cbcc8c8cd830c8632b5c1338a536aa25ec17bb91676b7f7176d481d8&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896944"
+        }
+      }
+    },
+    {
+      "id": "11544476-359c-47ff-9155-0cf4854fab68",
+      "title": "S50: Life’s a Soirée",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=49&artwork_number=50&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896945&token_id_hash=0x6fe620d0e66fb8425aceb9dd15918074f54315b47fec87a8213d4d6d0a00d5e8&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896945"
+        }
+      }
+    },
+    {
+      "id": "b85a132a-597d-4436-ab59-577383b6c219",
+      "title": "S51: Good Job",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=50&artwork_number=51&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896946&token_id_hash=0x46b14084dc23d4a697baad56162f2bedb1f725c16b018f9587fce77c38da8e55&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896946"
+        }
+      }
+    },
+    {
+      "id": "201f80bd-194c-4cab-ad1d-91d474eaea80",
+      "title": "S52: The Rose",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=51&artwork_number=52&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896947&token_id_hash=0x5281cfa5bac42d4039275bcf00161fe16836a475e68c040941b106a7ec4bfe8f&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896947"
+        }
+      }
+    },
+    {
+      "id": "8a77fe66-4cb9-456b-9ccd-7a51abb32b0e",
+      "title": "S53: Be True",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=52&artwork_number=53&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896948&token_id_hash=0xce58508ef7fdeb831264d112e16c3af03264be227b46fa5bb6a79fdc18574f04&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896948"
+        }
+      }
+    },
+    {
+      "id": "7cdfa8e2-6d7e-4552-9010-ab5ff776771d",
+      "title": "S54: One and a Two",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=53&artwork_number=54&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896949&token_id_hash=0x148eeb16502ca656e6295677f3c07c481fda16b5440461dc67ab01e62ffe3456&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896949"
+        }
+      }
+    },
+    {
+      "id": "e79a6eb9-31b9-43d8-8917-41db64bda4c5",
+      "title": "S55: Up or Down",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=54&artwork_number=55&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896950&token_id_hash=0xe2b628d157cdfb0b7071dc077c8b449c1aee3505bd04396e20a6889398801dd2&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896950"
+        }
+      }
+    },
+    {
+      "id": "154551d5-7630-4591-9876-96d7d1d0af64",
+      "title": "S56: Junior Miss StarQuest",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=55&artwork_number=56&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896951&token_id_hash=0x2e747a3041c48e13f2b783f0347599048df3660990e54f2f77fdd54e0af6a735&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896951"
+        }
+      }
+    },
+    {
+      "id": "a338997e-2b13-4d33-9afb-0f9fa8b5371a",
+      "title": "S57: Freaked Myself Out",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=56&artwork_number=57&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896952&token_id_hash=0x7c28b874e3710dfbfc9270b68f22f0c97719ca68a46b1790eb8d22e7f60fde2b&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896952"
+        }
+      }
+    },
+    {
+      "id": "666e11bb-c1e0-4e4c-b556-803d28cba27e",
+      "title": "S58: City of Angels",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=57&artwork_number=58&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896953&token_id_hash=0x32d26087e16762df33980bf13656e9bfe6f20322741af97a3135df68053a66f7&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896953"
+        }
+      }
+    },
+    {
+      "id": "210242b2-9b29-49ef-92d9-a5bab15e2d7e",
+      "title": "S59: Foundation",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=58&artwork_number=59&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896954&token_id_hash=0x46f5c277cf3894d611ea81d65595e25eaad2cb8ab8fb6f7e18a1ab21b114d574&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896954"
+        }
+      }
+    },
+    {
+      "id": "c4c4a3d6-bf16-4d17-9bef-e536996148d0",
+      "title": "S60: We Got This",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=59&artwork_number=60&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896955&token_id_hash=0xaaea063632368b7af7bb0c6bd96a2c1fa93ff221de71cc75cc176fb598b7ee80&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896955"
+        }
+      }
+    },
+    {
+      "id": "54ad62a8-5f9c-4daf-a119-634eb24ddc8a",
+      "title": "S61: Words",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=60&artwork_number=61&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896956&token_id_hash=0x84ba14043f754af517162f0a998c73c3b4809bf07356054d7993b971c1c7590b&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896956"
+        }
+      }
+    },
+    {
+      "id": "f0d3a4b6-16ff-45e0-bf70-3fafaff365d2",
+      "title": "S62: Arabesque",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=61&artwork_number=62&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896957&token_id_hash=0x93c6479fae482ce097b673063025842c498d0c707d015644ea226bacf12a41e7&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896957"
+        }
+      }
+    },
+    {
+      "id": "6173aa36-8f83-4cff-aa05-831be88f8daf",
+      "title": "S63: Heart Beats",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=62&artwork_number=63&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896958&token_id_hash=0x6e48eef6ae84bceb2dc8346b622480f272e6f20d6f734245335db267cb333da7&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896958"
+        }
+      }
+    },
+    {
+      "id": "e963107b-dd07-4c2e-b38a-39da33bdec35",
+      "title": "S64: Humble",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=63&artwork_number=64&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896959&token_id_hash=0x2a17c2a96ac150c0abbc9e583bd12f461a04fe7352f12a23118cfb3edbdae210&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896959"
+        }
+      }
+    },
+    {
+      "id": "656072f6-8807-48af-8bb1-68bcecccf752",
+      "title": "S65: Fame",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=64&artwork_number=65&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896960&token_id_hash=0x870e679cd67f90fe884ebc5d85e2dd2e42edf0f0f6488df3024ce8e7375ae64e&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896960"
+        }
+      }
+    },
+    {
+      "id": "86311df5-6ee4-427c-9ca0-fc226772f8f2",
+      "title": "S66: Solo",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=65&artwork_number=66&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896961&token_id_hash=0x647ac0f27c1171319223ac93dbef71b61c2cc9d52dc4ac4a7e4aaf422f8bc58d&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.750Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896961"
+        }
+      }
+    },
+    {
+      "id": "77ae5249-95d4-4b96-a0b1-3825eda9b505",
+      "title": "S67: New Obsession",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=66&artwork_number=67&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896962&token_id_hash=0x4d3b8be5b6d274eb6ba1164d65326be04af2b6d03ec8bb0d466d5b3a56852d1f&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.751Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896962"
+        }
+      }
+    },
+    {
+      "id": "6bde4590-d7ef-4dbb-9b7b-3af2b1be8606",
+      "title": "S68: Smiling!",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=67&artwork_number=68&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896963&token_id_hash=0xcf860c95f43e5731bd6a08203202f37c111f6b083e6de518edd289a546317bcf&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.751Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896963"
+        }
+      }
+    },
+    {
+      "id": "d875156c-f2d4-4a56-b68f-f4a3b93cc8d5",
+      "title": "S69: Be a Star",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=68&artwork_number=69&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896964&token_id_hash=0xf12226ea630918b1c75a2faa564dab5c011479c6c1a8321a3faf34adf73d1173&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.751Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896964"
+        }
+      }
+    },
+    {
+      "id": "c45518d1-cde3-4be3-8dcb-aa50d93d05c3",
+      "title": "S70: Other Girls",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=69&artwork_number=70&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896965&token_id_hash=0x436d57dcc9362c528883534e34b7892a3b4a51b0c9e3ea07ea8f339d19e2919b&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.751Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896965"
+        }
+      }
+    },
+    {
+      "id": "9d2acce4-e3bd-413f-b717-2c07f94fe670",
+      "title": "S71: Wish",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=70&artwork_number=71&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896966&token_id_hash=0x9430e90561d46c07792a4417ec74afbc97bcf746f86b3216b4e73b7d8a408bed&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.751Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896966"
+        }
+      }
+    },
+    {
+      "id": "1194c3c4-f72d-4036-9d3f-26560e28679c",
+      "title": "S72: Wrong",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=71&artwork_number=72&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896967&token_id_hash=0xca8e398c9aaeba065ea9c19dadfd83579f342e3eb4babea9aa769b78013f99c7&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.751Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896967"
+        }
+      }
+    },
+    {
+      "id": "5c55ffb0-c8b6-4295-9568-9b2459333444",
+      "title": "S73: Dark",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=72&artwork_number=73&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896968&token_id_hash=0x7a5e67e540dfddd5564a62137d9292f82cf40e61b3d8ed7e59697c9620652921&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.751Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896968"
+        }
+      }
+    },
+    {
+      "id": "6633356a-7bb8-43ff-913a-86f125215937",
+      "title": "S74: Everyone Cries",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=73&artwork_number=74&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896969&token_id_hash=0x2989235909c2cc569933e8fd70e010f25376a099d6def823c8478c946342d274&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.751Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896969"
+        }
+      }
+    },
+    {
+      "id": "2ae10301-6b9b-4d90-acc5-b36d1abb1df8",
+      "title": "S75: Push",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=74&artwork_number=75&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896970&token_id_hash=0x5c845d297d864857e840dc027b83859557f2edbc1c758330de9d10d76a3bcc40&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.751Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896970"
+        }
+      }
+    },
+    {
+      "id": "30484fc6-1011-4ba1-8174-164c4f2d6566",
+      "title": "S76: Perform",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=75&artwork_number=76&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896971&token_id_hash=0x590d3cf5d381c4968356947985baa565fdb8684e6c1d028105a634f8bfc6e0b7&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.751Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896971"
+        }
+      }
+    },
+    {
+      "id": "30ff7048-132b-43ce-b7b7-0c5a2561fac2",
+      "title": "S77: Taking Mine",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=76&artwork_number=77&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896972&token_id_hash=0xe63c04317ca75413ec9c056a066947a16d840031ea52efba5b333fc3397c3870&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.751Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896972"
+        }
+      }
+    },
+    {
+      "id": "f40de302-3cca-4f1b-b43f-b20ec252bf00",
+      "title": "S78: Not Ready",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=77&artwork_number=78&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896973&token_id_hash=0x52834c555ef7ff7f31af454477ad2a664a27aae2a652698ebadb98a7a18d04c5&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.751Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896973"
+        }
+      }
+    },
+    {
+      "id": "6fd70406-3042-4c0f-8255-121454e2e28f",
+      "title": "S79: Always Crying",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=78&artwork_number=79&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896974&token_id_hash=0x12dcaae4d1ca8c53f1552ff002ee90db933a4af17d2b24f860da5575d7b9c915&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.751Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896974"
+        }
+      }
+    },
+    {
+      "id": "a1dfa643-8c61-49f8-90fe-3b84cb517a23",
+      "title": "S80: Daisy",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=79&artwork_number=80&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896975&token_id_hash=0x2536c0b1dec6b4196afb47fefb3ee8d3b82e6d702f77078ba9ee99a992ec9c00&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.751Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896975"
+        }
+      }
+    },
+    {
+      "id": "9515c314-7396-423b-ba69-02a120677513",
+      "title": "S81: Wanna Win",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=80&artwork_number=81&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896976&token_id_hash=0x10efb79dd4c995e3e6edcd7d03126301e680615f9ab2e419ac90e5fb5b4029b0&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.751Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896976"
+        }
+      }
+    },
+    {
+      "id": "9595d1f4-52ce-4c84-9462-e5e2e89c4541",
+      "title": "S82: End of Time",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=81&artwork_number=82&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896977&token_id_hash=0x002bd8848efb4c7fe1d42c2c6996a1a8d1c34c2542ef36afd77cdd2936cb936a&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.751Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896977"
+        }
+      }
+    },
+    {
+      "id": "f307e753-bee5-4ae9-8372-89efa1edf69f",
+      "title": "S83: Don’t Lose Your Face",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=82&artwork_number=83&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896978&token_id_hash=0xcaf2060f70148a231fb021a4859d3945dd24f9febe716ebf3c3f75b0a8f9c8cd&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.751Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896978"
+        }
+      }
+    },
+    {
+      "id": "72ec0020-41b1-4437-a083-60ab39338237",
+      "title": "S84: Forgiveness",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=83&artwork_number=84&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896979&token_id_hash=0xcfdbd4e3ded5fef1afa77b82ef9339c182939e4c97bbe7aa19af599b171d7b75&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896979"
+        }
+      }
+    },
+    {
+      "id": "4a29f9a9-d105-48b7-8f7a-bba693e559f1",
+      "title": "S85: Danced Through The Pain",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=84&artwork_number=85&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896980&token_id_hash=0x25294d158c84a6bd93aeb8709b2b8a9dce297af423773a92221ebc51348c80f9&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896980"
+        }
+      }
+    },
+    {
+      "id": "ca50acf8-f8d9-4618-9054-213c2492b7b5",
+      "title": "S86: Some Things Glitter",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=85&artwork_number=86&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896981&token_id_hash=0x8605d80727bead201c7d165652a158133b7596dad36c5313b8ea7a14990d225c&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896981"
+        }
+      }
+    },
+    {
+      "id": "9b47396e-8fd3-4d17-9d73-861f7db9fa1b",
+      "title": "S87: Every Single Trick",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=86&artwork_number=87&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896982&token_id_hash=0x0efc2db36ba2fd2a5d440ac3a5641d15a979abf192f8d02f7bafce3a97e7fb9b&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896982"
+        }
+      }
+    },
+    {
+      "id": "911b044d-b25f-41b3-a39a-a14c102bd844",
+      "title": "S88: Party, Party, Party",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=87&artwork_number=88&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896983&token_id_hash=0x3417984f65e75e72cb43ff74214c0f925d7aa67881904a88fd9407ce749d7313&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896983"
+        }
+      }
+    },
+    {
+      "id": "01746ab9-5d06-49c5-9c66-72ee580e796b",
+      "title": "S89: Stretch Your Knee",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=88&artwork_number=89&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896984&token_id_hash=0x5620ace8ff91b93e481fbe527025cc843d0b1df63300cf23e53fdc258372aa49&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896984"
+        }
+      }
+    },
+    {
+      "id": "fa263b4e-82f1-4280-b15b-87ec2775c7f4",
+      "title": "S90: Left Behind",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=89&artwork_number=90&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896985&token_id_hash=0x23ba51fc9d8d46badd5b19b5c3a537519fd6b3c54e533dde7032df4174f1aafb&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896985"
+        }
+      }
+    },
+    {
+      "id": "6a40b8d1-3fa3-4d8d-a095-427cd2850006",
+      "title": "S91: Shine",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=90&artwork_number=91&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896986&token_id_hash=0xd7c0712db22798f6246c559de3f7f45ad5253ed6b13ac373843ac07bf1cd9f08&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896986"
+        }
+      }
+    },
+    {
+      "id": "b7f19096-aa29-496b-8bd8-20245c4f89f1",
+      "title": "S92: Not Crazy",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=91&artwork_number=92&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896987&token_id_hash=0xbc1fb71c2e23d604268ae9bd575be02021d26bbdd7385c44b3a77e7ba0084e7a&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896987"
+        }
+      }
+    },
+    {
+      "id": "a8876e6d-860e-4bab-a1ce-54ca3ad2aef8",
+      "title": "S93: Girl",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=92&artwork_number=93&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896988&token_id_hash=0x955a2429ef4fa436c8ec979bf841a3fc23e0695c7db1680e64a00cb1904101d2&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896988"
+        }
+      }
+    },
+    {
+      "id": "cf0bdd96-449c-461b-b1e0-fd5fdacc9ad7",
+      "title": "S94: Stars",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=93&artwork_number=94&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896989&token_id_hash=0x93be54be4c748bc09519d675d0d4dde1def6ff71a43d91fe1915c67d32c919a4&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896989"
+        }
+      }
+    },
+    {
+      "id": "43c0f139-b165-4fca-964d-ee75edbf065e",
+      "title": "S95: Marina",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=94&artwork_number=95&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896990&token_id_hash=0x181e065f87320d93c934b4943db1ff12a721f29b5da46a759ea2d39d3718ae7b&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896990"
+        }
+      }
+    },
+    {
+      "id": "f5aecf96-a360-4b64-9681-be8cfef5dbb1",
+      "title": "S96: Change",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=95&artwork_number=96&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896991&token_id_hash=0xca09fa6e3acf645ee42191a35d0825bca2b2ee46dfe278ac80dd6bd1982ed3cc&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896991"
+        }
+      }
+    },
+    {
+      "id": "b0a99a57-6066-44ca-be35-42b0fcaa0fce",
+      "title": "S97: New Reality",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=96&artwork_number=97&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896992&token_id_hash=0xd125a30f763f06541e2161b5a541afc717f2a6176b30d6e904ca4c9fb356a9c8&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896992"
+        }
+      }
+    },
+    {
+      "id": "2c59c2d0-495a-4d4b-a814-69247556f5eb",
+      "title": "S98: A Thousand Stars",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=97&artwork_number=98&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896993&token_id_hash=0xef11fe4af6232f1f81c8355a7b5c9ea3fab859c708826aa5299cf5b9e36a6cec&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896993"
+        }
+      }
+    },
+    {
+      "id": "12547297-5b0e-4923-891b-2899c045dcdd",
+      "title": "S99: The Real You",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=98&artwork_number=99&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896994&token_id_hash=0x91d79716a2c26b92bf880731ac2b527efd774613d8785037cb5055a11c63087a&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896994"
+        }
+      }
+    },
+    {
+      "id": "8ae16a7f-79a5-4718-b546-55951c218d8f",
+      "title": "S100: Forgetting",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=99&artwork_number=100&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896995&token_id_hash=0xa15ca5e8618c2b11f25f256d91608d16f10f80d63c51810ad3d3adb60340b60e&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896995"
+        }
+      }
+    },
+    {
+      "id": "1663b934-8c22-4fe6-bf60-63be555f01cc",
+      "title": "S101: Dizzy",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=100&artwork_number=101&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896996&token_id_hash=0x9575dd688881954029dbac3203f3222f2a83e07198e2689075fcca4d3feeea5f&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896996"
+        }
+      }
+    },
+    {
+      "id": "e6d1c155-1936-4a2c-be56-a0cc2a32c6ae",
+      "title": "S102: Critiquing",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=101&artwork_number=102&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896997&token_id_hash=0x250e72e8744ceaec9b1e580cac4d829cd6763eda2a9b03a3c6a2b88a6012d20b&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896997"
+        }
+      }
+    },
+    {
+      "id": "50696c07-b089-47c5-83c4-ebad9491ab14",
+      "title": "S103: Please",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=102&artwork_number=103&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896998&token_id_hash=0xad4696efdbc8e805782e3ff17783599447c41a478d75abd734cfae4e01a0a921&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896998"
+        }
+      }
+    },
+    {
+      "id": "6e4bfb00-cb54-44a3-b65c-f4a44155a3ae",
+      "title": "S104: Fight!",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=103&artwork_number=104&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099896999&token_id_hash=0xabc988c228a03fdabd7ffdd0b83d37538e4a6f86d5bae821c7d67c4b14513414&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099896999"
+        }
+      }
+    },
+    {
+      "id": "b32594a8-fe81-47fc-b5ca-34368211fca4",
+      "title": "S105: Maybe",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=104&artwork_number=105&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099897000&token_id_hash=0x91ab824eecdd56ecf44115845aae0c2b55bbcef922dce6f0fb8455be3c26ffd1&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099897000"
+        }
+      }
+    },
+    {
+      "id": "839090f8-6eb5-4d78-891f-db04fd14524f",
+      "title": "S106: Never Looking Back",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=105&artwork_number=106&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099897001&token_id_hash=0xfa8f65fd8af1d0cae002aa1449cae80684379d34ee6167eb21bd75b4bd4a8c15&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099897001"
+        }
+      }
+    },
+    {
+      "id": "d9752668-7d68-4c70-826c-8219103a00e8",
+      "title": "S107: Sure Ain’t Lazy",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=106&artwork_number=107&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099897002&token_id_hash=0xc8f89953ed6ddafa8f6527f1070456d40e16ae0c24f42d94d0c5ad7beedba14a&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.753Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099897002"
+        }
+      }
+    },
+    {
+      "id": "dbb9cc6d-bff9-4cca-bd69-07755119f94b",
+      "title": "S108: Makes Me Dance",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=107&artwork_number=108&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099897003&token_id_hash=0xe6d0bc511e88725b76c517301a6b7027ec9a49fe2c281e7ac9d3e8df88d4cfd8&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.753Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099897003"
+        }
+      }
+    },
+    {
+      "id": "34d00c8d-a7f8-4291-97fd-dde628eb5f5d",
+      "title": "S109: First Place",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=108&artwork_number=109&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099897004&token_id_hash=0x6fc51e87757cb0d5755d3323986172d5c7ef75e30e649e7095d03f22370c1ec4&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.753Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099897004"
+        }
+      }
+    },
+    {
+      "id": "a012d48f-50e5-44a8-8c24-b36e2de941f7",
+      "title": "S110: Cry",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=109&artwork_number=110&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099897005&token_id_hash=0x2766653f32d343c52441d73a549d8183b1d58eecfa567c2f6536af10386a8d99&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.753Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099897005"
+        }
+      }
+    },
+    {
+      "id": "c29e07cb-c649-4000-a701-97a82f0acf8e",
+      "title": "S111: Judging",
+      "source": "https://cdn.feralfileassets.com/previews/1c4e667e-45b5-4467-a1e9-8efe8165ca0d/1763010757/index.html?edition_number=110&artwork_number=111&blockchain=ethereum&contract=0x67E3ad1902A55074AAdD84d9b335105B2D52b813&token_id=98630812780435188807406188671760313206698968340061611991517188134130099897006&token_id_hash=0xcd0b01c9bd57d64f46fd72342c34973df935acf1c03b4018bd6457cca1c33b0f&clip_directory_url=https://cdn.feralfileassets.com/misc/049-resources/clips&mode=episode",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:14:06.753Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x67E3ad1902A55074AAdD84d9b335105B2D52b813",
+          "tokenId": "98630812780435188807406188671760313206698968340061611991517188134130099897006"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

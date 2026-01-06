@@ -1,0 +1,475 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "6487d075-c5f8-4dca-8839-e0185050701a",
+  "slug": "boom-town",
+  "title": "BOOM TOWN",
+  "summary": "<em>“This is not utopia. This is a neighborhood of speculation. This is Times Square. Or that fracking town in North Dakota with the $15 Budweisers while supplies last.”</em> - Peter Burr\r\n\r\nPeter Burr’s BOOM TOWN is a fictional neighborhood on the blockchain inspired by towns that live and die with the boom and bust cycles of speculation. The landscape of the American West was at one point littered with boomtowns — make-shift settlements that sprung up wherever gold, silver, oil, or other valuable resources were to be found. Animated by the imaginaries of Manifest Destiny, colonialist expansion, and get-rich-quick schemes, boomtowns attracted prospectors, speculators, and those in search of a fast track to a better life. San Francisco was one such town, swelling from a village of 800 people to a city of 35,000 in five short years during the Gold Rush, and subsequently ballooning to over 230,000 just 20 years later thanks to a massive silver find in the nearby mountains of Lake Tahoe. But once the resources are depleted, many boomtowns fall into disuse — abandoned as quickly as they appeared. Some become ghost towns that are simply left to ruin. Others, like San Francisco, reinvent themselves and live to see another windfall. \r\n\r\nLike most of his works, Burr’s BOOM TOWN is a richly crafted narrative world that is deeply evocative while remaining mysterious and restrained. Displaying the artist’s gift for creating images and environments that hover on the boundary between abstraction and figuration, they invite the viewer to fill in the blanks with their own interpretation, suggesting a story that is barely legible yet unmistakably present. Inspired by the tools and aesthetics of video games, Burr’s compositions draw on generative dynamics and the complexity that emerges from simple, rule-based systems. Each of the eight works in BOOM TOWN follows a precise logic for generating the structure’s architecture, its ground and field, its shadows, planes, and colors. The resulting images are reminiscent of 8-bit video games and early computer graphics, as well as the flat diagrammatic quality of CAD architectural drawings. \r\n\r\nArchitecture and the built environment, particularly of the utopian variety, has fascinated Burr for years. His works frequently mine the poetic tension between the architect’s idealistic (if egotistical) striving to remake the world, and the ways in which the lived reality mostly seems to miss the mark. Lofty aspirations of how a particular configuration of form and function, of bodies in space, of urban infrastructure in a city, might produce certain kinds of relationships between people and their environment tend to falter and disintegrate when they come in contact with the unpredictable emergent forces that govern the real world. Online, architectural metaphors are often invoked when discussing information and systems architecture, or in the form of digital real estate like domain names or plots of virtual land in the metaverse. Importantly, in contrast to much of Burr’s recent work, the locations in BOOM TOWN are devoid of people. The streets outside the factory and shopping plaza are empty. The windows of the apartment blocks show no signs of life. Burr is interested in drawing attention to the vacancy of these spaces and their potentiality as sites of projection, speculation, and collective imagination. On day one of the exhibition, BOOM TOWN is little more than a collection of empty structures, yet through the process of collecting, the town becomes populated and inhabited, in a sense, by the proprietors of its NFTs. At a time when web3 is still, by and large, a vacant space to be developed and designed, Burr seeks to underscore that it is <em>we</em> who will come to determine what kind of social and civic life it will ultimately enable and support. Not only will we be the ones who come to populate and activate these spaces, to breathe life into them, make them vibrant and give them their unique character and vibe, but the most potent promise of web3 is that we can choose to build them differe...",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/b6edd9fd-bbe3-4f17-f228-9d3775fb9600/raw",
+  "created": "2026-01-06T10:57:07.437Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "a405c37e-deea-4a43-aaad-92828912771a",
+      "title": "POWER PLANT #1",
+      "source": "https://cdn.feralfileassets.com/previews/d247736f-14d8-4e9a-8408-3f2328ae4459/1670988316/?edition_number=0&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=19926596094255126125166421402975005060328841433878809074115704782911025446719&token_id_hash=0xf1b1692581af839311065e972fb488ef67649e972131d7a8c8be3d990bd67104",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.424Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "19926596094255126125166421402975005060328841433878809074115704782911025446719"
+        }
+      }
+    },
+    {
+      "id": "ffc8befc-e2c1-4644-b12b-06f8ef4918a6",
+      "title": "LUXURY HOME #1",
+      "source": "https://cdn.feralfileassets.com/previews/4c2da678-ac66-4b85-8fd5-75fc26ba0a5b/1670988429/?edition_number=0&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=31407201287127526542816856047451791715680458487654720084356565537967265406231&token_id_hash=0xb80728bb82a1f8145807cf2432c7b60ffb9776e9952c3495d24ab17cec1ee6d8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.432Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "31407201287127526542816856047451791715680458487654720084356565537967265406231"
+        }
+      }
+    },
+    {
+      "id": "943de46a-fa58-4f75-941c-9dab5d898039",
+      "title": "FACTORY #1",
+      "source": "https://cdn.feralfileassets.com/previews/949ddc52-1007-4f79-a355-e287a7b55fc6/1670988648/?edition_number=0&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=100892839160060167571202380200459532184539179465012354262131066914373071764417&token_id_hash=0x7e99c248ffc0ad2c6ce0b7eeceda9fe7cd5cf5779b5d53450ee1297b5a0f7f39",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.433Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "100892839160060167571202380200459532184539179465012354262131066914373071764417"
+        }
+      }
+    },
+    {
+      "id": "f9b8f03a-141f-4ff4-9cbd-5224f7169821",
+      "title": "FACTORY #2",
+      "source": "https://cdn.feralfileassets.com/previews/949ddc52-1007-4f79-a355-e287a7b55fc6/1670988648/?edition_number=1&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=100892839160060167571202380200459532184539179465012354262131066914373071764418&token_id_hash=0x9399f626f1822d22346b267825ca5375e7ee3744fb086bd47aaf24923bc85b54",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.433Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "100892839160060167571202380200459532184539179465012354262131066914373071764418"
+        }
+      }
+    },
+    {
+      "id": "961984dc-1f89-4af2-a077-d577f6b62343",
+      "title": "FACTORY #3",
+      "source": "https://cdn.feralfileassets.com/previews/949ddc52-1007-4f79-a355-e287a7b55fc6/1670988648/?edition_number=2&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=100892839160060167571202380200459532184539179465012354262131066914373071764419&token_id_hash=0xb26787fd47d444d2b67b121eb72de4c1d4192c0c03b1fe1e584e8c729c883c55",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.434Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "100892839160060167571202380200459532184539179465012354262131066914373071764419"
+        }
+      }
+    },
+    {
+      "id": "08a311b3-1fa2-4c30-a636-62967b050edb",
+      "title": "WAREHOUSE #1",
+      "source": "https://cdn.feralfileassets.com/previews/9de55d58-68f1-455a-9a41-4296ecc56cad/1670989027/?edition_number=0&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=89391130809448363084087070038276728334099349534674600029855304563645247032792&token_id_hash=0x06e55928f35bdf761d7be89b454eaf22874d3ec52b1fc33f2e69b9954e069c7a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.434Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "89391130809448363084087070038276728334099349534674600029855304563645247032792"
+        }
+      }
+    },
+    {
+      "id": "7f1f3ca9-71f8-4470-a9bb-62b05ea09f84",
+      "title": "WAREHOUSE #2",
+      "source": "https://cdn.feralfileassets.com/previews/9de55d58-68f1-455a-9a41-4296ecc56cad/1670989027/?edition_number=1&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=89391130809448363084087070038276728334099349534674600029855304563645247032793&token_id_hash=0x883abfd240665aa24ef893a66bb68f27a7a49128844905ba79c4bd115519b95d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.434Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "89391130809448363084087070038276728334099349534674600029855304563645247032793"
+        }
+      }
+    },
+    {
+      "id": "29a8c190-cf0e-44dd-a1f6-f083fa2cc51e",
+      "title": "WAREHOUSE #3",
+      "source": "https://cdn.feralfileassets.com/previews/9de55d58-68f1-455a-9a41-4296ecc56cad/1670989027/?edition_number=2&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=89391130809448363084087070038276728334099349534674600029855304563645247032794&token_id_hash=0x18780e6dbc18a43d07bdb7d2c04cf2fb301b676a8ccf2aae122651b42b14f6e4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.434Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "89391130809448363084087070038276728334099349534674600029855304563645247032794"
+        }
+      }
+    },
+    {
+      "id": "6b12cdc8-d297-4d0a-b71b-aa83eef01c38",
+      "title": "OFFICE PARK #1",
+      "source": "https://cdn.feralfileassets.com/previews/d9002d0a-d209-43da-b71b-f4a9c0024af5/1670989718/?edition_number=0&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=43812773355323655352919296225043877433270052855456306374873853632824884117360&token_id_hash=0x88ce3862a87a9f71d3348ffa450c52e00bc329e2f9256ecf600690dbbdddca40",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.434Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "43812773355323655352919296225043877433270052855456306374873853632824884117360"
+        }
+      }
+    },
+    {
+      "id": "32d23c7c-62b8-489d-8cb1-4fc760e8a2cb",
+      "title": "OFFICE PARK #2",
+      "source": "https://cdn.feralfileassets.com/previews/d9002d0a-d209-43da-b71b-f4a9c0024af5/1670989718/?edition_number=1&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=43812773355323655352919296225043877433270052855456306374873853632824884117361&token_id_hash=0x504d60869dbf064a332d84dd4507d492815f27f47c65f1a1d8d07ce9e6724c98",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.434Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "43812773355323655352919296225043877433270052855456306374873853632824884117361"
+        }
+      }
+    },
+    {
+      "id": "946a710f-694e-4ae5-b2ea-3a509547ff97",
+      "title": "OFFICE PARK #3",
+      "source": "https://cdn.feralfileassets.com/previews/d9002d0a-d209-43da-b71b-f4a9c0024af5/1670989718/?edition_number=2&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=43812773355323655352919296225043877433270052855456306374873853632824884117362&token_id_hash=0x402453c23b9e4e6cd31804bda7999215447e84c5a8f723f962f5d3a0e589dcee",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.434Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "43812773355323655352919296225043877433270052855456306374873853632824884117362"
+        }
+      }
+    },
+    {
+      "id": "ae9093a3-d8b6-446f-b98b-85b8f6943b38",
+      "title": "SHOPPING PLAZA #1",
+      "source": "https://cdn.feralfileassets.com/previews/8d857653-9b06-4789-bf98-b5646b0c3f47/1670990379/?edition_number=0&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=62186715774995435029814843775832455593531258371274455388532309026170987997016&token_id_hash=0x38a7324c675c6378a9d21e81f964a4879472d2bfe4d2d2bd5adc67b5b1792d44",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.435Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "62186715774995435029814843775832455593531258371274455388532309026170987997016"
+        }
+      }
+    },
+    {
+      "id": "f9ff21e7-3be3-4e09-a5e4-1b5b51507c2a",
+      "title": "SHOPPING PLAZA #2",
+      "source": "https://cdn.feralfileassets.com/previews/8d857653-9b06-4789-bf98-b5646b0c3f47/1670990379/?edition_number=1&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=62186715774995435029814843775832455593531258371274455388532309026170987997017&token_id_hash=0x003063af569bc38ad724ae3998157ee79cd86fe02bc9e279252acb8fd693ceda",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.435Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "62186715774995435029814843775832455593531258371274455388532309026170987997017"
+        }
+      }
+    },
+    {
+      "id": "229eca39-9864-413f-9586-b950c8310f63",
+      "title": "SHOPPING PLAZA #3",
+      "source": "https://cdn.feralfileassets.com/previews/8d857653-9b06-4789-bf98-b5646b0c3f47/1670990379/?edition_number=2&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=62186715774995435029814843775832455593531258371274455388532309026170987997018&token_id_hash=0x2d14d521dd54a78c7d4fe51cf3e503df3d3113cbfdf837e22652b6f8e7b373e2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.435Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "62186715774995435029814843775832455593531258371274455388532309026170987997018"
+        }
+      }
+    },
+    {
+      "id": "3c66fcb3-3870-44e0-855c-deaaa5702e75",
+      "title": "APARTMENT BLOCK AE",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=0&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560112&token_id_hash=0x626cad4ce1bfbb38065e630350f171cd1e995b51b9550be9a777b2f3464f31e5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.435Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560112"
+        }
+      }
+    },
+    {
+      "id": "59249c00-6bec-40a2-9557-70c79fd2d55f",
+      "title": "APARTMENT BLOCK AE",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=1&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560113&token_id_hash=0xf7e661141772f3fb06e3611c8522e10c7db4ed804834c204d84f9b045134cab7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.435Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560113"
+        }
+      }
+    },
+    {
+      "id": "3aa5cc8b-2f8f-4da3-99a7-d1b8dc47b5fe",
+      "title": "APARTMENT BLOCK PP",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=2&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560114&token_id_hash=0x543cf69d094de60ab5fb350f7f10f13ba0e9fc170de57cc6571b4e63b086cbf3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.436Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560114"
+        }
+      }
+    },
+    {
+      "id": "296f1308-c144-458a-b1fb-b95eb8eb9c4d",
+      "title": "APARTMENT BLOCK #1",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=3&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560115&token_id_hash=0x51efd6dc31c7d559b73da92dc5d817e1683e35d573548caadab5e7206b6611e2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.436Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560115"
+        }
+      }
+    },
+    {
+      "id": "5e0512f0-26f0-4e4f-a3ba-a6f105e7db83",
+      "title": "APARTMENT BLOCK #2",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=4&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560116&token_id_hash=0x46a592a3ff7795837d0889d26dc739baf792d50c2dc90614673f2502fc2bbdbb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.436Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560116"
+        }
+      }
+    },
+    {
+      "id": "5e32c755-746b-4ef5-ad9d-64bbf738007f",
+      "title": "APARTMENT BLOCK #3",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=5&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560117&token_id_hash=0x8e6b945b7d553864cebc9a622aa963e2ff957b11cc71d335180bc22c79145929",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.436Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560117"
+        }
+      }
+    },
+    {
+      "id": "50087ded-3965-4805-a144-e4d4b139187f",
+      "title": "APARTMENT BLOCK #4",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=6&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560118&token_id_hash=0x5d46bf9605c7f7a5c066f49628ab5aa122ade354dbbd6c3b3b900ed545584e99",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.436Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560118"
+        }
+      }
+    },
+    {
+      "id": "616c158b-5fae-46ac-a29d-8ad99d80b03e",
+      "title": "APARTMENT BLOCK #5",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=7&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560119&token_id_hash=0x140d3b98b389ab6bd59bce2f095ae4891e3518cd1981bfd3cdf27d08c8cda260",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.436Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560119"
+        }
+      }
+    },
+    {
+      "id": "652d703d-75c1-4909-a6e7-16c6c8e1dfdf",
+      "title": "APARTMENT BLOCK #6",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=8&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560120&token_id_hash=0x7301edf6c37e75f640456dfe2d68f9631c703f6f0065ac2de4789476038b319c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.436Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560120"
+        }
+      }
+    },
+    {
+      "id": "24a64037-b9b1-448b-9c1d-621c0907ab49",
+      "title": "APARTMENT BLOCK #7",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=9&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560121&token_id_hash=0xe0fcf84d20dc9521f20127b91c20a2911bd14cf6b6f4919938179ad011760ccc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.436Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560121"
+        }
+      }
+    },
+    {
+      "id": "fd5e4cd5-5c1e-4a62-9a4f-c223c6e7e438",
+      "title": "APARTMENT BLOCK #8",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=10&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560122&token_id_hash=0x07707743403773b146a6fa3386763c2d30c1d2468ee5e59b80334239128822cc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.436Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560122"
+        }
+      }
+    },
+    {
+      "id": "eea3fd2c-9897-4a89-9139-5a759092d1fa",
+      "title": "APARTMENT BLOCK #9",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=11&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560123&token_id_hash=0xb57ac6050ff4eda17f6016731067bed691e7021f6e3494df022e3fabdc57f8a0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.437Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560123"
+        }
+      }
+    },
+    {
+      "id": "4ac6cc4b-7d93-44d6-817c-1907081c05b2",
+      "title": "EMPTY LOT AE",
+      "source": "https://cdn.feralfileassets.com/previews/fa38844a-ecc1-45be-b260-ceab60504697/1670992452/?edition_number=0&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=57129125216325247059066131395135709425197979245094347477997960213448800830459&token_id_hash=0x2528198338ad1492618c3cd6f22b2695234b082167b63d1a4e3d40d276e74796",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:57:07.437Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "57129125216325247059066131395135709425197979245094347477997960213448800830459"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

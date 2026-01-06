@@ -1,0 +1,2889 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "854d3f69-eb69-48dc-ad48-8b80f9bfe4e9",
+  "slug": "graph",
+  "title": "–GRAPH",
+  "summary": "When I created my first plotter drawing in 2015, it was a personal revelation. Fifteen years earlier, when I had just started translating my code systems into drawings on paper, I didn’t even know what a plotter was. In 2006, I saw my first historical plotter drawings at the Sonic Acts: The Anthology of Computer Art exhibition in Amsterdam and I was shocked by the material quality of the drawings. The wide range of papers and colors felt nothing like the generative drawings I had seen before. At that moment, I felt the constraints of relying on the limited papers prepared for printing and the pigments required for contemporary printers. Compared to the deep world of inks, paints, and the huge variety of papers that can be used with plotters, most printers require inks and papers that are only available in a very narrow range.\n\nA plotter drawing is a physical drawing created with a mechanical drawing machine. Plotters were created by industry to automate precise technical drawings, but were soon co-opted by artists in order to explore new ways of creating drawings. They range from a two-ton ZUSE Graphomat Z64 from the 1960s to a four-feet tall HP 7580 from the 1980s to an AxiDraw from the 2000s, which is compact enough to fit nicely on a small table. Before high-resolution printers and computers with screens, plotters were the primary way that code became drawings. \n\nWhen the endeavor of creating drawings with plotters began over 50 years ago, computers were incredibly different from today. Artists would start coding by making diagrams on paper, then they would encode their instructions onto physical cards that would be inserted into a room-sized computing machine. Today, we get immediate visual feedback by typing directly into a text editor and seeing the result on screen as we work. Back then, the first time the artist saw the result of their code, their drawing, was after it had been plotted by a large, mechanical drawing machine. \n\nIn 1965, the first plotter drawings were shown in exhibitions at the Howard Wise Gallery in New York and Galerie Wendelin Niedlich in Stuttgart. These exhibitions had little international impact at the time, but new artists continued to discover and use plotters for their work throughout the 1970s and 1980s, until new kinds of printers took over. Artists working with plotters never went away, and in recent years there’s been a renewed interest in the practice. \n\nIn the years that followed my own introduction to plotters, I was fortunate to meet some of the pioneer artists working with code and plotters while we shared walls in group exhibitions. It was through meeting artists like Manfred Mohr, Frieder Nake, Jean-Pierre Hébert, Mark Wilson, and Colette Bangert, and spending time with their drawings, that I learned the craft. I was in Roman Verostko’s studio in Minneapolis in 2015 when I discovered more about the material possibilities of working with plotters. Rather than working with colors “out of the bottle,” Roman mixes his own colors to create his vibrant work.\n\n<img class=\"col-100\" src=\"https://feralfile.com/assets/imgs/graph-curators-note.jpg\">\nBottles of ink in Roman Verostko’s studio in Minneapolis in 2015. Photo by Casey Reas.\n\nWhen I made my first plotter drawings, I can say without exaggeration that it completely transformed my understanding of the history of computer-generated drawings. Before, I had vaguely understood how they were created, but now I felt their production in detail. This method of creation is fundamentally different from anything that I had done. Each drawing is truly unique and is often the result of careful physical adjustments and extreme patience. In contrast to a software “undo,” twelve hours of work with a plotter can be destroyed by a pen leak or errant line. In my personal experience, this often happens!\n\nUnlike at the origins of artists working with plotters, using a plotter to create images from code today is one decision to make among many others. Making plotter drawings is difficult and wonderful, and the artists in –GRAPH are passionate about t...",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/d2c65c58-d373-4e70-2293-9e8a2eb27600/raw",
+  "created": "2026-01-06T11:07:00.760Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "aaf490fc-3560-47f1-8287-a8e4755e0336",
+      "title": "(The illusion of) depth of knowledge AP",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.745Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860679"
+        }
+      }
+    },
+    {
+      "id": "f2133993-d4c7-4fcd-b4f0-f8121f599afd",
+      "title": "CHERTI AP",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.752Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243974"
+        }
+      }
+    },
+    {
+      "id": "177a4f3b-15fe-4320-bb5c-2f2662fc9cce",
+      "title": "Chaos Blocks AP",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.753Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418335"
+        }
+      }
+    },
+    {
+      "id": "a8c06461-f53e-4a68-9988-5f36d7962fe6",
+      "title": "Umwelt AP",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.753Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910510"
+        }
+      }
+    },
+    {
+      "id": "76f4b0a0-2f93-4c42-a7c0-fad140a06daa",
+      "title": "Endless Monologue AP",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.753Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791595"
+        }
+      }
+    },
+    {
+      "id": "6ca42e90-d046-44b5-98ca-6db2dad7f282",
+      "title": "F(l)ight AP",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.753Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917907"
+        }
+      }
+    },
+    {
+      "id": "0d5b3c76-4bab-4aed-b5ce-c2ce7c40fbc3",
+      "title": "(The illusion of) depth of knowledge #1",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.753Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860680"
+        }
+      }
+    },
+    {
+      "id": "65f06abb-6d3b-4911-afe2-05944d458d2a",
+      "title": "CHERTI #1",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.753Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243975"
+        }
+      }
+    },
+    {
+      "id": "e11a0d96-e751-4d78-b729-eb827910c0e0",
+      "title": "Chaos Blocks #1",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.753Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418336"
+        }
+      }
+    },
+    {
+      "id": "81824db8-d6c5-42e1-be7e-38c391bcd5d9",
+      "title": "Umwelt #1",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.753Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910511"
+        }
+      }
+    },
+    {
+      "id": "65f45ada-d8b2-4bc6-a4c4-f79e4b138ef9",
+      "title": "Endless Monologue #1",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.753Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791596"
+        }
+      }
+    },
+    {
+      "id": "2589d2b6-c4a3-427f-a9e3-03f266a03fd6",
+      "title": "F(l)ight #1",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.753Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917908"
+        }
+      }
+    },
+    {
+      "id": "0b1b04f2-d57e-45ab-b09d-e20443768fa3",
+      "title": "(The illusion of) depth of knowledge #2",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=2&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.753Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860681"
+        }
+      }
+    },
+    {
+      "id": "50175e1a-f32f-474a-93ff-a64cc70e5ff5",
+      "title": "CHERTI #2",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=2&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.753Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243976"
+        }
+      }
+    },
+    {
+      "id": "7dbe5496-854f-453d-9a37-114bb0a6ee56",
+      "title": "Chaos Blocks #2",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=2&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418337"
+        }
+      }
+    },
+    {
+      "id": "2668c3cf-dbe6-4fae-a116-9e35b1b05899",
+      "title": "Umwelt #2",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=2&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910512"
+        }
+      }
+    },
+    {
+      "id": "6771cd15-a2c6-4d55-9849-a46ba4756fd5",
+      "title": "Endless Monologue #2",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=2&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791597"
+        }
+      }
+    },
+    {
+      "id": "0262632b-a44c-47b4-891b-516d54849aca",
+      "title": "F(l)ight #2",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=2&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917909"
+        }
+      }
+    },
+    {
+      "id": "f4266391-4551-4fe9-81f6-f49c259da7e7",
+      "title": "(The illusion of) depth of knowledge #3",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=3&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860682"
+        }
+      }
+    },
+    {
+      "id": "54cc8cc2-3887-4072-86de-61d5c45628c5",
+      "title": "CHERTI #3",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=3&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243977"
+        }
+      }
+    },
+    {
+      "id": "7ed31bc9-cdf1-42d1-a6a3-39253b07bed2",
+      "title": "Chaos Blocks #3",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=3&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418338"
+        }
+      }
+    },
+    {
+      "id": "87579de4-77c7-4ca1-a299-caa34eebce7e",
+      "title": "Umwelt #3",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=3&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910513"
+        }
+      }
+    },
+    {
+      "id": "43962db8-4f26-4a80-8b9c-9b769f012c30",
+      "title": "Endless Monologue #3",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=3&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791598"
+        }
+      }
+    },
+    {
+      "id": "da2e36b0-e2f1-454f-8a44-5a2100b63c59",
+      "title": "F(l)ight #3",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=3&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917910"
+        }
+      }
+    },
+    {
+      "id": "3bf4559a-f888-4698-a490-8cb0ea1f0171",
+      "title": "(The illusion of) depth of knowledge #4",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=4&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860683"
+        }
+      }
+    },
+    {
+      "id": "4caf440b-02c4-4c1f-9e4b-7479c0ac716b",
+      "title": "CHERTI #4",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=4&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243978"
+        }
+      }
+    },
+    {
+      "id": "18ed000c-9d2a-45da-a52c-369df3c47ccf",
+      "title": "Chaos Blocks #4",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=4&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418339"
+        }
+      }
+    },
+    {
+      "id": "c05aeaf2-dbf2-48c3-a520-dd2896530a24",
+      "title": "Umwelt #4",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=4&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910514"
+        }
+      }
+    },
+    {
+      "id": "0d163db5-f8ca-4403-83e1-e7f9b4440365",
+      "title": "Endless Monologue #4",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=4&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791599"
+        }
+      }
+    },
+    {
+      "id": "bf999d1e-7695-4021-8a2a-3a0d215922b3",
+      "title": "F(l)ight #4",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=4&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917911"
+        }
+      }
+    },
+    {
+      "id": "ba31a177-2cbd-4193-ba02-f962c12047f0",
+      "title": "(The illusion of) depth of knowledge #5",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=5&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860684"
+        }
+      }
+    },
+    {
+      "id": "0e83ccf2-49e5-4f90-a3a0-9481ffc66c9e",
+      "title": "CHERTI #5",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=5&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243979"
+        }
+      }
+    },
+    {
+      "id": "8c4b6d2e-8841-4d5d-91ae-247ea0fc6794",
+      "title": "Chaos Blocks #5",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=5&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418340"
+        }
+      }
+    },
+    {
+      "id": "412a8270-2280-4225-bc6b-feee809eb68d",
+      "title": "Umwelt #5",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=5&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910515"
+        }
+      }
+    },
+    {
+      "id": "6c535559-033d-4c57-9f50-a1134e883b35",
+      "title": "Endless Monologue #5",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=5&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791600"
+        }
+      }
+    },
+    {
+      "id": "39bebd4f-2b62-41e0-a1bc-7e3361e8f796",
+      "title": "F(l)ight #5",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=5&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917912"
+        }
+      }
+    },
+    {
+      "id": "5fd19716-0392-40a1-bf52-8416a81f0ec6",
+      "title": "(The illusion of) depth of knowledge #6",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=6&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.754Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860685"
+        }
+      }
+    },
+    {
+      "id": "01fadcf6-1564-46ef-a34b-b29148cde39e",
+      "title": "CHERTI #6",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=6&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243980"
+        }
+      }
+    },
+    {
+      "id": "38a47c05-cad0-4499-9a41-eb51c50cff6e",
+      "title": "Chaos Blocks #6",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=6&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418341"
+        }
+      }
+    },
+    {
+      "id": "1e3b1880-1e03-44ce-8832-1b9f63976960",
+      "title": "Umwelt #6",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=6&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910516"
+        }
+      }
+    },
+    {
+      "id": "03ed6370-2cb0-4325-b112-f0422f9c24a6",
+      "title": "Endless Monologue #6",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=6&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791601"
+        }
+      }
+    },
+    {
+      "id": "60379511-e185-4c73-915d-c51c3c4928ca",
+      "title": "F(l)ight #6",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=6&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917913"
+        }
+      }
+    },
+    {
+      "id": "d3c010c5-4bc7-46b9-a616-c6142b179bb4",
+      "title": "(The illusion of) depth of knowledge #7",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=7&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860686"
+        }
+      }
+    },
+    {
+      "id": "b2641be8-5403-420c-8e1a-0cd01b9b6c8b",
+      "title": "CHERTI #7",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=7&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243981"
+        }
+      }
+    },
+    {
+      "id": "e1f69f3b-7ac6-416a-80a6-cad01d12a878",
+      "title": "Chaos Blocks #7",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=7&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418342"
+        }
+      }
+    },
+    {
+      "id": "426110f4-3e1c-4c86-88ea-3c5358618301",
+      "title": "Umwelt #7",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=7&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910517"
+        }
+      }
+    },
+    {
+      "id": "d87656a5-6014-4371-96ed-4985060b8b3a",
+      "title": "Endless Monologue #7",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=7&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791602"
+        }
+      }
+    },
+    {
+      "id": "ad5cc838-0c83-47b1-bd42-609f7e82ae58",
+      "title": "F(l)ight #7",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=7&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917914"
+        }
+      }
+    },
+    {
+      "id": "aa1f330a-d5ae-47a7-a2ee-353bcc80806e",
+      "title": "(The illusion of) depth of knowledge #9",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=9&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860688"
+        }
+      }
+    },
+    {
+      "id": "bdfb76ea-31d0-436f-947e-2a743918eec5",
+      "title": "CHERTI #9",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=9&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243983"
+        }
+      }
+    },
+    {
+      "id": "71c647b0-35e9-4152-a134-93f9aa5246a1",
+      "title": "Chaos Blocks #9",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=9&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418344"
+        }
+      }
+    },
+    {
+      "id": "00194781-4b13-40cc-8732-8f95c3446b3c",
+      "title": "Umwelt #9",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=9&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910519"
+        }
+      }
+    },
+    {
+      "id": "89cfa2a8-ee49-458d-9a57-cbbfd6fedeb0",
+      "title": "Endless Monologue #9",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=9&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791604"
+        }
+      }
+    },
+    {
+      "id": "fe9d2ced-5ca7-4425-b57b-79af270d4f8d",
+      "title": "F(l)ight #8",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=8&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917915"
+        }
+      }
+    },
+    {
+      "id": "c0c4c077-0a21-4b14-95d2-cad91e68832e",
+      "title": "(The illusion of) depth of knowledge #10",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=10&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860689"
+        }
+      }
+    },
+    {
+      "id": "9e4c31dd-61f9-4b48-8912-ade3c8e377cf",
+      "title": "CHERTI #10",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=10&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243984"
+        }
+      }
+    },
+    {
+      "id": "0446179d-6f37-48f8-9fb9-330ef894e7be",
+      "title": "Chaos Blocks #10",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=10&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418345"
+        }
+      }
+    },
+    {
+      "id": "c018133a-15b2-444f-b19b-52135b574724",
+      "title": "Umwelt #10",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=10&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910520"
+        }
+      }
+    },
+    {
+      "id": "7b93011c-a711-4f5f-83ec-3ab099ae4281",
+      "title": "Endless Monologue #10",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=10&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791605"
+        }
+      }
+    },
+    {
+      "id": "d94c038f-c755-4b83-bca9-c333dc76d395",
+      "title": "F(l)ight #9",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=9&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917916"
+        }
+      }
+    },
+    {
+      "id": "57d1d212-ca93-46f2-bc07-eb67209ec75a",
+      "title": "(The illusion of) depth of knowledge #11",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=11&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860690"
+        }
+      }
+    },
+    {
+      "id": "332b8a43-d899-48a5-99bb-0b37bb7bb45a",
+      "title": "CHERTI #11",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=11&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243985"
+        }
+      }
+    },
+    {
+      "id": "e10aeb52-ef4f-4000-86c7-582eec2f26f9",
+      "title": "Chaos Blocks #11",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=11&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418346"
+        }
+      }
+    },
+    {
+      "id": "3f05cad6-ce3e-4bc9-bcc7-399ecf7844e2",
+      "title": "Umwelt #11",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=11&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.755Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910521"
+        }
+      }
+    },
+    {
+      "id": "56fc0088-50bc-47c5-a939-a0e3ab4b767d",
+      "title": "Endless Monologue #11",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=11&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791606"
+        }
+      }
+    },
+    {
+      "id": "4b1d4f84-e728-465c-80ea-5ebe6c34419f",
+      "title": "F(l)ight #10",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=10&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917917"
+        }
+      }
+    },
+    {
+      "id": "8dcfee52-5daa-44dc-bb1f-afe7fafcd3df",
+      "title": "(The illusion of) depth of knowledge #12",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=12&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860691"
+        }
+      }
+    },
+    {
+      "id": "de7e519e-55b0-46da-9bc0-d8c00180ff3a",
+      "title": "CHERTI #12",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=12&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243986"
+        }
+      }
+    },
+    {
+      "id": "55c7c704-9df0-4603-9834-12f3cdbfe83e",
+      "title": "Chaos Blocks #12",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=12&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418347"
+        }
+      }
+    },
+    {
+      "id": "437c6fcc-0798-49e5-9e5c-701a21c19e65",
+      "title": "Umwelt #12",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=12&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910522"
+        }
+      }
+    },
+    {
+      "id": "a2bc4629-5b90-492b-ad79-0ab3537c1fe2",
+      "title": "Endless Monologue #12",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=12&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791607"
+        }
+      }
+    },
+    {
+      "id": "5aae9110-a261-4aa6-8fa2-342046a4136b",
+      "title": "F(l)ight #11",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=11&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917918"
+        }
+      }
+    },
+    {
+      "id": "d9f2d56e-2f71-48bc-98d6-b58f4636a5bc",
+      "title": "(The illusion of) depth of knowledge #13",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=13&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860692"
+        }
+      }
+    },
+    {
+      "id": "43cebbbc-f372-4f13-983f-4bd5d2b10bca",
+      "title": "CHERTI #13",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=13&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243987"
+        }
+      }
+    },
+    {
+      "id": "0c9a4ca0-efe4-4ff5-aee3-d30156190473",
+      "title": "Chaos Blocks #13",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=13&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418348"
+        }
+      }
+    },
+    {
+      "id": "e415a873-c893-4de1-852b-4f0aa036e13a",
+      "title": "Umwelt #13",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=13&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910523"
+        }
+      }
+    },
+    {
+      "id": "bd103fe6-f823-4cc6-9ac2-54eeb0dabe34",
+      "title": "Endless Monologue #13",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=13&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791608"
+        }
+      }
+    },
+    {
+      "id": "b2d19ba0-4d57-40c5-aa92-6a6e3841bb3c",
+      "title": "F(l)ight #12",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=12&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917919"
+        }
+      }
+    },
+    {
+      "id": "13fd2072-f65b-48aa-a0a8-dd89dc592e73",
+      "title": "(The illusion of) depth of knowledge #14",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=14&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860693"
+        }
+      }
+    },
+    {
+      "id": "9b5ebe34-3433-4c27-9d0c-af507e39a082",
+      "title": "CHERTI #14",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=14&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243988"
+        }
+      }
+    },
+    {
+      "id": "2df31d3c-16e1-4c35-82bb-e29d06c51577",
+      "title": "Chaos Blocks #14",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=14&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418349"
+        }
+      }
+    },
+    {
+      "id": "1ade6d0e-d577-4688-b7e4-057394b5c80d",
+      "title": "Umwelt #14",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=14&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910524"
+        }
+      }
+    },
+    {
+      "id": "42828537-02a9-409f-a77d-ab777212fd33",
+      "title": "Endless Monologue #14",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=14&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791609"
+        }
+      }
+    },
+    {
+      "id": "37c3715d-07ff-4e17-8282-09d80596c7a9",
+      "title": "F(l)ight #13",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=13&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917920"
+        }
+      }
+    },
+    {
+      "id": "9d120de9-3bf1-43e9-9e31-d6ee88560ad4",
+      "title": "(The illusion of) depth of knowledge #15",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=15&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860694"
+        }
+      }
+    },
+    {
+      "id": "4ee31b8b-f15f-46b9-94f5-9d0b1c98ab01",
+      "title": "CHERTI #15",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=15&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243989"
+        }
+      }
+    },
+    {
+      "id": "5716326b-1cc3-4a92-a8a9-b4f82adcae02",
+      "title": "Chaos Blocks #15",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=15&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418350"
+        }
+      }
+    },
+    {
+      "id": "5546ca0b-0340-4c85-9158-143bf658b50e",
+      "title": "Umwelt #15",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=15&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910525"
+        }
+      }
+    },
+    {
+      "id": "f903eff5-bbdb-4a93-8ee8-2d7ee10c8070",
+      "title": "Endless Monologue #15",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=15&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.756Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791610"
+        }
+      }
+    },
+    {
+      "id": "9b3e9e45-0d5e-4514-b200-a1522cd866ed",
+      "title": "F(l)ight #14",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=14&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917921"
+        }
+      }
+    },
+    {
+      "id": "762c6fd0-b9ba-4fcb-8395-874d739ec198",
+      "title": "(The illusion of) depth of knowledge #16",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=16&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860695"
+        }
+      }
+    },
+    {
+      "id": "2c6c4e9c-29ae-4774-ae07-bd34997e5a68",
+      "title": "CHERTI #16",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=16&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243990"
+        }
+      }
+    },
+    {
+      "id": "4c80d913-7886-4de0-b980-011e17159039",
+      "title": "Chaos Blocks #16",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=16&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418351"
+        }
+      }
+    },
+    {
+      "id": "4933a6d9-7a53-44c7-8979-7ff8aa5dd625",
+      "title": "Umwelt #16",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=16&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910526"
+        }
+      }
+    },
+    {
+      "id": "51a941d3-3a9a-4df7-8e05-5065498cfe70",
+      "title": "Endless Monologue #16",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=16&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791611"
+        }
+      }
+    },
+    {
+      "id": "dfe2194a-ba83-4d73-945b-ca3b184fe775",
+      "title": "F(l)ight #15",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=15&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917922"
+        }
+      }
+    },
+    {
+      "id": "e213c0b6-725e-4f70-aa88-468f0a9331bb",
+      "title": "(The illusion of) depth of knowledge #18",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=18&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860697"
+        }
+      }
+    },
+    {
+      "id": "36f0222d-b314-4274-942d-e0e9d9f200a8",
+      "title": "CHERTI #18",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=18&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243992"
+        }
+      }
+    },
+    {
+      "id": "297d5458-376c-44d1-9901-a87abbfb8b1f",
+      "title": "Chaos Blocks #18",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=18&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418353"
+        }
+      }
+    },
+    {
+      "id": "b0529e14-9253-424c-8e15-09a934cbfc93",
+      "title": "Umwelt #18",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=18&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910528"
+        }
+      }
+    },
+    {
+      "id": "6f78f0c0-0058-42a6-ae59-a2391528b4f0",
+      "title": "Endless Monologue #18",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=18&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791613"
+        }
+      }
+    },
+    {
+      "id": "38b02e1d-e03c-4062-8e30-ef586f0b3bc4",
+      "title": "F(l)ight #16",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=16&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917923"
+        }
+      }
+    },
+    {
+      "id": "14b36670-0a55-470c-b711-ff9f6df771ce",
+      "title": "(The illusion of) depth of knowledge #19",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=19&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860698"
+        }
+      }
+    },
+    {
+      "id": "93f8ae4c-1ac6-47d6-902a-5f473965ec0a",
+      "title": "CHERTI #19",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=19&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243993"
+        }
+      }
+    },
+    {
+      "id": "ed52d313-3223-4ca1-9831-caed07261c58",
+      "title": "Chaos Blocks #19",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=19&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418354"
+        }
+      }
+    },
+    {
+      "id": "3cac1636-d736-40b1-947b-7d8ee291f00c",
+      "title": "Umwelt #19",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=19&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910529"
+        }
+      }
+    },
+    {
+      "id": "9267d4b2-3f85-4248-9460-ff5846565f86",
+      "title": "Endless Monologue #19",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=19&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791614"
+        }
+      }
+    },
+    {
+      "id": "dc0614a3-8fcd-4ee0-8e08-30a9e6f6e10a",
+      "title": "F(l)ight #18",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=18&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917925"
+        }
+      }
+    },
+    {
+      "id": "13eb33bb-fa9b-4633-9478-43bf5b947675",
+      "title": "(The illusion of) depth of knowledge #20",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=20&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860699"
+        }
+      }
+    },
+    {
+      "id": "473b3f29-f485-4975-9902-4c84239118fc",
+      "title": "CHERTI #20",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=20&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243994"
+        }
+      }
+    },
+    {
+      "id": "9b90141a-34d5-4596-90eb-9c335b506a6c",
+      "title": "Chaos Blocks #20",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=20&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418355"
+        }
+      }
+    },
+    {
+      "id": "afc350a5-82d4-422a-8048-3ab84172db54",
+      "title": "Umwelt #20",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=20&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910530"
+        }
+      }
+    },
+    {
+      "id": "5496f86d-c29e-4a1e-91db-ef1216c23e47",
+      "title": "Endless Monologue #20",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=20&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791615"
+        }
+      }
+    },
+    {
+      "id": "4b213a1f-05f2-4c6e-9781-4b0cf3d627b4",
+      "title": "F(l)ight #19",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=19&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917926"
+        }
+      }
+    },
+    {
+      "id": "5a1b6dad-8dfc-4c11-9ae5-e5e98ccd34ef",
+      "title": "(The illusion of) depth of knowledge #21",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=21&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860700"
+        }
+      }
+    },
+    {
+      "id": "f3becaa1-5018-48ee-ab5a-f0bd20f3d1bd",
+      "title": "CHERTI #21",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=21&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243995"
+        }
+      }
+    },
+    {
+      "id": "3178d907-1910-47bd-a6d0-7628c2d43230",
+      "title": "Chaos Blocks #21",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=21&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418356"
+        }
+      }
+    },
+    {
+      "id": "f03d7653-3ff0-4775-ab71-31e396ed06a5",
+      "title": "Umwelt #21",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=21&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.757Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910531"
+        }
+      }
+    },
+    {
+      "id": "449e2d3e-4762-4fde-83d5-aa4129b66d37",
+      "title": "Endless Monologue #21",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=21&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791616"
+        }
+      }
+    },
+    {
+      "id": "36b1e73f-a76d-4f1a-80dc-9f013495ec19",
+      "title": "F(l)ight #20",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=20&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917927"
+        }
+      }
+    },
+    {
+      "id": "6928110c-0f99-4476-9db8-4727e6825395",
+      "title": "(The illusion of) depth of knowledge #22",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=22&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860701"
+        }
+      }
+    },
+    {
+      "id": "6dc11dd9-2019-47ab-91c4-0ae5d3d1f65c",
+      "title": "CHERTI #22",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=22&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243996"
+        }
+      }
+    },
+    {
+      "id": "75c12f00-9976-40b2-9863-88b139de54fb",
+      "title": "Chaos Blocks #22",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=22&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418357"
+        }
+      }
+    },
+    {
+      "id": "e7c53293-129d-4449-b180-ccd5b9e086d5",
+      "title": "Umwelt #22",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=22&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910532"
+        }
+      }
+    },
+    {
+      "id": "60c44c88-51d5-4dcc-be07-0ec508988011",
+      "title": "Endless Monologue #22",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=22&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791617"
+        }
+      }
+    },
+    {
+      "id": "8e8a0d85-0bb4-4b3f-a965-cbd818c7094c",
+      "title": "F(l)ight #21",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=21&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917928"
+        }
+      }
+    },
+    {
+      "id": "3d8f9b5f-5967-4422-b606-a9409f81eb7c",
+      "title": "(The illusion of) depth of knowledge #25",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=25&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860704"
+        }
+      }
+    },
+    {
+      "id": "01928f39-3dd6-48b1-9cd8-dc5e9aefbece",
+      "title": "CHERTI #23",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=23&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243997"
+        }
+      }
+    },
+    {
+      "id": "9bc1eb44-56cd-4c87-974c-369827574cea",
+      "title": "Chaos Blocks #23",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=23&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418358"
+        }
+      }
+    },
+    {
+      "id": "6eb0f762-8c06-4472-8901-acebf9c94ca0",
+      "title": "Umwelt #23",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=23&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910533"
+        }
+      }
+    },
+    {
+      "id": "da53f544-4de0-4ade-9c6d-7a7b063d529f",
+      "title": "Endless Monologue #24",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=24&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791619"
+        }
+      }
+    },
+    {
+      "id": "e1ac9e33-daf5-4513-a0c5-e567dea70786",
+      "title": "F(l)ight #22",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=22&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917929"
+        }
+      }
+    },
+    {
+      "id": "26c67bc7-5f2b-453c-8540-b1ebb360709b",
+      "title": "(The illusion of) depth of knowledge #27",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=27&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860706"
+        }
+      }
+    },
+    {
+      "id": "02a076dc-784a-4448-92f5-e3a820784f5b",
+      "title": "CHERTI #24",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=24&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243998"
+        }
+      }
+    },
+    {
+      "id": "746c55f1-d85c-432b-8443-ec14502f0c85",
+      "title": "Chaos Blocks #24",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=24&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418359"
+        }
+      }
+    },
+    {
+      "id": "b6c5033f-3db6-4bf3-b463-f219232d0dd4",
+      "title": "Umwelt #24",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=24&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910534"
+        }
+      }
+    },
+    {
+      "id": "cf0faccf-a858-4457-a0bd-da32c5315168",
+      "title": "Endless Monologue #25",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=25&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791620"
+        }
+      }
+    },
+    {
+      "id": "4e77d19f-963e-4bc2-804f-90881000cf3b",
+      "title": "F(l)ight #23",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=23&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917930"
+        }
+      }
+    },
+    {
+      "id": "56c93612-61da-42fa-9ba7-bbe40a867a81",
+      "title": "(The illusion of) depth of knowledge #28",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=28&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860707"
+        }
+      }
+    },
+    {
+      "id": "c0c51a94-7727-48c8-bc4a-bd288cd86838",
+      "title": "CHERTI #25",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=25&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.758Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243999"
+        }
+      }
+    },
+    {
+      "id": "3f089197-483c-4d3e-8e6d-bdbeaa4c34ac",
+      "title": "Chaos Blocks #25",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=25&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418360"
+        }
+      }
+    },
+    {
+      "id": "36eccb99-42c2-4bee-b2c3-dd4673b371d7",
+      "title": "Umwelt #26",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=26&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910536"
+        }
+      }
+    },
+    {
+      "id": "b98e648e-3e44-4d7a-adec-6c3937cdae84",
+      "title": "Endless Monologue #26",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=26&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791621"
+        }
+      }
+    },
+    {
+      "id": "eb005566-e7ce-41ee-9a5c-f30d73b7c232",
+      "title": "F(l)ight #24",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=24&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917931"
+        }
+      }
+    },
+    {
+      "id": "efe1aa26-625f-4ccb-bd0c-6e2fbf2f1ca3",
+      "title": "(The illusion of) depth of knowledge #29",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=29&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860708"
+        }
+      }
+    },
+    {
+      "id": "c480aec0-9a16-4afc-883a-7d1440f7d055",
+      "title": "CHERTI #26",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=26&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136244000"
+        }
+      }
+    },
+    {
+      "id": "e2cfbaac-8579-4f05-96c7-3556b81300b1",
+      "title": "Chaos Blocks #26",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=26&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418361"
+        }
+      }
+    },
+    {
+      "id": "eca69159-8720-492b-97fe-90489e2ba2f7",
+      "title": "Umwelt #27",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=27&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910537"
+        }
+      }
+    },
+    {
+      "id": "1362f03d-afff-47ab-9f3b-b84a451c5d8c",
+      "title": "Endless Monologue #27",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=27&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791622"
+        }
+      }
+    },
+    {
+      "id": "de27f0a2-1c15-4616-8e83-63ecda9302ee",
+      "title": "F(l)ight #25",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=25&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917932"
+        }
+      }
+    },
+    {
+      "id": "dd268866-afa1-4ac2-bf68-2a563e286be7",
+      "title": "(The illusion of) depth of knowledge #30",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=30&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860709"
+        }
+      }
+    },
+    {
+      "id": "41cdd304-3a09-4324-83a9-e7dac464d5a0",
+      "title": "CHERTI #27",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=27&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136244001"
+        }
+      }
+    },
+    {
+      "id": "c2363174-1c54-4123-8291-60693a6c8d3e",
+      "title": "Chaos Blocks #27",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=27&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418362"
+        }
+      }
+    },
+    {
+      "id": "6f517ed3-1d25-49a1-babc-3906000b37a8",
+      "title": "Umwelt #28",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=28&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910538"
+        }
+      }
+    },
+    {
+      "id": "a72e63a7-9460-4b17-a17a-49fe51997179",
+      "title": "Endless Monologue #28",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=28&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791623"
+        }
+      }
+    },
+    {
+      "id": "a8dea808-cdba-4a11-aca3-a66bcd8160f2",
+      "title": "F(l)ight #26",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=26&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917933"
+        }
+      }
+    },
+    {
+      "id": "8fc9f1b5-ec80-4f4c-8184-3b30c497c79e",
+      "title": "CHERTI #28",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=28&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136244002"
+        }
+      }
+    },
+    {
+      "id": "713fb1b1-c40d-4f9d-8073-1fe58d6319f7",
+      "title": "Chaos Blocks #28",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=28&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418363"
+        }
+      }
+    },
+    {
+      "id": "e4dff847-4c9f-488d-9660-e33d199679ea",
+      "title": "Umwelt #29",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=29&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910539"
+        }
+      }
+    },
+    {
+      "id": "51e317bc-238c-46a0-873c-955591eabeca",
+      "title": "Endless Monologue #29",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=29&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791624"
+        }
+      }
+    },
+    {
+      "id": "d118ab2b-5cd5-47a3-866b-3c805ce159f3",
+      "title": "F(l)ight #28",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=28&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.759Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917935"
+        }
+      }
+    },
+    {
+      "id": "07b14989-c313-4b7c-96a7-68e3b72bb7e5",
+      "title": "CHERTI #29",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=29&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.760Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136244003"
+        }
+      }
+    },
+    {
+      "id": "f23eb8fe-7d88-4082-9a71-5f3d160b9e46",
+      "title": "Chaos Blocks #29",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=29&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.760Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418364"
+        }
+      }
+    },
+    {
+      "id": "783377c3-a17c-4c21-8f1d-827799692ab3",
+      "title": "Umwelt #30",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=30&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.760Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910540"
+        }
+      }
+    },
+    {
+      "id": "ffce5332-45bc-47b1-9f13-25a2cedc6300",
+      "title": "Endless Monologue #30",
+      "source": "https://cdn.feralfileassets.com/previews/5e0a93aa-22d0-4305-8bdd-5806dab5503a/1637559288/?edition_number=30&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.760Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "70073419953480297782302796423995345102860944796113057473502644391258664791625"
+        }
+      }
+    },
+    {
+      "id": "969c7a1c-6279-439f-bdba-af1ef7825f8e",
+      "title": "F(l)ight #29",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=29&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.760Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917936"
+        }
+      }
+    },
+    {
+      "id": "32269ced-ce6b-491a-8e7a-53dcf0558278",
+      "title": "CHERTI #30",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=30&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.760Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136244004"
+        }
+      }
+    },
+    {
+      "id": "5b9389c8-6fc8-4659-b321-2a31997cfd7f",
+      "title": "Chaos Blocks #30",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=30&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.760Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418365"
+        }
+      }
+    },
+    {
+      "id": "a5b026b5-d066-4284-92ee-dd7f926db18d",
+      "title": "F(l)ight #30",
+      "source": "https://cdn.feralfileassets.com/previews/1b1ffd48-5fc2-4d19-a563-364e00ddfb01/1637597750/?edition_number=30&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:07:00.760Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "92419109143972345096969611651362597777388673613154609693448331487805624917937"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

@@ -1,0 +1,186 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "2e213946-35f4-45ee-843e-1455e9772cd2",
+  "slug": "feralverse",
+  "title": "FeralVerse",
+  "summary": "FeralVerse is an anthology of multidimensional poems that embody theVERSEverse’s mission to explore the myriad ways in which words and image intertwine, growing together. Since 2021, our collective of poets, artists and technologists has explored the creative potential for composition and publication via blockchain, a realm where writers are empowered to transact their work, transcend the printed page, and collaborate with each other. Our Feral File offering — the first exhibition of verse on this platform — is planted here as a seed for the poetry journal of the future, in which authorial imagination is unbounded, language and art exist in symbiosis, and every contributor is a vital force in a literary ecosystem in which connection to verse can lead to collection.\r\n\r\nIn celebration of both National Poetry Month and Earth Month, the texts published here as non-fungible Tezos tokens – each a collaborative performance between writers and artists at the avant-garde of web3 poetry, including some of the planet’s most renowned voices – reflect diverse perspectives, aesthetics, and approaches to the worlds around us and inside us, always in flux. Every work invites its reader to step into a reality augmented through the art of poetry, and to engage deeply with the untamed universe of possibilities for writers on (and off) the blockchain.\r\n\r\nIn true literary form, FeralVerse will be initially offered as an anthology — simultaneously a multiplicity and a unified body — to collectors.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/c1c40e47-dd42-4b16-e893-9aba522c7700/raw",
+  "created": "2026-01-06T10:52:41.967Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "01a95162-815b-4c9e-91e8-c323adfb57e4",
+      "title": "Some Last Questions AE",
+      "source": "https://cdn.feralfileassets.com/previews/45c0f2cc-eef6-43db-87a3-f9a51275e0ec/1680599651/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:52:41.956Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1JCd3QHFgNZRatQuniDi8evTtyuhKFb3DC",
+          "tokenId": "115102002126076552507580024863960618470463757507692547587654022394981581576231"
+        }
+      }
+    },
+    {
+      "id": "206e33ec-37bd-4b1a-a4c5-21596856ae37",
+      "title": "Spring So Uneasy AE",
+      "source": "https://cdn.feralfileassets.com/previews/37144d7f-5d83-42eb-935b-87a54413c424/1678503610/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:52:41.964Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1JCd3QHFgNZRatQuniDi8evTtyuhKFb3DC",
+          "tokenId": "29815280137632890037414714722729939951171920857166159366334756676975157277478"
+        }
+      }
+    },
+    {
+      "id": "4155d9bf-721b-4d82-b31f-5367ddc121db",
+      "title": "Gray AE",
+      "source": "https://cdn.feralfileassets.com/previews/65619900-13dd-48a0-840f-e5652e2a0975/1677943680/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:52:41.965Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1JCd3QHFgNZRatQuniDi8evTtyuhKFb3DC",
+          "tokenId": "16967738043900095297835108542116374084254059902937628896229328345926329360234"
+        }
+      }
+    },
+    {
+      "id": "d61e34f0-aa22-409f-a59f-50e5db296c1b",
+      "title": "The Hybrid Branch AE",
+      "source": "https://cdn.feralfileassets.com/previews/a97afdeb-236a-4f49-94cb-0cf83e104e56/1678443927/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:52:41.965Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1JCd3QHFgNZRatQuniDi8evTtyuhKFb3DC",
+          "tokenId": "37962597456020436232701560695282750430268930100015285597316757620395679310737"
+        }
+      }
+    },
+    {
+      "id": "89fca58f-93a5-48c7-afb5-951cb2026568",
+      "title": "Notes from a Hackberry Seed AE",
+      "source": "https://cdn.feralfileassets.com/previews/35612a18-d1fe-4ce7-99ca-b4d1626d2c6f/1680593293/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:52:41.965Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1JCd3QHFgNZRatQuniDi8evTtyuhKFb3DC",
+          "tokenId": "70232485083489883449473577584065980778302078201856182406596792238319899478074"
+        }
+      }
+    },
+    {
+      "id": "cd62f3b1-66d0-4723-97cb-85188b99a258",
+      "title": "Futurum Febris AE",
+      "source": "https://cdn.feralfileassets.com/previews/637b6ec0-9476-47b6-958b-8408ec774cd8/1680703832/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:52:41.966Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1JCd3QHFgNZRatQuniDi8evTtyuhKFb3DC",
+          "tokenId": "11044380265907754914681392863497431422710135638151508880473009135222797981604"
+        }
+      }
+    },
+    {
+      "id": "7927590f-2fd3-401d-9627-9973a7d4a84c",
+      "title": "The Body Prepares AE",
+      "source": "https://cdn.feralfileassets.com/previews/a7bac3de-58bd-41df-bab2-bccfa4a536ad/1678019271/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:52:41.966Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1JCd3QHFgNZRatQuniDi8evTtyuhKFb3DC",
+          "tokenId": "33106399480578537777321132063903431520959749269348357550762867823917860410333"
+        }
+      }
+    },
+    {
+      "id": "c08e540f-db0f-451e-9469-cda1f0ba86fc",
+      "title": "Seed Words AE",
+      "source": "https://cdn.feralfileassets.com/previews/c2f9493f-950a-4f0a-a196-b3d40d4880f7/1677755124/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:52:41.966Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1JCd3QHFgNZRatQuniDi8evTtyuhKFb3DC",
+          "tokenId": "96963401658941170897023597847240679742655268881845164104688574029582501911268"
+        }
+      }
+    },
+    {
+      "id": "8a518274-44a1-40f8-b31e-0ca1a0ea81c1",
+      "title": "FERAL FONT: Neural Network Font Type (NNFT) AE",
+      "source": "https://cdn.feralfileassets.com/previews/506e46e1-fe84-41eb-b72c-11420b3fda23/1680573925/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:52:41.966Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1JCd3QHFgNZRatQuniDi8evTtyuhKFb3DC",
+          "tokenId": "58450016580621041141841211306253629727656585501248702727811619991962813148788"
+        }
+      }
+    },
+    {
+      "id": "8149d688-f092-43bc-93e5-1e811469ac38",
+      "title": "Ghost Organ AE",
+      "source": "https://cdn.feralfileassets.com/previews/c746388e-44b7-43af-b9f9-03692476e845/1677077547/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T10:52:41.966Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1JCd3QHFgNZRatQuniDi8evTtyuhKFb3DC",
+          "tokenId": "56110033438556769904626148700067377242835911620198520685839491343812004795011"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

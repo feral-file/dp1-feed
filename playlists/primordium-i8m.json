@@ -1,0 +1,645 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "ef21fb11-42fa-403b-8115-62fd9d73a600",
+  "slug": "primordium",
+  "title": "Primordium",
+  "summary": "A primordium is an organ at the earliest stages of development, a mass of cell tissue teeming with potentiality. For Sage Jenson, primordium is material at the precipice of desire, and their material of choice. Their work functions in the aesthetics of immanence; a place where machinic systems imbue each other with unending possibility, a world in motion, out of equilibrium, and pulsating with unstable flows. Each piece in Primordium, their solo exhibition, embodies this sense of becoming, hypnotizing the viewer with an ever-unfolding actualization of the shadow future.\r\n\r\nIn each of the works in the show, there are agents (particles) that can sense, navigate, and modify their environment. The environment acts as both an arena and a message board for the agents. All of the shapes and patterns within the pieces are emergent behaviors within a rich parameter space. In one sense, the behavior of the agents can be viewed as a reaction to the current state of the environment, and in another, the environment is a creation of the agents’ will upon it. \r\n\r\nFrom slime molds to the structure of the cosmic web, similar algorithmic techniques correlate to natural phenomena at the smallest and largest scales of the universe. Sage is inspired by the natural processes of Earth—a planet out of equilibrium, constantly irradiated with the energy of the sun— to create virtual worlds through the primordial logic of music. Having played the violin for over a decade, and with a deep love of sound from Ligeti to SOPHIE, their work often melts the lines between audio and visual expression. \r\n\r\nStealing pages from philosophy, science, and music, Sage has developed a recipe book for actuating concepts. It is their hope that these mirrorings of the complexities of nature and society, through art, can illuminate the relationship between you, the agent, and the structure of material reality. Primordium presents art at the precipice of becoming, art as a verb. \r\n\r\n<hr>\r\n“It’s this strange device that captures and immediately redistributes the surrounding forces that are both musical and pictorial, or rather neither entirely musical nor entirely pictorial.”<sup>1</sup>\r\n\r\nFrench philosopher Francois Laruelle describes this flattening of the artist / composer / computer and the object / music / pixels as the “registration of the real” and representative of the “perfect indifference” of music, its primordial nature. The emergent forms arising from this flattening of the simulation model and its expression are possibly best described by an aesthetics of the immanent.\r\n\r\nThe philosopher Gilles Deleuze builds upon Baruch Spinoza’s theory of immanence, and Henri Bergson’s theory of time. With Felix Guattari, he attempts to flatten the hierarchy prescribed by transcendence in favor of a temporal view of the world. Rather than a world of agents with transcendent goals, Deleuze imagines a world with machinic agents which actualize themselves through their connections with each other, because of those connections. In the language of complexity theory and thermodynamics, this is a theory of systems out of equilibrium, which evolve entropically. Forms arise due to symmetry breaking and phase instabilities. These are theories of becoming. \r\n\r\nWhat makes generative art, and Sage’s work in particular, so captivating is the “adjacent possible” of the system. Every present moment unlocks the forever unfolding set of future possibilities. The systems morph and ooze, and fold back onto themselves in an unending expression of their underlying computational substance (Jon McCormack’s “computational sublime”). You feel a sense of eternal recurrence, perpetually delayed, free-falling into the holographic firewall surrounding the overwhelming weight of every piece until a sufficient distraction snaps you back into your own actuality. Even though there are recurrent motifs throughout the work, you’d sooner see the heat death of the universe than the system repeat itself.\r\n\r\n<p class=\"font-12\">1.  Michel Henry on August von Briesen’s series of pencil drawings composed while...",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/6b75e2c8-2e4a-458b-4b59-5f317b2d7d00/raw",
+  "created": "2026-01-06T11:04:04.472Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "d194ae3a-0d50-46ad-a6f9-36228dbc68cd",
+      "title": "36 Points #01 #1",
+      "source": "https://cdn.feralfileassets.com/previews/f65cb7b3-89e2-47eb-9e73-3b371105e15e/1725620464/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.459Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "6229100147646990607419186448973685356003330360291535307888976845307913171916"
+        }
+      }
+    },
+    {
+      "id": "8436b62d-a0f2-4321-bb2c-dfbc86591215",
+      "title": "36 Points #02 #1",
+      "source": "https://cdn.feralfileassets.com/previews/a2ba079e-319b-425a-b3df-6bb68c1b7343/1725623570/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.468Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "60555235769946072280257368134421579233129900805931125862653074656717210657350"
+        }
+      }
+    },
+    {
+      "id": "452a17a6-0416-44e3-9a2c-4c499fe4bfb1",
+      "title": "36 Points #03 #1",
+      "source": "https://cdn.feralfileassets.com/previews/6f5db274-ea1f-47b6-82ab-13b0ad650d36/1725623638/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.469Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "11664021220004922721158142696805109385017351455970048986406817807233226597982"
+        }
+      }
+    },
+    {
+      "id": "48ab1e69-6d55-42ae-86de-d7232683ced2",
+      "title": "36 Points #04 #1",
+      "source": "https://cdn.feralfileassets.com/previews/bfecf42e-41e0-46a7-a948-435c5439d574/1725623694/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.469Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "54950933058261189443811690230205364815834649260599699471843244737216885808589"
+        }
+      }
+    },
+    {
+      "id": "cf3d6f31-adff-49fe-bffd-f14af71caa19",
+      "title": "36 Points #05 #1",
+      "source": "https://cdn.feralfileassets.com/previews/f4cf4ad5-b654-48d3-8ea0-85ec65eb17fa/1725623734/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.469Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "18698764637565186712817975068720307980521463968285219645773655026414864292038"
+        }
+      }
+    },
+    {
+      "id": "76b07752-4790-47f9-bb2d-26e47c830bfd",
+      "title": "36 Points #06 #1",
+      "source": "https://cdn.feralfileassets.com/previews/e5437c4c-e32c-40e4-9b0a-074db2d11a6a/1725623770/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.469Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "86901163340150327158931737285279027599235005837676884064067046790749010992666"
+        }
+      }
+    },
+    {
+      "id": "d4d58d4c-7e08-4c7a-ae83-52ebc42a49f5",
+      "title": "36 Points #07 #1",
+      "source": "https://cdn.feralfileassets.com/previews/c32b4f0b-d3dc-43b8-bce2-011b82e57c97/1725623799/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.469Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "30169743894372405399814053470325713857822493152084656191451240314612461820657"
+        }
+      }
+    },
+    {
+      "id": "d4e22e86-4b13-4195-a540-a045d14f3da8",
+      "title": "36 Points #08 #1",
+      "source": "https://cdn.feralfileassets.com/previews/2dbd7ac7-afe2-43fd-a83c-2156406c158e/1725623822/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.469Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "113889147401935052428898332763019184710835162451406557728929988943288507065367"
+        }
+      }
+    },
+    {
+      "id": "1ffb2e1d-0ca4-468d-bec1-6678d9be3158",
+      "title": "36 Points #09 #1",
+      "source": "https://cdn.feralfileassets.com/previews/ff673a40-0bfb-4ac9-b6a3-2d9cc8385463/1725623849/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.470Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "113631258753652137686654951879316359262553048824792126652063215429159754885130"
+        }
+      }
+    },
+    {
+      "id": "707178fc-5b6e-44f4-a68e-c88a081747a4",
+      "title": "36 Points #10 #1",
+      "source": "https://cdn.feralfileassets.com/previews/2da1ec21-e476-40df-bc45-fb07573bdfe5/1725623878/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.470Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "13891659075551035516373525909732448135021462143183580713795785540908171327833"
+        }
+      }
+    },
+    {
+      "id": "b6823763-0a6d-4a6d-a3dc-076a917f2596",
+      "title": "36 Points #11 #1",
+      "source": "https://cdn.feralfileassets.com/previews/81c8f5d2-9f23-4584-8ee5-f7c975dc7951/1725624011/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.470Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "76437880945266110880979439294051220069386127150721581770839031461418041342059"
+        }
+      }
+    },
+    {
+      "id": "60c971e0-4e59-4d4c-bd7e-cf5f0b986f5f",
+      "title": "36 Points #12 #1",
+      "source": "https://cdn.feralfileassets.com/previews/94c4b51e-3c29-4568-9545-0556b290e14b/1725624039/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.470Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "35358845553855715712537579587341818726651427648428517957934097602435224403756"
+        }
+      }
+    },
+    {
+      "id": "9a099987-a15a-42c0-b254-7c9294449f7a",
+      "title": "36 Points #13 #1",
+      "source": "https://cdn.feralfileassets.com/previews/cddc55e9-15b1-453e-9f5f-359171be96b5/1725624066/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.470Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "31820145363565995475565808681699772533099790137067530759761217146655371653098"
+        }
+      }
+    },
+    {
+      "id": "139a67ee-7849-4ee2-8362-f64803fecf95",
+      "title": "36 Points #14 #1",
+      "source": "https://cdn.feralfileassets.com/previews/e496c840-27ce-4988-80a3-e99cd123d107/1725624091/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.470Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "43593768040483625743468770500373785749685714786564201072059172213178285065644"
+        }
+      }
+    },
+    {
+      "id": "0db59027-4e42-4274-82c5-9c3163a7d41d",
+      "title": "36 Points #15 #1",
+      "source": "https://cdn.feralfileassets.com/previews/7ad28960-94f5-465f-b586-9d7834da476b/1725624110/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.470Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "41285037895643333678506599229217594042462856872765577229989444816834393086780"
+        }
+      }
+    },
+    {
+      "id": "49b1d4a1-14aa-4134-aa6a-d0c158a46219",
+      "title": "36 Points #16 #1",
+      "source": "https://cdn.feralfileassets.com/previews/193dc737-9fe3-4f98-8714-c484cb4ce3e8/1725624129/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.470Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "70623030731192735701913246036947858498549840800164888789576994045359929460904"
+        }
+      }
+    },
+    {
+      "id": "afa64df7-b0f1-4769-bcdf-fb0e1e2f929d",
+      "title": "36 Points #17 #1",
+      "source": "https://cdn.feralfileassets.com/previews/0f7a9421-44df-4d9c-a0d0-f850e4fdd43f/1725624153/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.470Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "44180945678244353946381414021145969454570501493128688942625345804159876631924"
+        }
+      }
+    },
+    {
+      "id": "183eb096-0908-4937-972f-c84b5cb8da01",
+      "title": "36 Points #18 #1",
+      "source": "https://cdn.feralfileassets.com/previews/05c97416-7379-4d26-a61d-61277b939d3f/1725624172/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.470Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "61302490045802210421291602096864529165791544979575746562596776854588594450501"
+        }
+      }
+    },
+    {
+      "id": "3e42f915-2f52-4b1d-aea8-8b673cbe890e",
+      "title": "36 Points #19 #1",
+      "source": "https://cdn.feralfileassets.com/previews/102f320e-2315-49a5-b0d9-bb96da1bf820/1725624195/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.470Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "37985513803993673830106652487622242224680120184398274991579420177029905026714"
+        }
+      }
+    },
+    {
+      "id": "5fa2fd11-43ee-4cfb-aeea-5944efae39bf",
+      "title": "36 Points #20 #1",
+      "source": "https://cdn.feralfileassets.com/previews/e15a896b-84f6-442d-be9e-3faeb088bfb0/1725624214/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.470Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "39045419855253112754790413081823885245560445127707009030483255494386572836524"
+        }
+      }
+    },
+    {
+      "id": "b2ff8334-18df-48b4-8c3d-91e6c7fa0870",
+      "title": "36 Points #21 #1",
+      "source": "https://cdn.feralfileassets.com/previews/669bc223-2deb-48f3-b5ba-e44d086bee6c/1725624238/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.471Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "52630059605360980240030978008624659997772624655712940351231983069206296894732"
+        }
+      }
+    },
+    {
+      "id": "2ed60cdc-600b-41fb-b74d-50cba95c6ad2",
+      "title": "36 Points #22 #1",
+      "source": "https://cdn.feralfileassets.com/previews/7e2aceea-c9f0-4afc-a4c6-8d37dda61d02/1725624255/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.471Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "35521017362997486661227184386262019050944532469219603439542027056911404432989"
+        }
+      }
+    },
+    {
+      "id": "21bf3fd4-25b8-44b4-b5f3-cf45a51e974f",
+      "title": "36 Points #23 #1",
+      "source": "https://cdn.feralfileassets.com/previews/361076b7-b4f5-4b47-b800-8c1f31100271/1725624277/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.471Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "112478779609398727296318639698804868409905475068419684504964656296439584494965"
+        }
+      }
+    },
+    {
+      "id": "acdba4e9-f838-440c-ba24-42e009cb103c",
+      "title": "36 Points #24 #1",
+      "source": "https://cdn.feralfileassets.com/previews/f004b2e2-91bf-4517-8815-faea12a3f062/1725624305/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.471Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "23756738345104985956279491196512625532472776404128855896704203620849904452811"
+        }
+      }
+    },
+    {
+      "id": "056dc9db-2bfa-43ac-a13e-0b477f2f9bde",
+      "title": "36 Points #25 #1",
+      "source": "https://cdn.feralfileassets.com/previews/7e92539c-65ce-426b-a243-9b043d0defda/1725624330/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.471Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "109756489743418279948022296820257745757229480070489034960221550030892017364116"
+        }
+      }
+    },
+    {
+      "id": "17655791-19f4-4af7-8485-b1891034f3ed",
+      "title": "36 Points #27 #1",
+      "source": "https://cdn.feralfileassets.com/previews/500ccc6e-d7ad-443f-a9df-0bf709b3b3c9/1725624373/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.471Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "70858792479752911964825160209008387148079647624299819935110713114423033073520"
+        }
+      }
+    },
+    {
+      "id": "e3766a23-46ba-4111-9ce5-52d85f77715b",
+      "title": "36 Points #28 #1",
+      "source": "https://cdn.feralfileassets.com/previews/cb0fc2d2-1e7b-4a39-b518-2be692a52ffc/1725624391/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.471Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "44167847711296331984236115781927606196597164406955248788598074402669003290633"
+        }
+      }
+    },
+    {
+      "id": "afc1cc02-840e-4c66-a704-b5af2d0c76ee",
+      "title": "36 Points #29 #1",
+      "source": "https://cdn.feralfileassets.com/previews/f128ae45-67bf-41f7-bef6-cdb30ec3c02b/1725624409/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.471Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "55050774917150653852740670218003209296271264867167241957669303404149967543634"
+        }
+      }
+    },
+    {
+      "id": "15fe70e2-6fe7-4908-b63a-0c97e0b14b50",
+      "title": "36 Points #30 #1",
+      "source": "https://cdn.feralfileassets.com/previews/b0cd5f03-3a5b-4be3-9c58-b05d2b388c5a/1725624437/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.471Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "78185066854195316843381508527357809817094314029485180988986462325720436744133"
+        }
+      }
+    },
+    {
+      "id": "cb2fd364-e4a9-47de-b0fc-0039cb551c78",
+      "title": "36 Points #31 #1",
+      "source": "https://cdn.feralfileassets.com/previews/cf4a1884-2d79-4875-bba1-20206a8a489c/1725624456/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.471Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "94406231090857735319495407328393197044459388382770307541637151012742187764658"
+        }
+      }
+    },
+    {
+      "id": "da0c743a-9ff0-4d26-9831-9fa4edeeee6b",
+      "title": "36 Points #32 #1",
+      "source": "https://cdn.feralfileassets.com/previews/dc560d90-2d89-45be-a639-ebc3ab496f43/1725624479/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.471Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "95160584055628064619537000106227551353849474859117617365427221214871443599613"
+        }
+      }
+    },
+    {
+      "id": "4d89b54b-1c6d-4d0e-ba92-111e03caf598",
+      "title": "36 Points #33 #1",
+      "source": "https://cdn.feralfileassets.com/previews/f421b0af-2ebc-4fa3-a9c1-de2ae7662c3e/1725624504/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.472Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "95543158056778133118455819643347502893421578935560723827960299458626561964336"
+        }
+      }
+    },
+    {
+      "id": "603410c2-11ad-49f2-9f75-fda01d61936c",
+      "title": "36 Points #34 #1",
+      "source": "https://cdn.feralfileassets.com/previews/35b11663-0ced-4c14-9113-b5d763da0040/1725624529/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.472Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "19896385305968253178382657295312611929067309497336284600677044000394779012156"
+        }
+      }
+    },
+    {
+      "id": "84a35146-dd49-4700-9ae5-f046508c801e",
+      "title": "36 Points Display Edition #1",
+      "source": "https://cdn.feralfileassets.com/previews/e9c74592-8483-4511-adb2-16ef4730ca1a/1644976484/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.472Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "63151345934093658910279098575106826835637174158898273242533855235071619205362"
+        }
+      }
+    },
+    {
+      "id": "ef577a91-0104-44fa-8b28-dd5e481999f2",
+      "title": "Tapestry #1",
+      "source": "https://cdn.feralfileassets.com/previews/a3d23452-f377-4d0e-9a67-ecce7a182927/1644823296/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.472Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "101362471285429083780124202340658617171206831615691583616293320663748173329692"
+        }
+      }
+    },
+    {
+      "id": "b7c8bfea-6e28-4acd-bbf7-c45d54826212",
+      "title": "Embryogenesis AP",
+      "source": "https://cdn.feralfileassets.com/previews/7ba57167-a13e-4033-b07e-c7094f74410c/1644855236/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.472Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "44167818044023130787199848224279273835352034260250746807952745844318335090281"
+        }
+      }
+    },
+    {
+      "id": "ad0991ba-c1b8-4c8c-8db7-bcb92d8df0f3",
+      "title": "36 Points #36 #1",
+      "source": "https://cdn.feralfileassets.com/previews/6835b45f-7f3f-4caf-8a74-d52b35a24df1/1725624582/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-06T11:04:04.472Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x513AC47320798fB6D74543242a9c0F686682998D",
+          "tokenId": "36922608953048096570585449902492180025692679394775252073245860230463876469866"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}
