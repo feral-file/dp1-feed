@@ -1951,16 +1951,16 @@ async function testPlaylistItemSorting() {
   return true;
 }
 
-// Test bulk write: Playlist with 1000 items
+// Test bulk write: Playlist with 1024 items
 let bulkTestPlaylistId = null;
 let bulkTestChannelId = null;
 
 async function testBulkPlaylistCreate() {
-  console.log('\n📦 Testing bulk write - Creating playlist with 1000 items...');
+  console.log('\n📦 Testing bulk write - Creating playlist with 1024 items...');
 
-  // Generate 1000 items
+  // Generate 1024 items
   const items = [];
-  for (let i = 1; i <= 1000; i++) {
+  for (let i = 1; i <= 1024; i++) {
     items.push({
       title: `Bulk Test Artwork ${i}`,
       source: `https://example.com/bulk-test-${i}.html`,
@@ -1971,8 +1971,8 @@ async function testBulkPlaylistCreate() {
 
   const bulkPlaylist = {
     dpVersion: '1.0.0',
-    title: 'Bulk Test Playlist - 1000 Items',
-    summary: 'Testing bulk write operations with 1000 playlist items',
+    title: 'Bulk Test Playlist - 1024 Items',
+    summary: 'Testing bulk write operations with 1024 playlist items',
     defaults: {
       display: {
         scaling: 'fit',
@@ -1992,7 +1992,7 @@ async function testBulkPlaylistCreate() {
   const duration = Date.now() - startTime;
 
   if (response.ok) {
-    console.log(`✅ Playlist with 1000 items created successfully in ${duration}ms`);
+    console.log(`✅ Playlist with 1024 items created successfully in ${duration}ms`);
     console.log(`   ID: ${response.data.id}`);
     console.log(`   Items count: ${response.data.items?.length || 0}`);
 
@@ -2000,8 +2000,8 @@ async function testBulkPlaylistCreate() {
     bulkTestPlaylistId = response.data.id;
 
     // Verify all items were created
-    if (response.data.items.length !== 1000) {
-      console.log(`❌ Expected 1000 items, got ${response.data.items.length}`);
+    if (response.data.items.length !== 1024) {
+      console.log(`❌ Expected 1024 items, got ${response.data.items.length}`);
       return false;
     }
 
@@ -2012,7 +2012,7 @@ async function testBulkPlaylistCreate() {
       return false;
     }
 
-    console.log('✅ All 1000 items have server-generated IDs and timestamps');
+    console.log('✅ All 1024 items have server-generated IDs and timestamps');
 
     return true;
   } else {
@@ -2027,11 +2027,11 @@ async function testBulkPlaylistUpdate() {
     return true;
   }
 
-  console.log('\n🔄 Testing bulk write - Updating playlist with 1000 items...');
+  console.log('\n🔄 Testing bulk write - Updating playlist with 1024 items...');
 
-  // Generate 1000 different items
+  // Generate 1024 different items
   const updatedItems = [];
-  for (let i = 1; i <= 1000; i++) {
+  for (let i = 1; i <= 1024; i++) {
     updatedItems.push({
       title: `Updated Bulk Artwork ${i}`,
       source: `https://example.com/updated-bulk-${i}.html`,
@@ -2041,8 +2041,8 @@ async function testBulkPlaylistUpdate() {
   }
 
   const updateData = {
-    title: 'Updated Bulk Test Playlist - 1000 Items',
-    summary: 'Updated: Testing bulk write operations with 1000 playlist items',
+    title: 'Updated Bulk Test Playlist - 1024 Items',
+    summary: 'Updated: Testing bulk write operations with 1024 playlist items',
     items: updatedItems,
   };
 
@@ -2058,12 +2058,12 @@ async function testBulkPlaylistUpdate() {
   const duration = Date.now() - startTime;
 
   if (response.ok) {
-    console.log(`✅ Playlist with 1000 items updated successfully in ${duration}ms`);
+    console.log(`✅ Playlist with 1024 items updated successfully in ${duration}ms`);
     console.log(`   Items count: ${response.data.items?.length || 0}`);
 
     // Verify all items were updated
-    if (response.data.items.length !== 1000) {
-      console.log(`❌ Expected 1000 items, got ${response.data.items.length}`);
+    if (response.data.items.length !== 1024) {
+      console.log(`❌ Expected 1024 items, got ${response.data.items.length}`);
       return false;
     }
 
@@ -2074,7 +2074,7 @@ async function testBulkPlaylistUpdate() {
       return false;
     }
 
-    console.log('✅ All 1000 items updated with new data');
+    console.log('✅ All 1024 items updated with new data');
 
     return true;
   } else {
@@ -2089,7 +2089,7 @@ async function testBulkPlaylistDelete() {
     return true;
   }
 
-  console.log('\n🗑️  Testing bulk write - Deleting playlist with 1000 items...');
+  console.log('\n🗑️  Testing bulk write - Deleting playlist with 1024 items...');
 
   const startTime = Date.now();
 
@@ -2103,12 +2103,12 @@ async function testBulkPlaylistDelete() {
   const duration = Date.now() - startTime;
 
   if (response.ok && response.status === 204) {
-    console.log(`✅ Playlist with 1000 items deleted successfully in ${duration}ms`);
+    console.log(`✅ Playlist with 1024 items deleted successfully in ${duration}ms`);
 
     // Verify playlist is actually deleted
     const verifyResponse = await makeRequest('GET', `/api/v1/playlists/${bulkTestPlaylistId}`);
     if (verifyResponse.status === 404) {
-      console.log('✅ Playlist and all 1000 items properly removed');
+      console.log('✅ Playlist and all 1024 items properly removed');
     } else {
       console.log(`❌ Playlist still exists after deletion: ${verifyResponse.status}`);
       return false;
@@ -2506,9 +2506,9 @@ async function runTests() {
     { name: 'Channels Sorting', fn: testChannelSorting },
     { name: 'Playlist Item Sorting', fn: testPlaylistItemSorting },
     // Bulk write tests
-    { name: 'Bulk Write: Create Playlist (1000 items)', fn: testBulkPlaylistCreate },
-    { name: 'Bulk Write: Update Playlist (1000 items)', fn: testBulkPlaylistUpdate },
-    { name: 'Bulk Write: Delete Playlist (1000 items)', fn: testBulkPlaylistDelete },
+    { name: 'Bulk Write: Create Playlist (1024 items)', fn: testBulkPlaylistCreate },
+    { name: 'Bulk Write: Update Playlist (1024 items)', fn: testBulkPlaylistUpdate },
+    { name: 'Bulk Write: Delete Playlist (1024 items)', fn: testBulkPlaylistDelete },
     { name: 'Bulk Write: Create Channel (100 playlists)', fn: testBulkChannelCreate },
     { name: 'Bulk Write: Update Channel (100 playlists)', fn: testBulkChannelUpdate },
     { name: 'Bulk Write: Delete Channel (100 playlists)', fn: testBulkChannelDelete },
@@ -2545,7 +2545,7 @@ async function runTests() {
 
   if (passed === total) {
     console.log(
-      '\n🎉 All tests passed! Your DP-1 Feed Operator API is working correctly with UUID, slug support, queue-based processing, and bulk write operations (1000 items, 100 playlists).'
+      '\n🎉 All tests passed! Your DP-1 Feed Operator API is working correctly with UUID, slug support, queue-based processing, and bulk write operations (1024 items, 100 playlists).'
     );
   } else {
     console.log('\n⚠️  Some tests failed. Please check the output above for details.');

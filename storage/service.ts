@@ -666,8 +666,8 @@ export class StorageService {
       // Note: unchanged items require no KV operations - they're skipped entirely
     } else {
       // Initial creation - add all items
+      const channelIds = await this.getChannelsForPlaylist(playlist.id);
       for (const item of playlist.items || []) {
-        const channelIds = await this.getChannelsForPlaylist(playlist.id);
         this.addItemInsertionOperations(collector, item, channelIds);
       }
     }
