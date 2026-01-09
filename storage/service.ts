@@ -910,8 +910,12 @@ export class StorageService {
             this.playlistItemStorage,
             `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_PREFIX}${channel.id}:${item.id}`
           );
-          if (playlist.created) {
-            const ts = this.toSortableTimestamps(playlist.created);
+
+          // Delete time-based indexes using item.created (not playlist.created)
+          if (item.created) {
+            const ts = this.toSortableTimestamps(item.created);
+
+            // Delete channel-to-item time-based indexes
             collector.addDelete(
               this.playlistItemStorage,
               `${STORAGE_KEYS.PLAYLIST_ITEM_BY_CHANNEL_CREATED_ASC_PREFIX}${channel.id}:${ts.asc}:${item.id}`
