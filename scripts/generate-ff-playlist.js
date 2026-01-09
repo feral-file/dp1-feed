@@ -122,7 +122,12 @@ function resolvePreviewURI(artwork) {
 /**
  * Generate item title based on artwork name
  */
-function generateItemTitle(seriesTitle, artworkName) {
+function generateItemTitle(seriesTitle, artworkName, artworkModel) {
+  // If artwork model is 'single' and series title ends with #{number}, use series title
+  if (artworkModel === 'single') {
+    return seriesTitle;
+  }
+
   // If artwork.name is AE, AP, PP or contains #, use formula "series.title artwork.name"
   const specialCategories = ['AE', 'AP', 'PP'];
 
@@ -362,7 +367,7 @@ async function generatePlaylist(exhibitionIdOrSlug) {
         continue;
       }
 
-      const title = generateItemTitle(series.title, artwork.name);
+      const title = generateItemTitle(series.title, artwork.name, series.settings?.artworkModel);
 
       console.log(`Adding item: ${title}`);
       console.log(`  Source: ${source}`);
