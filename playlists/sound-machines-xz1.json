@@ -1,0 +1,2634 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "20c6df13-2bdf-48eb-a7d2-4dc80814eb65",
+  "slug": "sound-machines",
+  "title": "SOUND MACHINES",
+  "summary": "<p>&quot;Music is like the wind. You don&#39;t know where it came from and you don&#39;t know where it went.” – <em>Eric Dolphy</em></p>\n<p>Sound has no center. Unlike vision, sound wraps around you, comes and goes, is fleeting. In <em>SOUND MACHINES</em>, seven artists explore the strange world of sound through new technologies. Their works cross optical and aural domains, creating new interfaces between the realms of sound and technology and art.</p>\n<p>Holly Herndon and Mat Dryhurst — who launched the generative musical instrument <em>Holly+</em> in 2021 — have created an audiovisual work, <em>Play From Memory</em> (2024). The piece compares the way humans learn music to the way humans train machines to learn music, and creates new ways to listen, in turn. Yoko Ono realizes her <em>SOUND PIECE V</em> (1996/2024) — a kind of musical score converted into a simple set of prompts as a digital, on-chain work that builds a living archive of laughter. Danielle Brathwaite-Shirley’s <em>CANCEL YOURSELF</em> (2024) is a multisensory, interactive video game set to an ambient score that upends the traditional roles of player and played. Another interactive interface is presented in American Artist and Tommy Martinez’s <em>Integrity Protocol/Lower Limb Lecture</em> (2023/24), which invites participants to devise their own soundscape based on the drones and disembodied, synthesized voice of the artist. And 0xDEAFBEEF’s <em>PAYPHONE</em> (2024) will involve a live call-and-response performance, revealing histories of telephony, tokenization, and exchange.</p>\n<p>These works connect to the history of modern art and sound, in which artists and composers and performers heard sound as a new arena for perception, experience, and interaction. In the 1950s and ‘60s, electronic and digital technologies radically expanded the definition of sound and music to encompass <em>vibrations</em> — from radio waves to cosmic rays — and <em>noise</em>. Radios, turntables, synthesizers, amplifiers, and computers all changed the way we interacted with art. Suddenly, we were no longer passive listeners or viewers of a symphony or a painting. Instead, we realized that we were surrounded all the time by waves, signals, and beats — even if we didn’t notice them, or recognize them, or if we had to tune in to hear them. In 1963, Ono’s EARTH PIECE instructed: “Listen to the sound of the earth turning.” Or, as John Cage said, “There is no such thing as silence.”</p>\n<p>At The Museum of Modern Art, these crossings between art and sound and technology were everywhere, even if they are little known today. Cage performed his first full concert at MoMA in 1943 (reviewers compared it to “the meaningless sounds made by children”); the Moog synthesizer debuted at MoMA in 1969; and Sonny Rollins played live in MoMA’s Sculpture Garden in 1965, recording the landmark album <em>There Will Never Be Another You</em>. From Yoko Ono to Terry Adkins, Laurie Anderson to Kraftwerk, artists and musicians fused their endeavors throughout the twentieth and twentieth-first centuries. Today, the artists in <em>SOUND MACHINES</em> bring to the fore MoMA’s deep history with sound and the sonic. They redefine sound once more with technologies ranging from generative AI to blockchains. They come in like music, and go where we haven’t gone before.</p>",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/a50b0614-d85e-43d0-cff0-0979f1bcc100/raw",
+  "created": "2026-01-09T07:26:14.158Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "9be621c7-c6df-4133-8ab9-76b75932ac34",
+      "title": "Play from Memory #1",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.134Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575936"
+        }
+      }
+    },
+    {
+      "id": "1ebea5b3-db94-4c56-9c29-3295c1c88aa6",
+      "title": "SOUND PIECE V #1",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=0&artwork_number=1&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575936&token_id_hash=0x837502b404debe5e31d845af52132aaf7d8d0cc4b2d53da50891fc3de8893213",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.144Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575936"
+        }
+      }
+    },
+    {
+      "id": "6f920ed0-5482-4cc6-9496-77f21a87b6b6",
+      "title": "Integrity Protocol / Lower Limb Lecture #1",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=0&artwork_number=1&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575936&token_id_hash=0x63762c81eae44a126d5b819b400a799db0d6171588a0bcd51e0871e87ecb5563",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.145Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575936"
+        }
+      }
+    },
+    {
+      "id": "b7ab44f9-ade1-4785-95db-6a6338e4f674",
+      "title": "PAYPHONE #1",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.145Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098496"
+        }
+      }
+    },
+    {
+      "id": "1b8cf922-aa47-4d66-9ab2-dadd040dd6d9",
+      "title": "CANCEL YOURSELF #1",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=0&artwork_number=1&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575936&token_id_hash=0x24d32aff46f596b25e0d91111e30448cbde69b986d5e474d4d6784c1aac6c6e3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.145Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575936"
+        }
+      }
+    },
+    {
+      "id": "960b73a4-012d-4e00-8269-db8aa5390e61",
+      "title": "CANCELLING YOURSELF (Portal Video) #1",
+      "source": "https://cdn.feralfileassets.com/previews/75e849ce-0d03-4943-84b3-56a41be87044/1708930900/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.146Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143448575936"
+        }
+      }
+    },
+    {
+      "id": "0d5cb1e0-ba1b-4154-bf41-bf365b333304",
+      "title": "Integrity Protocol Lyrics Video #1",
+      "source": "https://cdn.feralfileassets.com/previews/a15bd8e4-2e6e-4839-9c2b-c2fd98bd7b47/1708930762/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.146Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143447575936"
+        }
+      }
+    },
+    {
+      "id": "f2c6963b-53ff-4594-b118-c08cc00f6734",
+      "title": "Vox Anima #1",
+      "source": "https://cdn.feralfileassets.com/previews/67ab07f9-3dc5-4758-a560-c3d2347523b8/1709105834/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.146Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143449575936"
+        }
+      }
+    },
+    {
+      "id": "88dbf9f4-ca74-4c45-b836-b1597c15d831",
+      "title": "SOUND PIECE V",
+      "source": "https://cdn.feralfileassets.com/previews/faa810f7-7b75-4c02-bf8a-b7447a89c921/1709110451/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.146Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143450575936"
+        }
+      }
+    },
+    {
+      "id": "e20ffd1c-fcf3-402a-a73d-4488ca6f5076",
+      "title": "Play from Memory #2",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.146Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575937"
+        }
+      }
+    },
+    {
+      "id": "576dcdc4-f85f-43f0-8461-040c7cd0487b",
+      "title": "SOUND PIECE V #2",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=1&artwork_number=2&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575937&token_id_hash=0x2852836a9812d6c6059eade534778277ba3f36ecd2a0d93dcef432b85e693a28",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.146Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575937"
+        }
+      }
+    },
+    {
+      "id": "9c4802cf-ce6c-45fc-8e35-8a150fb00941",
+      "title": "Integrity Protocol / Lower Limb Lecture #2",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=1&artwork_number=2&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575937&token_id_hash=0xc431006ca654a2bd06f85e9174c0630be3e372966f3e2e980f7b8e2aac1fa8c8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.146Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575937"
+        }
+      }
+    },
+    {
+      "id": "27c9246b-9fd2-421d-be4e-219cd4862897",
+      "title": "PAYPHONE #2",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.147Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098497"
+        }
+      }
+    },
+    {
+      "id": "dd422537-00c3-4bff-94ec-acb32468af69",
+      "title": "CANCEL YOURSELF #2",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=1&artwork_number=2&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575937&token_id_hash=0x83a50b8d3b1c710c7cd831b9df9c4ba423b63c933461b741bb484b082a8e79f0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.147Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575937"
+        }
+      }
+    },
+    {
+      "id": "df6b4080-ee9a-4408-91b7-a79442f25984",
+      "title": "Play from Memory #3",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.147Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575938"
+        }
+      }
+    },
+    {
+      "id": "6033dc19-2dc1-431d-9c26-6cde744f1183",
+      "title": "SOUND PIECE V #3",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=2&artwork_number=3&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575938&token_id_hash=0xb041dfce54b1b0ed1c28c2d2345baec5fd637cd49e62b4397db58ea0d8249ab3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.147Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575938"
+        }
+      }
+    },
+    {
+      "id": "eb06fbf1-8096-4fb5-84e2-ea7887dad38c",
+      "title": "Integrity Protocol / Lower Limb Lecture #3",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=2&artwork_number=3&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575938&token_id_hash=0xc66b4a686c2297df18e44212e498a5f49a8abe629d51aad4370d8fb79a4ad963",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.147Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575938"
+        }
+      }
+    },
+    {
+      "id": "73c8ba39-a552-4a74-9ded-39700b0fda22",
+      "title": "PAYPHONE #3",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.147Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098498"
+        }
+      }
+    },
+    {
+      "id": "ab5e6172-0c20-4192-90a2-06b1bdd59574",
+      "title": "CANCEL YOURSELF #3",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=2&artwork_number=3&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575938&token_id_hash=0xbd476a543b7048a7d4a320ecd317c5218c5e7bed7d393daf3ea48bb7939f9faa",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.147Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575938"
+        }
+      }
+    },
+    {
+      "id": "bc968dd1-3c9d-4f2d-ba0f-0231cc0a4216",
+      "title": "Play from Memory #4",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.147Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575939"
+        }
+      }
+    },
+    {
+      "id": "45c5488e-b33e-4d6e-b6cd-502f477cc1b5",
+      "title": "SOUND PIECE V #4",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=3&artwork_number=4&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575939&token_id_hash=0xf3e761988e76993f4597f6dabb70fd5b9c54f57089e8ef15670b908caf2ded06",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.147Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575939"
+        }
+      }
+    },
+    {
+      "id": "9ace7aa5-947c-4f62-9d13-e06ce716aaa3",
+      "title": "Integrity Protocol / Lower Limb Lecture #4",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=3&artwork_number=4&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575939&token_id_hash=0x04f631be25fc0099ea9099c8064cd62a0b4b06524f7123a2cc96e3f8d754905c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.148Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575939"
+        }
+      }
+    },
+    {
+      "id": "d4807cf1-584d-44ef-969a-c1557dd8a502",
+      "title": "PAYPHONE #4",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.148Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098499"
+        }
+      }
+    },
+    {
+      "id": "c911366d-2c9c-48e0-9c57-9e850ff77696",
+      "title": "CANCEL YOURSELF #4",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=3&artwork_number=4&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575939&token_id_hash=0x71513f60f325937dcc3d3538b30383fb155f85833ca49d878cb7711d412fd7ec",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.148Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575939"
+        }
+      }
+    },
+    {
+      "id": "64c1bbed-2d0a-4167-9bf3-7df08cf12767",
+      "title": "Play from Memory #5",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.148Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575940"
+        }
+      }
+    },
+    {
+      "id": "53a1ccb1-2e48-4d25-9349-52c18a30e6c5",
+      "title": "SOUND PIECE V #5",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=4&artwork_number=5&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575940&token_id_hash=0x9c84cbc878ca54598d31865e94c36584daecfcdebfb6414a554dcd790fda2252",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.148Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575940"
+        }
+      }
+    },
+    {
+      "id": "a2f20573-8cd1-4142-9eae-c161ba1972b0",
+      "title": "Integrity Protocol / Lower Limb Lecture #5",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=4&artwork_number=5&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575940&token_id_hash=0xca90fe5def34e9fcb35c70c51a2a48c2798d630e671aaf5b77476f95eac87121",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.148Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575940"
+        }
+      }
+    },
+    {
+      "id": "d36a14a2-22f9-488d-aec7-b083fa20b8e1",
+      "title": "PAYPHONE #5",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.148Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098500"
+        }
+      }
+    },
+    {
+      "id": "0cd4e5ad-96e5-4511-9dae-4257e37e4dfe",
+      "title": "CANCEL YOURSELF #5",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=4&artwork_number=5&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575940&token_id_hash=0x5e5d2f53c622dcaae3263ba92314248f56623f1a66275019bdfa94620a1ca6d0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.148Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575940"
+        }
+      }
+    },
+    {
+      "id": "6b01278e-4c35-4240-91de-353b2e6ecdaf",
+      "title": "Play from Memory #6",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.148Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575941"
+        }
+      }
+    },
+    {
+      "id": "ff89dcdb-e26a-4f80-a358-010d4c047b30",
+      "title": "SOUND PIECE V #6",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=5&artwork_number=6&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575941&token_id_hash=0xc16d7ce1d867a274beae414b2ec09f3997717c73d96dfe4bcd387080db01e7a3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.148Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575941"
+        }
+      }
+    },
+    {
+      "id": "6919efeb-a683-45d4-a4f3-851777b4fb24",
+      "title": "Integrity Protocol / Lower Limb Lecture #6",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=5&artwork_number=6&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575941&token_id_hash=0x833e47c9c832a60c8e1180590836c2e6023bb21d60f1fa3a1974afd1d5a42022",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.149Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575941"
+        }
+      }
+    },
+    {
+      "id": "aeda374a-1382-4b6d-8d99-f903b7c34d43",
+      "title": "PAYPHONE #6",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.149Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098501"
+        }
+      }
+    },
+    {
+      "id": "bc8bc10a-a72c-4660-96b7-edafa9974786",
+      "title": "CANCEL YOURSELF #6",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=5&artwork_number=6&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575941&token_id_hash=0x4eb54c9e518d41ad44cf9eb1f8fc4cce6cbe987fe9722ee5d6b355b96f337935",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.149Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575941"
+        }
+      }
+    },
+    {
+      "id": "362eb387-6cf8-4529-89ed-b1e6c4166c32",
+      "title": "Play from Memory #7",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.149Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575942"
+        }
+      }
+    },
+    {
+      "id": "7ca90f1e-38ac-4e68-8b7d-dddc107c19e4",
+      "title": "SOUND PIECE V #7",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=6&artwork_number=7&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575942&token_id_hash=0x74ce8f99643dd10024e486efde2992aa1da0cc967645b1dc74b3f058ac96c65a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.149Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575942"
+        }
+      }
+    },
+    {
+      "id": "28262ce2-c99c-4616-9d75-710e415b2e6e",
+      "title": "Integrity Protocol / Lower Limb Lecture #7",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=6&artwork_number=7&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575942&token_id_hash=0xf4cf5607c5895c2a4cdeaab216f73d0ea71c2c62df11d465fa1375f14f907b62",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.149Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575942"
+        }
+      }
+    },
+    {
+      "id": "d6c80eed-a2a9-4730-84fd-249c4aa9477e",
+      "title": "PAYPHONE #7",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.149Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098502"
+        }
+      }
+    },
+    {
+      "id": "cf166be6-bafc-4d20-93d3-b6aec1fb7ea8",
+      "title": "CANCEL YOURSELF #7",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=6&artwork_number=7&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575942&token_id_hash=0x330febc3b9590b10ae55796ddc9ebc7300a6ca4d9d69cac1593ebc4a6afa416e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.149Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575942"
+        }
+      }
+    },
+    {
+      "id": "ce8eaf80-39a4-41c9-8a47-de524faae5ec",
+      "title": "Play from Memory #8",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.149Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575943"
+        }
+      }
+    },
+    {
+      "id": "62280d67-2e85-4817-aa50-7b5af484b8e7",
+      "title": "SOUND PIECE V #8",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=7&artwork_number=8&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575943&token_id_hash=0xeeeeb2ac7c9a9f9e0980a238555282dea866aa788600eac42af0d1db9a6f8096",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.149Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575943"
+        }
+      }
+    },
+    {
+      "id": "765f679b-1099-457e-8444-24ef43067668",
+      "title": "Integrity Protocol / Lower Limb Lecture #8",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=7&artwork_number=8&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575943&token_id_hash=0x7aab6166f95f7a161e6954569c82e05aa08453e86a9cbb4de5e544a490e0f22f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.149Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575943"
+        }
+      }
+    },
+    {
+      "id": "c4305f5b-9624-49e1-96e0-7dd269452164",
+      "title": "PAYPHONE #8",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.149Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098503"
+        }
+      }
+    },
+    {
+      "id": "6831bf41-e1b2-44d0-ba74-99b9e0b53057",
+      "title": "CANCEL YOURSELF #8",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=7&artwork_number=8&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575943&token_id_hash=0xc64c6dd8745ab79a65ad23acf1fc5fef34de5cbb9a24e2595899c6c9e22a5562",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.149Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575943"
+        }
+      }
+    },
+    {
+      "id": "ef99c6b6-2132-4bd5-8489-a99a629fbcb4",
+      "title": "Play from Memory #9",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.149Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575944"
+        }
+      }
+    },
+    {
+      "id": "6a84bead-005d-4f77-a687-bc22564321e6",
+      "title": "SOUND PIECE V #9",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=8&artwork_number=9&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575944&token_id_hash=0x82134848f18c338d738662529b279ad10a04d69d77bf5a4ab85042d87523af6c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.150Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575944"
+        }
+      }
+    },
+    {
+      "id": "b64a8541-c883-4d1c-b7ee-0d72dbc25e15",
+      "title": "Integrity Protocol / Lower Limb Lecture #9",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=8&artwork_number=9&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575944&token_id_hash=0x0e1b55229f05eae6d3d8c6d4de2949331923ebfe40a8c7e75822e2fe5be17891",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.150Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575944"
+        }
+      }
+    },
+    {
+      "id": "1a9924b7-8396-4aa3-9bc5-7d5582c5d09e",
+      "title": "PAYPHONE #9",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.150Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098504"
+        }
+      }
+    },
+    {
+      "id": "d40b09e9-6723-433a-b713-90b167fb072a",
+      "title": "CANCEL YOURSELF #9",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=8&artwork_number=9&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575944&token_id_hash=0xeb4069bbc1cc70734fcc9fbad76d6f8290e91cf196fbc3d7a478b9c86be73ec0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.150Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575944"
+        }
+      }
+    },
+    {
+      "id": "dd76b3e2-b616-499b-9e11-4c2574e15b6d",
+      "title": "Play from Memory #10",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.150Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575945"
+        }
+      }
+    },
+    {
+      "id": "e5d512dd-8ce0-497c-b505-8b5b21603867",
+      "title": "SOUND PIECE V #10",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=9&artwork_number=10&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575945&token_id_hash=0x7537a3761db1def5ccd3a66950e666f42bc473953db863f347bda619d7573f60",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.150Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575945"
+        }
+      }
+    },
+    {
+      "id": "65c8ae21-ead9-4733-bae5-f4d8226dd1f3",
+      "title": "Integrity Protocol / Lower Limb Lecture #10",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=9&artwork_number=10&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575945&token_id_hash=0x97fbceb1bcb5a9d6947cf558f46e72e3ec9fc27f016fff77e4635ee41d2efeb7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.150Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575945"
+        }
+      }
+    },
+    {
+      "id": "80143fce-4716-4659-8fe3-a9546c4da409",
+      "title": "PAYPHONE #10",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.150Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098505"
+        }
+      }
+    },
+    {
+      "id": "ff6f05e2-840c-4fff-9190-15f87586bf50",
+      "title": "CANCEL YOURSELF #10",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=9&artwork_number=10&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575945&token_id_hash=0x9c19bf93050963da09e013e5947b3bd8b9f4b99cb8c701f1c5ba8b5ae70d153e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.150Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575945"
+        }
+      }
+    },
+    {
+      "id": "04465f71-497c-4117-9e88-ffc82be1a383",
+      "title": "Play from Memory #11",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/10",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.150Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575946"
+        }
+      }
+    },
+    {
+      "id": "82bb5c6d-1931-4d8d-9a63-dc069c74029d",
+      "title": "SOUND PIECE V #11",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=10&artwork_number=11&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575946&token_id_hash=0x3f2335f2acba33cf85108861896b34e55cc1e517ae89e9c5ef878d106ce9e3b9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.150Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575946"
+        }
+      }
+    },
+    {
+      "id": "93985cb5-d32a-4128-adfb-44552e7e3c53",
+      "title": "Integrity Protocol / Lower Limb Lecture #11",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=10&artwork_number=11&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575946&token_id_hash=0x64a3bd7f2c160e7a5ffdd1936ad4459c6ae363f8bb77527947125c78156a15fa",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.150Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575946"
+        }
+      }
+    },
+    {
+      "id": "8f3d742c-7ddc-40ae-ba62-65e6a2b75f1f",
+      "title": "PAYPHONE #11",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/10",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.150Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098506"
+        }
+      }
+    },
+    {
+      "id": "01ec5899-60ee-4d70-9a38-d6bbadabb8d3",
+      "title": "CANCEL YOURSELF #11",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=10&artwork_number=11&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575946&token_id_hash=0x370b70574c90916c3a9cd079b12d95cfbc144cb0f4f1928c12a3d9970ce1cf09",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.151Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575946"
+        }
+      }
+    },
+    {
+      "id": "ec101886-0e4d-4750-ad3a-011312cc5af2",
+      "title": "Play from Memory #12",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/11",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.151Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575947"
+        }
+      }
+    },
+    {
+      "id": "d60fd1e6-e922-404d-ad48-038d9b64d798",
+      "title": "SOUND PIECE V #12",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=11&artwork_number=12&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575947&token_id_hash=0x076ff73d45abe2bad17fea926d47f2250603146d67c6580b91b3e47ce5287df3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.151Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575947"
+        }
+      }
+    },
+    {
+      "id": "087ccc57-23e7-4896-a35e-ab4152ed90ef",
+      "title": "Integrity Protocol / Lower Limb Lecture #12",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=11&artwork_number=12&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575947&token_id_hash=0x8ecff798b180a00394340ced12c6b75eabb9f08c9b80966a3d018ff12b61c614",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.151Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575947"
+        }
+      }
+    },
+    {
+      "id": "4e3b5d76-55a6-4ac6-835c-5fca08415a4a",
+      "title": "PAYPHONE #12",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/11",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.151Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098507"
+        }
+      }
+    },
+    {
+      "id": "b3b592bb-4780-4084-9639-3168c30c24de",
+      "title": "CANCEL YOURSELF #12",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=11&artwork_number=12&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575947&token_id_hash=0xf2a79246b45ddb6d6bcf429fa723dfce5bee1411377c64eb98efc61aae1c5c06",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.151Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575947"
+        }
+      }
+    },
+    {
+      "id": "b4b328f0-006e-487d-9dae-93cf34c18e34",
+      "title": "Play from Memory #13",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/12",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.151Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575948"
+        }
+      }
+    },
+    {
+      "id": "9a75f45f-e277-4951-aec0-8f64aa839c79",
+      "title": "SOUND PIECE V #13",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=12&artwork_number=13&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575948&token_id_hash=0x9694ae3603d10df566060434b19fbb1ce6142f9b14b53547fc7f4317bae8fd69",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.151Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575948"
+        }
+      }
+    },
+    {
+      "id": "f16af64b-a50b-4fbd-b1ce-89d9e0b447c9",
+      "title": "Integrity Protocol / Lower Limb Lecture #13",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=12&artwork_number=13&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575948&token_id_hash=0xc95d371ef438a2431c1ebedca22adb4342a6ef467d1e1e7a39c54e829c1dffeb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.151Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575948"
+        }
+      }
+    },
+    {
+      "id": "338cab99-701c-481a-9e1e-514e7c21df44",
+      "title": "PAYPHONE #13",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/12",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.151Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098508"
+        }
+      }
+    },
+    {
+      "id": "323d7730-fb37-44d9-824d-1109ddfffba3",
+      "title": "CANCEL YOURSELF #13",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=12&artwork_number=13&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575948&token_id_hash=0x23e8a8f5f1a61ec4d613b65f27b263972cfe8e56178a1d496955d32664f83f69",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.151Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575948"
+        }
+      }
+    },
+    {
+      "id": "157ec2dd-a85f-412d-aada-8f750cc547bd",
+      "title": "Play from Memory #14",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/13",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.151Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575949"
+        }
+      }
+    },
+    {
+      "id": "a5f6ae03-96ea-4f5b-ba97-ba59ed72ce74",
+      "title": "SOUND PIECE V #14",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=13&artwork_number=14&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575949&token_id_hash=0x8a4eca9ad399d481d15402e949c59e295c35eee67bdf6df651b1af5fe6fef762",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.152Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575949"
+        }
+      }
+    },
+    {
+      "id": "9ab358b8-57e4-4f08-a891-734f2dcc4d02",
+      "title": "Integrity Protocol / Lower Limb Lecture #14",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=13&artwork_number=14&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575949&token_id_hash=0x440ec14a56a49e0824ca4b9bb3f892a96001c3a5c6967c9ccf67a5aaee22f842",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.152Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575949"
+        }
+      }
+    },
+    {
+      "id": "33dfbd02-b77a-465a-8333-30aa8491f454",
+      "title": "PAYPHONE #14",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/13",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.152Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098509"
+        }
+      }
+    },
+    {
+      "id": "07defb1d-4968-4c9f-971b-02fc37794a79",
+      "title": "CANCEL YOURSELF #14",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=13&artwork_number=14&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575949&token_id_hash=0x4ad9be996d15041cfa5d525a0fa719c50bd4a54e9d66b8e9ef336df140bdaeec",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.152Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575949"
+        }
+      }
+    },
+    {
+      "id": "cc3a007a-c779-43f6-8702-a5f71bfad95b",
+      "title": "Play from Memory #15",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/14",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.152Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575950"
+        }
+      }
+    },
+    {
+      "id": "7ccdc3de-5513-4d51-8a55-59cbbd486680",
+      "title": "SOUND PIECE V #15",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=14&artwork_number=15&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575950&token_id_hash=0xb7e48e1e634475aeaf7539f6327f716b1a818689ffed412dffaa5d26ad519186",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.152Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575950"
+        }
+      }
+    },
+    {
+      "id": "23f862a0-e6a8-4eb9-be09-78160776bd4d",
+      "title": "Integrity Protocol / Lower Limb Lecture #15",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=14&artwork_number=15&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575950&token_id_hash=0x5e87113cb211c93176d85ac9933e70613d36b3a427d98a5256b63478d6ae63de",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.152Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575950"
+        }
+      }
+    },
+    {
+      "id": "46b265ba-a8c5-42cb-9b4f-f4da2c241019",
+      "title": "PAYPHONE #15",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/14",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.152Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098510"
+        }
+      }
+    },
+    {
+      "id": "6bca092c-e733-47ac-9acc-cc7343f90086",
+      "title": "CANCEL YOURSELF #15",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=14&artwork_number=15&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575950&token_id_hash=0x89f058ad136d4bae5dfe58a065d22c8085232931995b9ffb4ddc3aaa8b3769ef",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.152Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575950"
+        }
+      }
+    },
+    {
+      "id": "c9d717fa-4712-4c2a-bf6b-6bc1f6c40ff3",
+      "title": "Play from Memory #16",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/15",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.153Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575951"
+        }
+      }
+    },
+    {
+      "id": "f92af84a-bc39-4687-a659-7acf39e3fc66",
+      "title": "SOUND PIECE V #16",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=15&artwork_number=16&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575951&token_id_hash=0xc745c327b87c98ca95f80a5cd545209bb3bfd0567b5e325c2a06bf7f9c70eb46",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.153Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575951"
+        }
+      }
+    },
+    {
+      "id": "f613b90d-339b-4a3c-a9dd-0c13ed6fd016",
+      "title": "Integrity Protocol / Lower Limb Lecture #16",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=15&artwork_number=16&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575951&token_id_hash=0xf70fa61330223ceca7970efc4885fbac05ced90daabdd28ef14996c0eca86e97",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.153Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575951"
+        }
+      }
+    },
+    {
+      "id": "9ffeeb15-6cd3-44e5-a7c3-11867ce4b80d",
+      "title": "PAYPHONE #16",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/15",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.153Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098511"
+        }
+      }
+    },
+    {
+      "id": "74e67ce2-9720-4efd-bf40-c0b4184d66db",
+      "title": "CANCEL YOURSELF #16",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=15&artwork_number=16&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575951&token_id_hash=0xca5d92e123e66c802088ebc14f0b599085bd39ae14504c21ff11b201c28b65e5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.153Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575951"
+        }
+      }
+    },
+    {
+      "id": "d4751ac8-8afb-4972-83a7-fcdc59698089",
+      "title": "Play from Memory #17",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/16",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.153Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575952"
+        }
+      }
+    },
+    {
+      "id": "e80fbb7d-4ca9-43e5-b98e-a70225f02840",
+      "title": "SOUND PIECE V #17",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=16&artwork_number=17&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575952&token_id_hash=0x5198dcf7d00c67e97d974c182d3cf8c11fea6cf61679ec05984440c49ecc7445",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.153Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575952"
+        }
+      }
+    },
+    {
+      "id": "1244f04c-7a2b-4eb6-ab9f-70fe3dc2076b",
+      "title": "Integrity Protocol / Lower Limb Lecture #17",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=16&artwork_number=17&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575952&token_id_hash=0x60abe1a94beaac4ec0dc575eba51fd568f02e1c8496bf268b482389597ae13bd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.153Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575952"
+        }
+      }
+    },
+    {
+      "id": "2c5713d3-9ddc-400f-ab09-e398ef43f1c8",
+      "title": "PAYPHONE #17",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/16",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.153Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098512"
+        }
+      }
+    },
+    {
+      "id": "9dcc4b87-ef63-4db2-a269-417bac3575d5",
+      "title": "CANCEL YOURSELF #17",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=16&artwork_number=17&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575952&token_id_hash=0x43c5f39c188f5de54327c9e7c3d4f2e53391df63775605511e78191194d751e5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.153Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575952"
+        }
+      }
+    },
+    {
+      "id": "175a397e-a449-4aef-b69b-ad9a26e88a7e",
+      "title": "Play from Memory #18",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/17",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.153Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575953"
+        }
+      }
+    },
+    {
+      "id": "949741fe-b116-4cf3-914a-bb9d74491a7c",
+      "title": "SOUND PIECE V #18",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=17&artwork_number=18&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575953&token_id_hash=0xe452b96b39d1b8cedc100262e2d97964cb1156791cd6fb696234dbcbf3a0924d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.153Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575953"
+        }
+      }
+    },
+    {
+      "id": "ee24eb80-b47c-4649-a58f-3ed2b655568c",
+      "title": "Integrity Protocol / Lower Limb Lecture #18",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=17&artwork_number=18&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575953&token_id_hash=0xf41046f06737c5ca8cbb163c8f6bb144132a5098f57795542688d2a0dd6ca883",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.153Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575953"
+        }
+      }
+    },
+    {
+      "id": "1af9635e-fee9-468b-8f74-ec448934f54e",
+      "title": "PAYPHONE #18",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/17",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.153Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098513"
+        }
+      }
+    },
+    {
+      "id": "f4f77645-d7cb-4a57-a54f-9d99704bd836",
+      "title": "CANCEL YOURSELF #18",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=17&artwork_number=18&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575953&token_id_hash=0x741257078f3a39a24bbf14bb0c31c81e223f6b7a252e8386c231a4870222e23b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.154Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575953"
+        }
+      }
+    },
+    {
+      "id": "80b6722c-5763-40b1-ac77-08b1e4a89c32",
+      "title": "Play from Memory #19",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/18",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.154Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575954"
+        }
+      }
+    },
+    {
+      "id": "39700763-6855-432a-8546-6d937540f457",
+      "title": "SOUND PIECE V #19",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=18&artwork_number=19&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575954&token_id_hash=0x3ec1e55d9bd305028f1290c262649d88560435940abe98806673b8489c6aeb4d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.154Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575954"
+        }
+      }
+    },
+    {
+      "id": "1167bdc7-8c8d-4a3d-b0fc-0dd5fcf946df",
+      "title": "Integrity Protocol / Lower Limb Lecture #19",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=18&artwork_number=19&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575954&token_id_hash=0xd936ac08e41d8c9803c5ab53e6f6e6dd12b5c3a0e53d261f12e0d34b1387daa0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.154Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575954"
+        }
+      }
+    },
+    {
+      "id": "42bbcb67-339c-46a9-9c40-b8a604698f29",
+      "title": "PAYPHONE #19",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/18",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.154Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098514"
+        }
+      }
+    },
+    {
+      "id": "e472827b-13b4-44e9-8c3c-4fdab8f0f2c9",
+      "title": "CANCEL YOURSELF #19",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=18&artwork_number=19&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575954&token_id_hash=0x077e2a03e56b26596628b651767d3a243ec58c1b7c7850fdaa08b884e58e94cc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.154Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575954"
+        }
+      }
+    },
+    {
+      "id": "37db0ab7-4bfa-4173-901f-23f83d3cb0e3",
+      "title": "Play from Memory #20",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/19",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.154Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575955"
+        }
+      }
+    },
+    {
+      "id": "b90d3999-c886-4145-89a1-1972cea1cb81",
+      "title": "SOUND PIECE V #20",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=19&artwork_number=20&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575955&token_id_hash=0xfe74f09cd287a2452c3d8179d3b06650e6b8bbf49dde99bc59476251e1754542",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.154Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575955"
+        }
+      }
+    },
+    {
+      "id": "a53cfcc3-8e0f-4e9c-a759-91fafdf0116a",
+      "title": "Integrity Protocol / Lower Limb Lecture #20",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=19&artwork_number=20&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575955&token_id_hash=0xf996bd58e9aeadc6a7fbde6e721fc193e9f1100dbefec3b0167245e7f00010e0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.154Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575955"
+        }
+      }
+    },
+    {
+      "id": "d6364762-3cde-4bb4-a771-10f6dc16a6ae",
+      "title": "PAYPHONE #20",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/19",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.154Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098515"
+        }
+      }
+    },
+    {
+      "id": "70f3aab9-2635-4b5b-ba55-bdea7381ea15",
+      "title": "CANCEL YOURSELF #20",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=19&artwork_number=20&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575955&token_id_hash=0xe2889b88aef23f82dd4bf71096f0da03be501c2e408be3bfa43b8560475ca3d0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.154Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575955"
+        }
+      }
+    },
+    {
+      "id": "19ba1290-b2ca-4814-bcdc-929aec10ac40",
+      "title": "Play from Memory #21",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/20",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.154Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575956"
+        }
+      }
+    },
+    {
+      "id": "79c4a66d-0720-426e-8e05-f5d97e85ecc8",
+      "title": "SOUND PIECE V #21",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=20&artwork_number=21&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575956&token_id_hash=0xabd187662dc09c0ea2493a4247174591678892f078e85f8b72f46ad6675fb53f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.154Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575956"
+        }
+      }
+    },
+    {
+      "id": "ebaf587f-a3c8-4953-a85d-09f00cd79e39",
+      "title": "Integrity Protocol / Lower Limb Lecture #21",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=20&artwork_number=21&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575956&token_id_hash=0x65572834ee5699dbc585271fcc00f07e67b5e1dfc24766b70f3b78ee4aed94fd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.154Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575956"
+        }
+      }
+    },
+    {
+      "id": "9d69d2cb-8cf4-4de8-a3c7-3c964527aa61",
+      "title": "PAYPHONE #21",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/20",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.154Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098516"
+        }
+      }
+    },
+    {
+      "id": "1caea515-4430-450f-9d51-27b14bea42ab",
+      "title": "CANCEL YOURSELF #21",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=20&artwork_number=21&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575956&token_id_hash=0x02b7f8f77cab63497db92d4e6a370cdea11af71d151b4dd47efe0fd959349586",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.154Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575956"
+        }
+      }
+    },
+    {
+      "id": "f8dce01e-edf4-4d9b-a515-706ba21a14fa",
+      "title": "Play from Memory #22",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/21",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.154Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575957"
+        }
+      }
+    },
+    {
+      "id": "ef2ec265-6faa-411b-8118-2819066f6dcc",
+      "title": "SOUND PIECE V #22",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=21&artwork_number=22&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575957&token_id_hash=0x426a1e0d51f1c76c8ea191ac685390a2d080355cba95901129e2a7368b092012",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.155Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575957"
+        }
+      }
+    },
+    {
+      "id": "6e6f1a20-566e-432c-922d-bdf9d733ade2",
+      "title": "Integrity Protocol / Lower Limb Lecture #22",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=21&artwork_number=22&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575957&token_id_hash=0x3cd763e65e8c3e2c9ff77fbcd0d9e59fb885fc26d39fe4d6bd10a45a3116ffd4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.155Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575957"
+        }
+      }
+    },
+    {
+      "id": "1833aec6-04de-4c17-9f7a-c9b46d164c4b",
+      "title": "PAYPHONE #22",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/21",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.155Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098517"
+        }
+      }
+    },
+    {
+      "id": "10e07921-8723-430b-a89a-06021f35c978",
+      "title": "CANCEL YOURSELF #22",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=21&artwork_number=22&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575957&token_id_hash=0xa471a45240fd750d60e5dc7d1bf34d57447a7c38ac0dd2780ce5de8c2a281279",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.155Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575957"
+        }
+      }
+    },
+    {
+      "id": "1568f87a-ef9f-4c46-be3b-e9107d8a76cf",
+      "title": "Play from Memory #23",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.155Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575958"
+        }
+      }
+    },
+    {
+      "id": "d9439879-34cf-4a12-a6d5-323c96f83dc6",
+      "title": "SOUND PIECE V #23",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=22&artwork_number=23&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575958&token_id_hash=0xce5a4bf3d88e9e792a22a1c3b38b1a5af04b6657866e6882e1ff616feb16fae2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.155Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575958"
+        }
+      }
+    },
+    {
+      "id": "ee566b21-3cdd-41a2-acfc-6bc8976c4f1d",
+      "title": "Integrity Protocol / Lower Limb Lecture #23",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=22&artwork_number=23&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575958&token_id_hash=0x84bd29a6fe4d2608b28626d5c9ed29c26cb322cab4310e3a5dae3a4e1eb3d1b2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.155Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575958"
+        }
+      }
+    },
+    {
+      "id": "5cddc8fa-39ab-4e2c-bd3c-9e19ac20c0c9",
+      "title": "PAYPHONE #23",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.155Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098518"
+        }
+      }
+    },
+    {
+      "id": "db6822da-8a32-4465-9c7a-a8cbd98a3f4a",
+      "title": "CANCEL YOURSELF #23",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=22&artwork_number=23&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575958&token_id_hash=0xaaf014d020519b96217151be71433cd7e0fc129b49aa0f7e5a2c5d634a04e301",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.155Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575958"
+        }
+      }
+    },
+    {
+      "id": "f4bb3675-f505-468a-a59d-186bd4d037a5",
+      "title": "Play from Memory #24",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/23",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.155Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575959"
+        }
+      }
+    },
+    {
+      "id": "d43cf345-f8b0-4a48-81e6-e746c5655dc4",
+      "title": "SOUND PIECE V #24",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=23&artwork_number=24&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575959&token_id_hash=0xdbdcd2286ffb6faaa85ab07cf2840d1d004babf1b37001d996e1bf4979027a92",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.155Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575959"
+        }
+      }
+    },
+    {
+      "id": "2e3f5495-e608-4ee9-a944-e6815523c007",
+      "title": "Integrity Protocol / Lower Limb Lecture #24",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=23&artwork_number=24&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575959&token_id_hash=0xf4c9f42564020c9e1b5e1ebba62264392ea739c67c2d660d0811660fbdb15881",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.156Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575959"
+        }
+      }
+    },
+    {
+      "id": "366eaa78-a3b2-4eab-a421-eceb82d4c444",
+      "title": "PAYPHONE #24",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/23",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.156Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098519"
+        }
+      }
+    },
+    {
+      "id": "70531509-89f8-4388-9c52-f92c96278a94",
+      "title": "CANCEL YOURSELF #24",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=23&artwork_number=24&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575959&token_id_hash=0x808a5b337658342e7dd79cd9cb8e81717a4507d13490f8f0eb4293ee7c42e539",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.156Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575959"
+        }
+      }
+    },
+    {
+      "id": "d3e0c254-7343-4b33-8105-915b9a1f6995",
+      "title": "Play from Memory #25",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/24",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.156Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575960"
+        }
+      }
+    },
+    {
+      "id": "0395ca9e-1591-4bc4-8c82-a777e9373f07",
+      "title": "SOUND PIECE V #25",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=24&artwork_number=25&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575960&token_id_hash=0x50114ad5708ada3c908c628db1c5c9c05ae1a2fa9aaa2aa683fb9e6261d88de2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.156Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575960"
+        }
+      }
+    },
+    {
+      "id": "9219a07f-8919-4061-9f0d-32f0df4d4091",
+      "title": "Integrity Protocol / Lower Limb Lecture #25",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=24&artwork_number=25&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575960&token_id_hash=0x1e2603ced16c8dfc959399df5ab5147e9f76b6d24bdfb6b17c2525c61745c890",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.156Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575960"
+        }
+      }
+    },
+    {
+      "id": "6a3643f3-0680-42c5-b8e4-a16cae4a3895",
+      "title": "PAYPHONE #25",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/24",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.156Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098520"
+        }
+      }
+    },
+    {
+      "id": "c0a7e4f2-5b86-4787-9a4e-db0b7036a9c5",
+      "title": "CANCEL YOURSELF #25",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=24&artwork_number=25&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575960&token_id_hash=0x0a4d5955badd7a06d1abb3a22953edcf77e2671fe2f6c03ad02a165125d315d0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.156Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575960"
+        }
+      }
+    },
+    {
+      "id": "52b3aef5-bd9e-4224-9650-fc2f57080ed8",
+      "title": "Play from Memory #26",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/25",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.156Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575961"
+        }
+      }
+    },
+    {
+      "id": "5b3ab0e7-ae8c-43ff-9a57-c025bb2d3deb",
+      "title": "SOUND PIECE V #26",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=25&artwork_number=26&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575961&token_id_hash=0x9942bfc6cf17cc478f225cbff322db0f9d4160ca4024eac2d67f8222364a5209",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.156Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575961"
+        }
+      }
+    },
+    {
+      "id": "4e60f46c-7310-4d15-af7c-f453c672c329",
+      "title": "Integrity Protocol / Lower Limb Lecture #26",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=25&artwork_number=26&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575961&token_id_hash=0xbdbcbeca0e7b546c28b78d13c82e686a3c8318cb51de738084a9102cd4a40bf3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.156Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575961"
+        }
+      }
+    },
+    {
+      "id": "85aa4a1a-7a10-4fc7-aada-e95873bb9171",
+      "title": "PAYPHONE #26",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/25",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.156Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098521"
+        }
+      }
+    },
+    {
+      "id": "bd89dd65-b787-41cc-87a3-13ed6ee2b31a",
+      "title": "CANCEL YOURSELF #26",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=25&artwork_number=26&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575961&token_id_hash=0xc4527180ae11e8c7d27aee2f5412be5bd1f0acc956fcdf1306799f3c6f898a0c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.156Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575961"
+        }
+      }
+    },
+    {
+      "id": "894f8c5f-8c3c-40a3-99a6-a32a3276a604",
+      "title": "Play from Memory #27",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/26",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.156Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575962"
+        }
+      }
+    },
+    {
+      "id": "b128163e-3ef3-4ae0-8061-b68101fd9b8b",
+      "title": "SOUND PIECE V #27",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=26&artwork_number=27&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575962&token_id_hash=0xfb6f82324e40b122580981988d939275d9741f4ac9d28f5eda045235781ac968",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575962"
+        }
+      }
+    },
+    {
+      "id": "acf31970-1002-4a23-a7bd-8840747e32da",
+      "title": "Integrity Protocol / Lower Limb Lecture #27",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=26&artwork_number=27&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575962&token_id_hash=0x227a4782059ff3c0a1e05e82ca861cd4bf65ecb0a943b0da80a585a29327d786",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575962"
+        }
+      }
+    },
+    {
+      "id": "8267ca96-bcb2-487e-a299-03cbabac6a2e",
+      "title": "PAYPHONE #27",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/26",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098522"
+        }
+      }
+    },
+    {
+      "id": "12d1236c-a26f-45d0-8df0-9a948eb0f8da",
+      "title": "CANCEL YOURSELF #27",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=26&artwork_number=27&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575962&token_id_hash=0xa6322e4527f5126d05124a6cb957801cd60eb68f0d9030357c001dd0cc7a5459",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575962"
+        }
+      }
+    },
+    {
+      "id": "24d8712d-cf36-4b74-af8d-72fdefb21a6f",
+      "title": "Play from Memory #28",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/27",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575963"
+        }
+      }
+    },
+    {
+      "id": "389f9594-5208-42c8-8982-24b90c0de824",
+      "title": "SOUND PIECE V #28",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=27&artwork_number=28&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575963&token_id_hash=0x72a0e5081566434c270860e82d9be8efcba4342fbed9aa184b1bdc6db546a217",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575963"
+        }
+      }
+    },
+    {
+      "id": "63ae6e8d-4234-4416-b520-2f4442fae314",
+      "title": "Integrity Protocol / Lower Limb Lecture #28",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=27&artwork_number=28&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575963&token_id_hash=0xb7583fe62c15bfe7b1664165347ff0ddd23e4c312fc0f915a54d79715082599a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575963"
+        }
+      }
+    },
+    {
+      "id": "c4cdbd6c-549b-4776-99fd-594f9151064b",
+      "title": "PAYPHONE #28",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/27",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098523"
+        }
+      }
+    },
+    {
+      "id": "544a86d8-b49c-4c5c-bceb-f5feb1d0389d",
+      "title": "CANCEL YOURSELF #28",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=27&artwork_number=28&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575963&token_id_hash=0xe9d8eb02f02eca34310033f1f53a61c0ca789b92188c128ae0f7074b4c15c3f4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575963"
+        }
+      }
+    },
+    {
+      "id": "2e213ab7-842f-44db-ba59-2ebbbbc0f7cb",
+      "title": "Play from Memory #29",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/28",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575964"
+        }
+      }
+    },
+    {
+      "id": "c8ee4774-eb8a-4a94-b655-e6a21263ee86",
+      "title": "SOUND PIECE V #29",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=28&artwork_number=29&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575964&token_id_hash=0x32ba767574b68c125bc28c2e6fb7040133f75a3511d5624fbfafbc5217a27689",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575964"
+        }
+      }
+    },
+    {
+      "id": "8008b0b6-62b2-4a8f-9767-e7cb3ff97fab",
+      "title": "Integrity Protocol / Lower Limb Lecture #29",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=28&artwork_number=29&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575964&token_id_hash=0xe39e2170d81b93331d1ab3dd17b059d0c1a1140bcc0ca6f8619446f31f9a528e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575964"
+        }
+      }
+    },
+    {
+      "id": "8809aa77-c564-4f4b-86bc-f5f6d695c542",
+      "title": "PAYPHONE #29",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/28",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098524"
+        }
+      }
+    },
+    {
+      "id": "ad3aae23-a0d8-4a43-a611-f7f51d93530f",
+      "title": "CANCEL YOURSELF #29",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=28&artwork_number=29&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575964&token_id_hash=0x672aba190d4de5e156c74756afa88dee87fb1f5e9cfd8078e5bf2fe600c0c1db",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575964"
+        }
+      }
+    },
+    {
+      "id": "b33e1a32-b3a6-4c79-8d6f-0694b960c049",
+      "title": "Play from Memory #30",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/29",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575965"
+        }
+      }
+    },
+    {
+      "id": "3952117b-d8b9-4c22-b04f-9513aa182c85",
+      "title": "SOUND PIECE V #30",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=29&artwork_number=30&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575965&token_id_hash=0x701a2f73406ff2eefd6e6c7fa328c6a01a6950175a78103d00ab860d44c23d96",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575965"
+        }
+      }
+    },
+    {
+      "id": "a5ef72bc-454d-455c-acde-171269c42553",
+      "title": "Integrity Protocol / Lower Limb Lecture #30",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=29&artwork_number=30&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575965&token_id_hash=0xd5fc6fccde68a3ee8d1aae8cd0bc6ae9d366f6b86dc0ce84202d278889f2839a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575965"
+        }
+      }
+    },
+    {
+      "id": "1ac0e9b0-275b-4bb4-8aeb-50afc0379731",
+      "title": "PAYPHONE #30",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/29",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098525"
+        }
+      }
+    },
+    {
+      "id": "9c56fa53-b446-457e-86a9-1398396e2a6c",
+      "title": "CANCEL YOURSELF #30",
+      "source": "https://cdn.feralfileassets.com/previews/ccb212b8-76cd-4c54-824a-266f33fe057d/1707323458/index.html?edition_number=29&artwork_number=30&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143443575965&token_id_hash=0x87090f2447e9d3f1a360b4ee64ed8bfeadb72810bc799ae175ef0921fe9864fd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-01-09T07:26:14.157Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143443575965"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}
