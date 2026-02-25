@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "34c8e755-5c80-42a6-a830-c231ae6ce92c",
+  "slug": "machine-sees-more-than-it-says",
+  "title": "Machine Sees More Than It Says ",
+  "summary": "As an artist interrogating the role of data collection in contemporary society, Mimi Ọnụọha seeks to reveal what’s missing in our algorithmic lives. The presumption that technology is objective and indifferent is a boon to the powerful, often conveniently obscuring those power structures from view. Ọnụọha’s work is an act of sensemaking, revealing these underlying dynamics and relationships in powerful clarity. “Machine Sees More Than It Says” consists of clips of footage gathered from archival videos made between the 1950s and the 1980s. Stitched together, they form a machine’s imagining of itself and the courses of development that formed it, hinting at processes of resource extraction, transport, technical advancement, interfaces, and labor. In the words of the artist: “I was working on a completely different piece and kept stumbling across this footage from an array of different videos, all of which seemed to share an aesthetic feel and to hint at much deeper computational stories...as if the tools I was using were intervening to speak of themselves.”",
+  "coverImage": "https://imagedelivery.net/5BJzhBHeVhlhbn58hvcXAQ/80a8b7c3-c85a-40e7-57c5-04cff8752800/raw",
+  "created": "2026-02-25T09:58:47.725Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "e84ccaee-553a-4267-a226-5f5d3d3e3330",
+      "title": "Machine Sees More Than It Says  AP",
+      "source": "https://cdn.feralfileassets.com/previews/c81ccf90-777b-4251-801c-0f9457be3eba/1666192720/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:47.725Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1Q4SBM941oAeu69v8LsrfwSiEkhMWJiVrp",
+          "tokenId": "91774458657760995737618377233011874919887579905259346865754378061254205910823"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

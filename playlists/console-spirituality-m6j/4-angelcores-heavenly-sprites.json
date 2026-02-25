@@ -1,0 +1,475 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "815b5613-8449-466e-aa99-379866f8b264",
+  "slug": "angelcores-heavenly-sprites",
+  "title": "Angelcores & Heavenly Sprites",
+  "summary": "<p>In <em>Angelcores &amp; Heavenly Sprites</em>, Sabato Visconti uses glitch and ROM-corruption processes to reveal the angelic aspects of early console games, specifically third- and fourth-generation 8-bit and 16-bit consoles like the NES, Super Nintendo, and Sega Genesis.</p>\n<p>While much of our visual understanding of angels derives from Medieval European Christianity and after, the history of the angelic has evolved in a constant renegotiation as cultures and power structures change. The contemporary meme of &quot;Biblically-Accurate Angels&quot; reflects this broader understanding of the angelic, although a theologian may quietly point out that the Ophanim described in the book of Ezekiel wasn&#39;t classified as an Angel until much later in history. In the same spirit, depictions of angels in 1980-1990s video games were diverse and ludopoetic—designed to fit the game type, whether it was an action platformer, a shoot &#39;em up, or an RPG. Games like <em>ActRaiser</em>, <em>ActRaiser II</em>, <em>Wings of Wor</em>, <em>Spiritual Warfare</em>, <em>Chubby Cherub</em>, and <em>Legendary Wings</em> draw from a variety of historical influences and portray the angelic as powerful warriors, childlike cuties, winged creatures, or devotional objects. The glitch artefacts and looping GIF narratives serve to lift up these figures from the repetitive toil and routine mechanics of their medium.</p>\n",
+  "coverImage": "https://cdn.feralfileassets.com/thumbnails/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1748647429",
+  "created": "2026-02-25T10:00:08.841Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "e2f01887-0114-4da2-ba58-c6bcb8dafc92",
+      "title": "Biblically Accurate Cherub",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.840Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622400"
+        }
+      }
+    },
+    {
+      "id": "24f99d59-1a2e-4402-bc28-21962558c8e1",
+      "title": "Crybaby",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.840Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622401"
+        }
+      }
+    },
+    {
+      "id": "b912d4ea-fbe3-420e-a16c-96ef525276bf",
+      "title": "In the Presence",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.840Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622402"
+        }
+      }
+    },
+    {
+      "id": "a726c204-44c8-42f9-bb84-2bd745416daa",
+      "title": "Iyrin (Watchers)",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.840Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622403"
+        }
+      }
+    },
+    {
+      "id": "0be33002-ea99-46b2-b89a-6571d9517cca",
+      "title": "Transfigurations",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.840Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622404"
+        }
+      }
+    },
+    {
+      "id": "b925f2a3-da79-47a6-bd90-c919c956e666",
+      "title": "No Weapons Formed Against You Shall Prosper",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.840Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622405"
+        }
+      }
+    },
+    {
+      "id": "54d41348-a0e3-4fac-8929-07412e9fe6d7",
+      "title": "Pink Sublime",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.840Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622406"
+        }
+      }
+    },
+    {
+      "id": "3f714b86-c84c-486e-b996-3211bf4bc57c",
+      "title": "Icarus in Glory",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622407"
+        }
+      }
+    },
+    {
+      "id": "36d57f35-bc8d-45fa-8d20-8c6e502e2ba0",
+      "title": "Icarus Must Fly",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622408"
+        }
+      }
+    },
+    {
+      "id": "4d5a3a86-b975-4614-9c9a-bb48a7c52d35",
+      "title": "Angelcores & Heavenly Sprites Angelophany #01",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622409"
+        }
+      }
+    },
+    {
+      "id": "adca15c3-b1e3-48fa-abbd-94d8f45af9be",
+      "title": "Parable",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/10",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622410"
+        }
+      }
+    },
+    {
+      "id": "06e4cb69-129a-4840-b136-a9383cab86e6",
+      "title": "Angelcores & Heavenly Sprites Angelophany #02",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/11",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622411"
+        }
+      }
+    },
+    {
+      "id": "caa6f735-67e9-48e4-95b6-9f4c69395368",
+      "title": "Angelcores & Heavenly Sprites Angelophany #03",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/12",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622412"
+        }
+      }
+    },
+    {
+      "id": "532f1a51-7645-49ba-bd73-6a2460c96641",
+      "title": "Angelcores & Heavenly Sprites Angelophany #04",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/13",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622413"
+        }
+      }
+    },
+    {
+      "id": "09b5051e-3dfc-443e-84b6-2f6818c71702",
+      "title": "Angelcores & Heavenly Sprites Angelophany #05",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/14",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622414"
+        }
+      }
+    },
+    {
+      "id": "5eed0eb6-c238-4860-bfdb-740b527ca060",
+      "title": "Fifth Heaven",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/15",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622415"
+        }
+      }
+    },
+    {
+      "id": "daf045c1-3923-4722-9710-1ecb7a425a3c",
+      "title": "Even Angels Fall",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/16",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622416"
+        }
+      }
+    },
+    {
+      "id": "0cba5aa6-6804-4c39-9a09-9b521cc63c41",
+      "title": "Little Message",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/17",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622417"
+        }
+      }
+    },
+    {
+      "id": "8207d7c6-1d83-4e9e-a3fe-03ec9d0992e7",
+      "title": "Select Magic",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/18",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622418"
+        }
+      }
+    },
+    {
+      "id": "0d6257dc-2529-4932-b826-8d5e77027a2b",
+      "title": "Devotional",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/19",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622419"
+        }
+      }
+    },
+    {
+      "id": "42c6ba6e-6f9a-4522-8a8f-ac4af9df7115",
+      "title": "Day of Rest",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/20",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622420"
+        }
+      }
+    },
+    {
+      "id": "58fc296f-cefc-4f5b-aede-07a3397855bb",
+      "title": "Diligence",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/21",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622421"
+        }
+      }
+    },
+    {
+      "id": "9d539eca-6709-41be-ad37-b39dea36f2ea",
+      "title": "Rock of Ages",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622422"
+        }
+      }
+    },
+    {
+      "id": "bf52ee54-6630-4086-beb2-223bc20f3cf0",
+      "title": "Guardian",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/23",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622423"
+        }
+      }
+    },
+    {
+      "id": "d8c56628-3cc8-406e-a649-83efad1e5f40",
+      "title": "New Gospel",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/24",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622424"
+        }
+      }
+    },
+    {
+      "id": "5a2ee305-969c-4cef-ac47-a75bd33c3bac",
+      "title": "Ministering Angels",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/25",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622425"
+        }
+      }
+    },
+    {
+      "id": "478420cc-1fc0-4071-b726-86058f776574",
+      "title": "Messenger",
+      "source": "https://cdn.feralfileassets.com/previews/4538a452-7e21-46e4-bf3d-5b7cf1e08894/1745310828/_unique-previews/26",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.841Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112812622426"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

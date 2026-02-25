@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "6d42ec3f-375a-47fb-9090-d40a56cc1f1f",
+  "slug": "prophecy-nullification-algorithm-shaman-conspiracy",
+  "title": "Prophecy, nullification algorithm, shaman, conspiracy",
+  "summary": "It is a simple act: swiping your finger across the keyboard to find the words you intend to write. Or it could be the other way around: combining meaningless characters and posting them on social media in order to challenge the algorithms that govern the internet. Would this pave the way for the creation of a new QAnon-type of online conspiracy? The intentions behind aaajiao’s “Prophecy, nullification algorithm, shaman, conspiracy” work are as provocative as the intellectual challenges the artist raises.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/19d74bdc-d4e7-451f-4cd2-969042180a00/raw",
+  "created": "2026-02-25T09:58:57.930Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "eb38fb5c-7f7f-4ce5-8553-73360f92cc3e",
+      "title": "Prophecy, nullification algorithm, shaman, conspiracy AE",
+      "source": "https://cdn.feralfileassets.com/previews/bc82d0fb-eede-4947-aa97-fe085f46f0b4/1672665977/preview.gif",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:57.930Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE46A41b840176b62983FC71162dc9faEAC4D9bcB",
+          "tokenId": "78437930858508382358350445319245577989271984900771702036328894579070742980944"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

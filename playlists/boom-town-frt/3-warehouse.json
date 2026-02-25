@@ -1,0 +1,67 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "710d482c-11ee-468e-a914-35c6f0bb8d64",
+  "slug": "warehouse",
+  "title": "WAREHOUSE",
+  "summary": "<em>We need a box to store our future because residues of the past don’t matter. Looking back is simply not an option.</em><br/>Every one of the structures in BOOM TOWN represents a unique, living artwork comprised of 1,000 images that will change over time, evolving as a kind of durational stop motion animation over an undetermined period pegged to Ethereum’s block time — that is, the length of time it takes to add another block to the blockchain. Collectors receive the full set of images as part of their acquisition package and can browse or even create prints of the work’s past or future state, but they cannot make the work advance any faster or slower than block time. <br/>Burr’s process blends traditional animation techniques with the affordances of generative algorithmic systems. Each work originates with “intentionally unoptimized algorithms” developed by Burr’s collaborator, Dave Tandem, and follows a precise composition logic that dictates its form, ground and field, shadows, planes, colors, and weight. The software allows Burr to draw structures on a gravity-influenced canvas and to animate them changing over time. Burr is interested in highlighting the unique fingerprints of various software and in his practice often works across tech pipelines to weave these diverse fingerprints into a unique aesthetic, reveling in the compression and dithering that occurs through this approach. The final images are outputted into a custom framework built by Tandem that uses block time to advance their evolution.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/478d73ac-60c2-4c74-5a0c-bdaa9f3b3d00/raw",
+  "created": "2026-02-25T09:58:54.519Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "5d6efbfa-ec40-4377-8e70-886dd063e055",
+      "title": "WAREHOUSE #1",
+      "source": "https://cdn.feralfileassets.com/previews/9de55d58-68f1-455a-9a41-4296ecc56cad/1670989027/?edition_number=0&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=89391130809448363084087070038276728334099349534674600029855304563645247032792&token_id_hash=0x06e55928f35bdf761d7be89b454eaf22874d3ec52b1fc33f2e69b9954e069c7a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.518Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "89391130809448363084087070038276728334099349534674600029855304563645247032792"
+        }
+      }
+    },
+    {
+      "id": "77acc802-5104-4ef3-84fb-fe5ed5fd6cb2",
+      "title": "WAREHOUSE #2",
+      "source": "https://cdn.feralfileassets.com/previews/9de55d58-68f1-455a-9a41-4296ecc56cad/1670989027/?edition_number=1&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=89391130809448363084087070038276728334099349534674600029855304563645247032793&token_id_hash=0x883abfd240665aa24ef893a66bb68f27a7a49128844905ba79c4bd115519b95d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.518Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "89391130809448363084087070038276728334099349534674600029855304563645247032793"
+        }
+      }
+    },
+    {
+      "id": "01c58b55-847f-4e35-aa26-c28e3e38d057",
+      "title": "WAREHOUSE #3",
+      "source": "https://cdn.feralfileassets.com/previews/9de55d58-68f1-455a-9a41-4296ecc56cad/1670989027/?edition_number=2&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=89391130809448363084087070038276728334099349534674600029855304563645247032794&token_id_hash=0x18780e6dbc18a43d07bdb7d2c04cf2fb301b676a8ccf2aae122651b42b14f6e4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.519Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "89391130809448363084087070038276728334099349534674600029855304563645247032794"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "e258153b-4444-4c53-baa1-cfef89c4d494",
+  "slug": "sketches-in-iron",
+  "title": "Sketches in Iron",
+  "summary": "Performance and Auction: May 30th, 2022 17:00 UTC+0 <br/>The live performance is open to the public. Collecting this <a href=\"https://feralfile.com/artworks/sketches-in-iron-5n6?fromExhibition=on-screen-presence-mmq\" target=\"_blank\" class=\"link\">Access Pass</a> grants access to an editioned recorded video of the live streamed performance. <br/>The auction for the artwork created during the performance begins 30 May, 2022 17:00 UTC+0. The auction winner will receive a unique iron sculpture, unique digital output of render produced by software, codebase, and recorded video of live streamed performance, sent within seven days after live performance.<br/>Since 2020, 0xDEAFBEEF has been known primarily for creating generative audiovisual works that explore the limits of blockchain both technically and conceptually. For the first time, “Sketches in Iron” combines the artist’s core interest in software with a lesser known facet of their background, metalworking. Pushing the boundary further between digital computation and a 6,000 year-old industrial practice that plays out through a choreographed live streamed performance, the artist introduces their own biological, mineral content as catalyst for the work.<br/>The work was performed publicly for the first and only time on feralfile.com through an iframe pointed at a YouTube livestream on May 30th, 2022 at 17:05 UTC. 100 individuals purchased “access passes,” which allowed them to receive an edition of the recording, post-live performance. The unique iron sculpture created during the livestream performance was auctioned to one individual. ",
+  "coverImage": "https://imagedelivery.net/5BJzhBHeVhlhbn58hvcXAQ/1d95a699-9bc9-477a-aa50-689979716a00/raw",
+  "created": "2026-02-25T09:58:17.656Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "de100e1d-e687-4062-8a49-0fe8ce3b6e27",
+      "title": "Sketches in Iron",
+      "source": "https://cdn.feralfileassets.com/previews/abf1fd61-b911-402b-9e2e-d7dcf96c4d82/1654769374/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:17.656Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaDB387798599f5777CD0531c2ECb36007C1D1a51",
+          "tokenId": "51810762618327284440585296992102066213321412238822184011646144664068171452716"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

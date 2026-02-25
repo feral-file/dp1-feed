@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "4a958efa-9a5b-4d7f-a4ef-f528b1b0ed6f",
+  "slug": "movie-on-06-03-22-at-1-00-pm",
+  "title": "Movie on 06-03-22 at 1.00 PM",
+  "summary": "Performance and Auction: June 3rd, 2022 17:00 UTC+0 <br/>The live performance is open to the public. Collecting this Access Pass grants access to an editioned recorded video of the live streamed performance.<br/>Access Passes purchased before 17:00 UTC+0 on June 2nd, 2022 include access to editing Molly Soda’s video during live streamed performance and a recorded video of live streamed performance. Access Passes purchased after June 2nd do not include interaction.<br/>The auction for the artwork created during the performance begins June 3rd, 2022 17:00 UTC+0. The auction winner will collect a unique video created by participants and recorded live streamed performance, sent within seven business days of live performance.<br/>Since 2010, Molly Soda has captured audiences by frequently taking videos on the MacOS application Photo Booth with her computer’s webcam, documenting the mundanity of herself eating, dancing, singing, crying, or talking on the phone. Although many of these moments have been uploaded by the artist to YouTube, for every moment uploaded, there are countless recordings that exist unseen in her archive. Soda recognizes that digital media lends itself to the process of remixing — once uploaded to the internet, a video can be saved, re-ordered, stitched, paused, rewound, skipped, and chopped. This realization has led to a longstanding interest from the artist in publicly realizing and facilitating these processes. For “Movie on 06-03-22 at 1.00 PM,” instead of simply reworking and remixing her own archive for public view, Soda will hand-off hundreds of clips from the last decade over to participants. From the given audiovisual material, 100 viewers will have the ability to collectively create a new Molly Soda video, revealed at the culmination of the live stream. ",
+  "coverImage": "https://imagedelivery.net/5BJzhBHeVhlhbn58hvcXAQ/fcf160a5-a0e8-4b89-beec-a670809eb100/raw",
+  "created": "2026-02-25T09:58:17.659Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "9e48e4e0-36f3-4207-862a-5589837bb52d",
+      "title": "Movie on 06-03-22 at 1.00 PM #1",
+      "source": "https://cdn.feralfileassets.com/previews/fd2cbf3b-152e-4ed1-b2ae-21f65b2e2d0f/1655634158/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:17.659Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaDB387798599f5777CD0531c2ECb36007C1D1a51",
+          "tokenId": "61159305339113441985817533060594473710734401475288473968922067998918381350826"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

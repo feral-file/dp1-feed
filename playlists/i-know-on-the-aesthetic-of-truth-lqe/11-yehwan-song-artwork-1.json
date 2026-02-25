@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "63130b92-7617-47fe-9d1e-8f91615fce05",
+  "slug": "yehwan-song-artwork-1",
+  "title": "Yehwan Song Artwork 1",
+  "summary": "Yehwan Song’s “Artwork 1 & 2” are website-based, mutating virtual sculptures relying on inputs from touch screens. The touch input may not necessarily come from a finger touch but from something else, i.e., dropping a liquid on the screen. Technology is never neutral. Once we move beyond the formalities of how tech is built and conceptually framed vs how it may actually work, unbalanced power dynamics and violence are tragically unveiled. Those who are left out by the design of the same technology and unable to benefit from it regularly pay a heavy price.<br/>Artwork 1 & 2 parody the conventional ideas and stereotypes around the touch sensors device. ",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/7fa6f995-db72-4ac4-07b9-e08ac36d2500/raw",
+  "created": "2026-02-25T09:58:57.939Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "dfaea905-0006-452e-b10c-7360359b734c",
+      "title": "Yehwan Song Artwork 1 AE",
+      "source": "https://cdn.feralfileassets.com/previews/b5621c75-70f9-430f-852e-9d8fd9318917/1675049149/?edition_number=0&blockchain=ethereum&contract=0xE46A41b840176b62983FC71162dc9faEAC4D9bcB&token_id=58987192466841004628201111767945836073083865759174394385352028392528079468087&token_id_hash=0xb27356ed2447ddc8031ca54074deb75d3e2d5b63d09042b12c27160788b9b022",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:57.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE46A41b840176b62983FC71162dc9faEAC4D9bcB",
+          "tokenId": "58987192466841004628201111767945836073083865759174394385352028392528079468087"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

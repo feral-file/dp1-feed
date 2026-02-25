@@ -1,0 +1,1053 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "7b2b0754-628d-474b-9ded-0d0da6bd4805",
+  "slug": "chez-jo",
+  "title": "Chez Jo",
+  "summary": "“I remember my childhood home in Quartier Escale. The checkered staircase led to a corridor flanked by walls featuring oil paintings of Scrooge McDuck and other old-school Disney characters (or my grandfather’s best attempts at painting them). The outdoor cinema to the right, which he passionately managed, mostly showed Hindi movies and Westerns. The sweet smell of warm brioche wafted up and into the house through the balcony from the bakery on the ground floor. The bakery was once a grocery store, Chez Jo, where I spent many days as a toddler greeting my grandmother’s customers, while my parents attended school in a different town. <br/>Movie posters, plastered ads for sweet condensed milk, branded sacs of flour and onions and potatoes, cases of soda and beer in green glass bottles, camembert and brie wrapped in glossy paper, jars of pickled olives and chili and carrots — a symphony of colors now muted by a faltering memory. <br/>Fine art didn’t find its way to my hometown. We didn’t have museums or galleries. We didn’t have stewards of the finer things in life to tell us what beauty meant and what was worth contemplating. We had our own stuff, heaps of everyday life stuff, full of history and a distinct visual language that I contemplated in awe as a child. <br/>In the digital memory of the world, as evidenced by AI, my hometown is a blur, my people are distortions, and our perspective on art doesn’t matter. “Chez Jo” is a brute-force attempt at remembrance, coercing Midjourney to conjure up a sense of place and time it does not know well, using references it barely understands. <br/>‘Chez Jo’ is a series of 61 works created in a procedural way with Midjourney and p5js. Through a traditional collage technique and stubbornness, my grandmother’s grocery store comes to life, imperfect and elusive, much like my memory of it.” — Linda Dounia",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/488798c5-e16f-4e66-a1b8-025c49416a00/raw",
+  "created": "2026-02-25T09:59:15.343Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "157f8707-4e32-43c8-a48e-47c45f675706",
+      "title": "Chez Jo AE",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198696"
+        }
+      }
+    },
+    {
+      "id": "e92e7761-1fa9-4fc8-a0d3-4ff294af1971",
+      "title": "Chez Jo AE",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198697"
+        }
+      }
+    },
+    {
+      "id": "8e8c779b-859b-495b-8a75-3fceea0459c0",
+      "title": "Chez Jo AE",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198698"
+        }
+      }
+    },
+    {
+      "id": "04312896-747b-426c-a768-dfa7cdb2d62b",
+      "title": "Chez Jo AE",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198699"
+        }
+      }
+    },
+    {
+      "id": "c34960b0-c7f6-479f-b0b9-6e2fa88d783b",
+      "title": "Chez Jo AE",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198700"
+        }
+      }
+    },
+    {
+      "id": "4986824d-83cc-41a2-822d-4ede43675449",
+      "title": "Chez Jo AE",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198701"
+        }
+      }
+    },
+    {
+      "id": "ad0e6eac-49cf-414c-b797-cb8df4321b3b",
+      "title": "Chez Jo AE",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198702"
+        }
+      }
+    },
+    {
+      "id": "8832b1bb-e5aa-498c-b746-fb5c304087d6",
+      "title": "Chez Jo AE",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198703"
+        }
+      }
+    },
+    {
+      "id": "69c46ba9-8b8b-4bb9-8fed-3d34eed367ff",
+      "title": "Chez Jo AE",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198704"
+        }
+      }
+    },
+    {
+      "id": "ea427fed-b655-480d-bf55-00ff47033cc4",
+      "title": "Chez Jo AE",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198705"
+        }
+      }
+    },
+    {
+      "id": "e1db9f22-37f8-418d-800b-48af4f1de485",
+      "title": "Chez Jo PP",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/10",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198706"
+        }
+      }
+    },
+    {
+      "id": "df7aa83d-904b-45d2-bd63-0bb3d803b119",
+      "title": "Chez Jo #1",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/11",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198707"
+        }
+      }
+    },
+    {
+      "id": "0638a4a1-7107-4aa2-b52d-0b30e7886844",
+      "title": "Chez Jo #2",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/12",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198708"
+        }
+      }
+    },
+    {
+      "id": "1df86b86-ef44-4512-b138-c57cdcaef64d",
+      "title": "Chez Jo #3",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/13",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198709"
+        }
+      }
+    },
+    {
+      "id": "5283e796-72b6-4e41-b4b8-b30e2f0e9e6b",
+      "title": "Chez Jo #4",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/14",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198710"
+        }
+      }
+    },
+    {
+      "id": "cf433482-b226-402e-a21c-d012e2131405",
+      "title": "Chez Jo #5",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/15",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198711"
+        }
+      }
+    },
+    {
+      "id": "8df4f1b4-7585-4886-b6fd-ae5f8d10794c",
+      "title": "Chez Jo #6",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/16",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198712"
+        }
+      }
+    },
+    {
+      "id": "a2e09bec-df7e-4111-8f51-875cfd47e91e",
+      "title": "Chez Jo #7",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/17",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198713"
+        }
+      }
+    },
+    {
+      "id": "66236c7c-836d-4a67-bf5c-0b9c6b41cd24",
+      "title": "Chez Jo #8",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/18",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198714"
+        }
+      }
+    },
+    {
+      "id": "923a0ba9-9a75-4a67-8b2b-5cecba258953",
+      "title": "Chez Jo #9",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/19",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198715"
+        }
+      }
+    },
+    {
+      "id": "4fa07e6c-00ab-423c-a9ca-26efc19d294d",
+      "title": "Chez Jo #10",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/20",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198716"
+        }
+      }
+    },
+    {
+      "id": "c8bebb8e-4afc-4746-b355-26b51ce82b6d",
+      "title": "Chez Jo #11",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/21",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198717"
+        }
+      }
+    },
+    {
+      "id": "05d8cc6b-c5e6-48e5-ac2b-6a8ceb60e78f",
+      "title": "Chez Jo #12",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198718"
+        }
+      }
+    },
+    {
+      "id": "e4638684-9d1a-4681-8a74-07c60955346f",
+      "title": "Chez Jo #13",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/23",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198719"
+        }
+      }
+    },
+    {
+      "id": "5c354297-4b56-4098-b298-9fc3f59d72a3",
+      "title": "Chez Jo #14",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/24",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198720"
+        }
+      }
+    },
+    {
+      "id": "83f5bccf-53df-4f31-b048-f0d2e16d1b5c",
+      "title": "Chez Jo #15",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/25",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198721"
+        }
+      }
+    },
+    {
+      "id": "c03abe45-1b66-4114-a856-0b3b77f4dc5e",
+      "title": "Chez Jo #16",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/26",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198722"
+        }
+      }
+    },
+    {
+      "id": "68ad89df-d7ab-40c4-a5f3-ecc85b427a49",
+      "title": "Chez Jo #17",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/27",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198723"
+        }
+      }
+    },
+    {
+      "id": "7af960b8-f7b0-4c1a-bea4-d33e1939101c",
+      "title": "Chez Jo #18",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/28",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198724"
+        }
+      }
+    },
+    {
+      "id": "3b825342-68bf-43c1-a2f7-1d368d542f2f",
+      "title": "Chez Jo #19",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/29",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198725"
+        }
+      }
+    },
+    {
+      "id": "54a1c0bd-9b91-4f68-ad85-4aa34094e00c",
+      "title": "Chez Jo #20",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/30",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198726"
+        }
+      }
+    },
+    {
+      "id": "4c9863ac-ab0a-49e2-affc-1bfb872bf366",
+      "title": "Chez Jo #21",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/31",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198727"
+        }
+      }
+    },
+    {
+      "id": "17bff223-f675-4c7a-bd8e-bbe3d2625b6d",
+      "title": "Chez Jo #22",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/32",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198728"
+        }
+      }
+    },
+    {
+      "id": "4bf8053f-60be-413c-9daf-f0b6b96bb0db",
+      "title": "Chez Jo #23",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/33",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198729"
+        }
+      }
+    },
+    {
+      "id": "2576e7f2-0506-401a-af00-20f21089ed89",
+      "title": "Chez Jo #24",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/34",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198730"
+        }
+      }
+    },
+    {
+      "id": "c6b1d30d-ae00-4b09-8047-93d8295bf3ed",
+      "title": "Chez Jo #25",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/35",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198731"
+        }
+      }
+    },
+    {
+      "id": "23a055ee-9f29-49c6-8a0e-286fb0bc3a5d",
+      "title": "Chez Jo #26",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/36",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198732"
+        }
+      }
+    },
+    {
+      "id": "5226a5fa-9a6e-43ad-9c00-241bca53e13a",
+      "title": "Chez Jo #27",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/37",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198733"
+        }
+      }
+    },
+    {
+      "id": "2b408320-26a4-4625-8a7f-4cb6ab5d9ea0",
+      "title": "Chez Jo #28",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/38",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198734"
+        }
+      }
+    },
+    {
+      "id": "9fc89a3c-4171-4890-a8cd-427124cbc732",
+      "title": "Chez Jo #29",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/39",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198735"
+        }
+      }
+    },
+    {
+      "id": "85bef9d9-1828-439d-8644-09ffd1d59370",
+      "title": "Chez Jo #30",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/40",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198736"
+        }
+      }
+    },
+    {
+      "id": "ece69cd5-a3b7-4c16-98d0-ddba2f1685ec",
+      "title": "Chez Jo #31",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/41",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198737"
+        }
+      }
+    },
+    {
+      "id": "9cce7b47-c4cd-4499-a727-4c365d107c71",
+      "title": "Chez Jo #32",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/42",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198738"
+        }
+      }
+    },
+    {
+      "id": "b91ab1df-1df3-4f1f-9b26-b8311866342b",
+      "title": "Chez Jo #33",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/43",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198739"
+        }
+      }
+    },
+    {
+      "id": "742108ab-f780-4646-a63c-b8a50dc1a829",
+      "title": "Chez Jo #34",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/44",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198740"
+        }
+      }
+    },
+    {
+      "id": "5177d90c-7b3d-46f6-b170-c49e067f1b8d",
+      "title": "Chez Jo #35",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/45",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198741"
+        }
+      }
+    },
+    {
+      "id": "c066cbc1-4ac7-4a72-ab0b-61f50a8c80cc",
+      "title": "Chez Jo #36",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/46",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198742"
+        }
+      }
+    },
+    {
+      "id": "02da2502-a61d-491a-bf25-6dd7b50955f6",
+      "title": "Chez Jo #37",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/47",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198743"
+        }
+      }
+    },
+    {
+      "id": "44a9144c-0aca-4a73-938b-ffa75535a50a",
+      "title": "Chez Jo #38",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/48",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198744"
+        }
+      }
+    },
+    {
+      "id": "e324cc46-6c41-46af-abcf-3b994449a2ff",
+      "title": "Chez Jo #39",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/49",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198745"
+        }
+      }
+    },
+    {
+      "id": "37ef79a3-38cd-4983-8324-866ef136a379",
+      "title": "Chez Jo #40",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/50",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198746"
+        }
+      }
+    },
+    {
+      "id": "1dbff18d-3c00-429e-baff-1dce54871423",
+      "title": "Chez Jo #41",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/51",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198747"
+        }
+      }
+    },
+    {
+      "id": "694aac3c-e286-4a30-90cd-825d38aa2017",
+      "title": "Chez Jo #42",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/52",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198748"
+        }
+      }
+    },
+    {
+      "id": "b01c83e9-3eca-4d8f-a1e2-615db137be5a",
+      "title": "Chez Jo #43",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/53",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198749"
+        }
+      }
+    },
+    {
+      "id": "72dfc8ea-778f-4950-80c2-630c074d4de7",
+      "title": "Chez Jo #44",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/54",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198750"
+        }
+      }
+    },
+    {
+      "id": "b8d8e389-78b8-44d9-a594-96b6be9fea28",
+      "title": "Chez Jo #45",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/55",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198751"
+        }
+      }
+    },
+    {
+      "id": "2e86d1da-de3e-4c08-98f6-98de1106c242",
+      "title": "Chez Jo #46",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/56",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198752"
+        }
+      }
+    },
+    {
+      "id": "18ab56ff-b089-4fe8-bcec-3b53097a8a51",
+      "title": "Chez Jo #47",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/57",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198753"
+        }
+      }
+    },
+    {
+      "id": "882e6e0b-be3a-46a9-a79b-390f0ff7714b",
+      "title": "Chez Jo #48",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/58",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198754"
+        }
+      }
+    },
+    {
+      "id": "02fed6e8-4d74-40ef-9792-9bb6de95d5d0",
+      "title": "Chez Jo #49",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/59",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198755"
+        }
+      }
+    },
+    {
+      "id": "9fd94dd9-0491-4b28-a95d-42fe4aac3cd8",
+      "title": "Chez Jo #50",
+      "source": "https://cdn.feralfileassets.com/previews/0fc999f8-144b-48c9-99e1-b1b6968cc29f/1683637829/_unique-previews/60",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.343Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "59971026109497267027609616096128511975038723997719105847508979105447529198756"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

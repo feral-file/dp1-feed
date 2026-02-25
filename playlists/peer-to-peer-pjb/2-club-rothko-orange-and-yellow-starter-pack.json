@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "d3263096-186d-4ba6-8f6c-750262443929",
+  "slug": "club-rothko-orange-and-yellow-starter-pack",
+  "title": "CLUB ROTHKO - ORANGE AND YELLOW STARTER PACK",
+  "summary": "LaTurbo Avedon is a non-binary avatar artist who exists and makes work on the internet, including social media platforms and online digital games. In 2012, they created their first “Club Rothko,” a virtual environment inspired by the artist’s many hours spent inside the “Afterlife” nightclub within the game <em>Mass Effect 2</em>. Club Rothko looks like a nightclub, with rooms, a DJ platform, and lighting and sound systems. But it is also an interoperable “exoverse”—Avedon’s preferred term for the increasingly corporate idea of the “metaverse”—in which the multiple avatars of Avedon from different platforms can coexist and socialize, prompting us to consider how we construct our identities and experience intimacy in cyberspace. <br/>Club Rothko’s name derives from its digital wallpapers of paintings by the Abstract Expressionist Mark Rothko, whose large, floating fields of color are known for absorbing their viewers and triggering strong emotions—responses that many now associate with “immersive” virtual experiences. In Avedon’s exoverse, which treats modernism with both reverence and irreverence, Rothko’s blurry, visually unstable contours become a metaphor for the freedom found beyond the limits of existing technological systems: “At a certain point there are restrictions on what you can do in virtual (and online) environments, edges of where games are intended to go or not,” Avedon once stated. “When I am building in my own software those edges disappear, and I am able to render anything I am looking for.”<br/>While many artists, like Rothko, have found freedom in abstraction, detractors have accused it of being “merely” decorative—like a pretty wallpaper. Digital artists today similarly suffer from the suspicion that their work is as decorative as a screensaver. Avedon leans into the idea of abstraction as decoration, prompting us to question the cultural values that frame how we respond to different kinds of aesthetic experiences—and especially those, like games, that involve technology and are rarely seen as “art.” For <em>Peer to Peer</em>, Avedon has created a new Club Rothko inspired by the Buffalo AKG’s iconic Rothko painting <a href=\"https://buffaloakg.org/artworks/k19568-orange-and-yellow\" target=\"_blank\" class=\"link\"><em>Orange and Yellow</em>, 1956</a>. A video preview of the Club takes viewers on a tour through the space, which culminates with a close-up of a digital painting that reimagines Rothko’s painterly effects as a haze of luminous pixels. Collectors of the <em>CLUB ROTHKO – ORANGE AND YELLOW STARTER PACK</em> are given multiple files created by the artist—including three orange and yellow abstract videos, an ambient soundtrack, a customizable DJ “heads-up display,” and two folders of DJ sound effects—that they can use to create their own Club Rothko, in either their own exoverse or physical space. Despite the utopianism of 1990s cyberculture, the internet has become a space of commerce, surveillance, and discord; <em>CLUB ROTHKO</em> updates the avant-garde dream of integrating art and life for our networked present, asking us to once again imagine networked and virtual environments as utopian spaces where we can experience communion, transcendence, and freedom.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/f7ab02f0-223d-4ac4-0442-d4801ad14200/raw",
+  "created": "2026-02-25T09:58:44.077Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "8b91d462-6efa-4761-9976-a13ea6d15322",
+      "title": "CLUB ROTHKO - ORANGE AND YELLOW STARTER PACK AE",
+      "source": "https://cdn.feralfileassets.com/previews/867218d3-8421-4e45-b6b9-eca2fef44f5d/1665618979/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:44.076Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x2A86C5466f088caEbf94e071a77669BAe371CD87",
+          "tokenId": "81822415981171894284716765232211393989809838876971274183632474922438819548892"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

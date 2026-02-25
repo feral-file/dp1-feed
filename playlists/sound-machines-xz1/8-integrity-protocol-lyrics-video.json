@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "7aec9910-952a-49ee-a6ee-14e61e4fb7ad",
+  "slug": "integrity-protocol-lyrics-video",
+  "title": "Integrity Protocol Lyrics Video",
+  "summary": "<p>The generative music creation interface of Integrity Protocol/Lower Limb Lecture (2023/24), based on a live performance, is presented as an editioned lyrics video created by American Artist.</p>\n",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/f57a5ce3-d2be-4f3d-f43f-a2497da00100/raw",
+  "created": "2026-02-25T09:59:36.797Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "61a72d54-60c5-4c65-a867-f31530069443",
+      "title": "Integrity Protocol Lyrics Video #1",
+      "source": "https://cdn.feralfileassets.com/previews/a15bd8e4-2e6e-4839-9c2b-c2fd98bd7b47/1708930762/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.797Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143447575936"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

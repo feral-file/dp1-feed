@@ -1,0 +1,577 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "ec2ead9a-efb8-4739-bb97-41fd45b48abd",
+  "slug": "allure-of-the-poppy",
+  "title": "Allure of the Poppy",
+  "summary": "Anna Luisa Petrisko’s “Allure of the Poppy” takes place in the California poppy fields and riffs on Southern California colors to instigate alternative spaces of heritage and belonging. Described by the artist: “The California Poppy blooms all over Los Angeles in the Spring. The electric orange flower is also known as ‘cup of gold.’ The stunning poppy fields that dot the landscapes of Southern California are a coveted subject, eliciting greed as people strive to capture the perfect shot for their digital profiles, often trampling the flowers and destroying the wildlife. The allure of the poppy allows us to contemplate the consequences of our relentless quest for perfection, and discover the healing powers that lie within this iconic flower.”\n\nPetrisko explains, “Beautiful Sepehr, donned in her poppy-inspired dress, spends a warm Spring day amongst the poppies. She can’t resist eating their delicate petals, evoking a luscious feeling of deep rest. Poppies are not only known for their natural beauty, but they are also used to treat pain, neuralgia, anxiety, stress, depression, and migraines, and to promote sleep. As Sepehr lays down to rest in the poppies, she is camouflaged, becoming one with the poppies themselves. Humans and poppies are synchronizing in harmony; is it a hallucination? Or perhaps it’s a reminder that we can coexist with nature, embodying the soft gentleness of a poppy petal?”",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/4ef63796-cb0c-4270-3d07-aeabeae5f500/raw",
+  "created": "2026-02-25T09:59:27.810Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "2e701298-3b57-440d-b1bd-4b1583fa809e",
+      "title": "Allure of the Poppy #1",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713472"
+        }
+      }
+    },
+    {
+      "id": "df32e388-1483-421d-8384-dfac10749de0",
+      "title": "Allure of the Poppy #2",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713473"
+        }
+      }
+    },
+    {
+      "id": "3d155d24-4160-4cbd-b0b1-5a4561617033",
+      "title": "Allure of the Poppy #3",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713474"
+        }
+      }
+    },
+    {
+      "id": "ab51e477-de8d-4f0a-a75d-d875913768d8",
+      "title": "Allure of the Poppy #4",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713475"
+        }
+      }
+    },
+    {
+      "id": "0ee9c659-fc99-49d5-90ef-5c5e67eb46e1",
+      "title": "Allure of the Poppy #5",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713476"
+        }
+      }
+    },
+    {
+      "id": "f235bd4e-227e-4273-a10c-7e8c12f03194",
+      "title": "Allure of the Poppy #6",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713477"
+        }
+      }
+    },
+    {
+      "id": "1850a3c7-b85f-49f2-a375-d3bc8f2aa488",
+      "title": "Allure of the Poppy #7",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713478"
+        }
+      }
+    },
+    {
+      "id": "e4846edb-9315-477f-b9ae-f9768265b204",
+      "title": "Allure of the Poppy #8",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713479"
+        }
+      }
+    },
+    {
+      "id": "6d3bb678-c595-46c0-8da9-21acaf4c4427",
+      "title": "Allure of the Poppy #9",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713480"
+        }
+      }
+    },
+    {
+      "id": "51e3594f-1367-4296-993a-a0de90fb051f",
+      "title": "Allure of the Poppy #10",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713481"
+        }
+      }
+    },
+    {
+      "id": "104a1b2f-d455-42d2-b81c-c6df151b96a0",
+      "title": "Allure of the Poppy #11",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/10",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713482"
+        }
+      }
+    },
+    {
+      "id": "0ad6a1df-09b6-4fa2-a093-2c47466a09a9",
+      "title": "Allure of the Poppy #12",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/11",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713483"
+        }
+      }
+    },
+    {
+      "id": "97cff1f6-8f23-4185-940e-63e79b572c2d",
+      "title": "Allure of the Poppy #13",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/12",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713484"
+        }
+      }
+    },
+    {
+      "id": "4d775a9f-6e5d-400e-a4aa-9a85a6a8c645",
+      "title": "Allure of the Poppy #14",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/13",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713485"
+        }
+      }
+    },
+    {
+      "id": "b25e7ef7-72ab-415c-9c3b-1c3a78bdf3cf",
+      "title": "Allure of the Poppy #15",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/14",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713486"
+        }
+      }
+    },
+    {
+      "id": "8b51e038-2a06-423b-8014-4cad1a290c21",
+      "title": "Allure of the Poppy #16",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/15",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713487"
+        }
+      }
+    },
+    {
+      "id": "12a32cb9-4923-4df0-83ae-c406eb03a332",
+      "title": "Allure of the Poppy #17",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/16",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713488"
+        }
+      }
+    },
+    {
+      "id": "3f5e2988-a37c-44c5-9641-5d9317f56af6",
+      "title": "Allure of the Poppy #18",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/17",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713489"
+        }
+      }
+    },
+    {
+      "id": "70854a1a-e064-4233-a4d4-f4bb16974f7a",
+      "title": "Allure of the Poppy #19",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/18",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713490"
+        }
+      }
+    },
+    {
+      "id": "450dcc4e-dbbf-4e7d-84d0-d0de86cc77e3",
+      "title": "Allure of the Poppy #20",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/19",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713491"
+        }
+      }
+    },
+    {
+      "id": "cdffd289-cd8b-4e5d-ade0-7430cbdb7368",
+      "title": "Allure of the Poppy #21",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/20",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713492"
+        }
+      }
+    },
+    {
+      "id": "602305ed-c12f-4ce2-b0d7-7d0d947e0a6d",
+      "title": "Allure of the Poppy #22",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/21",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713493"
+        }
+      }
+    },
+    {
+      "id": "ffa3bda2-fc4c-44d6-a7c2-ce5c1b1f0b40",
+      "title": "Allure of the Poppy #23",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713494"
+        }
+      }
+    },
+    {
+      "id": "ba1ef86b-529b-44ec-a673-95e7ab08aff6",
+      "title": "Allure of the Poppy #24",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/23",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713495"
+        }
+      }
+    },
+    {
+      "id": "a4851f59-171d-40e4-a42e-ac55922d6858",
+      "title": "Allure of the Poppy #25",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/24",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713496"
+        }
+      }
+    },
+    {
+      "id": "3922c0b3-0586-4ee6-8c9c-83d6e50421c4",
+      "title": "Allure of the Poppy #26",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/25",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713497"
+        }
+      }
+    },
+    {
+      "id": "7b369b96-875e-4977-a993-f1f4ee2f0e24",
+      "title": "Allure of the Poppy #27",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/26",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713498"
+        }
+      }
+    },
+    {
+      "id": "05c7563a-ce17-4dd2-8463-45d84f457a53",
+      "title": "Allure of the Poppy #28",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/27",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713499"
+        }
+      }
+    },
+    {
+      "id": "798899dd-d073-4f24-a0ac-62c981c99da2",
+      "title": "Allure of the Poppy #29",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/28",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.809Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713500"
+        }
+      }
+    },
+    {
+      "id": "8a303731-36aa-4be8-910a-c343718cd4db",
+      "title": "Allure of the Poppy #30",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/29",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.810Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713501"
+        }
+      }
+    },
+    {
+      "id": "07c2886f-f195-4a95-991e-e5eab1c8a241",
+      "title": "Allure of the Poppy #31",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/30",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.810Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713502"
+        }
+      }
+    },
+    {
+      "id": "423c30ad-6082-4271-bf48-cea4542f7fbf",
+      "title": "Allure of the Poppy #32",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/31",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.810Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713503"
+        }
+      }
+    },
+    {
+      "id": "a5947b9e-c46b-4d5a-80ee-e0b5f7b9e61d",
+      "title": "Allure of the Poppy #33",
+      "source": "https://cdn.feralfileassets.com/previews/ea32ccaf-798b-4ece-8505-fa77ef23f8b8/1687229370/_unique-previews/32",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:27.810Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136599713504"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "d3cbe368-faeb-49e6-a78d-71f8167a1eda",
+  "slug": "winslow-homer-s-croquet-challenge",
+  "title": "Winslow Homer’s Croquet Challenge",
+  "summary": "<em>Winslow Homer’s Croquet Challenge</em> is a digital game that can be played by anyone on the internet or by collectors as an application on their computer. Toronto-based artist Mitchell F. Chan not only coded the game art and mechanics, but also wrote the dialogue, recorded the sound effects, and even created the shaders that calculate the lighting levels on each texture in real time. The first in his new series of immersive fictions called <em>Beggars Belief</em>, this game transforms Homer’s painting <a href=\"https://buffaloakg.org/artworks/194111-croquet-players\" target=\"_blank\" class=\"link\"><em>The Croquet Players</em>, 1865</a>, into a digital “physics game” (like <em>Angry Birds</em>), in which the player uses their cursor to aim and swing their mallet towards the ball. The characters are modeled after the figures in the painting; the action takes place on a lawn that is bounded by a recreation of the painting’s gilded frame; and landscape scenery from Homer’s other paintings provide the backdrop.<br/>Homer first became famous for his images of the Civil War, which were popularized in the press and helped the Union’s cause. Painted shortly after the war’s ending, his idyllic rendering of a friendly croquet competition may represent the desire for reconciliation after an intense period of social and political division—or perhaps a skepticism that such a thing is possible, given the ambiguous relationships between the figures. Chan amplifies the painting’s undercurrent of conflict by giving the characters dialogue that emphasizes the historical context of the Civil War, as well as by making Homer’s genre painting of privileged leisure into an actual game with winners and losers. Given that physics games are descended from ballistics research during World War II (which contributed to the invention of modern computing), the game play particularly highlights the military history haunting this scene.<br/>Beyond contextualizing <em>The Croquet Players</em> as an antebellum painting, Chan’s game reminds us that art—like games or politics or war—takes place within a defined arena according to a set of rules, and that certain ideas, facts, or people must be included or excluded for this arena to be maintained. Using your cursor to lower the in-game camera reveals a chain gang of formerly enslaved African Americans laboring in the fields beyond the lawn, suggesting the Jim Crow laws then forming on the horizon—as if the tenor of Homer’s painting depends on keeping knowledge of these events “outside the frame.” The game also touches on the sexual politics of this era, which saw the birth of the women’s suffrage movement. Homer’s painting reflects that croquet was one of the first co-ed sports, which contributed to its surge in popularity in the 1850s. Chan’s game uses Homer’s same co-ed figures, but we can only play as the women, even though only the men are allowed to speak—and to win.<br/><em>Note: This work is not optimized for viewing on mobile devices; please view it on your computer’s browser. Loading may take up to 30 seconds.</em><br/><em>Please note that this work contains adult language and content.</em>",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/22bb1f33-d721-49cb-cd4d-5ee9ef830100/raw",
+  "created": "2026-02-25T09:58:44.077Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "78961d6c-42d6-4d6a-8f00-a3c3261b9642",
+      "title": "Winslow Homer’s Croquet Challenge AE",
+      "source": "https://cdn.feralfileassets.com/previews/91765bc5-8815-4620-8268-80516d531dc0/1668956899/?edition_number=0&blockchain=ethereum&contract=0x2A86C5466f088caEbf94e071a77669BAe371CD87&token_id=25811853076941608055270457512038717433705462539422789705262203111341130500760&token_id_hash=0x657b8ee9784f92d891011d25d68a45a47499f7f9c7b1f95d11b18969d1222deb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:44.077Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x2A86C5466f088caEbf94e071a77669BAe371CD87",
+          "tokenId": "25811853076941608055270457512038717433705462539422789705262203111341130500760"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

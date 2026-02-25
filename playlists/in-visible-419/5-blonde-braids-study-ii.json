@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "fd9f8e5d-da36-430f-850c-2adf7611b945",
+  "slug": "blonde-braids-study-ii",
+  "title": "Blonde Braids Study II",
+  "summary": "“In ‘Blonde Braids Study II,’ I examine the ways in which a text-to-image algorithm — Midjourney (v4) — renders a portrait of Black identical twins adorned with blonde braids. The resulting image underscores significant gaps in the training data, which inevitably precipitates a flattened representation of the Black identity outlined in the text prompt. Instead, the algorithm generates an interpretation that evokes the semblance of fraternal twins, their hair styled in blonde, permed waves.” — Minne Atairu",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/eef80da7-9b9b-4a31-98c1-104c7cb9ab00/raw",
+  "created": "2026-02-25T09:59:15.340Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "9ce5e12c-ec1b-4bb3-9fb5-7e84659343e1",
+      "title": "Blonde Braids Study II AE",
+      "source": "https://cdn.feralfileassets.com/previews/94f4a7aa-833f-44fd-8047-101faee9cb4d/1680264084/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:15.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xfD9FdFAC71Bbc7DD5C7176644De7Fbfd1A6825ee",
+          "tokenId": "109698176792784266872728233504908651038149947468500265031716790231580826261414"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "81564d2b-f9e1-4d0c-9744-9e0ef396ca4a",
+  "slug": "unbridled-christie-by-lorna-mills",
+  "title": "Unbridled Christie by Lorna Mills",
+  "summary": "<p>Wrath</p>\n<p>When it comes to her GIF artworks, Lorna Mills draws material from many different sources. It’s not uncommon to see pornography, animal videos, and all other manner of internet eye candy cut out and transposed in her work against a bright colored background. In <em>Diatriber</em>, source material comes from weapons demonstrations on ballistic gel dummies posted to YouTube. In these videos, a weapon—be it a sword, gun, axe, or otherwise—is used, typically by a man, with full force against a dummy. The dummies are made to mimic human flesh in order to accurately test the weapon, and for the sake of effect, they often spurt fake blood. When this concoction comes into contact with the right weapon at the right speed, the result is a flurry of particles of blood, gel, and fake bone, meticulously identified and sculpted frame by frame in Mills’ hand-crafted style. Mills has described Diatriber as a “giant temper tantrum,” and in viewing the carnage, the viewer can’t help but take part.</p>\n",
+  "coverImage": "https://cdn.feralfileassets.com/thumbnails/f5bd9abb-7a95-4c69-9fd5-88b816e51f2b/1755593015",
+  "created": "2026-02-25T08:00:13.473Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "875379fb-7150-41f8-9a55-92af19713c52",
+      "title": "Unbridled Christie #1",
+      "source": "https://cdn.feralfileassets.com/previews/f5bd9abb-7a95-4c69-9fd5-88b816e51f2b/1747850031/preview.gif",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T08:00:13.473Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485446444096"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

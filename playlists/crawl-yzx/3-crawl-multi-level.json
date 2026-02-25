@@ -1,0 +1,356 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "15828589-d49a-41bf-8801-e198a9ec2774",
+  "slug": "crawl-multi-level",
+  "title": "CRAWL MULTI LEVEL",
+  "summary": "<p><em>CRAWL</em> is a series of 512 unique artworks, each generated from a Python-code system authored by Travess Smalley. Each artwork is a “level” to be explored, and includes different patterns, colors, and textures. The core of each artwork is a map image, but the artwork is also the way the image is revealed to the viewer through Smalley’s custom-built explorer software. Viewers can sit back and watch the software perform itself, or they can navigate directly with a keyboard. While exploring, different colors within the image trigger different events. Each level has a door icon, as well as other features to discover — all of which reveal new ways to explore.</p>\n<p>Each <em>CRAWL</em> artwork is one “level.” If you collect multiple <em>CRAWL</em> artworks, they can be merged into a new artwork that contains all the levels in your collection. For instance, if 24 individual levels are collected, those artworks can be combined into a unique 1/1 software artwork featuring all 24 levels, and the original single-layer artworks are burned. After a merge, icons embedded into each level map enable the collector to move between levels.</p>\n<p>Mouse Instructions:<br>Left Click and Hold - Move towards the cursor direction<br>Release Left Click - Stop moving<br>Left Click on Buttons to Trigger Action</p>\n<p>Keyboard instructions:<br>W | Arrow Up - Move Up<br>A | Arrow Left - Move Left<br>S | Arrow Down - Move Down<br>D | Arrow Right - Move Right<br>Hold Shift - Precision Movement Mode<br>+ - Zoom In (20x)<br>- - Zoom Out (4x) - (3x to 1x Unlocked)<br>G - Show Map<br>? - Show Info<br>T - Warp (Unlocked)<br>R - Create Spawn (Unlocked)<br>U - Create Worm (Unlocked)<br>[ - Ascend Level (Unlocked in Multi Level)<br>] - Descend Level (Unlocked in Multi Level)</p>\n<p>Touch Instructions:<br>Touch and Hold - Move towards the touch direction<br>Release Touch - Stop moving<br>Touch Buttons to Trigger Action</p>\n",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/14d176a9-cede-454c-6888-c94a9b111a00/raw",
+  "created": "2026-02-25T09:59:56.502Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "af6e7f2f-2db0-48d5-a187-3163b6829907",
+      "title": "CRAWL MULTI LEVEL[490,172,086,033]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/0/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.501Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383744"
+        }
+      }
+    },
+    {
+      "id": "82dcd30f-ab15-4d1c-b484-3cff670354b6",
+      "title": "CRAWL MULTI LEVEL[402,352,245]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/1/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.501Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383745"
+        }
+      }
+    },
+    {
+      "id": "3584d935-fcda-4043-8b88-0c4c3ca4cdb1",
+      "title": "CRAWL MULTI LEVEL[316,478,009,056,388,286,234,205,190,398]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/2/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.501Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383746"
+        }
+      }
+    },
+    {
+      "id": "4570dd05-c9ab-420d-a1f6-8c428346ca11",
+      "title": "CRAWL MULTI LEVEL[316,478,009,056,388,286,234,205,190,398,273,461]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/3/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.501Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383747"
+        }
+      }
+    },
+    {
+      "id": "996f8b6e-3778-46e1-96f8-f785f53c05a3",
+      "title": "CRAWL MULTI LEVEL[125,019]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/4/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.501Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383748"
+        }
+      }
+    },
+    {
+      "id": "7945ac34-8fdc-4dfa-adc2-cf2b90ea9711",
+      "title": "CRAWL MULTI LEVEL[348,419,482]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/5/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.501Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383749"
+        }
+      }
+    },
+    {
+      "id": "3b319f92-e208-442b-a9c6-1d0d6e829c01",
+      "title": "CRAWL MULTI LEVEL[128,241,258,068]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/6/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.501Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383750"
+        }
+      }
+    },
+    {
+      "id": "971d20eb-462c-4eb2-8515-0ccfc37b8f87",
+      "title": "CRAWL MULTI LEVEL[484,319]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/7/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.501Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383751"
+        }
+      }
+    },
+    {
+      "id": "0959d850-b9a6-4373-8465-c6cfd5d93294",
+      "title": "CRAWL MULTI LEVEL[458,448]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/8/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.501Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383752"
+        }
+      }
+    },
+    {
+      "id": "091beb1f-2c0b-481e-a974-6f43f9cc176d",
+      "title": "CRAWL MULTI LEVEL[359,293]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/9/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.501Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383753"
+        }
+      }
+    },
+    {
+      "id": "7477d1e0-fa35-4c8f-9ea6-7c3566f4a2ab",
+      "title": "CRAWL MULTI LEVEL[094,236]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/10/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.501Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383754"
+        }
+      }
+    },
+    {
+      "id": "1ad63bb4-c81a-4192-bacb-e9f45ee7e016",
+      "title": "CRAWL MULTI LEVEL[247,477]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/11/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.502Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383755"
+        }
+      }
+    },
+    {
+      "id": "e9bf9ea0-2583-4d33-b6c8-55ba29d614c7",
+      "title": "CRAWL MULTI LEVEL[209,367]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/12/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.502Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383756"
+        }
+      }
+    },
+    {
+      "id": "dc3bd424-689f-4e85-99ad-dcbe8475baea",
+      "title": "CRAWL MULTI LEVEL[279,044]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/13/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.502Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383757"
+        }
+      }
+    },
+    {
+      "id": "b422c5d9-e631-4a26-83ce-0c86968ac9e9",
+      "title": "CRAWL MULTI LEVEL[348,419,482,329,395,153]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/14/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.502Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383758"
+        }
+      }
+    },
+    {
+      "id": "6f7132a0-4c25-4de0-b858-6280a4b5349a",
+      "title": "CRAWL MULTI LEVEL[213,116,170,275]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/15/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.502Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383759"
+        }
+      }
+    },
+    {
+      "id": "61e38eb4-21be-4763-b4b6-c71bcbbad490",
+      "title": "CRAWL MULTI LEVEL[200,126,076,115]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/16/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.502Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383760"
+        }
+      }
+    },
+    {
+      "id": "15798f24-1481-4d95-8bdc-dfeb8866a206",
+      "title": "CRAWL MULTI LEVEL[474,118,409]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/17/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.502Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383761"
+        }
+      }
+    },
+    {
+      "id": "07650aa9-9471-4c4c-a65c-ffffadc81770",
+      "title": "CRAWL MULTI LEVEL[279,044,161]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/18/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.502Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383762"
+        }
+      }
+    },
+    {
+      "id": "4de46b1c-dd5c-4a7a-b6ac-81d8e8b0163f",
+      "title": "CRAWL MULTI LEVEL[279,044,161,356]",
+      "source": "https://cdn.feralfileassets.com/previews/0a954c31-d336-4e37-af0f-ec336c064879/1720433352/_unique-previews/19/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:56.502Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x81c882c59799eA442317D020c39174AaAa8d7FC7",
+          "tokenId": "27271357221255084324537793443996264744604553267670416617055471525879030383763"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

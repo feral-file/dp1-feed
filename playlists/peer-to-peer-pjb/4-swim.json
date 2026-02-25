@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "63573545-5a32-4304-ba3b-baf91d34f18c",
+  "slug": "swim",
+  "title": "Swim",
+  "summary": "Entangled Others was founded in 2020 by Sofia Crespo (a generative artist who works with neural networks) and Feileacan McCormick (a generative artist and former architect). Their “entangled” practice acknowledges the creative and ethical entanglements between people, and also the eerie entanglements between humans and more-than-human machines and natural forces. Their work <em>Swim</em> takes as its point of departure Arturo Herrera’s <a href=\"https://buffaloakg.org/artworks/201148a-n-walk\" target=\"_blank\" class=\"link\"><em>Walk</em>, 2009</a>, a series of fourteen independent sculptures of abstract lines, which in turn were inspired by <a href=\"https://buffaloakg.org/person/paul-klee\" target=\"_blank\" class=\"link\">Paul Klee</a>’s whimsical idea that “a line is a dot that went for a walk.” Herrera’s foot-tall steel objects are placed in a ten-foot row on a wall, suggesting the progressive linear movement of narrative forms like ancient friezes or modern-day filmstrips. Like Klee, Herrera embraced the creative potential in allowing a line “to move freely, without goal” (as Klee wrote in his 1925 <em>Pedagogical Sketchbook</em>). <br/>In <em>Swim</em>, Entangled Others uses artificial intelligence to “take a line for a swim.” They trained their neural network to iteratively morph a vector line to match images of aquatic subjects, resulting in fourteen doodles of abstract blue shapes that evoke lifeforms such as jellyfish and coral. While their works are produced with AI, they emphasize that these systems are not their “collaborators,” have no “agency,” and are not “alive.” In fact, they see their works as helping to demystify these technologies and promote technological literacy. By training algorithms on open-source databases of scientific information, Entangled Others draws attention to <em>what</em> we choose to study in nature and <em>how</em> we describe it using data—and how this information might be shaping the natural world in turn. <br/>The output for <em>Swim</em> is captured as an animated SVG file in which the lines seem to “draw themselves,” as well as a video recording. The final series of images also has been printed on paper by using a plotter printer—an early digital printer in which a computer controls the movement of a pen over paper, like a seismograph. This again evokes the specter of the (absent) “artist’s hand,” further pushing the long history of abstraction into a future increasingly shaped by so-called “intelligent” machines.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/0ce1c14f-ba3f-4aa5-8db4-8503231aae00/raw",
+  "created": "2026-02-25T09:58:44.077Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "bd608078-9de2-4640-b922-80f3978074da",
+      "title": "Swim",
+      "source": "https://cdn.feralfileassets.com/previews/5c46d607-e11d-477d-b38d-a9f5f2b7f6d9/1663401360/?edition_number=0&blockchain=ethereum&contract=0x2A86C5466f088caEbf94e071a77669BAe371CD87&token_id=69037219782415170039743351977361926117918379142220489214116017537486336548224&token_id_hash=0x2bd150ae012a1c9d5925c1edeb86c23040a44bce78e69a8d7d94339308292619",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:44.077Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x2A86C5466f088caEbf94e071a77669BAe371CD87",
+          "tokenId": "69037219782415170039743351977361926117918379142220489214116017537486336548224"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

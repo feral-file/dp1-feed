@@ -1,0 +1,220 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "1c802649-102d-4c6c-bb50-060e4cadda28",
+  "slug": "apartment-block",
+  "title": "APARTMENT BLOCK",
+  "summary": "<em>Like a chunk of houses glued together and cut into cubes, each with a standalone reality — the apartment blocks aren’t meant to be good because the community enjoys the process of making them better. </em><br/>Every one of the structures in BOOM TOWN represents a unique, living artwork comprised of 1,000 images that will change over time, evolving as a kind of durational stop motion animation over an undetermined period pegged to Ethereum’s block time — that is, the length of time it takes to add another block to the blockchain. Collectors receive the full set of images as part of their acquisition package and can browse or even create prints of the work’s past or future state, but they cannot make the work advance any faster or slower than block time. <br/>Burr’s process blends traditional animation techniques with the affordances of generative algorithmic systems. Each work originates with “intentionally unoptimized algorithms” developed by Burr’s collaborator, Dave Tandem, and follows a precise composition logic that dictates its form, ground and field, shadows, planes, colors, and weight. The software allows Burr to draw structures on a gravity-influenced canvas and to animate them changing over time. Burr is interested in highlighting the unique fingerprints of various software and in his practice often works across tech pipelines to weave these diverse fingerprints into a unique aesthetic, reveling in the compression and dithering that occurs through this approach. The final images are outputted into a custom framework built by Tandem that uses block time to advance their evolution.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/c53b3aab-7745-46e9-95a8-63eb1c831300/raw",
+  "created": "2026-02-25T09:58:54.522Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "492ac5c6-130a-4efd-af57-c0e93b155abe",
+      "title": "APARTMENT BLOCK AE",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=0&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560112&token_id_hash=0x626cad4ce1bfbb38065e630350f171cd1e995b51b9550be9a777b2f3464f31e5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560112"
+        }
+      }
+    },
+    {
+      "id": "5598207d-4ea1-494f-bda6-0c7dba4efe11",
+      "title": "APARTMENT BLOCK AE",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=1&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560113&token_id_hash=0xf7e661141772f3fb06e3611c8522e10c7db4ed804834c204d84f9b045134cab7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560113"
+        }
+      }
+    },
+    {
+      "id": "8bb8b147-7e5d-4182-af1a-89b534acc26d",
+      "title": "APARTMENT BLOCK PP",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=2&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560114&token_id_hash=0x543cf69d094de60ab5fb350f7f10f13ba0e9fc170de57cc6571b4e63b086cbf3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560114"
+        }
+      }
+    },
+    {
+      "id": "4e8a8b55-62a7-463b-801f-f4b1af298ee8",
+      "title": "APARTMENT BLOCK #1",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=3&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560115&token_id_hash=0x51efd6dc31c7d559b73da92dc5d817e1683e35d573548caadab5e7206b6611e2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560115"
+        }
+      }
+    },
+    {
+      "id": "6ad123a2-83ed-4dc8-9116-78a83ce22948",
+      "title": "APARTMENT BLOCK #2",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=4&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560116&token_id_hash=0x46a592a3ff7795837d0889d26dc739baf792d50c2dc90614673f2502fc2bbdbb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.522Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560116"
+        }
+      }
+    },
+    {
+      "id": "a31aed1b-58fc-4ae7-a5d2-d2d13c3b91eb",
+      "title": "APARTMENT BLOCK #3",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=5&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560117&token_id_hash=0x8e6b945b7d553864cebc9a622aa963e2ff957b11cc71d335180bc22c79145929",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.522Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560117"
+        }
+      }
+    },
+    {
+      "id": "bc8ebf2a-be90-410a-911d-93709e000d14",
+      "title": "APARTMENT BLOCK #4",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=6&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560118&token_id_hash=0x5d46bf9605c7f7a5c066f49628ab5aa122ade354dbbd6c3b3b900ed545584e99",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.522Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560118"
+        }
+      }
+    },
+    {
+      "id": "d4298947-4338-4f29-97a2-fc7747367424",
+      "title": "APARTMENT BLOCK #5",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=7&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560119&token_id_hash=0x140d3b98b389ab6bd59bce2f095ae4891e3518cd1981bfd3cdf27d08c8cda260",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.522Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560119"
+        }
+      }
+    },
+    {
+      "id": "cc560a98-1203-4e1e-b5fc-310e1bd82cec",
+      "title": "APARTMENT BLOCK #6",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=8&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560120&token_id_hash=0x7301edf6c37e75f640456dfe2d68f9631c703f6f0065ac2de4789476038b319c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.522Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560120"
+        }
+      }
+    },
+    {
+      "id": "99795ed2-09ee-460b-bcd3-38f9fe7a8c32",
+      "title": "APARTMENT BLOCK #7",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=9&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560121&token_id_hash=0xe0fcf84d20dc9521f20127b91c20a2911bd14cf6b6f4919938179ad011760ccc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.522Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560121"
+        }
+      }
+    },
+    {
+      "id": "10e3fa2d-9c50-48e5-a8ee-52ac82587770",
+      "title": "APARTMENT BLOCK #8",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=10&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560122&token_id_hash=0x07707743403773b146a6fa3386763c2d30c1d2468ee5e59b80334239128822cc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.522Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560122"
+        }
+      }
+    },
+    {
+      "id": "0112301c-6cea-4c9a-931b-e82fe090f5e5",
+      "title": "APARTMENT BLOCK #9",
+      "source": "https://cdn.feralfileassets.com/previews/dd833c02-3847-40be-ab08-20d574aad3b9/1670991044/?edition_number=11&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=95719868769968552594329151316256029294014863017036376334895531914236467560123&token_id_hash=0xb57ac6050ff4eda17f6016731067bed691e7021f6e3494df022e3fabdc57f8a0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.522Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "95719868769968552594329151316256029294014863017036376334895531914236467560123"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

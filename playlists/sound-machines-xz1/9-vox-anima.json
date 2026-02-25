@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "047dd925-8e23-464e-b471-c046ba611478",
+  "slug": "vox-anima",
+  "title": "Vox Anima",
+  "summary": "<p>A 1923 wall mount telephone rings. A synthesized voice reads a translated excerpt from Aristotle&#39;s &quot;On the Soul.&quot; This editioned video connects early communication networks with classical philosophy and artificial intelligence.</p>\n",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/355a0bae-fbaa-41f1-c96a-329026ead600/raw",
+  "created": "2026-02-25T09:59:36.797Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "574d0615-5412-4b95-a811-4de7d119b8be",
+      "title": "Vox Anima #1",
+      "source": "https://cdn.feralfileassets.com/previews/67ab07f9-3dc5-4758-a560-c3d2347523b8/1709105834/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.797Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143449575936"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

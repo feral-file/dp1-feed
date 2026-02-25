@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "22dcace4-2eb5-4456-b827-bfc4ff1debda",
+  "slug": "xibam-eternal-nurture-sometimes-my-spirit-runs-away-from-me",
+  "title": "Xibam / Eternal Nurture: Sometimes my spirit runs away from me",
+  "summary": "<p><em>Xibam</em> (which means “brother” in Téenek) is part of <em>Omoiyari</em>, a collaborative artwork made by the artist collective Keiken and Gabriel Massan. First displayed around the busy streets of Soho in Central London at The Photographers Gallery (2022), the posters in this series encouraged passers-by to explore a speculative world by encountering some of its inhabitants.</p>\n<p><em>Omoiyari</em> translates as compassion in Japanese. Each poster in the series features a slogan in the style of an advert. When positioned in busy, retail-driven areas, these expressions of love, tenderness, and infinite possibility inspire us to challenge and expand the pre-existing structures and limitations of our reality. They subvert the idea that adverts sell desires, and instead examine the depths and complexities of being a spirit within a body.  </p>\n<p>In this work, Xibam is a cute sibling spirit with eternal nurturing energy, who acknowledges that sometimes their own spirit may evade them. To practice compassion, one must be a student of the invisible.</p>\n",
+  "coverImage": "https://cdn.feralfileassets.com/thumbnails/45095426-61c8-40d1-b985-713062620744/1749195742",
+  "created": "2026-02-25T10:00:08.844Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "81faa935-950c-4788-9c81-d1884d229db8",
+      "title": "Xibam / Eternal Nurture: Sometimes my spirit runs away from me #1",
+      "source": "https://cdn.feralfileassets.com/previews/45095426-61c8-40d1-b985-713062620744/1749197037/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:08.844Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112815622400"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

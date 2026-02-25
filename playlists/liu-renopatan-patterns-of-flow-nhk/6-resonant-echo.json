@@ -1,0 +1,1121 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "898dd620-54c8-4291-baeb-2177c402a439",
+  "slug": "resonant-echo",
+  "title": "響く残響 / Resonant Echo",
+  "summary": "<p>Inspired by Hiroshi Kawano’s <em>Red Tree</em> (1972), Okazz’s <em>Resonant Echo</em> explores visual order and rhythm through its grid of simple geometrical shapes. With its palette limited to the color primaries of red, yellow, and blue, the work stresses the movement of shapes as well as the influence of Mondrian on Kawano. Motion here is consistently linear, with lines forming orderly patterns at right angles, evolving continually through smooth animation. <em>Resonant Echo</em> is an exploration of the subtle interaction between visual perception and cognition, achieved through a balance of minimal elements and precisely calculated movement.</p>\n<p>川野洋の「Red Tree」（1972）に着想を得たOkazzの作品「Resonant Echo」は、シンプルな幾何学的形状のグリッドを通して、視覚的な秩序とリズムを探求する作品。パレットを赤、黄、青の原色に限定することで、モンドリアンが河野に与えた影響と同様に、形の動きを強調している。動きは一貫して直線的で、線は直角に整然としたパターンを形成し、滑らかなアニメーションによって絶えず進化する。「Resonant Echo」は、最小限の要素と精密に計算された動きのバランスによって達成される、視覚認識と認知の間の微細な相互作用の探求を行う作品です。</p>",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/738ffdca-1dff-4552-e833-2294adf6ce00/raw",
+  "created": "2026-02-25T10:00:00.315Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "08917386-dc2f-41f2-a6ad-3faefa24a947",
+      "title": "響く残響 / Resonant Echo #1",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=0&artwork_number=1&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x83012ee9576e78df7c8a3b5db81d78bdd1d40b5a7d486178945e9420e6466d49",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306240"
+        }
+      }
+    },
+    {
+      "id": "24c71303-34e5-4354-a9c2-e05c8ee3284d",
+      "title": "響く残響 / Resonant Echo #2",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=1&artwork_number=2&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x5404527e2e6fb1202c707f1c82cb9290f95691eb9c7ad819a43b94659d0647e2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306241"
+        }
+      }
+    },
+    {
+      "id": "54814a68-2b8b-4300-b139-5fdafa1be703",
+      "title": "響く残響 / Resonant Echo #3",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=2&artwork_number=3&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x07596b6ffc6d5ba32d6f2351e50634a804bf86707b8ab2896fe3d5ca4456cf59",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306242"
+        }
+      }
+    },
+    {
+      "id": "3706cafd-a88d-4f71-952c-ed7a12cca6d9",
+      "title": "響く残響 / Resonant Echo #4",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=3&artwork_number=4&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xede656798a2d6f28a61fa469e9daeff622e37486f62432a76f15cc555b336de6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306243"
+        }
+      }
+    },
+    {
+      "id": "0dd7d737-60e0-4113-803e-656a8954c3ce",
+      "title": "響く残響 / Resonant Echo #5",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=4&artwork_number=5&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x9bd2e3ae9aa1efcf1939be978a650a635cde0aff37a4f2984d41036198fb4a08",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306244"
+        }
+      }
+    },
+    {
+      "id": "95337cc9-0fe5-4cfd-8456-3d809a9a4bed",
+      "title": "響く残響 / Resonant Echo #6",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=5&artwork_number=6&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xee8cd471a180b30c9bb16dbbb86f5b64b54745e81826fffe5a1154ffda6cf8e6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306245"
+        }
+      }
+    },
+    {
+      "id": "dd007609-7c99-4fad-a6c5-616d2e60bc49",
+      "title": "響く残響 / Resonant Echo #7",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=6&artwork_number=7&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x9573d0703190cb1bb1a2258aa81be288f93b11e101ac984a9cb52f927191d847",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306246"
+        }
+      }
+    },
+    {
+      "id": "47eb32ed-62bd-4c6d-b28e-9c6744b25438",
+      "title": "響く残響 / Resonant Echo #8",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=7&artwork_number=8&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x08867a47b246ebc7eea270b95e7fcbc7ea3d8db3094d4698380422c55ef45bc5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306247"
+        }
+      }
+    },
+    {
+      "id": "1230a9cd-5fea-4121-8ae0-efcf2f06ea68",
+      "title": "響く残響 / Resonant Echo #9",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=8&artwork_number=9&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x45e26f677225b3fe16be38a47dffbac2b6596eafc6ba3818e85a439fdc56654f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306248"
+        }
+      }
+    },
+    {
+      "id": "b258fe44-d386-4ada-b5b2-f5961047c48d",
+      "title": "響く残響 / Resonant Echo #10",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=9&artwork_number=10&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x4d612228c4bd51fca264673b1e32d23d313e62cfc155d1292c979a3a16830926",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306249"
+        }
+      }
+    },
+    {
+      "id": "aae3226f-706f-45da-af81-40b4afc4c9b4",
+      "title": "響く残響 / Resonant Echo #11",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=10&artwork_number=11&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x1f332c50c936a09f8e0c78ea3350808ca62796d05c7301f533b94205fc638d07",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306250"
+        }
+      }
+    },
+    {
+      "id": "53ba9455-cac4-405d-ad88-524091601d64",
+      "title": "響く残響 / Resonant Echo #12",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=11&artwork_number=12&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x768aa3c973758a3ca30a1032c455b93a5d94c13de4ec16c607ad40c30b9f256f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306251"
+        }
+      }
+    },
+    {
+      "id": "f2b4d21c-31af-4529-a579-76c3fd600a8e",
+      "title": "響く残響 / Resonant Echo #13",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=12&artwork_number=13&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xad78e64402674f5ec298d769718975ebb554cf4ba6c0c45968ea2ebc27b80d3b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306252"
+        }
+      }
+    },
+    {
+      "id": "87638962-c89e-4a26-b5aa-5a4b0b96c90f",
+      "title": "響く残響 / Resonant Echo #14",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=13&artwork_number=14&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x52df7ae32d20b83fc2fc47d6bee9431478576aa9964bf2e5c9590eceef0fb5b5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306253"
+        }
+      }
+    },
+    {
+      "id": "dfc71998-c03b-4d20-b86f-c3783690369b",
+      "title": "響く残響 / Resonant Echo #15",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=14&artwork_number=15&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xe6ae3e738a4fdff603d112e7b532c47e51fdddbf6565da80e14a79c3db546e42",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306254"
+        }
+      }
+    },
+    {
+      "id": "85a49d6a-5495-4e19-be7d-848a2fdf9630",
+      "title": "響く残響 / Resonant Echo #16",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=15&artwork_number=16&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x17823ad8a6aba0eec0bd0baf68109123678891d0c7e667f94ef04531404cbdf4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306255"
+        }
+      }
+    },
+    {
+      "id": "4608093d-a4aa-46ae-a909-c8ddd148cad2",
+      "title": "響く残響 / Resonant Echo #17",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=16&artwork_number=17&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x2b3518c30a97a113e80b9f642a633a6401bc7ce12d5a391b9a9a288f357fc373",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306256"
+        }
+      }
+    },
+    {
+      "id": "68df13ae-0c68-4d02-be40-5650a3d799d5",
+      "title": "響く残響 / Resonant Echo #18",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=17&artwork_number=18&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x25545d5087ea39d4e359d63e20c8a878ac12494b735bcaa0d4c91cb733c21f88",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306257"
+        }
+      }
+    },
+    {
+      "id": "b866dd64-218b-4703-b8fa-02686f72e42e",
+      "title": "響く残響 / Resonant Echo #19",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=18&artwork_number=19&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x78422de899a3777bd2c6e8ba1f5d6381c96f5f09dd42666b1b9c87cdde8013a1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306258"
+        }
+      }
+    },
+    {
+      "id": "93f04361-285b-47f1-bec1-5e57ad4f89bb",
+      "title": "響く残響 / Resonant Echo #20",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=19&artwork_number=20&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x037a701574a9789f5315760be5df5b8e07655ec3d020ca138b40e69006eb1f31",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306259"
+        }
+      }
+    },
+    {
+      "id": "178f1f8d-316b-4e54-9bdb-8845e4d02a02",
+      "title": "響く残響 / Resonant Echo #21",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=20&artwork_number=21&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xe87795c19ace4a37f948c72432d20575b9c2d87643e6a1448239bbd392711567",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306260"
+        }
+      }
+    },
+    {
+      "id": "c07b9443-fbf4-4794-a663-cc3f7e99da76",
+      "title": "響く残響 / Resonant Echo #22",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=21&artwork_number=22&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xd0a9a2631416217a1414167ba4a1dbc4a552d3359d5d5475e491e2a315288813",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306261"
+        }
+      }
+    },
+    {
+      "id": "6256f370-a664-45dd-8e1b-361132452c0e",
+      "title": "響く残響 / Resonant Echo #23",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=22&artwork_number=23&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xe0bfcdc15e368e8b921d4899a838814fbc18246050a3e32a25b31501280f4645",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306262"
+        }
+      }
+    },
+    {
+      "id": "960e9a17-a98c-4d7b-b0d2-e9f648e41497",
+      "title": "響く残響 / Resonant Echo #24",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=23&artwork_number=24&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x98c04a339d6b6e33c1317b83df9007bb8cb5df19dd41dee9249747ec677ac9df",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306263"
+        }
+      }
+    },
+    {
+      "id": "1ecf2a9b-4757-4c08-9daa-8b057e87787b",
+      "title": "響く残響 / Resonant Echo #25",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=24&artwork_number=25&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x315be38584c31efeb17cbbec445b7bfc48ba95c778ee9cc804fff784221b71d7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306264"
+        }
+      }
+    },
+    {
+      "id": "2214ea40-56ff-4458-b9c6-cec38d386c62",
+      "title": "響く残響 / Resonant Echo #26",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=25&artwork_number=26&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xa9e61a0c0eade0824bbeb212a39c178302f6042c29715d35ba1a465a7c91b480",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.314Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306265"
+        }
+      }
+    },
+    {
+      "id": "cc786637-9aa7-4736-8561-79a4223ec138",
+      "title": "響く残響 / Resonant Echo #27",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=26&artwork_number=27&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xc71717ebb2e284773017064566c51f08233d22af8a4fc17958ba4219c442f799",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306266"
+        }
+      }
+    },
+    {
+      "id": "773eacc1-1727-4bd3-b729-576e328a826f",
+      "title": "響く残響 / Resonant Echo #28",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=27&artwork_number=28&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xfbcfed1a2054306e416cc4da3f528bd3d2496e398924e78e6068147f54a22bc4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306267"
+        }
+      }
+    },
+    {
+      "id": "34765d66-ea46-4de4-a3ff-f15b64a954d9",
+      "title": "響く残響 / Resonant Echo #29",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=28&artwork_number=29&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xc70df2e02aadb10b831bcf32cf1c9a6ace206bfe963b75dc754b563269a8a035",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306268"
+        }
+      }
+    },
+    {
+      "id": "7b561884-4505-4c54-b0da-ceb1844d015f",
+      "title": "響く残響 / Resonant Echo #30",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=29&artwork_number=30&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x75807fd659158a8be219f6202fc8843bfcd95f6bff9b4831bc157b473e586a06",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306269"
+        }
+      }
+    },
+    {
+      "id": "becb0455-f457-4400-8134-f9d2bfe3d587",
+      "title": "響く残響 / Resonant Echo #31",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=30&artwork_number=31&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x8995af99e4f48a216125b31962e6c1d693564bf07cc59118f01a41d0ee066fb5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306270"
+        }
+      }
+    },
+    {
+      "id": "b3e7b993-ef1e-4d1e-b1ad-a23d3c030796",
+      "title": "響く残響 / Resonant Echo #32",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=31&artwork_number=32&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xc9e15add4318f96b3bfa9ab6a143d4449b45570b5f925cef517408a47cd418a8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306271"
+        }
+      }
+    },
+    {
+      "id": "695d9f9e-54a3-465f-bd82-a55ab2540bf2",
+      "title": "響く残響 / Resonant Echo #33",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=32&artwork_number=33&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x763524bc82924f226e1735ec5bebe285b721ea65f1c9d64acaabf92d9aa019b9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306272"
+        }
+      }
+    },
+    {
+      "id": "a6d20a41-4630-4804-8912-a1bc58f39828",
+      "title": "響く残響 / Resonant Echo #34",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=33&artwork_number=34&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x9b3dd5770c823f25e9a42548ee1831d7de2f4fa3f74f1a13c64966858784fa71",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306273"
+        }
+      }
+    },
+    {
+      "id": "3cb6ce34-ef7d-44cb-9d20-a3ec8173c69c",
+      "title": "響く残響 / Resonant Echo #35",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=34&artwork_number=35&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xfb86773eaf5421aed788bddf99f047dd60a981c34ec22bfc72dbd270fe7ae8bb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306274"
+        }
+      }
+    },
+    {
+      "id": "c6618022-1f25-4674-a939-f62af590e41c",
+      "title": "響く残響 / Resonant Echo #36",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=35&artwork_number=36&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x0853b5a9c436a0d3bd9aee85ca4b236de92912417873409da82f2f215b74d25c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306275"
+        }
+      }
+    },
+    {
+      "id": "9de73eb6-7508-44a8-916c-238a28cd8d2f",
+      "title": "響く残響 / Resonant Echo #37",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=36&artwork_number=37&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x1de719e5ec1ad22d5f90492c3b86474cbd26e1b564c4f30ba51adc813721ecf3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306276"
+        }
+      }
+    },
+    {
+      "id": "14a1ce1f-7925-4e1b-9777-e20831ffe1be",
+      "title": "響く残響 / Resonant Echo #38",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=37&artwork_number=38&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xb70a36f24732553103c2214cd5268e3a314798112d50757ab20a96f9699396e0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306277"
+        }
+      }
+    },
+    {
+      "id": "9cde4261-a2f5-4722-acb7-2185156ee2db",
+      "title": "響く残響 / Resonant Echo #39",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=38&artwork_number=39&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x718e52bdb881d0e154201fa52be29afbad04a32b70c5fcda4a2ce11329abbcfc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306278"
+        }
+      }
+    },
+    {
+      "id": "dcf78e94-2a26-4c1e-90f5-61eb62c0137e",
+      "title": "響く残響 / Resonant Echo #40",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=39&artwork_number=40&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xdd808eb33138690958ec0c85d029617a715a1509d1204f59e3b5aa6d14eed83f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306279"
+        }
+      }
+    },
+    {
+      "id": "3dec68ab-6935-4d99-9886-55ebb2fe379b",
+      "title": "響く残響 / Resonant Echo #41",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=40&artwork_number=41&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x4de51f9f890b783da5ee0dcff315b10a2fe4fdd597cd639b68637ff2a20ded0e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306280"
+        }
+      }
+    },
+    {
+      "id": "add6b730-f582-43c7-af5f-ab4d5bc52b9d",
+      "title": "響く残響 / Resonant Echo #42",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=41&artwork_number=42&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x07ad69fc01c2841c8d7b90d14e4416dc765b4f6b6a69366dfbc76240f3dfd194",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306281"
+        }
+      }
+    },
+    {
+      "id": "513bdd37-8d25-4fff-a25d-9553cda18b86",
+      "title": "響く残響 / Resonant Echo #43",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=42&artwork_number=43&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xd4027ef6c5268225ec2b97ef52314314948f5713c7906bd7d3ea68cd04887fdf",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306282"
+        }
+      }
+    },
+    {
+      "id": "0c4cbb27-6190-418f-860f-0b31c8595c59",
+      "title": "響く残響 / Resonant Echo #44",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=43&artwork_number=44&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x9b1941dfa9d69a9496b07cbbd0f906b8c7f2559564e97ec5bbee104ae20eabd8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306283"
+        }
+      }
+    },
+    {
+      "id": "a90208a2-10a2-40e5-b1f4-dd626bad66bf",
+      "title": "響く残響 / Resonant Echo #45",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=44&artwork_number=45&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x6f4e4eaa566111079ec8e2c2cdb011db070e87d1aa2e549c78f94ef170e70eee",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306284"
+        }
+      }
+    },
+    {
+      "id": "564487d5-9cbc-4b1c-8da1-e6d3298e0b59",
+      "title": "響く残響 / Resonant Echo #46",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=45&artwork_number=46&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x88cf3ae25e1c5a4409656024ec5cf10b42d108d17565b480608bca6621c7a8c2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306285"
+        }
+      }
+    },
+    {
+      "id": "badb1dc9-e5a8-4ff0-9a14-04eb34c4e47c",
+      "title": "響く残響 / Resonant Echo #47",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=46&artwork_number=47&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xf293703022539ae77a823b37463f91ca6ae5bc3a1fed2380173583d94978ae79",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306286"
+        }
+      }
+    },
+    {
+      "id": "2060dfee-4a8b-4b65-90e7-276a71bb0136",
+      "title": "響く残響 / Resonant Echo #48",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=47&artwork_number=48&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x06463b92dc4291be12423d92745805d04c18644ac00cd39e850ef5d22630168c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306287"
+        }
+      }
+    },
+    {
+      "id": "301d158f-3acd-4d71-a525-80022d62d979",
+      "title": "響く残響 / Resonant Echo #49",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=48&artwork_number=49&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xa7bdf203b4540da7e92947052868b91a38c0e33af9e9470e73327c30b41df779",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306288"
+        }
+      }
+    },
+    {
+      "id": "32e24708-c8d9-4e2f-a901-84e34f8ea56b",
+      "title": "響く残響 / Resonant Echo #50",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=49&artwork_number=50&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x76c8ebdff42c79e97157868ba88e3c955acd1bd2403d31de6189d5ac78de6e93",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306289"
+        }
+      }
+    },
+    {
+      "id": "a70f3f5e-472e-48a4-8e88-7c89da6a8d6b",
+      "title": "響く残響 / Resonant Echo #51",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=50&artwork_number=51&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x8c4c8499b05a7128cb146cb8a576e1f02916bb4f5e71d7cd24024e5f0331b81a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306290"
+        }
+      }
+    },
+    {
+      "id": "bcf6d4b7-850d-4575-8eff-c332c6f9e3d4",
+      "title": "響く残響 / Resonant Echo #52",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=51&artwork_number=52&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xbe5a83fe28086cb811fbdea5a93d710c540661215252dcb653b3fcd7665e0957",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306291"
+        }
+      }
+    },
+    {
+      "id": "d320d434-15bc-418a-b8b8-9d3dd96f7775",
+      "title": "響く残響 / Resonant Echo #53",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=52&artwork_number=53&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x08a4b4c15b7af494f10228bd29373d280be5efb97d49d14f314ed2fa65c171a3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306292"
+        }
+      }
+    },
+    {
+      "id": "168ef177-fd42-45d0-bd2d-21dce5dffa4f",
+      "title": "響く残響 / Resonant Echo #54",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=53&artwork_number=54&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x6407a4e0b2a994695316614a6af9476ba876d61c2201f924a98913aceba1268b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306293"
+        }
+      }
+    },
+    {
+      "id": "dac6c694-d4a7-4c3a-b382-ea9cf4207bff",
+      "title": "響く残響 / Resonant Echo #55",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=54&artwork_number=55&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x59ee00ac320a248fe8f14f1b2bcfcd8107fa8c8f7bce553f85dd0b9b080109c8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306294"
+        }
+      }
+    },
+    {
+      "id": "31a0f8bb-62ef-4d8d-89e4-585e5824976d",
+      "title": "響く残響 / Resonant Echo #56",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=55&artwork_number=56&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x679818b16a1b37ca650c929f48493f55018769d7be3fe07cd4759d6f200eb7c7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306295"
+        }
+      }
+    },
+    {
+      "id": "1cf2efb7-0d48-41ba-8431-943efcc1f8ce",
+      "title": "響く残響 / Resonant Echo #57",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=56&artwork_number=57&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xba67b604413708ea9a1142ed25cd108473b966cecf26cb746a1878d9822cb7ff",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306296"
+        }
+      }
+    },
+    {
+      "id": "e1c49ed7-6717-49b5-8464-ee926018bc1c",
+      "title": "響く残響 / Resonant Echo #58",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=57&artwork_number=58&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x863d4a5babc176e3b89379fdbb11093da7e3e5a49779802e32c8296d1881c621",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306297"
+        }
+      }
+    },
+    {
+      "id": "708b5ce3-0e1f-4226-9faa-8e19d77fc90d",
+      "title": "響く残響 / Resonant Echo #59",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=58&artwork_number=59&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xb5d41dfd058bf5b541bd4bf1d2f1443b0e8ef8527debb31982777c8fb734c3cb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306298"
+        }
+      }
+    },
+    {
+      "id": "4c8666de-1580-4e53-a0dd-97ad5d91010c",
+      "title": "響く残響 / Resonant Echo #60",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=59&artwork_number=60&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x5fabb3c9a42a7a0625f4eba33402507d64b039f7a8ab3dbe5eb7fc7770fad98d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306299"
+        }
+      }
+    },
+    {
+      "id": "31b48e16-971f-48cd-9766-6268d7a5f909",
+      "title": "響く残響 / Resonant Echo #61",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=60&artwork_number=61&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xa5274a716876b31ffa00171b3fbdb9623744752a190d68b45e43938bf0f7c745",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306300"
+        }
+      }
+    },
+    {
+      "id": "231f9b30-0092-48a8-b128-36c1ea69b2fb",
+      "title": "響く残響 / Resonant Echo #62",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=61&artwork_number=62&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x7b76c7e4ae912400682edaf0308a40950f52e056f149669a8f70b2f94d000e6d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306301"
+        }
+      }
+    },
+    {
+      "id": "01f1e6e1-c0fa-43be-abcf-170c2d2141c5",
+      "title": "響く残響 / Resonant Echo #63",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=62&artwork_number=63&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xbb74f8dbd6e8f5d9bfa035e493581c10f8811386d45cc1c0c87639502733238d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306302"
+        }
+      }
+    },
+    {
+      "id": "24335266-99e5-4a66-96e0-99d3b742be5f",
+      "title": "響く残響 / Resonant Echo #64",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=63&artwork_number=64&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x1001e12aca5754ceb78199c1ae243ef5afd130de5d1dc9d27ffaeb5cca8723dc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306303"
+        }
+      }
+    },
+    {
+      "id": "dee86fd0-9699-4369-9d53-cfe891a9adbd",
+      "title": "響く残響 / Resonant Echo #65",
+      "source": "https://cdn.feralfileassets.com/previews/a62734e6-bce4-49a6-ab10-1b9698085efa/1725388435/index.html?edition_number=64&artwork_number=65&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x749e21a1caaecde6855a2f53faa936df7ce42073eb36075dfba333c7e56b7a69",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.315Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460961306304"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

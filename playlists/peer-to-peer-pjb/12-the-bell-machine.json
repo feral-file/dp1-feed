@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "577da3e2-3af2-463a-b083-0e91be02c1c2",
+  "slug": "the-bell-machine",
+  "title": "The Bell Machine",
+  "summary": "The Surrealist painter René Magritte is known for his images of everyday objects and scenes that are transformed in unexpected and unsettling ways. The imagery in <a href=\"https://buffaloakg.org/artworks/197613-la-voix-des-airs-voice-space\" target=\"_blank\" class=\"link\"><em>La voix des airs (The Voice of Space)</em>, 1928</a>, is reminiscent of the region of Belgium where Magritte grew up—the Pays Noir (Black Country). The floating forms were inspired by the silver bells hung on horses’ collars, the sound of which Magritte remembered reverberating through the night air over great distances. Slits in the spheres reflect the artist’s obsession with concealment and the mystery of human experience, which in his view could not be fully explained. <br/>In the video <em>The Bell Machine</em>, pioneering digital artist Anne Spalter continues her exploration of Artificial Intelligence as its own mysterious force. To make this work, she specifically used DALL·E 2, a text-to-image system from the tech conglomerate OpenAI. These kinds of systems generate an image in response to a prompt phrased in natural language (instead of code), using a training set of existing images that are already associated with specific texts. Her outputs show us bells that nonsensically float in the air, as in Magritte’s painting, and are depicted in a painterly style; she adds to these images a haunting soundtrack of chiming bells, as one might hear on a clear, dark night. <br/>Magritte described his paintings as “visible images which conceal nothing; they evoke mystery, and indeed, when one sees one of my pictures, one asks oneself this simple question, ’What does that mean?’ It does not mean anything, because mystery means nothing, it is unknowable.” Like Magritte’s paintings, Spalter’s AI outputs can be thought of as “visible images” that “evoke mystery.” While rationally based on code and statistics, they also can look like the unconscious hallucinations of a superhuman mind (hence the nod to the Surrealist Salvador Dali in DALL·E’s name), begging the question of what “creativity” means and whether and how we can ascribe it to both computers and humans. While AI is itself a kind of Surrealist thought experiment, Spalter’s process underscores the connections between the two. She entered almost identical prompts over and over again in the attempt to produce different results, echoing the Surrealists’ fascination with repetition and compulsion, which they viewed as fundamentally irrational. The randomness of the outputs also highlights the Surrealists’ embrace of chance operations—as in the rolling of dice—which is amplified here by the way the images quickly scroll by in seemingly random order, as if in a slot machine. Ultimately, Spalter’s work asks what AI can tell us about Surrealism, and perhaps more urgently, what Surrealism can tell us about the seemingly “unknowable” mystery that is AI. <br/>",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/86ac1653-1224-407b-0c9a-a66acce7cf00/raw",
+  "created": "2026-02-25T09:58:44.086Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "1756aa19-6d2c-4adf-a4df-8a06aeb87c1a",
+      "title": "The Bell Machine",
+      "source": "https://cdn.feralfileassets.com/previews/4d3d60e8-0f7b-4578-b5a7-efae617c3ce2/1667251143/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:44.086Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x2A86C5466f088caEbf94e071a77669BAe371CD87",
+          "tokenId": "102483456495595525347856182687662158730242810709523643804999349043957638016883"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

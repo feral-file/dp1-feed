@@ -1,0 +1,118 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "13bad5b9-48d9-4a01-8d90-049ea1d5fe19",
+  "slug": "marisol-daphne-auriea",
+  "title": "Marisol/Daphne/Auriea",
+  "summary": "Auriea Harvey is an artist and game designer deeply engaged with 3-D modeling and immersive storytelling. She is also a classically-trained artist who has studied academic methods of creating naturalistic forms with traditional materials like pastel and bronze. Most recently, she has been meticulously crafting digital figures that are viewed either in a browser, via Augmented Reality (AR), or as 3-D printed sculptures. These figures often are based on photogrammetry scans of her own face and body; she then digitally combines these scans with references to mythological characters and Western art history, creating hybrid creatures that suggest her own movements between cultures. <br/><em>Marisol/Daphne/Auriea</em> is the first in a new series of works that Harvey is developing around the myth of Daphne. According to the ancient Greco-Roman tales recorded in Ovid’s <em>Metamorphoses</em>, Daphne is the beautiful, virginal daughter of a river god who is chased by the god Apollo. She calls to her father to save her, who responds by turning her into a laurel tree, from which Apollo fashions the crowns of victory that are worn by rulers and champions. The story was famously <a href=\"https://www.collezionegalleriaborghese.it/en/opere/apollo-and-daphne\" target=\"_blank\" class=\"link\">depicted in marble by the Baroque artist Gian Lorenzo Bernini</a>; the sculpture now resides in Rome, in one of the many museums that Harvey regularly frequents for inspiration. Like Bernini, Harvey is drawn to stories of transformation, which are particularly challenging to render in a single image. As an artist and a woman, Harvey chooses to respond to the terror of this story by arming herself with joy: Bernini’s Daphne makes a gesture of self-defense, but Harvey shows herself dancing as her entire body liquifies in a riot of colors. <br/>Harvey sees the joyfulness of her figure as a response not only to Bernini’s rape scene, but also to the sensuality (and even perhaps violence) suggested in a series of drawings by the Venezuelan Pop artist Marisol. To make her unusual <a href=\"https://buffaloakg.org/artworks/2021118-untitled\" target=\"_blank\" class=\"link\">untitled drawing from 1978</a>, from which Harvey’s work draws its color palette, Marisol traced parts of her own body without allowing them to cohere into a realistic figure. Harvey echoes this in the use of her own bodily scans to create a shape suspended between two and three dimensions, which furthermore seems to bear its insides on its outsides. (The use of photogrammetry itself plays into this confusion, as it reduces three-dimensional volumes to two-dimensional surfaces or “skins” draped over a void.) The colors of this ambiguously defined figure shift slightly each time the work is reloaded, thanks to the unpredictable iterations of Harvey’s custom shaders. Furthermore, the work exists in three iterations with distinct backgrounds, representing the three characters who comprise this chimerical figure. Ultimately, the formal openness and undecidability of <em>Marisol/Daphne/Auriea</em> suggests the ongoing struggle of women to quite literally define and transform themselves—a struggle well-suited to the iterations of digital art.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/1c72889c-c335-48e3-9720-1ef11ae72200/raw",
+  "created": "2026-02-25T09:58:44.079Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "4030edc3-2ce9-45cd-a1d3-fffd2faaa23e",
+      "title": "Marisol/Daphne/Auriea AE",
+      "source": "https://cdn.feralfileassets.com/previews/712ddea8-2492-4357-9f03-d1ff7e9ad4cf/1668642023/?edition_number=0&blockchain=ethereum&contract=0x2A86C5466f088caEbf94e071a77669BAe371CD87&token_id=23054627654022293378557484339859314570662620440316285194737095994444934294386&token_id_hash=0x2f5dad0542b7c454d8f29fa7efdd25020d3c93f19455d6fee579537da20f8719",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:44.078Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x2A86C5466f088caEbf94e071a77669BAe371CD87",
+          "tokenId": "23054627654022293378557484339859314570662620440316285194737095994444934294386"
+        }
+      }
+    },
+    {
+      "id": "e98c81b0-b44f-4da4-bf5b-12d54ae05a63",
+      "title": "Marisol/Daphne/Auriea AE",
+      "source": "https://cdn.feralfileassets.com/previews/712ddea8-2492-4357-9f03-d1ff7e9ad4cf/1668642023/?edition_number=1&blockchain=ethereum&contract=0x2A86C5466f088caEbf94e071a77669BAe371CD87&token_id=23054627654022293378557484339859314570662620440316285194737095994444934294387&token_id_hash=0xad1f275df382e77c0aed5776c39b7ba91eb9e9e0ea5c5a086edd4247a6db8840",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:44.078Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x2A86C5466f088caEbf94e071a77669BAe371CD87",
+          "tokenId": "23054627654022293378557484339859314570662620440316285194737095994444934294387"
+        }
+      }
+    },
+    {
+      "id": "7f876707-c716-4930-9057-fbfc2d9abadf",
+      "title": "Marisol/Daphne/Auriea PP",
+      "source": "https://cdn.feralfileassets.com/previews/712ddea8-2492-4357-9f03-d1ff7e9ad4cf/1668642023/?edition_number=2&blockchain=ethereum&contract=0x2A86C5466f088caEbf94e071a77669BAe371CD87&token_id=23054627654022293378557484339859314570662620440316285194737095994444934294388&token_id_hash=0x8f6d3053822c7b995d529256b4756b8b7bcf2f36130528ffef8727d3fa9a04d6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:44.078Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x2A86C5466f088caEbf94e071a77669BAe371CD87",
+          "tokenId": "23054627654022293378557484339859314570662620440316285194737095994444934294388"
+        }
+      }
+    },
+    {
+      "id": "59df9067-9a02-4b66-94a5-57256b030af6",
+      "title": "Marisol/Daphne/Auriea #1",
+      "source": "https://cdn.feralfileassets.com/previews/712ddea8-2492-4357-9f03-d1ff7e9ad4cf/1668642023/?edition_number=3&blockchain=ethereum&contract=0x2A86C5466f088caEbf94e071a77669BAe371CD87&token_id=23054627654022293378557484339859314570662620440316285194737095994444934294389&token_id_hash=0xecbda6712ca9c6a087a7d54b06306a423b429201440a38e6f3538b8dd5b01458",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:44.079Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x2A86C5466f088caEbf94e071a77669BAe371CD87",
+          "tokenId": "23054627654022293378557484339859314570662620440316285194737095994444934294389"
+        }
+      }
+    },
+    {
+      "id": "38826afa-7178-4c96-8be8-cbe7481378e4",
+      "title": "Marisol/Daphne/Auriea #2",
+      "source": "https://cdn.feralfileassets.com/previews/712ddea8-2492-4357-9f03-d1ff7e9ad4cf/1668642023/?edition_number=4&blockchain=ethereum&contract=0x2A86C5466f088caEbf94e071a77669BAe371CD87&token_id=23054627654022293378557484339859314570662620440316285194737095994444934294390&token_id_hash=0xce1b5b468632211f4337f25e1ec584c35fab727ebdb0e0c61a947d5694e7c9d2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:44.079Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x2A86C5466f088caEbf94e071a77669BAe371CD87",
+          "tokenId": "23054627654022293378557484339859314570662620440316285194737095994444934294390"
+        }
+      }
+    },
+    {
+      "id": "c2fca461-7dae-4b43-8b26-b5e4f90d92d1",
+      "title": "Marisol/Daphne/Auriea #3",
+      "source": "https://cdn.feralfileassets.com/previews/712ddea8-2492-4357-9f03-d1ff7e9ad4cf/1668642023/?edition_number=5&blockchain=ethereum&contract=0x2A86C5466f088caEbf94e071a77669BAe371CD87&token_id=23054627654022293378557484339859314570662620440316285194737095994444934294391&token_id_hash=0xb132789f19b226adb8841dfcc4ea1864d016c6d967f1edd74827909636a52907",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:44.079Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x2A86C5466f088caEbf94e071a77669BAe371CD87",
+          "tokenId": "23054627654022293378557484339859314570662620440316285194737095994444934294391"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

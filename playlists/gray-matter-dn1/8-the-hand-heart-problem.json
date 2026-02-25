@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "a3ed34fd-663a-469c-bbe1-e9aaa54bc59a",
+  "slug": "the-hand-heart-problem",
+  "title": "The Hand-Heart Problem",
+  "summary": "“The Hand-Heart Problem” is a spinning sculpture, subjected to acceleration by the interaction of the viewer. The title recalls the anatomical components assembled in the sculpture. The basis is a rock, roughly shaped like a heart and a hand made out of clay. The face comes from the artist’s library of forms. It’s about the absurdity of spinning out of control at the slightest touch.<br/>Interaction: <br/>Grab object with mouse or touch/tap to spin object<br/>Left mouse button/touch drag to rotate the scene<br/>Wait for it to calm down<br/>Scroll wheel/pinch to zoom<br/>This artwork comes with an application for offline viewing and a 3D printable digital file.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/3aea222c-5800-4a73-a50c-c79c2cce1100/raw",
+  "created": "2026-02-25T09:58:51.601Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "1e365734-4025-46ac-af39-7747ccf538b1",
+      "title": "The Hand-Heart Problem AE",
+      "source": "https://cdn.feralfileassets.com/previews/f15bce66-da54-4f05-bc29-7ef15202b0c3/1667592496/?edition_number=0&blockchain=ethereum&contract=0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5&token_id=34718018818869922919370887279228907780982832976222422378720431113664518558578&token_id_hash=0xebbce12810c9887fa181dd3254b4955ad309f0e1210d11aad0e2e080defb0c55",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:51.601Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5",
+          "tokenId": "34718018818869922919370887279228907780982832976222422378720431113664518558578"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

@@ -1,0 +1,458 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "0c79cdf2-bc4b-4493-b7d1-c2aabaa331a5",
+  "slug": "human-abecedary-inter-letters",
+  "title": "Human Abecedary: Inter-Letters",
+  "summary": "<p><em>Human Abecedary</em> (2024) is a generative alphabet that takes the standard pool of Latin letters and systematically abstracts them by cutting them up and swapping their parts around. This process reorients familiar components, namely recognizable letters, and mutates them indefinitely to appear “foreign,” solely by rearranging them. The work calls to mind fictional languages and asemic writing systems that have no national identity—an algorithmic way to estrange the alphabet from itself. The series made for Feral File focuses on an expanding, cumulative pool of letters, beginning with permutations between the first two letters (A and B) and ending with the entire alphabet. Each edition iterates through twenty-four cycles, generating hundreds of mutated, semi-legible hybrid glyphs.</p>\n",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/d64b8b0d-7c98-4190-3591-f0bc43e81b00/raw",
+  "created": "2026-02-25T09:59:39.808Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "08904fd2-2470-4e15-880e-771d4fbc3d5e",
+      "title": "Human Abecedary: Inter-Letters #1",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.807Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773056"
+        }
+      }
+    },
+    {
+      "id": "23d49dd4-d402-4300-953c-ef78363e3a52",
+      "title": "Human Abecedary: Inter-Letters #2",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773057"
+        }
+      }
+    },
+    {
+      "id": "e5865fc9-e15c-4797-b5fa-db6f1e0c06d6",
+      "title": "Human Abecedary: Inter-Letters #3",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773058"
+        }
+      }
+    },
+    {
+      "id": "d35c3ae7-660b-451f-a484-9c0536e84fa0",
+      "title": "Human Abecedary: Inter-Letters #4",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773059"
+        }
+      }
+    },
+    {
+      "id": "3e6f14c5-c30d-4f5e-9b2f-93ff280ce5c0",
+      "title": "Human Abecedary: Inter-Letters #5",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773060"
+        }
+      }
+    },
+    {
+      "id": "660e0cbc-5df5-4a09-83f0-d9689cc4c795",
+      "title": "Human Abecedary: Inter-Letters #6",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773061"
+        }
+      }
+    },
+    {
+      "id": "d0a3c3e5-4a2f-46eb-9b0e-149c57147f8e",
+      "title": "Human Abecedary: Inter-Letters #7",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773062"
+        }
+      }
+    },
+    {
+      "id": "6af993b8-cd26-4283-b3c5-6b07e9e60408",
+      "title": "Human Abecedary: Inter-Letters #8",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773063"
+        }
+      }
+    },
+    {
+      "id": "180bc744-cd67-4aaa-a8b5-f03a4ac0f11f",
+      "title": "Human Abecedary: Inter-Letters #9",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773064"
+        }
+      }
+    },
+    {
+      "id": "6e06372d-ee28-46d6-ba1e-9e2287410dc3",
+      "title": "Human Abecedary: Inter-Letters #10",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773065"
+        }
+      }
+    },
+    {
+      "id": "f9760b7e-fe66-404f-b40a-d7468f6de0a4",
+      "title": "Human Abecedary: Inter-Letters #11",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/10",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773066"
+        }
+      }
+    },
+    {
+      "id": "5d380792-e593-4cdd-917e-a3f8794134c0",
+      "title": "Human Abecedary: Inter-Letters #12",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/11",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773067"
+        }
+      }
+    },
+    {
+      "id": "387cac1f-6963-4f27-b19f-d3990e8e1b37",
+      "title": "Human Abecedary: Inter-Letters #13",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/12",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773068"
+        }
+      }
+    },
+    {
+      "id": "95ef722d-4d8a-4dc2-bf13-c0fa4ec674fc",
+      "title": "Human Abecedary: Inter-Letters #14",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/13",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773069"
+        }
+      }
+    },
+    {
+      "id": "bd05fc56-fea6-46db-be6a-0c0c46342c41",
+      "title": "Human Abecedary: Inter-Letters #15",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/14",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773070"
+        }
+      }
+    },
+    {
+      "id": "50aeaa8c-14a0-48f9-8bd6-e5c33c4b39ba",
+      "title": "Human Abecedary: Inter-Letters #16",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/15",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773071"
+        }
+      }
+    },
+    {
+      "id": "619b9f0c-dee4-452e-8a5f-21a67b2ef0e6",
+      "title": "Human Abecedary: Inter-Letters #17",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/16",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773072"
+        }
+      }
+    },
+    {
+      "id": "67557077-291c-4802-8656-e76076b6857c",
+      "title": "Human Abecedary: Inter-Letters #18",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/17",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773073"
+        }
+      }
+    },
+    {
+      "id": "1d31ac73-6640-4e9d-8411-1e8e3067cdcd",
+      "title": "Human Abecedary: Inter-Letters #19",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/18",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773074"
+        }
+      }
+    },
+    {
+      "id": "9eda9f0c-7ae2-47ea-9e07-6d3a5000c384",
+      "title": "Human Abecedary: Inter-Letters #20",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/19",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773075"
+        }
+      }
+    },
+    {
+      "id": "4e029645-fecf-41e1-8b12-2f9b484ff22f",
+      "title": "Human Abecedary: Inter-Letters #21",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/20",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773076"
+        }
+      }
+    },
+    {
+      "id": "6d41f98d-c534-4f28-a1dd-fe0db5ad0804",
+      "title": "Human Abecedary: Inter-Letters #22",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/21",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773077"
+        }
+      }
+    },
+    {
+      "id": "b93161b6-5f5b-4638-9102-36308dddfd29",
+      "title": "Human Abecedary: Inter-Letters #23",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773078"
+        }
+      }
+    },
+    {
+      "id": "31a529a7-ce96-41ab-9f36-f05b7ec2e1df",
+      "title": "Human Abecedary: Inter-Letters #24",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/23",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773079"
+        }
+      }
+    },
+    {
+      "id": "0e7b3d66-1c69-4b3d-8d55-e8c61498a1af",
+      "title": "Human Abecedary: Inter-Letters #25",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/24",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773080"
+        }
+      }
+    },
+    {
+      "id": "5c291893-429a-4533-b413-d4d95b22fddb",
+      "title": "Human Abecedary: Inter-Letters #26",
+      "source": "https://cdn.feralfileassets.com/previews/d08770b9-536b-4129-b122-b47269fb0b64/1711125759/_unique-previews/25",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.808Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "3552795128286736986400307492283059187598773081"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

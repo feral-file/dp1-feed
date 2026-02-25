@@ -1,0 +1,526 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "a0ca1004-93bc-4221-9763-8e32b43466da",
+  "slug": "breakpoint",
+  "title": "Breakpoint.",
+  "summary": "<p>“Breakpoint” starts with James Merrill’s signature dense and dynamic geometry, then disrupts it with one line that cuts through and displaces the original composition. He generates an ordered system that is a highly structured composition, then he obliterates it to create new forms. Each composition in the series uses a single meandering line to create this change. Despite the way the line pierces and punctures the original form, James feels the work isn’t violent, but instead shows that order and messiness can coexist and complement each other.</p>\n<p>“Breakpoint” is a generative art NFT, but the first collector of each in the series will receive the corresponding plotter drawing created in the artist’s studio. Each software NFT includes millions of other images beyond the primary image for each in the series. The software NFT and the plotter drawing aren’t linked together; the NFT can continue to be collected on a secondary market without the drawing.</p>\n<p>The image you see on the main artwork page on Feral File is the plotter drawing for #1/30. Compare this image of the drawing to the corresponding software version to see how the software image and the plotted drawing are similar and how they diverge. Because the artists are using a range of papers and inks, the software and physical drawings are delightfully different.</p>\n<p>Press spacebar to generate new image</p>\n<p>Dimensions: 24 × 18 inches \nPaper: Legion Stonehenge paper, White, 250 gsm \nPen: Pilot fountain pen, extra-fine nib \nInk: Pilot Iroshisuku Machine: Axidraw</p>\n",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/ff59c789-6ed1-4719-df48-c547355e5600/raw",
+  "created": "2026-02-25T09:59:33.352Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "723f4b35-6729-4371-927a-67cb31f0a86e",
+      "title": "Breakpoint. #1",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=0&artwork_number=1&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490880&token_id_hash=0xde30dc7774dae099db68b4f1b07b48ace90ad45c08f1e643c0d7f1d68ce62d9b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.350Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490880"
+        }
+      }
+    },
+    {
+      "id": "72e1aab4-f119-4bd7-a300-38c3eacc3292",
+      "title": "Breakpoint. #2",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=1&artwork_number=2&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490881&token_id_hash=0xe2c377cc2888da2f957ea8488f009aee018904eac7bc1b948bece4d1eecdf662",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.351Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490881"
+        }
+      }
+    },
+    {
+      "id": "8d477dec-97d1-4175-8253-5123d682820c",
+      "title": "Breakpoint. #3",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=2&artwork_number=3&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490882&token_id_hash=0x7f73f81bf015d5f404b2c2f5630950ae314554b0e5b963eba6e4fbb97d86d35d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.351Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490882"
+        }
+      }
+    },
+    {
+      "id": "32a47058-887c-488b-96f6-46fd4df2fa91",
+      "title": "Breakpoint. #4",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=3&artwork_number=4&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490883&token_id_hash=0x731619992119a77e70838f5094d339e0729ca9ce17a23b560929469fd031a360",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.351Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490883"
+        }
+      }
+    },
+    {
+      "id": "bf3c9833-d7f8-4211-b412-d015bce41f5d",
+      "title": "Breakpoint. #5",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=4&artwork_number=5&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490884&token_id_hash=0x49d7c465f82378111a487ca61ceb39390539c058ea66bd73073ffe6010b2fb32",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.351Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490884"
+        }
+      }
+    },
+    {
+      "id": "a19965f4-212a-40e4-bd53-493ef35c245f",
+      "title": "Breakpoint. #6",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=5&artwork_number=6&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490885&token_id_hash=0xe9dbb7517aaecfe6d88f474dd22a08b822bb47f87360ebb57ff5364bd5ce4c35",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.351Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490885"
+        }
+      }
+    },
+    {
+      "id": "27bb66af-f53a-460f-94b4-b81b40312c61",
+      "title": "Breakpoint. #7",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=6&artwork_number=7&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490886&token_id_hash=0x2e46bb0d195acbeba83a1d7e060ce03753bf70781299058ce5afd248bedb2c86",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.351Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490886"
+        }
+      }
+    },
+    {
+      "id": "78a54f08-b178-4cbb-9d37-e03370c10df1",
+      "title": "Breakpoint. #8",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=7&artwork_number=8&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490887&token_id_hash=0xd0beb91ac61c85fed238eb7bd0cfbd93f9f3b9d5e840d4ca1b818f9606d18a84",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.351Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490887"
+        }
+      }
+    },
+    {
+      "id": "e7d7c203-b308-4817-a3ee-191d180def3c",
+      "title": "Breakpoint. #9",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=8&artwork_number=9&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490888&token_id_hash=0xf242ef1afa6884e93d7bfe298c07cbfb33cf7fb6094c9eb362b0f9f74493dc22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.351Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490888"
+        }
+      }
+    },
+    {
+      "id": "7dc6d98e-2ce7-492f-b0cf-b7e84d24153f",
+      "title": "Breakpoint. #10",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=9&artwork_number=10&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490889&token_id_hash=0x1d4ae9548fb2bbb5c7e21ec15d4b80f3494562a2ce1ccb3b7f020ffea2e297fd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.351Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490889"
+        }
+      }
+    },
+    {
+      "id": "56381332-8c4a-4123-be4f-aa00b39af4d7",
+      "title": "Breakpoint. #11",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=10&artwork_number=11&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490890&token_id_hash=0x82d946ade03d8392b673bf40698335d0746bbbbe406db7eff8d26877037c63d6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.351Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490890"
+        }
+      }
+    },
+    {
+      "id": "c4ebcabf-2ff4-480b-b4a7-bf263e065968",
+      "title": "Breakpoint. #12",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=11&artwork_number=12&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490891&token_id_hash=0x8c5d00fcb6fada81d18c058c998fabeae6dd4519ab31d83c8443c1032a2dff90",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490891"
+        }
+      }
+    },
+    {
+      "id": "4d5be877-0e09-418d-a05e-2343fc9fcc1d",
+      "title": "Breakpoint. #13",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=12&artwork_number=13&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490892&token_id_hash=0x2a89815ae610f048594f07079148a2f63f214911d441063bc0621ef6e856e263",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490892"
+        }
+      }
+    },
+    {
+      "id": "86a9c876-e277-4c85-8068-c1159c98eb31",
+      "title": "Breakpoint. #14",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=13&artwork_number=14&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490893&token_id_hash=0x2833d06e50328a0c42d90936337e3068b5c64613ef026a232f513eff50c0e459",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490893"
+        }
+      }
+    },
+    {
+      "id": "d6ac8e6c-64fd-4259-a399-9d63deafe2ee",
+      "title": "Breakpoint. #15",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=14&artwork_number=15&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490894&token_id_hash=0x138ad65b3a37b02ced669f4696375220f730c6fd484cf18754cfd846973b4e06",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490894"
+        }
+      }
+    },
+    {
+      "id": "57788dd6-a0ea-4688-8488-a0acfed81abc",
+      "title": "Breakpoint. #16",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=15&artwork_number=16&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490895&token_id_hash=0xf8c2bf98619bb070a0badf5618c7bcbe2d79fc1ca60a9be72ab1138cc812c078",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490895"
+        }
+      }
+    },
+    {
+      "id": "4f6f3094-8735-406c-920c-2fc87b0aaaec",
+      "title": "Breakpoint. #17",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=16&artwork_number=17&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490896&token_id_hash=0xf9436009e3e6f9fe392b3f59cd47599022c147c9295109b74ddcd26364829102",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490896"
+        }
+      }
+    },
+    {
+      "id": "38843698-4ee5-4a7a-a223-547081749e56",
+      "title": "Breakpoint. #18",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=17&artwork_number=18&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490897&token_id_hash=0x31beaa1ddcd1f09c8f49a00bcf9f0ec0104299d3be34203ca9f635851cf1649b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490897"
+        }
+      }
+    },
+    {
+      "id": "07f0d567-53b5-48e7-ba83-56b5d1364395",
+      "title": "Breakpoint. #19",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=18&artwork_number=19&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490898&token_id_hash=0x56e0b3537def6bd0727ae6f8a2e103b0c25b71b62696ad0a89e9612e2b997fec",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490898"
+        }
+      }
+    },
+    {
+      "id": "a966318f-462d-41aa-926f-e85bd23973c2",
+      "title": "Breakpoint. #20",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=19&artwork_number=20&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490899&token_id_hash=0x9b1009601cd1bf713c708bbb4b8e546a5d46d0a3098d4fc3b4e37eced7cef723",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490899"
+        }
+      }
+    },
+    {
+      "id": "7852b4dd-e820-4a5a-9a1e-a8f922d823f6",
+      "title": "Breakpoint. #21",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=20&artwork_number=21&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490900&token_id_hash=0xceb09784848eb31a4e8e4ebac3a7928437c34496e18c70c30e9c949b78b35f44",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490900"
+        }
+      }
+    },
+    {
+      "id": "46140eac-b1c7-4249-be22-651c46344e75",
+      "title": "Breakpoint. #22",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=21&artwork_number=22&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490901&token_id_hash=0xb5b56b1228a2c3428e9888c2b18e4fd1a195f749f25e92ec17e2ce3a3f0a2287",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490901"
+        }
+      }
+    },
+    {
+      "id": "258fa20e-6103-4171-abcf-aa47b5050e49",
+      "title": "Breakpoint. #23",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=22&artwork_number=23&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490902&token_id_hash=0x15b03546c506d3ce5fafe0b87182fa005652e415acc19ea73a03f0b36776e984",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490902"
+        }
+      }
+    },
+    {
+      "id": "24cad234-355a-4e30-9c70-0b633037d831",
+      "title": "Breakpoint. #24",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=23&artwork_number=24&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490903&token_id_hash=0x8018e7885179c957d060a3a0027117444e1385fbf6c421d26282c65f00904d1c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490903"
+        }
+      }
+    },
+    {
+      "id": "3e4dc65f-664e-44bb-8f70-66aeec2514a2",
+      "title": "Breakpoint. #25",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=24&artwork_number=25&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490904&token_id_hash=0x821d3e2ad6a5e631e0821a986ca83b1331cc96e8d6822933f3397144630156f8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490904"
+        }
+      }
+    },
+    {
+      "id": "68c0679e-7297-49a2-b20f-7e3a348bfac0",
+      "title": "Breakpoint. #26",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=25&artwork_number=26&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490905&token_id_hash=0xc9e329d35c511b9ca1f61750ad1431c68dcb7d0d7ae7ef755e0e27e8d37951e7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490905"
+        }
+      }
+    },
+    {
+      "id": "c1c5bc81-4654-4857-bcf7-f18261758e28",
+      "title": "Breakpoint. #27",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=26&artwork_number=27&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490906&token_id_hash=0x50502ac0de73a4c3a70ad8a409a3c589ac27a39ea1f0df07bc43810a142cd5e6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490906"
+        }
+      }
+    },
+    {
+      "id": "5c1975f4-350a-4321-ad37-d71da0799d50",
+      "title": "Breakpoint. #28",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=27&artwork_number=28&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490907&token_id_hash=0x4b1865ad8e3ff04ae2fd0d17921ddd02463e5c4e2a2151b1c397eca8f6d315fc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490907"
+        }
+      }
+    },
+    {
+      "id": "63d9f115-a375-4fd3-a63d-74efa9e35ffa",
+      "title": "Breakpoint. #29",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=28&artwork_number=29&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490908&token_id_hash=0x378ce0e8d219060880a09b3970bfc882ad80cf5d278df0fea97d2a94f0f20a6a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490908"
+        }
+      }
+    },
+    {
+      "id": "5a44fb19-3dcf-4c52-9915-8528f20dbee8",
+      "title": "Breakpoint. #30",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=29&artwork_number=30&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490909&token_id_hash=0x0d725b8c92902f5913e11239e79a8c54697e6dce5d76f3c61a515eabd4dda763",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:33.352Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490909"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

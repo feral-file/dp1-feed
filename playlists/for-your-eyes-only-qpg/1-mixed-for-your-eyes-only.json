@@ -1,0 +1,237 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "863e6adb-909b-49c4-9e12-dc92b0d81513",
+  "slug": "mixed-for-your-eyes-only",
+  "title": "Mixed For Your Eyes Only",
+  "summary": "“Over the last decade or so...human visual culture has become a special case of vision, an exception to the rule. The overwhelming majority of images are now made by machines for other machines, with humans rarely in the loop,”<sup>1</sup> artist Trevor Paglen wrote in 2016. Paglen’s statement doesn’t apply just to machine vision imagery and datasets: any born-digital or digitized image may or may not be seen by human eyes, but would always be seen by a number of machines— the device taking it, the computer we use to archive or edit it, the server where we upload it, and the number of algorithms active at any of these levels.\n\nMachines not only see images, they also turn them “operational.” According to Harun Farocki, “operational images” are images “not meant to inform the public or instruct people,”<sup>2</sup> but to make something. Images taken by surveillance cameras, or by self-driving cars, are natively operational, but virtually any image gets, by default, “operationalized” at the very moment in which it goes under the gaze of a machine.\n\nIn short, with the development of machine vision, visual culture has become a contested territory, and the human gaze and intelligence have become the minority group. Being aware of this ongoing process is crucial if we want to preserve what’s inherently human in the act of making, seeing, and interpreting images; if we want to keep hold of the field of vision. What’s at stake is not only the freedom of images—their existence outside of a given function, be it improving our user profile in order to sell us something, allowing other users to tag us in their pictures, training a machine to distinguish between a leaf and a flower, helping the security apparatus to identify a criminal, or the military to bomb a given spot. What’s at stake is also images’ irreducibility to a list of tags or a set of parameters, their ability to be something more than what they represent. What’s at stake is the very existence of human vision. How long will we be able to see and understand images in ways different from those of the machines we trained to see? Will images keep existing as a layered, ambiguous yet extremely rich and powerful, instrument of communication between humans that nobody and nothing else can master and understand as we do?\n\nIf, according to Paglen, in order to understand machine vision we have to unlearn how to see like humans, this very unlearning only makes sense as the foundation of a recovery, and an improvement, of human vision. How can we do it? No image can escape the gaze of the machine; but images can resist it. They can do it by physically or digitally incorporating features that defy, at least by now, machine vision; by featuring ambiguities and nuances that defy, at least by now, machine intelligence. But more importantly, they can do it by displaying an emotional and semiotic complexity, an “infra-thin” dimension that may only be captured and understood by humans.\n\nYet, in order to resist the gaze of the machine, images have to be crafted with this purpose in mind. Now more than ever, our visual vocabulary and its syntactic structure needs to be improved and turned into an encrypted code whose key cannot be attained by anything inhuman. This bestows image makers, and more specifically visual artists, with an extraordinary level of responsibility as the caretakers of human-readable visual language.\n\nFor Your Eyes Only is a curatorial concept that aims to stimulate a conversation with contemporary artists about the future of human visual culture, and to investigate how they are working, in different ways, on the development of a visual language capable to resist the machine gaze and its implications, and to improve human visual communication—a post-AI, posthuman human vision. The exhibition includes images of diverse nature and origin, submitted as answers to the questions raised in this text. And yet, images can be used like words, but they are not words. They can be paraphrased, explained, and described, but no description will ever exhaust them. They can be used...",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/89abaab9-44f1-4a96-0f66-fcab99035700/raw",
+  "created": "2026-02-25T09:57:51.711Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "67163f32-49b7-4e2a-9fe4-d6d8938b7891",
+      "title": "ماه طلعت، Moon-faced AP",
+      "source": "https://cdn.feralfileassets.com/previews/ce3a3a9a-e894-40a1-b531-95027b1328eb/1639016248/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:51.701Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6DBa130221A1C39f6623908A136976686050059a",
+          "tokenId": "33302801400363962874789470259095989022217858728739498634567156886587995359798"
+        }
+      }
+    },
+    {
+      "id": "c08ef536-48f4-47cf-89f3-e3c84a034a32",
+      "title": "Marine Emojidiversity AP",
+      "source": "https://cdn.feralfileassets.com/previews/c66d0636-30c1-4227-819c-0e69924fc7a1/1638520742/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:51.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6DBa130221A1C39f6623908A136976686050059a",
+          "tokenId": "53371721779496106250806810012954968902493653702630683745297059501575841016360"
+        }
+      }
+    },
+    {
+      "id": "86e8e993-3f9c-4e6a-a60f-97790444e8c2",
+      "title": "sextape AP",
+      "source": "https://cdn.feralfileassets.com/previews/19c097b4-c440-44e9-b6a8-eb97f3b4513a/1638403563/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:51.708Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6DBa130221A1C39f6623908A136976686050059a",
+          "tokenId": "58715691114557290052923369262590057385049903455696195926578851682062958379043"
+        }
+      }
+    },
+    {
+      "id": "1c15d524-789e-475d-82fa-492d4974fa5f",
+      "title": "Ganxillo AP",
+      "source": "https://cdn.feralfileassets.com/previews/31a680b4-c00a-4eac-8729-cba633c91c54/1638740490/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:51.709Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6DBa130221A1C39f6623908A136976686050059a",
+          "tokenId": "7142148090357981262620060743698252227045627673001286620435269287302883305472"
+        }
+      }
+    },
+    {
+      "id": "26c40367-47ef-4637-98aa-5bda01771333",
+      "title": "smoking-vase-1 #1",
+      "source": "https://cdn.feralfileassets.com/previews/31eb3d1f-9bf5-4f87-b1ea-b9a4a98a348b/1638379103/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:51.709Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6DBa130221A1C39f6623908A136976686050059a",
+          "tokenId": "101043813606859043093891134325200796282151589594329312865873240052343565763950"
+        }
+      }
+    },
+    {
+      "id": "8b215ec0-3403-4392-8250-71c99c6f2ed4",
+      "title": "Fractura AP",
+      "source": "https://cdn.feralfileassets.com/previews/f503f9fe-276c-4519-92b7-8a2239cfa489/1638359231/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:51.709Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6DBa130221A1C39f6623908A136976686050059a",
+          "tokenId": "93209025824749972235393612728993646531929193109115320840298061071985134413533"
+        }
+      }
+    },
+    {
+      "id": "f8284443-6429-485a-9854-7efd9a0064f7",
+      "title": "Daemon (cene) AP",
+      "source": "https://cdn.feralfileassets.com/previews/9841c727-f5c8-40e4-b995-0716eeff843f/1638724047/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:51.709Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6DBa130221A1C39f6623908A136976686050059a",
+          "tokenId": "73980082598384344058289331737417079228872825756593197648924210196672374105347"
+        }
+      }
+    },
+    {
+      "id": "c3411646-9d33-4045-a076-9e60aae97c17",
+      "title": "A Rose by Any Other Name #1",
+      "source": "https://cdn.feralfileassets.com/previews/a566dd50-6194-4e88-8aec-59cebbc1ed55/1639419587/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:51.710Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6DBa130221A1C39f6623908A136976686050059a",
+          "tokenId": "65211754792056209469837182571482720243458789560604872493885493069380093113282"
+        }
+      }
+    },
+    {
+      "id": "343b8c85-8eb9-47cf-989c-7aa81c5a46f3",
+      "title": "Smart Cut AP",
+      "source": "https://cdn.feralfileassets.com/previews/25a3d5d3-43a6-495e-bf18-e0583fa11f72/1638568442/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:51.710Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6DBa130221A1C39f6623908A136976686050059a",
+          "tokenId": "95818392624963223466242622248667825872377430497511423781312150293054165540047"
+        }
+      }
+    },
+    {
+      "id": "f89b649a-cc36-4df3-8f13-8aad43837f86",
+      "title": "One Million Manga Pages AP",
+      "source": "https://cdn.feralfileassets.com/previews/094b8bd3-a89b-4127-937f-faef6c6eee96/1638793004/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:51.710Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6DBa130221A1C39f6623908A136976686050059a",
+          "tokenId": "47504590404431819772730669100462563762389269860941622284956357597624953663442"
+        }
+      }
+    },
+    {
+      "id": "78aca739-4d15-4b0f-9d37-c51e87e0e1c8",
+      "title": "Daemon (chaos) AP",
+      "source": "https://cdn.feralfileassets.com/previews/8711ddf0-0474-4a8d-a5ec-30c7f42977df/1638724863/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:51.710Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6DBa130221A1C39f6623908A136976686050059a",
+          "tokenId": "24487133724888882042422336242935619015674683503675788069020098776232053890134"
+        }
+      }
+    },
+    {
+      "id": "4ffa8dfc-cb94-4db7-a7a4-093f2639e7de",
+      "title": "Patterns of Activation (gardens of the galaxy) #1",
+      "source": "https://cdn.feralfileassets.com/previews/f3170ca8-2a0d-49ac-b307-d20fbfb15b0d/1638543454/preview.gif",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:51.710Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6DBa130221A1C39f6623908A136976686050059a",
+          "tokenId": "4237351900362484979393738734188218512814611599551146591211431512871878215152"
+        }
+      }
+    },
+    {
+      "id": "861be6a6-e25c-440f-8b28-e30e5a254928",
+      "title": "ᖴᗩᑕIᗩᒪᔕ I AP",
+      "source": "https://cdn.feralfileassets.com/previews/79cb077a-355b-4694-a787-f023abf070de/1639451952/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:51.711Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6DBa130221A1C39f6623908A136976686050059a",
+          "tokenId": "86584866137907099745492992997284354126943640786271745688151670466342863188004"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

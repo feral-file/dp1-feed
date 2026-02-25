@@ -1,0 +1,492 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "2674d373-7796-4b4e-b840-390b731ee3e6",
+  "slug": "umwelt",
+  "title": "Umwelt",
+  "summary": "Julien Gachadoat’s “Umwelt” relies on the combination of a subdivision algorithm and a curved-line-drawing algorithm to produce a set of minimalist compositions. Each image in the series is the result of partitioning a square into a series of smaller areas and then filling those areas with a dense group of curved lines. The spacing of these lines, their orientation, and their precise curvature are defined by harmonic functions that create rhythms within a spatial geometric melody.<br/>“Umwelt” is a software NFT, but the first collector of each edition will receive the corresponding plotter drawing shipped directly from the artist’s studio. Each software NFT includes millions of other images beyond the primary image for each edition. The software NFT and the plotter drawing aren’t linked together; the NFT can continue to be collected on a secondary market without the drawing. Click on the artwork or press the spacebar to generate a new image with a different random seed value.<br/>The image you see on the main artwork page on Feral File is the plotter drawing for the artist-proof (AP). Compare this image of the drawing to the corresponding software version of the AP to see how the software image and the plotted drawing are related. Because the artists are using a range of papers and inks, the software and physical drawings are delightfully different.  <br/>The “Umwelt” drawings are 42 × 29.7 cm (16.5 × 11.7 inches) on Fedrigoni Sirio White 700 gsm or Fedrigoni Sirio Ultra Black 680 gsm paper. They are drawn with Rotring Isograph Black 0.2 to 0.6 mm or Uni-Ball Signo White pens.",
+  "coverImage": "https://imagedelivery.net/5BJzhBHeVhlhbn58hvcXAQ/a9667e23-9672-45c3-3f88-050d1095c500/raw",
+  "created": "2026-02-25T09:57:47.454Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "869b67cb-9b34-47de-b1ff-314cf80f5c0e",
+      "title": "Umwelt AP",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910510"
+        }
+      }
+    },
+    {
+      "id": "664c99bb-6ec8-4df7-9cbc-96a1b3dde99a",
+      "title": "Umwelt #1",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910511"
+        }
+      }
+    },
+    {
+      "id": "e3606ae9-718c-496c-a935-3d2caa7b5427",
+      "title": "Umwelt #2",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=2&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910512"
+        }
+      }
+    },
+    {
+      "id": "0bf6cc4f-f390-4f97-b203-fced6e7806ef",
+      "title": "Umwelt #3",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=3&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910513"
+        }
+      }
+    },
+    {
+      "id": "c409bdb7-c8c6-41b1-88ac-66f5a3325bfd",
+      "title": "Umwelt #4",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=4&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910514"
+        }
+      }
+    },
+    {
+      "id": "63e82b39-cb5b-46ce-92e6-627a0ef67d00",
+      "title": "Umwelt #5",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=5&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910515"
+        }
+      }
+    },
+    {
+      "id": "d1c8f370-18fe-47ea-9a62-b1f64646a1ba",
+      "title": "Umwelt #6",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=6&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910516"
+        }
+      }
+    },
+    {
+      "id": "5e1af4f6-24d2-4542-9948-8e5e197c227f",
+      "title": "Umwelt #7",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=7&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910517"
+        }
+      }
+    },
+    {
+      "id": "46bdeb5e-d3b9-4c29-9cb4-605f4111bfed",
+      "title": "Umwelt #9",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=9&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910519"
+        }
+      }
+    },
+    {
+      "id": "7913fc67-dce6-4e64-8823-0cd9e32d88e5",
+      "title": "Umwelt #10",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=10&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910520"
+        }
+      }
+    },
+    {
+      "id": "1c83e285-1a76-48ab-aa10-ee0ffd7df873",
+      "title": "Umwelt #11",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=11&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910521"
+        }
+      }
+    },
+    {
+      "id": "876a9576-ad38-4de7-90a4-1164ca7c70e2",
+      "title": "Umwelt #12",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=12&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910522"
+        }
+      }
+    },
+    {
+      "id": "13017666-7d59-43ff-90a2-cf2af280767b",
+      "title": "Umwelt #13",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=13&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910523"
+        }
+      }
+    },
+    {
+      "id": "382763bc-9488-41f4-9fef-0f39e0136df6",
+      "title": "Umwelt #14",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=14&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910524"
+        }
+      }
+    },
+    {
+      "id": "83b607c2-1c43-49fc-8c5c-9b9a3da09756",
+      "title": "Umwelt #15",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=15&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910525"
+        }
+      }
+    },
+    {
+      "id": "41eba216-5fe0-4ec1-aaf6-03e19f17d51c",
+      "title": "Umwelt #16",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=16&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910526"
+        }
+      }
+    },
+    {
+      "id": "fd6ac355-088e-40f5-b6f4-84f07592b638",
+      "title": "Umwelt #18",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=18&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910528"
+        }
+      }
+    },
+    {
+      "id": "dcdb5770-5d23-4746-90ed-6736c63e5160",
+      "title": "Umwelt #19",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=19&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910529"
+        }
+      }
+    },
+    {
+      "id": "e7444f30-32bd-42ac-a942-e9016e444ee6",
+      "title": "Umwelt #20",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=20&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910530"
+        }
+      }
+    },
+    {
+      "id": "b3e375d6-68f7-46ba-ae2e-a7560b430fae",
+      "title": "Umwelt #21",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=21&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910531"
+        }
+      }
+    },
+    {
+      "id": "37abfde1-05d3-4f6f-ab53-5348da3ee5b2",
+      "title": "Umwelt #22",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=22&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.453Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910532"
+        }
+      }
+    },
+    {
+      "id": "f5f9d11e-1fd3-4e8a-b603-214300ca5336",
+      "title": "Umwelt #23",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=23&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.454Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910533"
+        }
+      }
+    },
+    {
+      "id": "2a24ed5b-e491-469d-9cd0-e20dcadf0233",
+      "title": "Umwelt #24",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=24&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.454Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910534"
+        }
+      }
+    },
+    {
+      "id": "5e48dd41-7413-45bf-8fda-73e1fda54ddb",
+      "title": "Umwelt #26",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=26&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.454Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910536"
+        }
+      }
+    },
+    {
+      "id": "148f72b6-22f7-4209-bfe8-bd3e14be3b7a",
+      "title": "Umwelt #27",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=27&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.454Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910537"
+        }
+      }
+    },
+    {
+      "id": "aea7754c-3b43-406d-aa67-afcac08fb95a",
+      "title": "Umwelt #28",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=28&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.454Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910538"
+        }
+      }
+    },
+    {
+      "id": "447910c0-5e8f-4b05-b20d-86da25e48e2a",
+      "title": "Umwelt #29",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=29&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.454Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910539"
+        }
+      }
+    },
+    {
+      "id": "5da9e831-e533-473b-9d21-26e09c0d38e0",
+      "title": "Umwelt #30",
+      "source": "https://cdn.feralfileassets.com/previews/2fb649d0-3ed2-4539-8ea2-e073b85e9a21/1637626255/?edition_number=30&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.454Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "113176185863405706439780180052288132133861027165671865326111761497590281910540"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

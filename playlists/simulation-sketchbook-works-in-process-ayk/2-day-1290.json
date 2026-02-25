@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "cef6ece7-32f9-430e-a55d-0664403c82f5",
+  "slug": "day-1290",
+  "title": "DAY 1290",
+  "summary": "Alida Sun is an artist for whom the notion of a “sketch” is key — a critical aspect of her practice is the “everyday,” an ongoing dialogue with an audience in which artists share a new piece every single day. Some are completed artworks, others are riffs, gestures, and experiments. For Sun, this “everyday” practice with generative tools amasses, with many motifs appearing again and again, typically published to social platforms. This practice also means that different concerns of the artist appear in different configurations, producing novel conversations within and without. “DAY 1290” merges code, bird flight patterns, choreography, and meditation into one sketch out of 1,290 days of generative art practice. It’s an exploration of swarm intelligence and decentralization. Sun writes, “I release preconceived notions and let the emergent system form and behave in ways I never predicted. So the practice of sketching becomes a humbling, fun, and spiritual experience free from attachment to outcomes. “DAY 1290” visualizes nature and technology not as separate from us or each other, but thoroughly interconnected with human movements in an ongoing process.”",
+  "coverImage": "https://imagedelivery.net/5BJzhBHeVhlhbn58hvcXAQ/e60a8ee9-ea8d-45cf-6ab6-258c37a60d00/raw",
+  "created": "2026-02-25T09:58:47.724Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "9f5a0932-4288-42c3-b5a2-3f3e0e4091d8",
+      "title": "DAY 1290 AP",
+      "source": "https://cdn.feralfileassets.com/previews/59f5b4bf-7381-4b09-9dfd-2b38a77ee349/1665935949/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:47.724Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1Q4SBM941oAeu69v8LsrfwSiEkhMWJiVrp",
+          "tokenId": "3216706790835547142892075934972629096704680077222533470703103161285507179518"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

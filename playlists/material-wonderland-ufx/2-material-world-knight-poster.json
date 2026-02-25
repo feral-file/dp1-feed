@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "76661dbb-ac70-431b-8ddc-fa39fbd75961",
+  "slug": "material-world-knight-poster",
+  "title": "Material World Knight: Poster",
+  "summary": "This dynamic image of the Material World Knight was featured on the cover of Frieze magazine, Issue 201, in March 2019.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/2ed75c55-5e6b-4729-198a-5393e3b56c00/raw",
+  "created": "2026-02-25T09:59:03.488Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "3a9c76aa-9594-4968-8681-1e76e85d3575",
+      "title": "Material World Knight: Poster AE",
+      "source": "https://cdn.feralfileassets.com/previews/f2cabb51-5eae-48a7-ba16-fc847c23e0fe/1675931007/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:03.487Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "64083282194581793942215293811836391478974900789963845024963281200227193839067"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

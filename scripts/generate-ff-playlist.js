@@ -3,7 +3,7 @@
 /**
  * DP-1 Playlist Generator for Feral File Exhibitions
  *
- * This script generates a DP-1 playlist from a Feral File exhibition
+ * This script generates DP-1 playlists from a Feral File exhibition
  * using the Feral File API and the dp1-js library.
  *
  * Usage:
@@ -22,7 +22,8 @@ const CDN_BASE = 'https://cdn.feralfileassets.com';
 const MAX_PLAYLIST_ITEMS = 1024;
 
 /**
- * Fetch data from Feral File API
+ * Fetch a single page from the Feral File API.
+ * Returns the full parsed JSON body so callers can inspect paging metadata.
  */
 async function fetchAPI(endpoint) {
   const url = `${FF_API_BASE}${endpoint}`;
@@ -32,8 +33,32 @@ async function fetchAPI(endpoint) {
     throw new Error(`API request failed: ${response.status} ${response.statusText} for ${url}`);
   }
 
-  const data = await response.json();
-  return data.result;
+  return await response.json();
+}
+
+/**
+ * Fetch all pages for a paginated Feral File API endpoint.
+ * The endpoint must not already include `offset` or `limit` params.
+ * Uses the `paging` envelope `{ offset, limit, total }` to determine when to stop.
+ */
+async function fetchAllPages(endpoint, pageSize = 300) {
+  const allResults = [];
+  let offset = 0;
+
+  while (true) {
+    const sep = endpoint.includes('?') ? '&' : '?';
+    const data = await fetchAPI(`${endpoint}${sep}offset=${offset}&limit=${pageSize}`);
+    const page = data.result ?? [];
+    allResults.push(...page);
+
+    const { paging } = data;
+    if (!paging || offset + page.length >= paging.total) {
+      break;
+    }
+    offset += pageSize;
+  }
+
+  return allResults;
 }
 
 /**
@@ -41,7 +66,8 @@ async function fetchAPI(endpoint) {
  */
 async function getExhibition(idOrSlug) {
   console.log(`Fetching exhibition: ${idOrSlug}...`);
-  return await fetchAPI(`/exhibitions/${idOrSlug}`);
+  const data = await fetchAPI(`/exhibitions/${idOrSlug}`);
+  return data.result;
 }
 
 /**
@@ -49,15 +75,15 @@ async function getExhibition(idOrSlug) {
  */
 async function getSeries(exhibitionId) {
   console.log(`Fetching series for exhibition ${exhibitionId}...`);
-  return await fetchAPI(`/series?exhibitionID=${exhibitionId}&includeArtist=true`);
+  return await fetchAllPages(`/series?exhibitionID=${exhibitionId}&includeArtist=true`);
 }
 
 /**
- * Fetch artworks for a series
+ * Fetch all artworks for a series, handling pagination automatically
  */
 async function getArtworks(seriesId) {
   console.log(`Fetching artworks for series ${seriesId}...`);
-  return await fetchAPI(`/artworks?seriesID=${seriesId}&includeActiveSwap=true`);
+  return await fetchAllPages(`/artworks?seriesID=${seriesId}&includeActiveSwap=true`);
 }
 
 /**
@@ -69,7 +95,6 @@ function resolveURI(rawSrc) {
     return null;
   }
 
-  // Step 2: Transform the candidate
   let resolvedSrc = rawSrc;
 
   // If starts with https
@@ -304,9 +329,145 @@ function interleaveArtworks(seriesArtworks) {
 }
 
 /**
- * Generate DP-1 playlist from exhibition
+ * Build DP-1 playlist items from a list of {artwork, series} pairs
  */
-async function generatePlaylist(exhibitionIdOrSlug) {
+function buildPlaylistItems(selectedItems, exhibition) {
+  const playlistItems = [];
+
+  for (const { artwork, series } of selectedItems) {
+    const source = resolvePreviewURI(artwork);
+
+    if (!source) {
+      console.warn(`Skipping artwork ${artwork.id}: Unable to resolve preview URI`);
+      continue;
+    }
+
+    const title = generateItemTitle(series.title, artwork.name, series.settings?.artworkModel);
+
+    console.log(`Adding item: ${title}`);
+    console.log(`  Source: ${source}`);
+
+    try {
+      const provenance = createProvenance(artwork, exhibition);
+      if (!provenance) {
+        console.warn(`  Skipping artwork ${artwork.name}: Unable to create provenance`);
+        continue;
+      }
+
+      const item = {
+        id: randomUUID(),
+        title,
+        source,
+        duration: 300, // Default 300 seconds per artwork
+        license: 'open', // Feral File artworks are open access
+        created: new Date().toISOString(),
+        provenance,
+      };
+
+      const validation = dp1.validatePlaylistItem(item);
+      if (!validation.success) {
+        console.error(`  ✗ Invalid playlist item: ${validation.error.message}`);
+        continue;
+      }
+
+      playlistItems.push(item);
+
+      if (playlistItems.length >= MAX_PLAYLIST_ITEMS) {
+        console.log(
+          `\n⚠️  Reached maximum playlist item limit of ${MAX_PLAYLIST_ITEMS}. Stopping item creation.`
+        );
+        break;
+      }
+    } catch (error) {
+      console.error(`Error creating playlist item for ${title}:`, error.message);
+      continue;
+    }
+  }
+
+  return playlistItems;
+}
+
+/**
+ * Build a full DP-1 playlist object from a title, items, and exhibition metadata.
+ * Pass a series object for series-specific playlists; omit (or pass null) for
+ * 1-of-1s and mixed playlists, which fall back to the exhibition-level description.
+ */
+function buildPlaylist(title, items, exhibition, series = null) {
+  const playlistId = randomUUID();
+  const playlistSlug = createSlug(title);
+
+  let coverImageUrl = series
+    ? series.thumbnailDisplay || series.thumbnailURI
+    : exhibition.coverDisplay || exhibition.coverURI;
+  if (coverImageUrl) {
+    coverImageUrl = resolveURI(coverImageUrl);
+  }
+
+  let summary;
+  if (series) {
+    summary =
+      series.description ||
+      series.note ||
+      series.noteBrief ||
+      `A digital art series: ${series.title}`;
+  } else {
+    summary =
+      exhibition.note ||
+      exhibition.noteBrief ||
+      `A digital art exhibition featuring works from ${exhibition.title}`;
+  }
+  if (summary.length > 4096) {
+    summary = summary.substring(0, 4093) + '...';
+  }
+
+  const playlist = {
+    dpVersion: '1.1.0',
+    id: playlistId,
+    slug: playlistSlug,
+    title,
+    summary,
+    coverImage: coverImageUrl,
+    created: new Date().toISOString(),
+    defaults: {
+      license: 'open',
+      duration: 300,
+    },
+    items,
+  };
+
+  // Generate a temporary signature (should be replaced with real signing)
+  playlist.signature =
+    'ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000';
+
+  return playlist;
+}
+
+/**
+ * Validate and log a playlist, throwing if invalid
+ */
+function validatePlaylist(playlist) {
+  const result = dp1.parseDP1Playlist(playlist);
+  if (result.error) {
+    console.error('\n✗ Playlist validation failed:');
+    console.error(result.error.message);
+    if (result.error.details) {
+      console.error('Details:', result.error.details);
+    }
+    throw new Error('Playlist validation failed');
+  }
+
+  console.log(`\n✓ Playlist created successfully!`);
+  console.log(`  Title: ${playlist.title}`);
+  console.log(`  ID: ${playlist.id}`);
+  console.log(`  Slug: ${playlist.slug}`);
+  console.log(`  Items: ${playlist.items.length}`);
+}
+
+/**
+ * Generate DP-1 playlists from exhibition
+ * Returns an array of playlists.
+ */
+async function generatePlaylists(exhibitionIdOrSlug) {
   try {
     // 1. Fetch exhibition
     const exhibition = await getExhibition(exhibitionIdOrSlug);
@@ -320,7 +481,6 @@ async function generatePlaylist(exhibitionIdOrSlug) {
 
     // Sort series by displayIndex (ascending) to ensure proper order
     seriesList.sort((a, b) => {
-      // First try to sort by displayIndex if they differ
       if (
         a.displayIndex !== undefined &&
         b.displayIndex !== undefined &&
@@ -328,13 +488,11 @@ async function generatePlaylist(exhibitionIdOrSlug) {
       ) {
         return a.displayIndex - b.displayIndex;
       }
-      // Fallback: try to extract number from title (e.g., "Infinite Entropy 1" -> 1)
       const aMatch = a.title.match(/(\d+)$/);
       const bMatch = b.title.match(/(\d+)$/);
       if (aMatch && bMatch) {
         return parseInt(aMatch[1]) - parseInt(bMatch[1]);
       }
-      // Final fallback: use createdAt timestamp
       return new Date(a.createdAt) - new Date(b.createdAt);
     });
 
@@ -342,145 +500,126 @@ async function generatePlaylist(exhibitionIdOrSlug) {
     const allSeriesArtworks = [];
     for (const series of seriesList) {
       const artworks = await selectArtworksFromSeries(series, exhibition);
-      allSeriesArtworks.push(artworks);
+      allSeriesArtworks.push({ series, artworks });
     }
 
-    // 4. For group exhibitions, interleave artworks; otherwise just flatten
-    let selectedItems;
-    if (exhibition.type === 'group' || exhibition.type === 'curated') {
-      console.log('\nInterleaving artworks from multiple series...');
-      selectedItems = interleaveArtworks(allSeriesArtworks);
-    } else {
-      selectedItems = allSeriesArtworks.flat();
-    }
+    const playlists = [];
+    const isSolo = exhibition.type !== 'group' && exhibition.type !== 'curated';
 
-    console.log(`\nTotal artworks selected: ${selectedItems.length}\n`);
-
-    // 5. Create playlist items
-    const playlistItems = [];
-
-    for (const { artwork, series } of selectedItems) {
-      const source = resolvePreviewURI(artwork);
-
-      if (!source) {
-        console.warn(`Skipping artwork ${artwork.id}: Unable to resolve preview URI`);
-        continue;
-      }
-
-      const title = generateItemTitle(series.title, artwork.name, series.settings?.artworkModel);
-
-      console.log(`Adding item: ${title}`);
-      console.log(`  Source: ${source}`);
-
-      try {
-        // Create provenance information
-        const provenance = createProvenance(artwork, exhibition);
-        if (!provenance) {
-          console.warn(`  Skipping artwork ${artwork.name}: Unable to create provenance`);
-          continue;
-        }
-
-        // Create playlist item following DP-1 schema
-        const item = {
-          id: randomUUID(),
-          title,
-          source,
-          duration: 300, // Default 300 seconds per artwork
-          license: 'open', // Feral File artworks are open access
-          created: new Date().toISOString(),
-          provenance,
-        };
-
-        // Validate the item
-        const validation = dp1.validatePlaylistItem(item);
-        if (!validation.success) {
-          console.error(`  ✗ Invalid playlist item: ${validation.error.message}`);
-          continue;
-        }
-
-        playlistItems.push(item);
-
-        // Cap playlist items at MAX_PLAYLIST_ITEMS
-        if (playlistItems.length >= MAX_PLAYLIST_ITEMS) {
-          console.log(
-            `\n⚠️  Reached maximum playlist item limit of ${MAX_PLAYLIST_ITEMS}. Stopping item creation.`
-          );
-          break;
-        }
-      } catch (error) {
-        console.error(`Error creating playlist item for ${title}:`, error.message);
-        continue;
-      }
-    }
-
-    if (playlistItems.length === 0) {
-      throw new Error('No valid playlist items could be created');
-    }
-
-    // 6. Create playlist
-    console.log(`\nCreating playlist with ${playlistItems.length} items...`);
-
-    const playlistId = randomUUID();
-    const playlistSlug = createSlug(exhibition.title);
-
-    // Process cover image - apply same URL transformation
-    let coverImageUrl = exhibition.coverDisplay || exhibition.coverURI;
-    if (coverImageUrl) {
-      coverImageUrl = resolveURI(coverImageUrl);
-    }
-
-    // Process summary - truncate to max 4096 characters as per DP-1 spec
-    let summary =
-      exhibition.note ||
-      exhibition.noteBrief ||
-      `A digital art exhibition featuring works from ${exhibition.title}`;
-    if (summary.length > 4096) {
-      summary = summary.substring(0, 4093) + '...';
-    }
-
-    const playlist = {
-      dpVersion: '1.1.0',
-      id: playlistId,
-      slug: playlistSlug,
-      title: exhibition.title,
-      summary,
-      coverImage: coverImageUrl,
-      created: new Date().toISOString(),
-      defaults: {
-        license: 'open',
-        duration: 300,
-      },
-      items: playlistItems,
-    };
-
-    // Generate a temporary signature (should be replaced with real signing)
-    // For now, use a placeholder that matches the pattern
-    playlist.signature =
-      'ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000';
-
-    // Validate the full playlist
-    const playlistValidation = dp1.parseDP1Playlist(playlist);
-    if (playlistValidation.error) {
-      console.error('\n✗ Playlist validation failed:');
-      console.error(playlistValidation.error.message);
-      if (playlistValidation.error.details) {
-        console.error('Details:', playlistValidation.error.details);
-      }
-      throw new Error('Playlist validation failed');
-    }
-
-    console.log('\n✓ Playlist created successfully!');
-    console.log(`  Title: ${playlist.title}`);
-    console.log(`  ID: ${playlist.id}`);
-    console.log(`  Slug: ${playlist.slug}`);
-    console.log(`  Items: ${playlist.items.length}`);
-    console.log(
-      '\nNote: Signature is a placeholder. Use a proper Ed25519 key to sign in production.'
+    // Check if all series have artworkModel === 'multi'
+    const allSeriesAreMulti = allSeriesArtworks.every(
+      ({ series }) => series.settings?.artworkModel === 'multi'
     );
 
-    return playlist;
+    if (isSolo) {
+      // --- Solo exhibition ---
+
+      // Playlist 1: all series with artworkModel === 'single' grouped together
+      const singleItems = allSeriesArtworks
+        .filter(({ series }) => series.settings?.artworkModel === 'single')
+        .flatMap(({ artworks }) => artworks);
+
+      if (singleItems.length > 0) {
+        console.log(`\nBuilding "1 of 1s" playlist (${singleItems.length} artworks)...`);
+        const items = buildPlaylistItems(singleItems, exhibition);
+        if (items.length > 0) {
+          const playlist = buildPlaylist(`${exhibition.title} 1 of 1s`, items, exhibition);
+          validatePlaylist(playlist);
+          playlists.push(playlist);
+        }
+      }
+
+      // If all series are multi, create a mixed playlist
+      // Note: allSeriesArtworks already contains only the first artwork from each multi series
+      if (allSeriesAreMulti) {
+        const allArtworksPerSeries = allSeriesArtworks.map(({ artworks }) => artworks);
+        const mixedItems = interleaveArtworks(allArtworksPerSeries);
+
+        if (mixedItems.length > 0) {
+          const mixedTitle = `Mixed ${exhibition.title}`;
+          console.log(
+            `\nBuilding mixed playlist: "${mixedTitle}" (${mixedItems.length} artworks)...`
+          );
+          const items = buildPlaylistItems(mixedItems, exhibition);
+          if (items.length > 0) {
+            const playlist = buildPlaylist(mixedTitle, items, exhibition);
+            validatePlaylist(playlist);
+            playlists.push(playlist);
+          }
+        }
+      } else {
+        // Playlist per non-single series: "$series_title"
+        for (const { series, artworks } of allSeriesArtworks) {
+          if (series.settings?.artworkModel === 'single') continue;
+          if (artworks.length === 0) continue;
+
+          const playlistTitle = series.title;
+          console.log(
+            `\nBuilding series playlist: "${playlistTitle}" (${artworks.length} artworks)...`
+          );
+          const items = buildPlaylistItems(artworks, exhibition);
+          if (items.length > 0) {
+            const playlist = buildPlaylist(playlistTitle, items, exhibition, series);
+            validatePlaylist(playlist);
+            playlists.push(playlist);
+          }
+        }
+      }
+    } else {
+      // --- Group / curated exhibition ---
+
+      // Playlist 1 (top): "Mixed $exhibition_title" — interleaved artworks from all series
+      const allArtworksPerSeries = allSeriesArtworks.map(({ artworks }) => artworks);
+      const mixedItems = interleaveArtworks(allArtworksPerSeries);
+
+      if (mixedItems.length > 0) {
+        const mixedTitle = `Mixed ${exhibition.title}`;
+        console.log(
+          `\nBuilding mixed playlist: "${mixedTitle}" (${mixedItems.length} artworks)...`
+        );
+        const items = buildPlaylistItems(mixedItems, exhibition);
+        if (items.length > 0) {
+          const playlist = buildPlaylist(mixedTitle, items, exhibition);
+          validatePlaylist(playlist);
+          playlists.push(playlist);
+        }
+      }
+
+      // One playlist per series: "$series_title"
+      // Skip if all series are multi
+      if (!allSeriesAreMulti) {
+        for (const { series, artworks } of allSeriesArtworks) {
+          if (artworks.length === 0) continue;
+
+          const playlistTitle = series.title;
+          console.log(
+            `\nBuilding series playlist: "${playlistTitle}" (${artworks.length} artworks)...`
+          );
+          const items = buildPlaylistItems(artworks, exhibition);
+          if (items.length > 0) {
+            const playlist = buildPlaylist(playlistTitle, items, exhibition, series);
+            validatePlaylist(playlist);
+            playlists.push(playlist);
+          }
+        }
+      } else {
+        console.log('\nSkipping individual series playlists (all series have artworkModel: multi)');
+      }
+    }
+
+    if (playlists.length === 0) {
+      throw new Error('No valid playlists could be created');
+    }
+
+    console.log(`\n✓ Generated ${playlists.length} playlist(s) total.`);
+    console.log(
+      'Note: Signatures are placeholders. Use a proper Ed25519 key to sign in production.'
+    );
+
+    const exhibitionSlug = exhibition.slug || createSlug(exhibition.title);
+    return { playlists, exhibitionSlug };
   } catch (error) {
-    console.error('\n✗ Error generating playlist:', error.message);
+    console.error('\n✗ Error generating playlists:', error.message);
     throw error;
   }
 }
@@ -492,31 +631,33 @@ async function main() {
   const args = process.argv.slice(2);
 
   if (args.length === 0) {
-    console.error('Usage: node generate-ff-playlist.js <exhibition-id-or-slug>');
+    console.error('Usage: node generate-ff-playlist.js <exhibition-id-or-slug> [output-dir]');
     console.error('\nExamples:');
     console.error('  node scripts/generate-ff-playlist.js infinite-entropy-xhj');
     console.error('  node scripts/generate-ff-playlist.js 71513905-f7b2-4ac1-b617-0d41123b3639');
+    console.error('  node scripts/generate-ff-playlist.js infinite-entropy-xhj playlist-new');
     process.exit(1);
   }
 
   const exhibitionIdOrSlug = args[0];
+  const outputDir = args[1] || '.';
 
   try {
-    const playlist = await generatePlaylist(exhibitionIdOrSlug);
-
-    // Output the playlist JSON
-    const playlistJson = JSON.stringify(playlist, null, 2);
-
-    // Write to file
-    const outputFile = `playlist-${exhibitionIdOrSlug}.json`;
+    const { playlists, exhibitionSlug } = await generatePlaylists(exhibitionIdOrSlug);
     const fs = await import('fs');
-    fs.writeFileSync(outputFile, playlistJson, 'utf-8');
+    const path = await import('path');
 
-    console.log(`\n✓ Playlist saved to: ${outputFile}`);
-    console.log('\nPlaylist JSON:');
-    console.log(playlistJson);
+    const exhibitionDir = path.join(outputDir, exhibitionSlug);
+    fs.mkdirSync(exhibitionDir, { recursive: true });
+
+    playlists.forEach((playlist, index) => {
+      const playlistJson = JSON.stringify(playlist, null, 2);
+      const outputFile = path.join(exhibitionDir, `${index + 1}-${playlist.slug}.json`);
+      fs.writeFileSync(outputFile, playlistJson, 'utf-8');
+      console.log(`\n✓ Playlist saved to: ${outputFile}`);
+    });
   } catch (error) {
-    console.error('\n✗ Failed to generate playlist');
+    console.error('\n✗ Failed to generate playlists');
     process.exit(1);
   }
 }

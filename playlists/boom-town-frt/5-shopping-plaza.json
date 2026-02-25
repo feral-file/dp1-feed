@@ -1,0 +1,67 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "10ead723-5a63-40b3-a82f-c5646c312900",
+  "slug": "shopping-plaza",
+  "title": "SHOPPING PLAZA",
+  "summary": "<em>A good town needs a few places to go when you’re bored. None of them are here, but the food court has an arcade.</em><br/>Every one of the structures in BOOM TOWN represents a unique, living artwork comprised of 1,000 images that will change over time, evolving as a kind of durational stop motion animation over an undetermined period pegged to Ethereum’s block time — that is, the length of time it takes to add another block to the blockchain. Collectors receive the full set of images as part of their acquisition package and can browse or even create prints of the work’s past or future state, but they cannot make the work advance any faster or slower than block time. <br/>Burr’s process blends traditional animation techniques with the affordances of generative algorithmic systems. Each work originates with “intentionally unoptimized algorithms” developed by Burr’s collaborator, Dave Tandem, and follows a precise composition logic that dictates its form, ground and field, shadows, planes, colors, and weight. The software allows Burr to draw structures on a gravity-influenced canvas and to animate them changing over time. Burr is interested in highlighting the unique fingerprints of various software and in his practice often works across tech pipelines to weave these diverse fingerprints into a unique aesthetic, reveling in the compression and dithering that occurs through this approach. The final images are outputted into a custom framework built by Tandem that uses block time to advance their evolution.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/68930f77-6ddc-47c2-91d2-c8c32785e000/raw",
+  "created": "2026-02-25T09:58:54.521Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "0660c7f7-a50e-4cad-89a8-b173dd510d4f",
+      "title": "SHOPPING PLAZA #1",
+      "source": "https://cdn.feralfileassets.com/previews/8d857653-9b06-4789-bf98-b5646b0c3f47/1670990379/?edition_number=0&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=62186715774995435029814843775832455593531258371274455388532309026170987997016&token_id_hash=0x38a7324c675c6378a9d21e81f964a4879472d2bfe4d2d2bd5adc67b5b1792d44",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "62186715774995435029814843775832455593531258371274455388532309026170987997016"
+        }
+      }
+    },
+    {
+      "id": "202cd92f-5776-431d-ba23-d48b0b06a508",
+      "title": "SHOPPING PLAZA #2",
+      "source": "https://cdn.feralfileassets.com/previews/8d857653-9b06-4789-bf98-b5646b0c3f47/1670990379/?edition_number=1&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=62186715774995435029814843775832455593531258371274455388532309026170987997017&token_id_hash=0x003063af569bc38ad724ae3998157ee79cd86fe02bc9e279252acb8fd693ceda",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "62186715774995435029814843775832455593531258371274455388532309026170987997017"
+        }
+      }
+    },
+    {
+      "id": "ba3b9a25-181f-49c2-8767-2e9e08f5df10",
+      "title": "SHOPPING PLAZA #3",
+      "source": "https://cdn.feralfileassets.com/previews/8d857653-9b06-4789-bf98-b5646b0c3f47/1670990379/?edition_number=2&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=62186715774995435029814843775832455593531258371274455388532309026170987997018&token_id_hash=0x2d14d521dd54a78c7d4fe51cf3e503df3d3113cbfdf837e22652b6f8e7b373e2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "62186715774995435029814843775832455593531258371274455388532309026170987997018"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

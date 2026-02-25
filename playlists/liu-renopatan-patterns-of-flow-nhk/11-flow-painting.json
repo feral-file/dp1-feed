@@ -1,0 +1,1121 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "edf75de9-22dc-44bf-a6f7-1248f659d9ce",
+  "slug": "flow-painting",
+  "title": "Flow Painting",
+  "summary": "<p>Inspired by Hiroshi Kawano’s assertion that “computer art should be the work of a computer artist, not a human,” ykxotkx has designed an algorithm that generates a painting independently of his own intention. In previous works, the artist has meticulously designed algorithms to realize an envisioned outcome, thereby stressing the human’s creative agency. However, for the exhibition <em>Patterns of Flow</em>, he placed emphasis on the computer’s creative autonomy instead.</p>\n<p>In <em>Flow Painting,</em> the artist divided the program into two parts according to Kawano’s framework, comprising a control system (the “necessary conditions”) and a material component (“sufficient conditions”). The work’s composition is determined by a simple control algorithm that uses random numbers, recursive subdivision, and noise-based coordinate transformation. When drawing the objects based on this composition, the artist then applied his own selected color palette and textures to generate a painterly output that reflects his own personality and aesthetic sensibilities.</p>\n<p>「コンピュータアートは人間に代わるコンピュータ芸術家の作品であるべき」という川野洋の主張にインスパイアされ、ykxotkxは、自身の意図とは独立して絵画を生成するアルゴリズムを設計しました。これまでの作品でアーティストは、アルゴリズムを綿密に設計し、想定した結果を実現することにより人間の創造的な役割を強調してきました。しかし、「Patterns of Flow」では、コンピュータの創造的な自律性に重点を置いています。</p>\n<p>「Flow Painting」において、アーティストはプログラムを川野のフレームワークに従って、制御システム（「必要条件」）と材料成分（「十分条件」）の2つの要素に分けました。作品の構図は、乱数、再帰的な分割、ノイズに基づく座標変換を使用するシンプルな制御アルゴリズムによって決定されます。この構図に基づいて、オブジェクトを描く際にアーティストが選んだカラーパレットとテクスチャを適用することで、自身の個性と美的感覚を反映した絵画的なアウトプットが生み出されます。</p>",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/d85440aa-6cd8-4adf-3e73-ffa046314e00/raw",
+  "created": "2026-02-25T10:00:00.325Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "e111eb0b-a352-4f0d-9f24-8641e94d05e5",
+      "title": "Flow Painting #1",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=0&artwork_number=1&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306240&token_id_hash=0xeef4c34a35c1e0095ad0bd74197ee64a40d16c87bcef508f2dde62cb8045c79f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306240"
+        }
+      }
+    },
+    {
+      "id": "d49178ba-b131-42c9-b067-77c331e3f2b7",
+      "title": "Flow Painting #2",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=1&artwork_number=2&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306241&token_id_hash=0xf16e2133bfd267ac6a495a85e0b338f540029343a27509263770e9c9d2f588f1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306241"
+        }
+      }
+    },
+    {
+      "id": "cd4c4c2d-a4fd-490a-b9c7-e23447d0cfad",
+      "title": "Flow Painting #3",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=2&artwork_number=3&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306242&token_id_hash=0x2e112718a0ba6b636d234d5559277dead8e7caeb02a0a0654df55795b1c88523",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306242"
+        }
+      }
+    },
+    {
+      "id": "9ec5a914-27d4-43b8-84a2-47a342eefc30",
+      "title": "Flow Painting #4",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=3&artwork_number=4&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306243&token_id_hash=0x66af74a10f3183085bcdcacb1477d157eeb2c47538b6b3537f5d2edab38b0e68",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306243"
+        }
+      }
+    },
+    {
+      "id": "3ea68c61-87bb-4044-8073-318edeebefa0",
+      "title": "Flow Painting #5",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=4&artwork_number=5&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306244&token_id_hash=0xc24632f2540b6c6f30a0f73454fb351a2c556d675f75c7f1de8e5212065f8eaf",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306244"
+        }
+      }
+    },
+    {
+      "id": "e69292ea-1d7c-4053-a5b4-1c6c32256222",
+      "title": "Flow Painting #6",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=5&artwork_number=6&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306245&token_id_hash=0x96f2b82a1e0db551cb0d76791044bc94a9036d38f27a578ea6c4247d1dd23064",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306245"
+        }
+      }
+    },
+    {
+      "id": "397cdd3e-0c78-4461-b378-8af6ed73866c",
+      "title": "Flow Painting #7",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=6&artwork_number=7&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306246&token_id_hash=0xb6db17c985c4eeaa7a783561a49de53abab52569afda347a765142e0b6a3736c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306246"
+        }
+      }
+    },
+    {
+      "id": "52113d97-5549-471b-aa25-1e956a2a288e",
+      "title": "Flow Painting #8",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=7&artwork_number=8&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306247&token_id_hash=0xe1a576aa820ab8db394425f57758a52171782a3abc7c3fd9485792a185485253",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306247"
+        }
+      }
+    },
+    {
+      "id": "149aeb6e-2e1e-46de-958f-f828764839c2",
+      "title": "Flow Painting #9",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=8&artwork_number=9&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306248&token_id_hash=0xbcd96fa74926e380c1731b5336f975782ef1de1e363588fe60a86ad733a164bc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306248"
+        }
+      }
+    },
+    {
+      "id": "64ed2ec0-1d66-4f88-a973-a9207e7f0f1f",
+      "title": "Flow Painting #10",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=9&artwork_number=10&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306249&token_id_hash=0x5dcbc0157c633da16f5d9ba0ab33c1a0377eacc36860616e27d8133b034c0fed",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306249"
+        }
+      }
+    },
+    {
+      "id": "634bb5e4-60e2-43f3-a844-5bbe98926224",
+      "title": "Flow Painting #11",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=10&artwork_number=11&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306250&token_id_hash=0x6842b8c874e47b6e28a6cf4a40cee373cc9939a18ad7e4b7d446254cc2bff431",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306250"
+        }
+      }
+    },
+    {
+      "id": "95c76fd6-ef97-483c-999e-ec0650bea454",
+      "title": "Flow Painting #12",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=11&artwork_number=12&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306251&token_id_hash=0x8052755f847237dd607559ef0f8cab82a619bae2bd0dd9ce5e1e8da9afa8facd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306251"
+        }
+      }
+    },
+    {
+      "id": "fba6c309-0450-4411-9d0d-4d0e05734f09",
+      "title": "Flow Painting #13",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=12&artwork_number=13&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306252&token_id_hash=0xe21fe7cb1f77d6f0fdf943391f245e897deedfe8165841da933f8084783ed423",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306252"
+        }
+      }
+    },
+    {
+      "id": "28c78ed3-2b37-4531-a45d-d49d83d0e8bc",
+      "title": "Flow Painting #14",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=13&artwork_number=14&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306253&token_id_hash=0x37bd94e4f024a9991ce5d84c0c88ce19ab8da34b9bb1266937f5aba1b41302f1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306253"
+        }
+      }
+    },
+    {
+      "id": "999d15ff-f082-49b0-8750-fd4808e4f425",
+      "title": "Flow Painting #15",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=14&artwork_number=15&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306254&token_id_hash=0xcb2c4effb166d5ee01aedb5229a1f8365bed513eb09f2e8a34e8c554c13b0f2e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306254"
+        }
+      }
+    },
+    {
+      "id": "6fd0c498-96bd-48f4-bbb7-ec7f9282621f",
+      "title": "Flow Painting #16",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=15&artwork_number=16&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306255&token_id_hash=0x1120602b23b7df0287b7891ba848b2b08261d9af3dc2bb7de65e3d228f03e50c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306255"
+        }
+      }
+    },
+    {
+      "id": "f4716684-cc51-4326-9429-a48d31330341",
+      "title": "Flow Painting #17",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=16&artwork_number=17&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306256&token_id_hash=0x438e037f48e49256c670d21376618e1353cb138cf956b6ca838d8e13d1b047af",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306256"
+        }
+      }
+    },
+    {
+      "id": "078ac01d-2c30-400d-bd88-8c70aad9e105",
+      "title": "Flow Painting #18",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=17&artwork_number=18&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306257&token_id_hash=0x2fb5d3d193a3f9187eb84f8c029e30ce5f1880b6e110c0ee217fe5a29cccb74f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306257"
+        }
+      }
+    },
+    {
+      "id": "03b5ebe9-c618-4d56-8734-cc5165656d83",
+      "title": "Flow Painting #19",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=18&artwork_number=19&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306258&token_id_hash=0xdc8eb13feb8bcc14dadd371f24c286b92cb38aa33343be4b1803514cf57308f2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306258"
+        }
+      }
+    },
+    {
+      "id": "b1e9d056-563a-40c1-b0b5-2da3759b1ef7",
+      "title": "Flow Painting #20",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=19&artwork_number=20&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306259&token_id_hash=0xc6e05d4c169dfdf661b9a2bd73cd93fb60a128f686cae92f320702658522c7ed",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306259"
+        }
+      }
+    },
+    {
+      "id": "f36b9dcd-9d0b-4d17-b3c6-b845a32450c2",
+      "title": "Flow Painting #21",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=20&artwork_number=21&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306260&token_id_hash=0x598fb7fcd8f37e03dfd523680a7e0264f12febb7919da71c4db85c1e850cfe04",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306260"
+        }
+      }
+    },
+    {
+      "id": "f92f6907-eb1e-4b44-a233-fc262f80dc7c",
+      "title": "Flow Painting #22",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=21&artwork_number=22&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306261&token_id_hash=0xb16abbd2af1fcb12e0839f60ecc18c91b3862e85ba0f8e223681efd5c55b0d8d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306261"
+        }
+      }
+    },
+    {
+      "id": "9773b0d1-f09b-49b3-85dc-63a949462999",
+      "title": "Flow Painting #23",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=22&artwork_number=23&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306262&token_id_hash=0xfd19265821654df59637e3966715c570091808c44e6bb8423c5ad9bfb59dc0d5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306262"
+        }
+      }
+    },
+    {
+      "id": "cba91d65-a514-4e3a-81fa-af52a9f87283",
+      "title": "Flow Painting #24",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=23&artwork_number=24&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306263&token_id_hash=0xc0fc8ecbe0a284af84287d21bf21165822bddc4ea0205dec6f6f2efc3c73e89b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306263"
+        }
+      }
+    },
+    {
+      "id": "d0ba20c5-1890-43fa-b8ac-1d54a5d0243c",
+      "title": "Flow Painting #25",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=24&artwork_number=25&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306264&token_id_hash=0xfc13807f4c7158987379a73935f80d8b0c3b3d21083e3713d04c25b53e92bc24",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306264"
+        }
+      }
+    },
+    {
+      "id": "a06be8cc-934e-4a42-9fdc-b33f269a72ab",
+      "title": "Flow Painting #26",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=25&artwork_number=26&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306265&token_id_hash=0x4c8e0e354e416c8d7ea91d54cbfc5e1009671dceab08d24f81d2529eba3493ce",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306265"
+        }
+      }
+    },
+    {
+      "id": "623c29eb-843b-4cc7-9ce7-31b1878d72a7",
+      "title": "Flow Painting #27",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=26&artwork_number=27&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306266&token_id_hash=0x3c46c94d7cc5d8d37ce0a59888504f28a2822e7cc84c19a691c1dad458ded090",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306266"
+        }
+      }
+    },
+    {
+      "id": "c0f59b65-d827-4ed4-9ff8-873bc312858e",
+      "title": "Flow Painting #28",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=27&artwork_number=28&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306267&token_id_hash=0xc5d637c09aa91f8ba56fd480aca2df99fd1d5fc810661c0e764a5950b1f8e34e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306267"
+        }
+      }
+    },
+    {
+      "id": "e58a3ad9-b44d-4453-8661-22ad89216712",
+      "title": "Flow Painting #29",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=28&artwork_number=29&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306268&token_id_hash=0x322479bea17078edef3c268abc4bc15440a623d9984fdcb02c72375acbc99b9e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306268"
+        }
+      }
+    },
+    {
+      "id": "202d96b7-65b0-4354-ba40-19a907f8a0dd",
+      "title": "Flow Painting #30",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=29&artwork_number=30&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306269&token_id_hash=0x07330202b912718dc3ccf4eef9031919da9d5ab795d9dcc7cd3d264b465aeb27",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306269"
+        }
+      }
+    },
+    {
+      "id": "e1dfc6bf-9fbc-4b73-a095-baa8cc36b83e",
+      "title": "Flow Painting #31",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=30&artwork_number=31&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306270&token_id_hash=0xc3dd1964137a63bdd29576324c5c1ee48cfdb7edb20965549ee386912f554b88",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306270"
+        }
+      }
+    },
+    {
+      "id": "7e07f876-0867-4d76-97ad-61feba86a09c",
+      "title": "Flow Painting #32",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=31&artwork_number=32&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306271&token_id_hash=0xae6d56a147780ff929bbb2f0f8efd3f4029f9852d6e570d306f0a0c25f885777",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306271"
+        }
+      }
+    },
+    {
+      "id": "0cd755b6-33e1-45d1-9d96-cce115239eb7",
+      "title": "Flow Painting #33",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=32&artwork_number=33&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306272&token_id_hash=0x6c97e5dae38c249a170b3da78b51afd79f8b6129c1548d654c44f41b6fba835e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306272"
+        }
+      }
+    },
+    {
+      "id": "99a8ed03-34ef-43b5-832f-251a1b9dbee8",
+      "title": "Flow Painting #34",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=33&artwork_number=34&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306273&token_id_hash=0xfb413e574fd307a560266c2ba026115d4cc448d183836975600afa3fe873a149",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306273"
+        }
+      }
+    },
+    {
+      "id": "913d173c-b6c3-445a-9703-28004c890e53",
+      "title": "Flow Painting #35",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=34&artwork_number=35&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306274&token_id_hash=0x621d31e5e28d6b1549f83eab4b8695b326e1a76dae7b4170bb094c3a3f9b8148",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306274"
+        }
+      }
+    },
+    {
+      "id": "ae6300f8-ddc2-4260-aebf-c0eb8eb29948",
+      "title": "Flow Painting #36",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=35&artwork_number=36&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306275&token_id_hash=0xa15ce67a728c51040b8983f9ab386a69fcd47a67f781a1edf1550b2c2e6da3c0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306275"
+        }
+      }
+    },
+    {
+      "id": "46fb470b-76ee-4c5c-8c98-3535e34630f9",
+      "title": "Flow Painting #37",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=36&artwork_number=37&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306276&token_id_hash=0x80598a509fd07b499c8dda120dad074bb4179582a96e73adc906693e9bee887c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306276"
+        }
+      }
+    },
+    {
+      "id": "96022e62-403f-4ec6-975d-39898bd4ac89",
+      "title": "Flow Painting #38",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=37&artwork_number=38&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306277&token_id_hash=0x5c0a3d979bfd3696abe17751584034976e02a5dc51ab49f9875f87414c439cdf",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306277"
+        }
+      }
+    },
+    {
+      "id": "22398406-a4ed-402a-b59e-0494336edffb",
+      "title": "Flow Painting #39",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=38&artwork_number=39&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306278&token_id_hash=0x1b2a820ebc83c2614f099805de3d1e506ff2eedf44249e4d54e7806f65fef728",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306278"
+        }
+      }
+    },
+    {
+      "id": "716a9810-34b0-48e3-be07-3985f54c1ebe",
+      "title": "Flow Painting #40",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=39&artwork_number=40&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306279&token_id_hash=0xa31d19bd4ee86c5d121c72fbfe420eb007c7ebf5a3601251868791564e78ae92",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306279"
+        }
+      }
+    },
+    {
+      "id": "cc22d635-be93-4971-962f-986324c07a55",
+      "title": "Flow Painting #41",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=40&artwork_number=41&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306280&token_id_hash=0x2eab7a49e4129a840395ab0655a20084fe7ee0d4a2dd08125bf2e9948e3da85c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306280"
+        }
+      }
+    },
+    {
+      "id": "d51885af-4594-465c-a1ce-3014f97e47a8",
+      "title": "Flow Painting #42",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=41&artwork_number=42&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306281&token_id_hash=0x2ff2a32e8bca33589b89f2ff4530e251e77f6d566c5ebb8dd779e20dc1033027",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306281"
+        }
+      }
+    },
+    {
+      "id": "f415189e-bf80-49ba-9b16-76526d4f7364",
+      "title": "Flow Painting #43",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=42&artwork_number=43&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306282&token_id_hash=0xd843539261552f9926462b0ae9d3a0b7fb6a10e411066674d3879b27fa05ff2c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306282"
+        }
+      }
+    },
+    {
+      "id": "f4614158-c269-456a-a298-0f2524fb36b1",
+      "title": "Flow Painting #44",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=43&artwork_number=44&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306283&token_id_hash=0x7e19188195be38b0a2d36f38ec86db416da0acc981e0d7ed09a54dba81e181de",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306283"
+        }
+      }
+    },
+    {
+      "id": "64405f4b-1178-4d8d-bcff-de4ad043ddaa",
+      "title": "Flow Painting #45",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=44&artwork_number=45&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306284&token_id_hash=0x5cc3b999fc843db1bb74edc67566d7c714b20d5808b2394a9384ca5628d88872",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306284"
+        }
+      }
+    },
+    {
+      "id": "96b66b11-a51d-4499-b1e2-7f1edd9f5b53",
+      "title": "Flow Painting #46",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=45&artwork_number=46&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306285&token_id_hash=0x63d4e592db60c849ab13816db8880852c19779eb2127bcae28411047041ce025",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306285"
+        }
+      }
+    },
+    {
+      "id": "3002e37f-39a4-4faf-941c-2acfc5490fdd",
+      "title": "Flow Painting #47",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=46&artwork_number=47&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306286&token_id_hash=0x9b83a7b94343ae564da5ea0eb4ad0f90cc87f1ff4a647e9af3172e1c68b37988",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306286"
+        }
+      }
+    },
+    {
+      "id": "6fd9b63f-958e-4f70-b2ba-228ff3e653ca",
+      "title": "Flow Painting #48",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=47&artwork_number=48&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306287&token_id_hash=0x6042f4d6dda790a61e623f3b252141f85c32478ccf647c9f93f41c807450780c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306287"
+        }
+      }
+    },
+    {
+      "id": "c06e499e-f95a-4cd0-9c93-516f90b48b34",
+      "title": "Flow Painting #49",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=48&artwork_number=49&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306288&token_id_hash=0x78ebda9d49419a458dfaca8f4592ea45b9b297ef816f693a488aed36ebc32c96",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306288"
+        }
+      }
+    },
+    {
+      "id": "17e5e2fd-9672-4f8b-8459-20b2692291bb",
+      "title": "Flow Painting #50",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=49&artwork_number=50&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306289&token_id_hash=0x3e507915736bc47977291ed62b7b62638a7cc1e374834113b162693d9ee4b549",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306289"
+        }
+      }
+    },
+    {
+      "id": "531d3713-5009-45a8-ba11-7408929a7eaf",
+      "title": "Flow Painting #51",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=50&artwork_number=51&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306290&token_id_hash=0x4c4a170788cce771a3532131f55b8fb9117884c613d73da9f8cb8759ff041b7e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306290"
+        }
+      }
+    },
+    {
+      "id": "47381b9a-176c-445a-8cc6-b93bc1c6a7af",
+      "title": "Flow Painting #52",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=51&artwork_number=52&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306291&token_id_hash=0x6d3fa30f01d3df2fd3f6f54a07364b344a3a6671c9cccbef708253ae4a4a80db",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306291"
+        }
+      }
+    },
+    {
+      "id": "b57956e7-cc74-41e7-9679-b144e2fa38be",
+      "title": "Flow Painting #53",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=52&artwork_number=53&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306292&token_id_hash=0x60eae5330c041a82f2f95206bc8decc698a34a360e216e3d74a0c54bf2f4b47f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306292"
+        }
+      }
+    },
+    {
+      "id": "20052a11-d3c1-4722-b5c7-39f13d419564",
+      "title": "Flow Painting #54",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=53&artwork_number=54&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306293&token_id_hash=0x616f16593e7880d82b95600b3ab7250187fc52fbde3f7a46300ec4a3a12f821b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306293"
+        }
+      }
+    },
+    {
+      "id": "62f84192-3ff2-426d-a654-e60ce69cd8bc",
+      "title": "Flow Painting #55",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=54&artwork_number=55&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306294&token_id_hash=0xc13323f8cf5cce199fe530b17410f882fad13607fca7967e76333c813768c32b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306294"
+        }
+      }
+    },
+    {
+      "id": "ed36df9a-5035-4fa3-948b-03e84593d7b6",
+      "title": "Flow Painting #56",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=55&artwork_number=56&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306295&token_id_hash=0x8bb2d3f3744a3494bd472d926ca68e362daae941af58d593ff32b6776e3e9e6b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306295"
+        }
+      }
+    },
+    {
+      "id": "2857586f-3f57-477c-b30a-c19ce189cd21",
+      "title": "Flow Painting #57",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=56&artwork_number=57&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306296&token_id_hash=0xe086ae4f1e99a1fb1a13cc7c7235a97ee2460b13b4bef2f9fcc8cc6bcb654adb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306296"
+        }
+      }
+    },
+    {
+      "id": "5358eb44-0233-4911-9c4d-8ca9d3a91f6e",
+      "title": "Flow Painting #58",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=57&artwork_number=58&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306297&token_id_hash=0xc16d375e6b4c51fadaaaab623ac5cba0ac0a38d36e497f61f887e478220579c4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306297"
+        }
+      }
+    },
+    {
+      "id": "ca2fed4d-45be-4a02-b5f2-8b265ab517d4",
+      "title": "Flow Painting #59",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=58&artwork_number=59&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306298&token_id_hash=0x99ab2a5f48774ac0ab9e34eb01fb6824721ec3804870a83fa1c53a2eaf210d84",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306298"
+        }
+      }
+    },
+    {
+      "id": "7284343e-3771-4941-bf50-31f0d84a056a",
+      "title": "Flow Painting #60",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=59&artwork_number=60&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306299&token_id_hash=0xf5dc090fcaa60e37512bbc1d836409c61276bacd2d8509835adb49a92cebb346",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306299"
+        }
+      }
+    },
+    {
+      "id": "3353e82c-46a6-4152-a3e7-dfe78e526281",
+      "title": "Flow Painting #61",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=60&artwork_number=61&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306300&token_id_hash=0xd635ccc7963ca31008fe720364839629c6c45e28d97bff3d5fd44e3a3e558cc8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306300"
+        }
+      }
+    },
+    {
+      "id": "9aa65aed-52c6-43ca-bafb-1c25c2c8fa98",
+      "title": "Flow Painting #62",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=61&artwork_number=62&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306301&token_id_hash=0x251a7b399a87e5e5efe22f39e2b30d053db9833e3d8dc2382ae65b6a687a0b7d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306301"
+        }
+      }
+    },
+    {
+      "id": "9265b87a-c78c-479f-9323-53450fccbcbe",
+      "title": "Flow Painting #63",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=62&artwork_number=63&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306302&token_id_hash=0xa75885aae5e4328eb84568c6124902cfaa1fa8bad751d30ba32bc5cde98caf58",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306302"
+        }
+      }
+    },
+    {
+      "id": "60b51a0b-e256-4533-91eb-6d441c1f5a53",
+      "title": "Flow Painting #64",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=63&artwork_number=64&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306303&token_id_hash=0xa358cfc0a873572d2791250e4443dde08a4a5ec26c08d72fc589088a1cd5e78d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306303"
+        }
+      }
+    },
+    {
+      "id": "9926f1c0-ca93-4246-a744-d9586c28080b",
+      "title": "Flow Painting #65",
+      "source": "https://cdn.feralfileassets.com/previews/4d23d1ce-97c8-411b-b615-e64ca8d78c3c/1724327523/index.html?edition_number=64&artwork_number=65&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id=27351590983062365677486503722577408930064250723080863920865112148460957306304&token_id_hash=0x1745092563ad25d65092c5f0990d848fb3b95dda59bab153d57e1fbcce638500",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T10:00:00.325Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460957306304"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

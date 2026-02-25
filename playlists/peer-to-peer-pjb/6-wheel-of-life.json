@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "8bd29f1a-ca62-4320-bac2-270e49b20a01",
+  "slug": "wheel-of-life",
+  "title": "Wheel of Life",
+  "summary": "Amir H. Fallah’s immediately recognizable style is a kind of post-internet pastiche, mixing elements of Middle Eastern and Western high and low culture to convey the experience of being culturally hybrid. Many of his works particularly reference the works of Minimalist artist Frank Stella, as these appeal to Fallah’s appreciation for the powerful visual pull of geometric abstraction across cultural contexts. Here, Fallah has combined elements of Stella’s work <a href=\"https://buffaloakg.org/artworks/k19708-lac-laronge-iii\" target=\"_blank\" class=\"link\"><em>Lac Laronge III</em>, 1969</a>, with imagery culled from across the internet, as well as his own staged studio photography. The circle recurs throughout the work as a kind of universal, mystical motif that appears in both art and nature. As Fallah explains, <br/><p class=\"m-l-56 display-inline-block\">an archaic cosmological chart points toward humanity’s ever-changing view of our position in the universe, a cow’s skull foreshadows the specter of death that foregrounds all of humanity’s questions, a seashell and images of the early universe taken by the Hubble Space Telescope reveal the rhythm and harmony of patterns in nature, all self-repeating at vastly disparate scales.</p> <br/>Stella’s own circles—which are larger than life in person but elastic in scale when presented as a digital image on a screen—appear here as yet another iteration of the geometric “Wheel of Life” that Fallah imagines spanning all of existence, from the microcosmic to the macrocosmic. Fallah also plays with Stella’s color palette of complementary colors; the prominent use of greens, purples, and oranges subtly reinforces the circular motif by suggesting movement across the color wheel.<br/> <br/>Fallah began his career as a graffiti artist, going on to found <em>Beautiful/Decay</em>, a cult magazine for street art and design. His recent series of digital works, which he produces in Photoshop and outputs as PNG files, are more refined versions of the digital sketches that he makes for each of his paintings. These paintings are known for their meticulous brushwork, and Fallah’s file-based works similarly explore the materiality of digital images: the high-resolution format allows viewers to observe the pixilation of his downloaded source materials as well as digital effects that are difficult to recreate in paint, such as the halo of pink light over the left figure’s shoulder. In this PNG, his familiar use of bold patterns—particularly those he finds on the mass-produced “ethnic” textiles that are sold in American stores—takes on an additional resonance with algorithmic patterns associated with the digital processing of images. For example, the dotted pattern found in the teal areas suggests dithering, which is used to compress images and make them easier to share on the internet. In this way, Fallah’s work emblematizes the quickening circulation of culture in digital formats, while highlighting the various technological mediations and cultural translations that such a traffic in images requires.<br/><em>Because of its visual properties, the artist has requested that this work only be shown in a digital format and not as a physical print. Collectors of any edition will have the unique option to purchase a dedicated 10” screen for displaying this work from <a href=\"https://infiniteobjects.com/products/wheel-of-life\">Infinite Objects</a>.</em>",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/ee0ba37d-c29d-423a-a116-0a8d327c0000/raw",
+  "created": "2026-02-25T09:58:44.078Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "0f035050-5928-4690-b8e8-a873514c78de",
+      "title": "Wheel of Life AE",
+      "source": "https://cdn.feralfileassets.com/previews/82115197-d516-4bd8-8498-227aaf30eb12/1663731416/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:44.078Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x2A86C5466f088caEbf94e071a77669BAe371CD87",
+          "tokenId": "114509197042641126982266828896949519237122822493274123627313583916128762606677"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

@@ -1,0 +1,509 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "37921b0f-9b0d-46ea-bd42-1e6505107614",
+  "slug": "chaos-blocks",
+  "title": "Chaos Blocks",
+  "summary": "James Merrill’s “Chaos Blocks” drawings explore the tension between order and chaos. Each drawing in the series is reminiscent of a geological drawing, and we see them created on the screen as each layer draws on top of the next. After the layers are created, each is filled with an unexpected, vibrant pattern. James is reacting against the inhuman perfection that often characterizes visual art created through machines. With this focus, his work has a strong relationship to many of the first plotter drawings created in the 1960s that explored randomness to circumvent precision. James amplifies this further with his library of dense and meticulous patterns.<br/>“Chaos Blocks” is a software NFT, but the first collector of each edition will receive the corresponding plotter drawing shipped directly from the artist’s studio. Each software NFT includes millions of other images beyond the primary image for each edition. The software NFT and the plotter drawing aren’t linked together; the NFT can continue to be collected on a secondary market without the drawing. Click on the artwork or press the enter/return key to generate a new image with a different random seed value.<br/>The image you see on the main artwork page on Feral File is the plotter drawing for the artist-proof (AP). Compare this image of the drawing to the corresponding software version of the AP to see how the software image and the plotted drawing are related. Because the artists are using a range of papers and inks, the software and physical drawings are delightfully different.  <br/>The “Chaos Blocks” drawings are 45.7 × 61 cm (18 × 24 inches) on Strathmore Bristol 400. They are drawn with Staedtler Triplus Fineliner pens.",
+  "coverImage": "https://imagedelivery.net/5BJzhBHeVhlhbn58hvcXAQ/d3eaf0e9-9b17-400f-bc3b-a6da6a001300/raw",
+  "created": "2026-02-25T09:57:47.451Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "ab317abe-28ab-462d-935b-16dbf4bf32f0",
+      "title": "Chaos Blocks AP",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.450Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418335"
+        }
+      }
+    },
+    {
+      "id": "904bdad6-9456-4c5c-b2f9-c16c733599b6",
+      "title": "Chaos Blocks #1",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.450Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418336"
+        }
+      }
+    },
+    {
+      "id": "1d9843ef-ecfa-4854-9748-95b5284f43f2",
+      "title": "Chaos Blocks #2",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=2&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.450Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418337"
+        }
+      }
+    },
+    {
+      "id": "7bf0c53f-8567-4773-ac13-156d277bf09b",
+      "title": "Chaos Blocks #3",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=3&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.450Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418338"
+        }
+      }
+    },
+    {
+      "id": "c9df5db7-2d06-4117-9755-3dfd9a522de4",
+      "title": "Chaos Blocks #4",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=4&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.450Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418339"
+        }
+      }
+    },
+    {
+      "id": "154b5c44-1d45-4efe-b378-880704885cfb",
+      "title": "Chaos Blocks #5",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=5&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.450Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418340"
+        }
+      }
+    },
+    {
+      "id": "3b9207f3-4f83-4a14-a5fa-860459999561",
+      "title": "Chaos Blocks #6",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=6&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.450Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418341"
+        }
+      }
+    },
+    {
+      "id": "fbead388-2585-4a50-9f37-fac058489f5a",
+      "title": "Chaos Blocks #7",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=7&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.450Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418342"
+        }
+      }
+    },
+    {
+      "id": "9553d7aa-b0f0-467b-97fb-2dcc59c6e0fe",
+      "title": "Chaos Blocks #9",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=9&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.450Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418344"
+        }
+      }
+    },
+    {
+      "id": "edcac4c1-f21c-4b7a-b4f8-9ce1a212ab82",
+      "title": "Chaos Blocks #10",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=10&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.450Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418345"
+        }
+      }
+    },
+    {
+      "id": "4ea74e20-6b6e-46c5-8ae8-b25a33afc3de",
+      "title": "Chaos Blocks #11",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=11&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.450Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418346"
+        }
+      }
+    },
+    {
+      "id": "c55ddb30-0930-4f05-842e-65339e152cb7",
+      "title": "Chaos Blocks #12",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=12&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.450Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418347"
+        }
+      }
+    },
+    {
+      "id": "adc10ce0-8c46-42c8-9085-bb6d434df275",
+      "title": "Chaos Blocks #13",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=13&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.450Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418348"
+        }
+      }
+    },
+    {
+      "id": "addd8f22-836f-4ad8-aa53-07f89e8a5862",
+      "title": "Chaos Blocks #14",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=14&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.450Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418349"
+        }
+      }
+    },
+    {
+      "id": "a649efe5-f390-4d8f-8075-2b1d0a47603d",
+      "title": "Chaos Blocks #15",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=15&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.450Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418350"
+        }
+      }
+    },
+    {
+      "id": "26652be0-cd08-44db-9a34-bdf45355ffb0",
+      "title": "Chaos Blocks #16",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=16&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.450Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418351"
+        }
+      }
+    },
+    {
+      "id": "2e8c63b1-1e68-4d77-a6ce-c83c4719e872",
+      "title": "Chaos Blocks #18",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=18&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.450Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418353"
+        }
+      }
+    },
+    {
+      "id": "5ef7309d-13e4-4eeb-a105-ee1d016dea69",
+      "title": "Chaos Blocks #19",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=19&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.451Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418354"
+        }
+      }
+    },
+    {
+      "id": "988535f9-3a38-4b04-b9fc-56e120d003ae",
+      "title": "Chaos Blocks #20",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=20&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.451Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418355"
+        }
+      }
+    },
+    {
+      "id": "9570ec75-102f-4ca6-ae22-7cdd236a0d7e",
+      "title": "Chaos Blocks #21",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=21&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.451Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418356"
+        }
+      }
+    },
+    {
+      "id": "07a9ed2b-d30b-4279-9907-c83806f30197",
+      "title": "Chaos Blocks #22",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=22&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.451Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418357"
+        }
+      }
+    },
+    {
+      "id": "cb83dc37-3c0d-4554-a8ff-2160d8803644",
+      "title": "Chaos Blocks #23",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=23&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.451Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418358"
+        }
+      }
+    },
+    {
+      "id": "a0e4223d-a85d-4cd6-beba-aabba0707d9e",
+      "title": "Chaos Blocks #24",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=24&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.451Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418359"
+        }
+      }
+    },
+    {
+      "id": "e31582f6-11e1-4e77-88cf-9e7d79fca04f",
+      "title": "Chaos Blocks #25",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=25&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.451Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418360"
+        }
+      }
+    },
+    {
+      "id": "b08e7a3d-a380-4827-8f42-19bd046782f3",
+      "title": "Chaos Blocks #26",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=26&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.451Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418361"
+        }
+      }
+    },
+    {
+      "id": "698f05af-41c3-4361-a5ae-7451145cabdf",
+      "title": "Chaos Blocks #27",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=27&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.451Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418362"
+        }
+      }
+    },
+    {
+      "id": "016ee403-4706-4b78-b4a3-4c4ab5d9ce05",
+      "title": "Chaos Blocks #28",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=28&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.451Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418363"
+        }
+      }
+    },
+    {
+      "id": "24bebf8c-6181-4bdb-a012-8ff2b78b62de",
+      "title": "Chaos Blocks #29",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=29&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.451Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418364"
+        }
+      }
+    },
+    {
+      "id": "de24efcf-67ba-4854-9c60-a98b4e766565",
+      "title": "Chaos Blocks #30",
+      "source": "https://cdn.feralfileassets.com/previews/e7252d16-c248-4de0-aade-433e9e7d2484/1637288427/?edition_number=30&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:57:47.451Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "40703256104123374682425525887708543480679113060821520627354095268875283418365"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

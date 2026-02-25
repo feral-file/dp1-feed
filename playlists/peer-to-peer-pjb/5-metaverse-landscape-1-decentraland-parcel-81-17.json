@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "4fe4e5cd-0d5d-48c0-a390-028f5f91f16b",
+  "slug": "metaverse-landscape-1-decentraland-parcel-81-17",
+  "title": "Metaverse Landscape 1: Decentraland Parcel -81, -17",
+  "summary": "In the nineteenth century, landscape painters like Albert Bierstadt traveled what is now the American West, producing picturesque images of the frontier that were seen as celebrating its beauty. These images also resonated with the idea of “manifest destiny,” a term coined in 1845 as an expression of the belief that Americans are destined by God to settle across the continent and claim its natural resources. <br/>Simon Denny’s recent work examines how claims to ownership are articulated and “naturalized” (that is, rendered legitimate, reasonable, or even “destined”), through means that include images of landscapes. Denny’s <em>Metaverse Landscape 1: Decentraland Parcel -81, -17</em> focuses on Decentraland, a platform that uses the Ethereum blockchain to allow users to purchase parcels of digital “land.” Is the rush to “colonize” the “metaverse” a digital update of nineteenth-century manifest destiny? Or is the very idea of ownership being transformed by blockchains, which allow people to “own” assets that are otherwise freely available for everyone to view, scrambling the distinction between private and public property?<br/><em>Metaverse Landscape 1</em> comprises both physical and digital components. The physical component is a <a href=\"https://klassedenny.space/files/SD_MetaverseLandscape1_DecentralandParcelFF.jpg\" target=\"_blank\" class=\"link\">painting</a> of a single <a href=\"https://opensea.io/assets/ethereum/0xf87e31492faf9a91b02ee0deaad50d51d56d5d4d/115792089237316195423570985008687907826047395311965486962387615413371672723439\" target=\"_blank\" class=\"link\">plot</a> of Decentraland labeled “Parcel -81, -17” (which Denny does not himself own). By depicting the plot in a painting, Denny highlights how its visual representation echoes the tropes of modernist art, including the use of the monochrome and the grid, which were used to create worlds that seem divorced from our visible reality. The comparison is strategic: while Decentraland also uses these tropes to present itself as an autonomous system, perhaps the metaverse—like modernism itself—isn’t as divorced from reality as it is sometimes claimed to be, especially when it comes to the forces of capitalism. <br/><em>Metaverse Landscape 1</em> also includes a dynamic NFT tied to a digital Monopoly-like card that displays the wallet addresses of the owners of both the Decentraland parcel and the painting of the parcel. The listed addresses on this “Title Deed” update in real time whenever the parcel or its painting change hands, pointing to the importance of provenance and speculation in the blockchain-based market for digital assets. The work also includes a kind of interactive, social performance: between November 29 and December 2, 2022, anyone can purchase a token that represents symbolic ownership in this project. The addresses that hold these tokens will be reflected on the Title Deed and will update as the tokens are traded between wallets. If Bierstadt’s painting of <a href=\"https://buffaloakg.org/artworks/19763-laramie-peak\" target=\"_blank\" class=\"link\"><em>Laramie Peak</em>, 1870</a>, depicts a pristine mountain awaiting the arrival of American settlers, Denny’s multi-faceted “Metaverse Landscape” depicts the digital landscape as one that is already thoroughly integrated with the strategies of capitalism, including colonialism—even as it potentially transforms ownership into something that is more transparent and egalitarian.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/fda6a3fa-dd99-4db5-45d7-6fa1822f5500/raw",
+  "created": "2026-02-25T09:58:44.078Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "ca62ac5b-163e-46c7-ab53-7e000c65f7a2",
+      "title": "Metaverse Landscape 1: Decentraland Parcel -81, -17 AE",
+      "source": "https://cdn.feralfileassets.com/previews/ea510926-e95c-43ad-b284-e2a9286ff3f2/1668747373/?edition_number=0&blockchain=ethereum&contract=0x2A86C5466f088caEbf94e071a77669BAe371CD87&token_id=111620246613695490106738849263862774922244140225367210165377389379116547016181&token_id_hash=0xa5b66c3ca5dba6b6bf706aea5d2c86335956268a586c4eb87700def21c2ecad4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:44.078Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x2A86C5466f088caEbf94e071a77669BAe371CD87",
+          "tokenId": "111620246613695490106738849263862774922244140225367210165377389379116547016181"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

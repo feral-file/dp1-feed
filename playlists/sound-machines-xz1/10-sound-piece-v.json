@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "0d6dff88-7d2b-47a1-a18e-a0bf43086834",
+  "slug": "sound-piece-v",
+  "title": "SOUND PIECE V",
+  "summary": "<p>This version of SOUND PIECE V (1996/2024) invites public participation. Ono encourages any and all to contribute their recording to this archive of laughter, which will be freely accessible in perpetuity.</p>\n<p>Participation requires a small fee, which goes only towards covering transaction costs.</p>\n",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/f9aa083e-0b18-41ea-0947-2e7e20213400/raw",
+  "created": "2026-02-25T09:59:36.798Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "fbaa481c-ddf1-4e8d-9633-79aaec25fe84",
+      "title": "SOUND PIECE V",
+      "source": "https://cdn.feralfileassets.com/previews/faa810f7-7b75-4c02-bf8a-b7447a89c921/1709110451/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.798Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143450575936"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

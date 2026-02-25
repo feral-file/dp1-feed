@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "c1328998-f556-4f3c-bf25-f9316cf60f59",
+  "slug": "rave-sing-traversing",
+  "title": "+rave-sing (traversing)",
+  "summary": "Osinachi’s stylized images, GIFs, and generative projects are created with a surprisingly familiar program that is rarely used in digital art: Microsoft Word. He uses a digital stylus and the photo-editing features that are built into this word-processing program to manipulate and augment existing imagery, such as scans of printed newspapers, which he uses to portray the tones of Black skin. Like a painter who works within and against the limitations of oil and canvas, Osinachi has spent several years exploring the capabilities of this unique tool. The result is an instantly recognizable visual style, which he typically uses to depict sharply-defined gay Black men dressed in brightly colored or patterned clothing. These are collaged against either abstract or everyday backgrounds without a horizon line, creating the illusion of limitless space.<br/>In previous works, Osinachi has paid homage to the queer scenes painted in a flat style by Pop artist David Hockney, who himself has turned to using an iPad to create digital drawings in recent years. Here, Osinachi responds to a work that is itself technological: Mona Hatoum’s kinetic sculpture <a href=\"https://buffaloakg.org/artworks/20072a-d-and\" target=\"_blank\" class=\"link\"><em>+ and -</em>, 2004</a>. Its continuously rotating motorized arm has two hands: one with a jagged edge that draws symmetrical rows in the sand and another with a smooth edge that immediately erases them. The result is a hypnotic visual and aural pattern that evokes the steady rhythm of waves crashing on a sandy shore—a visceral representation of the eternal cycle of creation and destruction and the perpetual tension of “positive” and “negative” forces. These are universal themes, and yet the use of sand also recalls the specific terrain of Hatoum’s native Palestine, which has been reshaped continuously by settlement and displacement, memory and erasure. Osinachi reimagines Hatoum’s work as a touching portrait of intimacy, using the looping rhythms of GIF files to depict a gay African couple that is continually coming together and moving apart, in a single movement as fluid as the tides. As he writes, “Life is about coming and leaving. With each movement, the slate is wiped clean and there is a new chance to begin anew. In most cases, the idea of coming is positive while the idea of leaving is seen as negative. However, one cannot exist without the other.”",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/02e902f7-6ed7-4bd7-fd33-8e9de0695500/raw",
+  "created": "2026-02-25T09:58:44.081Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "b1fc9c2b-57bc-4773-9063-0bd7016de44a",
+      "title": "+rave-sing (traversing)",
+      "source": "https://cdn.feralfileassets.com/previews/e03b37b6-2d2d-41d1-ac24-673e08600ac8/1667836783/preview.gif",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:44.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x2A86C5466f088caEbf94e071a77669BAe371CD87",
+          "tokenId": "34585829179764704558776471721101382364497188835544837351424684262481243220355"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

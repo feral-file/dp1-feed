@@ -1,0 +1,458 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "375c5f56-2e5f-418e-bc56-fa2bb92cd2dc",
+  "slug": "recaptcha-otf",
+  "title": "reCAPTCHA.otf",
+  "summary": "<p><em>reCAPTCHA.otf</em> is a font derived from ink-on-paper drawings of reCAPTCHA texts. These distorted word forms were excerpted from scans of printed material that Google&#39;s machine readers had been unable to transcribe. Humans transcribing the reCAPTCHA texts were not only verifying their humanity via their English literacy in order to gain access to the website, but also freely helping Google transcribe previously undigitized text and improve its machine-reading capabilities. With the present acceleration of large language models, machines require increasingly massive volumes of quality text input for training purposes; they still depend on human labor to help them learn, and the parameters around what they will be fed are unclear. What machines seem to have the most trouble understanding—and inversely, what humans depend on to read efficiently—is context. With <em>reCAPTCHA.otf</em>, the source reCAPTCHAs have been cropped to include the smeared and wavering letters next to the character you are typing, producing new reCAPTCHAs where characters bleed into one another. Each of the 26 editions includes a different cluster of characters.</p>\n",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/c558f286-fee0-497f-c88f-4feca69f9500/raw",
+  "created": "2026-02-25T09:59:39.799Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "96ac5b3a-def4-4f35-a8db-c5729a1afb19",
+      "title": "reCAPTCHA.otf #1",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.796Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610816"
+        }
+      }
+    },
+    {
+      "id": "7e1cf4d2-c965-4702-85f8-3dd8f667fef4",
+      "title": "reCAPTCHA.otf #2",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.796Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610817"
+        }
+      }
+    },
+    {
+      "id": "0ecf4894-5e75-40bc-8ceb-3b986d449b8e",
+      "title": "reCAPTCHA.otf #3",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.796Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610818"
+        }
+      }
+    },
+    {
+      "id": "68740508-50e2-4703-8c28-f5528e922eb4",
+      "title": "reCAPTCHA.otf #4",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.796Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610819"
+        }
+      }
+    },
+    {
+      "id": "8f8519e7-b684-405d-a377-36d97aabf9f4",
+      "title": "reCAPTCHA.otf #5",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.796Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610820"
+        }
+      }
+    },
+    {
+      "id": "670d43c9-73a1-496c-9f64-6bbba5c351ee",
+      "title": "reCAPTCHA.otf #6",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.796Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610821"
+        }
+      }
+    },
+    {
+      "id": "4989e1fc-af5f-469c-88de-d7ba6d7701ee",
+      "title": "reCAPTCHA.otf #7",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.797Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610822"
+        }
+      }
+    },
+    {
+      "id": "baa1ff51-7aeb-4d0d-871b-3da151daeff0",
+      "title": "reCAPTCHA.otf #8",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.797Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610823"
+        }
+      }
+    },
+    {
+      "id": "7d547f3f-3446-4c31-9138-c5c12e646e7f",
+      "title": "reCAPTCHA.otf #9",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.797Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610824"
+        }
+      }
+    },
+    {
+      "id": "c47490f2-7289-4343-be93-4047e898a743",
+      "title": "reCAPTCHA.otf #10",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.797Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610825"
+        }
+      }
+    },
+    {
+      "id": "df2509f7-77b9-4a86-a360-9ed4cab4b37b",
+      "title": "reCAPTCHA.otf #11",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/10",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.797Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610826"
+        }
+      }
+    },
+    {
+      "id": "ebd1c370-59f5-495a-855f-6cad404d57f1",
+      "title": "reCAPTCHA.otf #12",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/11",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.798Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610827"
+        }
+      }
+    },
+    {
+      "id": "cd00433d-3038-40df-b67c-596ac4213600",
+      "title": "reCAPTCHA.otf #13",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/12",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.798Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610828"
+        }
+      }
+    },
+    {
+      "id": "42008cf1-3b00-4ed2-a4a4-223bd639528a",
+      "title": "reCAPTCHA.otf #14",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/13",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.798Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610829"
+        }
+      }
+    },
+    {
+      "id": "17d19e77-e422-4fe9-8e72-50976f6e5ae8",
+      "title": "reCAPTCHA.otf #15",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/14",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.798Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610830"
+        }
+      }
+    },
+    {
+      "id": "51e0e82c-7021-4d4f-ac4d-438dec4ae2de",
+      "title": "reCAPTCHA.otf #16",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/15",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.798Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610831"
+        }
+      }
+    },
+    {
+      "id": "a2d8a2aa-0804-4a8f-9d25-41e94e8fe07c",
+      "title": "reCAPTCHA.otf #17",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/16",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.798Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610832"
+        }
+      }
+    },
+    {
+      "id": "efc58855-51d6-4394-838b-71e58bc8faa5",
+      "title": "reCAPTCHA.otf #18",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/17",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.798Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610833"
+        }
+      }
+    },
+    {
+      "id": "60cb63c4-6026-4e76-b13a-beb075a97ee2",
+      "title": "reCAPTCHA.otf #19",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/18",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.799Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610834"
+        }
+      }
+    },
+    {
+      "id": "5e81c9e5-8e95-47a1-a42e-24cdd21417df",
+      "title": "reCAPTCHA.otf #20",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/19",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.799Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610835"
+        }
+      }
+    },
+    {
+      "id": "c843900a-3692-4179-907f-bad927ea96ed",
+      "title": "reCAPTCHA.otf #21",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/20",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.799Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610836"
+        }
+      }
+    },
+    {
+      "id": "379e5ba6-dee4-4af8-933c-64aefd83e7a9",
+      "title": "reCAPTCHA.otf #22",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/21",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.799Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610837"
+        }
+      }
+    },
+    {
+      "id": "7f59b100-519d-4f26-b27b-1d3970be9488",
+      "title": "reCAPTCHA.otf #23",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.799Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610838"
+        }
+      }
+    },
+    {
+      "id": "57b70c3a-32ad-4dd3-ba77-f8bbaa8883a0",
+      "title": "reCAPTCHA.otf #24",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/23",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.799Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610839"
+        }
+      }
+    },
+    {
+      "id": "50935343-8e9a-4173-91aa-93b1dbf2b483",
+      "title": "reCAPTCHA.otf #25",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/24",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.799Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610840"
+        }
+      }
+    },
+    {
+      "id": "78f0821e-5716-4796-9205-501a1b8d015a",
+      "title": "reCAPTCHA.otf #26",
+      "source": "https://cdn.feralfileassets.com/previews/0bd7bb41-118d-4392-8559-43082957c05d/1711068727/_unique-previews/25",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:39.799Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8a20fB6eb7e1D662b157Fc6eA0694972584C09BB",
+          "tokenId": "222049695517921061650019218267691199225610841"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

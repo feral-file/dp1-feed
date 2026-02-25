@@ -1,0 +1,2464 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "06b0ae50-c754-46ff-91b1-2ce1081e43c0",
+  "slug": "text-me-when-you-get-home",
+  "title": "Text Me When You Get Home",
+  "summary": "Nicole Vella’s artwork “Text Me When You Get Home” explores human connection; what it means to connect with people and have those connections change. Over time, our thoughts and beliefs grow, causing the dynamics of our interpersonal relationships to shift. While these transitions happen, residual elements of ourselves are left clinging to one another with either hope or regret, as we grow together or grow apart.\n\nEach piece centers on two complex forms connected with unique structures, some thin and tenuous, some thick and substantial. The highly detailed crystalline bodies appear glassine and solid yet are fused by fragile strings of malleable and stretched material. A duality which echoes the complexity of human relationships and the delicacy between opposing thoughts, feelings, and emotions.\n\n“Text Me When You Get Home” is coded in GLSL within a single fragment shader. Each pixel reacts to the mathematics and logic within the shader software, exhibiting similar crystal properties to glass sculptures by the likes of Jack Storms. In this way Vella works as a painter using code as paint, programming a system to carefully color every point on the canvas.\n\nInteractive keyboard controls:\n[s] Save a high resolution PNG  (4800 × 6400 pixels). Please allow some time for the render to download.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/6f2565b4-1206-4eea-9c77-2869d5e2a000/raw",
+  "created": "2026-02-25T09:59:24.524Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "c3ff6939-34a1-43d2-99ec-c24fdb391289",
+      "title": "Text Me When You Get Home #1",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=0&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670592&token_id_hash=0xebe7e750cef8b1ca097cea018a119ce632c18b3c0ca5565113e0118a993230ea",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670592"
+        }
+      }
+    },
+    {
+      "id": "89c0300c-642a-4e11-bb3c-dde87c30d3cc",
+      "title": "Text Me When You Get Home #2",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=1&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670593&token_id_hash=0x63582d8ea2c0be6015faf4c2ec9b7ad68638caf043e46b0dc12be16b667ee263",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670593"
+        }
+      }
+    },
+    {
+      "id": "a8a16576-ddde-4dc5-912c-95c21579a0f0",
+      "title": "Text Me When You Get Home #3",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=2&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670594&token_id_hash=0xb2cd59cd37fdfe04bfe61237c2de93eb37792b1aa3d6c43643795d5be56acfb6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670594"
+        }
+      }
+    },
+    {
+      "id": "053a6bb5-f10c-4c2d-92f5-b06cbab86321",
+      "title": "Text Me When You Get Home #4",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=3&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670595&token_id_hash=0x7968e4aa83bc24aa02f83eec87d041aa8e62400b6ba598a9874aa2ee109469cb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670595"
+        }
+      }
+    },
+    {
+      "id": "1dc84201-dd70-43e5-9f12-477f43537341",
+      "title": "Text Me When You Get Home #5",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=4&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670596&token_id_hash=0xf7a8fcf57a075d11f91fbf6d8391630c255343089fe2c154d2bc74046bd7b53c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670596"
+        }
+      }
+    },
+    {
+      "id": "ea0124c7-070a-4313-a1f8-b7125fa58bf8",
+      "title": "Text Me When You Get Home #6",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=5&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670597&token_id_hash=0xb69e98d0aca89ebfd481ec197016430aafc9ad2493fef070e327948488688289",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670597"
+        }
+      }
+    },
+    {
+      "id": "4ff91a4b-69f0-42f4-ba3f-ea7309f18f49",
+      "title": "Text Me When You Get Home #7",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=6&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670598&token_id_hash=0xce138dffc347999ad471623d531051d17711859e94f7c74e3f3ca3f57ae0dcf3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670598"
+        }
+      }
+    },
+    {
+      "id": "7c5b3bae-0886-4317-8d68-0b52504f0ae7",
+      "title": "Text Me When You Get Home #8",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=7&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670599&token_id_hash=0xd697a50835ccd52ce9dc9908230af5bb0e95c69c3c36cceecb9b8365d2b7c074",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670599"
+        }
+      }
+    },
+    {
+      "id": "f7729705-5ea7-482b-a825-64a21b5e80a1",
+      "title": "Text Me When You Get Home #9",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=8&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670600&token_id_hash=0xc062dd258d314a1766c60963c9e4262d9c615d6276eadb71dced0d902fe04045",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670600"
+        }
+      }
+    },
+    {
+      "id": "4cb47b8e-cd8e-4735-8f8a-55753512f922",
+      "title": "Text Me When You Get Home #10",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=9&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670601&token_id_hash=0xfe1ffa4d5a5f0ce90374363a02bb8d875a952b8ff930b4246343ff54d6b7e048",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670601"
+        }
+      }
+    },
+    {
+      "id": "1fab7130-c451-44b4-b957-16f1d1deecba",
+      "title": "Text Me When You Get Home #11",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=10&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670602&token_id_hash=0xdd94a4b708a0072a321900f759b4ef69ae61730a8760f9f41417535c58d5a253",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670602"
+        }
+      }
+    },
+    {
+      "id": "e0da07e1-fec9-4b58-9455-9da11f553baf",
+      "title": "Text Me When You Get Home #12",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=11&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670603&token_id_hash=0x35922ed3f857aff0e5ae462fdc2e675896ea25690ae00b99490dff46721fab55",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670603"
+        }
+      }
+    },
+    {
+      "id": "7e1539d9-b859-44aa-b215-62e0da773b34",
+      "title": "Text Me When You Get Home #13",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=12&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670604&token_id_hash=0xe481123f128fa5ce4471d0d5384b16280d2bb1d2fe9db4d225d6094887e7e7f5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670604"
+        }
+      }
+    },
+    {
+      "id": "b66831c1-e698-45dd-82d1-8f4787c78bc9",
+      "title": "Text Me When You Get Home #14",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=13&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670605&token_id_hash=0x57e3d8d95fe362658619547126fc679d199366f75baaf568ad86a8420f02b240",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670605"
+        }
+      }
+    },
+    {
+      "id": "b8289a94-7755-476e-9306-81d498c86152",
+      "title": "Text Me When You Get Home #15",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=14&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670606&token_id_hash=0x22d120efecf9d7f2aa71f70e4c0819c4588dd469100c7db174307db9249c7a8c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670606"
+        }
+      }
+    },
+    {
+      "id": "24920c95-358a-4a45-8b19-3bf452cecd2b",
+      "title": "Text Me When You Get Home #16",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=15&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670607&token_id_hash=0x9de886b8e8ec98ad8d644347fe3eb4088fc41b5e6693f5122046c0716916c400",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670607"
+        }
+      }
+    },
+    {
+      "id": "9bb045f6-17a5-42a7-a224-4cdc038e4a24",
+      "title": "Text Me When You Get Home #17",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=16&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670608&token_id_hash=0x0597157a859d85989e0c661eb0969ee06a1e3ed6b5c32733b015f6286c6efdee",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670608"
+        }
+      }
+    },
+    {
+      "id": "7f240826-8e02-4990-8be4-be8c90521749",
+      "title": "Text Me When You Get Home #18",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=17&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670609&token_id_hash=0x331f14cde55751f08e9fad6c0b6e9150173888adc1cdee8ec3c15fabc8a9dc1d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670609"
+        }
+      }
+    },
+    {
+      "id": "c2b5dfed-b521-42b0-993d-adbcd51d0c86",
+      "title": "Text Me When You Get Home #19",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=18&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670610&token_id_hash=0x738486beac02ea89ee5320daf4361ec02e16876a97e1f26b3810eb82f5b4ac7e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670610"
+        }
+      }
+    },
+    {
+      "id": "f23856d8-9f1d-4407-9c60-90e497270ee2",
+      "title": "Text Me When You Get Home #20",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=19&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670611&token_id_hash=0xfacac779a0fe9873699691bb087495d3105534453531b64cc502e4e00bc64b91",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670611"
+        }
+      }
+    },
+    {
+      "id": "48973e09-e96b-4daf-8e61-1f630275f96f",
+      "title": "Text Me When You Get Home #21",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=20&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670612&token_id_hash=0xfa06fdbb703e11a1cd274fa186ff4dafc4c1501a4211ab3e6067c3abeb761e0d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670612"
+        }
+      }
+    },
+    {
+      "id": "c32a2df1-650e-468c-80eb-5dbf082ac564",
+      "title": "Text Me When You Get Home #22",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=21&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670613&token_id_hash=0xbd9d1d6492caf7aa5135f976973eb60c685fe72866c7255bb27bebffe5634cdd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670613"
+        }
+      }
+    },
+    {
+      "id": "83ee01bb-2f6e-4a3a-acf6-658d56404f2d",
+      "title": "Text Me When You Get Home #23",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=22&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670614&token_id_hash=0xf064feb0bf74223de148504fdf67eccfc85605dfa17c1983419383ecb50be309",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670614"
+        }
+      }
+    },
+    {
+      "id": "367ca2a7-7668-40e7-baf6-6ac7adc5a3e5",
+      "title": "Text Me When You Get Home #24",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=23&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670615&token_id_hash=0x60990b62b57df3dbc80d02a0e32de18dee7f9858747315beef3da9bf19dabd8c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670615"
+        }
+      }
+    },
+    {
+      "id": "917b6542-4e72-4f9b-9174-ddc9b7275e66",
+      "title": "Text Me When You Get Home #25",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=24&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670616&token_id_hash=0x5e98cf16664fff81aecf28df9d78c8a9aa74968ee1a0226c90a61b52911e9d8e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670616"
+        }
+      }
+    },
+    {
+      "id": "a39cc82d-2178-4ed4-8a60-b513fca4f33f",
+      "title": "Text Me When You Get Home #26",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=25&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670617&token_id_hash=0x56f184e54ca8ba637c330d17e7d78fdb155fce79fda9300a8bc2684893cec154",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670617"
+        }
+      }
+    },
+    {
+      "id": "f199410f-3090-45ab-9d79-118086c445e9",
+      "title": "Text Me When You Get Home #27",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=26&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670618&token_id_hash=0x58d44975c45b2c3e6899a961593368a96c75615332f6b84592f31c4a9e7f21e8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670618"
+        }
+      }
+    },
+    {
+      "id": "704eb3a5-9246-4a0e-a904-f4eaafb60ea8",
+      "title": "Text Me When You Get Home #28",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=27&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670619&token_id_hash=0x354ea3b351015fa2f4d46b3a4de62fe263d26d9a25908a0c44c1f115e6eb90a0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670619"
+        }
+      }
+    },
+    {
+      "id": "ef3927bb-6f5f-493e-977e-1384a88e115f",
+      "title": "Text Me When You Get Home #29",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=28&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670620&token_id_hash=0x9ca6e47b4277cfb50dddb3f5eeb376301c6922bff6503906efc70934fffc809f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670620"
+        }
+      }
+    },
+    {
+      "id": "c1f5fc86-d7af-4889-9d20-9a0dc6be2b0d",
+      "title": "Text Me When You Get Home #30",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=29&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670621&token_id_hash=0xab462026d6f08aefdd8b2757ec57444a2ade9287a365dfe52265ef22a200926a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670621"
+        }
+      }
+    },
+    {
+      "id": "848c4c13-2049-4cb5-817b-89f765434f04",
+      "title": "Text Me When You Get Home #31",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=30&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670622&token_id_hash=0x328a4f8e1f3d21030f9729d30ee105d54fe1e77fa061c34ec32276d2f186059a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670622"
+        }
+      }
+    },
+    {
+      "id": "6ba64994-7897-4844-84d2-667f02f87fe2",
+      "title": "Text Me When You Get Home #32",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=31&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670623&token_id_hash=0x46683b28e8144fdce2641dacbf019908fb2bc72d450cf92a97cf0959192bc570",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670623"
+        }
+      }
+    },
+    {
+      "id": "6f973438-24fd-4a6b-afe1-704ec6c1d6f4",
+      "title": "Text Me When You Get Home #33",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=32&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670624&token_id_hash=0xe485096119b1bd663459308a64871126fb588afe4faa44c3cb3dc85ab4cc6de7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670624"
+        }
+      }
+    },
+    {
+      "id": "5f0d209b-ae95-4d33-bda5-bac5f6310107",
+      "title": "Text Me When You Get Home #34",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=33&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670625&token_id_hash=0x9c2bd7ad03439564f1a1f3f51ec0dd1f80d1d198fd04ad2196d0ed7b2bae605e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670625"
+        }
+      }
+    },
+    {
+      "id": "653f20d5-dca5-4db7-9ade-e5defee4c1ec",
+      "title": "Text Me When You Get Home #35",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=34&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670626&token_id_hash=0x8f563e2ac2c47cb78602a65d42bca0f455d3ea55ed692923488eb1aae80717df",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670626"
+        }
+      }
+    },
+    {
+      "id": "67394556-b85f-4781-8cbc-c40e23f802df",
+      "title": "Text Me When You Get Home #36",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=35&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670627&token_id_hash=0x66ded87ce4cadef1a18b2b8f6caef253f90a9ddbf5c7803dc04ad89187584292",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670627"
+        }
+      }
+    },
+    {
+      "id": "271a0b10-bc8e-454c-8386-7e63a08719d8",
+      "title": "Text Me When You Get Home #37",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=36&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670628&token_id_hash=0x69d51d5b20e588de87a23d70da6d4eef66cd55857863c6ac1dddbe28bbd52751",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670628"
+        }
+      }
+    },
+    {
+      "id": "59bb7879-9492-450d-89e8-4cfb1ed78d9d",
+      "title": "Text Me When You Get Home #38",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=37&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670629&token_id_hash=0x87e111159f8242275c519aba5004aa9c05fe3ef8d94a9a473eadf14b012c3b23",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670629"
+        }
+      }
+    },
+    {
+      "id": "8a206329-78b9-4a5f-a2e5-37af3e1d0475",
+      "title": "Text Me When You Get Home #39",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=38&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670630&token_id_hash=0xd70b1e6f9cf9d39e8330220799deca7d9da85d1fa5fa0f059ad667fa520324af",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670630"
+        }
+      }
+    },
+    {
+      "id": "e2b77cf5-72a1-4370-8c95-ca6ea3cb1133",
+      "title": "Text Me When You Get Home #40",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=39&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670631&token_id_hash=0x1915f3dcb066b80c7075f89ca9052b9457069574aa0e72b742aecf2f407af01f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670631"
+        }
+      }
+    },
+    {
+      "id": "eef70898-78f2-402f-b6a2-ae3f2ea837ed",
+      "title": "Text Me When You Get Home #41",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=40&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670632&token_id_hash=0x9e34551b3057eafd6796c77a1746ad74fa5a6b739488a31be8bf15f9615d60b5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670632"
+        }
+      }
+    },
+    {
+      "id": "cb8af2a1-91e6-4900-9ea3-f64a8a799126",
+      "title": "Text Me When You Get Home #42",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=41&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670633&token_id_hash=0xa7ddc23b53febc0b7aeeef10f50633cbd503cd46cb4f318403966c863dc67e90",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670633"
+        }
+      }
+    },
+    {
+      "id": "6038febd-f1f6-4988-82ff-d6c10674158f",
+      "title": "Text Me When You Get Home #43",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=42&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670634&token_id_hash=0x43297e33960484d87b14b16f4fbc253f422a9344fed98a16dbdbfdfceb4e5b6b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670634"
+        }
+      }
+    },
+    {
+      "id": "86f4ea2f-8ba2-4e21-8d8b-1276fe32f9fe",
+      "title": "Text Me When You Get Home #44",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=43&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670635&token_id_hash=0x33941a7ab3d5e3828d9fbad68006fcbd6778b1391638bc367776c524e82c6262",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670635"
+        }
+      }
+    },
+    {
+      "id": "fef3c740-4bb9-4e6f-8987-92919912cc8f",
+      "title": "Text Me When You Get Home #45",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=44&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670636&token_id_hash=0xb04694aebd0727d039399a34281a668b814ccfb5202704fd0be213bcda7139ce",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670636"
+        }
+      }
+    },
+    {
+      "id": "1bdc2c24-b316-45b8-8cdc-9b20a82ec935",
+      "title": "Text Me When You Get Home #46",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=45&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670637&token_id_hash=0x2a1b7708109291f0f1eddc154322f488dca539478e5ed76041a794c367f3f7fa",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670637"
+        }
+      }
+    },
+    {
+      "id": "95806d13-00c2-4273-8d13-5e5b4fb40a8c",
+      "title": "Text Me When You Get Home #47",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=46&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670638&token_id_hash=0x68bbeea66f8dc08e117ce13ce3581b027e14226feb4810d315e7921645170c46",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670638"
+        }
+      }
+    },
+    {
+      "id": "b1447720-8e0f-4b1c-ba69-d387b36c0283",
+      "title": "Text Me When You Get Home #48",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=47&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670639&token_id_hash=0xdc090a1783db6f68de60d7fa502d49208f88518e6d7737d74f5e2ad7a08a734e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670639"
+        }
+      }
+    },
+    {
+      "id": "260f0b24-4eba-4785-a35a-a7abe4567935",
+      "title": "Text Me When You Get Home #49",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=48&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670640&token_id_hash=0x6faf42cb89a511e170deb3b9d0fa643b7ed54e676d1b80fe440edba6451c1b9d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670640"
+        }
+      }
+    },
+    {
+      "id": "456732d7-b29d-4977-8f54-aceabef1c89e",
+      "title": "Text Me When You Get Home #50",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=49&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670641&token_id_hash=0x140fafd20bcfb10c41860502ab7104d6d1562ccdc96e11a025ac41fab4b8b731",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670641"
+        }
+      }
+    },
+    {
+      "id": "5debd2f5-57eb-4870-a55b-5f81c4162f50",
+      "title": "Text Me When You Get Home #51",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=50&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670642&token_id_hash=0x5a86927f072da362176fa96d5dd5bc4ef4cdbb6e584387fd2650060958587145",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670642"
+        }
+      }
+    },
+    {
+      "id": "fb62ce26-0aba-4cca-9240-6a09fc41e2dd",
+      "title": "Text Me When You Get Home #52",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=51&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670643&token_id_hash=0xcf92cce5b783a4c63f8bd4f98443193fdaf2654c7f7ddca21a955a5adeebb51a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670643"
+        }
+      }
+    },
+    {
+      "id": "0afbd1df-3d76-4df9-9a37-d24902e212a6",
+      "title": "Text Me When You Get Home #53",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=52&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670644&token_id_hash=0xb374b6262c8f8d89b13fbf37cbfef3199cf964a5b9b7218996311752f0901c7b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670644"
+        }
+      }
+    },
+    {
+      "id": "194e4303-26f8-4f5d-b79c-c50aa9bf8b54",
+      "title": "Text Me When You Get Home #54",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=53&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670645&token_id_hash=0xe20dec8c162ee739fe6b6101f918eff505f72b80345100a5fb307224df8cb6ac",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670645"
+        }
+      }
+    },
+    {
+      "id": "e24a548d-5b53-42af-a1a6-262c4dca2436",
+      "title": "Text Me When You Get Home #55",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=54&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670646&token_id_hash=0x5977043c9694a49b68a283e632717a66eaad043cc414039c13432a7f5386a118",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670646"
+        }
+      }
+    },
+    {
+      "id": "3bed706b-abc1-4e11-95ac-6315333374f4",
+      "title": "Text Me When You Get Home #56",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=55&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670647&token_id_hash=0x0785cd9894a39aff153d5a8e0b90b37eb400245dab0a1960843261bfc9859e9b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670647"
+        }
+      }
+    },
+    {
+      "id": "dba92c60-0a50-4198-9c83-748d1de16116",
+      "title": "Text Me When You Get Home #57",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=56&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670648&token_id_hash=0xc22ff5d9cbce6664f7758ed4acca3cc896425026d2cf3e4ed44e40f2c09ebeeb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670648"
+        }
+      }
+    },
+    {
+      "id": "38fa4bf0-a40e-49f1-9013-ca94777ca404",
+      "title": "Text Me When You Get Home #58",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=57&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670649&token_id_hash=0xca0e5fa2c76999f0aee3cd2e8797267bf3692e7491c81589cb83b7a43aafb65e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670649"
+        }
+      }
+    },
+    {
+      "id": "9855847d-74dd-4b13-a4b8-c40f8594ee45",
+      "title": "Text Me When You Get Home #59",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=58&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670650&token_id_hash=0xadc0f01f3c4fd385500693d6379cb9fadd87a636731118d16f0dc6736eb8aae2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670650"
+        }
+      }
+    },
+    {
+      "id": "ed0a61e5-4279-4943-a044-11663762b0a5",
+      "title": "Text Me When You Get Home #60",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=59&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670651&token_id_hash=0xbb28bd6ed0f8b792ba6eae4477499c505d0ddb05d8a7057e1dec6d90a00dabe0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670651"
+        }
+      }
+    },
+    {
+      "id": "8c271dfe-afa7-4b26-ae4c-5c249f12a0fd",
+      "title": "Text Me When You Get Home #61",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=60&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670652&token_id_hash=0x1c3a8bc9e559546be04e2a2657959cb9f7c8ef4a9038bbd012f01e6c1fceaddb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670652"
+        }
+      }
+    },
+    {
+      "id": "d58eb610-3363-4dc3-88ad-aac66f3fc877",
+      "title": "Text Me When You Get Home #62",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=61&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670653&token_id_hash=0x1d615ade5800d01592390784fb639e15e3fabe628457b482a552cf0796888634",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670653"
+        }
+      }
+    },
+    {
+      "id": "c52128fe-2b29-4d31-8343-67a28452f281",
+      "title": "Text Me When You Get Home #63",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=62&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670654&token_id_hash=0x1f9659204848604bc13b054ff20ad7f51b52de07a32feabad32991674ffe6d83",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670654"
+        }
+      }
+    },
+    {
+      "id": "dc8ed547-0063-45cf-887b-ffa2fd49ee23",
+      "title": "Text Me When You Get Home #64",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=63&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670655&token_id_hash=0x08d09ad07ed761cbf4d6233501eeb3a75bcde086ca7f8812b7b4b5ac78904f88",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670655"
+        }
+      }
+    },
+    {
+      "id": "ef55d723-8305-4673-a663-564ab2416908",
+      "title": "Text Me When You Get Home #65",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=64&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670656&token_id_hash=0xfa55f7173531b8fff07ee8b9fac3625656c775c7d3bdf0c366e1b9d2e92dfe3c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670656"
+        }
+      }
+    },
+    {
+      "id": "48c01133-965e-4014-a62a-48d85c2335c4",
+      "title": "Text Me When You Get Home #66",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=65&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670657&token_id_hash=0x167825bd7fa9d3186b967b9bcee6d2efbde8bb329a4dad0a920a91d9e43bea52",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670657"
+        }
+      }
+    },
+    {
+      "id": "f8482a40-1ca9-4c19-9f31-302ce2cebb21",
+      "title": "Text Me When You Get Home #67",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=66&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670658&token_id_hash=0x342c894152441ee3c7a604a3afe57fba18a62b4832787f8999287de8a0582f7d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670658"
+        }
+      }
+    },
+    {
+      "id": "c3d3b6f5-9c2e-4d75-b217-825fe6656e97",
+      "title": "Text Me When You Get Home #68",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=67&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670659&token_id_hash=0x17ef6aeb7697a8574f9d7b1eee9d2e83c9bb5ba8f6aa4e432387eafd351c6b15",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670659"
+        }
+      }
+    },
+    {
+      "id": "9c74cffb-7f25-482a-a641-170a9a948ec9",
+      "title": "Text Me When You Get Home #69",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=68&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670660&token_id_hash=0x765a4eabc8a6fcc3b3b69c0ddc65b1a4dfe81ccc853e2f973eac78b3fb770317",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670660"
+        }
+      }
+    },
+    {
+      "id": "25ccadc2-1ce4-4371-aae8-610f35121097",
+      "title": "Text Me When You Get Home #70",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=69&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670661&token_id_hash=0x0c1f3f67361c562dc3bae3d8a562d094498137017ff35b3334702559b0f8c866",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670661"
+        }
+      }
+    },
+    {
+      "id": "278d904c-ce7c-4ff8-8cf5-8f7f1ca93feb",
+      "title": "Text Me When You Get Home #71",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=70&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670662&token_id_hash=0xa1d5c7c1b067433cfe13bce9112260c16e3cd85dd572c25bed1d88f873c453ae",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670662"
+        }
+      }
+    },
+    {
+      "id": "7f1fa496-16f0-492e-a094-1b37b0d0d526",
+      "title": "Text Me When You Get Home #72",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=71&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670663&token_id_hash=0x25cf07ae00aafb4f6e9956741947a091bdb947a86d69a53c3ea91edaf5b64886",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670663"
+        }
+      }
+    },
+    {
+      "id": "65554026-c0bf-4ff7-8e87-ab4e0086d2c6",
+      "title": "Text Me When You Get Home #73",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=72&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670664&token_id_hash=0xa09becbf504a8b2064d5644479fada29af78bfd75fcc9b998f4e581320ae466e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670664"
+        }
+      }
+    },
+    {
+      "id": "c2d3f8d2-4bb3-4396-a3b8-47e1c612e0c5",
+      "title": "Text Me When You Get Home #74",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=73&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670665&token_id_hash=0x7d6d8a9ca29b5002e62c085bbcfae20570ac5703e0acdb7a8771741440219990",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670665"
+        }
+      }
+    },
+    {
+      "id": "41295366-2798-4bde-8f73-1229e479154c",
+      "title": "Text Me When You Get Home #75",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=74&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670666&token_id_hash=0x3d22bfb4d0536915e9704fc294ac7c68436e764932b7cf2daedc559bb56c109c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670666"
+        }
+      }
+    },
+    {
+      "id": "b447a730-3979-461f-af8b-bf3cbf789714",
+      "title": "Text Me When You Get Home #76",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=75&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670667&token_id_hash=0x1e45dceb839b0b3bed9d83668d7aa1853384929e8597feabbb1bac9f75e9fa5e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670667"
+        }
+      }
+    },
+    {
+      "id": "3865b777-0b41-45eb-a189-4b7cf7e68987",
+      "title": "Text Me When You Get Home #77",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=76&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670668&token_id_hash=0x1bb54250e4e5f042aa064dc32e755fb5cdf7297625cce6026777ad6d7789349f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670668"
+        }
+      }
+    },
+    {
+      "id": "d8405eb8-4b99-462e-aad1-b51d989d8a7e",
+      "title": "Text Me When You Get Home #78",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=77&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670669&token_id_hash=0x585bd8c3afc2a7650d6d97c9e6b490ede8c2179ca9807376e6cbd4c1fdf3c5b2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670669"
+        }
+      }
+    },
+    {
+      "id": "4d4f4918-f7d4-46a9-8f34-1fe9aad4737e",
+      "title": "Text Me When You Get Home #79",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=78&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670670&token_id_hash=0xc59925287e2d0251c8ef97617848b114f0c14cd2153193018b1b34bf82ce43dc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670670"
+        }
+      }
+    },
+    {
+      "id": "8e4255a4-f51f-43e4-8ff6-665528f835a4",
+      "title": "Text Me When You Get Home #80",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=79&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670671&token_id_hash=0x47d146e454ccf0efd4afaee3c56f939c3d510d9e8d4a2f60326d1f25783e8d2e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670671"
+        }
+      }
+    },
+    {
+      "id": "714e1c38-474d-4569-a66f-184641fab0e8",
+      "title": "Text Me When You Get Home #81",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=80&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670672&token_id_hash=0xd261e376c0ae0a28191003de37c8c4145a321b3be172fec4bfd6869256c690f3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670672"
+        }
+      }
+    },
+    {
+      "id": "3eadc93e-8c4c-474c-a145-3736e9486123",
+      "title": "Text Me When You Get Home #82",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=81&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670673&token_id_hash=0xd94f382310c3f7c19e52d8e83b8e23f722c41e5af4bdde2d77da0565c977d929",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670673"
+        }
+      }
+    },
+    {
+      "id": "d9e02b50-e474-4348-915f-add5bb61282d",
+      "title": "Text Me When You Get Home #83",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=82&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670674&token_id_hash=0xb1e5e07773a06b9332ef1dc139e81a94abd1e022ef80e03ff8c37b50324bc255",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670674"
+        }
+      }
+    },
+    {
+      "id": "635c377e-334d-4742-b3fd-f684f32f52d4",
+      "title": "Text Me When You Get Home #84",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=83&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670675&token_id_hash=0x8e7f85c85bdb0e25b2326f5e539cb9698442e3363709dfa9b5ce6b7239cdb584",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670675"
+        }
+      }
+    },
+    {
+      "id": "7d5674c4-01f1-41ea-9062-38cf95fbd46d",
+      "title": "Text Me When You Get Home #85",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=84&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670676&token_id_hash=0xa3a82b8329828ab6470563b1707e2632789dcf4049ce45efde5114e8fbefde62",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670676"
+        }
+      }
+    },
+    {
+      "id": "13d1ef82-b3cb-45d9-8e71-32dbf3155364",
+      "title": "Text Me When You Get Home #86",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=85&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670677&token_id_hash=0xd8c0bfbb6dd52e80056e01306371a70aa20962f0b39c3c336582d4f1b391289f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670677"
+        }
+      }
+    },
+    {
+      "id": "2f71fae8-be49-4d70-9d4d-d40d52772afd",
+      "title": "Text Me When You Get Home #87",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=86&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670678&token_id_hash=0x6205f706577ab681b1e132a4d6a5b39fc5b09e5110640f3e2bd3aa797b9f7f30",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670678"
+        }
+      }
+    },
+    {
+      "id": "d4f6ce59-2755-4b7d-a099-a0cf81a7dd6b",
+      "title": "Text Me When You Get Home #88",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=87&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670679&token_id_hash=0x9e7d029cdf96e17bc5d9896af095f48ae93bf3bf7b00a8885ea9431dc0190a5c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670679"
+        }
+      }
+    },
+    {
+      "id": "d871330a-ce28-44a6-8117-a7fd5f5e5ff6",
+      "title": "Text Me When You Get Home #89",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=88&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670680&token_id_hash=0x1ef8a9456cab59c42102d5424a530f1d1e7b1ae9aabf5ff8dc1e0fdf20757c73",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670680"
+        }
+      }
+    },
+    {
+      "id": "c9deafe0-4876-4528-8566-a2404afafe94",
+      "title": "Text Me When You Get Home #90",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=89&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670681&token_id_hash=0xc6cabcfd05707150102f2df76b4a65e77d08892142f3060a942192a72e5e9acc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670681"
+        }
+      }
+    },
+    {
+      "id": "77eabda6-d23e-4078-83f9-dd7032fcd0a5",
+      "title": "Text Me When You Get Home #91",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=90&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670682&token_id_hash=0xb56323adecd38a1681362d908ce825a05f53cfd37e601bcf5eb0867717279596",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670682"
+        }
+      }
+    },
+    {
+      "id": "029a7c1e-15d1-4e77-b696-dd0ae2a18ee3",
+      "title": "Text Me When You Get Home #92",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=91&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670683&token_id_hash=0xb7bedbf9235a6b9ef417c9a502e3d74241fe9d7de9a33946ea152cd2d7fb5f53",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670683"
+        }
+      }
+    },
+    {
+      "id": "d826c3cb-a7bd-4a3f-be6e-03e422bceb3a",
+      "title": "Text Me When You Get Home #93",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=92&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670684&token_id_hash=0x43fcf16c7689e60a976907aca76055e19bb5a19262ff17e57716de00ab219503",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670684"
+        }
+      }
+    },
+    {
+      "id": "1f2e2a04-2d8a-4dbf-8770-f36535580d87",
+      "title": "Text Me When You Get Home #94",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=93&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670685&token_id_hash=0xf5f1007406fcdca2a73c45a78740195659a4f80f2bf0a7b4eb1cfa1f75ee6816",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670685"
+        }
+      }
+    },
+    {
+      "id": "1e5baffa-168f-4bbe-b4d7-8a19a38d2a37",
+      "title": "Text Me When You Get Home #95",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=94&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670686&token_id_hash=0xba3113c3d4a1035952c3c3f6b353ccfb82a6e276db1afe90d1dbc35dfd871b6c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670686"
+        }
+      }
+    },
+    {
+      "id": "1621977c-4d84-4a8a-aef0-1d9d203f78b4",
+      "title": "Text Me When You Get Home #96",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=95&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670687&token_id_hash=0x16d42be641b3032538fb203ff20f1b1b745af2c7929209800d3112c82c98808c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670687"
+        }
+      }
+    },
+    {
+      "id": "a0cb745b-2b58-4507-9ab7-76a4b0cc3bc5",
+      "title": "Text Me When You Get Home #97",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=96&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670688&token_id_hash=0x3d9dd08f68469b7c2cff9067b351b01adb56ad122afbdc3ef617360b4b0d9c68",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670688"
+        }
+      }
+    },
+    {
+      "id": "e952f3ac-9f32-48a7-9deb-125ae31e2fad",
+      "title": "Text Me When You Get Home #98",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=97&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670689&token_id_hash=0xf958848d74617e0603b221da779026ce6ac8eead507cbbf1a2cbc5d2949aadcb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670689"
+        }
+      }
+    },
+    {
+      "id": "c02317fe-93fc-4e83-a61f-aa11f01a667e",
+      "title": "Text Me When You Get Home #99",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=98&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670690&token_id_hash=0xcd5f825b10abb3a821ae30ad995eee5ec07ec2331212513bba05bb11c39b722b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670690"
+        }
+      }
+    },
+    {
+      "id": "a1ba6026-daae-407f-9597-87d82c17b546",
+      "title": "Text Me When You Get Home #100",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=99&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670691&token_id_hash=0x7afcd73e95a1569fd4cbf30de1063968d44105cf8c1259160446b0a466d1013b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670691"
+        }
+      }
+    },
+    {
+      "id": "c3d290e3-3644-4f5a-9241-6942870cb626",
+      "title": "Text Me When You Get Home #101",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=100&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670692&token_id_hash=0xd8d5ad35f82752005b99034f4996d9ec63699afa4a1ec425868f936496ca27a0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670692"
+        }
+      }
+    },
+    {
+      "id": "86c6dde6-5655-4ab1-9bca-0c1fc8932546",
+      "title": "Text Me When You Get Home #102",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=101&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670693&token_id_hash=0x98a74459b9960be54352c33a205cacfd1ee870813df414928b35f2465e1bd4e8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670693"
+        }
+      }
+    },
+    {
+      "id": "5c6cd0d9-bce3-40b2-a8a8-18404f53803b",
+      "title": "Text Me When You Get Home #103",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=102&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670694&token_id_hash=0xb0c9a440627d40f4c73286292ce85c35cd71df1662dfa845a68ffb359ac8bedb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670694"
+        }
+      }
+    },
+    {
+      "id": "ceba1801-ab00-4b08-898a-46ffd569b584",
+      "title": "Text Me When You Get Home #104",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=103&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670695&token_id_hash=0x5d72e746222558b830ff73b52b0a052ec04a960c337de8159bb14c4bb70580fd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670695"
+        }
+      }
+    },
+    {
+      "id": "6bc5cd9e-0aa4-4dc7-9fbd-128004510e15",
+      "title": "Text Me When You Get Home #105",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=104&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670696&token_id_hash=0x5dfd77641588f1001aaad11b4641f8cf9f70985339e705c3c7b3602610c914b7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670696"
+        }
+      }
+    },
+    {
+      "id": "61262744-71be-4808-9ada-800e37944995",
+      "title": "Text Me When You Get Home #106",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=105&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670697&token_id_hash=0x4305d8bb5b1ca823ec2f2fb13adde7b986fad83cb7dbf34dcf3883bac3ac22db",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670697"
+        }
+      }
+    },
+    {
+      "id": "46e60f44-456d-4085-8a22-e0305c8308ee",
+      "title": "Text Me When You Get Home #107",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=106&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670698&token_id_hash=0x0c785dc21748a63e7f4bfc1fb9ff7dc2b7cfd1af4de34f3288f68509dc316242",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670698"
+        }
+      }
+    },
+    {
+      "id": "c9191ae5-4095-4463-8fd1-3561f2998313",
+      "title": "Text Me When You Get Home #108",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=107&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670699&token_id_hash=0xacf826dc5f1de1f09fdd76fbe7ba0e3ca2f3ea7c71136dc4955354c0634953b2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670699"
+        }
+      }
+    },
+    {
+      "id": "f9d387fe-c2a3-4f64-a200-75d9811fba22",
+      "title": "Text Me When You Get Home #109",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=108&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670700&token_id_hash=0xfbe5d5d32826834fcebc0b2481a3bcd502adb9dd212ea399d5e2fd48611b74c2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670700"
+        }
+      }
+    },
+    {
+      "id": "f327a7cd-c5d8-465b-893b-d30a3c56fe7c",
+      "title": "Text Me When You Get Home #110",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=109&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670701&token_id_hash=0xf1a2208d06127f2dd094210ab6a35bfc5058aad16ca2bf2aa03e8d304993e1a7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670701"
+        }
+      }
+    },
+    {
+      "id": "65dff1ba-ff04-40bc-9615-85be1a46533f",
+      "title": "Text Me When You Get Home #111",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=110&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670702&token_id_hash=0xe57136772d0a50b6fc35628c300417260cbbb4a85c192a6715873adced1b2e7e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670702"
+        }
+      }
+    },
+    {
+      "id": "4a0fbf8b-097d-4057-a94c-935983033aa4",
+      "title": "Text Me When You Get Home #112",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=111&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670703&token_id_hash=0x6e73fc17e9c22e5842b86837e90701e572262ca3097c4480e30398accadd8e32",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670703"
+        }
+      }
+    },
+    {
+      "id": "451e6bf7-6c64-4e72-8f3c-40e08609ff68",
+      "title": "Text Me When You Get Home #113",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=112&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670704&token_id_hash=0x638063cdf87ff6238ee792e7fd4daa697e27e7e27f41dc5316c07297d87234a3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670704"
+        }
+      }
+    },
+    {
+      "id": "12d4e527-9b7b-4fa5-9f4b-e3a24f2a731f",
+      "title": "Text Me When You Get Home #114",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=113&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670705&token_id_hash=0x15c497016e798836e6197c70b4f59e6cf4b73251312d3d09de68c84e7c0acafb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670705"
+        }
+      }
+    },
+    {
+      "id": "2dc1670e-864c-4202-993c-0032a7a5a89d",
+      "title": "Text Me When You Get Home #115",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=114&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670706&token_id_hash=0xa59066ccc06f2fd9d93ea3258ff1a3a6f1520459bcbc40eb1c5fc745841f9fd0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670706"
+        }
+      }
+    },
+    {
+      "id": "4722866f-849a-421c-8e82-cd79c1862838",
+      "title": "Text Me When You Get Home #116",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=115&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670707&token_id_hash=0x49f27d80a96cb85ac2ba29d749038e85bdebab9e0d3af7f5927efd94eade93dd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670707"
+        }
+      }
+    },
+    {
+      "id": "c41d8007-e394-4d86-afd0-31106cdd2127",
+      "title": "Text Me When You Get Home #117",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=116&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670708&token_id_hash=0x68292a4b55faac50a0b1bb9a060cbd514a4e5fad273f8832a60553abc64a55b1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670708"
+        }
+      }
+    },
+    {
+      "id": "5f6fb6aa-94c7-49d9-987b-6b0e7c9f1cde",
+      "title": "Text Me When You Get Home #118",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=117&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670709&token_id_hash=0x6751e760b396b5dc159e7bfd0aa796daf30e989f179b971518eef045a6e93538",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.523Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670709"
+        }
+      }
+    },
+    {
+      "id": "94c52f4d-5492-46e4-b5ac-25b2edce3b78",
+      "title": "Text Me When You Get Home #119",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=118&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670710&token_id_hash=0x30e2bce2cc9086f2d887dcb6a47fae13b36852e8b220f19bea4cc6b5a9795532",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670710"
+        }
+      }
+    },
+    {
+      "id": "c4b8fe13-046e-4434-b76c-8c6d4853fb17",
+      "title": "Text Me When You Get Home #120",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=119&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670711&token_id_hash=0xbc8c0a8fd808fcc7ae3484d23347c980698fdcbbe94942116a007f0ba6abd2c7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670711"
+        }
+      }
+    },
+    {
+      "id": "5eab35aa-8421-4cca-885a-4f3d1a8e35af",
+      "title": "Text Me When You Get Home #121",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=120&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670712&token_id_hash=0xbb6b5d550e046438893c7d3d3a80c75565e06f8ebb8747ef1bcf27295cd7089f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670712"
+        }
+      }
+    },
+    {
+      "id": "621ffd32-5032-4d92-80c4-ef3842ba36f4",
+      "title": "Text Me When You Get Home #122",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=121&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670713&token_id_hash=0x0de7459035b052d4d6ef0034d872f12aa3d27c7cab9a7e6a1a0f8227d51d90d2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670713"
+        }
+      }
+    },
+    {
+      "id": "64245061-fdbd-41f5-b3cc-81eabe302ca2",
+      "title": "Text Me When You Get Home #123",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=122&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670714&token_id_hash=0x36f336fac3e4e00d72736bbe6739622eef3ec2903f20d488976172941562b644",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670714"
+        }
+      }
+    },
+    {
+      "id": "25ed969b-1b4b-408f-b4fa-bc303393b983",
+      "title": "Text Me When You Get Home #124",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=123&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670715&token_id_hash=0xce65b138052cd8cf03bdee5b15a0359eef0e71ad06305ffd40e081c6280034b4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670715"
+        }
+      }
+    },
+    {
+      "id": "fe62f436-40fa-47bc-83f2-fb031523f778",
+      "title": "Text Me When You Get Home #125",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=124&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670716&token_id_hash=0x601d599043bc8c46b780f2cfc29c2f06add18e3cd6c0db2b1d24fef92a3e299e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670716"
+        }
+      }
+    },
+    {
+      "id": "2813e21f-07eb-47da-892d-2b4e0c98cb20",
+      "title": "Text Me When You Get Home #126",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=125&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670717&token_id_hash=0x359db0bafe6ea30e4c8394b4eafa54c7319ebb6371033d549990ea88a44e1d2f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670717"
+        }
+      }
+    },
+    {
+      "id": "74b0a34e-43ac-4160-b517-63246b926a18",
+      "title": "Text Me When You Get Home #127",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=126&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670718&token_id_hash=0xacece9be01db0f56a4f167b221def7f780e848c47da8cf0552e5c914b4fdd8c0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670718"
+        }
+      }
+    },
+    {
+      "id": "48c62e12-6027-431e-b6a1-4a89bc2d0f7f",
+      "title": "Text Me When You Get Home #128",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=127&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670719&token_id_hash=0xce549a39b4bda3bf7161f3a7af3db57e027f84e24e1b00ca2112e761dc1eab59",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670719"
+        }
+      }
+    },
+    {
+      "id": "a29ac583-5c14-4e42-8e5a-d60c932b3bc9",
+      "title": "Text Me When You Get Home #129",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=128&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670720&token_id_hash=0xd716b30994bd08b943eec870f4bf3d82b44cd3f79284e32eb4357d475822ac62",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670720"
+        }
+      }
+    },
+    {
+      "id": "5d08b0c4-ab53-4ea1-ad18-779ef02494b8",
+      "title": "Text Me When You Get Home #130",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=129&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670721&token_id_hash=0x9e279a318723b1722c23d2fce3494139271d277d13fe8a92e6d7bc7b67e63027",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670721"
+        }
+      }
+    },
+    {
+      "id": "9d9a374d-749a-400e-9ac3-8f51d2e1a5f5",
+      "title": "Text Me When You Get Home #131",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=130&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670722&token_id_hash=0x109a021153bbd5e52b71f2d9f5dcbcee48a44d587883fa8635d0f5cf35885b98",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670722"
+        }
+      }
+    },
+    {
+      "id": "81cb6ea6-2e31-4bd2-a67a-b7093ab33078",
+      "title": "Text Me When You Get Home #132",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=131&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670723&token_id_hash=0x5c47ebef60c6cf8d1390230a3648a6b877e7fd715497902db7fb0266e8d444e8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670723"
+        }
+      }
+    },
+    {
+      "id": "7773aba6-e3fb-42da-b3b0-e282f82c6166",
+      "title": "Text Me When You Get Home #133",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=132&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670724&token_id_hash=0x2c5f5c2319ec1a3bcab66b3b6f94f29cca8d0bce885f15c261acd6baef263331",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670724"
+        }
+      }
+    },
+    {
+      "id": "408b12d4-fd4f-40f4-b93b-4202bbfefcbd",
+      "title": "Text Me When You Get Home #134",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=133&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670725&token_id_hash=0x590256c6b7b37c4e1bf1445b4acfb01a8ede8d4925b313aa1251eb0b4edd791d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670725"
+        }
+      }
+    },
+    {
+      "id": "eb021502-df4f-4401-82eb-c72c39fd306d",
+      "title": "Text Me When You Get Home #135",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=134&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670726&token_id_hash=0x8063364b14f58cfee49314c0105ab3e092c5cc3254edabfaa0ae797462530722",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670726"
+        }
+      }
+    },
+    {
+      "id": "e29c9ec4-9a9e-414f-8dc5-9562674fb650",
+      "title": "Text Me When You Get Home #136",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=135&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670727&token_id_hash=0xeff0f987ab144f8bd96c1cb1868c9879a494a2d0ecc2429e1899f7a4a5fe6c41",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670727"
+        }
+      }
+    },
+    {
+      "id": "a0742423-6162-4ea6-93a1-90a07e6dd9d4",
+      "title": "Text Me When You Get Home #137",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=136&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670728&token_id_hash=0x0808f8250ebba5b5697d4ab6c25873b31ccdfd33f24b44dc411bb5be63ea2851",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670728"
+        }
+      }
+    },
+    {
+      "id": "978cfd96-d368-4d9f-a07b-ac0ecb00e717",
+      "title": "Text Me When You Get Home #138",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=137&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670729&token_id_hash=0x64e35bd1a4f3b168681110180f9705309e548b9d8524619518aa1855dd38af8d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670729"
+        }
+      }
+    },
+    {
+      "id": "63f242ed-2e79-4cf7-a4f3-4f66faa5ade3",
+      "title": "Text Me When You Get Home #139",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=138&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670730&token_id_hash=0x6448bb22ff75ff2ea7af7b7cad4201d265c9eeaed63f90fa578ddcca6e14c37e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670730"
+        }
+      }
+    },
+    {
+      "id": "167258fb-a145-4cd7-990d-c8b86ec6c3d2",
+      "title": "Text Me When You Get Home #140",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=139&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670731&token_id_hash=0xd8b01d6506acfbc7d54e5451afc2d04378d5df23c087bbbcd4adbb73e109b516",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670731"
+        }
+      }
+    },
+    {
+      "id": "8aec3f52-80ea-491b-b73d-db199462acf0",
+      "title": "Text Me When You Get Home #141",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=140&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670732&token_id_hash=0x5f18425cad21a08d5657c2754264c54def374eae9716cc3c9c8be9a4421e70c9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670732"
+        }
+      }
+    },
+    {
+      "id": "c76f4ee9-353e-46e4-9b4f-631b6d0263ef",
+      "title": "Text Me When You Get Home #142",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=141&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670733&token_id_hash=0x495999b5806135b5a713a79d4d25b8a8048c4474c9966050cc2b08c8ee39c7eb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670733"
+        }
+      }
+    },
+    {
+      "id": "7e58047e-dd84-49bb-891c-e28e6fe8ac40",
+      "title": "Text Me When You Get Home #143",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=142&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670734&token_id_hash=0x941782e954e18164f45e830ecaa92924b4e8840b11d4a10a1b5ec0832dae3f08",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670734"
+        }
+      }
+    },
+    {
+      "id": "8b6317a1-ad69-4a5f-8482-30bf8d14d11b",
+      "title": "Text Me When You Get Home #144",
+      "source": "https://cdn.feralfileassets.com/previews/cbdf21b6-9875-4060-85b1-75d966086c52/1686607533/index.html?edition_number=143&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895118670735&token_id_hash=0xa1a109fbf54c9f8be7ba594f6e2909b609aa7146b9585cb62d5b42df6b18fbfe",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.524Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895118670735"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

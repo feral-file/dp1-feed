@@ -1,0 +1,50 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "ba938154-f634-4246-8313-db1b286a21b1",
+  "slug": "boom-town-1-of-1s",
+  "title": "BOOM TOWN 1 of 1s",
+  "summary": "<em>“This is not utopia. This is a neighborhood of speculation. This is Times Square. Or that fracking town in North Dakota with the $15 Budweisers while supplies last.”</em> - Peter Burr\r\n\r\nPeter Burr’s BOOM TOWN is a fictional neighborhood on the blockchain inspired by towns that live and die with the boom and bust cycles of speculation. The landscape of the American West was at one point littered with boomtowns — make-shift settlements that sprung up wherever gold, silver, oil, or other valuable resources were to be found. Animated by the imaginaries of Manifest Destiny, colonialist expansion, and get-rich-quick schemes, boomtowns attracted prospectors, speculators, and those in search of a fast track to a better life. San Francisco was one such town, swelling from a village of 800 people to a city of 35,000 in five short years during the Gold Rush, and subsequently ballooning to over 230,000 just 20 years later thanks to a massive silver find in the nearby mountains of Lake Tahoe. But once the resources are depleted, many boomtowns fall into disuse — abandoned as quickly as they appeared. Some become ghost towns that are simply left to ruin. Others, like San Francisco, reinvent themselves and live to see another windfall. \r\n\r\nLike most of his works, Burr’s BOOM TOWN is a richly crafted narrative world that is deeply evocative while remaining mysterious and restrained. Displaying the artist’s gift for creating images and environments that hover on the boundary between abstraction and figuration, they invite the viewer to fill in the blanks with their own interpretation, suggesting a story that is barely legible yet unmistakably present. Inspired by the tools and aesthetics of video games, Burr’s compositions draw on generative dynamics and the complexity that emerges from simple, rule-based systems. Each of the eight works in BOOM TOWN follows a precise logic for generating the structure’s architecture, its ground and field, its shadows, planes, and colors. The resulting images are reminiscent of 8-bit video games and early computer graphics, as well as the flat diagrammatic quality of CAD architectural drawings. \r\n\r\nArchitecture and the built environment, particularly of the utopian variety, has fascinated Burr for years. His works frequently mine the poetic tension between the architect’s idealistic (if egotistical) striving to remake the world, and the ways in which the lived reality mostly seems to miss the mark. Lofty aspirations of how a particular configuration of form and function, of bodies in space, of urban infrastructure in a city, might produce certain kinds of relationships between people and their environment tend to falter and disintegrate when they come in contact with the unpredictable emergent forces that govern the real world. Online, architectural metaphors are often invoked when discussing information and systems architecture, or in the form of digital real estate like domain names or plots of virtual land in the metaverse. Importantly, in contrast to much of Burr’s recent work, the locations in BOOM TOWN are devoid of people. The streets outside the factory and shopping plaza are empty. The windows of the apartment blocks show no signs of life. Burr is interested in drawing attention to the vacancy of these spaces and their potentiality as sites of projection, speculation, and collective imagination. On day one of the exhibition, BOOM TOWN is little more than a collection of empty structures, yet through the process of collecting, the town becomes populated and inhabited, in a sense, by the proprietors of its NFTs. At a time when web3 is still, by and large, a vacant space to be developed and designed, Burr seeks to underscore that it is <em>we</em> who will come to determine what kind of social and civic life it will ultimately enable and support. Not only will we be the ones who come to populate and activate these spaces, to breathe life into them, make them vibrant and give them their unique character and vibe, but the most potent promise of web3 is that we can choose to build them differe...",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/b6edd9fd-bbe3-4f17-f228-9d3775fb9600/raw",
+  "created": "2026-02-25T09:58:54.515Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "f3621d15-43d7-435e-a617-a609dc1b3aea",
+      "title": "POWER PLANT",
+      "source": "https://cdn.feralfileassets.com/previews/d247736f-14d8-4e9a-8408-3f2328ae4459/1670988316/?edition_number=0&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=19926596094255126125166421402975005060328841433878809074115704782911025446719&token_id_hash=0xf1b1692581af839311065e972fb488ef67649e972131d7a8c8be3d990bd67104",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.508Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "19926596094255126125166421402975005060328841433878809074115704782911025446719"
+        }
+      }
+    },
+    {
+      "id": "fecdbdf1-ffcd-4443-823d-7b15c84fd6fc",
+      "title": "LUXURY HOME",
+      "source": "https://cdn.feralfileassets.com/previews/4c2da678-ac66-4b85-8fd5-75fc26ba0a5b/1670988429/?edition_number=0&blockchain=ethereum&contract=0x6003994adECA13407E8dbEE808280CC3EF2ab820&token_id=31407201287127526542816856047451791715680458487654720084356565537967265406231&token_id_hash=0xb80728bb82a1f8145807cf2432c7b60ffb9776e9952c3495d24ab17cec1ee6d8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:54.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6003994adECA13407E8dbEE808280CC3EF2ab820",
+          "tokenId": "31407201287127526542816856047451791715680458487654720084356565537967265406231"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "67c2e075-0f1b-4b43-80f2-5b3cc21b84bd",
+  "slug": "faunette",
+  "title": "Faunette",
+  "summary": "“Faunette” establishes a symbiotic relationship with the sun that enlightens the virtual set up. As a sort of sundial, the figure rotates on the pedestal as the time keeps flowing. By doing this, the head engraves the surface on which it lays while the clouded background reinforces the mysterious and metaphysical setting .The face is a repeated motif in the artist’s sculptures, as is the use of the fossil shell which makes up this creature’s head.<br/>Interaction: <br/>Left mouse button/touch drag to rotate the scene<br/>Scroll wheel/pinch to zoom<br/>Watch time pass<br/>This artwork comes with an application for offline viewing and a 3D printable digital file.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/053716a5-924f-4b83-2e69-5eab87c26b00/raw",
+  "created": "2026-02-25T09:58:51.600Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "69be50a2-1cb3-45c9-8e3a-bcb27cbb1cb5",
+      "title": "Faunette AE",
+      "source": "https://cdn.feralfileassets.com/previews/527a291d-49f5-4ddc-81f6-0331f9e08be9/1667600061/?edition_number=0&blockchain=ethereum&contract=0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5&token_id=103670424291181108903021494306982394267978572499721974093211453159646661892321&token_id_hash=0x107eb9a062458fff10e95f5acd4e3e3e5ad9842d0a4d7318878293c237ebc2c8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:51.599Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5",
+          "tokenId": "103670424291181108903021494306982394267978572499721974093211453159646661892321"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

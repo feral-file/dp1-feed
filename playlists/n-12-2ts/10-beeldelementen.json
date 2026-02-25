@@ -1,0 +1,2464 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "070ec16b-e4af-4cd7-a3e4-5d8989711b88",
+  "slug": "beeldelementen",
+  "title": "Beeldelementen",
+  "summary": "“Beeldelementen” seeks order amongst chaos. Bart Simons establishes structure by placing elements on a grid, then disrupting this order by introducing patterns, colors, and distortions. While the end result appears disorganized upon first glance, closer inspection reveals residual organization in the layers.\n\nThe graphic nature is reminiscent of collage constructed of cut up images from magazines. There is an echo of the punchcards which drove the creation of early generative art in the 1960s with programming languages such as FORTRAN being translated to holes in paper.\n\nIn particular, the concentric circles evident in some of the pieces belie the macro organization that is destroyed by the program. Repeated off-center layers thwart the attempt to find order, yet it can be found if each layer is examined and traced in turn.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/785d564f-1308-45d9-462a-74e840029000/raw",
+  "created": "2026-02-25T09:59:24.515Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "05710b19-a2ed-40b2-8117-31f16aec4426",
+      "title": "Beeldelementen #1",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=0&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670592&token_id_hash=0x30cba2ed123b766eab74adbe283cd079a55982338105bca51aab63b7a656c25d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670592"
+        }
+      }
+    },
+    {
+      "id": "03c1b18f-012e-4755-95ec-6f61bd2f3ae3",
+      "title": "Beeldelementen #2",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=1&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670593&token_id_hash=0x0a5f89eeebd1ce12eaec0a965383c416050b08696f45ca0020c469c632c0501a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670593"
+        }
+      }
+    },
+    {
+      "id": "146a28a8-53c9-4877-ac23-bc4b96d72143",
+      "title": "Beeldelementen #3",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=2&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670594&token_id_hash=0x5aaf1dbf035c2419f1f12adfb5af89cf7129429ddee0d1b1a91b806e43d3eb16",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670594"
+        }
+      }
+    },
+    {
+      "id": "159cfe81-fa68-49e5-9b38-d7484eed4bf0",
+      "title": "Beeldelementen #4",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=3&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670595&token_id_hash=0xd69df7cba70526ca0de161686e9a50246d17f6e6df3e8f601e93ee778d3b567a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670595"
+        }
+      }
+    },
+    {
+      "id": "4426f014-a5ae-4895-b09d-e4e830fdd231",
+      "title": "Beeldelementen #5",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=4&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670596&token_id_hash=0x5f734f30ce13e13fa76f544596b2cd2f8752fac34e89b43e1d9a7148b0feb423",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670596"
+        }
+      }
+    },
+    {
+      "id": "15e5acea-92b7-481c-86a6-bc42edfaf641",
+      "title": "Beeldelementen #6",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=5&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670597&token_id_hash=0xf77957fe57988aab42bfb0f60da0fae5ca73a75f00ba6435b58f31ca7258514e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670597"
+        }
+      }
+    },
+    {
+      "id": "d80c430b-551e-40c5-871d-7d74b31ef4f7",
+      "title": "Beeldelementen #7",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=6&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670598&token_id_hash=0x7bce95cfecb676f55638d2cd3e3d68b64bb7762c5810ba93b864f03fd0b2a8b7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670598"
+        }
+      }
+    },
+    {
+      "id": "94040153-371b-44fe-b017-a83612803aad",
+      "title": "Beeldelementen #8",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=7&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670599&token_id_hash=0xacc8cabdf3396cd9f6036eba20f3909b06c92cad939bd46d7f48b60f1166b2fc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670599"
+        }
+      }
+    },
+    {
+      "id": "7c309262-bbfc-4633-8a97-8139d3547994",
+      "title": "Beeldelementen #9",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=8&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670600&token_id_hash=0x1ed7bbb05ebdd979a093a7e0603f6a670bd9978f419b69a51559ed303c7c1557",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670600"
+        }
+      }
+    },
+    {
+      "id": "6a0f4436-313d-49cb-868d-df919858ca93",
+      "title": "Beeldelementen #10",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=9&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670601&token_id_hash=0x0c0defda363716d94e79ee2af27bee3941a8834419fce1d4f418f092e2171eb7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670601"
+        }
+      }
+    },
+    {
+      "id": "d0e7ce61-f647-4217-bf9b-6015f32cba2e",
+      "title": "Beeldelementen #11",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=10&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670602&token_id_hash=0xf0255721134e72ba34ea6eba5785347ef15c04d463f408842297fda09f8ed730",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670602"
+        }
+      }
+    },
+    {
+      "id": "ecc2483b-3be8-40e5-9bed-306efa7797b8",
+      "title": "Beeldelementen #12",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=11&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670603&token_id_hash=0xa3fc70107bd797b28bfd0b988cc286fc6e4cb6df857491975fc48cb3d0fe9790",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670603"
+        }
+      }
+    },
+    {
+      "id": "804d8563-16cc-4936-b4a4-aaa0e302f875",
+      "title": "Beeldelementen #13",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=12&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670604&token_id_hash=0xb172296e41c5e3e1502e846ee0ed4c2605095cbdcac863efd116399f2a969c36",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670604"
+        }
+      }
+    },
+    {
+      "id": "836c388e-f26d-46c9-972c-8e23edc24cde",
+      "title": "Beeldelementen #14",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=13&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670605&token_id_hash=0xc0a196a934260e8e863e74d57098a539bef52dc380586771e7d3b045d49abf63",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670605"
+        }
+      }
+    },
+    {
+      "id": "da8628fe-5481-4745-a3c8-0693a8f9c7a2",
+      "title": "Beeldelementen #15",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=14&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670606&token_id_hash=0x52b7e734181a718e6eb9c7ddc3fc4c58d2b3a4eb6a22094fb969c688a49d7b75",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670606"
+        }
+      }
+    },
+    {
+      "id": "096192c6-f663-4728-8014-f59bca0c97b9",
+      "title": "Beeldelementen #16",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=15&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670607&token_id_hash=0x5f895b0099127145c6e8a9407ebbaf1ae569c91d5a47aeffbd1a8cb0df2067fc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670607"
+        }
+      }
+    },
+    {
+      "id": "e483166c-0543-4a3c-b6a9-8de84afeb7e7",
+      "title": "Beeldelementen #17",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=16&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670608&token_id_hash=0x74579144f0c64e14fdf1fc0a23fb1334cc4648f98e5ee40c6b89023d1dca0964",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670608"
+        }
+      }
+    },
+    {
+      "id": "73a0ba0b-d067-4244-8e45-dda2ea117c7b",
+      "title": "Beeldelementen #18",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=17&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670609&token_id_hash=0x4edd32ff6526e5b40370dc8e51a6920c886288c053e076f28a3e5bfe8a3b8197",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670609"
+        }
+      }
+    },
+    {
+      "id": "ed923403-02e6-4012-8497-772dd44d50a5",
+      "title": "Beeldelementen #19",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=18&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670610&token_id_hash=0x2d57b89de44762fa056ec91b3b3f654d6e40582b60b45c3c1ccf327c9dbebc09",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670610"
+        }
+      }
+    },
+    {
+      "id": "6957e472-4f5c-43ad-b696-7669ae09287d",
+      "title": "Beeldelementen #20",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=19&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670611&token_id_hash=0xb913c2a13d5cc072e2fc845e21f5415b4ec43a3a408828751b1f6b3ae6a6d2b4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670611"
+        }
+      }
+    },
+    {
+      "id": "07407363-eba2-4d99-9b92-5317ce6557cb",
+      "title": "Beeldelementen #21",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=20&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670612&token_id_hash=0x82dfba81bc6e5ed878f8140d54253681c32fa935dd7c529572ce41536bb7787f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670612"
+        }
+      }
+    },
+    {
+      "id": "3a0cbe8b-6afd-4109-a4b1-0e5dd15de027",
+      "title": "Beeldelementen #22",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=21&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670613&token_id_hash=0x25381c82b9cb2ffcc3d524fefec543a5c0294cc1982be44a91b29b4dd829d6fb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670613"
+        }
+      }
+    },
+    {
+      "id": "3a5b4063-6f95-4b31-adb7-740b4d1bf025",
+      "title": "Beeldelementen #23",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=22&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670614&token_id_hash=0xf5e7c6469172460ca911e3f4b66ffecc632d9aab652bf0694474f83d97a2edac",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670614"
+        }
+      }
+    },
+    {
+      "id": "4f53c022-e2ef-4dbd-a916-ca3fd5eaa670",
+      "title": "Beeldelementen #24",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=23&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670615&token_id_hash=0x79da060ce075f30b8d6dc195195d9a5fcf6157fab4e5351d452370ca5be1a31b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670615"
+        }
+      }
+    },
+    {
+      "id": "b4116f62-766e-4089-92e3-039212c6632a",
+      "title": "Beeldelementen #25",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=24&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670616&token_id_hash=0xabba60cb545fd9d26c55e25f3977817b7448144e4cfa0be125b3ef3f60c51907",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670616"
+        }
+      }
+    },
+    {
+      "id": "377cb217-d60c-4eeb-a632-698ac88192c4",
+      "title": "Beeldelementen #26",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=25&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670617&token_id_hash=0x80106cdf091ad5fa050bd065831b912fbe5bb60937982d2bda188cc4e5d9bc64",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670617"
+        }
+      }
+    },
+    {
+      "id": "8ccb289c-c374-4174-bc94-07bbe6ab17ff",
+      "title": "Beeldelementen #27",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=26&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670618&token_id_hash=0x4ddbb1913e52e1b43389598ae1b07b9703013bf6aa7c5728af0116d55a8c345a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670618"
+        }
+      }
+    },
+    {
+      "id": "b019b0f0-4ec8-44a2-a1f9-6d66c22a0bba",
+      "title": "Beeldelementen #28",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=27&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670619&token_id_hash=0x2fb086d532c1ddfa309503f45226a5117f4ed0c4fd5448aec1459415b9a85f75",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670619"
+        }
+      }
+    },
+    {
+      "id": "7f871821-cfda-471f-88f2-11889964abb1",
+      "title": "Beeldelementen #29",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=28&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670620&token_id_hash=0x7f3b7b2caeb12d5c76fbb1ca8599005ffed8ecb4483842336b12e59066e4fef1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670620"
+        }
+      }
+    },
+    {
+      "id": "553b9e32-7531-46bd-a042-fc9b2f962efe",
+      "title": "Beeldelementen #30",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=29&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670621&token_id_hash=0xd948b91ba5f2455d2a8da793a43e443bc7c0ed7db3829465bafe4e243820a73a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670621"
+        }
+      }
+    },
+    {
+      "id": "5b822d92-b35b-4fd9-855d-0a0ac2ca5563",
+      "title": "Beeldelementen #31",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=30&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670622&token_id_hash=0xaabd34e899f241f5d9967ce1267b8e9ec7b341f72af83d3e93c2961e499d02e0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.511Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670622"
+        }
+      }
+    },
+    {
+      "id": "deb414bb-642c-44f3-9ba7-2155c780f39a",
+      "title": "Beeldelementen #32",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=31&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670623&token_id_hash=0x5f547498bb7a84d49486fa66f250daedc979089e1a421e689bc2a2a6f0c7b0b1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670623"
+        }
+      }
+    },
+    {
+      "id": "9e809774-43b3-4f22-9ebc-e7fafe3f86c8",
+      "title": "Beeldelementen #33",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=32&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670624&token_id_hash=0x14b96e6d232ca4521f17e10e51d22ffed874a429bd9c51336ff79822d3a87def",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670624"
+        }
+      }
+    },
+    {
+      "id": "37d217c3-7049-4a6a-8930-d5997d837a10",
+      "title": "Beeldelementen #34",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=33&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670625&token_id_hash=0x4492e5b8c03564b5513534a8cd1f3447fa8926cf2e887fa03e2856efd977aad5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670625"
+        }
+      }
+    },
+    {
+      "id": "a350d2ab-874d-44e4-bd08-18e20544369b",
+      "title": "Beeldelementen #35",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=34&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670626&token_id_hash=0x79cede352f93b0b6c30a552564898927e3fe204aa5ff0ecc7d38118df8ed7ee0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670626"
+        }
+      }
+    },
+    {
+      "id": "b463ae08-5c91-4c69-9efb-64868650de18",
+      "title": "Beeldelementen #36",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=35&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670627&token_id_hash=0x856926ef0da8b4820b716f4852fae1526c0152e0741d0f5ffd26e0510c68b0fa",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670627"
+        }
+      }
+    },
+    {
+      "id": "7da3c7c9-e5b9-44b2-8375-1a9bd35a8718",
+      "title": "Beeldelementen #37",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=36&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670628&token_id_hash=0x561d5a3d8564b1378a3ccc29c71ff39f044bc5990532a88537537046e6481845",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670628"
+        }
+      }
+    },
+    {
+      "id": "0fce87ce-1700-493c-8ade-8ec61abe5aff",
+      "title": "Beeldelementen #38",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=37&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670629&token_id_hash=0x3336e387b1e029ca6fded337e8d203431025ed2172dc3275c4a21cfbc5a31051",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670629"
+        }
+      }
+    },
+    {
+      "id": "69f2da2f-ad6d-4e56-a236-855bc9243355",
+      "title": "Beeldelementen #39",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=38&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670630&token_id_hash=0x0dd3d81b7e0692d6f31349f753249df8690484b021fcff8e72524f5b9726ce3c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670630"
+        }
+      }
+    },
+    {
+      "id": "39258217-aad7-46cf-9654-bc4811bb4d7d",
+      "title": "Beeldelementen #40",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=39&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670631&token_id_hash=0x8b4339527743c2a15a62b6101682296811dfeaffbc683ad6404f79318c34da63",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670631"
+        }
+      }
+    },
+    {
+      "id": "7d901810-3f7d-4276-b268-0b78f08eb7dd",
+      "title": "Beeldelementen #41",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=40&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670632&token_id_hash=0x9b23555f73a806b51bbf9e36ab21665f963ed8a9cb6f9d860c7dcd9066cc5f83",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670632"
+        }
+      }
+    },
+    {
+      "id": "45bd9d3b-3cd1-4090-b5f0-039bf11fe73f",
+      "title": "Beeldelementen #42",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=41&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670633&token_id_hash=0x2bce7358002bdef573a029f5b71ca4302906f0e2cb470f0b61e741732a774415",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670633"
+        }
+      }
+    },
+    {
+      "id": "8acf529f-a3e4-4a06-afe2-619c4fbd3fba",
+      "title": "Beeldelementen #43",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=42&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670634&token_id_hash=0x3fbb535f7e0c13d839a39429dca3934874dbdec43029639eebf492a1445ac1ac",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670634"
+        }
+      }
+    },
+    {
+      "id": "a28edc93-db7d-4579-8b1b-bd84eff19d53",
+      "title": "Beeldelementen #44",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=43&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670635&token_id_hash=0x4731ea1ec9bd07e93cfb3e6a6496ef0235994054afa04aaa3bc682fc147c01ba",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670635"
+        }
+      }
+    },
+    {
+      "id": "982fd7ad-29d6-4a3b-abc1-2430d8e184ce",
+      "title": "Beeldelementen #45",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=44&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670636&token_id_hash=0xc5e951c57df5190e772af2ab02820ee2441a3009c3770a29735df92cd0d3c9e7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670636"
+        }
+      }
+    },
+    {
+      "id": "14e24eb7-1681-4da6-8b2a-4b658402d830",
+      "title": "Beeldelementen #46",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=45&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670637&token_id_hash=0x7eb21de5ae9508d9f2c876106c923074e143de50dd089264ba0525745beb916c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670637"
+        }
+      }
+    },
+    {
+      "id": "2655f56e-6900-4aac-b987-4b5fc364cfbb",
+      "title": "Beeldelementen #47",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=46&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670638&token_id_hash=0x8234da83567fd1f30566689a120a7e32dd976449754c37e8f789200bf4672251",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670638"
+        }
+      }
+    },
+    {
+      "id": "0ad3d969-d2bc-4dcb-93ec-08d79f4ca0f0",
+      "title": "Beeldelementen #48",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=47&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670639&token_id_hash=0x74a37a35849def089a6d729612ff6f68343394b8c7a6cbbcc0d1c57d9a971638",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670639"
+        }
+      }
+    },
+    {
+      "id": "4a870a0b-59b5-4395-ab85-d60b1539bf6f",
+      "title": "Beeldelementen #49",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=48&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670640&token_id_hash=0x6eb01cb4e03658c0c46bec24a727cdd90e93c38beb03381613c634dee5b1c3c1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670640"
+        }
+      }
+    },
+    {
+      "id": "2351aeba-3dcf-4f67-bc4b-3d050d5786e4",
+      "title": "Beeldelementen #50",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=49&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670641&token_id_hash=0xcbff5d57f06a204cd501841f053777fd663ce4dff6186bbbd573c6683d0f6885",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670641"
+        }
+      }
+    },
+    {
+      "id": "2ddbcd9a-c88e-4b4c-bd65-09126d59d238",
+      "title": "Beeldelementen #51",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=50&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670642&token_id_hash=0xe2674b94497d27f4f428238ea8ee555c022848f4b391010d88902fe059ca93a1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670642"
+        }
+      }
+    },
+    {
+      "id": "e1dda18d-7369-4552-abba-4617f5a34ea1",
+      "title": "Beeldelementen #52",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=51&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670643&token_id_hash=0x4b55950ac67b869743e162a487e0de211c9a5a3b726bc6666a438f81abc8bfc9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670643"
+        }
+      }
+    },
+    {
+      "id": "6c461738-ec1c-49ef-a3d9-a8bc924c3a5b",
+      "title": "Beeldelementen #53",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=52&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670644&token_id_hash=0x8d753b2760085e57c66305d54fe49fd689e731230eaabc1bcd1d530602f4a2cd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670644"
+        }
+      }
+    },
+    {
+      "id": "f5daf910-25fd-49d0-addf-3a647c1347d5",
+      "title": "Beeldelementen #54",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=53&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670645&token_id_hash=0x442d16231b39aa70b95bf6f30a90075bf400858e171b09b1019271a78feab701",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670645"
+        }
+      }
+    },
+    {
+      "id": "b6e1e5be-eb24-4b19-8c86-5ad9efd31ca5",
+      "title": "Beeldelementen #55",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=54&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670646&token_id_hash=0x4a080eb341ab7d12ba6f9151a0a972e795b332c0b59556edeff694c0642d1670",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670646"
+        }
+      }
+    },
+    {
+      "id": "7c6b4465-b33a-4237-af49-3ddd2b09c970",
+      "title": "Beeldelementen #56",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=55&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670647&token_id_hash=0x28cb6aa69fd268d645a4a55e98d41106319c635a2c73ec40fb02e2b3882ff199",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670647"
+        }
+      }
+    },
+    {
+      "id": "149043d0-af49-4464-afcd-fb9f8774912a",
+      "title": "Beeldelementen #57",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=56&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670648&token_id_hash=0x80e13e236191609f55a4646ba05df0c2d9bb16429eb82eef3e54f2759ce59527",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670648"
+        }
+      }
+    },
+    {
+      "id": "6ca559a1-7f4c-4e76-bdd3-99daf9c2e8d6",
+      "title": "Beeldelementen #58",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=57&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670649&token_id_hash=0xab02eb42e8ae84dabe8a24fa1cea29f45c0f832b48e73f31df4a511268f2ef46",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670649"
+        }
+      }
+    },
+    {
+      "id": "28e5aa15-392b-4bf1-b72e-ffa9c43540cf",
+      "title": "Beeldelementen #59",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=58&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670650&token_id_hash=0x34e20bcd0d1a8ed7e942a2a46574861af09731de056b3edf15197e419f4e09fa",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670650"
+        }
+      }
+    },
+    {
+      "id": "0fd3775e-0137-423c-be24-ebfcbfd4989b",
+      "title": "Beeldelementen #60",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=59&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670651&token_id_hash=0xf7ca4c1029377ae01f70ac6f5354838276fb76bd1f7c4f5c6d03979dc8a9f9c9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670651"
+        }
+      }
+    },
+    {
+      "id": "00780484-13a6-48e3-932a-ce1c13c16ec5",
+      "title": "Beeldelementen #61",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=60&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670652&token_id_hash=0xe0046df2e43b2eef6477cae524abff8170896f55acd7ce3fcc81f7fd731568c6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670652"
+        }
+      }
+    },
+    {
+      "id": "e928595d-5845-4fc4-9bef-b98d37ae0483",
+      "title": "Beeldelementen #62",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=61&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670653&token_id_hash=0xd13feaaf1f3729759df7b1c5029d0c954cd946112adcd7703164173c39eb03e5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670653"
+        }
+      }
+    },
+    {
+      "id": "a8020eaa-0938-45c2-8623-b733cb721aad",
+      "title": "Beeldelementen #63",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=62&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670654&token_id_hash=0xceff481531bc11ae83d383e93809bf23ca6eade029e069f8806758f831de3e3b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670654"
+        }
+      }
+    },
+    {
+      "id": "eb4e1617-9b2a-47d3-8589-2cd4834d4e04",
+      "title": "Beeldelementen #64",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=63&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670655&token_id_hash=0x841d961632e4f68fee4245cef3add065bcceb571adaee37fca4269afe6059dbc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670655"
+        }
+      }
+    },
+    {
+      "id": "7b2e3914-1bae-4dad-acc7-a78cfa8d0228",
+      "title": "Beeldelementen #65",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=64&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670656&token_id_hash=0x21c242cdbdb46cb0537c85e773b7deb6e9bdfaf3208219ff942654c0bdd02300",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670656"
+        }
+      }
+    },
+    {
+      "id": "62c2d3eb-b85f-4370-9b6b-4ab0d3c78b69",
+      "title": "Beeldelementen #66",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=65&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670657&token_id_hash=0x5b657d7af7b64fda29ba40cf3b411a2a04d539fcfc412d2100519d7229f1f1a4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670657"
+        }
+      }
+    },
+    {
+      "id": "a02e313b-9c16-47fc-a33c-dfd1c6e6426c",
+      "title": "Beeldelementen #67",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=66&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670658&token_id_hash=0x63260c7db41898d882b467207f841680585bf337f189343880f25232eb59a2de",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670658"
+        }
+      }
+    },
+    {
+      "id": "e89769b3-3892-4d43-97d1-4c96c931abea",
+      "title": "Beeldelementen #68",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=67&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670659&token_id_hash=0x3772a73d53697ddad0ab5da3c26f5e926e271b7ea61bc5f01e311b82b028e7e0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670659"
+        }
+      }
+    },
+    {
+      "id": "ec3a9e0b-14b4-4eb5-bd95-ea3f6cf9f573",
+      "title": "Beeldelementen #69",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=68&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670660&token_id_hash=0xb585c22da77a1ff97461c5d11d3e98eab7a305651891f43f8e6509858a753dbb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670660"
+        }
+      }
+    },
+    {
+      "id": "5505ab18-36dd-4a91-96b6-703060cc03da",
+      "title": "Beeldelementen #70",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=69&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670661&token_id_hash=0x7793c9366f5241bd9a24bffb580a8fb132158e05fa02df36c2c028944beb049e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670661"
+        }
+      }
+    },
+    {
+      "id": "4cf984b5-9e9b-44f0-8dc2-1ad9bbf22861",
+      "title": "Beeldelementen #71",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=70&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670662&token_id_hash=0x932c899d894d75d468d7514f9ca6d76a4190eca060b25275dfb369367cddf8e8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670662"
+        }
+      }
+    },
+    {
+      "id": "be7e4f5d-62a7-48ad-aad6-27693c3b0c64",
+      "title": "Beeldelementen #72",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=71&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670663&token_id_hash=0xb83f98d5dce53502a17c5c95aa23ffe87c153cf450cb93827c8400f7310d9e9c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670663"
+        }
+      }
+    },
+    {
+      "id": "fea3af7e-8afc-483a-b3f5-f45e6847dbe4",
+      "title": "Beeldelementen #73",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=72&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670664&token_id_hash=0x3e21399b53ced0b1237a3683fcc4330cf4298e019e5186a978c807cd6be2d5c9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670664"
+        }
+      }
+    },
+    {
+      "id": "fa943ee7-6348-42e9-8517-1b0c0c698035",
+      "title": "Beeldelementen #74",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=73&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670665&token_id_hash=0x4c5bae422df2afb96a34dfdcb748fb60998c129a4aeaa6f68f5d88a016314482",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670665"
+        }
+      }
+    },
+    {
+      "id": "ef905b8b-7e6b-4857-9259-cbf4c0b198e0",
+      "title": "Beeldelementen #75",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=74&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670666&token_id_hash=0x8e8e4175988c1c4034e9f43f224e5850d8bd8a66a12f28776fe16e7d0ef92f20",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670666"
+        }
+      }
+    },
+    {
+      "id": "99030d66-4f92-4c94-b7fe-701ba7761a8b",
+      "title": "Beeldelementen #76",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=75&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670667&token_id_hash=0x8b6111af516337bd5754dcdcaa9e94219d08f3f466096ce208a5f6c4676e189f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670667"
+        }
+      }
+    },
+    {
+      "id": "2a5df573-0433-42a2-ac3f-08db1bd0b236",
+      "title": "Beeldelementen #77",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=76&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670668&token_id_hash=0xeac9f479d5974dbf1d547fe4164961538dd8227f2e21ccdec5d311d84b08fe82",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670668"
+        }
+      }
+    },
+    {
+      "id": "d8ec3376-f4e3-4ca0-930b-1f5077070a52",
+      "title": "Beeldelementen #78",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=77&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670669&token_id_hash=0x63675b191720de382395b8a414a7b5b3a11c26ce309e3ea6b1c60f22dabc2e04",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670669"
+        }
+      }
+    },
+    {
+      "id": "b960fa82-3d9e-46a9-92f4-a3ba32dd3a48",
+      "title": "Beeldelementen #79",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=78&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670670&token_id_hash=0x01ebd6c0f86ff4ff0b502c4ddf827824cc9dafb5498866ffdf0e33d0ad76a061",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670670"
+        }
+      }
+    },
+    {
+      "id": "994fdc9b-924d-4ce1-8ccc-b05ab2ff4fa5",
+      "title": "Beeldelementen #80",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=79&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670671&token_id_hash=0x1ac2e764aa49f0c22a645fc225dbc79a28fb2054386023bc5e52e96ebbec34fc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670671"
+        }
+      }
+    },
+    {
+      "id": "ca0bcd21-5e5e-447a-a075-36cfeba4814b",
+      "title": "Beeldelementen #81",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=80&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670672&token_id_hash=0xfd72ff10b70f6742d334cc367fbf7ed57fb14b2dfab341adedfa951b35ba213b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670672"
+        }
+      }
+    },
+    {
+      "id": "7209d89e-adf1-4710-b645-12af88e40824",
+      "title": "Beeldelementen #82",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=81&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670673&token_id_hash=0xba77cc2b9febbd4f27bc6439bd29c0ab43cc1ee57454cec14c4ad9da42ef0298",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670673"
+        }
+      }
+    },
+    {
+      "id": "eac00a76-9551-4b41-97d6-fe29e8e07db0",
+      "title": "Beeldelementen #83",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=82&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670674&token_id_hash=0x94e88f575b79d99a1316eb98efa7141bc32c8d7708e4c336114aa062f3920a59",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670674"
+        }
+      }
+    },
+    {
+      "id": "d9b41d2e-6b86-4329-b2a9-d948ef7fadcb",
+      "title": "Beeldelementen #84",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=83&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670675&token_id_hash=0x4a766be626b0374f38b5d9a1f564ebd2d26f06030182a7b39ebc0da7e4fe33e2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670675"
+        }
+      }
+    },
+    {
+      "id": "023f103c-d941-455b-9ff8-f22e9b4d7585",
+      "title": "Beeldelementen #85",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=84&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670676&token_id_hash=0x3957c884a8d393e4fbd9eec375286ee35e122a6f2d98b2270ccae1517dabc975",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670676"
+        }
+      }
+    },
+    {
+      "id": "8294cf74-0c64-40b5-a55a-4a29b7b29bbe",
+      "title": "Beeldelementen #86",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=85&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670677&token_id_hash=0xf3c301e632ba0679f35dbbdfbd7e35de8569252295eb82d1b7b73cb45bb2c326",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670677"
+        }
+      }
+    },
+    {
+      "id": "062409e2-3dfe-4cdb-9bd2-6d82fb326d21",
+      "title": "Beeldelementen #87",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=86&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670678&token_id_hash=0xddc33167428610a20664dd7101f017c5a8d599b0125c1c4e207f6c38ef5b93f7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670678"
+        }
+      }
+    },
+    {
+      "id": "7bfd5494-d32b-47f1-8d05-cc002316c5fa",
+      "title": "Beeldelementen #88",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=87&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670679&token_id_hash=0x968c4a7fbe9fd2dbd2cd5c14cc22f221729a4a6ddfa484c8d438ea011925aad2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670679"
+        }
+      }
+    },
+    {
+      "id": "2550ed7f-de48-4ffb-82d1-a3c2bf191cf1",
+      "title": "Beeldelementen #89",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=88&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670680&token_id_hash=0xbfb83b9b7433d0681a35dbc78895b449a5911dd5f20401100e0d9c775ac00bf7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670680"
+        }
+      }
+    },
+    {
+      "id": "c2f4d0ca-e740-4790-a0df-58e22bd15cf8",
+      "title": "Beeldelementen #90",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=89&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670681&token_id_hash=0x357afb167779f9f77b2b86c3ddc077dcd133c0e40f6823a5c1c070f3d156fe4e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670681"
+        }
+      }
+    },
+    {
+      "id": "d051b565-b5ce-49e7-a28d-705f356fc432",
+      "title": "Beeldelementen #91",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=90&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670682&token_id_hash=0x970586a8ba8b3d4e0b34c817ad07659f8c14edf8afe7db854d1ab52e96d05535",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670682"
+        }
+      }
+    },
+    {
+      "id": "754473d9-9edb-4282-ab00-82797b949fb2",
+      "title": "Beeldelementen #92",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=91&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670683&token_id_hash=0x138ff7777aa24e9d3df7e1d4afcffa4cbab673c0ada059134fd08afee7144567",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670683"
+        }
+      }
+    },
+    {
+      "id": "fd633535-fd24-4070-a993-6c3e687d6908",
+      "title": "Beeldelementen #93",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=92&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670684&token_id_hash=0x95b40c13b2fc7860048dbdc1f3ff62ed643c3c14b16f5c96dd67b8123643842e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670684"
+        }
+      }
+    },
+    {
+      "id": "9496b0fe-c5a7-4d88-b4c3-6b51c5e95342",
+      "title": "Beeldelementen #94",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=93&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670685&token_id_hash=0xd307a71411cf0d93d7762d88f7ce167cc01273631c2c809fef039e3e94d8b4d6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670685"
+        }
+      }
+    },
+    {
+      "id": "28dc887f-7eb3-4d33-8675-da9d63d9ff9f",
+      "title": "Beeldelementen #95",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=94&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670686&token_id_hash=0xd2f9f06c2b303b90a52cf603798541fd4654479c41682ded4ff3d3f7f5165097",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670686"
+        }
+      }
+    },
+    {
+      "id": "3c48763a-5d80-4bff-9ba2-abbfa2eef048",
+      "title": "Beeldelementen #96",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=95&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670687&token_id_hash=0x3fe6abbf933a2fc3c27bf179ea13b894278b28da0b0071522b5bbc82a65d8588",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670687"
+        }
+      }
+    },
+    {
+      "id": "5423beb3-9318-408c-aeb3-caa577c2ed6b",
+      "title": "Beeldelementen #97",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=96&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670688&token_id_hash=0xcb2ae13a71e4e10826dd01e7654f9849db4218ee8a7ece86d538a0bb883e676c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670688"
+        }
+      }
+    },
+    {
+      "id": "3148a11d-d226-4887-b58a-b42d57595cf9",
+      "title": "Beeldelementen #98",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=97&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670689&token_id_hash=0xa53d1fb3de5070f11afb0f2eaa981e949949bdba5ea7044ab96967194aaeca40",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670689"
+        }
+      }
+    },
+    {
+      "id": "a80c24ec-2540-47bb-9a91-d2fd9502bfb0",
+      "title": "Beeldelementen #99",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=98&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670690&token_id_hash=0x22b31e7ec199f80b60d7a57ee8e2cda2b380f6c755c28b92f09fb071ac59086a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670690"
+        }
+      }
+    },
+    {
+      "id": "495c2661-be52-4b8e-84dd-3aaece5bc459",
+      "title": "Beeldelementen #100",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=99&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670691&token_id_hash=0x43f807f882e0c60b31c777b67cf7703f91f1044cf3e4b39b1753fa4cb98931bc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670691"
+        }
+      }
+    },
+    {
+      "id": "38a4ee08-561f-43d1-bc54-dd24e8fdf793",
+      "title": "Beeldelementen #101",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=100&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670692&token_id_hash=0x17ce95e7159f2e61edf9a639f14660c20cfb43cdd443ffb735fd7462d3a0d6d5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670692"
+        }
+      }
+    },
+    {
+      "id": "4cadcf73-1ec8-400c-ac3e-9f143667931a",
+      "title": "Beeldelementen #102",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=101&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670693&token_id_hash=0x02ea5a375e633894d14e5ed8907c08d5b538554a710411cf050e3424c055bdc1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670693"
+        }
+      }
+    },
+    {
+      "id": "d2167bef-bc90-43d4-810d-6c8dfb733add",
+      "title": "Beeldelementen #103",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=102&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670694&token_id_hash=0x248b69521d45e927c1415369911f3a90ea216a09597cd41a8ea0cbf7e3dd1582",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670694"
+        }
+      }
+    },
+    {
+      "id": "53ccc70f-fa3a-41af-a5c9-df1d1944b05d",
+      "title": "Beeldelementen #104",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=103&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670695&token_id_hash=0x12b61a53ff5bc2a382b8a1e6193c5f808a6d60c26dc440c9844a8217ee6a37a1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670695"
+        }
+      }
+    },
+    {
+      "id": "ae64118f-af40-4f0d-b5c5-407138bed4d3",
+      "title": "Beeldelementen #105",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=104&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670696&token_id_hash=0x3abaeb9a0f05b2c46478206fdfb34539dda3e1ba7f3e377fc1d89620df748f8f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670696"
+        }
+      }
+    },
+    {
+      "id": "5820ddc3-cf9c-4f7b-bddd-5a38e366ebeb",
+      "title": "Beeldelementen #106",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=105&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670697&token_id_hash=0x8f34ed264bc959d0ce8d722352cae3d64ec06a181348fe29254ed88f74d53442",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670697"
+        }
+      }
+    },
+    {
+      "id": "a007a062-e7a0-4cf3-9ba0-15747b150385",
+      "title": "Beeldelementen #107",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=106&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670698&token_id_hash=0x729771c049e59213afd027b7e793442e324f833ac38e85263fa0ea070b165ac8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670698"
+        }
+      }
+    },
+    {
+      "id": "d5f95f78-8dec-4c4a-9c4d-0f2a264e08ca",
+      "title": "Beeldelementen #108",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=107&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670699&token_id_hash=0x2ef8f9429c69be38e405d40dcc88a19c758a25141478d243b3fc17b54c39863a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670699"
+        }
+      }
+    },
+    {
+      "id": "21da46ae-bd00-4f37-ad4d-805f3672b817",
+      "title": "Beeldelementen #109",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=108&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670700&token_id_hash=0x78b29c79a15b8d0e3ef9fb7a0f9a243cf2a16e2089a5a6474d3d6f015662debe",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670700"
+        }
+      }
+    },
+    {
+      "id": "6d2d35dc-f922-473d-9566-82dbe38a4fbb",
+      "title": "Beeldelementen #110",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=109&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670701&token_id_hash=0x1d8099443449516542f284fe9a07ca0bb3206da7e11a374585e4e05ac733e794",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670701"
+        }
+      }
+    },
+    {
+      "id": "b01064da-a71d-4e12-942f-b9cb5abafce0",
+      "title": "Beeldelementen #111",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=110&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670702&token_id_hash=0x4bf6ca92f7b888733a51f09871d3914029214993d6b74eb620ab9de6f20a35e7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670702"
+        }
+      }
+    },
+    {
+      "id": "974424ed-5886-4536-8bf9-4859f5e53eed",
+      "title": "Beeldelementen #112",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=111&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670703&token_id_hash=0xcdea353a78b45b69c85930b9f86af1219065beb439d4e5c4d91c4a6930f84d65",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670703"
+        }
+      }
+    },
+    {
+      "id": "c1520f9f-713a-46ce-951a-513946cad5d8",
+      "title": "Beeldelementen #113",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=112&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670704&token_id_hash=0x97caaa67731607c885ee3eda05cb8b5bd37ff59d6146cc4be147ce54bceef3cd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670704"
+        }
+      }
+    },
+    {
+      "id": "2cbb082f-5014-403e-b638-c2213e87708f",
+      "title": "Beeldelementen #114",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=113&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670705&token_id_hash=0x4ece3211a2092699cd586b73203e4bcd3a4d067d06a5df024ff63eec6991b99b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670705"
+        }
+      }
+    },
+    {
+      "id": "e04549b9-d435-41e7-8d03-3dd7b89df03a",
+      "title": "Beeldelementen #115",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=114&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670706&token_id_hash=0x58ce53a330d3163cc2d4018bd863b48fe923dcfd072d47119ef8a71b4bea3f3b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670706"
+        }
+      }
+    },
+    {
+      "id": "5501bca1-bd07-4f1e-8dbc-20b15c3a3c59",
+      "title": "Beeldelementen #116",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=115&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670707&token_id_hash=0xf87988f9c5415b2adf12e1a35a8a15456134103d2fa864031457a949163c6773",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670707"
+        }
+      }
+    },
+    {
+      "id": "a725a150-423a-4875-8772-537c489a8994",
+      "title": "Beeldelementen #117",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=116&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670708&token_id_hash=0x92b3c64287e363c6b70c529a1e6e47188e4cc3dc22edf0bdf4aceb57d7c8e59d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670708"
+        }
+      }
+    },
+    {
+      "id": "7e88e787-f3d4-48b2-8cc3-e5cda0ce0859",
+      "title": "Beeldelementen #118",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=117&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670709&token_id_hash=0x16e1ff95bb2f7d0ee44762ea43b940e586fd14cf7cff1ae12328a63530aba00e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670709"
+        }
+      }
+    },
+    {
+      "id": "7b9ea568-e180-4e5b-8054-7f51ff6d68c1",
+      "title": "Beeldelementen #119",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=118&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670710&token_id_hash=0x51f46eba29eb2ddeb935b816811eeb8c46ad7e0c16d667aa1d3c1f59d63eb0be",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670710"
+        }
+      }
+    },
+    {
+      "id": "b48b24d8-9108-4098-b5db-938644156f61",
+      "title": "Beeldelementen #120",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=119&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670711&token_id_hash=0x1231bbfccbfb448f54219643a9e729be45ee8663b7ca15e4adabebeab33579bc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670711"
+        }
+      }
+    },
+    {
+      "id": "0918e32e-8cc1-4418-8b84-6e10ef7692a5",
+      "title": "Beeldelementen #121",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=120&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670712&token_id_hash=0xab3ed72e6fae07bc977b59551251e0e535cbb83d4e9ea351827595b3ac880977",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670712"
+        }
+      }
+    },
+    {
+      "id": "bbf1e121-2f47-4f71-9d1a-6a7c126abcb8",
+      "title": "Beeldelementen #122",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=121&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670713&token_id_hash=0xcf24f7f7579bceb06cf633bbf2b0bba493137833ae9647cea4b04380af003491",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670713"
+        }
+      }
+    },
+    {
+      "id": "7454cad6-420c-4886-a5fb-07593ae5cba9",
+      "title": "Beeldelementen #123",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=122&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670714&token_id_hash=0xce0a48d0c47d64b1e82c0eb6f4c567751e3d4ad70aac19f4e971a58673eafedc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670714"
+        }
+      }
+    },
+    {
+      "id": "3f183ee1-6e40-4bd8-971e-e0e17c238ba3",
+      "title": "Beeldelementen #124",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=123&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670715&token_id_hash=0x96328e2da88c98a312cf4c334c20b1684a65a08bfaa5b878259bc0ef21c05d34",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670715"
+        }
+      }
+    },
+    {
+      "id": "cb979861-ebf7-4e5f-803d-af7d3111a59d",
+      "title": "Beeldelementen #125",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=124&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670716&token_id_hash=0x8cb14f7b4439115c91a11d96bff734e661c8ef08541b023ed3d07920cd885c41",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670716"
+        }
+      }
+    },
+    {
+      "id": "2cbf386e-ab13-4871-8edc-65b9047da29d",
+      "title": "Beeldelementen #126",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=125&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670717&token_id_hash=0xb65183210dfab427958f8053ef31cf861256ee30622bf66cf3f4f975f84e992a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670717"
+        }
+      }
+    },
+    {
+      "id": "b48cf732-bff2-4c98-8c56-3a8575189f64",
+      "title": "Beeldelementen #127",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=126&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670718&token_id_hash=0xea058c7c13818004b12ac4113af2350d69099f69672dce8b180a37f80483b5a8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670718"
+        }
+      }
+    },
+    {
+      "id": "09f71611-214e-4282-9bce-45816eba67cf",
+      "title": "Beeldelementen #128",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=127&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670719&token_id_hash=0x0db41f764c60b2c16b346b255ef3b0c04f6bf19815485f56bf098720f467b65d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670719"
+        }
+      }
+    },
+    {
+      "id": "18587d6a-8e71-4767-8bd0-64bc6d717d3a",
+      "title": "Beeldelementen #129",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=128&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670720&token_id_hash=0xfd74ae4396099ad85033a5522a8d459e988f9fdb7e59a395f428f210b0d1ef65",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670720"
+        }
+      }
+    },
+    {
+      "id": "61cbd1bc-9826-4598-ac39-d4b49492b8d7",
+      "title": "Beeldelementen #130",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=129&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670721&token_id_hash=0xc0320f860e782aa70c72abf59060bfd51303910c010612728fd6aae13e38f65b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670721"
+        }
+      }
+    },
+    {
+      "id": "31e01901-0c74-4a87-9721-94cae2f05cc7",
+      "title": "Beeldelementen #131",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=130&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670722&token_id_hash=0x500a76d90cabe72599d3ada4837858e7f130d44ec637db687f3eebbd45c084d7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670722"
+        }
+      }
+    },
+    {
+      "id": "9f561fe3-2961-43e4-8aa5-782764cd10ea",
+      "title": "Beeldelementen #132",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=131&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670723&token_id_hash=0x1b232a7022b40f84e6a7b7265833163d956852e05517bf7bf2a96f894a0f077d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670723"
+        }
+      }
+    },
+    {
+      "id": "15fd2c8b-4dca-46ba-85a0-d3cfe0e09439",
+      "title": "Beeldelementen #133",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=132&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670724&token_id_hash=0xcbf9dcede1692ea6184c530fbac06d100e9d07011dcde314065875e9964b9195",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670724"
+        }
+      }
+    },
+    {
+      "id": "f080a927-d892-4595-8072-4b249f51119f",
+      "title": "Beeldelementen #134",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=133&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670725&token_id_hash=0x94e7bbd3b322cf2488d93af03e492b20f465b94b5a61790926b2226395d529cf",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670725"
+        }
+      }
+    },
+    {
+      "id": "8d931e19-2f2b-4689-8086-f90bdab902af",
+      "title": "Beeldelementen #135",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=134&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670726&token_id_hash=0x4e8c254472c66da352716c2699320295e847ab39ab43c0036b03a9738cf892a1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670726"
+        }
+      }
+    },
+    {
+      "id": "ad3488b4-265e-44dc-b231-e3ecac2061b4",
+      "title": "Beeldelementen #136",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=135&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670727&token_id_hash=0x3e4a9126033b9e372f41d9d498bbadbad3b641ea3e257c04ffeed792df20d52b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.514Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670727"
+        }
+      }
+    },
+    {
+      "id": "5aa73bba-2e31-4c03-a453-646d21da24b1",
+      "title": "Beeldelementen #137",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=136&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670728&token_id_hash=0x0a214d2c4bc80062c59336543a27b7f023a9ff921e60d375ddf8204f92f9981b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.515Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670728"
+        }
+      }
+    },
+    {
+      "id": "ccbc57b4-4443-473f-a6c9-6101261e495f",
+      "title": "Beeldelementen #138",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=137&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670729&token_id_hash=0x7fdaabfc5c16a7f3fc35baf9b22693d26c6dc678c88f79cb42d573e24b0f1206",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.515Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670729"
+        }
+      }
+    },
+    {
+      "id": "f2922745-fa78-44c7-8699-5f98cdb2f1f6",
+      "title": "Beeldelementen #139",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=138&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670730&token_id_hash=0xd926e451e22490a59b82ba4dc88b6b239f3d4be13c62ece8986acbe2828b9302",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.515Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670730"
+        }
+      }
+    },
+    {
+      "id": "4a45b30a-e854-4477-82aa-a371cef17200",
+      "title": "Beeldelementen #140",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=139&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670731&token_id_hash=0x9ce0bdf48d7953d9f4adb87dfa7c3f06a50b9f4ea50d1a8b68567a22586a043e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.515Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670731"
+        }
+      }
+    },
+    {
+      "id": "6806bced-c910-4442-b0e9-f2e6a72d667a",
+      "title": "Beeldelementen #141",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=140&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670732&token_id_hash=0x9d88cd658bb2101237ef9759fe9dddb34e167c3a262ffc71e2aef80e52c72004",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.515Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670732"
+        }
+      }
+    },
+    {
+      "id": "9520ee09-170f-45f7-954a-bd90deb62a2d",
+      "title": "Beeldelementen #142",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=141&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670733&token_id_hash=0xf008f768ccfaa9a252288acec5a07241933822ffa6061a8eb64bb37545369d0a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.515Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670733"
+        }
+      }
+    },
+    {
+      "id": "0f746afa-b68b-4c75-9683-2491299d0607",
+      "title": "Beeldelementen #143",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=142&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670734&token_id_hash=0x6f0b4f74f38fe89dffbbf885872e8cdb0c0a1e10fb21485ca7e1958e7fe9145e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.515Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670734"
+        }
+      }
+    },
+    {
+      "id": "beca4f85-2591-457a-a737-c7bc2e031c37",
+      "title": "Beeldelementen #144",
+      "source": "https://cdn.feralfileassets.com/previews/15cc0e38-fabd-4529-907d-e71cf143ce85/1686683223/index.html?edition_number=143&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=4045563695846915711900312409516322895115670735&token_id_hash=0x698c2b57a8a14f423b2e87408effb7569f9b91220e53aae6acda89420cc98e1e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:24.515Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "4045563695846915711900312409516322895115670735"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

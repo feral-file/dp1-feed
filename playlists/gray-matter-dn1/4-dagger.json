@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "204b72f0-9773-4e3f-b72d-b109b7d696f7",
+  "slug": "dagger",
+  "title": "Dagger",
+  "summary": "In “Dagger,” an obelisk/dagger interrupts the dawning horizon with its vertical lithic shape, embodying an ironic and provocative statement. It appears on a stage set and again and again it plants itself tip down into the ground, a fiction of futile violence.  The integration of mythological elements recalls the classical monumental tradition. This particular Minotauress being is a repeated theme in the artist’s work. Facing-off, their horns promise a danger that the clay-made blade cannot fulfill.<br/>Interaction: <br/>Left mouse button/touch drag to rotate the scene<br/>Scroll wheel/pinch to zoom<br/>Wait or click object to topple<br/>Wait 60 seconds for reset<br/>This artwork comes with an application for offline viewing and a 3D printable digital file.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/522c023d-8dc7-4448-9964-07e8a1634200/raw",
+  "created": "2026-02-25T09:58:51.599Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "4ccb7fde-aa9c-4dd5-876a-f695970e6810",
+      "title": "Dagger AE",
+      "source": "https://cdn.feralfileassets.com/previews/bd0c4207-f8e7-49db-919e-e2913f39d59c/1667599797/?edition_number=0&blockchain=ethereum&contract=0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5&token_id=92208933710796125770590251699325730336243064425460091178260788340701093768779&token_id_hash=0x8f1ab2c8b8dc683984093fa2c3cf6a62fb9856d5de28db5d358ea4db803d81f3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:51.599Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5",
+          "tokenId": "92208933710796125770590251699325730336243064425460091178260788340701093768779"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

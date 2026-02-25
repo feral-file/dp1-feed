@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "d5055961-00ad-4d9c-b7c2-5702f245f79e",
+  "slug": "haristory",
+  "title": "Haristory",
+  "summary": "Recalling the display of ancient Greco-Roman sculptures, the pedestal in “Haristory” holds a head fragment and echoes the style of non-finito aesthetics or melting digital morphs. Of course, in this case the work was done, broken, and re-done, scanned, placed, and finished. The strange and ambiguous protrusion of the hair troubles the usual relation with the archeological artifact, evoking a dystopian atmosphere. And what is this sculpture made of?<br/>Interaction: <br/>Left mouse button/touch drag to rotate the scene<br/>Scroll wheel/pinch to zoom<br/>Middle mouse button/Arrow keys/two finger drag to pan the view<br/>This artwork comes with an application for offline viewing and a 3D printable digital file.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/11998e30-9424-4e67-bdd2-6e5683e08200/raw",
+  "created": "2026-02-25T09:58:51.600Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "16e1db9f-4099-4eef-a9f7-81a6431d3281",
+      "title": "Haristory AE",
+      "source": "https://cdn.feralfileassets.com/previews/cc86cf63-6b79-4bba-9613-e362851cbbdc/1667587386/?edition_number=0&blockchain=ethereum&contract=0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5&token_id=67884599743201988766725462649025530234665379733525547672892980733959710599814&token_id_hash=0x5410a5928fc7eabf1125dc0623cff8cb3f8681b13ceafe805a9c858d5de4868e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:51.600Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x6e82e4B398Ca4137007ba69ddD6FF699334d13b5",
+          "tokenId": "67884599743201988766725462649025530234665379733525547672892980733959710599814"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

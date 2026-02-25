@@ -1,0 +1,526 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "9321dd86-2510-4e80-a1b0-d206e276ab6e",
+  "slug": "play-from-memory",
+  "title": "Play from Memory",
+  "summary": "<p>Holly Herndon and Mat Dryhurst’s <em>Play from Memory</em> (2024) is a series of machine-generated works informed by Gunild Keetman and Carl Orff’s Schulwerk, a set of music education methods and “imitation games” for children developed in the 1920s. Orff and Keetman hoped to teach children to improvise freely from memory, training them with instructions in the form of text prompts, mnemonic games, and graphic symbols. Herndon and Dryhurst created sixteen new machine learning models that produce fantastical orchestral / choral sounds and imagery of imaginary instruments, performances, and lessons. <em>Play from Memory</em> highlights striking similarities between the ways in which Orff and Keetman aspired for children to learn music, and how we train machines to learn music today.</p>\n",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/8f1e6eb0-9df9-467f-4c31-5723f9062400/raw",
+  "created": "2026-02-25T09:59:36.790Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "6a7c23f9-c3ce-4344-837c-20dc411791b9",
+      "title": "Play from Memory #1",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.789Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575936"
+        }
+      }
+    },
+    {
+      "id": "786e07f0-509c-4233-bce1-c764232b3ecb",
+      "title": "Play from Memory #2",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.789Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575937"
+        }
+      }
+    },
+    {
+      "id": "55d1d169-f5b3-4e01-9bae-7a2f9f2cbb28",
+      "title": "Play from Memory #3",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.789Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575938"
+        }
+      }
+    },
+    {
+      "id": "4170375f-9b60-434c-b85f-61da8a9bd657",
+      "title": "Play from Memory #4",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.789Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575939"
+        }
+      }
+    },
+    {
+      "id": "02bc8062-8c5d-4639-b5ab-a57865f08996",
+      "title": "Play from Memory #5",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.789Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575940"
+        }
+      }
+    },
+    {
+      "id": "473ac58e-c4b9-4d72-ab63-d3d08d74ac89",
+      "title": "Play from Memory #6",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.789Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575941"
+        }
+      }
+    },
+    {
+      "id": "b4c6dd22-d732-4c81-bec9-ea9b861928ba",
+      "title": "Play from Memory #7",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.789Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575942"
+        }
+      }
+    },
+    {
+      "id": "e2fd1ae3-d80c-4fd3-bade-50999ae1441a",
+      "title": "Play from Memory #8",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.789Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575943"
+        }
+      }
+    },
+    {
+      "id": "8b56991a-6dbf-4222-809c-5eedf59c328b",
+      "title": "Play from Memory #9",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.789Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575944"
+        }
+      }
+    },
+    {
+      "id": "305ed9e4-80dd-41a8-a155-d665b201fbd0",
+      "title": "Play from Memory #10",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.789Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575945"
+        }
+      }
+    },
+    {
+      "id": "d68dbd91-ed91-44de-a3a2-7808fd73ba41",
+      "title": "Play from Memory #11",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/10",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.789Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575946"
+        }
+      }
+    },
+    {
+      "id": "19451641-6f82-4b13-aaf0-b2ddf27a6523",
+      "title": "Play from Memory #12",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/11",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.789Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575947"
+        }
+      }
+    },
+    {
+      "id": "cc5b7376-d44e-4471-a16e-47fd45f4abd0",
+      "title": "Play from Memory #13",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/12",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.789Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575948"
+        }
+      }
+    },
+    {
+      "id": "82ca0a39-7281-4dad-bf13-8968f8d57473",
+      "title": "Play from Memory #14",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/13",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.789Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575949"
+        }
+      }
+    },
+    {
+      "id": "6d63c1cf-7044-4796-ac15-dcc67b162339",
+      "title": "Play from Memory #15",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/14",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.789Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575950"
+        }
+      }
+    },
+    {
+      "id": "f7382e89-2622-4467-97ad-32571964bdcd",
+      "title": "Play from Memory #16",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/15",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.789Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575951"
+        }
+      }
+    },
+    {
+      "id": "edc2ac23-dc87-45ff-9348-45879e5287e3",
+      "title": "Play from Memory #17",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/16",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.790Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575952"
+        }
+      }
+    },
+    {
+      "id": "b9f91567-f16c-47d9-bf86-a54edd74e2d1",
+      "title": "Play from Memory #18",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/17",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.790Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575953"
+        }
+      }
+    },
+    {
+      "id": "a026c05b-c6c9-4f12-a6dd-fd49970279f4",
+      "title": "Play from Memory #19",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/18",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.790Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575954"
+        }
+      }
+    },
+    {
+      "id": "ec4e0a8b-fa54-42ee-ad9b-4b840659ef55",
+      "title": "Play from Memory #20",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/19",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.790Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575955"
+        }
+      }
+    },
+    {
+      "id": "009409d1-11fa-46c9-8344-78cd2a490c41",
+      "title": "Play from Memory #21",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/20",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.790Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575956"
+        }
+      }
+    },
+    {
+      "id": "82eca569-00c3-414f-89ea-18de0480b519",
+      "title": "Play from Memory #22",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/21",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.790Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575957"
+        }
+      }
+    },
+    {
+      "id": "6ecc7e78-9d2a-4d92-9cd4-51f9e1050d22",
+      "title": "Play from Memory #23",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.790Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575958"
+        }
+      }
+    },
+    {
+      "id": "e76ff63b-663a-4b63-b68a-a5326cf5a28e",
+      "title": "Play from Memory #24",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/23",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.790Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575959"
+        }
+      }
+    },
+    {
+      "id": "aa28c92c-5a7e-4387-af5a-fb227c8e2389",
+      "title": "Play from Memory #25",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/24",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.790Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575960"
+        }
+      }
+    },
+    {
+      "id": "df7cfb4b-74a5-4650-86c9-d152d60cdebb",
+      "title": "Play from Memory #26",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/25",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.790Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575961"
+        }
+      }
+    },
+    {
+      "id": "76db1cd6-789c-4911-8230-1133b2ec1846",
+      "title": "Play from Memory #27",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/26",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.790Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575962"
+        }
+      }
+    },
+    {
+      "id": "283537ee-99dc-47ac-b2b2-b9b6257eff64",
+      "title": "Play from Memory #28",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/27",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.790Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575963"
+        }
+      }
+    },
+    {
+      "id": "99a6527c-822d-4a80-bec7-1be84f688e6c",
+      "title": "Play from Memory #29",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/28",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.790Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575964"
+        }
+      }
+    },
+    {
+      "id": "02c8f9f6-ec16-4ec6-9d1e-8479f3639cb4",
+      "title": "Play from Memory #30",
+      "source": "https://cdn.feralfileassets.com/previews/8d8e8feb-da80-4dc4-b2f0-b7c7a3472f29/1707427240/_unique-previews/29",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:59:36.790Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143445575965"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

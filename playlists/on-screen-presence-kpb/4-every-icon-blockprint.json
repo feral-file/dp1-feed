@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "cf5acb15-8a45-4b16-a944-1be5ca900450",
+  "slug": "every-icon-blockprint",
+  "title": "Every Icon: BlockPrint",
+  "summary": "Performance and Auction: May 31st, 2022 20:00 UTC+0 <br/>The live performance is open to the public. Collecting this Access Pass grants access to an editioned recorded video of the live streamed performance. <br/>Access Passes purchased before 20:00 UTC+0 on May 30th include access to control 10 pixels during the live stream and recorded video of the performance. Access Passes purchased after May 30th do not include interaction. Access Passes do not include a unique woodblock print on paper.<br/>The auction for the artwork created during the performance begins May 31st, 2022 20:00 UTC+0. The auction winner will collect a unique woodblock print on paper, digital still image of final configuration, and recorded live streamed performance.<br/>Since 1996, each iteration of John F. Simon Jr.’s Every Icon series has been, at its core, a 32 x 32 grid on a digital screen, divided into 1024 squares, each representing a single pixel. But unlike prior versions, “Every Icon: BlockPrint” does not have the goal of moving through every computational variation, pixel by pixel, until the grid transforms into a black square. Instead, the artwork introduces variables related to chance and mediated human intervention that can only reflect a concentrated moment in space and time. <br/>Participants are each assigned ten of 1000 available pixels which they can turn either on or off in the span of 30 minutes. Once the clock stops, the grid will freeze. Whether the result is a distinguishable image or an abstract blotch, Simon will proceed to create a traditional woodblock print on fine art paper with oil-based matte black ink, mirroring the born-digital outcome.",
+  "coverImage": "https://imagedelivery.net/5BJzhBHeVhlhbn58hvcXAQ/121e9b83-072d-43d5-3aa3-20d3aa950500/raw",
+  "created": "2026-02-25T09:58:17.657Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "8c2fb1de-af7c-48b9-abd9-a1a69880b121",
+      "title": "Every Icon: BlockPrint AP",
+      "source": "https://cdn.feralfileassets.com/previews/c328998f-27d4-496f-acea-7c971416110e/1651621817/preview.mov",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:17.657Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaDB387798599f5777CD0531c2ECb36007C1D1a51",
+          "tokenId": "88382476355344623856629371528612093380120156796134516390221029509011885779057"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

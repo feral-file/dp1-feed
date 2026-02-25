@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "55e2b8bc-4186-4abc-8aa6-feb14fc58555",
+  "slug": "a-picture-can-t-take-my-elan-vital",
+  "title": "A Picture Can’t Take My Elan Vital",
+  "summary": "In “A Picture Can’t Take My Elan Vital,” Cibelle Cavalli Bastos singles out a still image output of generative portraiture using StyleGAN2. The data set consists of Google search pictures of Cibelle Cavalli Bastos when they were known as a cis woman singer, as well as selfies taken while transitioning to non-binary and aging, from a personal archive spanning 20 years and their Instagram (@aevtarperform).",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/3f98f1b6-23b8-4e60-a50c-2de7fc74fb00/raw",
+  "created": "2026-02-25T09:58:57.938Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "d277608e-5e9d-430d-9154-6b9274e81765",
+      "title": "A Picture Can’t Take My Elan Vital AE",
+      "source": "https://cdn.feralfileassets.com/previews/c6befe2e-1934-40ce-958c-2011e425c511/1672939318/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:57.938Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE46A41b840176b62983FC71162dc9faEAC4D9bcB",
+          "tokenId": "4747622386996134347530103051137512757478489873315040866696710228902591236899"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

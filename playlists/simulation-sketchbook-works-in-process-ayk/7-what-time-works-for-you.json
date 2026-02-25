@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "09bfb814-05cd-4738-b009-d61113d5b035",
+  "slug": "what-time-works-for-you",
+  "title": "What Time Works for You?",
+  "summary": "Itzel Yard, known as IX Shells, spent years refining her relationship to art through code during the 2010s. In spring 2021, the public’s interest in digital art surged on the back of a then-burgeoning NFT wave — and a historic sale for Yard in May of that year situated her at its epicenter. Like an indie musician who lands a major chart-topper years into their career, everything about her professional experience shifted. Suddenly sought after by museums, galleries, auction houses, and industry events around the world, Yard had to adjust to a new social dimension in her practice — one entailing travel; communications with curators, organizers, and producers across different timezones; and the realities of running out of hours for sitting with ideas and artmaking. “What Time Works for You?” — referencing a message she received from two senders simultaneously — is a sketch created in these cracks and corners in her travel schedule. All of IX Shells’s work, regardless of how in-process or complete, channels a slice of her present-tense personal narrative — a moment, a memory, a song. Her essential fluency with digital materials becomes a sort of baseline flow state, from which a range of expressions might emerge — spanning glitch, patterns, color fields, and more. With “What Time Works for You?” we find a juxtaposition of harmony and tension, sine waves striated by bright lines and colors that contrast the breezy background. What results is a sketch of velocity and stillness, the experience of light from slanted perspectives, when time runs strange.",
+  "coverImage": "https://imagedelivery.net/5BJzhBHeVhlhbn58hvcXAQ/7753c9ff-412d-4479-5c2a-e412ddd2d700/raw",
+  "created": "2026-02-25T09:58:47.725Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "fca3aee3-8289-4ac1-bb30-d1bed56ad1e0",
+      "title": "What Time Works for You? AP",
+      "source": "https://cdn.feralfileassets.com/previews/00bdcc0b-72e8-4681-8311-c57319c50d4a/1666231585/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:47.725Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1Q4SBM941oAeu69v8LsrfwSiEkhMWJiVrp",
+          "tokenId": "36945307147423321808609930534674505098889999291546183974173603037809205329271"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

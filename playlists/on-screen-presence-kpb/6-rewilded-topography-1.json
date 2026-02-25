@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "961b3ada-6d96-4b28-a716-685502a6fc90",
+  "slug": "rewilded-topography-1",
+  "title": "Rewilded Topography #1 ",
+  "summary": "Performance and Auction: June 1st, 2022 17:00 UTC+0 <br/>The live performance is open to the public. Collecting this Access Pass grants access to an editioned recorded video of the live streamed performance.<br/>Access Passes purchased before 17:00 UTC+0 May 31st include entry into a lottery to be chosen as one of 6 participants during the live streamed performance and recorded video of live streamed performance. Access Passes purchased after May 31st do not include interaction.<br/>The auction for the artwork created during the performance begins June 1st, 2022 17:00 UTC+0. The auction winner will collect a unique video of Lin’s performance and recorded video of live streamed performance, sent within seven days after live performance.<br/>“Rewilded Topography #1” is a tabletop sculpture designed as a dynamic, organic urban landscape. The artist created it in response to an increase in artworks inspired by simulated characteristics or near replicas of nature portrayed on a digital screen. <br/>A type of Stockholm Syndrome has emerged in the form of a greater comfort with confinement. With increasing interest in digital portals leading to the supposed “metaverse,” there is a growing disregard for the natural universe taking hold, contributing to the acceleration of human demise. Proxies for nature may distract from the urgency around the human species impending extinction. Yet anecdotal and neurobiological findings have made it clear to Lin that identifying oneself with and immersion within the natural world is essential to survival.<br/>During the livestream, chosen participants will be invited to enter a date which in turn provokes a set of predetermined actions performed in the landscape, leading into a final performance by the artist.",
+  "coverImage": "https://imagedelivery.net/5BJzhBHeVhlhbn58hvcXAQ/1387fb4f-59a3-4fa6-7adc-fea2528d6400/raw",
+  "created": "2026-02-25T09:58:17.658Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "4f01696b-d357-4067-aff2-4aca930c93a7",
+      "title": "Rewilded Topography #1  AP",
+      "source": "https://cdn.feralfileassets.com/previews/7b77f5d5-fefc-4a77-a40c-e9e8e5f8f9cb/1679631642/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-25T09:58:17.657Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xaDB387798599f5777CD0531c2ECb36007C1D1a51",
+          "tokenId": "97339798142417990651546655250958447204136795354879494670137097919969032689459"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}
