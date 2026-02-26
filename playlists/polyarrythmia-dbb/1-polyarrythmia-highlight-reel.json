@@ -1,0 +1,169 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "6dde0787-d7cf-4654-ade6-c1e29ea1b8bd",
+  "slug": "polyarrythmia-highlight-reel",
+  "title": "Polyarrythmia — Highlight Reel",
+  "summary": "With this solo exhibition of electronic musician Jan St. Werner, the idea is to put audio at the forefront, positioning it at the same level as visual work within the framework of digital art. The nine compositions that make up Polyarrythmia&mdash;which can be taken as a set of sound works, a performance, an exhibition, an album&mdash;are being released as NFTs through Feral File, available both as individual compositions and a full set. Here&rsquo;s St. Werner on Polyarrythmia, in his own words: \n\n&ldquo;Polyarrythmia is an album or an exhibition or a selection of pieces, or maybe just a narrative in sound. None of the compositions have a strict metronome; there is no click or clock. The album as a whole has these interlocking peaks, micro-moments and movements, and then larger arcs, which meet and then disperse. To me that is very much what rhythm is, thus the name Polyarrythmia. \n\n&ldquo;The compositions were mastered to be as present and intense as possible. The actual files that people download when they collect will provide the maximum resolution that people will be able to play back. I&rsquo;m happy for listeners to experience the compositions separately, but to me, Polyarrythmia is a set, it&rsquo;s a narrative as a whole. The pieces were all constructed in relation to each other, based on a visionary brain space, let&rsquo;s call it. I was thinking, how far can I let these things drift off? How much space can I give it to unfold and go its own way? When I draw it back, that&rsquo;s what becomes an individual composition or a piece.\n\n&ldquo;Polyarrythmia could be a musical. The whole record has this cabaret connotation, with the sounds doing odd things, stepping up or doing a weird little trick, or waving its hand and having a mustache or something. I also perceive it symphonically, an orchestra of unknown instruments. After all, maybe we still have to figure out what sound is. Maybe it helps to reconsider that idea. Hopefully some people will experience this exhibition not just as sound-based, but as something physical as well, a reconsideration of perceptual signal flow.\n\n&ldquo;I think that when we work in the field of art, or creating, it&rsquo;s a manifestation of thoughts. The tool that you use to make these thoughts manifest might be animation, or it might be paint, or graphics. Or the thoughts might translate into sound&mdash;sound that changes drastically, or holds a certain vibrational moment. I think of these decisions as a necessity or a convention, which is sometimes put upon us. I don&rsquo;t think anyone who works, let&rsquo;s say, in the field of visual arts thinks only visually, or in the field of sound arts thinks only in audio. The output is an expression of an artist&rsquo;s thoughts, emotions, and connections&mdash;how you respond to the world, and how you feed those thoughts back into your world.\n\n&ldquo;What&rsquo;s really interesting about working in this field of digital art is not that I&rsquo;m especially interested in the aesthetics of the digital or the futuristic. For me, it&rsquo;s more of an expression of intuitively interfacing with the world with the means you have at hand. With NFTs, there&rsquo;s a new possibility for doing that, and there&rsquo;s an intensity and sensuality to it, interfacing with direct call-and-response modes of communicating with the world and other humans. We can call it poetic, or experimental, or critical. We can call it interfering, bonding: us becoming some of that new technology, or that new technology feeding deeper into our neural-networks, maybe eventually becoming fully, intuitively performable without any physical restrictions at all. The digital realm is also a territory of unprecedented surveillance and manipulation, so we need to formulate how we want to push up against that, build alternatives, parallel strains, add bifurcations, and openings to the code.&rdquo;",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/40a03738-9a94-41eb-094a-ccff6923fd00/raw",
+  "created": "2026-02-26T07:00:45.845Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "5dda4753-11ab-4fe0-8bb0-7e59f53f7edc",
+      "title": "Vectoria AP",
+      "source": "https://cdn.feralfileassets.com/previews/398716ae-a05b-43bb-adb8-48e56114af6a/1634712504/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:00:45.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x63c8282C8705E7873B3302bd623b2Bc8eBCdDDD3",
+          "tokenId": "14808707129630868888589227812417910086411880728991208376740090448304616725942"
+        }
+      }
+    },
+    {
+      "id": "447cba7f-581f-4dd5-b962-871d50fb5c10",
+      "title": "Seizures Palace AP",
+      "source": "https://cdn.feralfileassets.com/previews/25a0daeb-ec6d-4bfd-8a24-11c44beb5629/1634763514/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:00:45.842Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x63c8282C8705E7873B3302bd623b2Bc8eBCdDDD3",
+          "tokenId": "40582763593648557811191937735826120826529602589973647619561551454755487140706"
+        }
+      }
+    },
+    {
+      "id": "fe31c16f-f357-41bf-963f-d41af9d8438b",
+      "title": "Glissbob AP",
+      "source": "https://cdn.feralfileassets.com/previews/ec014e95-c9de-4d2e-b464-d95c3f7ae19c/1634763465/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:00:45.843Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x63c8282C8705E7873B3302bd623b2Bc8eBCdDDD3",
+          "tokenId": "77719085104144097198726231368057412146921410219882134799509844267664927453113"
+        }
+      }
+    },
+    {
+      "id": "8be50ed8-a7eb-4bf3-99c1-09b94288f523",
+      "title": "Model Illusion AP",
+      "source": "https://cdn.feralfileassets.com/previews/dc8dddb8-7b4e-4d60-80da-071b92444514/1634763492/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:00:45.843Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x63c8282C8705E7873B3302bd623b2Bc8eBCdDDD3",
+          "tokenId": "75923882045973182498068776930244847216238027676476073917459690512026952616767"
+        }
+      }
+    },
+    {
+      "id": "3d4d1ad2-2c4f-45ac-9fff-65562c10c6a8",
+      "title": "Acrylic Interval AP",
+      "source": "https://cdn.feralfileassets.com/previews/3e8f638a-c7e2-403a-98d8-c185411825bd/1634763505/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:00:45.843Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x63c8282C8705E7873B3302bd623b2Bc8eBCdDDD3",
+          "tokenId": "107536683400151968778805872819354389507338832579302201024848977590280338321350"
+        }
+      }
+    },
+    {
+      "id": "74ad2016-cbdf-49a6-b9dc-45d0fb9d7a45",
+      "title": "Simultan Dub AP",
+      "source": "https://cdn.feralfileassets.com/previews/21a5bd39-64d0-490b-b578-6c6ecd317b7a/1634757768/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:00:45.844Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x63c8282C8705E7873B3302bd623b2Bc8eBCdDDD3",
+          "tokenId": "76736424928049829485849844656273424977657134288517050120796792001320464362641"
+        }
+      }
+    },
+    {
+      "id": "0d30f051-1dca-4c54-9703-b42665992f8d",
+      "title": "Contrafictionary AP",
+      "source": "https://cdn.feralfileassets.com/previews/93544620-dff8-4ae5-8194-3f527e8cc91e/1634763453/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:00:45.844Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x63c8282C8705E7873B3302bd623b2Bc8eBCdDDD3",
+          "tokenId": "62053976524648832076152227282003984725628786000338910737067080401221516797790"
+        }
+      }
+    },
+    {
+      "id": "64c4a19c-629c-48d4-b04f-d9d4fd9cb124",
+      "title": "Aufgezeichnete Luft AP",
+      "source": "https://cdn.feralfileassets.com/previews/e885a572-1acc-4b0c-9c63-c3f8e49bd302/1634763439/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:00:45.844Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x63c8282C8705E7873B3302bd623b2Bc8eBCdDDD3",
+          "tokenId": "43251899406434899853549271338683314467893470309931542100462149559534929717258"
+        }
+      }
+    },
+    {
+      "id": "62c395c9-aff6-4f2d-a9ab-c265c432bc5d",
+      "title": "Kubo Final AP",
+      "source": "https://cdn.feralfileassets.com/previews/03c9301f-e338-4419-8830-3e790fdc936b/1634763480/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:00:45.844Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x63c8282C8705E7873B3302bd623b2Bc8eBCdDDD3",
+          "tokenId": "35027941516673743192276364591774300289703430220545721189514811826570070766250"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

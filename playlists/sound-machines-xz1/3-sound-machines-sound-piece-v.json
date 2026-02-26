@@ -1,0 +1,526 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "eed31664-2a8d-48a7-b1d8-a636271ed4af",
+  "slug": "sound-machines-sound-piece-v",
+  "title": "SOUND MACHINES — SOUND PIECE V",
+  "summary": "<p>Yoko Ono's <em>SOUND PIECE V</em> (1996/2024) is newly realized as a digital, on-chain interactive work. Often working in instruction or text-based works, with <em>SOUND PIECE V</em> Ono transforms the traditional musical score into a simple written prompt that elicits everyday sounds — which are, in turn, revealed to be extraordinary: \"Tape the sound of friends laughing together. / Save it for a rainy day.\" Each time the piece is performed, participants can add their recordings, successively building an ever-evolving archive of sound.</p><br><p><em>In honoring the spirit of the piece, Yoko Ono encourages the work to be transferred to each subsequent participant, rather than sold.</em></p>",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/6eb8ef92-d1c7-41e9-b46a-9131abce7400/raw",
+  "created": "2026-02-26T07:04:07.764Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "7e7acc12-8625-4695-846b-6e62b96fb591",
+      "title": "SOUND PIECE V #1",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=0&artwork_number=1&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575936&token_id_hash=0x837502b404debe5e31d845af52132aaf7d8d0cc4b2d53da50891fc3de8893213",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575936"
+        }
+      }
+    },
+    {
+      "id": "561514da-2b04-4bdd-bfff-7290b4cab52a",
+      "title": "SOUND PIECE V #2",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=1&artwork_number=2&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575937&token_id_hash=0x2852836a9812d6c6059eade534778277ba3f36ecd2a0d93dcef432b85e693a28",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575937"
+        }
+      }
+    },
+    {
+      "id": "f7f68ae8-4b1f-4d08-bc78-8199971361fc",
+      "title": "SOUND PIECE V #3",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=2&artwork_number=3&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575938&token_id_hash=0xb041dfce54b1b0ed1c28c2d2345baec5fd637cd49e62b4397db58ea0d8249ab3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575938"
+        }
+      }
+    },
+    {
+      "id": "11f53b36-9ebc-4745-bc8d-66ae581ab4c1",
+      "title": "SOUND PIECE V #4",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=3&artwork_number=4&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575939&token_id_hash=0xf3e761988e76993f4597f6dabb70fd5b9c54f57089e8ef15670b908caf2ded06",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575939"
+        }
+      }
+    },
+    {
+      "id": "7ceeed47-e12f-403c-af99-e7536c44207f",
+      "title": "SOUND PIECE V #5",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=4&artwork_number=5&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575940&token_id_hash=0x9c84cbc878ca54598d31865e94c36584daecfcdebfb6414a554dcd790fda2252",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575940"
+        }
+      }
+    },
+    {
+      "id": "ae1eedd8-50a7-4ca1-bb97-1ab4bb22cafe",
+      "title": "SOUND PIECE V #6",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=5&artwork_number=6&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575941&token_id_hash=0xc16d7ce1d867a274beae414b2ec09f3997717c73d96dfe4bcd387080db01e7a3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575941"
+        }
+      }
+    },
+    {
+      "id": "e4113248-639a-435a-9a82-6c2610241d9d",
+      "title": "SOUND PIECE V #7",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=6&artwork_number=7&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575942&token_id_hash=0x74ce8f99643dd10024e486efde2992aa1da0cc967645b1dc74b3f058ac96c65a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575942"
+        }
+      }
+    },
+    {
+      "id": "7eee2a29-1243-4d3f-8b2f-70b2a41deda4",
+      "title": "SOUND PIECE V #8",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=7&artwork_number=8&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575943&token_id_hash=0xeeeeb2ac7c9a9f9e0980a238555282dea866aa788600eac42af0d1db9a6f8096",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575943"
+        }
+      }
+    },
+    {
+      "id": "6e98a0d0-d1ff-4727-8b5c-196e08948e0d",
+      "title": "SOUND PIECE V #9",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=8&artwork_number=9&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575944&token_id_hash=0x82134848f18c338d738662529b279ad10a04d69d77bf5a4ab85042d87523af6c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575944"
+        }
+      }
+    },
+    {
+      "id": "94722608-722e-4e44-ad0e-8301a3c2b8f1",
+      "title": "SOUND PIECE V #10",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=9&artwork_number=10&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575945&token_id_hash=0x7537a3761db1def5ccd3a66950e666f42bc473953db863f347bda619d7573f60",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575945"
+        }
+      }
+    },
+    {
+      "id": "ced0a5cf-5064-4d8d-b3c2-530e73922c10",
+      "title": "SOUND PIECE V #11",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=10&artwork_number=11&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575946&token_id_hash=0x3f2335f2acba33cf85108861896b34e55cc1e517ae89e9c5ef878d106ce9e3b9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575946"
+        }
+      }
+    },
+    {
+      "id": "3756e4f8-c552-4100-a455-3d465af7f476",
+      "title": "SOUND PIECE V #12",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=11&artwork_number=12&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575947&token_id_hash=0x076ff73d45abe2bad17fea926d47f2250603146d67c6580b91b3e47ce5287df3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575947"
+        }
+      }
+    },
+    {
+      "id": "708ffee0-e60b-4f5c-abd9-a9eaa54a5b42",
+      "title": "SOUND PIECE V #13",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=12&artwork_number=13&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575948&token_id_hash=0x9694ae3603d10df566060434b19fbb1ce6142f9b14b53547fc7f4317bae8fd69",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575948"
+        }
+      }
+    },
+    {
+      "id": "ad558799-2c1b-44c7-9250-075cf512b422",
+      "title": "SOUND PIECE V #14",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=13&artwork_number=14&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575949&token_id_hash=0x8a4eca9ad399d481d15402e949c59e295c35eee67bdf6df651b1af5fe6fef762",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575949"
+        }
+      }
+    },
+    {
+      "id": "8e238523-67fb-4927-a5f7-7b12cb18151a",
+      "title": "SOUND PIECE V #15",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=14&artwork_number=15&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575950&token_id_hash=0xb7e48e1e634475aeaf7539f6327f716b1a818689ffed412dffaa5d26ad519186",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575950"
+        }
+      }
+    },
+    {
+      "id": "653448f5-f9ba-4d74-afb1-5c33df3b76b8",
+      "title": "SOUND PIECE V #16",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=15&artwork_number=16&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575951&token_id_hash=0xc745c327b87c98ca95f80a5cd545209bb3bfd0567b5e325c2a06bf7f9c70eb46",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575951"
+        }
+      }
+    },
+    {
+      "id": "58641d24-d005-4999-9f76-64035d881b54",
+      "title": "SOUND PIECE V #17",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=16&artwork_number=17&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575952&token_id_hash=0x5198dcf7d00c67e97d974c182d3cf8c11fea6cf61679ec05984440c49ecc7445",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575952"
+        }
+      }
+    },
+    {
+      "id": "7ae3a65e-bc1e-4bc2-acf6-7c00c1d516e1",
+      "title": "SOUND PIECE V #18",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=17&artwork_number=18&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575953&token_id_hash=0xe452b96b39d1b8cedc100262e2d97964cb1156791cd6fb696234dbcbf3a0924d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575953"
+        }
+      }
+    },
+    {
+      "id": "dfff9d8c-5afe-406f-9fa4-8c10fc1ce630",
+      "title": "SOUND PIECE V #19",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=18&artwork_number=19&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575954&token_id_hash=0x3ec1e55d9bd305028f1290c262649d88560435940abe98806673b8489c6aeb4d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575954"
+        }
+      }
+    },
+    {
+      "id": "0ef380dd-f9a0-4faf-b8b7-016f5f28b91f",
+      "title": "SOUND PIECE V #20",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=19&artwork_number=20&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575955&token_id_hash=0xfe74f09cd287a2452c3d8179d3b06650e6b8bbf49dde99bc59476251e1754542",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575955"
+        }
+      }
+    },
+    {
+      "id": "f130a147-41ba-4cde-bd43-f24e0736172d",
+      "title": "SOUND PIECE V #21",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=20&artwork_number=21&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575956&token_id_hash=0xabd187662dc09c0ea2493a4247174591678892f078e85f8b72f46ad6675fb53f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575956"
+        }
+      }
+    },
+    {
+      "id": "0b067fa7-0e67-44dd-9898-9da602a0eb4e",
+      "title": "SOUND PIECE V #22",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=21&artwork_number=22&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575957&token_id_hash=0x426a1e0d51f1c76c8ea191ac685390a2d080355cba95901129e2a7368b092012",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.763Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575957"
+        }
+      }
+    },
+    {
+      "id": "b1f651ba-46fc-4dd2-b2e9-99a00202e0c2",
+      "title": "SOUND PIECE V #23",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=22&artwork_number=23&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575958&token_id_hash=0xce5a4bf3d88e9e792a22a1c3b38b1a5af04b6657866e6882e1ff616feb16fae2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.764Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575958"
+        }
+      }
+    },
+    {
+      "id": "0259ed5e-967d-46ae-86d3-f11fa2e41f85",
+      "title": "SOUND PIECE V #24",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=23&artwork_number=24&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575959&token_id_hash=0xdbdcd2286ffb6faaa85ab07cf2840d1d004babf1b37001d996e1bf4979027a92",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.764Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575959"
+        }
+      }
+    },
+    {
+      "id": "d04e417e-b4bd-41a7-9054-2c978b426077",
+      "title": "SOUND PIECE V #25",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=24&artwork_number=25&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575960&token_id_hash=0x50114ad5708ada3c908c628db1c5c9c05ae1a2fa9aaa2aa683fb9e6261d88de2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.764Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575960"
+        }
+      }
+    },
+    {
+      "id": "9853e6c1-4aee-400a-bb09-fb703f1236f4",
+      "title": "SOUND PIECE V #26",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=25&artwork_number=26&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575961&token_id_hash=0x9942bfc6cf17cc478f225cbff322db0f9d4160ca4024eac2d67f8222364a5209",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.764Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575961"
+        }
+      }
+    },
+    {
+      "id": "af6ad122-0cca-4a92-aa19-52cfb39cd174",
+      "title": "SOUND PIECE V #27",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=26&artwork_number=27&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575962&token_id_hash=0xfb6f82324e40b122580981988d939275d9741f4ac9d28f5eda045235781ac968",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.764Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575962"
+        }
+      }
+    },
+    {
+      "id": "d3479a0b-7cce-4288-9f38-f4f174da7bbd",
+      "title": "SOUND PIECE V #28",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=27&artwork_number=28&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575963&token_id_hash=0x72a0e5081566434c270860e82d9be8efcba4342fbed9aa184b1bdc6db546a217",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.764Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575963"
+        }
+      }
+    },
+    {
+      "id": "fa52ebed-a272-4f2d-ab0d-08d71399c157",
+      "title": "SOUND PIECE V #29",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=28&artwork_number=29&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575964&token_id_hash=0x32ba767574b68c125bc28c2e6fb7040133f75a3511d5624fbfafbc5217a27689",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.764Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575964"
+        }
+      }
+    },
+    {
+      "id": "24beebb2-40cf-4c8b-92cc-c60ba2757afb",
+      "title": "SOUND PIECE V #30",
+      "source": "https://cdn.feralfileassets.com/previews/a8cefd59-fd74-4ac1-9cdc-c91d1ef56e7e/1708927767/index.html?edition_number=29&artwork_number=30&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143446575965&token_id_hash=0x701a2f73406ff2eefd6e6c7fa328c6a01a6950175a78103d00ab860d44c23d96",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.764Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143446575965"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

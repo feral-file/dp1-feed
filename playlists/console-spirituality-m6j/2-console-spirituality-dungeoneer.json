@@ -1,0 +1,1104 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "6e4c2dfd-7008-4d9f-806c-0b0d86e7f2cf",
+  "slug": "console-spirituality-dungeoneer",
+  "title": "Console Spirituality — Dungeoneer",
+  "summary": "<p><em>Dungeoneer</em> is a series of 64 works in a self-running program that navigates a generative maze, raycasting images onto bricked walls as an NPC moves through a programmatic path. Each image serves as a portal to a dungeon floor … a figure tied to memory, used as texture for an endlessly repetitive pixel terrain.</p>\n<p>( CLICK/TAP IMAGE TO ENTER )</p>\n",
+  "coverImage": "https://cdn.feralfileassets.com/thumbnails/a3613c63-074d-4aaa-847d-b23a77512a90/1750664558",
+  "created": "2026-02-26T07:06:31.082Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "9628e96e-0be1-421a-8043-3855da000090",
+      "title": "00void",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/0/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.079Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622400"
+        }
+      }
+    },
+    {
+      "id": "a3c12c19-078c-4421-99f8-16318056fb68",
+      "title": "empty-lobby",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/1/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.079Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622401"
+        }
+      }
+    },
+    {
+      "id": "70b760b3-62bf-4eb1-9839-af36b8afe354",
+      "title": "small-god",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/2/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.079Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622402"
+        }
+      }
+    },
+    {
+      "id": "43dbfc65-82a3-4e01-8ce5-9787cf9ac276",
+      "title": "shadowww",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/3/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.079Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622403"
+        }
+      }
+    },
+    {
+      "id": "54dcc37d-5d22-46b4-971e-c2143e2bfb3f",
+      "title": "p-copy-3a",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/4/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.079Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622404"
+        }
+      }
+    },
+    {
+      "id": "524839ba-7f2b-4c68-a81c-34696921d9d1",
+      "title": "shroud-knight",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/5/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.079Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622405"
+        }
+      }
+    },
+    {
+      "id": "157d530d-c2ed-4e6c-bd95-79f2914cf5be",
+      "title": "teal-portrait03",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/6/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.079Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622406"
+        }
+      }
+    },
+    {
+      "id": "ef62c7ce-cfbc-437c-bac3-4debbd6500ab",
+      "title": "dread-p01",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/7/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.079Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622407"
+        }
+      }
+    },
+    {
+      "id": "d4699ab8-594a-42c2-87ae-c6353c4844af",
+      "title": "corrupt-jpeg",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/8/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.080Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622408"
+        }
+      }
+    },
+    {
+      "id": "b6be2271-406c-4841-89f5-6659d8579692",
+      "title": "nullprojects",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/9/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.080Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622409"
+        }
+      }
+    },
+    {
+      "id": "a6697a89-9cf9-4da1-8e74-83cfe6d351b0",
+      "title": "helmx",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/10/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.080Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622410"
+        }
+      }
+    },
+    {
+      "id": "7349ec64-a1fa-426a-ad6f-cda700a57e49",
+      "title": "animaaa",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/11/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.080Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622411"
+        }
+      }
+    },
+    {
+      "id": "76bb005e-e6d4-47c4-9f18-e8e973a90f44",
+      "title": "guard-3x",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/12/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.080Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622412"
+        }
+      }
+    },
+    {
+      "id": "8f04643f-c066-4537-b8fa-140e1602d781",
+      "title": "halo-offset",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/13/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.080Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622413"
+        }
+      }
+    },
+    {
+      "id": "41af359e-2d43-4e1b-a41e-6e7fec31b29c",
+      "title": "security016",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/14/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.080Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622414"
+        }
+      }
+    },
+    {
+      "id": "29ecf827-6ccd-469e-bd49-ae61fc42b444",
+      "title": "angel-state",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/15/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.080Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622415"
+        }
+      }
+    },
+    {
+      "id": "0640dfcc-09e6-4321-84df-f4b6279ba615",
+      "title": "way-down",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/16/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.080Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622416"
+        }
+      }
+    },
+    {
+      "id": "083a8d1a-2e16-4bac-9250-f40c19927b64",
+      "title": "searching---",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/17/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.080Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622417"
+        }
+      }
+    },
+    {
+      "id": "d3e41b2b-8505-4250-ad35-ec894077ed36",
+      "title": "angel1x-martyr",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/18/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.080Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622418"
+        }
+      }
+    },
+    {
+      "id": "b8a9484d-2950-4d24-99a7-f306a5654c6e",
+      "title": "form-null",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/19/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.080Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622419"
+        }
+      }
+    },
+    {
+      "id": "fa835f0d-14eb-43ad-a14a-c02cf7646293",
+      "title": "knightpfp",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/20/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622420"
+        }
+      }
+    },
+    {
+      "id": "f4688239-08b4-428b-93ec-2cf6e9f138dd",
+      "title": "browser-x03",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/21/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622421"
+        }
+      }
+    },
+    {
+      "id": "71ea01ea-d829-42a2-b475-f7337cdb24c7",
+      "title": "deaddeaddead",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/22/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622422"
+        }
+      }
+    },
+    {
+      "id": "2eb0665b-e9bc-42fa-ba5d-40ded45aa496",
+      "title": "floralfloral",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/23/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622423"
+        }
+      }
+    },
+    {
+      "id": "2730478b-8557-4663-bfc4-43aea84352d2",
+      "title": "view-01",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/24/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622424"
+        }
+      }
+    },
+    {
+      "id": "7211f2f8-f09d-44d6-9abd-f873b5bf96c7",
+      "title": "barakiel-cropped",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/25/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622425"
+        }
+      }
+    },
+    {
+      "id": "926c41c1-0825-427b-afbc-d3b84df3a1b3",
+      "title": "small-angel",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/26/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622426"
+        }
+      }
+    },
+    {
+      "id": "379cc70e-e668-4c72-b906-529aa734e946",
+      "title": "angel-of-redemption",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/27/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622427"
+        }
+      }
+    },
+    {
+      "id": "d0688014-5397-4dfa-817b-834709b7911e",
+      "title": "hhh--4161",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/28/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622428"
+        }
+      }
+    },
+    {
+      "id": "669d034b-1583-4bee-a1b8-f7d1b6c36d21",
+      "title": "figure-drawing",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/29/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622429"
+        }
+      }
+    },
+    {
+      "id": "1ad279a3-aa7c-43c6-8f3a-80ef8870f04d",
+      "title": "portrait-b",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/30/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622430"
+        }
+      }
+    },
+    {
+      "id": "62332eb6-40f2-474f-b2f3-52547a326aa9",
+      "title": "frame0",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/31/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622431"
+        }
+      }
+    },
+    {
+      "id": "37452c2d-f886-4101-bee5-bf303438f642",
+      "title": "execute-001",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/32/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622432"
+        }
+      }
+    },
+    {
+      "id": "f02b1ad3-1475-4b3c-82f2-b9f6fc3cb9fb",
+      "title": "hooded-saint-1888",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/33/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622433"
+        }
+      }
+    },
+    {
+      "id": "5e774091-5c81-4d1f-bf63-447062700388",
+      "title": "iii-index",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/34/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622434"
+        }
+      }
+    },
+    {
+      "id": "22c2bb1e-9e19-4a2e-ac79-7b8cf09a2021",
+      "title": "statue-pic",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/35/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622435"
+        }
+      }
+    },
+    {
+      "id": "8c83a219-68a7-429a-81fb-6c1665ac21eb",
+      "title": "adamel-right",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/36/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622436"
+        }
+      }
+    },
+    {
+      "id": "15b0ad17-1248-43fb-a45b-2c62661b020d",
+      "title": "portrait-2adefault",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/37/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622437"
+        }
+      }
+    },
+    {
+      "id": "cbde9cf6-85c2-4ebf-99f6-fd9505f0777c",
+      "title": "rise-001",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/38/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622438"
+        }
+      }
+    },
+    {
+      "id": "277b9b7e-687b-4fe1-8bf7-d3e1b73a43b8",
+      "title": "new-grace",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/39/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622439"
+        }
+      }
+    },
+    {
+      "id": "41938388-c17a-4451-ae04-7ac90f084a77",
+      "title": "saintportal-sublevel",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/40/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622440"
+        }
+      }
+    },
+    {
+      "id": "8bf9ddf8-832d-4b98-91c4-5ed311c6fc38",
+      "title": "lore-img",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/41/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622441"
+        }
+      }
+    },
+    {
+      "id": "321bcc4d-a61f-4611-8acf-b14e146933c7",
+      "title": "cybernet",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/42/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622442"
+        }
+      }
+    },
+    {
+      "id": "c9306949-3dd3-412f-952f-102608073db3",
+      "title": "fan-fiction",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/43/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622443"
+        }
+      }
+    },
+    {
+      "id": "911c75c5-dd7c-4280-831a-64a9f2635954",
+      "title": "respite-figure",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/44/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622444"
+        }
+      }
+    },
+    {
+      "id": "9bd645e9-3040-49a9-a8f8-2588041aaeb3",
+      "title": "dreaded-angel",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/45/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622445"
+        }
+      }
+    },
+    {
+      "id": "56f8c1cd-0bc0-492f-bff3-1fd806fc7a0d",
+      "title": "small-saint-painting",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/46/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622446"
+        }
+      }
+    },
+    {
+      "id": "8fdbdf37-105e-4fbe-928d-609a8530fa4d",
+      "title": "destined-fate",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/47/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622447"
+        }
+      }
+    },
+    {
+      "id": "3ec76cbc-9a9d-4cc0-9f3e-ff8f16179608",
+      "title": "fallen-angx",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/48/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622448"
+        }
+      }
+    },
+    {
+      "id": "5d1d53b4-a2db-44e7-9160-a757d7d803ae",
+      "title": "fallen-ang2b",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/49/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622449"
+        }
+      }
+    },
+    {
+      "id": "d764ff49-8faf-4a69-baab-9e102f77e0ae",
+      "title": "npc-auto6",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/50/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622450"
+        }
+      }
+    },
+    {
+      "id": "8d8b3657-8859-4efb-bc4e-7f5bcef61018",
+      "title": "dreaded-knight",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/51/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622451"
+        }
+      }
+    },
+    {
+      "id": "7cf32d54-ccb0-4230-852c-299bffc89892",
+      "title": "redemption00",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/52/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622452"
+        }
+      }
+    },
+    {
+      "id": "9edd433c-db2b-4014-9a50-0fba54e8e58e",
+      "title": "rand0m-2",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/53/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622453"
+        }
+      }
+    },
+    {
+      "id": "a0217125-7a6d-4b5a-96b3-408e8e792ffb",
+      "title": "sacred-room",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/54/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622454"
+        }
+      }
+    },
+    {
+      "id": "02608e23-b189-4ad3-bbb2-4a704e5e25bb",
+      "title": "plot781",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/55/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.081Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622455"
+        }
+      }
+    },
+    {
+      "id": "32dcbfd7-e49f-47cb-920a-570c0f194c9f",
+      "title": "lonerider-02",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/56/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.082Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622456"
+        }
+      }
+    },
+    {
+      "id": "58585f0c-7653-4583-8e27-31168ec1bc8e",
+      "title": "iii-portrait",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/57/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.082Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622457"
+        }
+      }
+    },
+    {
+      "id": "f4929e7a-6f02-405d-88fc-b7744f9fe540",
+      "title": "forgiveness",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/58/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.082Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622458"
+        }
+      }
+    },
+    {
+      "id": "8ef7c05b-cd78-435f-8c18-dfdb8a842c4b",
+      "title": "sys-bug",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/59/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.082Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622459"
+        }
+      }
+    },
+    {
+      "id": "8ee60663-d2bf-4761-8559-d11e83a2e4da",
+      "title": "fatal",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/60/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.082Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622460"
+        }
+      }
+    },
+    {
+      "id": "217113b3-9f48-4f47-9c99-041df4fd03ae",
+      "title": "forced-error",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/61/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.082Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622461"
+        }
+      }
+    },
+    {
+      "id": "b76e2cfd-7443-4595-ae2c-8dbbc6c5f637",
+      "title": "forced-error2",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/62/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.082Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622462"
+        }
+      }
+    },
+    {
+      "id": "76c053dd-4e06-45c7-8c63-d99aef2f095d",
+      "title": "01void",
+      "source": "https://cdn.feralfileassets.com/previews/a3613c63-074d-4aaa-847d-b23a77512a90/1749443950/_unique-previews/63/",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:31.082Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x614d5475FE81ef4b6Dd8093b5C73EfEEE03167e0",
+          "tokenId": "29919155492698187126531232456323148759057791663783576338797872692112813622463"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

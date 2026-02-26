@@ -1,0 +1,237 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "8f1269dc-4ac3-4ea4-b6b7-3ca8c90f8e40",
+  "slug": "unsupervised-highlight-reel",
+  "title": "Unsupervised — Highlight Reel",
+  "summary": "Unsupervised is part of Machine Hallucinations, Refik Anadol Studio&rsquo;s ongoing project exploring data aesthetics based on collective visual memories. Since the inception of the project in 2016, Anadol has utilized machine intelligence as a collaborator of human consciousness, specifically DCGAN, PGAN, and StyleGAN algorithms trained on vast datasets to unfold unrecognized layers of our external realities. Anadol and his team collect data from digital archives and publicly available resources, and process these datasets with machine-learning classification models. As a masterfully curated multi-channel experience, Machine Hallucinations brings a self-regenerating element of surprise to the audience and offers a new form of sensorial autonomy via cybernetic serendipity. \n\nUnsupervised emerges from such an aesthetic/scientific vision and processes 138,151 pieces of metadata from the vast collection of The Museum of Modern Art in the mind of a machine. Using StyleGAN2 ADA to capture the machine&rsquo;s transformative &ldquo;hallucinations&rdquo; of modern art in a multi-dimensional space, Anadol trains a unique AI model with subsets of the archive of MoMA&rsquo;s collection of artworks, creating embeddings in 1024 dimensions. The sorted image datasets are then clustered into thematic categories to better understand the semantic context of data. This expanding data universe not only represents the interpolation of data as synthesis, but also becomes a latent cosmos in which hallucinatory potential arises from a novel form of artistic creativity interpreting MoMA&rsquo;s unparalleled collection of modern and contemporary art. Spanning more than 200 years of art, from paintings to photography to cars to video games, the MoMA collection is an extraordinary data set&mdash;within which works from artistic movements such as Surrealism, not unlike Unsupervised, explored automatism, chance, and systems to generate unprecedented new art forms. \n\nThis is work that resonates aesthetically and also pushes machine-learning research into new territories. Anadol is in dialogue with scholars such as Jaakko Lehtinen, Distinguished Research Scientist at NVIDIA Research, who are inventing the technologies that the artist is using. On seeing this new body of work, Lehtinen remarked: \n\n<p class=\"m-l-56 display-inline-block\">This is the beauty of fundamental research: to see the progress we&rsquo;ve made on a hard, technical machine learning problem being unexpectedly channeled to serve such astounding creativity is extremely satisfying. We&rsquo;re thrilled to witness the deepening interplay between art and AI research, and eagerly looking forward to seeing what we can do together in the future.</p> \n\nThe AI-based abstract images and shapes that result from the machine&rsquo;s unsupervised learning of modern art are dictated by the Museum&rsquo;s collection archive, weighted toward the special exhibition of new artworks at MoMA this fall. The AI data pigmentation, in turn, captures the movement in the latent space created by autonomous machine hallucinations. Each data connection is driven by an edge-detection algorithm and colorized by the density of its previous and next latent coordinates. In other words, the machine allows the artist to trace its &ldquo;unconscious decisions,&rdquo; in a network of intricate and poetic connections.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/d8f78690-9464-492b-55ec-60806f971400/raw",
+  "created": "2026-02-26T07:01:19.343Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "e4a16f5b-97fa-4087-a677-75d349b77976",
+      "title": "Unsupervised — Machine Hallucinations — MoMA",
+      "source": "https://cdn.feralfileassets.com/previews/29b720ff-fcbf-4467-a53d-e79a90ad0d60/1637059159/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:19.334Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x7a15b36cB834AeA88553De69077D3777460d73Ac",
+          "tokenId": "66965029230094245694785985847399663964803402403207832947552806358116789198961"
+        }
+      }
+    },
+    {
+      "id": "1127d080-bee8-4cfc-910f-43ce779a3de2",
+      "title": "Unsupervised — Machine Hallucinations — MoMA Generative Study 1",
+      "source": "https://cdn.feralfileassets.com/previews/96f1663b-5216-4758-aa7f-3a70e6d9d45b/1637052748/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:19.340Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x7a15b36cB834AeA88553De69077D3777460d73Ac",
+          "tokenId": "68717547499709147316094146770796383443925587785864914584526615797593766025991"
+        }
+      }
+    },
+    {
+      "id": "1d5015a8-f6ec-4aca-b8e7-5682de425ecd",
+      "title": "Unsupervised — Machine Hallucinations — MoMA Fluid Dreams",
+      "source": "https://cdn.feralfileassets.com/previews/d6e1e0f1-7a9d-46f1-a691-bf0604e755b5/1637053622/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:19.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x7a15b36cB834AeA88553De69077D3777460d73Ac",
+          "tokenId": "96186361738988730929202118688262424103444309134708770864876998274999853867500"
+        }
+      }
+    },
+    {
+      "id": "366419c1-d03c-4be1-a0bf-88d1516a7221",
+      "title": "Unsupervised — Machine Hallucinations — MoMA Dreams — A AP",
+      "source": "https://cdn.feralfileassets.com/previews/d35cdb38-917f-42f3-9914-e276dc5f0ded/1637045388/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:19.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x7a15b36cB834AeA88553De69077D3777460d73Ac",
+          "tokenId": "9654437293614983878447008954651574738102085915959744418992085055843510330527"
+        }
+      }
+    },
+    {
+      "id": "6b3c512e-1c22-4739-b9ba-a94d9860d78e",
+      "title": "Unsupervised — Machine Hallucinations — MoMA Dreams — B AP",
+      "source": "https://cdn.feralfileassets.com/previews/821dd86a-8764-441f-af58-95c857a7c4d3/1637046150/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:19.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x7a15b36cB834AeA88553De69077D3777460d73Ac",
+          "tokenId": "54682151706815913185894207919983797355021603287101182631346106136630027792894"
+        }
+      }
+    },
+    {
+      "id": "f7a7290e-04ef-4016-abf8-8405534f1de2",
+      "title": "Unsupervised — Machine Hallucinations — MoMA Dreams — C AP",
+      "source": "https://cdn.feralfileassets.com/previews/c3b2c10b-91c6-4e2f-83bc-fcb5068e98be/1637046206/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:19.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x7a15b36cB834AeA88553De69077D3777460d73Ac",
+          "tokenId": "106246018777602716151571873331818585646615221152111297965994288240674568755515"
+        }
+      }
+    },
+    {
+      "id": "5679d5ce-add9-458a-b83b-6cffac8be5bb",
+      "title": "Unsupervised — Machine Hallucinations — MoMA Dreams — D AP",
+      "source": "https://cdn.feralfileassets.com/previews/61c2c2b6-4f2c-4e1b-9e45-23faf3e76594/1637046237/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:19.341Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x7a15b36cB834AeA88553De69077D3777460d73Ac",
+          "tokenId": "36336520616483379779876286035854464102964236813906078878209189045033370555403"
+        }
+      }
+    },
+    {
+      "id": "36d9e295-ae41-4c4b-a6f2-fb0225e4e858",
+      "title": "Unsupervised — Machine Hallucinations — MoMA Dreams — E AP",
+      "source": "https://cdn.feralfileassets.com/previews/c4c9bfde-13bc-4cf5-bc4d-817280673ec3/1637046282/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:19.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x7a15b36cB834AeA88553De69077D3777460d73Ac",
+          "tokenId": "64645945396020190858853894417923155886220085439940387637854865598376145291977"
+        }
+      }
+    },
+    {
+      "id": "5dc0a0d5-0c66-41c5-841f-e82b8a30b8fc",
+      "title": "Unsupervised — Machine Hallucinations — MoMA Dreams — F AP",
+      "source": "https://cdn.feralfileassets.com/previews/e362fa91-c218-45df-8167-d7e7c3440052/1637046314/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:19.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x7a15b36cB834AeA88553De69077D3777460d73Ac",
+          "tokenId": "9177232773935888089973516453223683873847832415924935257329611547197171953928"
+        }
+      }
+    },
+    {
+      "id": "4ffc8493-5125-44a3-96b9-86b148f36bbe",
+      "title": "Unsupervised — Machine Hallucinations — MoMA Dreams — G AP",
+      "source": "https://cdn.feralfileassets.com/previews/31bc21a0-c834-49a3-866f-d4839cbe14df/1637046340/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:19.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x7a15b36cB834AeA88553De69077D3777460d73Ac",
+          "tokenId": "41471500397993240987189358415828705655413617827414671187602137231640406753662"
+        }
+      }
+    },
+    {
+      "id": "f3560c2b-f3ca-4e25-8513-210401d3bf05",
+      "title": "Unsupervised — Machine Hallucinations — MoMA Dreams — H AP",
+      "source": "https://cdn.feralfileassets.com/previews/6a0781b7-93ff-4cef-9a92-6e197990be57/1637046365/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:19.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x7a15b36cB834AeA88553De69077D3777460d73Ac",
+          "tokenId": "29103141692645694143442121609975855127037787157746680372203682878453136328626"
+        }
+      }
+    },
+    {
+      "id": "0ec4cab0-fafd-4780-b643-ebef646a52e5",
+      "title": "Unsupervised — Machine Hallucinations — MoMA Dreams — I AP",
+      "source": "https://cdn.feralfileassets.com/previews/29cd44b3-2ed9-4d8b-beb5-073d248a1a00/1637046398/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:19.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x7a15b36cB834AeA88553De69077D3777460d73Ac",
+          "tokenId": "28177113884492896301524940841603972287493013219629492064125803130518372243395"
+        }
+      }
+    },
+    {
+      "id": "4fe578b9-8683-4f7f-b638-11ef61edccba",
+      "title": "Unsupervised — Data Universe — MoMA AP",
+      "source": "https://cdn.feralfileassets.com/previews/e601569d-5611-4a82-93ba-a7f55b260001/1637053763/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:19.342Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x7a15b36cB834AeA88553De69077D3777460d73Ac",
+          "tokenId": "5280336779268220421569573059971679349075200194886069432279714075018412548290"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

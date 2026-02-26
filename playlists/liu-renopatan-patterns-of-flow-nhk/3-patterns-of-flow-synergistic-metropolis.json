@@ -1,0 +1,1121 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "f7598b09-bf9f-4a94-a006-063cd5644baa",
+  "slug": "patterns-of-flow-synergistic-metropolis",
+  "title": "流れのパターン / Patterns of Flow — Synergistic Metropolis",
+  "summary": "<p>Saeko Ehara’s <em>Synergistic Metropolis</em> is the product of an algorithm powered by Stable Diffusion (AI) and TouchDesigner, a node-based visual coding software. From image generation to animation calculations, every aspect of the process is fully automated by the computer. In this way, the project builds on Hiroshi Kawano’s explorations of computational simulation by emphasizing an AI-centered workflow. Just as Kawano’s <em>Artificial Mondrian</em> (1967) revealed the influence of Piet Mondrian, so this work also channels the latter’s <em>Broadway Boogie Woogie</em> (1942-43), which captures the vibrancy of New York City. However, in contrast, Ehara has fed images of Japanese nocturnal landscapes into the machine, adding generative animations to produce a unique rhythm through the fusion of inorganic AI generation and human creative intervention, blending stillness with motion.</p>\n<p>While much of the simulation in this work is delegated to the computer, the process of building the system and selecting the final outputs still depends on human judgment. The work therefore reflects the paradox of digital art as both heavily reliant on mechanical procedure and human intention and choice. Even creations born of machines carry within them the semblance of life.</p>\n<p>「Synergistic Metropolis」は、Stable Diffusion（AI）とノードベースのビジュアルコーディングソフトウェアであるTouchDesignerによって駆動されるアルゴリズムから生まれました。画像生成からアニメーションの計算に至るまで、プロセスのすべてがコンピュータによって完全に自動化されています。このように、このプロジェクトではAIを中心としたワークフローを強調することで、川野洋が探求した計算シミュレーションの成果を発展させることを試みました。ピート・モンドリアンの影響が色濃くみられる川野の「Artificial Mondrian」（1967）のように、この作品もまたニューヨークの活気を捉えたモンドリアンの「Broadway Boogie Woogie」（1942-43）に触発されています。対照的に、江原は日本の夜景を機械に入力し、ジェネラティブアニメーションを加えることで、無機的なAI生成と人間の創造的介入を融合させ、静と動を組み合わせた独自のリズムを生み出しています。</p>\n<p>この作品では、シミュレーションの多くがコンピュータに委ねられていますが、システムの構築や最終出力の選択プロセスは依然として人間の判断に依存しています。したがって、この作品は、デジタルアートが機械的な手続きに大きく依存しながらも、人間の意図と選択によって形作られるというパラドックスを反映しています。機械から生まれた創造物であっても、そこには生命の気配が宿っているのです。</p>",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/3d0c5361-7d67-4035-9b07-53b4a4f3ff00/raw",
+  "created": "2026-02-26T07:06:17.103Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "f9313ace-5bd9-4b66-a6da-d09276001fd4",
+      "title": "Synergistic Metropolis #1",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.101Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306240"
+        }
+      }
+    },
+    {
+      "id": "4f1fc109-131b-4945-a291-85f36e235bef",
+      "title": "Synergistic Metropolis #2",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.101Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306241"
+        }
+      }
+    },
+    {
+      "id": "daaa8e88-1708-4d36-aff4-81185369d311",
+      "title": "Synergistic Metropolis #3",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306242"
+        }
+      }
+    },
+    {
+      "id": "2e896470-4085-4e75-bf9e-6aef59679b0f",
+      "title": "Synergistic Metropolis #4",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306243"
+        }
+      }
+    },
+    {
+      "id": "6d1fc7a5-8997-4dc8-a4cf-2f06584501d6",
+      "title": "Synergistic Metropolis #5",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306244"
+        }
+      }
+    },
+    {
+      "id": "dec90e91-267f-4a4b-9fd5-a6bf0fccad03",
+      "title": "Synergistic Metropolis #6",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306245"
+        }
+      }
+    },
+    {
+      "id": "c5feed17-0820-4cd5-b41a-ec90f65330a2",
+      "title": "Synergistic Metropolis #7",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306246"
+        }
+      }
+    },
+    {
+      "id": "45172e43-63c5-46a4-857c-5b207acbdef6",
+      "title": "Synergistic Metropolis #8",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306247"
+        }
+      }
+    },
+    {
+      "id": "d9f641e5-6983-48c5-8e65-f3cd9c2ac477",
+      "title": "Synergistic Metropolis #9",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306248"
+        }
+      }
+    },
+    {
+      "id": "67d04c1f-28f7-4a00-92a2-612fed009230",
+      "title": "Synergistic Metropolis #10",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306249"
+        }
+      }
+    },
+    {
+      "id": "3fa75395-8dc8-49e1-b528-0a096d52dfac",
+      "title": "Synergistic Metropolis #11",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/10",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306250"
+        }
+      }
+    },
+    {
+      "id": "fba9c1c7-1ce6-4ac8-8343-a3440f68c2f6",
+      "title": "Synergistic Metropolis #12",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/11",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306251"
+        }
+      }
+    },
+    {
+      "id": "54915fc5-5923-4c1b-a6d6-27935a656f7f",
+      "title": "Synergistic Metropolis #13",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/12",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306252"
+        }
+      }
+    },
+    {
+      "id": "3554e016-fb6e-41d5-a2b4-07a5bfae6062",
+      "title": "Synergistic Metropolis #14",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/13",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306253"
+        }
+      }
+    },
+    {
+      "id": "3f82f1be-e8a1-4cb9-8ead-945f32fe6b8d",
+      "title": "Synergistic Metropolis #15",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/14",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306254"
+        }
+      }
+    },
+    {
+      "id": "ad3b1d5c-821f-49c5-9f1f-61b5e0a2475a",
+      "title": "Synergistic Metropolis #16",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/15",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306255"
+        }
+      }
+    },
+    {
+      "id": "e5cf23e5-79fd-4d8e-9871-9bd4976c48f1",
+      "title": "Synergistic Metropolis #17",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/16",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306256"
+        }
+      }
+    },
+    {
+      "id": "757e874f-c4f9-4507-b832-648e6565810e",
+      "title": "Synergistic Metropolis #18",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/17",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306257"
+        }
+      }
+    },
+    {
+      "id": "d3ed6443-ef5a-48fd-b98d-0dac8e86080a",
+      "title": "Synergistic Metropolis #19",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/18",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306258"
+        }
+      }
+    },
+    {
+      "id": "13a695eb-8873-47b7-80e5-f0160cf730be",
+      "title": "Synergistic Metropolis #20",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/19",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306259"
+        }
+      }
+    },
+    {
+      "id": "bdb0a3bd-b8b4-4a57-bdf0-e104710241d4",
+      "title": "Synergistic Metropolis #21",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/20",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306260"
+        }
+      }
+    },
+    {
+      "id": "25429780-1f8c-42f9-b2c3-b6b73d767e35",
+      "title": "Synergistic Metropolis #22",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/21",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306261"
+        }
+      }
+    },
+    {
+      "id": "3832f948-3465-4c58-b364-989070b8fca9",
+      "title": "Synergistic Metropolis #23",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306262"
+        }
+      }
+    },
+    {
+      "id": "8c8af631-f9c0-435d-950c-89871b276bc0",
+      "title": "Synergistic Metropolis #24",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/23",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306263"
+        }
+      }
+    },
+    {
+      "id": "50491343-3c05-4d8c-b2b4-42d9ec60e358",
+      "title": "Synergistic Metropolis #25",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/24",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306264"
+        }
+      }
+    },
+    {
+      "id": "beaf53bb-b7bb-48db-9754-8b21a65f4a5d",
+      "title": "Synergistic Metropolis #26",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/25",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306265"
+        }
+      }
+    },
+    {
+      "id": "2597951d-0b5d-495c-8fdf-590bb7180f9e",
+      "title": "Synergistic Metropolis #27",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/26",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306266"
+        }
+      }
+    },
+    {
+      "id": "59175988-302f-408d-88af-af352e7eda12",
+      "title": "Synergistic Metropolis #28",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/27",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306267"
+        }
+      }
+    },
+    {
+      "id": "27462c3d-74ca-470c-88ec-6ff0caa5507f",
+      "title": "Synergistic Metropolis #29",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/28",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306268"
+        }
+      }
+    },
+    {
+      "id": "3e34795c-6482-4b0c-9ad4-08a75f665b5e",
+      "title": "Synergistic Metropolis #30",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/29",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306269"
+        }
+      }
+    },
+    {
+      "id": "2dd63c9a-13c9-47dd-9a26-ace885ca158c",
+      "title": "Synergistic Metropolis #31",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/30",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306270"
+        }
+      }
+    },
+    {
+      "id": "1720cbf9-25ff-4d84-9831-4d5d6c73504b",
+      "title": "Synergistic Metropolis #32",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/31",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306271"
+        }
+      }
+    },
+    {
+      "id": "ac60cd3a-757d-4071-a0da-c4afaae9569e",
+      "title": "Synergistic Metropolis #33",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/32",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306272"
+        }
+      }
+    },
+    {
+      "id": "9eb35c7b-d9de-47c4-993b-147b99c4f109",
+      "title": "Synergistic Metropolis #34",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/33",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306273"
+        }
+      }
+    },
+    {
+      "id": "56b9d59f-0427-42ed-8e92-4e2dca446e8e",
+      "title": "Synergistic Metropolis #35",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/34",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306274"
+        }
+      }
+    },
+    {
+      "id": "8cb9df43-214e-439e-9596-0edbc09d3e4d",
+      "title": "Synergistic Metropolis #36",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/35",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306275"
+        }
+      }
+    },
+    {
+      "id": "d7a80c17-f128-4195-9124-b75c11244ccb",
+      "title": "Synergistic Metropolis #37",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/36",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306276"
+        }
+      }
+    },
+    {
+      "id": "9224f168-a7a5-43d3-8d3d-66e9df34380a",
+      "title": "Synergistic Metropolis #38",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/37",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306277"
+        }
+      }
+    },
+    {
+      "id": "5ec189a0-640b-4ab9-8b10-fde76ae79300",
+      "title": "Synergistic Metropolis #39",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/38",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306278"
+        }
+      }
+    },
+    {
+      "id": "71aab87f-e6b4-4aff-91bd-6736d9c4667b",
+      "title": "Synergistic Metropolis #40",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/39",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306279"
+        }
+      }
+    },
+    {
+      "id": "9b518ac1-2387-46a8-9b5a-ab6745ffdee4",
+      "title": "Synergistic Metropolis #41",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/40",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306280"
+        }
+      }
+    },
+    {
+      "id": "3e6652aa-7b0d-4613-8d97-858cdb30b6ae",
+      "title": "Synergistic Metropolis #42",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/41",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306281"
+        }
+      }
+    },
+    {
+      "id": "3b3dd044-975e-4668-afe1-141866c1475e",
+      "title": "Synergistic Metropolis #43",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/42",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306282"
+        }
+      }
+    },
+    {
+      "id": "1de40469-c77e-4ec8-adc5-34ad2f441468",
+      "title": "Synergistic Metropolis #44",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/43",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306283"
+        }
+      }
+    },
+    {
+      "id": "5bb7851b-d71a-4360-ac4a-4fa0a4320d2c",
+      "title": "Synergistic Metropolis #45",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/44",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306284"
+        }
+      }
+    },
+    {
+      "id": "9476486d-6252-4e31-a483-47d4883bc25c",
+      "title": "Synergistic Metropolis #46",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/45",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306285"
+        }
+      }
+    },
+    {
+      "id": "cef75ccc-a0c8-4d2d-8e58-1810f3b88a33",
+      "title": "Synergistic Metropolis #47",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/46",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306286"
+        }
+      }
+    },
+    {
+      "id": "7882d777-c4a2-49fd-8797-3ca9e8312bad",
+      "title": "Synergistic Metropolis #48",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/47",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306287"
+        }
+      }
+    },
+    {
+      "id": "2e3089e6-f9f3-4194-86a1-0fe883badde7",
+      "title": "Synergistic Metropolis #49",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/48",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306288"
+        }
+      }
+    },
+    {
+      "id": "156357c3-e2a4-4b63-9b26-2922a74b00c2",
+      "title": "Synergistic Metropolis #50",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/49",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306289"
+        }
+      }
+    },
+    {
+      "id": "b14f5ed2-f369-404a-ab52-b3cbf1d3ec42",
+      "title": "Synergistic Metropolis #51",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/50",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306290"
+        }
+      }
+    },
+    {
+      "id": "d7da53b7-4ac3-468e-ad1d-0447d496f6d4",
+      "title": "Synergistic Metropolis #52",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/51",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306291"
+        }
+      }
+    },
+    {
+      "id": "94085669-27b8-444b-9964-8302a2ebea24",
+      "title": "Synergistic Metropolis #53",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/52",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306292"
+        }
+      }
+    },
+    {
+      "id": "fc13d551-39f6-4593-a5ab-7b6623f61ac2",
+      "title": "Synergistic Metropolis #54",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/53",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306293"
+        }
+      }
+    },
+    {
+      "id": "1370aa8f-031f-4c86-8129-bfea766c45c4",
+      "title": "Synergistic Metropolis #55",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/54",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.102Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306294"
+        }
+      }
+    },
+    {
+      "id": "d08a3d76-268e-4640-adda-26fd24d55011",
+      "title": "Synergistic Metropolis #56",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/55",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.103Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306295"
+        }
+      }
+    },
+    {
+      "id": "e3ccf412-b963-4795-8666-7c07cd0cdb06",
+      "title": "Synergistic Metropolis #57",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/56",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.103Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306296"
+        }
+      }
+    },
+    {
+      "id": "99208d8e-858a-4deb-9e71-f3e17d0e3e1e",
+      "title": "Synergistic Metropolis #58",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/57",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.103Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306297"
+        }
+      }
+    },
+    {
+      "id": "cafd5f31-77b6-41bd-beae-32a8e98d07c0",
+      "title": "Synergistic Metropolis #59",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/58",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.103Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306298"
+        }
+      }
+    },
+    {
+      "id": "cd65eadd-b860-48a0-b964-10c7ec910754",
+      "title": "Synergistic Metropolis #60",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/59",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.103Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306299"
+        }
+      }
+    },
+    {
+      "id": "3c486efa-241e-4ad5-b001-d9d84017b8aa",
+      "title": "Synergistic Metropolis #61",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/60",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.103Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306300"
+        }
+      }
+    },
+    {
+      "id": "7c7c98e4-5d22-4f03-9cb3-b30c5fbd3e37",
+      "title": "Synergistic Metropolis #62",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/61",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.103Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306301"
+        }
+      }
+    },
+    {
+      "id": "45415188-2346-4961-821d-6020e7b44fea",
+      "title": "Synergistic Metropolis #63",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/62",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.103Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306302"
+        }
+      }
+    },
+    {
+      "id": "5b2c1057-4c9c-4fa1-896c-103cf562f027",
+      "title": "Synergistic Metropolis #64",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/63",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.103Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306303"
+        }
+      }
+    },
+    {
+      "id": "139b994e-ac13-4bdb-8c92-87a84e68789c",
+      "title": "Synergistic Metropolis #65",
+      "source": "https://cdn.feralfileassets.com/previews/5f673d60-a2c0-4356-8bf9-09dc0d43f44b/1721897970/_unique-previews/64",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.103Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460953306304"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

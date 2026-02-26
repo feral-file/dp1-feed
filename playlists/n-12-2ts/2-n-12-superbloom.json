@@ -1,0 +1,2464 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "d8ebf140-1dfc-487a-80b9-f5ec0f92a44a",
+  "slug": "n-12-superbloom",
+  "title": "N=12 — Superbloom",
+  "summary": "“Superbloom\" by Elsif captures the ephemeral floral beauty of spring on the Pacific Coast. An experiment in creating 144 individual artworks that connect together, with each piece flowing seamlessly into the next, inviting you on an endless walk through a meadow by the sea. \n\nMemory’s nostalgia is presented as the peaceful calm of an ocean breeze flows over the flowers and grass. The art style transitions between clear geometric shapes and loose painterly strokes, which heightens the appreciation of the knowledge that “Superbloom\" is created with code rather than a paintbrush. The influence of traditional Chinese art shines through in the continuous landscape, the elegant movement of calligraphic brushes echoing in the implied movement across the horizon.\n\nElsif worked directly with the themes of the exhibition, choosing to create a continuous piece that pulls at the threads of connection and the fluid exchange of ideas.\n\nInteractive keyboard controls:\n[f] Fill the current window (press ‘f’ again to get back to the original aspect ratio).\n[g] Toggle the background texture.\n[m] Change the margin amount.\n[s] Save a PNG image of the live view, default resolution is 1500 × 2000 pixels.\n[j] Save a JPEG image of the live view, default resolution is 1500 × 2000 pixels.\n[1]-[3] Change the output resolution, up to 4500 × 6000 pixels.\n\nURL parameters:\n&aspect=[an aspect ratio between 0.25 and 4, default is 0.75]\n&texture=[a roughness value greater than or equal to 0, default is 0.8]\n&margin=[the amount of margin around the painting (try 20 to 150), default is 20]\n&fill=[true/false, whether to fill the window]\n",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/42c5aafd-0776-413f-3f1a-6bc9e2b2d400/raw",
+  "created": "2026-02-26T07:03:42.403Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "53e22eae-b44b-47f2-9f61-61dce9826377",
+      "title": "Superbloom #1",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=0&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166912&token_id_hash=0x8a625e9469de0dd424e75ab28e7a4aa6dfe327344c7e3b4a4c10d320ded5f879",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166912"
+        }
+      }
+    },
+    {
+      "id": "f153eaea-a16e-4fe9-9461-dcb96dbb3430",
+      "title": "Superbloom #2",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=1&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166913&token_id_hash=0xfe58ddec625e02f77410a096d4f7dc583834fe849af62305cdff8ded7a6e52fb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166913"
+        }
+      }
+    },
+    {
+      "id": "1b820e3b-a12b-494b-beaa-0a306ebdccb3",
+      "title": "Superbloom #3",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=2&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166914&token_id_hash=0xdb0eb93cb2bff56c408e444acd8eb565e06cc30a9bf0ca8127ffd77bbfb1d3f4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166914"
+        }
+      }
+    },
+    {
+      "id": "3ed6e756-636e-45d8-93f8-69be217042db",
+      "title": "Superbloom #4",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=3&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166915&token_id_hash=0xefc7e1daafca1fc7aff60d109a8b380fec805e9b9c56eed6aa29abe0352b2dd7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166915"
+        }
+      }
+    },
+    {
+      "id": "15331f1b-2366-451a-b64f-e4956bc9896f",
+      "title": "Superbloom #5",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=4&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166916&token_id_hash=0x751034de3f8001b403a6276cff4e714d4808b81647a175a448ac7b87e801bcbc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166916"
+        }
+      }
+    },
+    {
+      "id": "a96ac3a0-5fbe-4044-b734-ce6659d92bfb",
+      "title": "Superbloom #6",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=5&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166917&token_id_hash=0x3be457456b3bbaa4dffc253467a2102692c64f61525c0915ee9469eb3c8fc2a3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166917"
+        }
+      }
+    },
+    {
+      "id": "37ce8cb5-7df0-49d9-a3fb-e2e7359b9f14",
+      "title": "Superbloom #7",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=6&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166918&token_id_hash=0x1449faf492dd7b90f2e75870214a6b8787b4844c085333cd2d99fa7392417e1f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166918"
+        }
+      }
+    },
+    {
+      "id": "b80cc068-a0d0-4e02-bb9c-d1d6c3fffe1c",
+      "title": "Superbloom #8",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=7&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166919&token_id_hash=0xda9351992c7088d91fa08aca1fe15301ef718483f62ea30db2223f3fd357d32b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166919"
+        }
+      }
+    },
+    {
+      "id": "c3dbc8cd-c01f-4164-b3c2-f0ce6b736dc7",
+      "title": "Superbloom #9",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=8&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166920&token_id_hash=0x2eeccf3f9e8755503c3c53a63a59d8328df7a39343ee70c6f9341fd6efa9d970",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166920"
+        }
+      }
+    },
+    {
+      "id": "89e55b3e-2caa-4beb-96a5-cef6447b4c9c",
+      "title": "Superbloom #10",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=9&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166921&token_id_hash=0x292d775a56cb84ee613841242918949aefd973c720e1e35e66b31e4c21e729f7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166921"
+        }
+      }
+    },
+    {
+      "id": "0e0915b7-3778-47be-93a3-a0252c7b5392",
+      "title": "Superbloom #11",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=10&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166922&token_id_hash=0x19669f17ed2b9e3ce9bb1ddf05cf0d3c28c837d39612d8e2045a00059e71a2f2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166922"
+        }
+      }
+    },
+    {
+      "id": "e774666f-88b9-49c0-a4de-1182815bb030",
+      "title": "Superbloom #12",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=11&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166923&token_id_hash=0xe06da9c18bf3d0836166cdb7f11faeb72bc33e7665a2bf7c331392763f3bd225",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166923"
+        }
+      }
+    },
+    {
+      "id": "2c3d6a73-84b9-4e90-a260-a6220ace4e5f",
+      "title": "Superbloom #13",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=12&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166924&token_id_hash=0x235c8558ce05c5619933295cf043f569f64b6dfa74596c934aa5325135d5c039",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166924"
+        }
+      }
+    },
+    {
+      "id": "c619426e-728b-403c-98df-31bab38930d4",
+      "title": "Superbloom #14",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=13&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166925&token_id_hash=0x201888624ca10f0f24cd325551cf7523f52680783d89b7381eaee527c2c94689",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166925"
+        }
+      }
+    },
+    {
+      "id": "6797af9a-5e1e-472c-ba92-127624a69208",
+      "title": "Superbloom #15",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=14&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166926&token_id_hash=0x4b77e353b57fd096a37f090a44370b9c011dc8cf64f7777fffd1c3a9a37cf2c1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166926"
+        }
+      }
+    },
+    {
+      "id": "26a46d77-7e73-46be-a57f-f882fb5492b5",
+      "title": "Superbloom #16",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=15&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166927&token_id_hash=0x33f05536d70eb70f09983311f6f9a73513cc4e18b577b2fc214e9ecd09566f08",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166927"
+        }
+      }
+    },
+    {
+      "id": "bb297210-c02d-48e4-9709-fff821c1cbb4",
+      "title": "Superbloom #17",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=16&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166928&token_id_hash=0x50cd80d63a60608a47e0c77c87514b973181d7aa93f88afaddcbe2709dd45b93",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166928"
+        }
+      }
+    },
+    {
+      "id": "0c9d8042-3972-401c-89da-ee5958f4b04a",
+      "title": "Superbloom #18",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=17&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166929&token_id_hash=0x658bc2afccfdb3e5be9d75993797499b11abec62d81eba0ef0eee692a6bf931c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166929"
+        }
+      }
+    },
+    {
+      "id": "efc8b077-a936-4e47-9a0d-3eb3787e6b5b",
+      "title": "Superbloom #19",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=18&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166930&token_id_hash=0x1fa56304431a92a470ddd28e3987460d0cab026ee4ed0692189ab1b8820f4d77",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166930"
+        }
+      }
+    },
+    {
+      "id": "9517ecac-c921-4ba6-8ab2-21c3aa53e437",
+      "title": "Superbloom #20",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=19&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166931&token_id_hash=0x1604bf2958689a90c108aaef623027858305578631f475d59d4483b24f58ee41",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166931"
+        }
+      }
+    },
+    {
+      "id": "ade351bc-580d-42b7-bec9-a503d45463dc",
+      "title": "Superbloom #21",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=20&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166932&token_id_hash=0x5d7518baf193243a62f977deb6b2432ad1a1b455a0537ccf97683490853ab2ed",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166932"
+        }
+      }
+    },
+    {
+      "id": "f802164f-9e61-4dd2-ab91-a1f640095cbb",
+      "title": "Superbloom #22",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=21&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166933&token_id_hash=0xa9c8f20591268b7c06a52615913694ca87d18aa6c8883a3659da670a8bfd7588",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166933"
+        }
+      }
+    },
+    {
+      "id": "bd28707f-224a-4bcd-8972-732fe0ccf90d",
+      "title": "Superbloom #23",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=22&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166934&token_id_hash=0x53d2980bdea82b215268b71b0ef7ed559cf48bbb3f7d83aad73c13a110f68b30",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166934"
+        }
+      }
+    },
+    {
+      "id": "5fbd37c7-4c06-410d-b173-378e9c618362",
+      "title": "Superbloom #24",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=23&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166935&token_id_hash=0x900c5c7e2531c79175f6f2d8e3413c5e277adf27880e27b404fb4937f17a9071",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.400Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166935"
+        }
+      }
+    },
+    {
+      "id": "6fdfd12c-dda6-4b0e-be61-55df524dec8a",
+      "title": "Superbloom #25",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=24&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166936&token_id_hash=0xb955bec07ae75f98e24c2cd12dbcb42e211a2d0e30b4295282e8de000bbfa632",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166936"
+        }
+      }
+    },
+    {
+      "id": "ddcd5657-329d-496b-bc20-74b1f58ad699",
+      "title": "Superbloom #26",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=25&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166937&token_id_hash=0x1f26e9a4299008b87360850a2280ba00534e871ef832e41aa7aef3994bf59db1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166937"
+        }
+      }
+    },
+    {
+      "id": "e2376984-b015-4435-95f7-ef5b91489862",
+      "title": "Superbloom #27",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=26&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166938&token_id_hash=0x2a026dcb714825d9143645c63268e75de5c5e21aa2c220924603526bb8e4dd9c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166938"
+        }
+      }
+    },
+    {
+      "id": "9ee48de8-01cf-4a14-9951-7d7b6ea84d96",
+      "title": "Superbloom #28",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=27&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166939&token_id_hash=0xcd9d4a7376be42eaa780f60e3fb8c7de186b6c9f9313b538e416f5e537b71af2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166939"
+        }
+      }
+    },
+    {
+      "id": "ec3aa6f6-349c-4706-bd2f-12b630ebb7ee",
+      "title": "Superbloom #29",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=28&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166940&token_id_hash=0xf6a17238a26a68f91e68ddabbca434639dfcee5800e1cc6dbbe2f27bb3dd3924",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166940"
+        }
+      }
+    },
+    {
+      "id": "bb147e09-c4f0-4462-9453-01e621397c17",
+      "title": "Superbloom #30",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=29&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166941&token_id_hash=0x851af63388c0b28ba35c37d27320c2ff0d48aba4b93ff3c89a96f8b424b1b4c4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166941"
+        }
+      }
+    },
+    {
+      "id": "d73eb7e2-1dce-4e21-a8c3-468df3ad0e37",
+      "title": "Superbloom #31",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=30&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166942&token_id_hash=0x25fbee990824a9d27c46caee440951043b4b80faf77f818b8f067c73cfabfc65",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166942"
+        }
+      }
+    },
+    {
+      "id": "37631205-2538-482c-92a3-5730a627ac1a",
+      "title": "Superbloom #32",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=31&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166943&token_id_hash=0xbc3eaf462af108f8a6b33f1ff1d2038c3642314558bb23c85d3a277488b29345",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166943"
+        }
+      }
+    },
+    {
+      "id": "ad508595-731f-4c32-953f-d83dab5b2c24",
+      "title": "Superbloom #33",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=32&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166944&token_id_hash=0xcd29ef347c534e8cd322db40a5e3fd138af88290dfac1ba4d797e3b534561e85",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166944"
+        }
+      }
+    },
+    {
+      "id": "9c9b56b2-39fc-4631-8bc6-17ba3558cf05",
+      "title": "Superbloom #34",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=33&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166945&token_id_hash=0x63c8ac66eebc73796aacffaa91e6638723421986ff1111c93c7bb2bcbb091dff",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166945"
+        }
+      }
+    },
+    {
+      "id": "cafa2780-5c86-4440-bcd1-76d0f2afe742",
+      "title": "Superbloom #35",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=34&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166946&token_id_hash=0x31be29dcd944d49ab7e628056c64f070af26973420cd81283c43a0d66b93f39c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166946"
+        }
+      }
+    },
+    {
+      "id": "f1e68cd2-7a61-42f6-be30-98b36396bfdb",
+      "title": "Superbloom #36",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=35&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166947&token_id_hash=0x1b17cd27f5e7dfd3cd5ffbfaa04afe2918d536e2ad52761fa9476d50a566aa67",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166947"
+        }
+      }
+    },
+    {
+      "id": "5cce168a-b819-4380-b981-6e2307ff2731",
+      "title": "Superbloom #37",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=36&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166948&token_id_hash=0x3bcbe76c035b352a17bc8cee8772e7f8d0a7a6dbba247c8a854a9a39d3d241b8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166948"
+        }
+      }
+    },
+    {
+      "id": "16cff122-c3aa-46b9-867a-c436195fc5e3",
+      "title": "Superbloom #38",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=37&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166949&token_id_hash=0x3216fbf0bc80ed563efaa6a7cfd7b4acc6dd3ec53b2bc062185919f20bb71870",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166949"
+        }
+      }
+    },
+    {
+      "id": "061142b4-28f9-4427-b3b4-a42674332713",
+      "title": "Superbloom #39",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=38&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166950&token_id_hash=0x7ccd1d6f306c12794c0f3ef2b8e1f95d786aa5fb2f63ed38f323a1a8c3a50155",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166950"
+        }
+      }
+    },
+    {
+      "id": "11186a86-7a32-408c-8e94-392212b12460",
+      "title": "Superbloom #40",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=39&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166951&token_id_hash=0xa0a87c1e605e634006901b77ff8229a5107f4180c4ba5118534a34491066f1e3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166951"
+        }
+      }
+    },
+    {
+      "id": "5ebdcb46-56e6-42ff-9634-3b8e50d193ce",
+      "title": "Superbloom #41",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=40&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166952&token_id_hash=0xbdf059ae160f67a99bf2cf130c6322c270096eba7b491ff1f15a3339f2663604",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166952"
+        }
+      }
+    },
+    {
+      "id": "9fb51bd0-06db-49fd-bc23-d81c98824b9d",
+      "title": "Superbloom #42",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=41&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166953&token_id_hash=0x16436a5fe1f6af6e39739dee4f0e400e21c74140ec92950239b48de3cee7210f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166953"
+        }
+      }
+    },
+    {
+      "id": "e32fbc1a-8c79-4417-8976-ea72c4ece84f",
+      "title": "Superbloom #43",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=42&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166954&token_id_hash=0x4be568de962ba667ad35284c8116dc1ac4241de0684245824cd42f092362293c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166954"
+        }
+      }
+    },
+    {
+      "id": "ee16bf44-e114-4bc7-8088-cbd8044a00e9",
+      "title": "Superbloom #44",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=43&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166955&token_id_hash=0xbe822e7993803daf697b7711e6001c411a1bbd84fee3ff581fde88583c31d2b7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166955"
+        }
+      }
+    },
+    {
+      "id": "a8ec95a6-ea3c-466f-8609-abb6dc91a9e8",
+      "title": "Superbloom #45",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=44&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166956&token_id_hash=0x32010da7dc717317ba7d0fce83cf58d8f7927b679e628b273ec12b951a8408fe",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166956"
+        }
+      }
+    },
+    {
+      "id": "24323744-dace-4eca-a3f5-75b0853bd9dd",
+      "title": "Superbloom #46",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=45&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166957&token_id_hash=0x1038020a357637916e655b03fbf1dcb9d00add175ea1a1c37a8bd96dd77ca7ab",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166957"
+        }
+      }
+    },
+    {
+      "id": "5bbe9594-552d-4353-9320-a559f28fe6f9",
+      "title": "Superbloom #47",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=46&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166958&token_id_hash=0xc126ad243572bbd29f112dada637aca28b5696138b7126c6243ca7713d06bddf",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166958"
+        }
+      }
+    },
+    {
+      "id": "0ab97d73-a19b-47b7-a760-9d2a828c8539",
+      "title": "Superbloom #48",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=47&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166959&token_id_hash=0xe040a148b9c168d4adde4e4bab75b222efcd0bc5b4a99f3badadb868fe9deb16",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166959"
+        }
+      }
+    },
+    {
+      "id": "cbba3321-04ad-4d55-9662-f980e4f87215",
+      "title": "Superbloom #49",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=48&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166960&token_id_hash=0xe6151eed2fecc38672482868116b5434ffbe7683c10ae18743c32b6857aedc08",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166960"
+        }
+      }
+    },
+    {
+      "id": "b80472d4-91ae-443a-bcab-960d0a4d2623",
+      "title": "Superbloom #50",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=49&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166961&token_id_hash=0xba81804f558c33735490b123c3e6cf09c2ef0510a34cbb017742485af443c9de",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166961"
+        }
+      }
+    },
+    {
+      "id": "84efeefb-98be-4954-bdf9-d5cae73ca1a3",
+      "title": "Superbloom #51",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=50&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166962&token_id_hash=0x72162a39c81d966b641ac40daa6daa654ee398490eeca478ac0b987c240815bc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166962"
+        }
+      }
+    },
+    {
+      "id": "24337061-7c64-4ef4-90b5-26f8f5e056b4",
+      "title": "Superbloom #52",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=51&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166963&token_id_hash=0xa6c690fc8c18059e3df187adb5ea93a0a2c12268b4563e3e45c292d34c0835e9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166963"
+        }
+      }
+    },
+    {
+      "id": "5f3b07c3-c00f-48b2-ad39-2032d2913363",
+      "title": "Superbloom #53",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=52&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166964&token_id_hash=0x82bc03c8605e92f8f2c9b6e29b115a19cef36f61551d3fa2fb0aecb6cba05ac5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166964"
+        }
+      }
+    },
+    {
+      "id": "60b2e66f-1709-4556-a665-ab75933f4a77",
+      "title": "Superbloom #54",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=53&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166965&token_id_hash=0x398c9a03d31c72a654a103d400994fd824f5f87166b94939daf97f37afe87757",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166965"
+        }
+      }
+    },
+    {
+      "id": "c3362480-9aad-4979-ae23-46f45185b3df",
+      "title": "Superbloom #55",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=54&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166966&token_id_hash=0xa42aa06d40f397ae6276196403ad21db551cca854fcbf5b89e3a70d22bcefc62",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166966"
+        }
+      }
+    },
+    {
+      "id": "0bb0b0bb-96b8-4ec1-8051-fb85953148ba",
+      "title": "Superbloom #56",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=55&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166967&token_id_hash=0x5e0d8ae0b4612a308e167b91b2a62bc8f8fcf86e294dc12345454a8b9032c59e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166967"
+        }
+      }
+    },
+    {
+      "id": "306404ff-27aa-4305-84ed-04d042fea593",
+      "title": "Superbloom #57",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=56&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166968&token_id_hash=0xe28264b1594bd43d641303914d67480f03c1850e3c6c0c7b3c661b78a9401763",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166968"
+        }
+      }
+    },
+    {
+      "id": "6330fdab-95e8-46ae-a570-65b60110e8bc",
+      "title": "Superbloom #58",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=57&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166969&token_id_hash=0x82bcc01209a7a4252feca04220e92443f85fb1b91f1d0aa44029402fa2aec9c2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166969"
+        }
+      }
+    },
+    {
+      "id": "dc65b0cc-7900-4ff5-ae1c-4d6bd13e5a52",
+      "title": "Superbloom #59",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=58&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166970&token_id_hash=0x24edb5bd361c5a4506bb2227116263c6287b74e6bf9790f47c43992a994b32cb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166970"
+        }
+      }
+    },
+    {
+      "id": "ba28e4b2-9a40-469e-8e9d-11fc82b2048b",
+      "title": "Superbloom #60",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=59&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166971&token_id_hash=0xe6814ca6ac9fdd6642365541b50276b15e6d72cfa142e88329b15441bf594f43",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166971"
+        }
+      }
+    },
+    {
+      "id": "212cb922-f731-4d7f-a431-a6b6a5e60e26",
+      "title": "Superbloom #61",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=60&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166972&token_id_hash=0xf6979cf3c521f43c0ed81604732a54f965901d7e7c69354733e57b9814ff30e7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166972"
+        }
+      }
+    },
+    {
+      "id": "b37b5306-e12f-490f-9937-49a50bcc7f4b",
+      "title": "Superbloom #62",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=61&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166973&token_id_hash=0x5c6381a8a266306d9f49406781ceb030df39a113e90a96677cae10e76ff886d7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166973"
+        }
+      }
+    },
+    {
+      "id": "54b44f17-166a-4e6b-a709-6fe4b0e138b0",
+      "title": "Superbloom #63",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=62&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166974&token_id_hash=0xc67e3da91bc9573a4ba66d14ddac79a879e2049a270736e2e85ddcdd095e27de",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166974"
+        }
+      }
+    },
+    {
+      "id": "6cf26df4-bcee-4a3d-bbbe-6fe6ad5587bf",
+      "title": "Superbloom #64",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=63&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166975&token_id_hash=0x7f4c71f041598d002cff19b656232ac512d2c21bcba423b429fed83f051c70b5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166975"
+        }
+      }
+    },
+    {
+      "id": "ee3eeca5-fbd1-4090-99dc-f9c09a0444f7",
+      "title": "Superbloom #65",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=64&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166976&token_id_hash=0x4416bd90a3064db38076ccfca1b9e5a7263ac53adc11529c20190678ab37fab2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.401Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166976"
+        }
+      }
+    },
+    {
+      "id": "eb8a0c5a-5573-4f60-92df-4d663eb20dd3",
+      "title": "Superbloom #66",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=65&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166977&token_id_hash=0x88ac53d38b2baf13c991ddc18c7e9ba4e0939d1c85b5b83f5758b0e19470d50b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166977"
+        }
+      }
+    },
+    {
+      "id": "3a8bc51b-73c7-4546-b5ab-06e3e8e0e8c9",
+      "title": "Superbloom #67",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=66&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166978&token_id_hash=0x868e5dcb88e8489fed3824592b67d886b46671b1a4c4f76f4f5c7a2c53243a35",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166978"
+        }
+      }
+    },
+    {
+      "id": "36217cc0-5312-4ace-a334-93d4f1a184ba",
+      "title": "Superbloom #68",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=67&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166979&token_id_hash=0x08d9a70ce7dbf9d2923faddde504ca214c5a3d81a0db2fe62e81c95a83462df9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166979"
+        }
+      }
+    },
+    {
+      "id": "e7af5fd2-4069-4d96-b6ab-f8c4cb1ab824",
+      "title": "Superbloom #69",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=68&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166980&token_id_hash=0xe7cd4ced41c732968d6450b55b51c548e1e06090b8a0bd37b24306ff950837f2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166980"
+        }
+      }
+    },
+    {
+      "id": "68ea528b-773a-4b4c-b9d5-85c5bbd67048",
+      "title": "Superbloom #70",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=69&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166981&token_id_hash=0x04f78a38ac1460d5ceceb885962397d3bf1c8f7e28ea0de6eab7ab162ff49920",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166981"
+        }
+      }
+    },
+    {
+      "id": "513e25cc-391e-4e74-be98-3e0f2eeae9f0",
+      "title": "Superbloom #71",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=70&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166982&token_id_hash=0x4341a3724af1904220ef30521689547308053dfbeddd126d5b4240527c79610c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166982"
+        }
+      }
+    },
+    {
+      "id": "74740187-91e5-40cb-b5ad-9ace58f9bb55",
+      "title": "Superbloom #72",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=71&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166983&token_id_hash=0x90a358c21ad91da85b111acaa4c564da4dd66b9a4e7e3c5e444c0a45ba9aa384",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166983"
+        }
+      }
+    },
+    {
+      "id": "98e673e2-64cf-43da-9c78-895cbcb9d862",
+      "title": "Superbloom #73",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=72&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166984&token_id_hash=0x29f96f06eedd5d86a3d551660e48101b8030b17a803b7e94e583b1a91a466468",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166984"
+        }
+      }
+    },
+    {
+      "id": "4c215db0-6e15-4e6d-99e8-178a2e6b91d6",
+      "title": "Superbloom #74",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=73&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166985&token_id_hash=0x94302338a7693055d4c2f6e87b02191af811c973c77ac329154d4b6e91d01b53",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166985"
+        }
+      }
+    },
+    {
+      "id": "6f1a5c90-31e7-4a05-b0d9-01bd88bffe1a",
+      "title": "Superbloom #75",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=74&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166986&token_id_hash=0x8fa6a7ee420fdca359f572daa1bf492a198ba650b5f9adda0f3a9730b19f9ad9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166986"
+        }
+      }
+    },
+    {
+      "id": "4be5083c-6636-49ad-8287-5d12ecdd8ffb",
+      "title": "Superbloom #76",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=75&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166987&token_id_hash=0x5e13d45089ff7aed6c6cd155221f98f3696931c5b6a3e8688b91f8b35d677a22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166987"
+        }
+      }
+    },
+    {
+      "id": "2462e482-b9c4-4547-95e3-2fc27f163d24",
+      "title": "Superbloom #77",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=76&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166988&token_id_hash=0x849600cdc0e4e38b40272a7b65a3b58168c29474add637dbaee3070ea3fbb015",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166988"
+        }
+      }
+    },
+    {
+      "id": "ed8c4509-c0a6-4072-b7c3-39d89ed07406",
+      "title": "Superbloom #78",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=77&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166989&token_id_hash=0x5008f3ab56200ac27a024e39ec17aee4d14d8e8fb03303666f0d6f817d613078",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166989"
+        }
+      }
+    },
+    {
+      "id": "2eaf60b6-5a20-4479-9629-2e24f319799b",
+      "title": "Superbloom #79",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=78&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166990&token_id_hash=0x761a8dce17b02ba3f6a4f3c2d4a446775844cfe12bea194bb5c7710234db9c80",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166990"
+        }
+      }
+    },
+    {
+      "id": "fd202b2c-3223-4c6e-8c80-8f6064db2724",
+      "title": "Superbloom #80",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=79&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166991&token_id_hash=0xbf0b35f56cd13170c212ffb2f50fe215410aadca21e8f6097958d72cff2b7ce5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166991"
+        }
+      }
+    },
+    {
+      "id": "9f338abe-4627-4535-976e-34e9d930d008",
+      "title": "Superbloom #81",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=80&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166992&token_id_hash=0x320a84f2c65bc6e1cc758d49f86528d9fdcd788f085fa32a7d10ed3ae183c9ee",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166992"
+        }
+      }
+    },
+    {
+      "id": "46a0e50f-d1a2-49ab-8242-2feea4547106",
+      "title": "Superbloom #82",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=81&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166993&token_id_hash=0xd453997a41e801538ac11e3a2d7cced3188afb7bbfee4352b3fc5600c4071def",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166993"
+        }
+      }
+    },
+    {
+      "id": "623e268b-c825-4086-99c6-cf52e6bddf10",
+      "title": "Superbloom #83",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=82&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166994&token_id_hash=0xa1d623bf55f11116fcb80132f50ebc3a6dd9e20297331e1298e7426f398c00ff",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166994"
+        }
+      }
+    },
+    {
+      "id": "09cdb0be-1c76-4df2-9a90-9fcda72aa800",
+      "title": "Superbloom #84",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=83&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166995&token_id_hash=0xffaa5880ca7dce2ac38a282cc3fcad47425b3448a620044ff547579b173e59af",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166995"
+        }
+      }
+    },
+    {
+      "id": "19b91eaf-cf67-47a2-8ae4-db3d31d90932",
+      "title": "Superbloom #85",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=84&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166996&token_id_hash=0x617613daa82682d7b70ed88f113676a0b71fca99a998e5cfaa7f0a1a20e17454",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166996"
+        }
+      }
+    },
+    {
+      "id": "8a93ae92-6981-40df-8e86-3dca47f566df",
+      "title": "Superbloom #86",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=85&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166997&token_id_hash=0x81f64a0938a1c32743244630e731a9018ffd3c8a22f50e52d268c9a57a0cf53d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166997"
+        }
+      }
+    },
+    {
+      "id": "a9ecf4ee-3743-4ce9-b028-50dce31d8947",
+      "title": "Superbloom #87",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=86&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166998&token_id_hash=0x13f9cd165e3eab3aa3fe0e7ba6db96a5029fed68169411267e3e1115f2a5b523",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166998"
+        }
+      }
+    },
+    {
+      "id": "a6eedefa-5f72-49a7-92a8-dff519462483",
+      "title": "Superbloom #88",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=87&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945166999&token_id_hash=0xb56a2a05eb3d429c8be166e201bfd1e862fae7c6498a85f52e2bba29af5faae2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945166999"
+        }
+      }
+    },
+    {
+      "id": "da9b8ca3-b9a6-4fa9-9b8b-6b1737092091",
+      "title": "Superbloom #89",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=88&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167000&token_id_hash=0xb387b5f7bfe16ef67f21e5bc71e706b127851da53ac03b79c680a6c4a0cb1f53",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167000"
+        }
+      }
+    },
+    {
+      "id": "2aefdc57-8f85-4011-9abb-1543c8075619",
+      "title": "Superbloom #90",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=89&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167001&token_id_hash=0xd26573393adefd4765edda5aee5385ae19a7bb99fa3278d2208c20481de35c3d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167001"
+        }
+      }
+    },
+    {
+      "id": "9a9950e4-51c7-491c-9f05-87abb88c3646",
+      "title": "Superbloom #91",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=90&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167002&token_id_hash=0x4c44db0b1f22eef8b5698505afa79acb14f8ec4fe982ba9e8b09e6429bfc25f3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167002"
+        }
+      }
+    },
+    {
+      "id": "42d073f0-1c58-4b9f-88cc-c63bba70f0df",
+      "title": "Superbloom #92",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=91&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167003&token_id_hash=0xc96fdf082b70bb06626fa3af4d911826d0fc02201686508af6a9f34e863d4c9d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167003"
+        }
+      }
+    },
+    {
+      "id": "2e714490-f056-419c-9777-c57c79d641c6",
+      "title": "Superbloom #93",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=92&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167004&token_id_hash=0xfd30ea934a99571fdbf7e81de8bb341986374f45b84583e0ff250f2b90816b01",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167004"
+        }
+      }
+    },
+    {
+      "id": "e91d5e3c-51f7-400e-9153-157e4d9e6a7b",
+      "title": "Superbloom #94",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=93&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167005&token_id_hash=0xd40b4dead307f5b15aa01eb6de0b587135135dafb21832761a5c6dae041a4694",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167005"
+        }
+      }
+    },
+    {
+      "id": "870fe1f4-9f6b-4b19-bb0b-112edaf7a21c",
+      "title": "Superbloom #95",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=94&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167006&token_id_hash=0x5521d29bf6805afbd4347a5d353eed35e8ddd9d0b60e68480e071f7d7f81380f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167006"
+        }
+      }
+    },
+    {
+      "id": "c310ea3c-669e-427f-a6e0-047ba2ebe641",
+      "title": "Superbloom #96",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=95&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167007&token_id_hash=0xbadea5df0ea268e8293777b9344ba99363d2b3d61b35888339e977c73003de74",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167007"
+        }
+      }
+    },
+    {
+      "id": "7d92129c-b1b1-4647-89ad-80975c468384",
+      "title": "Superbloom #97",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=96&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167008&token_id_hash=0x058a44d4274330a9c8c67be68f26c3aa0c1cbea8a9119b3738b26fdd3923c01d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167008"
+        }
+      }
+    },
+    {
+      "id": "68070cf2-7e4a-4e7f-ba56-991a90e4ed96",
+      "title": "Superbloom #98",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=97&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167009&token_id_hash=0xc2eee1e9203dfb81dd6cc5c6f6f7864f8936eaaf290fab79d22501aa0a8ca1d6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167009"
+        }
+      }
+    },
+    {
+      "id": "d2d2bd10-9cf1-46ac-8be1-7396740bafa4",
+      "title": "Superbloom #99",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=98&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167010&token_id_hash=0x101bd411352910fed023a16c04139f2101f0692b2263e5df152cdf1101f56b9c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167010"
+        }
+      }
+    },
+    {
+      "id": "435d19a1-ce35-4bc4-ad91-5ae92ddfac9c",
+      "title": "Superbloom #100",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=99&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167011&token_id_hash=0x39ef75ecdf9cd65051d550ad714ddc8b868f64f7c62fe650d4ca7873ff868550",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167011"
+        }
+      }
+    },
+    {
+      "id": "54e7d408-bbc1-4d4a-a6a5-5d29993818fd",
+      "title": "Superbloom #101",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=100&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167012&token_id_hash=0xb7eaf9369ddd3ef100c06e71c1160444b10fdd7d1b7af1eec40f3dcadc8409ef",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167012"
+        }
+      }
+    },
+    {
+      "id": "d00a88cf-1d28-41b9-a1dd-1ed00dae289f",
+      "title": "Superbloom #102",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=101&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167013&token_id_hash=0x00649a54e41db2d1a8857843a71c7228e6538eadfe049979e7adce113b94ad08",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167013"
+        }
+      }
+    },
+    {
+      "id": "36571289-1bb8-4a28-9dd7-78adb59893b3",
+      "title": "Superbloom #103",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=102&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167014&token_id_hash=0xbd5b82cae650215eb8f39c2b867e60ba1a14824ee9832f71a6941372440f2d19",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167014"
+        }
+      }
+    },
+    {
+      "id": "b6322af0-aa57-4b69-b512-bb69f65aa952",
+      "title": "Superbloom #104",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=103&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167015&token_id_hash=0x648bc59d49548908054d18ef2ec9e2456f2848be12b19120f4fc610250afa9f8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167015"
+        }
+      }
+    },
+    {
+      "id": "97c0732c-96a8-4ebd-bdf4-b7393df20864",
+      "title": "Superbloom #105",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=104&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167016&token_id_hash=0x713f837ecef08aac58e6dec0e4e0b122165741d8aaff0985ada39f3304825296",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167016"
+        }
+      }
+    },
+    {
+      "id": "8175b1a0-67fc-4c6c-b023-85bc7d22d593",
+      "title": "Superbloom #106",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=105&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167017&token_id_hash=0xa2498aaca80dfcbce43b7c22a5c7f6ec791be1c420773730dd6c29dac8c4cb0f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167017"
+        }
+      }
+    },
+    {
+      "id": "ba38aa10-247e-40e2-b233-ec5d7c5dd278",
+      "title": "Superbloom #107",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=106&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167018&token_id_hash=0x2a1eb759bacab42d19f98d3c9951c3a13dbe76e05137dbe3c6347f40c8618487",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.402Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167018"
+        }
+      }
+    },
+    {
+      "id": "ce40bb67-bcdc-4664-84a6-650aad9c26d9",
+      "title": "Superbloom #108",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=107&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167019&token_id_hash=0xa3f4e7d01838ce89885de9954e14c3f6590814485f7d9cccc67aa8fff4e56d9f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167019"
+        }
+      }
+    },
+    {
+      "id": "d4f43749-c640-4050-abd6-2e7a594a0142",
+      "title": "Superbloom #109",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=108&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167020&token_id_hash=0xdcafa6d5b902fa201a34af5880f6e1c8beb1f9cf48999e06e783bae18b79ce85",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167020"
+        }
+      }
+    },
+    {
+      "id": "ecaa14c3-a905-45f7-a8da-1abc5bf3232c",
+      "title": "Superbloom #110",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=109&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167021&token_id_hash=0xb4ed8bc5d77a5cb49ec8581fa67fcc81b6704ea80f9b025ea175cffa007da13c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167021"
+        }
+      }
+    },
+    {
+      "id": "8cf67b71-62b5-4536-8bdd-6322166845ae",
+      "title": "Superbloom #111",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=110&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167022&token_id_hash=0x4aefa0b02892df0fd479e2b50d9f1d70dabb6fe06e4d770f8ad7ea3a392abbd3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167022"
+        }
+      }
+    },
+    {
+      "id": "8260d804-ce57-44da-b878-3535c3053185",
+      "title": "Superbloom #112",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=111&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167023&token_id_hash=0x0ab5b9b1e9064d93c7d71a1fcfd68acf8ddf6f2b9c0779c9e9c6c4d55d7164ec",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167023"
+        }
+      }
+    },
+    {
+      "id": "30985bce-f9fe-40b5-9baf-2badd5fb7c18",
+      "title": "Superbloom #113",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=112&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167024&token_id_hash=0x7dddbfba7ec781066959a4872de0f445b324ac40a5511f54d9f9d939d926ac51",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167024"
+        }
+      }
+    },
+    {
+      "id": "0f054e23-d1df-4ed9-8e12-e01748c0d18d",
+      "title": "Superbloom #114",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=113&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167025&token_id_hash=0x14ceb5807f96eff58512c4dd2f5c08e69354a89507ede4d1ca952b48159a50ab",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167025"
+        }
+      }
+    },
+    {
+      "id": "3bcb223d-ad16-406d-bc98-51f9f6d80440",
+      "title": "Superbloom #115",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=114&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167026&token_id_hash=0x18b869bbc3801f859e9c801da0e3ceee8de9273bc68ebc4fe088a31fd87f78fc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167026"
+        }
+      }
+    },
+    {
+      "id": "d971fead-a817-486e-af7a-cd5d69bb9c3f",
+      "title": "Superbloom #116",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=115&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167027&token_id_hash=0xa10a2338908ef25669fa8272bea6da19ca5b80624d192ede64f2b9719027d781",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167027"
+        }
+      }
+    },
+    {
+      "id": "b84ae241-a829-49cd-8bbd-5e3fe693d113",
+      "title": "Superbloom #117",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=116&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167028&token_id_hash=0x147c3c3dde19bc0fea3e4e58c958ae9d4b7855680e777b1232492fbfc5f89135",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167028"
+        }
+      }
+    },
+    {
+      "id": "2c166a9f-d287-4b0e-9f6d-532e49df82e3",
+      "title": "Superbloom #118",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=117&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167029&token_id_hash=0xfb8ba0efcdce7811364c0468248510148f9ed9e58ed54e3b2ec50e1562f96ff3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167029"
+        }
+      }
+    },
+    {
+      "id": "edb4ed30-ac2b-4c19-a096-46396af11c55",
+      "title": "Superbloom #119",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=118&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167030&token_id_hash=0x06a75993d77b6201f390dd3448d7fa47b934a9000e868512ed4e54366e7ba38a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167030"
+        }
+      }
+    },
+    {
+      "id": "f539eae8-0851-4d70-90cd-c611d3eeef8a",
+      "title": "Superbloom #120",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=119&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167031&token_id_hash=0x73846df601f87c193e185c9910b3e4055724a83ad90626d5a8c8dfa50523b14f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167031"
+        }
+      }
+    },
+    {
+      "id": "fd2dbdd0-1655-42bb-b995-543ffded0761",
+      "title": "Superbloom #121",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=120&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167032&token_id_hash=0xfba2f740ddf07e632a0c7c10916f020e42977665ce945f08ceb517cf9b9be4e7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167032"
+        }
+      }
+    },
+    {
+      "id": "fad86b03-4b8e-4c08-9c57-c6d62df49def",
+      "title": "Superbloom #122",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=121&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167033&token_id_hash=0x90fee71be889e98d34ce11776aa1f71e1424e828ac5c45559cd298a3585dfcc0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167033"
+        }
+      }
+    },
+    {
+      "id": "6d608a2b-8db6-4341-b339-f9d790927398",
+      "title": "Superbloom #123",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=122&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167034&token_id_hash=0xfce9ea89e2bbf2528591a022598cd1574ef971efb675d3352b1b0beb1fd46cc0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167034"
+        }
+      }
+    },
+    {
+      "id": "d172067c-b65f-4699-93e0-f4e1300d2845",
+      "title": "Superbloom #124",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=123&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167035&token_id_hash=0x759a9952fc10b42f53b905a9bb78cbb4330cbe87290ddd64a1b76cb80e3a5aff",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167035"
+        }
+      }
+    },
+    {
+      "id": "b6d4932b-079b-4da5-9eff-a0fce46ab554",
+      "title": "Superbloom #125",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=124&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167036&token_id_hash=0xdf13d3bfbb68a0728ebd8479e35fc62bade595ec38aa00a1a857a066f2537697",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167036"
+        }
+      }
+    },
+    {
+      "id": "7a291b95-ccc9-4137-a657-d8d3dd976170",
+      "title": "Superbloom #126",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=125&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167037&token_id_hash=0x43542061409227e0e2e88934b766779ddc54579b8a18eb4751eb307c368782e0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167037"
+        }
+      }
+    },
+    {
+      "id": "27c2fcce-4247-483d-bc69-ca519ba5a6fe",
+      "title": "Superbloom #127",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=126&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167038&token_id_hash=0x660c961ca9e076ed7baafd4a65d6aea597886581f79ca8339a264ad2cd24b7ee",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167038"
+        }
+      }
+    },
+    {
+      "id": "e2e95bc2-c3ed-43fb-a44e-084d2fb3755a",
+      "title": "Superbloom #128",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=127&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167039&token_id_hash=0x3797aebdb1438ff74805181d5e19b9d05abf775d8ed783a98399615a0ce65af1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167039"
+        }
+      }
+    },
+    {
+      "id": "8aafde43-b6f3-4b5c-885f-54396598cf89",
+      "title": "Superbloom #129",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=128&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167040&token_id_hash=0xb61446b0be514bd17b114eb7c83692a9824249dcad0f3702d57b2faef7453d04",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167040"
+        }
+      }
+    },
+    {
+      "id": "79fff60d-289f-4a1b-8170-ec88188f3cfd",
+      "title": "Superbloom #130",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=129&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167041&token_id_hash=0x7f07a581ec62e5d0b8b61e51eb39c58a349a41a4baf99f48666f01df3cd9cdb5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167041"
+        }
+      }
+    },
+    {
+      "id": "d0fc4f61-c7e8-4da5-bf1f-96f40e870dc1",
+      "title": "Superbloom #131",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=130&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167042&token_id_hash=0x16d9ac557bb1f23b7ca16468a513470d70898460fb5efbe4293169564ce973cf",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167042"
+        }
+      }
+    },
+    {
+      "id": "2ac0b064-f1b7-4196-bee6-221566585302",
+      "title": "Superbloom #132",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=131&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167043&token_id_hash=0x2a30d220dafc578a0fb83e20382eedf1185443c63443b7a5e8269b0f7404c7f9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167043"
+        }
+      }
+    },
+    {
+      "id": "b3511d37-470b-4cda-be5c-ff0b223fd10b",
+      "title": "Superbloom #133",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=132&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167044&token_id_hash=0x32ce4ccfb2041c66e82a2582b9c2d1040cb5620edde32c44b05f4456b9261909",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167044"
+        }
+      }
+    },
+    {
+      "id": "cbdabcc1-13aa-4bb4-ac35-f8540da55925",
+      "title": "Superbloom #134",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=133&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167045&token_id_hash=0xa6fcf335bfe3af38768f05a34c93ce1754b648ea6234404013518d20a53354ab",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167045"
+        }
+      }
+    },
+    {
+      "id": "929eff43-b1be-45bb-a88f-071615252310",
+      "title": "Superbloom #135",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=134&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167046&token_id_hash=0x399fe6eef1984dbb2374c269dd3cf81dd704a88a537596ab46ca2167bce6b261",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167046"
+        }
+      }
+    },
+    {
+      "id": "1bdd8b4f-e973-4157-956f-2d984b147ad6",
+      "title": "Superbloom #136",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=135&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167047&token_id_hash=0xcb0da62b374d5f1f990d8752906f27c487ed2b295b89be8fbfd175aa7d8d9ccc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167047"
+        }
+      }
+    },
+    {
+      "id": "2638e441-5745-4dd8-9311-c682e229a520",
+      "title": "Superbloom #137",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=136&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167048&token_id_hash=0xcc9d6ec61bc28e17d2f47ba0c4e7e289b0be6fdd491012efe0de3b5411fe1c74",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167048"
+        }
+      }
+    },
+    {
+      "id": "2a168001-2d78-4416-af0f-e7163af1ffb9",
+      "title": "Superbloom #138",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=137&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167049&token_id_hash=0xb97a3361638c4a7538e84de64580f2d89e61a66e3dc221688d7721c4dfd152ca",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167049"
+        }
+      }
+    },
+    {
+      "id": "10adf671-8bdc-480b-a6b6-3d80338c26de",
+      "title": "Superbloom #139",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=138&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167050&token_id_hash=0xe4dbd075b4e36000c931b474264c427142a40de3ca72c7ce7120d693c6782327",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167050"
+        }
+      }
+    },
+    {
+      "id": "74364d23-9dd1-49ed-a692-e141c37d0748",
+      "title": "Superbloom #140",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=139&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167051&token_id_hash=0x6f42ccb4fe902c90f5dec436ece658e8bb6ee47e0579a15e1c73b962c42cd69b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167051"
+        }
+      }
+    },
+    {
+      "id": "f13dff81-de66-44ae-af74-dd51071f91bd",
+      "title": "Superbloom #141",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=140&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167052&token_id_hash=0xc8c102df65bdc7324a42e64eb19b2821404ad90fea900a8cc6a1ebb506f04b24",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167052"
+        }
+      }
+    },
+    {
+      "id": "9356ea82-a61f-45af-a71d-e362c3c9248d",
+      "title": "Superbloom #142",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=141&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167053&token_id_hash=0xb8ce7f9847c25001930f6b66c5c64f9ec2e38a2547df16a64570c85d4075dc39",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167053"
+        }
+      }
+    },
+    {
+      "id": "d0a10763-d251-443d-8612-520e9af99cb6",
+      "title": "Superbloom #143",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=142&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167054&token_id_hash=0xaccad3131699cd46cea88c2bee5e38804e6dfc1b9308e734ec9667ff5cf5a40d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167054"
+        }
+      }
+    },
+    {
+      "id": "84946ab9-289b-4cf2-a5d4-0f7098eaed19",
+      "title": "Superbloom #144",
+      "source": "https://cdn.feralfileassets.com/previews/7392c74e-cb0f-4be7-b4e4-26b9cad0499d/1686871245/index.html?edition_number=143&blockchain=ethereum&contract=0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250&token_id=252847730990432231993769525594770180945167055&token_id_hash=0x1fadd20b5fef04df2e5c25532af2c935d43cebc1d5f24cec3663520b64c9901e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:42.403Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xF51bFC40C10289246e5BBa7afEDeB8cF976c3250",
+          "tokenId": "252847730990432231993769525594770180945167055"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

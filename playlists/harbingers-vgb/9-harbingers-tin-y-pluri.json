@@ -1,0 +1,713 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "c0ceda37-1b5f-4fc6-ad23-9fea8b00f8b6",
+  "slug": "harbingers-tin-y-pluri",
+  "title": "Harbingers — Tin y Pluri",
+  "summary": "Fusing microscopic imagery, rock music, and *particle group*’s signature poetic incantations, which draw on concrete poetry and the aesthetic strategies of visual/textual interplay, “Tin y Pluri” has the feel of a music video. Indeed, it was originally designed to be exhibited on the iPod nano, a product that came out in the mid-2000s, when the idea of “nanotech” was synonymous with the future. Tin refers to the Tijuana Institute of Nanotechnology, a speculative space for nano-scale research and art production inaugurated in 2012. As artists engaged with scientific research, *particle group* question science’s narrative “engines of creation” and the aestheticized practices and “naturalized” conceptualisms inherent in research, investigation, discovery, and data transfer within scientific communities’ articulations of self. By recombining the rational and the impulsive, *particle group*’s media interventions invite us to question what we know about the synthetic material world we are surrounded by — what we buy, use, live in, and consume. ",
+  "coverImage": "https://imagedelivery.net/5BJzhBHeVhlhbn58hvcXAQ/c8f5db3c-f479-49b4-04bc-df8c16e70d00/raw",
+  "created": "2026-02-26T07:02:31.840Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "395b2ddf-b9fb-49ae-aa57-ade805a00e60",
+      "title": "Tin y Pluri AP",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=0&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538439&token_id_hash=0x0c4b22a5d327b7456e16fe664e4e7be1898d460a37d0f8912f8e2687c84b30af",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538439"
+        }
+      }
+    },
+    {
+      "id": "a2d97dd2-d2fd-4b52-8145-8ec234cb50aa",
+      "title": "Tin y Pluri #1",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=1&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538440&token_id_hash=0x64485e4de87a3f61a6a4c49f16fdf208e5a99e5351843a7cc8c868681104ab69",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538440"
+        }
+      }
+    },
+    {
+      "id": "62651b66-970b-4bf5-a3af-2c1ccb882fad",
+      "title": "Tin y Pluri #2",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=2&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538441&token_id_hash=0xdc8ac529fbdeba46b2d222d82538cae76277aac0b6c003a1fafc707983144d66",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538441"
+        }
+      }
+    },
+    {
+      "id": "82d1500f-74d1-4679-90b2-f7daf50a51ad",
+      "title": "Tin y Pluri #3",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=3&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538442&token_id_hash=0x121c9c435983a15f93b657da5c0cce7f3a708d79e65605cc46aec108db82ca77",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538442"
+        }
+      }
+    },
+    {
+      "id": "67b1b9fd-9899-4b53-9677-1a8ecdd92ec3",
+      "title": "Tin y Pluri #4",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=4&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538443&token_id_hash=0xf2d88a11a25ad34e4e6226fd3aabf329cc55ef727effa649de8e1fae02a5dd32",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538443"
+        }
+      }
+    },
+    {
+      "id": "ac3ea339-ce62-42bf-bd12-f921cfa243e5",
+      "title": "Tin y Pluri #5",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=5&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538444&token_id_hash=0x5c99cad6e69eb019d0029c76dc932830432469e5573c6466f39ab81f9e05410c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538444"
+        }
+      }
+    },
+    {
+      "id": "f8f3c2a3-1a30-49eb-80f1-6d4aad5f997a",
+      "title": "Tin y Pluri #6",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=6&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538445&token_id_hash=0x0531395acb3179417c4d20e59a6e7e49ad671570bf489e43da822284d9fba230",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538445"
+        }
+      }
+    },
+    {
+      "id": "c254375f-8b33-412f-afa9-e1314094f408",
+      "title": "Tin y Pluri #7",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=7&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538446&token_id_hash=0x3eb59df352309aaf61f32006241dc7a7d1637679e04ca3b6d55dacbed3369302",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538446"
+        }
+      }
+    },
+    {
+      "id": "0049ee4b-7ee8-4ec1-865e-147edb1f92d3",
+      "title": "Tin y Pluri #8",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=8&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538447&token_id_hash=0x4acc30503908069ddff49e1cfe5b3619b7e350d3c05ab955dc532a6c4cc604b4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538447"
+        }
+      }
+    },
+    {
+      "id": "a70befc1-6cf4-4a55-9c5e-cc151877d8d1",
+      "title": "Tin y Pluri #9",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=9&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538448&token_id_hash=0xa5e6b67710050e996a2f7e698b2bd5a6b67f0f918848ca01148ac3275833ff98",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538448"
+        }
+      }
+    },
+    {
+      "id": "33c93d71-8181-403e-8e8d-c9a3404ec536",
+      "title": "Tin y Pluri #10",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=10&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538449&token_id_hash=0xa277ac2b13bbcadce8fe76126f781367a14525cbf7add8c4766e5a9221ae4a97",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538449"
+        }
+      }
+    },
+    {
+      "id": "a4bf22e0-7e27-4c3e-81ef-5209544c1daa",
+      "title": "Tin y Pluri #11",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=11&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538450&token_id_hash=0xf601be31f9f7a3d930d1798006afc2ff4d23a8026084036728b6fcdba25b897c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538450"
+        }
+      }
+    },
+    {
+      "id": "6bece537-30c7-4c2c-b089-115bffefa18a",
+      "title": "Tin y Pluri #12",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=12&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538451&token_id_hash=0xa0b672c35bf9059a76dbdc0201596eb9721895b4a1cc748efc120eed103895b2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538451"
+        }
+      }
+    },
+    {
+      "id": "a5fc9ce1-1b9d-44ce-8c84-344382688956",
+      "title": "Tin y Pluri #13",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=13&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538452&token_id_hash=0xcc4944b4223d634765732a7bc0a44fc607ca90b8b8f8f50e823daaeaf6af51a5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538452"
+        }
+      }
+    },
+    {
+      "id": "ce4ce0d6-d087-4221-9365-8aa81ea31a9e",
+      "title": "Tin y Pluri #14",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=14&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538453&token_id_hash=0x34d5b3c4d920790a9126170d61ebc76f400efb2d493b3da186cf0fef61fbdf34",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538453"
+        }
+      }
+    },
+    {
+      "id": "e45de442-735c-41cf-b950-69be14d5e325",
+      "title": "Tin y Pluri #15",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=15&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538454&token_id_hash=0xaf4e4c099ee2ea80a0827b968fa08a3b7550e14114cbfade41c4a0ce7d6ab3b1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538454"
+        }
+      }
+    },
+    {
+      "id": "b5cc4281-5bbe-402f-87c7-0cd2c3939638",
+      "title": "Tin y Pluri #16",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=16&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538455&token_id_hash=0xe762dbdd3ed7b9449b20db77f891f8385c83a176530717d5e6231ff020a4e0b1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538455"
+        }
+      }
+    },
+    {
+      "id": "95cad29a-4770-4e80-a60c-cabfdc0a206a",
+      "title": "Tin y Pluri #17",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=17&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538456&token_id_hash=0xdf3086cd9f02d627dd340b33458ac78e9a5a9fa5c677edba609b37b6a5a3fd3c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538456"
+        }
+      }
+    },
+    {
+      "id": "3e5954c4-ea03-4159-8ccd-9f4efee66cf8",
+      "title": "Tin y Pluri #18",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=18&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538457&token_id_hash=0x8a113f3a9ecb50e356a05e735c3c5f0b276e7f2364691aa8390c0c1b9700222f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538457"
+        }
+      }
+    },
+    {
+      "id": "3b0f534e-1e81-4859-b180-b51bed253f78",
+      "title": "Tin y Pluri #19",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=19&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538458&token_id_hash=0x806cad2008e0e4ddf98c2e448d83909122274c1e9115d7f190371e942dd8602a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538458"
+        }
+      }
+    },
+    {
+      "id": "ab35a944-659a-4f12-8102-b2c458f1aa33",
+      "title": "Tin y Pluri #20",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=20&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538459&token_id_hash=0x90f5a203faa775a630b84784e57c1205a8c7b74e42a94e3c07c632de2b03bee4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538459"
+        }
+      }
+    },
+    {
+      "id": "0515e618-b965-41f6-b420-937f6f67ba4d",
+      "title": "Tin y Pluri #21",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=21&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538460&token_id_hash=0x36676914149a8d9dd1710f6835d20f8d1ada18f775dc13e41f29e9de78139693",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538460"
+        }
+      }
+    },
+    {
+      "id": "bf70978c-5d29-494d-a784-b938c6bc0202",
+      "title": "Tin y Pluri #22",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=22&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538461&token_id_hash=0x87af8213e1b7c1b993bf999011dbd0f7842b35efa4c7ad80dd566f79683fdf97",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538461"
+        }
+      }
+    },
+    {
+      "id": "c2ef7f89-9798-46cb-9f6d-5ae1bacfdcff",
+      "title": "Tin y Pluri #23",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=23&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538462&token_id_hash=0x9fda30b47bff5ef29ec406769dc5bac7901af570dd6173c3c16d3babde312670",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538462"
+        }
+      }
+    },
+    {
+      "id": "7ddd5891-e14a-4469-9d16-4b277f8b9873",
+      "title": "Tin y Pluri #24",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=24&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538463&token_id_hash=0xe65ce399d7568f1b0d5e84427fdf6f3a8160e3a589c8d1305cf48ea6cea9839f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538463"
+        }
+      }
+    },
+    {
+      "id": "878fd74d-8be2-411b-ab00-d234379dcaa4",
+      "title": "Tin y Pluri #25",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=25&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538464&token_id_hash=0x1b7d19f5543bf0866849a06c378e5d856fd0f3d6043e86430557b7580de6cb64",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538464"
+        }
+      }
+    },
+    {
+      "id": "817a1675-6e80-48f6-9543-f58564826c22",
+      "title": "Tin y Pluri #26",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=26&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538465&token_id_hash=0xf11408dd29be08895f92cb69eda1981a58f2101034dd1dd2daf7a44036a82c94",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538465"
+        }
+      }
+    },
+    {
+      "id": "c52d0341-50db-4d1e-b002-7f447e385a74",
+      "title": "Tin y Pluri #27",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=27&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538466&token_id_hash=0x7e063cd9b7541eea2a97e89e5498c811b6336ed35bd170a2d93c3bf948427511",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538466"
+        }
+      }
+    },
+    {
+      "id": "cf70a751-e539-439c-b8b8-5d7f36a7e8bd",
+      "title": "Tin y Pluri #28",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=28&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538467&token_id_hash=0x6d4df92949259b78131b0bb60bef0b9bf9f6256b4aace7c06206c9ac051fe8cf",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538467"
+        }
+      }
+    },
+    {
+      "id": "d4625379-245b-42a7-a2e0-9b8c8f98c4e5",
+      "title": "Tin y Pluri #29",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=29&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538468&token_id_hash=0xd09274ff8ccacc7549861ccedb224ecb26d0bcb3658b4bb1f04ce325530839e3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538468"
+        }
+      }
+    },
+    {
+      "id": "a745706c-8c4d-4218-ad4e-446468579c87",
+      "title": "Tin y Pluri #30",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=30&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538469&token_id_hash=0x775e2843d2d93310f2125ecebfe55a678359a71faccd5595b8003aea5be1fd6e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538469"
+        }
+      }
+    },
+    {
+      "id": "20d3b233-022d-42d1-9692-e97725e4be9f",
+      "title": "Tin y Pluri #31",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=31&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538470&token_id_hash=0xfd72b21518e222382bd488063fbdd74f757244d22e3eabc121c91029cd4213cb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538470"
+        }
+      }
+    },
+    {
+      "id": "c381ca04-7ee3-4c07-bf11-019361758755",
+      "title": "Tin y Pluri #32",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=32&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538471&token_id_hash=0x537affa761225bc51795e4c893accfefb5b8bf7df862da8c1dae13af7705fc4a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538471"
+        }
+      }
+    },
+    {
+      "id": "a7ab5299-be9a-49dc-8154-046befa2a9e6",
+      "title": "Tin y Pluri #33",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=33&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538472&token_id_hash=0xc694b82f2efb5d1b2629f67ba38f33bc6fe4de577374f16d9fe869b16c5655e1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538472"
+        }
+      }
+    },
+    {
+      "id": "d96f7be5-66f7-4ff2-88aa-ee10460671d9",
+      "title": "Tin y Pluri #34",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=34&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538473&token_id_hash=0x4f368a70b1f46653445419c4513317bb51816583cf6d842cb1a9adb0e6e73a65",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538473"
+        }
+      }
+    },
+    {
+      "id": "5a5e6fa8-c8fa-408d-818b-3dec0dddf46d",
+      "title": "Tin y Pluri #35",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=35&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538474&token_id_hash=0xbd9d0bfc56c8e8043e670508d47544e80341ad75555d9cb6368355269e6e6fee",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538474"
+        }
+      }
+    },
+    {
+      "id": "b0290693-4f68-47a0-b890-9d9a71138b49",
+      "title": "Tin y Pluri #36",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=36&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538475&token_id_hash=0xb14cc40dd38075e7ac05974c062c3d8e6c7de58bf3943651eeb611b36d937a90",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538475"
+        }
+      }
+    },
+    {
+      "id": "ec68a77e-de52-4dfd-a460-5ddc97741755",
+      "title": "Tin y Pluri #37",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=37&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538476&token_id_hash=0xdef4756f7b9dc6d7e3fd1aa09c2211636d5813f371a66c0addce9b4cd527051c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538476"
+        }
+      }
+    },
+    {
+      "id": "ef7f82c0-f22a-4995-b106-55eab9df5280",
+      "title": "Tin y Pluri #38",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=38&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538477&token_id_hash=0xf775a72fff77635d9e2693ea4281234bc875dee7b2709300bebe7ba23f931ab7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538477"
+        }
+      }
+    },
+    {
+      "id": "b9d3a99b-a8ad-45b0-b2ad-dba9a923378d",
+      "title": "Tin y Pluri #39",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=39&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538478&token_id_hash=0x2cabbb5c43bb905d92e37ab7d2e7f18d5b625ee119305367ec159f93bac1d766",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538478"
+        }
+      }
+    },
+    {
+      "id": "ace744bc-79bd-4820-875e-668e9a67b31b",
+      "title": "Tin y Pluri #40",
+      "source": "https://cdn.feralfileassets.com/previews/6db3cd9a-e341-4cd1-8d11-7a4688f45dae/1706081014/index.html?edition_number=40&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=105170814510720884534968678378680238518185772590047262605014910790304369538479&token_id_hash=0xede6d5532eaa9bcb42ba1697fd17c3b85195975b31b76a2171e68fa9b32a49fa",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.839Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "105170814510720884534968678378680238518185772590047262605014910790304369538479"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

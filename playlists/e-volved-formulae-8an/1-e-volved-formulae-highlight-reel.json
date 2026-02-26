@@ -1,0 +1,407 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "6ad5bf66-8ccc-46d7-90f5-0fbefa2ef1a8",
+  "slug": "e-volved-formulae-highlight-reel",
+  "title": "E-volved Formulae — Highlight Reel",
+  "summary": "A digital art exhibition featuring works from E-volved Formulae",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/2abc9d02-f78c-4dfe-7cfd-2e2d85c90200/raw",
+  "created": "2026-02-26T07:06:24.137Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "80d6642c-8280-4fb5-9572-057b5ee7105e",
+      "title": "E-volved Formula #01",
+      "source": "https://cdn.feralfileassets.com/previews/9d8ba8bc-1e6e-4dbe-acbe-9c2cbf8d793a/1732309733/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.131Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282060669504"
+        }
+      }
+    },
+    {
+      "id": "918f5b28-5bef-4c52-9f72-015d7bab1338",
+      "title": "E-volved Formula #02",
+      "source": "https://cdn.feralfileassets.com/previews/a2ec59c2-a56e-488c-9fdf-a67e04117337/1732309762/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.134Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282061669504"
+        }
+      }
+    },
+    {
+      "id": "28f2373a-2071-42dd-97e1-153b6f60874a",
+      "title": "E-volved Formula #03",
+      "source": "https://cdn.feralfileassets.com/previews/04f89cc6-7042-4eed-9566-b46d78621ef3/1732309810/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.135Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282062669504"
+        }
+      }
+    },
+    {
+      "id": "3c3adf67-e3dd-4221-9d28-dfdd20d2a019",
+      "title": "E-volved Formula #04",
+      "source": "https://cdn.feralfileassets.com/previews/dfb66bb8-1f6e-45f6-b18d-8b9c070f345f/1732309833/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.135Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282063669504"
+        }
+      }
+    },
+    {
+      "id": "cf62d3b6-ef3f-479d-a610-f1ed676c7eec",
+      "title": "E-volved Formula #05",
+      "source": "https://cdn.feralfileassets.com/previews/7a6b063b-638e-4b39-9116-21a9f77f52a2/1732309854/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.135Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282064669504"
+        }
+      }
+    },
+    {
+      "id": "53a0c0d6-ae5c-4e08-9b50-2552f121df1f",
+      "title": "E-volved Formula #06",
+      "source": "https://cdn.feralfileassets.com/previews/f247bc81-b318-4682-9678-0107a53dd6ec/1732309874/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.135Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282065669504"
+        }
+      }
+    },
+    {
+      "id": "946fcaf5-3e3b-4690-89e9-d4d7bf962030",
+      "title": "E-volved Formula #07",
+      "source": "https://cdn.feralfileassets.com/previews/00afe566-666c-4503-bdc1-b3d50b75e7a3/1732309892/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.135Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282066669504"
+        }
+      }
+    },
+    {
+      "id": "857b2bc0-1a79-471f-be6c-75dc00a17bca",
+      "title": "E-volved Formula #08",
+      "source": "https://cdn.feralfileassets.com/previews/5f9b3499-a222-4db8-9819-93476cddad3b/1732309913/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.135Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282067669504"
+        }
+      }
+    },
+    {
+      "id": "1e4b2f8f-2759-4dd8-83bd-ea3a32d9316f",
+      "title": "E-volved Formula #09",
+      "source": "https://cdn.feralfileassets.com/previews/6bf16a3e-74ce-4cb8-88dd-5d759649fbc5/1732309931/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.135Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282068669504"
+        }
+      }
+    },
+    {
+      "id": "343fb426-5ed9-467e-b4ae-c0039d716a98",
+      "title": "E-volved Formula #10",
+      "source": "https://cdn.feralfileassets.com/previews/6bbf0654-f674-4fda-a1c0-48f2fa0a0784/1732309951/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.136Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282069669504"
+        }
+      }
+    },
+    {
+      "id": "e6924fe8-5cf6-41e7-9097-32ce94d23375",
+      "title": "E-volved Formula #11",
+      "source": "https://cdn.feralfileassets.com/previews/03c214ff-a9f1-4731-a6a4-79335f9fe6d7/1732309973/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.136Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282070669504"
+        }
+      }
+    },
+    {
+      "id": "43911175-f050-42c2-9b25-1354afe9e257",
+      "title": "E-volved Formula #12",
+      "source": "https://cdn.feralfileassets.com/previews/dbec51af-3c01-4824-bd91-a21a3b23eaed/1732309991/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.136Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282071669504"
+        }
+      }
+    },
+    {
+      "id": "0969f390-bce3-402a-bd2a-1b58d788fa55",
+      "title": "E-volved Formula #13",
+      "source": "https://cdn.feralfileassets.com/previews/1b605863-0e96-4380-b90f-e5211f96c071/1732310009/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.136Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282072669504"
+        }
+      }
+    },
+    {
+      "id": "a7f9ba43-6779-4d12-a81e-d193639ce9d5",
+      "title": "E-volved Formula #14",
+      "source": "https://cdn.feralfileassets.com/previews/58b77db4-51c0-4199-a36f-9fdbaa802477/1732310025/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.136Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282073669504"
+        }
+      }
+    },
+    {
+      "id": "4a576d22-0b05-45a2-8702-b96c0f15053c",
+      "title": "E-volved Formula #15",
+      "source": "https://cdn.feralfileassets.com/previews/8ea87e8d-51c1-411a-b3d6-cf1c86e14747/1732310046/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.136Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282074669504"
+        }
+      }
+    },
+    {
+      "id": "b61fc523-4dde-4fa9-8366-ad487c475a04",
+      "title": "E-volved Formula #16",
+      "source": "https://cdn.feralfileassets.com/previews/d0f8e49a-ff14-4dd3-8e9f-610511318b8d/1732310064/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.136Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282075669504"
+        }
+      }
+    },
+    {
+      "id": "2188fedd-39c8-4578-8e61-3acb6d409004",
+      "title": "E-volved Formula #17",
+      "source": "https://cdn.feralfileassets.com/previews/db81d1a6-f70e-4665-862a-000417c28877/1732310082/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.136Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282076669504"
+        }
+      }
+    },
+    {
+      "id": "f2b220e6-6a42-4f00-86b3-609838229b17",
+      "title": "E-volved Formula #18",
+      "source": "https://cdn.feralfileassets.com/previews/3645c044-192b-41a8-a094-2d77213afadf/1732310100/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.136Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282077669504"
+        }
+      }
+    },
+    {
+      "id": "8b399a81-57c6-4de9-a5b4-0e823c1c906f",
+      "title": "E-volved Formula #19",
+      "source": "https://cdn.feralfileassets.com/previews/e8e9f20b-1c6e-4528-b768-aa1a32deb31b/1732310119/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.136Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282078669504"
+        }
+      }
+    },
+    {
+      "id": "20f3abf8-349d-4277-8f14-219eaadc3d47",
+      "title": "E-volved Formula #20",
+      "source": "https://cdn.feralfileassets.com/previews/e1964643-d46f-4c3c-aaf1-b77ae595b6f9/1732310137/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.136Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282079669504"
+        }
+      }
+    },
+    {
+      "id": "3816f853-91d9-47be-8950-930e86afd24b",
+      "title": "E-volved Formula #21",
+      "source": "https://cdn.feralfileassets.com/previews/3273f7b9-102c-4e87-96af-a8fab3db7158/1732310156/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.136Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282080669504"
+        }
+      }
+    },
+    {
+      "id": "7664daab-698b-42db-a698-ce82e85e9af0",
+      "title": "E-volved Formula #22",
+      "source": "https://cdn.feralfileassets.com/previews/10b93289-a501-4b34-b0a5-514f70a83a1b/1732310177/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.136Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282081669504"
+        }
+      }
+    },
+    {
+      "id": "27d6c38c-751e-4529-bf96-8b5ae5ce2ed4",
+      "title": "E-volved Formula #23",
+      "source": "https://cdn.feralfileassets.com/previews/8cf47dfe-e6d2-4e3e-9413-904d8b2a4a94/1732310197/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:24.137Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xFfE213c3faA18B4B80aC1658C363D471dC745886",
+          "tokenId": "54927077953071573898060197382410853987230099039252111790486496240282082669504"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

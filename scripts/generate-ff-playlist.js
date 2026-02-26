@@ -6,6 +6,20 @@
  * This script generates DP-1 playlists from a Feral File exhibition
  * using the Feral File API and the dp1-js library.
  *
+ * Playlist Generation Logic:
+ *
+ * 1. Solo Exhibition:
+ *    - Master Playlist: All "1 of 1" (single) + "Edition of n" (multi) works
+ *      Name: [Exhibition Name] — Highlight Reel
+ *    - Separate playlists for each "1 of n" (multi_unique/Generative) series
+ *      Name: [Exhibition Name] — [Series Title]
+ *
+ * 2. Group Exhibition:
+ *    - Master Playlist: All artworks from the exhibition, interleaved
+ *      Name: [Exhibition Name] — Full Collection
+ *    - Separate playlists for each "1 of n" (multi_unique/Generative) series
+ *      Name: [Exhibition Name] — [Series Title]
+ *
  * Usage:
  *   node scripts/generate-ff-playlist.js <exhibition-id-or-slug> [--private-key <key>]
  *
@@ -506,104 +520,87 @@ async function generatePlaylists(exhibitionIdOrSlug) {
     const playlists = [];
     const isSolo = exhibition.type !== 'group' && exhibition.type !== 'curated';
 
-    // Check if all series have artworkModel === 'multi'
-    const allSeriesAreMulti = allSeriesArtworks.every(
-      ({ series }) => series.settings?.artworkModel === 'multi'
-    );
-
     if (isSolo) {
-      // --- Solo exhibition ---
-
-      // Playlist 1: all series with artworkModel === 'single' grouped together
-      const singleItems = allSeriesArtworks
-        .filter(({ series }) => series.settings?.artworkModel === 'single')
+      // --- Solo Exhibition Logic ---
+      
+      // Master Playlist: All "1 of 1" (single) + "Edition of n" (multi) works
+      // Name: [Exhibition Name] — Highlight Reel
+      const highlightReelItems = allSeriesArtworks
+        .filter(({ series }) => {
+          const model = series.settings?.artworkModel;
+          return model === 'single' || model === 'multi';
+        })
         .flatMap(({ artworks }) => artworks);
 
-      if (singleItems.length > 0) {
-        console.log(`\nBuilding "1 of 1s" playlist (${singleItems.length} artworks)...`);
-        const items = buildPlaylistItems(singleItems, exhibition);
+      if (highlightReelItems.length > 0) {
+        const highlightReelTitle = `${exhibition.title} — Highlight Reel`;
+        console.log(
+          `\nBuilding Highlight Reel playlist (${highlightReelItems.length} artworks: 1 of 1 + Edition of n)...`
+        );
+        const items = buildPlaylistItems(highlightReelItems, exhibition);
         if (items.length > 0) {
-          const playlist = buildPlaylist(`${exhibition.title} 1 of 1s`, items, exhibition);
+          const playlist = buildPlaylist(highlightReelTitle, items, exhibition);
           validatePlaylist(playlist);
           playlists.push(playlist);
         }
       }
 
-      // If all series are multi, create a mixed playlist
-      // Note: allSeriesArtworks already contains only the first artwork from each multi series
-      if (allSeriesAreMulti) {
-        const allArtworksPerSeries = allSeriesArtworks.map(({ artworks }) => artworks);
-        const mixedItems = interleaveArtworks(allArtworksPerSeries);
+      // Separate playlists for each "1 of n" (multi_unique/Generative) series
+      // Name: [Exhibition Name] — [Series Title]
+      for (const { series, artworks } of allSeriesArtworks) {
+        const artworkModel = series.settings?.artworkModel;
+        if (artworkModel !== 'multi_unique') continue;
+        if (artworks.length === 0) continue;
 
-        if (mixedItems.length > 0) {
-          const mixedTitle = `Mixed ${exhibition.title}`;
-          console.log(
-            `\nBuilding mixed playlist: "${mixedTitle}" (${mixedItems.length} artworks)...`
-          );
-          const items = buildPlaylistItems(mixedItems, exhibition);
-          if (items.length > 0) {
-            const playlist = buildPlaylist(mixedTitle, items, exhibition);
-            validatePlaylist(playlist);
-            playlists.push(playlist);
-          }
-        }
-      } else {
-        // Playlist per non-single series: "$series_title"
-        for (const { series, artworks } of allSeriesArtworks) {
-          if (series.settings?.artworkModel === 'single') continue;
-          if (artworks.length === 0) continue;
-
-          const playlistTitle = series.title;
-          console.log(
-            `\nBuilding series playlist: "${playlistTitle}" (${artworks.length} artworks)...`
-          );
-          const items = buildPlaylistItems(artworks, exhibition);
-          if (items.length > 0) {
-            const playlist = buildPlaylist(playlistTitle, items, exhibition, series);
-            validatePlaylist(playlist);
-            playlists.push(playlist);
-          }
+        const playlistTitle = `${exhibition.title} — ${series.title}`;
+        console.log(
+          `\nBuilding generative series playlist: "${playlistTitle}" (${artworks.length} artworks)...`
+        );
+        const items = buildPlaylistItems(artworks, exhibition);
+        if (items.length > 0) {
+          const playlist = buildPlaylist(playlistTitle, items, exhibition, series);
+          validatePlaylist(playlist);
+          playlists.push(playlist);
         }
       }
     } else {
-      // --- Group / curated exhibition ---
-
-      // Playlist 1 (top): "Mixed $exhibition_title" — interleaved artworks from all series
+      // --- Group Exhibition Logic ---
+      
+      // Master Playlist: All artworks from the exhibition, interleaved
+      // Name: [Exhibition Name] — Full Collection
       const allArtworksPerSeries = allSeriesArtworks.map(({ artworks }) => artworks);
-      const mixedItems = interleaveArtworks(allArtworksPerSeries);
+      const fullCollectionItems = interleaveArtworks(allArtworksPerSeries);
 
-      if (mixedItems.length > 0) {
-        const mixedTitle = `Mixed ${exhibition.title}`;
+      if (fullCollectionItems.length > 0) {
+        const fullCollectionTitle = `${exhibition.title} — Full Collection`;
         console.log(
-          `\nBuilding mixed playlist: "${mixedTitle}" (${mixedItems.length} artworks)...`
+          `\nBuilding Full Collection playlist: "${fullCollectionTitle}" (${fullCollectionItems.length} artworks)...`
         );
-        const items = buildPlaylistItems(mixedItems, exhibition);
+        const items = buildPlaylistItems(fullCollectionItems, exhibition);
         if (items.length > 0) {
-          const playlist = buildPlaylist(mixedTitle, items, exhibition);
+          const playlist = buildPlaylist(fullCollectionTitle, items, exhibition);
           validatePlaylist(playlist);
           playlists.push(playlist);
         }
       }
 
-      // One playlist per series: "$series_title"
-      // Skip if all series are multi
-      if (!allSeriesAreMulti) {
-        for (const { series, artworks } of allSeriesArtworks) {
-          if (artworks.length === 0) continue;
+      // Separate playlists for each "1 of n" (multi_unique/Generative) series
+      // Name: [Exhibition Name] — [Series Title]
+      for (const { series, artworks } of allSeriesArtworks) {
+        const artworkModel = series.settings?.artworkModel;
+        if (artworkModel !== 'multi_unique') continue;
+        if (artworks.length === 0) continue;
 
-          const playlistTitle = series.title;
-          console.log(
-            `\nBuilding series playlist: "${playlistTitle}" (${artworks.length} artworks)...`
-          );
-          const items = buildPlaylistItems(artworks, exhibition);
-          if (items.length > 0) {
-            const playlist = buildPlaylist(playlistTitle, items, exhibition, series);
-            validatePlaylist(playlist);
-            playlists.push(playlist);
-          }
+        const playlistTitle = `${exhibition.title} — ${series.title}`;
+        console.log(
+          `\nBuilding generative series playlist: "${playlistTitle}" (${artworks.length} artworks)...`
+        );
+        const items = buildPlaylistItems(artworks, exhibition);
+        if (items.length > 0) {
+          const playlist = buildPlaylist(playlistTitle, items, exhibition, series);
+          validatePlaylist(playlist);
+          playlists.push(playlist);
         }
-      } else {
-        console.log('\nSkipping individual series playlists (all series have artworkModel: multi)');
       }
     }
 

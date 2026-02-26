@@ -1,0 +1,713 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "9cb457a6-ad62-4130-bebd-c46b6f0de275",
+  "slug": "harbingers-20-sided-elf",
+  "title": "Harbingers — 20-Sided Elf",
+  "summary": "“20-Sided Elf” depicts an automated prediction session from Zach Blas’ Icosahedron, an AI crystal ball that houses an immortal elf soothsayer. While tech elite toy with predicting the world’s future, Icosahedron plays with their worldview of the future. Blas modeled Icosahedron after the 20-sided die inside a Magic 8-Ball, a popular American fortune-telling toy designed to offer ten affirmative responses, five non-committal, and five negative. Similarly structured, the elf that lives inside the crystal ball of Icosahedron is trained via machine learning techniques on 20 writings influential to Silicon Valley’s approach to predicting the future, including texts by historian Yuval Noah Harari and Ayn Rand, as well as works of fiction such as The Lord of the Rings and Lord of the Flies. The outcome is an AI elf futurist created by accentuating the often overlooked condition that Silicon Valley’s predictive technologies are bound to material constraints and limitations, as well as ideologies and fantasies of the future.",
+  "coverImage": "https://imagedelivery.net/5BJzhBHeVhlhbn58hvcXAQ/ab2d428c-973c-4f69-15a6-4325dd7b5c00/raw",
+  "created": "2026-02-26T07:02:31.833Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "03e1e4cb-ed58-4ecf-be26-666bc109c09a",
+      "title": "20-Sided Elf AP",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=0&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459079&token_id_hash=0x2c058bee10cad570f92fd46b19e3eb516ffa91db5d922c1e2bf45fce79d2a9aa",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.831Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459079"
+        }
+      }
+    },
+    {
+      "id": "f16c724e-6e33-4764-9932-44a48ed5c8f8",
+      "title": "20-Sided Elf #1",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=1&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459080&token_id_hash=0x32b157bcce49a0b7a61fbbb8069173d0874c10099ce49b628d11aa82636642c3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.831Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459080"
+        }
+      }
+    },
+    {
+      "id": "b7874db8-1ce5-4290-8c99-60eef32de1ad",
+      "title": "20-Sided Elf #2",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=2&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459081&token_id_hash=0x5d038d6fb7b6124894688e2b720025f4d19a3a2a7cb615096a005fcce0f92c25",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.831Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459081"
+        }
+      }
+    },
+    {
+      "id": "d8ae1ee0-26cb-4e5f-9a3d-f244f935348d",
+      "title": "20-Sided Elf #3",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=3&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459082&token_id_hash=0xfa86f9be2697c47590416da4d0ea2e6e055d9741ac465c28adeaf2348c651ff0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.831Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459082"
+        }
+      }
+    },
+    {
+      "id": "983bcafd-cf31-4783-b055-cd962badded3",
+      "title": "20-Sided Elf #4",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=4&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459083&token_id_hash=0x268be95439e8e57d629ffc2bfd53d75196ac918679fc595ad1613849a78733c1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.831Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459083"
+        }
+      }
+    },
+    {
+      "id": "940cedb5-e38f-4392-8de7-96111d907c2a",
+      "title": "20-Sided Elf #5",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=5&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459084&token_id_hash=0x86a84b1f5a62adb4557e608c4b6a5e5fba47203e48d2a8c32a3a0a5fe4ac6c62",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.831Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459084"
+        }
+      }
+    },
+    {
+      "id": "5b00f338-68a5-414f-8339-40efab9f04e1",
+      "title": "20-Sided Elf #6",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=6&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459085&token_id_hash=0x1025234d0fed2bbb8a6b35a0383d2627816622541f4f516728282d32131d3c63",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.831Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459085"
+        }
+      }
+    },
+    {
+      "id": "1469cbd6-4b1e-4ae6-ad60-4e70d0a47987",
+      "title": "20-Sided Elf #7",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=7&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459086&token_id_hash=0x47a389b47aed0c22ed784c17c3979e1aec74ddfb85ade52bc47ee50ffb58f9b9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.831Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459086"
+        }
+      }
+    },
+    {
+      "id": "091c7ed2-7b79-49ac-b019-7e9041cff91c",
+      "title": "20-Sided Elf #8",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=8&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459087&token_id_hash=0x66634a02efa532233d650932505986a5c5afd29e4f41b9f36b0c28a02a0204dc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.831Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459087"
+        }
+      }
+    },
+    {
+      "id": "6a99abe4-3e6b-4eb6-981e-69a9f59b1550",
+      "title": "20-Sided Elf #9",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=9&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459088&token_id_hash=0xa8942e377c930f4d292ef87d2cf9e40e46fbedcc68e55d66f0a3408744dbf247",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.831Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459088"
+        }
+      }
+    },
+    {
+      "id": "8de5781a-9a7b-4617-bc6f-c6551d9c076f",
+      "title": "20-Sided Elf #10",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=10&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459089&token_id_hash=0x37c4ce9512c4f5b65de4c2303dfafdbca45b3de7657646eb975f7e396583f2b0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459089"
+        }
+      }
+    },
+    {
+      "id": "23322953-d46a-4956-a25f-cd728db88bd0",
+      "title": "20-Sided Elf #11",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=11&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459090&token_id_hash=0xd7e62506855f7ce716ba8b4aa4825a29657de41f5ef33adca350700a59296113",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459090"
+        }
+      }
+    },
+    {
+      "id": "9f0472c8-03b9-4484-ba99-9748215b2e58",
+      "title": "20-Sided Elf #12",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=12&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459091&token_id_hash=0x8705c1a31abacd343e5e9b18b80d593242665876f001cb9e991de0a079e588f2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459091"
+        }
+      }
+    },
+    {
+      "id": "d38e8fd1-febd-4993-a47f-b08155da5015",
+      "title": "20-Sided Elf #13",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=13&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459092&token_id_hash=0xf81e8844a9cea02268429b5ad3f8087bd76f956bb8cda65d16e8d14861e8f18e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459092"
+        }
+      }
+    },
+    {
+      "id": "310d8432-84fd-40a4-b68d-f75bd5f9b44c",
+      "title": "20-Sided Elf #14",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=14&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459093&token_id_hash=0xa211158a0b991b50fd07b687c2ef6f6e8b5851fb2c38db4a6d0927fc20fdb6d9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459093"
+        }
+      }
+    },
+    {
+      "id": "cd7b6a2d-53f9-4745-9887-97aa3e9c3d4d",
+      "title": "20-Sided Elf #15",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=15&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459094&token_id_hash=0xe6c4ea95c3d5da9eeb7ace32ca1c7d1faa3757b17d86a3eb3acb4f4611ffcf91",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459094"
+        }
+      }
+    },
+    {
+      "id": "81f8c3c6-bd00-4747-8925-cf326d011c61",
+      "title": "20-Sided Elf #16",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=16&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459095&token_id_hash=0x6054657cece2ea728ae5cd6f6f2330e5876782c50ef4e9323dc6436ad5add692",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459095"
+        }
+      }
+    },
+    {
+      "id": "a421d291-3bd0-49da-a662-340c5df487fb",
+      "title": "20-Sided Elf #17",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=17&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459096&token_id_hash=0x1ecf756bdd148d5b04ffed350e9b78e18d6c0c7f3305e323e5abab32820bffc1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459096"
+        }
+      }
+    },
+    {
+      "id": "86466056-69bc-4800-b236-37fb1dacc55b",
+      "title": "20-Sided Elf #18",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=18&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459097&token_id_hash=0x7aca8c664ae8654d9b7349d7d0a4804b59ed46c9fdbf3bb3b161c08607a6d4c9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459097"
+        }
+      }
+    },
+    {
+      "id": "2eaab3bd-5ad1-456d-b860-124084200b41",
+      "title": "20-Sided Elf #19",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=19&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459098&token_id_hash=0xe20199a9405fc0c7b89f2c11942a7d8f565e16214fc2f48ab4dd24e7af203e0a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459098"
+        }
+      }
+    },
+    {
+      "id": "624a4b0e-10dc-4bdf-90d4-2df4521c24d5",
+      "title": "20-Sided Elf #20",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=20&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459099&token_id_hash=0x305b7a4c88ed79d8041bc47e3eb08df8308a07f7a0f267e29d7e0fb768519c45",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459099"
+        }
+      }
+    },
+    {
+      "id": "2f9d6e8f-7b37-4a2a-9621-450837b929c7",
+      "title": "20-Sided Elf #21",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=21&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459100&token_id_hash=0x7af7dade2caf3cd7455532a8950b5c4fe0dc450a47d13c9ed6a4f65633defc11",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459100"
+        }
+      }
+    },
+    {
+      "id": "21719ee1-5c16-4f68-b956-e0bd371eeb37",
+      "title": "20-Sided Elf #22",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=22&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459101&token_id_hash=0x4f1946036b9064adc8a0edb2c8b089fc6ad1dc9900859d8d8469e276ab73e1c6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459101"
+        }
+      }
+    },
+    {
+      "id": "bd6fc8a3-0b4b-4c57-9b4f-b0f4797eb6c7",
+      "title": "20-Sided Elf #23",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=23&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459102&token_id_hash=0x77105cc3bd1d83a3b7f758f55082f29bb87e88ba3bfb99936f1b31a4ab9dd615",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459102"
+        }
+      }
+    },
+    {
+      "id": "eec2eb1a-1324-4733-8c61-0b355e081cf7",
+      "title": "20-Sided Elf #24",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=24&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459103&token_id_hash=0xf3aa0ec286ebabb1c2aa115daa1e3fbaa7111242624d863370844fde9c44f16e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459103"
+        }
+      }
+    },
+    {
+      "id": "66545f01-9f4b-45c9-a907-354bf9bd055c",
+      "title": "20-Sided Elf #25",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=25&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459104&token_id_hash=0xe14233462b76a59cfc2209dfac00cf31aab1c4bcf9c6ca5ff06fd8c60d0a14ad",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459104"
+        }
+      }
+    },
+    {
+      "id": "ea9ac653-0f54-4f12-b1ee-c913026f51c6",
+      "title": "20-Sided Elf #26",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=26&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459105&token_id_hash=0xd8e86688e87d18f48318437cec43c592d5f38a535b9bbd919b06b783b8c16038",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459105"
+        }
+      }
+    },
+    {
+      "id": "957494ce-8d6f-4563-a75e-5bd2cc30c28b",
+      "title": "20-Sided Elf #27",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=27&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459106&token_id_hash=0x2643bbf191feb95ac81e95f700d9f87d2b196689e1de813bdc7eb142bae93638",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459106"
+        }
+      }
+    },
+    {
+      "id": "0507001e-5426-4f17-8923-6e1734dabfa2",
+      "title": "20-Sided Elf #28",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=28&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459107&token_id_hash=0x19a68df99b82a7ff0fb991a31b59c709ca54b742ea6540229be521954f91d0db",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459107"
+        }
+      }
+    },
+    {
+      "id": "16ddfc41-9da6-4f9e-9a0f-65caab6619f4",
+      "title": "20-Sided Elf #29",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=29&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459108&token_id_hash=0x6e375815335658d0674761442865ebadff2ed7e6afc09d0fc7e265f7cf0b513d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459108"
+        }
+      }
+    },
+    {
+      "id": "92c2b244-700f-4212-b22c-95333119d08c",
+      "title": "20-Sided Elf #30",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=30&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459109&token_id_hash=0xe3db35b877a6d46ce39f20ae14b01a6af3afdb75f548d0c5fae43e4ab7f5f7dd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459109"
+        }
+      }
+    },
+    {
+      "id": "6c7c0f13-af50-4ad0-8117-d0c3fd23c5d4",
+      "title": "20-Sided Elf #31",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=31&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459110&token_id_hash=0x0b7bd87336d1c5891bcbce288389e9e96ed29b2a2293a2e68e4b2787fe4721d6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459110"
+        }
+      }
+    },
+    {
+      "id": "d08e059f-ab64-451d-a8dd-c745df2976ab",
+      "title": "20-Sided Elf #32",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=32&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459111&token_id_hash=0xf19eccd3d50c2f20dc54aa1012dfcb26b525bcda4a76be279ddeecc7bce11d00",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459111"
+        }
+      }
+    },
+    {
+      "id": "40ff8143-fdb7-45de-8356-9764060d013f",
+      "title": "20-Sided Elf #33",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=33&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459112&token_id_hash=0xc5ebec9fc1d4d84340b185087b488d6c7f5c26a4f95ec989559bd0b8206f7c90",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.832Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459112"
+        }
+      }
+    },
+    {
+      "id": "39f44b63-9b48-4e97-b755-636086949f24",
+      "title": "20-Sided Elf #34",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=34&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459113&token_id_hash=0x6e4bb2c80b492ee86e0d0619344ef5dbe7ab48a4bb73ca1e3d1c48a10b635c98",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.833Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459113"
+        }
+      }
+    },
+    {
+      "id": "ca89cd7d-f5a2-48f2-a548-240339ce08bc",
+      "title": "20-Sided Elf #35",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=35&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459114&token_id_hash=0xced3b2d374c34d24578a68070d19f1c234bd42212d032b2bb3f4b8a58ee9e01a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.833Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459114"
+        }
+      }
+    },
+    {
+      "id": "65fb4be6-2c9a-42a7-85d1-457a128e0929",
+      "title": "20-Sided Elf #36",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=36&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459115&token_id_hash=0x186bf0bac093b870c85f6839454d6cd88547de4a2c297614f347b6747b6784bf",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.833Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459115"
+        }
+      }
+    },
+    {
+      "id": "a9768f6a-319b-40ea-bcdd-a14c85ed868c",
+      "title": "20-Sided Elf #37",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=37&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459116&token_id_hash=0x140a67c1e5db2bfb58b6ac3cd9fd18d828fe79a3d27941beadf3ea5b3710c008",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.833Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459116"
+        }
+      }
+    },
+    {
+      "id": "0a9484c4-9480-488b-a3b1-34b6136c677a",
+      "title": "20-Sided Elf #38",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=38&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459117&token_id_hash=0x5cc9006d2684b55e8e1d8e563775f9b0685eac126596a6425a99c6173229eb5c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.833Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459117"
+        }
+      }
+    },
+    {
+      "id": "5d308a02-aa85-4a32-b5fa-14d234b7d840",
+      "title": "20-Sided Elf #39",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=39&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459118&token_id_hash=0x49e1eb21ba2c36dbba7afb80f70d315cff8ebc67fd061bf1d85a17483c3768d3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.833Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459118"
+        }
+      }
+    },
+    {
+      "id": "8ccba8e7-aa4d-4033-9df9-bf288ff8084b",
+      "title": "20-Sided Elf #40",
+      "source": "https://cdn.feralfileassets.com/previews/d8319668-cf7b-42ac-bda2-208a78206a8a/1706081014/index.html?edition_number=40&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=93190997625679230467622604421447157150175764437277632378895386938324964459119&token_id_hash=0x94ee291178d8ceec3f3e9f03fba45650673fe0076db1f17f3f91eb2e00113b36",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.833Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "93190997625679230467622604421447157150175764437277632378895386938324964459119"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

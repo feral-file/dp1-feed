@@ -1,0 +1,526 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "b7d840f4-c06b-49fc-901e-75f2cf37e6f8",
+  "slug": "sound-machines-integrity-protocol-lower-limb-lecture",
+  "title": "SOUND MACHINES — Integrity Protocol / Lower Limb Lecture",
+  "summary": "<p>American Artist and Tommy Martinez have produced a new generative interface that remixes a recording of their sound piece <em>Integrity Protocol/Lower Limb Lecture</em> (2023/24). Viewers can explore and create new sonic textures by experimenting with the custom interface. The interface is based on an audiovisual work composed using synthesizers and poetic speech, centering on a disembodied voice — American Artist’s own — that evokes an empty personhood, or the lowest and least counted in society. Text captions scroll against a blue void, suggesting the “blue screen of death” appearing during a system crash.    </p>\n<p>Credits:\nTommy Martinez - Music and Web Programming\nAmerican Artist - Lyrics and Video\nRyan Howe - Recording and Mixing\nKevin Ramsay - Mastering</p>\n",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/69e45f2d-6227-46af-b664-c269ecb53a00/raw",
+  "created": "2026-02-26T07:04:07.766Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "af022621-76d9-4a8b-9d30-7d184112d778",
+      "title": "Integrity Protocol / Lower Limb Lecture #1",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=0&artwork_number=1&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575936&token_id_hash=0x63762c81eae44a126d5b819b400a799db0d6171588a0bcd51e0871e87ecb5563",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575936"
+        }
+      }
+    },
+    {
+      "id": "e21d3e91-af00-4d4a-a006-117a23abf016",
+      "title": "Integrity Protocol / Lower Limb Lecture #2",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=1&artwork_number=2&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575937&token_id_hash=0xc431006ca654a2bd06f85e9174c0630be3e372966f3e2e980f7b8e2aac1fa8c8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575937"
+        }
+      }
+    },
+    {
+      "id": "9ca9e791-6d70-4ec7-84ec-c7736860b6c3",
+      "title": "Integrity Protocol / Lower Limb Lecture #3",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=2&artwork_number=3&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575938&token_id_hash=0xc66b4a686c2297df18e44212e498a5f49a8abe629d51aad4370d8fb79a4ad963",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575938"
+        }
+      }
+    },
+    {
+      "id": "05caf204-88e5-44d8-b0f8-883d9799aa18",
+      "title": "Integrity Protocol / Lower Limb Lecture #4",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=3&artwork_number=4&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575939&token_id_hash=0x04f631be25fc0099ea9099c8064cd62a0b4b06524f7123a2cc96e3f8d754905c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575939"
+        }
+      }
+    },
+    {
+      "id": "78c1e186-7417-4e50-80a5-3423abb328de",
+      "title": "Integrity Protocol / Lower Limb Lecture #5",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=4&artwork_number=5&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575940&token_id_hash=0xca90fe5def34e9fcb35c70c51a2a48c2798d630e671aaf5b77476f95eac87121",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575940"
+        }
+      }
+    },
+    {
+      "id": "3bf3ad86-0333-490e-b6f8-badc0bebe02b",
+      "title": "Integrity Protocol / Lower Limb Lecture #6",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=5&artwork_number=6&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575941&token_id_hash=0x833e47c9c832a60c8e1180590836c2e6023bb21d60f1fa3a1974afd1d5a42022",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575941"
+        }
+      }
+    },
+    {
+      "id": "7ea5dafa-16b1-4cc4-8b67-2c305f33cd11",
+      "title": "Integrity Protocol / Lower Limb Lecture #7",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=6&artwork_number=7&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575942&token_id_hash=0xf4cf5607c5895c2a4cdeaab216f73d0ea71c2c62df11d465fa1375f14f907b62",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575942"
+        }
+      }
+    },
+    {
+      "id": "8bb7d0f7-2af2-4872-8516-a81057ae7960",
+      "title": "Integrity Protocol / Lower Limb Lecture #8",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=7&artwork_number=8&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575943&token_id_hash=0x7aab6166f95f7a161e6954569c82e05aa08453e86a9cbb4de5e544a490e0f22f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575943"
+        }
+      }
+    },
+    {
+      "id": "33fafc34-20ec-4cb9-9a13-24bbc13c24b8",
+      "title": "Integrity Protocol / Lower Limb Lecture #9",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=8&artwork_number=9&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575944&token_id_hash=0x0e1b55229f05eae6d3d8c6d4de2949331923ebfe40a8c7e75822e2fe5be17891",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575944"
+        }
+      }
+    },
+    {
+      "id": "39b8b127-a71f-4dfa-8de3-a2fec003252f",
+      "title": "Integrity Protocol / Lower Limb Lecture #10",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=9&artwork_number=10&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575945&token_id_hash=0x97fbceb1bcb5a9d6947cf558f46e72e3ec9fc27f016fff77e4635ee41d2efeb7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575945"
+        }
+      }
+    },
+    {
+      "id": "2a138890-337a-4f60-bb48-0137694e972c",
+      "title": "Integrity Protocol / Lower Limb Lecture #11",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=10&artwork_number=11&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575946&token_id_hash=0x64a3bd7f2c160e7a5ffdd1936ad4459c6ae363f8bb77527947125c78156a15fa",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575946"
+        }
+      }
+    },
+    {
+      "id": "80b0a14e-0a8d-4107-953f-26731f46bd92",
+      "title": "Integrity Protocol / Lower Limb Lecture #12",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=11&artwork_number=12&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575947&token_id_hash=0x8ecff798b180a00394340ced12c6b75eabb9f08c9b80966a3d018ff12b61c614",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575947"
+        }
+      }
+    },
+    {
+      "id": "fd91725f-7145-4a61-aded-56618299f0de",
+      "title": "Integrity Protocol / Lower Limb Lecture #13",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=12&artwork_number=13&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575948&token_id_hash=0xc95d371ef438a2431c1ebedca22adb4342a6ef467d1e1e7a39c54e829c1dffeb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575948"
+        }
+      }
+    },
+    {
+      "id": "0555d4de-beeb-4ced-b818-a9de810bb865",
+      "title": "Integrity Protocol / Lower Limb Lecture #14",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=13&artwork_number=14&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575949&token_id_hash=0x440ec14a56a49e0824ca4b9bb3f892a96001c3a5c6967c9ccf67a5aaee22f842",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575949"
+        }
+      }
+    },
+    {
+      "id": "41a589da-fc2c-43e6-8305-19ffe7bf1267",
+      "title": "Integrity Protocol / Lower Limb Lecture #15",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=14&artwork_number=15&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575950&token_id_hash=0x5e87113cb211c93176d85ac9933e70613d36b3a427d98a5256b63478d6ae63de",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575950"
+        }
+      }
+    },
+    {
+      "id": "21f4dd60-ae89-4db0-a06b-55ad4f998cdb",
+      "title": "Integrity Protocol / Lower Limb Lecture #16",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=15&artwork_number=16&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575951&token_id_hash=0xf70fa61330223ceca7970efc4885fbac05ced90daabdd28ef14996c0eca86e97",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575951"
+        }
+      }
+    },
+    {
+      "id": "ed28fa57-918c-4004-bfb2-4cdfb7fb61e2",
+      "title": "Integrity Protocol / Lower Limb Lecture #17",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=16&artwork_number=17&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575952&token_id_hash=0x60abe1a94beaac4ec0dc575eba51fd568f02e1c8496bf268b482389597ae13bd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575952"
+        }
+      }
+    },
+    {
+      "id": "7a901638-fc06-46c6-8a39-1650dee12938",
+      "title": "Integrity Protocol / Lower Limb Lecture #18",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=17&artwork_number=18&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575953&token_id_hash=0xf41046f06737c5ca8cbb163c8f6bb144132a5098f57795542688d2a0dd6ca883",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575953"
+        }
+      }
+    },
+    {
+      "id": "13846f72-91c4-4739-93c9-b89b4f25ba78",
+      "title": "Integrity Protocol / Lower Limb Lecture #19",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=18&artwork_number=19&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575954&token_id_hash=0xd936ac08e41d8c9803c5ab53e6f6e6dd12b5c3a0e53d261f12e0d34b1387daa0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575954"
+        }
+      }
+    },
+    {
+      "id": "054940ce-6e23-4690-9019-5aec32d8e690",
+      "title": "Integrity Protocol / Lower Limb Lecture #20",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=19&artwork_number=20&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575955&token_id_hash=0xf996bd58e9aeadc6a7fbde6e721fc193e9f1100dbefec3b0167245e7f00010e0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575955"
+        }
+      }
+    },
+    {
+      "id": "f7ef7373-6f43-46cf-a718-ac86153e2410",
+      "title": "Integrity Protocol / Lower Limb Lecture #21",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=20&artwork_number=21&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575956&token_id_hash=0x65572834ee5699dbc585271fcc00f07e67b5e1dfc24766b70f3b78ee4aed94fd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575956"
+        }
+      }
+    },
+    {
+      "id": "7daa2d6a-5940-4e59-99f5-c495b3825ed4",
+      "title": "Integrity Protocol / Lower Limb Lecture #22",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=21&artwork_number=22&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575957&token_id_hash=0x3cd763e65e8c3e2c9ff77fbcd0d9e59fb885fc26d39fe4d6bd10a45a3116ffd4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575957"
+        }
+      }
+    },
+    {
+      "id": "25c55dff-c5f4-44f3-9f05-2c049108bef2",
+      "title": "Integrity Protocol / Lower Limb Lecture #23",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=22&artwork_number=23&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575958&token_id_hash=0x84bd29a6fe4d2608b28626d5c9ed29c26cb322cab4310e3a5dae3a4e1eb3d1b2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575958"
+        }
+      }
+    },
+    {
+      "id": "70a5aabc-79f9-4b7f-b2a3-601661c7b401",
+      "title": "Integrity Protocol / Lower Limb Lecture #24",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=23&artwork_number=24&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575959&token_id_hash=0xf4c9f42564020c9e1b5e1ebba62264392ea739c67c2d660d0811660fbdb15881",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575959"
+        }
+      }
+    },
+    {
+      "id": "f968c258-672f-4003-9335-f19de01517b0",
+      "title": "Integrity Protocol / Lower Limb Lecture #25",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=24&artwork_number=25&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575960&token_id_hash=0x1e2603ced16c8dfc959399df5ab5147e9f76b6d24bdfb6b17c2525c61745c890",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575960"
+        }
+      }
+    },
+    {
+      "id": "84673d60-e0ac-447f-82a2-e73283343875",
+      "title": "Integrity Protocol / Lower Limb Lecture #26",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=25&artwork_number=26&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575961&token_id_hash=0xbdbcbeca0e7b546c28b78d13c82e686a3c8318cb51de738084a9102cd4a40bf3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.765Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575961"
+        }
+      }
+    },
+    {
+      "id": "6f54974b-921b-466f-9897-b37125abfebd",
+      "title": "Integrity Protocol / Lower Limb Lecture #27",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=26&artwork_number=27&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575962&token_id_hash=0x227a4782059ff3c0a1e05e82ca861cd4bf65ecb0a943b0da80a585a29327d786",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.766Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575962"
+        }
+      }
+    },
+    {
+      "id": "f9c2003e-eea6-48b8-bac5-6670a275252c",
+      "title": "Integrity Protocol / Lower Limb Lecture #28",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=27&artwork_number=28&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575963&token_id_hash=0xb7583fe62c15bfe7b1664165347ff0ddd23e4c312fc0f915a54d79715082599a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.766Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575963"
+        }
+      }
+    },
+    {
+      "id": "c27d939f-4f22-4937-a02c-bd476a2efbaf",
+      "title": "Integrity Protocol / Lower Limb Lecture #29",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=28&artwork_number=29&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575964&token_id_hash=0xe39e2170d81b93331d1ab3dd17b059d0c1a1140bcc0ca6f8619446f31f9a528e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.766Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575964"
+        }
+      }
+    },
+    {
+      "id": "5e7846d5-3721-44df-9578-10015d3faa72",
+      "title": "Integrity Protocol / Lower Limb Lecture #30",
+      "source": "https://cdn.feralfileassets.com/previews/471b892b-9373-4245-9b80-c6e5c706ae43/1705804311/index.html?edition_number=29&artwork_number=30&blockchain=ethereum&contract=0x1d9787369b1dcf709f92da1d8743c2a4b6028a83&token_id=5429577522081131997036023001590580143444575965&token_id_hash=0xd5fc6fccde68a3ee8d1aae8cd0bc6ae9d366f6b86dc0ce84202d278889f2839a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.766Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "5429577522081131997036023001590580143444575965"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

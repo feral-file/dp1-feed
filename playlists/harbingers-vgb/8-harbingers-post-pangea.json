@@ -1,0 +1,713 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "072fba1f-31c0-42e9-957d-de76f104727d",
+  "slug": "harbingers-post-pangea",
+  "title": "Harbingers — Post-Pangea",
+  "summary": "“If you reap what you sow, who soughs what you reap?” “Post-Pangea” critically engages with the politics of biocapitalism as it pertains to the food industry and how ideas of nanotechnology, synthetic biology, and genetic engineering have infected the imaginary of agriculture and food production. Nanotechnology involves the manipulation of materials and the creation of structures and systems that exist at the scale of atoms and molecules. Researchers embed infinitesimally small nanoscale biosensors and particles in plants to detect pathogens, pesticides, heavy metals, and other contaminants in food, water, and soil. We are told that this technological intervention is vital to ensure food security in a world ravaged by climate change. Yet existing research indicates that nanoparticles have a greater risk of toxicity than larger particles and the multi-generational impact of nanotoxicology is still poorly understood. With “Post-Pangea,” *particle group* asks us to consider who stands to profit from these innovations and to shed light on the lack of regulation of nanoparticles.",
+  "coverImage": "https://imagedelivery.net/5BJzhBHeVhlhbn58hvcXAQ/31cb149b-83e3-4435-c734-9d2e32113500/raw",
+  "created": "2026-02-26T07:02:31.838Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "c9ad2fc4-2299-4132-b2fc-0de19d129914",
+      "title": "Post-Pangea AP",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=0&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871800&token_id_hash=0x0ac6829fde8bc43c715e5bfa0e67bd07eb8789bd9459a0bcd79325d55152d46f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871800"
+        }
+      }
+    },
+    {
+      "id": "669d84b5-2718-497d-9ca6-d34994080832",
+      "title": "Post-Pangea #1",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=1&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871801&token_id_hash=0x2afa99241d35e41e90d3677ed7e72a4f80c7c0535929be2901e267c72a942f67",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871801"
+        }
+      }
+    },
+    {
+      "id": "313324ca-b9e7-4a6a-9368-dd893bd7ab5f",
+      "title": "Post-Pangea #2",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=2&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871802&token_id_hash=0x6032dde95b27f8a978c13101c4dd32719a01a64be6526feff14fb6e45b572ef5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871802"
+        }
+      }
+    },
+    {
+      "id": "efe892e4-25c5-475c-8790-31fa3fa34036",
+      "title": "Post-Pangea #3",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=3&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871803&token_id_hash=0xe28e2691cfde5f23e4998410c25ef5180c3b6dfe43ac6d43b5d239f8cbfe7b1b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871803"
+        }
+      }
+    },
+    {
+      "id": "b3a5b5b9-2a65-468b-98ab-36c042d18fb0",
+      "title": "Post-Pangea #4",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=4&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871804&token_id_hash=0x04b4d3a202939591a1fed15a96c5454cfd696e02c14c40821c0d29a07f7238ac",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871804"
+        }
+      }
+    },
+    {
+      "id": "20c77371-ee9d-43bb-ba21-df39e2d5e1f4",
+      "title": "Post-Pangea #5",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=5&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871805&token_id_hash=0x7a173dc503b02a5cd5df25979de9cde9f524fc1fb857d1024f4315fd553c8173",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871805"
+        }
+      }
+    },
+    {
+      "id": "6149460b-58bf-44f3-b9fc-b8a665aa3214",
+      "title": "Post-Pangea #6",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=6&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871806&token_id_hash=0xb0cc8205b2d4c6111badd1ecba4cf72ae146bf3e48fa56348f3c45bd71b6c9ac",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871806"
+        }
+      }
+    },
+    {
+      "id": "eae2738c-16dc-4db3-ba33-85a15523e985",
+      "title": "Post-Pangea #7",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=7&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871807&token_id_hash=0x93485ddf0edb248c9f85aeb0365f13026e448ee4ab56e300a95348582ef18187",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871807"
+        }
+      }
+    },
+    {
+      "id": "2b9ff366-5cd6-4e84-b32c-29e1b11a07a4",
+      "title": "Post-Pangea #8",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=8&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871808&token_id_hash=0x5b034ba6a7565361509876a3379f578b3e01e766ec17040a52ed51db81cb5ad5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871808"
+        }
+      }
+    },
+    {
+      "id": "0370485c-0565-4f76-bd0c-9cc8d86d9a6e",
+      "title": "Post-Pangea #9",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=9&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871809&token_id_hash=0xafa821ac47279e6d8f2266b0a15b556f6352a06b4b68de3712c30f43b154152d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871809"
+        }
+      }
+    },
+    {
+      "id": "4fe80595-1cf0-4d10-9939-38739d0dd1df",
+      "title": "Post-Pangea #10",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=10&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871810&token_id_hash=0xa64259200fe5558fcfa2b7721d7ace31abc40f5547837f9512fbdd9b0d227546",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871810"
+        }
+      }
+    },
+    {
+      "id": "7a1a56c1-db5f-4326-a08b-ca3824be1c27",
+      "title": "Post-Pangea #11",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=11&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871811&token_id_hash=0xcfb92354b7901eb3ad2d96130ae9fa7ecb0327534a92f4d7ac3d486995d06429",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871811"
+        }
+      }
+    },
+    {
+      "id": "13254175-6bf2-436c-a7b3-9d4c6c34fece",
+      "title": "Post-Pangea #12",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=12&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871812&token_id_hash=0x8ade1e12370ae5d5abd099ced35dcbef2ace5d2269e38302f225d08eed5715cc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871812"
+        }
+      }
+    },
+    {
+      "id": "e2c5d072-fd0c-4239-b7b2-3b20c40e17e4",
+      "title": "Post-Pangea #13",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=13&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871813&token_id_hash=0x90d8a82e3382b3a3e3b888fc8206d16575ffdd57e2bb0f13efdcead3705e4c18",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871813"
+        }
+      }
+    },
+    {
+      "id": "dd3ee62a-5010-49e9-9526-c3b3f3b96a3a",
+      "title": "Post-Pangea #14",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=14&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871814&token_id_hash=0x624dd0ac83ae601a38bf12c258673764527d83151d95681e0fb3e71b4c20a4d0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871814"
+        }
+      }
+    },
+    {
+      "id": "8ddffecc-72fd-433a-9b12-404e489524de",
+      "title": "Post-Pangea #15",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=15&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871815&token_id_hash=0xddf89685bb5c35f8e6b159cc3b44cfebb43a1a1844a309a0b86c865b2d672aa6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871815"
+        }
+      }
+    },
+    {
+      "id": "89f71fa8-934d-4cda-b700-7110593ea187",
+      "title": "Post-Pangea #16",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=16&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871816&token_id_hash=0xbcf3198dc738fb1c88f761c3f7db37754f31219b2c01627884e4972bcae0489f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871816"
+        }
+      }
+    },
+    {
+      "id": "c75abfa4-66df-44c2-8ee2-eb19cc8f352f",
+      "title": "Post-Pangea #17",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=17&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871817&token_id_hash=0x16432bc7c10731070f853df5ba9a410f40c61e600611ce2da9e95e912ada230a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871817"
+        }
+      }
+    },
+    {
+      "id": "8fecb6b9-4e83-4aab-a9dd-e7c024b50c82",
+      "title": "Post-Pangea #18",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=18&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871818&token_id_hash=0x2bd3f5e01d6d02e933573188a56db4e194c276d6ed5a8ed0755dd0f9e06f8e8e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871818"
+        }
+      }
+    },
+    {
+      "id": "f8411130-39a0-4fd8-bd52-1fd86b391d57",
+      "title": "Post-Pangea #19",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=19&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871819&token_id_hash=0x90f8184c16ad50a4a80723e7c96d7e1bc5de01514573db7c4961d154b441f0c7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871819"
+        }
+      }
+    },
+    {
+      "id": "84c80de3-d669-472a-862f-24479baa651d",
+      "title": "Post-Pangea #20",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=20&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871820&token_id_hash=0x087901a4c11a9a4148e195a00f0ee194d297cafa7e84f3886158e4aff8316479",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871820"
+        }
+      }
+    },
+    {
+      "id": "d7469ee6-4e50-462f-8226-dd0cae16872d",
+      "title": "Post-Pangea #21",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=21&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871821&token_id_hash=0x89d9d5dbd7c268f0eda5e5ca99d0342d13c5ee754762c1564bc08da7713392a5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871821"
+        }
+      }
+    },
+    {
+      "id": "c538c64e-c619-42f6-9bdb-46a4f3ebca8c",
+      "title": "Post-Pangea #22",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=22&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871822&token_id_hash=0x1909279f843fbbeb102c758025b3357e5da3e313fbd8ffa39447a95e204a01a4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871822"
+        }
+      }
+    },
+    {
+      "id": "e7ab40e6-6c60-4683-a91a-6acb465572f0",
+      "title": "Post-Pangea #23",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=23&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871823&token_id_hash=0xac8594a8a9c568283c76eb61afe09f58863ff5f1ef81bfaa226963faf48cb95d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871823"
+        }
+      }
+    },
+    {
+      "id": "0f66bba3-96a3-46a4-a989-07bbffd90297",
+      "title": "Post-Pangea #24",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=24&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871824&token_id_hash=0x322274f7c2f34d0a980a0161f644e74c137989beb2b5d325676e4e5a19d3e899",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871824"
+        }
+      }
+    },
+    {
+      "id": "4de8b41c-2a46-4ec1-8bd9-a0d449861f0b",
+      "title": "Post-Pangea #25",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=25&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871825&token_id_hash=0x61b2078b8d652a69215a205272ea6304021930ae4d98eff30ac2e456da8ca49e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871825"
+        }
+      }
+    },
+    {
+      "id": "d906880b-fabe-4388-a93b-c209b46f9214",
+      "title": "Post-Pangea #26",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=26&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871826&token_id_hash=0x486a49267bee1dcb133007d64ccd88fa98dd9c54a628a8ef3577eb20e1f35c94",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871826"
+        }
+      }
+    },
+    {
+      "id": "06b065bf-f2cf-478a-a49a-2cb554777dae",
+      "title": "Post-Pangea #27",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=27&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871827&token_id_hash=0x9b1a27c7ccb9164579bd8ea591452d1d363ac01b0913e8f5dda1b26ca552eb55",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871827"
+        }
+      }
+    },
+    {
+      "id": "ca0d5fee-f1e8-4839-90de-ae51ea631134",
+      "title": "Post-Pangea #28",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=28&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871828&token_id_hash=0x2764d699b9908343245bc070550b0dc1517e01fede6eb149b3ec50d8d71e5c20",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.837Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871828"
+        }
+      }
+    },
+    {
+      "id": "b5d863a2-4ce6-4dce-8005-d9442662332b",
+      "title": "Post-Pangea #29",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=29&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871829&token_id_hash=0xa9772f2b5d3e309fc2d858f0942bf8a9c37a87a6241ceb7d104707f9e5e405ca",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871829"
+        }
+      }
+    },
+    {
+      "id": "c7528f67-d7e9-420b-8aae-fd66dc17e196",
+      "title": "Post-Pangea #30",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=30&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871830&token_id_hash=0x4466752941c669e5ba3e031ac83761833bfaba32ed0320f946133ed96e01f56f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871830"
+        }
+      }
+    },
+    {
+      "id": "55ed0776-e82a-4aa4-b6b5-dd576dbc0437",
+      "title": "Post-Pangea #31",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=31&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871831&token_id_hash=0x0f11909ddcafeacbd8e29a8051071195895d92466981db6638b8c3a3daa45df8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871831"
+        }
+      }
+    },
+    {
+      "id": "cb3e86c7-d066-4089-a535-1a48e52fe7e5",
+      "title": "Post-Pangea #32",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=32&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871832&token_id_hash=0x90839943ed998dbdfa170634a3a0a5ca588c351af0273ab6773092d36b6078b4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871832"
+        }
+      }
+    },
+    {
+      "id": "aaf6dd9d-8157-4c11-bc63-9ec23b9a03e1",
+      "title": "Post-Pangea #33",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=33&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871833&token_id_hash=0x87e858b7a65e4b0f55744c176c483230d2927c5c87b83f1478182bb85d9f28b8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871833"
+        }
+      }
+    },
+    {
+      "id": "7b62e2e9-5834-4d51-a6d6-2930d1e56120",
+      "title": "Post-Pangea #34",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=34&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871834&token_id_hash=0x1830ef303746c595fb0fa8229fbfed18dfba4b5275d226bf52ca941139c1e2ae",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871834"
+        }
+      }
+    },
+    {
+      "id": "e9bbd2a8-dfac-4a9f-afc6-7aa15e2c2a02",
+      "title": "Post-Pangea #35",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=35&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871835&token_id_hash=0x62cb02b72ae86f7c7a40ed62d1e58b20c94ea302bfa193aa3d14930ca1da4509",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871835"
+        }
+      }
+    },
+    {
+      "id": "7725f7e2-cc5a-4c1e-9b07-456ffafa8117",
+      "title": "Post-Pangea #36",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=36&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871836&token_id_hash=0xe321e54effb13433f168600672bf8d25884d47eeb8558bdc84940dbbf2806670",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871836"
+        }
+      }
+    },
+    {
+      "id": "0888d82b-ecb7-46f7-b87c-6893ffa69821",
+      "title": "Post-Pangea #37",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=37&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871837&token_id_hash=0xb1898a9d3b1a19655dc276c7913d6cf7ea3b8bd13173b644e970f7c40ec676aa",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871837"
+        }
+      }
+    },
+    {
+      "id": "f87b354c-7d1c-4880-a9c3-9cb31b3af50e",
+      "title": "Post-Pangea #38",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=38&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871838&token_id_hash=0x6e3a9feae6e21f298fb7fefc9578694e470570fdf0c6c8a12d82d11f02882950",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871838"
+        }
+      }
+    },
+    {
+      "id": "98dda534-8ba3-40df-9a77-889b539d021e",
+      "title": "Post-Pangea #39",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=39&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871839&token_id_hash=0x80a7a175d1b290b7abb73fba01f317fb54f8fa4f6033160e9ad58d93594ee954",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871839"
+        }
+      }
+    },
+    {
+      "id": "1ac63dfe-8d03-4e43-8ff0-c01811a7f000",
+      "title": "Post-Pangea #40",
+      "source": "https://cdn.feralfileassets.com/previews/5b8fdb66-f0be-4008-8659-44b56fb32bf2/1706081014/index.html?edition_number=40&blockchain=tezos&contract=KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD&token_id=24075449374515138956476187814928644353787251512559881398160744112749173871840&token_id_hash=0xfcd5f37a73076603aee098aa80bded2ada4242dcda22929462932d55a876f47b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:02:31.838Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "tezos",
+          "standard": "fa2",
+          "address": "KT1GbUx4MFBWHi3YhofDDvDYyeDeqahpKAGD",
+          "tokenId": "24075449374515138956476187814928644353787251512559881398160744112749173871840"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

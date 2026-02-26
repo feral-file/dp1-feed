@@ -1,0 +1,526 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "4ed176c6-3550-4a15-9b17-dbef1c96a2fa",
+  "slug": "sound-machines-payphone",
+  "title": "SOUND MACHINES — PAYPHONE",
+  "summary": "<p>In <em>PAYPHONE</em> (2024), 0xDEAFBEEF considers phone cards as an early form of tokenized communication in relation to contemporary blockchain ledger systems. Phone cards once circulated via an active collectible market, and have even doubled as currency; they employed technologies for loading, tracking, and spending value. <em>PAYPHONE</em> features uniquely generated phone card tokens, which will be updated with sound pieces based on a live call-and-response performance by the artist. An edition of physical telephone tokens, created from hand-forged and laser-cut iron, accompany the work.</p>\n<p>0xDEAFBEEF’S call-and-response performance will be live for participation and viewing here: <a href=\"https://payphone.deafbeef.com/\">https://payphone.deafbeef.com/</a>.</p>\n",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/42dac31c-1871-4675-786c-5a5476c0e000/raw",
+  "created": "2026-02-26T07:04:07.772Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "c625bded-f4a5-4cb7-82f6-61401050a7f8",
+      "title": "PAYPHONE #1",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.770Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098496"
+        }
+      }
+    },
+    {
+      "id": "618d9578-4e2b-488d-8190-a664b224a6de",
+      "title": "PAYPHONE #2",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.770Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098497"
+        }
+      }
+    },
+    {
+      "id": "acf2919e-ddf6-4317-a38d-e1c14a97edd3",
+      "title": "PAYPHONE #3",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.770Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098498"
+        }
+      }
+    },
+    {
+      "id": "3d412696-31d5-43e4-8548-f2f8c33b83cc",
+      "title": "PAYPHONE #4",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.770Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098499"
+        }
+      }
+    },
+    {
+      "id": "1ab3556a-1f00-41cd-a82b-a35738ae0ad1",
+      "title": "PAYPHONE #5",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.770Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098500"
+        }
+      }
+    },
+    {
+      "id": "8e55fd20-0e9c-49b7-a8ed-b8724109a169",
+      "title": "PAYPHONE #6",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.770Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098501"
+        }
+      }
+    },
+    {
+      "id": "639e6338-2d2d-4880-baa9-bb83e1ccc9d2",
+      "title": "PAYPHONE #7",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.770Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098502"
+        }
+      }
+    },
+    {
+      "id": "fa354a12-f3fa-4e41-bcf8-32952acf1108",
+      "title": "PAYPHONE #8",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.770Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098503"
+        }
+      }
+    },
+    {
+      "id": "8952b3e5-31c0-4e6d-a32d-9528e7c90299",
+      "title": "PAYPHONE #9",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.770Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098504"
+        }
+      }
+    },
+    {
+      "id": "73ff9ac5-52c2-4841-bb43-3c0034e3a212",
+      "title": "PAYPHONE #10",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.770Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098505"
+        }
+      }
+    },
+    {
+      "id": "2ff79de4-91aa-4cb2-bd6c-e4e41365a2da",
+      "title": "PAYPHONE #11",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/10",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.770Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098506"
+        }
+      }
+    },
+    {
+      "id": "57266566-c040-48b8-89c4-203f9644f480",
+      "title": "PAYPHONE #12",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/11",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.770Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098507"
+        }
+      }
+    },
+    {
+      "id": "74d32e17-6381-417b-96fe-0f2e03bfab96",
+      "title": "PAYPHONE #13",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/12",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.771Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098508"
+        }
+      }
+    },
+    {
+      "id": "e86d9d61-d31d-4a0a-ad7a-92ec087bb9b9",
+      "title": "PAYPHONE #14",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/13",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.771Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098509"
+        }
+      }
+    },
+    {
+      "id": "fb1333c0-8a56-45c9-af1b-002b435413c5",
+      "title": "PAYPHONE #15",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/14",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.771Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098510"
+        }
+      }
+    },
+    {
+      "id": "5bfea7ff-6271-43a9-a89e-4655337d079b",
+      "title": "PAYPHONE #16",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/15",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.771Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098511"
+        }
+      }
+    },
+    {
+      "id": "7352d790-831b-4fd0-ab52-f4d41e917914",
+      "title": "PAYPHONE #17",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/16",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.771Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098512"
+        }
+      }
+    },
+    {
+      "id": "db0bc9fd-d654-4bd0-aab3-ffaca138b1c4",
+      "title": "PAYPHONE #18",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/17",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.771Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098513"
+        }
+      }
+    },
+    {
+      "id": "b82efe87-c942-40ef-9580-61436a6321af",
+      "title": "PAYPHONE #19",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/18",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.771Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098514"
+        }
+      }
+    },
+    {
+      "id": "1dfe22bb-c32a-4f3f-b967-1d6d1e0ab5f5",
+      "title": "PAYPHONE #20",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/19",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.771Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098515"
+        }
+      }
+    },
+    {
+      "id": "6afb26f7-1d98-4819-8e53-fb11a5b68ad6",
+      "title": "PAYPHONE #21",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/20",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.771Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098516"
+        }
+      }
+    },
+    {
+      "id": "077ef745-c881-4bfa-8f33-ab13f3a436d0",
+      "title": "PAYPHONE #22",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/21",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.771Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098517"
+        }
+      }
+    },
+    {
+      "id": "0d213406-999b-48e7-9f35-9a5c365af925",
+      "title": "PAYPHONE #23",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.771Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098518"
+        }
+      }
+    },
+    {
+      "id": "75fc2c37-ae76-470b-bf07-b9d90602b71d",
+      "title": "PAYPHONE #24",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/23",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.771Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098519"
+        }
+      }
+    },
+    {
+      "id": "9d9f78d1-ea50-4694-a6a1-a666b2c1ed36",
+      "title": "PAYPHONE #25",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/24",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.771Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098520"
+        }
+      }
+    },
+    {
+      "id": "1696abb0-35a3-41a1-974c-9142d395d77a",
+      "title": "PAYPHONE #26",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/25",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.771Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098521"
+        }
+      }
+    },
+    {
+      "id": "af4d234b-fa1e-4d5c-b50a-635ed56d69f1",
+      "title": "PAYPHONE #27",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/26",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.771Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098522"
+        }
+      }
+    },
+    {
+      "id": "b42481a5-bafb-4a4b-a38d-8cc2b8022870",
+      "title": "PAYPHONE #28",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/27",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.772Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098523"
+        }
+      }
+    },
+    {
+      "id": "54a241d9-2d04-48df-8c22-ee839418dad2",
+      "title": "PAYPHONE #29",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/28",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.772Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098524"
+        }
+      }
+    },
+    {
+      "id": "c3216d36-c915-4df8-a8c6-07c90b4233c8",
+      "title": "PAYPHONE #30",
+      "source": "https://cdn.feralfileassets.com/previews/cccecf88-6d8f-485f-9358-0def21bc4ad7/1704989387/_unique-previews/29",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:04:07.772Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x1D9787369B1DCf709f92Da1d8743c2A4b6028a83",
+          "tokenId": "339348595130070749814751437599411258966098525"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

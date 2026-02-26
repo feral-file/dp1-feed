@@ -1,0 +1,577 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "7c540ec3-70ac-43a8-a345-fd3323db0315",
+  "slug": "in-medias-res-echoloji",
+  "title": "In Medias Res — Echoloji",
+  "summary": "Tuna Bora, artist of the first Academy Award-nominated VR experience, “Pearl,” works at the intersection of conceptual practice, illustration, and narrative to create emotionally investigative digital worlds. Bora’s artwork often depicts non-physical identities and utilizes movement as a language format to create studies of bodies and belonging. For “Echoloji,” which references philosopher Félix Guattari’s “ecosophies,” Bora creates moving anthropomorphized color blocks sourced from video documentation of actual people, animals and objects in Echo Park, Los Angeles. By planting blocks of living color in familiar Los Angeles thoroughfares, Bora’s piece asks the question: who in urban spaces gets to qualify as a subject, with whatever rights granted, and who will be cast into the category of objects? What kinds of negotiations of subject-object take place in urban sprawls?",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/fcde534d-9a9c-4c4d-1a26-897dd0021c00/raw",
+  "created": "2026-02-26T07:03:54.879Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "d4f2e67c-1316-4415-b9d6-cbf2a58bb618",
+      "title": "Echoloji #1",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713472"
+        }
+      }
+    },
+    {
+      "id": "fb957b07-72d1-41a3-8e11-d8d64c4f9202",
+      "title": "Echoloji #2",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713473"
+        }
+      }
+    },
+    {
+      "id": "fc3ccfc0-954d-4b6b-a518-7d8b4f06f137",
+      "title": "Echoloji #3",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713474"
+        }
+      }
+    },
+    {
+      "id": "582cf98d-edcc-42af-bd06-09ef796bc856",
+      "title": "Echoloji #4",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713475"
+        }
+      }
+    },
+    {
+      "id": "eb3362b9-2059-48ae-8faf-3a12b7436d10",
+      "title": "Echoloji #5",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713476"
+        }
+      }
+    },
+    {
+      "id": "6d324142-466a-4596-9c77-3f9091b6ace9",
+      "title": "Echoloji #6",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713477"
+        }
+      }
+    },
+    {
+      "id": "b0b4180d-a4ae-4066-bb8c-f3279c768581",
+      "title": "Echoloji #7",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713478"
+        }
+      }
+    },
+    {
+      "id": "453c3f82-f7ca-4c29-8ff2-1c84f63a10f8",
+      "title": "Echoloji #8",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713479"
+        }
+      }
+    },
+    {
+      "id": "8e0c17d9-cd90-4e13-b02c-d2e8fddf6ef8",
+      "title": "Echoloji #9",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713480"
+        }
+      }
+    },
+    {
+      "id": "8f13803c-bb17-4271-b3da-08e6b553c2e3",
+      "title": "Echoloji #10",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713481"
+        }
+      }
+    },
+    {
+      "id": "13c0d2b0-fa70-4e60-85cc-63abfa95ae4b",
+      "title": "Echoloji #11",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/10",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713482"
+        }
+      }
+    },
+    {
+      "id": "fb152697-3829-45eb-82dc-76cd2da008c1",
+      "title": "Echoloji #12",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/11",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713483"
+        }
+      }
+    },
+    {
+      "id": "577ded9e-eaa6-402a-b950-ceea500fa163",
+      "title": "Echoloji #13",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/12",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713484"
+        }
+      }
+    },
+    {
+      "id": "e829f659-5905-4255-b8bc-cbee48bfb037",
+      "title": "Echoloji #14",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/13",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713485"
+        }
+      }
+    },
+    {
+      "id": "8f149636-eacc-4ad7-b9ca-d8fc5b9dcfc6",
+      "title": "Echoloji #15",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/14",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713486"
+        }
+      }
+    },
+    {
+      "id": "6c3aba87-7934-4ab0-9052-e0a3873a9c2d",
+      "title": "Echoloji #16",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/15",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713487"
+        }
+      }
+    },
+    {
+      "id": "c46772b3-4377-491b-91d1-935f73a8e5eb",
+      "title": "Echoloji #17",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/16",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713488"
+        }
+      }
+    },
+    {
+      "id": "0c875d93-2562-47ca-93f6-3375b368d16e",
+      "title": "Echoloji #18",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/17",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713489"
+        }
+      }
+    },
+    {
+      "id": "016c0839-dab5-4409-9cc6-1a291ada6081",
+      "title": "Echoloji #19",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/18",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713490"
+        }
+      }
+    },
+    {
+      "id": "516e4437-0359-4ec2-a2d1-6f5d195a2764",
+      "title": "Echoloji #20",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/19",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713491"
+        }
+      }
+    },
+    {
+      "id": "c0334713-26ad-426a-bb6d-758c4ae45de0",
+      "title": "Echoloji #21",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/20",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713492"
+        }
+      }
+    },
+    {
+      "id": "181d44e9-9250-4441-8c04-62dccc9ebb61",
+      "title": "Echoloji #22",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/21",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713493"
+        }
+      }
+    },
+    {
+      "id": "1720277f-6101-401c-9ad4-486851de14c1",
+      "title": "Echoloji #23",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713494"
+        }
+      }
+    },
+    {
+      "id": "3ef64810-3fd3-47a7-9c58-5960d5e9c8b3",
+      "title": "Echoloji #24",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/23",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713495"
+        }
+      }
+    },
+    {
+      "id": "c7e1eda7-df66-4b08-a9fd-6ea9d477f34f",
+      "title": "Echoloji #25",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/24",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713496"
+        }
+      }
+    },
+    {
+      "id": "eb84d9b4-2059-457f-a112-8e50defac3de",
+      "title": "Echoloji #26",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/25",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713497"
+        }
+      }
+    },
+    {
+      "id": "57bad6e3-d111-41f4-91da-816954d6cc55",
+      "title": "Echoloji #27",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/26",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713498"
+        }
+      }
+    },
+    {
+      "id": "13c7a3cb-689f-4e13-9ab0-d3ca803c56f0",
+      "title": "Echoloji #28",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/27",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713499"
+        }
+      }
+    },
+    {
+      "id": "0e320b8d-a9e5-4387-a685-71735de5cad1",
+      "title": "Echoloji #29",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/28",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713500"
+        }
+      }
+    },
+    {
+      "id": "76be1126-b6c0-4b7a-9971-ac821d12377b",
+      "title": "Echoloji #30",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/29",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713501"
+        }
+      }
+    },
+    {
+      "id": "cad5356d-b553-484a-8e9e-6c0bc745756f",
+      "title": "Echoloji #31",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/30",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713502"
+        }
+      }
+    },
+    {
+      "id": "9e45f69e-0432-414f-84d1-24a11e79a6c3",
+      "title": "Echoloji #32",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/31",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713503"
+        }
+      }
+    },
+    {
+      "id": "9a5cddfb-3094-4798-a56f-14df6ad78e2e",
+      "title": "Echoloji #33",
+      "source": "https://cdn.feralfileassets.com/previews/4ae268d4-aef9-4cc9-82ff-f2fb2dfe0351/1687229411/_unique-previews/32",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:54.879Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x835dF7CC88D8BC51FCbb6a7FDED0BBE1ec020273",
+          "tokenId": "2517582246254990625947327841552489136605713504"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

@@ -1,0 +1,339 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "f4913d68-a524-4ed2-9119-45ec7ed9303f",
+  "slug": "the-experiment-full-collection",
+  "title": "The Experiment — Full Collection",
+  "summary": "In 2019, I invited my friends Rick Silva, Addie Wagenknecht, and artist duo exonemo (SEMBO Kensuke and AKAIWA Yae) to help me select a large group of artists to run an experiment. We called the experiment a2p, short for artist-to-peer network, in reference to decentralized peer-to-peer network structures. a2p was made by artists, for other artists. It was created to explore emerging ideas about digital art and to create connections.\n\nThe fundamental idea of a2p was for each artist to bring one artwork, and for that artwork to be editioned, so that the artists could swap works with each other over the course of a week. If an artist traded actively, they could swap each of their 10 editions and their artist proof for works from the other artists. There were no financial transactions involved in a2p, it was all direct trades, this for that.\n\nAt the time, we wrote:\n\n<p class=\"m-l-56 display-inline-block\">“Each of us has created a new artwork and has released it as an edition of ten along with one artist proof. We’re across many time zones and continents, but for one week, we’ll occupy a shared online space where we’ll trade work. It’s a performance, but also a way of sharing our work with fellow artists and a way to think about what happens to the work after it’s made. It’s an artist-to-artist system to build and curate a collection of work.\n\nWe all have different points of view on these topics. Some of us are “all in” with the experiment and others are skeptical. We don’t know what will happen, but we’re open to the process.\n\nWe place this project in the tradition of artists working outside of the market. We take direct inspiration from early net.art and with a longer view, from Fluxus. Many of us don’t have a gallery that represents our work and for those of us who do, we often can’t afford to collect that work. This experiment is a way for us to trade works to create a collection.\n\nAs a group, we create digital media. Perfect copies of these works can be distributed with almost no cost. The last few decades are the first time in the history of art where a work can be created and identical copies can be distributed almost instantly across the globe. Digital media has no “original;” each “copy” is identical.”</p>\n\nBack in 2019 when we created a2p, we weren’t thinking about NFTs. “NFT” didn’t appear anywhere in the documentation or our internal discussions. However, all the work was registered on the Bitmark blockchain and every artwork in a2p was an NFT in the way we think about them today. We were using the Bitmark blockchain because they were our friends and collaborators in the project. \n\nBitmark, Feral File’s parent company, is currently retiring their blockchain and we’re migrating all of the a2p artwork to the Ethereum blockchain, where it will enter a new ecology. Each artwork will move from the isolated island of Bitmark into the larger continent of Ethereum NFTs. \n\nTo mark this occasion, Addie, Rick, Sembo, Yae and I have selected a short list of artists from the first a2p exhibition to create a new exhibition on Feral File. It was nearly impossible to make the selection from the full group of artists who participated in a2p in 2019, so we each created a short list that we worked out together to represent the diversity of practices of the artists in the original exhibition. Here’s our consensus list for this exhibition:\n\n<p class=\"m-l-56 display-inline-block\">Alan Butler, Andrew Benson, Auriea Harvey XLVIII, Émilie Brout & Maxime Marion, hiroyuki nisougi, Kim Asendorf, LaTurbo Avedon, Lee Blalock (L[3]^2), LIA, Morehshin Allahyari, Nicolas Sassoon, peter burr, Sabrina Ratté, Sara Ludy, Sarah Rara, shawné michaelain holloway, Tabor Robak, Theo Triantafyllidis, Yoshi Sodeoka</p>\n\nAfter we ran a2p 1.0 in fall 2019, I decided to keep going and to try new things. For a2p 2.0, I invited Iris Long and Carol Sabbadini to co-curate. As a result, a2p 2.0 has many artists from China and South America, communities that weren’t well represented in the 1.0 version. \n\nFor the full experience of both exhibitions and to see all ...",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/8ba40bce-1112-4321-d071-d6b26ba8ae00/raw",
+  "created": "2026-02-26T07:03:48.560Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "38bf38e1-febc-4fd3-ae53-7a77d835a402",
+      "title": "Self-Portrait with Mask #5",
+      "source": "https://cdn.feralfileassets.com/previews/f6d0cf6d-5e60-454d-b9bb-823657fccd4e/1685943694/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.553Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "56300052718398774807819020732069961181708481619449133953548486688135112294536"
+        }
+      }
+    },
+    {
+      "id": "cad9bc90-dce6-4d7b-b6b8-9d85f4660e80",
+      "title": "Announcement, 2019 #9",
+      "source": "https://cdn.feralfileassets.com/previews/31f893aa-cc8f-4345-af6f-efd5d0b3afbf/1685943757/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.557Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "113148802240218681184974053236902476314831139496606512180957962646928001696916"
+        }
+      }
+    },
+    {
+      "id": "7c4235bd-d7c7-4516-ba85-b91e02cb79a9",
+      "title": "She Who Sees The Unknown: Aisha Qandisha #8",
+      "source": "https://cdn.feralfileassets.com/previews/5b561f36-6604-4ec8-8dbe-cb3c4f6039c9/1685943854/preview.gif",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.558Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "23036805247933097402748091287609904340465030469396477110974884075412902750613"
+        }
+      }
+    },
+    {
+      "id": "eeebdb81-51ec-4733-bf3c-341b98c7813c",
+      "title": "💮 ɃŁØSSØM (FØNŦ) 💮 #6",
+      "source": "https://cdn.feralfileassets.com/previews/d0b8d299-3787-4da9-8eff-9a7654d7e2cb/1685944007/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.558Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "15832235245950409373256984098931349893034698598998551205440941172037574932720"
+        }
+      }
+    },
+    {
+      "id": "ec659b71-1dcf-4598-9cad-20883126fcaf",
+      "title": "Nakamoto (The Proof) #9",
+      "source": "https://cdn.feralfileassets.com/previews/b2a161dd-a790-4b60-83b4-dece2d0e1602/1685944118/preview.jpeg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.558Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "89772386660528134518222812320225584060672011208372004260493201990699963094840"
+        }
+      }
+    },
+    {
+      "id": "5ed70db8-a76e-4696-b8d8-8d690a8aa9b9",
+      "title": "Nashi #5",
+      "source": "https://cdn.feralfileassets.com/previews/78f213d3-a7d3-440e-817f-3cefbf28e043/1685944186/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.559Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "25645729519026555920787231016167757175236524206152408987684427100872668271295"
+        }
+      }
+    },
+    {
+      "id": "4d478bce-426b-4485-ba93-b2e85647be3f",
+      "title": "Mode Confusion #1",
+      "source": "https://cdn.feralfileassets.com/previews/44915b9e-8eac-477b-aa53-cfd335da082a/1685944998/preview.gif",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.559Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "1299511854520002634015191577671796554131262292261602276056987334175610842710"
+        }
+      }
+    },
+    {
+      "id": "3ba2d41f-b928-4faa-9960-6c8ad1449c5e",
+      "title": "Pavilions #3",
+      "source": "https://cdn.feralfileassets.com/previews/e9eb561f-255d-4dd9-bf6a-b26e6476ce03/1685944582/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.559Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "83634162844558333238196065288336164259320955888103999895345919795993708847159"
+        }
+      }
+    },
+    {
+      "id": "ce9723d1-4053-4ad2-9d86-c3e90103df82",
+      "title": "Aliqua #5",
+      "source": "https://cdn.feralfileassets.com/previews/14224a4b-321b-4326-af6c-4488d9450de2/1685945455/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.559Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "75126995133917846690915984462785890891357174624862363379428302968617629497129"
+        }
+      }
+    },
+    {
+      "id": "4470ad67-37ea-493b-87c8-fdc7b5e3e04e",
+      "title": "Untitled Specimen #1",
+      "source": "https://cdn.feralfileassets.com/previews/21f4e5b6-6af2-4885-a174-377d73be8397/1685945706/preview.jpeg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.559Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "75873312082406023683842059756147743160095524587759747624824497103953233011297"
+        }
+      }
+    },
+    {
+      "id": "bc26c48b-23bd-4aa2-87c1-1e426bd1bbfc",
+      "title": "Speculative Fetish (Vive Controller) #7",
+      "source": "https://cdn.feralfileassets.com/previews/bc195832-3ec9-4fd1-a1f6-a761ae0d8f53/1685945748/preview.gif",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.559Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "67571408210486716591439940424663580609879380443817400222855251024765385767724"
+        }
+      }
+    },
+    {
+      "id": "95e474f7-5eb1-4f4c-a50d-7b14d99e6865",
+      "title": "Into the Nothingness #8",
+      "source": "https://cdn.feralfileassets.com/previews/c3103036-25e6-4d9c-bf38-bda9ce49722f/1685945809/preview.gif",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.559Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "97629658773617611850634597588052113311459005001699396706865964812016450518765"
+        }
+      }
+    },
+    {
+      "id": "6829b8cc-6d6c-4ea4-bd8f-c81dbd1ea939",
+      "title": "Sketch for a Cyclops #2",
+      "source": "https://cdn.feralfileassets.com/previews/807072fa-2043-483d-a5bb-d274e6a83fa9/1686650899/index.html",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.560Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "101040033990724987320915512456219298687757377879809035120565523455002867135808"
+        }
+      }
+    },
+    {
+      "id": "e865d91e-5253-41f0-889d-198a7f096c35",
+      "title": "Cube_1997 #5",
+      "source": "https://cdn.feralfileassets.com/previews/b9fc23b3-5cf1-4507-82b0-3ececbc7e01f/1685948113/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.560Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "67958677895893137800484609179652788843315276641992863600550466925218602782036"
+        }
+      }
+    },
+    {
+      "id": "72fa3338-367b-482d-8075-5e092834c4a7",
+      "title": "SHE #5",
+      "source": "https://cdn.feralfileassets.com/previews/6337f939-ad1e-4ea6-b549-205fb1951b56/1685948174/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.560Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "112719489495599285632573085929086652062667184160985018299870204816731530920407"
+        }
+      }
+    },
+    {
+      "id": "424d45c8-3795-4c93-9495-654784dc02b0",
+      "title": "Cyanotype Plant Sketch AP",
+      "source": "https://cdn.feralfileassets.com/previews/d1497479-9335-4b83-85bc-31caba9f2b29/1685948196/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.560Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "79508127103274976206211075928743635846379035818084520222247456670246052322271"
+        }
+      }
+    },
+    {
+      "id": "f86ddea7-a327-46e3-9be1-53d9def26b3a",
+      "title": "1570742540594-34287 #6",
+      "source": "https://cdn.feralfileassets.com/previews/e15b4b6f-c180-4f92-9a8d-0599df13670c/1685948324/preview.png",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.560Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "114486695932942101468313093455271286055907040099182929455875975891869445654565"
+        }
+      }
+    },
+    {
+      "id": "6b396284-4e11-4d41-83d7-b8fe4a44cb26",
+      "title": "Mineral Ghost #4",
+      "source": "https://cdn.feralfileassets.com/previews/ce3d993f-34cc-494a-b265-a38105d4cd39/1685949009/preview.gif",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.560Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "68026654726833852532244389925972502595201189704995385957740547992129730249286"
+        }
+      }
+    },
+    {
+      "id": "cab29e90-0a51-4083-a5f8-7d4d068387df",
+      "title": "DOG-WHISTLE_V2.MP4(L8NITE-SCREENER) #2",
+      "source": "https://cdn.feralfileassets.com/previews/daf603b2-4c66-4faf-8e43-a5062ed1301e/1685948470/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:48.560Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x377d8E26d145c9ba0db766A0A577baBa9de9eC17",
+          "tokenId": "10926095371654028799179391261585010065492858691364314366316581517609086944785"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

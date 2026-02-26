@@ -1,0 +1,424 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "eb18917e-86cb-4a38-b439-995db868220b",
+  "slug": "net-evil-napster-24",
+  "title": "Net Evil — Napster 24",
+  "summary": "<p>Sloth</p>\n<p>Damjanski is an artist who respects the institution of sleep. In 2024 he released the virtual exhibition and performance <em>Sleepover</em>, where viewers entered a dreamlike digital space and were invited to take a 30-minute nap; in 2023, there was the AR app Napster, a peer-to-peer nap-sharing service to find places for Damjanski to take a nap. Users could use their camera to select a place for the artist to nap and share it with him. A sleeping 3D model of Damjanski would then appear at that location. With <em>Napster 24</em>, the artist performs sleep yet again, but this time in person instead of virtually. Each artwork in the <em>Napster 24</em> series is a reflection of a nap taken by Damjanski during a 24-hour period, beginning at 12 AM Eastern Daylight Time on August 8th, 2025. Nap data was recorded through a wearable sleep tracker, and used as the seed to generate the visuals of the artwork. While the abstract visuals appear bright, the data beneath them represents the fractured sleep schedule induced by internet use—either by choice, by the requirement of remote work, or otherwise. This fractured schedule was lived first-hand by the artist both during the recording period, and beyond.</p>\n",
+  "coverImage": "https://cdn.feralfileassets.com/thumbnails/ba7e377d-e19e-40ff-becc-eff1e2aac779/1755593015",
+  "created": "2026-02-26T07:06:28.708Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "a84e1817-a3bd-4cca-879e-c88a45d6547b",
+      "title": "NAPSTER 12am",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444096"
+        }
+      }
+    },
+    {
+      "id": "d7e26ef0-37fb-44c6-b0cd-e873f50f42ed",
+      "title": "NAPSTER 1am",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444097"
+        }
+      }
+    },
+    {
+      "id": "be7d8c82-a3d9-494e-8a6c-6a8a90d959dd",
+      "title": "NAPSTER 2am",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444098"
+        }
+      }
+    },
+    {
+      "id": "25c612d1-8a15-4a2c-b6ef-6f761fe342a3",
+      "title": "NAPSTER 3am",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444099"
+        }
+      }
+    },
+    {
+      "id": "fb4f1dd7-8246-415a-b477-ff40904241ee",
+      "title": "NAPSTER 4am",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444100"
+        }
+      }
+    },
+    {
+      "id": "e145e405-73f0-451d-ba0e-18397a20fa88",
+      "title": "NAPSTER 5am",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444101"
+        }
+      }
+    },
+    {
+      "id": "0a285025-c20f-4eb6-9340-a14b48c49a72",
+      "title": "NAPSTER 6am",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444102"
+        }
+      }
+    },
+    {
+      "id": "1888ba9b-17a5-4322-b655-806bca49bc2d",
+      "title": "NAPSTER 7am",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444103"
+        }
+      }
+    },
+    {
+      "id": "7ac99633-5954-4ad1-b037-ea24108e6182",
+      "title": "NAPSTER 8am",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444104"
+        }
+      }
+    },
+    {
+      "id": "60e1e516-b5ef-496e-b6e2-d91c666cb844",
+      "title": "NAPSTER 9am",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444105"
+        }
+      }
+    },
+    {
+      "id": "bcf0e938-7d14-44b1-ad19-faea6528086f",
+      "title": "NAPSTER 10am",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/10",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444106"
+        }
+      }
+    },
+    {
+      "id": "c1d72a73-6feb-44c2-813a-ca36f4156281",
+      "title": "NAPSTER 11am",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/11",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444107"
+        }
+      }
+    },
+    {
+      "id": "c8916d55-2f1c-4c73-b97b-6d8d546f3cf5",
+      "title": "NAPSTER 12pm",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/12",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444108"
+        }
+      }
+    },
+    {
+      "id": "518e7757-3822-4728-87e5-a86faee11cda",
+      "title": "NAPSTER 1pm",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/13",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444109"
+        }
+      }
+    },
+    {
+      "id": "ecd8cd7c-7c6d-4a53-b3a5-610c7b985bc6",
+      "title": "NAPSTER 2pm",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/14",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444110"
+        }
+      }
+    },
+    {
+      "id": "15ffa3ad-0923-4095-b558-49ee49480e24",
+      "title": "NAPSTER 3pm",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/15",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444111"
+        }
+      }
+    },
+    {
+      "id": "7fd2e355-2239-4bae-993f-d88cb495efe4",
+      "title": "NAPSTER 4pm",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/16",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444112"
+        }
+      }
+    },
+    {
+      "id": "ab912c8d-9f14-4896-8ea1-e8f87654f291",
+      "title": "NAPSTER 5pm",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/17",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444113"
+        }
+      }
+    },
+    {
+      "id": "0ae793c8-8321-439f-87af-80884bb6e43b",
+      "title": "NAPSTER 6pm",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/18",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444114"
+        }
+      }
+    },
+    {
+      "id": "efdeb8bf-2f19-413e-bb92-14bf28da3010",
+      "title": "NAPSTER 7pm",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/19",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444115"
+        }
+      }
+    },
+    {
+      "id": "39b9b33e-374c-4a3c-b8a0-d7baafc206b2",
+      "title": "NAPSTER 8pm",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/20",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444116"
+        }
+      }
+    },
+    {
+      "id": "21f4b08e-6c61-40d3-a177-98bbadb6d347",
+      "title": "NAPSTER 9pm",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/21",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444117"
+        }
+      }
+    },
+    {
+      "id": "03e1d5aa-17d0-48f7-8b93-a0ded3146000",
+      "title": "NAPSTER 10pm",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444118"
+        }
+      }
+    },
+    {
+      "id": "d6aefa3f-a23d-45c6-ad9c-254f58033cc7",
+      "title": "NAPSTER 11pm",
+      "source": "https://cdn.feralfileassets.com/previews/ba7e377d-e19e-40ff-becc-eff1e2aac779/1747850031/_unique-previews/23",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.707Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485447444119"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

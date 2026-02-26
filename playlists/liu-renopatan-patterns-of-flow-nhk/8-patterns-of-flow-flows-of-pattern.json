@@ -1,0 +1,1121 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "af63f428-1417-482f-8aa4-8d18a1d9cead",
+  "slug": "patterns-of-flow-flows-of-pattern",
+  "title": "流れのパターン / Patterns of Flow — Flows of Pattern",
+  "summary": "<p>Shunsuke Takawo regards geometrical motifs as well-suited to reflecting daily life and expressing his inner world through programming. For many years, he has explored static elements such as color, shape, harmony, shadow, density, layering, and texture, while his explorations of composition are rooted in his mother’s quilting. His work, <em>Flows of Pattern</em>, is influenced by Hiroshi Kawano’s vision of social transformation through aesthetics as well as his 1969 work, <em>Simulated Color Mosaic</em>.</p>\n<p>Like a haiku, tanka, or short melody, Takawo generates individual images filled with potential through concise code. While these codes are structured systematically, they are often daily records that he later organizes and shares publicly. His coding process is spontaneous and physical, involving writing, interacting with an output, and then adding and connecting further code. His dialogue with the computer is subtle, fleeting, and highly volatile. Takawo dreams of writing code as if he were speaking Japanese, imagining a future where fragments of his own code remain part of human history, like stone monuments or ancient tablets. He wishes to leave behind his works as well as the self transformed through the writing process.</p>\n<p>髙尾俊介は、幾何学的なモチーフが日常を模写し、プログラミングを通じて心象を表現するのに適していると考えています。高尾は色、形、調和、陰影、密度、重なり、質感といった静的な要素の探求してきましたが、その構図への探求は母親のキルティングに深く結びついています。彼の作品「Flows of Pattern」は、川野洋が提唱した美学による社会変革のビジョンや、彼の「Simulated Color Mosaic」（1969）に影響を受けています。</p>\n<p>髙尾は短いコードを使って、俳句や短歌、短いメロディのように可能性を孕んだ一枚の絵を生み出します。そのコードは体系的に構造化されていますが、基本的には日々の記録に過ぎず、書き綴ったものを後から整理する形で公開されます。彼のコーディングプロセスは、自発的かつ身体的であり、書き込み、出力との対話、さらにコードを追加・接続するというプロセスを含みます。コンピュータとの対話は儚く、一瞬のものであり、非常に流動的です。彼は自分が日本語を話すかのようにコードを書くことを夢見ており、自身のコードの断片が、石碑や古代の石板のように人類の歴史の一部として残る未来を想像しています。それは作品だけではなく、彼が書いたコードや、その過程で書き換えられていく自分自身をも残したいという願いでもあります。</p>",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/7a33f8d4-6b14-4b0e-819b-8425e0723300/raw",
+  "created": "2026-02-26T07:06:17.111Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "10d46692-53c7-4103-a4fe-adce9d7013ce",
+      "title": "Flows of Pattern #1",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=0&artwork_number=1&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x72b47c1a336bc8b86afa341cf46ec920eec2c8b083d6b4076fa5822d8c3e1ec2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.110Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306240"
+        }
+      }
+    },
+    {
+      "id": "42b36b4a-47f0-4a01-8837-cb12f5bd8375",
+      "title": "Flows of Pattern #2",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=1&artwork_number=2&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x9ae7b05d67747373027e9a88f56f13527c58789e08c8e641d55ceba6edd551fc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.110Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306241"
+        }
+      }
+    },
+    {
+      "id": "ab038fc6-cf11-46e8-af4d-d406c8fbfd39",
+      "title": "Flows of Pattern #3",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=2&artwork_number=3&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x41c46d95471866dbe53cb8b4538ab9a67d59b74333cc89c6b5c85348db4131c9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.110Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306242"
+        }
+      }
+    },
+    {
+      "id": "f872abc6-7fd7-4d34-b94f-27afaf44d0e6",
+      "title": "Flows of Pattern #4",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=3&artwork_number=4&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x8816b04fa28cc1bb6718e7e7a880cce71275cedba4a10d5f205f5bff645bf4b1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.110Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306243"
+        }
+      }
+    },
+    {
+      "id": "30f60617-fdf5-486e-b099-b009ecf894cf",
+      "title": "Flows of Pattern #5",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=4&artwork_number=5&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x5fca03f761e78cb08a8033d14e84cd2b3562bec051fb9672d8bf92d886785b56",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.110Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306244"
+        }
+      }
+    },
+    {
+      "id": "03226925-522c-466f-8e91-48e3e4d7bfad",
+      "title": "Flows of Pattern #6",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=5&artwork_number=6&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xccd7c92cbecea0590bfabde4874459ba3c8be1c0684a747db31c995bc26277b5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.110Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306245"
+        }
+      }
+    },
+    {
+      "id": "c9d152e3-b9ba-4110-b901-1e3040002bf9",
+      "title": "Flows of Pattern #7",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=6&artwork_number=7&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x0b73b31e6d626be30cd8979e13ec8173a1fe8bc4022cb6f612fe4ec1c1479ca8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.110Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306246"
+        }
+      }
+    },
+    {
+      "id": "52535457-4416-4308-96c9-13e0fbf42abb",
+      "title": "Flows of Pattern #8",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=7&artwork_number=8&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xc95b0788840a1ef7f77e817eb90a29e927e99d7e27fe1bcd1a54235d21bace07",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.110Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306247"
+        }
+      }
+    },
+    {
+      "id": "b771b0e5-6468-4721-8ddc-c09e0954a64f",
+      "title": "Flows of Pattern #9",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=8&artwork_number=9&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x49ef7dfe7bc0d323a6326e7554e404ca6e9a24a43e356cc06b1cf9c2a6ff7a91",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306248"
+        }
+      }
+    },
+    {
+      "id": "41115721-0fa9-49d9-bcc6-9c21e3b48961",
+      "title": "Flows of Pattern #10",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=9&artwork_number=10&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x6d26382a4b7c6b48cbf15403512250d6e89c045c8d05a758c4f124374f982ca1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306249"
+        }
+      }
+    },
+    {
+      "id": "236c57cc-2894-4a04-bae7-b95383682cca",
+      "title": "Flows of Pattern #11",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=10&artwork_number=11&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x293dccc78e721e2b2564d197f81a450171c0d7dd83c38607a922ce26a60f7897",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306250"
+        }
+      }
+    },
+    {
+      "id": "c18d9617-46c8-4036-9afe-8c838c8c8c4e",
+      "title": "Flows of Pattern #12",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=11&artwork_number=12&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x676a5106522e781639766c73bb88998cb7c12809798314f43a723e228958c179",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306251"
+        }
+      }
+    },
+    {
+      "id": "ea2b3aec-de26-4e17-a1a9-56ede6b5fd3d",
+      "title": "Flows of Pattern #13",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=12&artwork_number=13&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xba80d4ba32e1495c267f9a2f2fecfbe5c290b60a9d98fb8efae4a049c4d9a77b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306252"
+        }
+      }
+    },
+    {
+      "id": "f1ef94de-0a27-4b9d-9783-9d34779905de",
+      "title": "Flows of Pattern #14",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=13&artwork_number=14&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x9da06039bb3e323bb549d71432425ab894895d9a5f3506a5a0ca5d9021dada4d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306253"
+        }
+      }
+    },
+    {
+      "id": "4e691cd5-56cd-4533-84c1-fff84dc18bc6",
+      "title": "Flows of Pattern #15",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=14&artwork_number=15&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x7ec7856e76790d864e86c095aa32f7a5ad57c89fa468105e7680307c1bc4965a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306254"
+        }
+      }
+    },
+    {
+      "id": "49fb9911-6cf6-41fa-b901-3e8a428901a6",
+      "title": "Flows of Pattern #16",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=15&artwork_number=16&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x896c7b11dfbc1af578716af0a7aedfe306027e995ab22fb48f7abdf58b808d51",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306255"
+        }
+      }
+    },
+    {
+      "id": "74645084-ad08-475d-b050-5b730be9586a",
+      "title": "Flows of Pattern #17",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=16&artwork_number=17&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xbb38c57f758a160fc93b9bbbd6e43a0c151a3495bc3f73e87c80ccdfcf98bf9d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306256"
+        }
+      }
+    },
+    {
+      "id": "90f8d646-f2d2-40ab-80d1-b444dc348b63",
+      "title": "Flows of Pattern #18",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=17&artwork_number=18&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x4c472714a33c5e1816ea35ca029738632b445727dd5220afc2ebcd7ca63f3125",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306257"
+        }
+      }
+    },
+    {
+      "id": "2dc49578-6b9e-49ba-94bf-a3af5704f6d1",
+      "title": "Flows of Pattern #19",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=18&artwork_number=19&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x67aebb48d90d3cbae9dfb811e7e399bd40cfb900381b33541528c647be327b9f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306258"
+        }
+      }
+    },
+    {
+      "id": "6bda57a7-e7a4-4528-bb3e-2e4bfef3854e",
+      "title": "Flows of Pattern #20",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=19&artwork_number=20&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x89d17ee5a0723f8062606323d55df6d497c17dce8e5dd0f93330bddd318f6da1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306259"
+        }
+      }
+    },
+    {
+      "id": "d1e7a238-0b9a-4db4-8d4d-39b103fcac36",
+      "title": "Flows of Pattern #21",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=20&artwork_number=21&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x99f2dfe3c62b0fee58f3617fbda76f68f2cd9b5f032f2198f755104817d6512e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306260"
+        }
+      }
+    },
+    {
+      "id": "8cac7406-b866-4fc3-b834-247b19dad2dc",
+      "title": "Flows of Pattern #22",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=21&artwork_number=22&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x30c08a6cff2bb5ccd6b7360990973fe29678eb1e45b27ad610f84293fa43bcb9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306261"
+        }
+      }
+    },
+    {
+      "id": "8dd3320f-7509-4955-83a7-e86c8d52833c",
+      "title": "Flows of Pattern #23",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=22&artwork_number=23&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xc3b781c6eb2cf6b42f1e8d027ee0f986c11b8643d570872bf9fb5a69674e580a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306262"
+        }
+      }
+    },
+    {
+      "id": "e5023164-5692-4dda-ae5b-74ba0795eb41",
+      "title": "Flows of Pattern #24",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=23&artwork_number=24&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x27c21ab9b3bae55f73d89453f6ce49e0171f950092a3dba089762122abcfaf3b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306263"
+        }
+      }
+    },
+    {
+      "id": "603dd0e5-ebc5-4880-b01d-a7beecb16858",
+      "title": "Flows of Pattern #25",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=24&artwork_number=25&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xb08107ebeeef0e496c2c09b2c2fb9b2ec59657192331db9397db8a65b85dec6d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306264"
+        }
+      }
+    },
+    {
+      "id": "e6835357-f1ea-483d-b75c-bd2c12c40001",
+      "title": "Flows of Pattern #26",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=25&artwork_number=26&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x6b9113e360d13ba5a22c8f32448e94509e0ed544ae9647f36683459c8a6b7242",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306265"
+        }
+      }
+    },
+    {
+      "id": "6ae0d920-8d75-4ea0-b6de-1f8a01901037",
+      "title": "Flows of Pattern #27",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=26&artwork_number=27&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xecf1d797a817f73a0005aa4e96b9f2f3fe5b8a7e453bf0e4d271ed338f9d6133",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306266"
+        }
+      }
+    },
+    {
+      "id": "f2f7a885-c02d-4e96-a9b8-69f6a0eed7c4",
+      "title": "Flows of Pattern #28",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=27&artwork_number=28&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x4ac83db22199e82da33e0dff4645758b13525052f9444708b4296973dd235f1a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306267"
+        }
+      }
+    },
+    {
+      "id": "c69db322-84c8-4ab5-996a-9dcc5c9f13ce",
+      "title": "Flows of Pattern #29",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=28&artwork_number=29&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x383be9490b5f23107878e7f16e7557be74ae69cdfaeefb1da1b27a11abecb418",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306268"
+        }
+      }
+    },
+    {
+      "id": "3f181660-dcb1-4595-a6f0-ea334afd3144",
+      "title": "Flows of Pattern #30",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=29&artwork_number=30&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xeb3ea144296e39b6f22b621def91b31f42fe7a134dd88c3c715756e406ba52dc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306269"
+        }
+      }
+    },
+    {
+      "id": "cce5966e-838e-44fd-a167-a064a98c4613",
+      "title": "Flows of Pattern #31",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=30&artwork_number=31&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xd5959f126d8edd119c50d3b78968fa4a5b4d2a59fe99aee8ddaf3bc2c32c531f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306270"
+        }
+      }
+    },
+    {
+      "id": "2dc46571-557e-4851-addc-c0ed0ad52a3a",
+      "title": "Flows of Pattern #32",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=31&artwork_number=32&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xb58c849910a3c811563b1e935b99c42eaae1092cc394a39ec2d108b7910e285a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306271"
+        }
+      }
+    },
+    {
+      "id": "d99faf4c-27dd-4ecf-bf3c-59077e96bc1c",
+      "title": "Flows of Pattern #33",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=32&artwork_number=33&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x3f54bdc51b069d8a13826a5e7bcca8174d8b7a9f958cfe4fefd3420e125f3326",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306272"
+        }
+      }
+    },
+    {
+      "id": "d35bff1b-43b5-419a-a81a-7406781e4c1a",
+      "title": "Flows of Pattern #34",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=33&artwork_number=34&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xeb972cbee9bf0af9b8204db2d29c7c0c69dc2e62cc4e0f795293307ec208481a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306273"
+        }
+      }
+    },
+    {
+      "id": "c1375ca5-0406-4548-8474-573048d50a66",
+      "title": "Flows of Pattern #35",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=34&artwork_number=35&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xb09d21015bf3699ac44c715bc1e60bc61a5d8e0a6bb7430d7d371ff604c91dc0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306274"
+        }
+      }
+    },
+    {
+      "id": "0a870e51-9514-4fcf-a58a-e261eccc38b0",
+      "title": "Flows of Pattern #36",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=35&artwork_number=36&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x1eddcd748886c9cde01b67ad718c04813139a6c55341969d860e352ad58df40f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306275"
+        }
+      }
+    },
+    {
+      "id": "6d47e2c9-0b9d-4971-bb35-7a0ad4e9b952",
+      "title": "Flows of Pattern #37",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=36&artwork_number=37&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x6dd7f0b6ed1a009555d186e701cf16a4793275761b87c63d17f9e3688c6c548b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306276"
+        }
+      }
+    },
+    {
+      "id": "17571142-494c-4546-a14f-3689e35ca48b",
+      "title": "Flows of Pattern #38",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=37&artwork_number=38&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x490c188acab39d4d3e78f35b66a05d1eade3d636848e702152afb86c3c1e81a0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306277"
+        }
+      }
+    },
+    {
+      "id": "146da415-29b8-4d2e-ae91-f882a65ee8ad",
+      "title": "Flows of Pattern #39",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=38&artwork_number=39&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x68f9d18db23cbc2670176cd5011361d8fbef3105e0af5488af44f9e1c89d5d2e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306278"
+        }
+      }
+    },
+    {
+      "id": "23c870bb-5809-458e-b681-814dab570076",
+      "title": "Flows of Pattern #40",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=39&artwork_number=40&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xdf221a6727ecd5a9bd0d92a46e5804d96e180186c35cc6fd915ab438263ff5e8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306279"
+        }
+      }
+    },
+    {
+      "id": "22f7b847-d289-44dc-9bcb-efb0e5fc9ae8",
+      "title": "Flows of Pattern #41",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=40&artwork_number=41&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x2a018959ee28f966cfc50311a12f18f6376cd199f3d8e21b94823ca7593b4326",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306280"
+        }
+      }
+    },
+    {
+      "id": "e1d41266-c520-4912-8069-90414c927b05",
+      "title": "Flows of Pattern #42",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=41&artwork_number=42&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xd524ce017a5b0c210353e824735448e4fbfd90d77d6b5e5805f3a8f464d74be4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306281"
+        }
+      }
+    },
+    {
+      "id": "0d22ecbf-df60-401e-ba10-19cee217718f",
+      "title": "Flows of Pattern #43",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=42&artwork_number=43&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xe17e87e1a0142a9f34e9b4bd9cf159b8cb2822478a1ca8aee649cd804f998ffa",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306282"
+        }
+      }
+    },
+    {
+      "id": "96b6156e-7533-4e9a-8883-e299d3ddea18",
+      "title": "Flows of Pattern #44",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=43&artwork_number=44&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x7696e8a8147999fe5dd40626eae1c15a81bbc983bb6f9c32ab70edede376d8d5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306283"
+        }
+      }
+    },
+    {
+      "id": "cc905a6c-1f76-4a12-a0dd-54cf51112376",
+      "title": "Flows of Pattern #45",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=44&artwork_number=45&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x016af6f81c8b238656e88c59d1eadeb1929f837eb424ffb6e68d4695f1425810",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306284"
+        }
+      }
+    },
+    {
+      "id": "ebea9009-d17c-472e-873c-a3e4d76a05ea",
+      "title": "Flows of Pattern #46",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=45&artwork_number=46&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xaece729a3a56eaada3b49d47925e22a26bdf2beebaaff4d0e836fa466ce53cdd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306285"
+        }
+      }
+    },
+    {
+      "id": "a9e736e9-98c9-4cd5-ba5b-8bea61322e93",
+      "title": "Flows of Pattern #47",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=46&artwork_number=47&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x45fe18614a938850b3d582bb5fe63071d1473fb0e70563c10a90bda3d7ecc21b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306286"
+        }
+      }
+    },
+    {
+      "id": "f22b3709-06a4-40cf-862d-95c86724ca2a",
+      "title": "Flows of Pattern #48",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=47&artwork_number=48&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xc23ca5554f8e35957dbff29a296efe3dd8064dbe9cddc583a5f4264515fe5189",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306287"
+        }
+      }
+    },
+    {
+      "id": "cc5dba86-5c6f-49d0-9074-306c00305d97",
+      "title": "Flows of Pattern #49",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=48&artwork_number=49&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xcba3ba19d0b9e3305ca2d4409cad01fa4b9694f4201aa0ca35af61eeccb84228",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306288"
+        }
+      }
+    },
+    {
+      "id": "22d0a7ea-cd65-401b-922f-555501647618",
+      "title": "Flows of Pattern #50",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=49&artwork_number=50&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x04d3b73f91ba3784d0aa6a3901336ecbc740d51a14c9c1936ddef73cda90e0c6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306289"
+        }
+      }
+    },
+    {
+      "id": "663a7ae9-450c-45ae-8d3a-add5282fae49",
+      "title": "Flows of Pattern #51",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=50&artwork_number=51&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x0de27f63f6d9a665899ca90dfe61e5621ea2f1707edac9410131aeb7d8a3bc24",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306290"
+        }
+      }
+    },
+    {
+      "id": "81fdaf2e-b5cd-474b-b58e-dd2c0a3a4522",
+      "title": "Flows of Pattern #52",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=51&artwork_number=52&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xf7d3160eff04258503f5862b53a163de6bc4d22c245ae325ee394b5c0a5f0c86",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306291"
+        }
+      }
+    },
+    {
+      "id": "1d40cbc0-45cd-4389-9824-d0d382e64ad4",
+      "title": "Flows of Pattern #53",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=52&artwork_number=53&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xd4c35a5d6c608819d43cbe69b3f567f3348c338c7685a9d72dc5a6481197c3cd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306292"
+        }
+      }
+    },
+    {
+      "id": "f931e60e-4e26-42d3-b55c-8699f6c08e52",
+      "title": "Flows of Pattern #54",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=53&artwork_number=54&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x4c86c9ff16f8901c86fcd958c2fd0053c1c11724f5f7268c7be1034ec36b3c34",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306293"
+        }
+      }
+    },
+    {
+      "id": "d1c9a548-a0ad-4c17-a2c1-ade853a069cf",
+      "title": "Flows of Pattern #55",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=54&artwork_number=55&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x324c51187fc6f4bbdfc4a43e44ff69327a4da6a3fcd67feef2b62f16ea57fa0d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306294"
+        }
+      }
+    },
+    {
+      "id": "834121e8-0a04-457a-959f-d7f12af9a127",
+      "title": "Flows of Pattern #56",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=55&artwork_number=56&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x59f433ed8a06db19ddf19cd5187db277aa840515d440f0050a9529c19301c6c2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306295"
+        }
+      }
+    },
+    {
+      "id": "6239ef1f-5da9-4825-8225-9aa9dbe73a9b",
+      "title": "Flows of Pattern #57",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=56&artwork_number=57&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x25a478b969704cad69effa613543d316a9a068ee2c297471a4cdccba513e42a4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306296"
+        }
+      }
+    },
+    {
+      "id": "34d12738-88f1-4dfb-a19e-9a5c0bc4253d",
+      "title": "Flows of Pattern #58",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=57&artwork_number=58&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xea9c5834b63eb8b3773bb83b846729e83d24e5ff05956225005dccc44e700ad6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306297"
+        }
+      }
+    },
+    {
+      "id": "ee3c49df-1f0d-4b93-b974-a0a50910910b",
+      "title": "Flows of Pattern #59",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=58&artwork_number=59&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x498ebfe927097596e57a4301e0d26039dfedf2918aab458705e67796021f3bd3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306298"
+        }
+      }
+    },
+    {
+      "id": "498c38cf-4ac9-4772-92c0-2870c32282b2",
+      "title": "Flows of Pattern #60",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=59&artwork_number=60&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0xc9ec95c28ec8b962d9840eeea100d3c61292282ff2cff5ef6b079d630650fcc4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306299"
+        }
+      }
+    },
+    {
+      "id": "19d89a51-4943-4df3-8598-9151f18a8966",
+      "title": "Flows of Pattern #61",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=60&artwork_number=61&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x755725c4e3b44a61ca01c7de47e486ed231b9e10b0649de1cf0f91cc72970219",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306300"
+        }
+      }
+    },
+    {
+      "id": "bcca16a3-160c-4543-aaac-b4c75cdcd477",
+      "title": "Flows of Pattern #62",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=61&artwork_number=62&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x3150c066848fab981bafcb7039ae60c87477c01c0d61347a860f57b221d39bb7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306301"
+        }
+      }
+    },
+    {
+      "id": "8b3f837a-0a7b-482c-89e2-acf7476c7971",
+      "title": "Flows of Pattern #63",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=62&artwork_number=63&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x50b4638641a060cfbb7f2a5cd12f1086d8e04910e0ecefad69650a7469921cd4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306302"
+        }
+      }
+    },
+    {
+      "id": "9c6fcf7e-503c-4db6-b1c0-7a49ce7a3a96",
+      "title": "Flows of Pattern #64",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=63&artwork_number=64&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x7ce46d56244bb6bb7ef997282d17f54d5758f2c2631320a3c4004e91a7b5eb13",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306303"
+        }
+      }
+    },
+    {
+      "id": "3347cdc2-b14e-493c-bf64-f0bb942fe55f",
+      "title": "Flows of Pattern #65",
+      "source": "https://cdn.feralfileassets.com/previews/dce8e5ee-869d-41f6-8c0b-de98a4a0a98f/1727681243/index.html?edition_number=64&artwork_number=65&blockchain=ethereum&contract=0x5D303A17883C442603B8afb54921d1b7DCc0C831&token_id_hash=0x161819c320cd034e8f8f639330cf42b313644b7e60e4066da6268a6b29a53f44",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:17.111Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x5D303A17883C442603B8afb54921d1b7DCc0C831",
+          "tokenId": "27351590983062365677486503722577408930064250723080863920865112148460955306304"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

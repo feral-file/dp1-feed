@@ -1,0 +1,509 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "06f64e5c-ea8b-48d2-a29a-6a5c26df2de3",
+  "slug": "graph-cherti",
+  "title": "–GRAPH — CHERTI",
+  "summary": "Iskra Velitchkova is constantly moving back and forth between working with code and working with physical materials, in order to better understand the behavior and output of both. Her “CHERTI” artwork is a series of drawings that explore the relationship between physical drawings and software drawings. On that topic, Iskra writes, “The difference between digital and physical allows me to see the process itself. The constraints of the pen, the paper, and many other circumstances that only happen in real life make me more aware of how much we can learn from technology and its capacity to produce complexity.” The software drawing seen in the web browser is a small window of the full composition, to show more detail. The physical drawing reveals the whole picture, and both views are displayed together to convey this relationship.<br/>“CHERTI” is a software NFT, but the first collector of each edition will receive the corresponding plotter drawing shipped directly from the artist’s studio. Each software NFT includes millions of other images beyond the primary image for each edition. The software NFT and the plotter drawing aren’t linked together; the NFT can continue to be collected on a secondary market without the drawing. Click on the artwork or press the spacebar to generate a new image with a different random seed value. Press ‘1’ to zoom out of the image and ‘2’ to zoom in. Press ‘3’ to return to the original magnification.<br/>The image you see on the main artwork page on Feral File is the plotter drawing for the artist-proof (AP). Compare this image of the drawing to the corresponding software version of the AP to see how the software image and the plotted drawing are related. Because the artists are using a range of papers and inks, the software and physical drawings are delightfully different. Iskra uses two different color schemes selected randomly in the digital version of each digital edition, but the physical drawings associated with the editions will have the same colors and will match the AP.<br/>The “CHERTI” drawings are 50 × 70 cm (19.8 × 27.6 inches) on ivory Fabriano Rosaspina 220 gsm paper. They are drawn with black, brown, and red Muji Gel Ink pens.",
+  "coverImage": "https://imagedelivery.net/5BJzhBHeVhlhbn58hvcXAQ/cfca9c98-6ead-4800-1bdf-8801399f0000/raw",
+  "created": "2026-02-26T07:01:22.613Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "5f88a14f-2610-4f43-9cfb-47c3978bd672",
+      "title": "CHERTI AP",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243974"
+        }
+      }
+    },
+    {
+      "id": "eb29c0b0-7bd1-4dd8-b641-737260122963",
+      "title": "CHERTI #1",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243975"
+        }
+      }
+    },
+    {
+      "id": "115993a0-89c7-41cb-beb8-3d31f8bd9cdf",
+      "title": "CHERTI #2",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=2&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243976"
+        }
+      }
+    },
+    {
+      "id": "dcbf14bf-e7bc-4a3c-bdaa-604d529a6194",
+      "title": "CHERTI #3",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=3&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243977"
+        }
+      }
+    },
+    {
+      "id": "6d5ff34c-b92f-4c7a-9180-fa37f6c9c677",
+      "title": "CHERTI #4",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=4&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243978"
+        }
+      }
+    },
+    {
+      "id": "ffc7a545-e8f8-4989-a5c0-4a10c07db1dc",
+      "title": "CHERTI #5",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=5&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243979"
+        }
+      }
+    },
+    {
+      "id": "418b817b-116e-4d16-b29b-916e5659b869",
+      "title": "CHERTI #6",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=6&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243980"
+        }
+      }
+    },
+    {
+      "id": "4a9f00f0-6861-4526-8f03-3d82d7268cc1",
+      "title": "CHERTI #7",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=7&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243981"
+        }
+      }
+    },
+    {
+      "id": "d3fba772-cb9a-4a87-9ea3-7b688a847d2f",
+      "title": "CHERTI #9",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=9&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243983"
+        }
+      }
+    },
+    {
+      "id": "fd1cfa64-9141-416f-976a-96f4e38c1d90",
+      "title": "CHERTI #10",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=10&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243984"
+        }
+      }
+    },
+    {
+      "id": "0bcadab3-8a5a-40d0-bee9-399faa5c32e0",
+      "title": "CHERTI #11",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=11&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243985"
+        }
+      }
+    },
+    {
+      "id": "0366167f-2c7f-4c6f-a73e-553160797ea3",
+      "title": "CHERTI #12",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=12&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243986"
+        }
+      }
+    },
+    {
+      "id": "eff26c08-a65d-41ce-90d5-b5f04cd2231f",
+      "title": "CHERTI #13",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=13&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243987"
+        }
+      }
+    },
+    {
+      "id": "8833a0c6-dfdf-4884-86e6-9b814311674b",
+      "title": "CHERTI #14",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=14&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243988"
+        }
+      }
+    },
+    {
+      "id": "a09ddf8b-9190-4f8d-af16-74707f8b31f1",
+      "title": "CHERTI #15",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=15&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243989"
+        }
+      }
+    },
+    {
+      "id": "06f45c2e-b479-4df5-aad0-98731e521e83",
+      "title": "CHERTI #16",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=16&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243990"
+        }
+      }
+    },
+    {
+      "id": "0d084052-b3fe-4576-b8fc-ce94ee1d5deb",
+      "title": "CHERTI #18",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=18&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243992"
+        }
+      }
+    },
+    {
+      "id": "0bc747da-0d6c-41c6-a309-c5554286cc38",
+      "title": "CHERTI #19",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=19&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243993"
+        }
+      }
+    },
+    {
+      "id": "77174098-dc92-45da-84dc-e1e718b042bc",
+      "title": "CHERTI #20",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=20&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243994"
+        }
+      }
+    },
+    {
+      "id": "b2df1767-4c97-47c8-bedf-bfaa22f8c7ec",
+      "title": "CHERTI #21",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=21&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243995"
+        }
+      }
+    },
+    {
+      "id": "874d9bb7-e20c-4edc-928d-8f88e8aa7e96",
+      "title": "CHERTI #22",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=22&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243996"
+        }
+      }
+    },
+    {
+      "id": "3f61fcc6-21ca-4398-8d0b-19f39139a0a9",
+      "title": "CHERTI #23",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=23&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243997"
+        }
+      }
+    },
+    {
+      "id": "7159c9cd-926f-428b-aecd-91667ae722cd",
+      "title": "CHERTI #24",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=24&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243998"
+        }
+      }
+    },
+    {
+      "id": "bb4a0000-83b8-4589-be70-c81fc0d46189",
+      "title": "CHERTI #25",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=25&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136243999"
+        }
+      }
+    },
+    {
+      "id": "060311fd-304c-4d29-b327-b09bdf0e8faa",
+      "title": "CHERTI #26",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=26&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136244000"
+        }
+      }
+    },
+    {
+      "id": "654128dd-4f71-4889-8244-33c98bf493fd",
+      "title": "CHERTI #27",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=27&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136244001"
+        }
+      }
+    },
+    {
+      "id": "44bd881c-fe02-41e9-85d4-50b1675fdebd",
+      "title": "CHERTI #28",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=28&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136244002"
+        }
+      }
+    },
+    {
+      "id": "a6ade5e4-f2d3-47ec-b6f4-e039ac6fe5a6",
+      "title": "CHERTI #29",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=29&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.612Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136244003"
+        }
+      }
+    },
+    {
+      "id": "cb7358e9-9490-490f-b7a3-4a9a3dbd0fbe",
+      "title": "CHERTI #30",
+      "source": "https://cdn.feralfileassets.com/previews/cee5b80c-af17-44d0-9a56-c17a68f92569/1637687720/?edition_number=30&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.613Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "89297309684891029190082962870220024536171121680166239431121387638963136244004"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

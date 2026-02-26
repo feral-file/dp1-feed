@@ -1,0 +1,1138 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "d743a1a6-c0ed-4938-afe5-3a87fec1c12e",
+  "slug": "net-evil",
+  "title": "Net Evil — ​​𝚅𝙰𝙽𝙸𝚃𝙸𝙴𝚂",
+  "summary": "<p>Pride</p>\n<p>SHL0MS’ artworks often revolve around the absence of something rather than its presence. In the 2022 work <em>$CAR</em>, they destroyed a Lamborghini and auctioned off the scans of its parts. Since then they’ve made art in the form of blank pages, empty tokens, and the negative space created when posting the right text characters on X. In 𝚅𝙰𝙽𝙸𝚃𝙸𝙴𝚂 , SHL0MS displaces another icon: the celebrity mirror selfie.</p>\n<p>Each selfie is digitally reconstructed to remove the celebrity themselves while restoring the space they occupy with photorealistic fidelity. The result is a modified readymade which decontextualizes an image that was previously loaded with cultural signifiers, embodied in the celebrity, in order to refocus attention on their banal (and oftentimes quietly absurd) surroundings.</p>\n<p>These modified images and their precursors are combined into a video piece in which the celebrity subject, often posing bizarrely or self-hypersexualized, flickers disjointedly back into the frame in a strobing pattern encoding their legal name. The number of frames in each piece is defined by the subject&#39;s Instagram following, and the collection is subsequently ranked linearly by duration, linking each individual&#39;s relative online value to the runtime of the piece.</p>\n<p>In SHL0MS’ work, pride is embodied both within each celebrity’s curated image, as well as through the viewer’s own investment in the status their image represents. With the celebrity removed, the work asks the audience to notice what they project into the void: desire, derision, aspiration, complicity. The mirror still reflects, but now all that appears is the spectator’s relationship to the celebrity complex itself.</p>\n",
+  "coverImage": "https://cdn.feralfileassets.com/thumbnails/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755593015",
+  "created": "2026-02-26T07:06:28.713Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "b9825a8d-902a-49e1-b4fe-b027b0caf4ed",
+      "title": "VANITIES // 0001",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444096"
+        }
+      }
+    },
+    {
+      "id": "0f73dfbc-1dae-4721-bc6a-c4add2b577a8",
+      "title": "VANITIES // 0002",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444097"
+        }
+      }
+    },
+    {
+      "id": "d41086ee-7da5-456f-9098-04af11f1d4f7",
+      "title": "VANITIES // 0003",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444098"
+        }
+      }
+    },
+    {
+      "id": "acba1f31-764a-4843-ba12-480b09ff5703",
+      "title": "VANITIES // 0004",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444099"
+        }
+      }
+    },
+    {
+      "id": "bc86774d-d698-4fc0-9014-5c4bfcf3672a",
+      "title": "VANITIES // 0005",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444100"
+        }
+      }
+    },
+    {
+      "id": "682f87fa-8346-4aed-8408-2e824980aad2",
+      "title": "VANITIES // 0006",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444101"
+        }
+      }
+    },
+    {
+      "id": "82950b76-3664-43fc-a6ff-f900b8afbcb8",
+      "title": "VANITIES // 0007",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444102"
+        }
+      }
+    },
+    {
+      "id": "fc2a9137-32e9-4a3c-9ca1-60e03bd7f940",
+      "title": "VANITIES // 0008",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444103"
+        }
+      }
+    },
+    {
+      "id": "e0002ffb-e0b5-4fa4-8009-45cfb636bb7e",
+      "title": "VANITIES // 0009",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444104"
+        }
+      }
+    },
+    {
+      "id": "81d8373b-fcfb-4028-9a46-480a158dbf53",
+      "title": "VANITIES // 0010",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444105"
+        }
+      }
+    },
+    {
+      "id": "aac18d24-65c8-43bb-bbd6-05264228a8c3",
+      "title": "VANITIES // 0011",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/10",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444106"
+        }
+      }
+    },
+    {
+      "id": "06ff5a75-3374-43db-aee4-69e19ceafe7a",
+      "title": "VANITIES // 0012",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/11",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444107"
+        }
+      }
+    },
+    {
+      "id": "4b0ed876-863a-4071-8e24-3f5515b60244",
+      "title": "VANITIES // 0013",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/12",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444108"
+        }
+      }
+    },
+    {
+      "id": "29084dc5-e4b9-451c-a0d1-e794943bc661",
+      "title": "VANITIES // 0014",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/13",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444109"
+        }
+      }
+    },
+    {
+      "id": "00938cbd-6985-4ff9-b708-c6b563ca16d7",
+      "title": "VANITIES // 0015",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/14",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444110"
+        }
+      }
+    },
+    {
+      "id": "63fd9555-1673-46e3-98d4-64f6de6bcb6f",
+      "title": "VANITIES // 0016",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/15",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444111"
+        }
+      }
+    },
+    {
+      "id": "142994b8-5f7e-44b6-bd80-7afda0710fa9",
+      "title": "VANITIES // 0017",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/16",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444112"
+        }
+      }
+    },
+    {
+      "id": "13a8c041-e4a4-4f56-93a3-adfae69c4ce5",
+      "title": "VANITIES // 0018",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/17",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444113"
+        }
+      }
+    },
+    {
+      "id": "81774a2a-2af4-4747-8c51-19b8bd9250d6",
+      "title": "VANITIES // 0019",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/18",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444114"
+        }
+      }
+    },
+    {
+      "id": "9886ee28-cbf2-4fe2-bb2b-f19e9eb857a3",
+      "title": "VANITIES // 0020",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/19",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444115"
+        }
+      }
+    },
+    {
+      "id": "321866e2-a8a6-4d6e-bafe-375d41a0e7a7",
+      "title": "VANITIES // 0021",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/20",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444116"
+        }
+      }
+    },
+    {
+      "id": "a47e77c8-cd63-4687-84c7-a538b87c9f36",
+      "title": "VANITIES // 0022",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/21",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444117"
+        }
+      }
+    },
+    {
+      "id": "482ecb67-8d89-4afd-adf3-5fa09b9a0693",
+      "title": "VANITIES // 0023",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444118"
+        }
+      }
+    },
+    {
+      "id": "8b19e092-3bb4-4033-9a0a-593b7d703b9e",
+      "title": "VANITIES // 0024",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/23",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444119"
+        }
+      }
+    },
+    {
+      "id": "16dacb22-5782-4c5d-b7c1-47d1f953a427",
+      "title": "VANITIES // 0025",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/24",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444120"
+        }
+      }
+    },
+    {
+      "id": "b4c8c640-c740-48f8-9516-75d8cadef4ac",
+      "title": "VANITIES // 0026",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/25",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444121"
+        }
+      }
+    },
+    {
+      "id": "4be14273-fce7-4348-984b-190b317d6787",
+      "title": "VANITIES // 0027",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/26",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444122"
+        }
+      }
+    },
+    {
+      "id": "86fa57dc-afb6-4ec2-b283-08137a5792d1",
+      "title": "VANITIES // 0028",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/27",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.712Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444123"
+        }
+      }
+    },
+    {
+      "id": "fbebc6b8-0088-4a68-bc33-4996f609ad1f",
+      "title": "VANITIES // 0029",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/28",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444124"
+        }
+      }
+    },
+    {
+      "id": "e8470dca-5f24-427e-9b10-7f82d246f79f",
+      "title": "VANITIES // 0030",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/29",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444125"
+        }
+      }
+    },
+    {
+      "id": "6615804e-9c81-4795-8173-329b94253dfb",
+      "title": "VANITIES // 0031",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/30",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444126"
+        }
+      }
+    },
+    {
+      "id": "caa2401f-f7ef-42c2-b0e8-756bc6ca0e0f",
+      "title": "VANITIES // 0032",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/31",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444127"
+        }
+      }
+    },
+    {
+      "id": "e74adf8f-ff17-4d7d-aa88-64847a570703",
+      "title": "VANITIES // 0033",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/32",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444128"
+        }
+      }
+    },
+    {
+      "id": "d030fa42-f369-4821-80c7-f508410381c3",
+      "title": "VANITIES // 0034",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/33",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444129"
+        }
+      }
+    },
+    {
+      "id": "a0be4886-f7f1-4183-bd20-7145e6dc8f66",
+      "title": "VANITIES // 0035",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/34",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444130"
+        }
+      }
+    },
+    {
+      "id": "fcc90652-8efc-49e5-90b9-0043a8912a7c",
+      "title": "VANITIES // 0036",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/35",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444131"
+        }
+      }
+    },
+    {
+      "id": "38a079ef-9b12-422f-9238-3551c73309cd",
+      "title": "VANITIES // 0037",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/36",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444132"
+        }
+      }
+    },
+    {
+      "id": "d2c71082-9cc3-4df5-b82e-095a6ae38ad3",
+      "title": "VANITIES // 0038",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/37",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444133"
+        }
+      }
+    },
+    {
+      "id": "469a31ac-75a8-4772-bfc1-7e7349df2b0e",
+      "title": "VANITIES // 0039",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/38",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444134"
+        }
+      }
+    },
+    {
+      "id": "2de58608-5137-42ed-8466-91a1274110c5",
+      "title": "VANITIES // 0040",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/39",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444135"
+        }
+      }
+    },
+    {
+      "id": "55864008-0a48-4b47-bc86-0a1ab3ffc39e",
+      "title": "VANITIES // 0041",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/40",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444136"
+        }
+      }
+    },
+    {
+      "id": "7742b3ff-4d84-437b-864c-45164c22cce6",
+      "title": "VANITIES // 0042",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/41",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444137"
+        }
+      }
+    },
+    {
+      "id": "33f51a9e-29cb-4afe-a8fc-0623954a485d",
+      "title": "VANITIES // 0043",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/42",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444138"
+        }
+      }
+    },
+    {
+      "id": "109dac66-9e7e-4370-ac1d-5bb39ffa306f",
+      "title": "VANITIES // 0044",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/43",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444139"
+        }
+      }
+    },
+    {
+      "id": "6d108bfc-d988-4286-865c-08f9027a3c4c",
+      "title": "VANITIES // 0045",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/44",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444140"
+        }
+      }
+    },
+    {
+      "id": "82f7820f-6a9a-470e-8847-c8e193ec14d0",
+      "title": "VANITIES // 0046",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/45",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444141"
+        }
+      }
+    },
+    {
+      "id": "3cbf6350-d48d-4dd8-863f-f9a0c0fda4d5",
+      "title": "VANITIES // 0047",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/46",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444142"
+        }
+      }
+    },
+    {
+      "id": "ebc5a4e8-09e8-48c8-8135-bac3075d6371",
+      "title": "VANITIES // 0048",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/47",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444143"
+        }
+      }
+    },
+    {
+      "id": "97d7dab0-f1b9-48ae-a241-ee9bafe52c50",
+      "title": "VANITIES // 0049",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/48",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444144"
+        }
+      }
+    },
+    {
+      "id": "6c866e42-1e0a-420d-9ab0-e2179ae7bec9",
+      "title": "VANITIES // 0050",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/49",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444145"
+        }
+      }
+    },
+    {
+      "id": "7eb61d8c-159c-4f2f-8436-9515d685d218",
+      "title": "VANITIES // 0051",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/50",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444146"
+        }
+      }
+    },
+    {
+      "id": "08f19165-2566-4f77-aefb-0d76a0ca4637",
+      "title": "VANITIES // 0052",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/51",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444147"
+        }
+      }
+    },
+    {
+      "id": "825e3998-1188-418e-b6e0-362545655e84",
+      "title": "VANITIES // 0053",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/52",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444148"
+        }
+      }
+    },
+    {
+      "id": "cab7c9e6-7a77-4761-9b25-945c42d08ae3",
+      "title": "VANITIES // 0054",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/53",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444149"
+        }
+      }
+    },
+    {
+      "id": "0bb99b7b-635f-4b03-b23b-e10752917721",
+      "title": "VANITIES // 0055",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/54",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444150"
+        }
+      }
+    },
+    {
+      "id": "d1eced52-aa7e-4bcb-bd7a-3f4768903c2c",
+      "title": "VANITIES // 0056",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/55",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444151"
+        }
+      }
+    },
+    {
+      "id": "d0bd8488-3ed2-4130-8af9-720a8c90ad37",
+      "title": "VANITIES // 0057",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/56",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444152"
+        }
+      }
+    },
+    {
+      "id": "9350add4-bc21-48f2-a085-d53bb34b819e",
+      "title": "VANITIES // 0058",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/57",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444153"
+        }
+      }
+    },
+    {
+      "id": "2e1e42c3-d65b-470c-94d7-fadf543d6d5f",
+      "title": "VANITIES // 0059",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/58",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444154"
+        }
+      }
+    },
+    {
+      "id": "a8b5f883-da96-4b00-8d32-9f03db1dbca0",
+      "title": "VANITIES // 0060",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/59",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444155"
+        }
+      }
+    },
+    {
+      "id": "0baf6af7-c520-4235-bf35-b7e045941551",
+      "title": "VANITIES // 0061",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/60",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444156"
+        }
+      }
+    },
+    {
+      "id": "03e2d57f-e27e-4b1d-b9c1-6ba6fafb1786",
+      "title": "VANITIES // 0062",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/61",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444157"
+        }
+      }
+    },
+    {
+      "id": "dab8dcf3-2282-4a24-a4c1-4887ecaa7375",
+      "title": "VANITIES // 0063",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/62",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444158"
+        }
+      }
+    },
+    {
+      "id": "45e7b5ed-7247-4b6b-a1db-e0bd20f487da",
+      "title": "VANITIES // 0064",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/63",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444159"
+        }
+      }
+    },
+    {
+      "id": "07e5394a-344d-4870-8519-2f928d619f49",
+      "title": "VANITIES // 0065",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/64",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444160"
+        }
+      }
+    },
+    {
+      "id": "c53390d8-1c3b-4c54-94e8-f3ffb2d36d5a",
+      "title": "VANITIES // 0066",
+      "source": "https://cdn.feralfileassets.com/previews/2f5d8b08-af8c-4a19-b1ce-815c9fd9bd03/1755660438/_unique-previews/65",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:06:28.713Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x115C9A6118bC7a3EB0aBD30f6BCF1C45Bb198AEd",
+          "tokenId": "68133196527112232794835997367314869505960984666033462681082934679485450444161"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

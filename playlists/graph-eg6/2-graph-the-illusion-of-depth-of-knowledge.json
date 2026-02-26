@@ -1,0 +1,458 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "4475c4d7-5949-4c9c-a0e2-5e63ecde560b",
+  "slug": "graph-the-illusion-of-depth-of-knowledge",
+  "title": "–GRAPH — (The illusion of) depth of knowledge",
+  "summary": "With a background in both art and mathematics, Aleksandra Jovanić has a strong affinity for graphs and diagrams. In “(The illusion of) depth of knowledge,” she explores apophenia, the tendency to perceive a connection or meaningful pattern between unrelated or random things. Each drawing in the series is generated through random numbers, but the internal connections suggest that more is happening. In Aleksandra’s words, these images show “how things in life are pretty simple most of the time, but we tend to complicate them.”<br/>“(The illusion of) depth of knowledge” is a software NFT, but the first collector of each edition will receive the corresponding plotter drawing shipped directly from the artist’s studio. Each software NFT includes millions of other images beyond the primary image for each edition. The software NFT and the plotter drawing aren’t linked together; the NFT can continue to be collected on a secondary market without the drawing. Click on the artwork or press the spacebar to generate a new image with a different random seed value.<br/>The image you see on the main artwork page on Feral File is the plotter drawing for the artist-proof (AP). Compare this image of the drawing to the corresponding software version of the AP to see how the software image and the plotted drawing are related. Because the artists are using a range of papers and inks, the software and physical drawings are delightfully different.  <br/>The “(The illusion of) depth of knowledge” drawings are 35 × 62 cm (13.8 × 24.4 inches) on Woodstock Cipria Fedrigoni 285 gsm paper. They are drawn with red Stabilo Fineliner 0.4 mm and black Faber-Castell 0.1 mm pens.",
+  "coverImage": "https://imagedelivery.net/5BJzhBHeVhlhbn58hvcXAQ/25ac85ee-3dee-4c8b-9a32-1ad5e52ae600/raw",
+  "created": "2026-02-26T07:01:22.611Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "3b894e61-c210-4ec5-8fd2-ad0a80b5417b",
+      "title": "(The illusion of) depth of knowledge AP",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860679"
+        }
+      }
+    },
+    {
+      "id": "340b52ca-e71e-4341-9bb6-d47e833b003d",
+      "title": "(The illusion of) depth of knowledge #1",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860680"
+        }
+      }
+    },
+    {
+      "id": "eb385a38-2b8e-4cee-9d9a-ddfb7cf990df",
+      "title": "(The illusion of) depth of knowledge #2",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=2&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860681"
+        }
+      }
+    },
+    {
+      "id": "a38d7019-5357-432f-aa3c-adb5b9a0f198",
+      "title": "(The illusion of) depth of knowledge #3",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=3&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860682"
+        }
+      }
+    },
+    {
+      "id": "46aba824-07ac-4acb-a37b-4c65b8d698ce",
+      "title": "(The illusion of) depth of knowledge #4",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=4&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860683"
+        }
+      }
+    },
+    {
+      "id": "4401f3a0-415d-44cb-b82e-b2bb002e113d",
+      "title": "(The illusion of) depth of knowledge #5",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=5&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860684"
+        }
+      }
+    },
+    {
+      "id": "ac27244d-2760-4d72-a190-fbbbf3ef0735",
+      "title": "(The illusion of) depth of knowledge #6",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=6&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860685"
+        }
+      }
+    },
+    {
+      "id": "e3d43059-b97e-4f64-9089-78c8f0600cad",
+      "title": "(The illusion of) depth of knowledge #7",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=7&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860686"
+        }
+      }
+    },
+    {
+      "id": "22809e17-1706-4bfe-912f-d6d43fd80c12",
+      "title": "(The illusion of) depth of knowledge #9",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=9&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860688"
+        }
+      }
+    },
+    {
+      "id": "2cc6f9d7-5800-4f6b-a4f7-d6311ddf6d21",
+      "title": "(The illusion of) depth of knowledge #10",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=10&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860689"
+        }
+      }
+    },
+    {
+      "id": "e46e8f4d-1418-44cc-b384-4d3f110dfcfb",
+      "title": "(The illusion of) depth of knowledge #11",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=11&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860690"
+        }
+      }
+    },
+    {
+      "id": "d46012a2-0791-463d-b489-e86e98960d68",
+      "title": "(The illusion of) depth of knowledge #12",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=12&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860691"
+        }
+      }
+    },
+    {
+      "id": "c7fa3d0b-db22-46e6-8824-d57dd4387416",
+      "title": "(The illusion of) depth of knowledge #13",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=13&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860692"
+        }
+      }
+    },
+    {
+      "id": "2b1693c3-4ebe-4841-9c34-653b199eb74d",
+      "title": "(The illusion of) depth of knowledge #14",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=14&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860693"
+        }
+      }
+    },
+    {
+      "id": "074ec3a2-c6d9-4e0b-9f8d-b601b744ae95",
+      "title": "(The illusion of) depth of knowledge #15",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=15&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860694"
+        }
+      }
+    },
+    {
+      "id": "504305e4-a74f-4120-8220-03f36d20a48d",
+      "title": "(The illusion of) depth of knowledge #16",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=16&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860695"
+        }
+      }
+    },
+    {
+      "id": "7dd6f3c3-08c3-4eb0-a0c9-7f2b7a9bf735",
+      "title": "(The illusion of) depth of knowledge #18",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=18&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860697"
+        }
+      }
+    },
+    {
+      "id": "e5517d25-6b22-4eba-bfc0-af8e797fe44d",
+      "title": "(The illusion of) depth of knowledge #19",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=19&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860698"
+        }
+      }
+    },
+    {
+      "id": "ed157dc7-d3b4-4fac-90c1-ecb20fbd6efa",
+      "title": "(The illusion of) depth of knowledge #20",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=20&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860699"
+        }
+      }
+    },
+    {
+      "id": "016e31fd-f9de-4253-8e3f-7b79eda55fcb",
+      "title": "(The illusion of) depth of knowledge #21",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=21&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860700"
+        }
+      }
+    },
+    {
+      "id": "5911c27f-37ad-4a7a-8d24-7a5d9c6faccd",
+      "title": "(The illusion of) depth of knowledge #22",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=22&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860701"
+        }
+      }
+    },
+    {
+      "id": "2a7815fc-a2b6-42bb-90e6-af1a70a2bbcb",
+      "title": "(The illusion of) depth of knowledge #25",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=25&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860704"
+        }
+      }
+    },
+    {
+      "id": "5b3a768d-78d6-4cc2-b767-513216a23e09",
+      "title": "(The illusion of) depth of knowledge #27",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=27&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860706"
+        }
+      }
+    },
+    {
+      "id": "f0743375-460b-4811-b88a-784bc0fea928",
+      "title": "(The illusion of) depth of knowledge #28",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=28&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860707"
+        }
+      }
+    },
+    {
+      "id": "0aa80df2-4f42-4fc6-acd0-a013d88035d1",
+      "title": "(The illusion of) depth of knowledge #29",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=29&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860708"
+        }
+      }
+    },
+    {
+      "id": "a0988899-d473-4fcc-9508-02fe40be1a5f",
+      "title": "(The illusion of) depth of knowledge #30",
+      "source": "https://cdn.feralfileassets.com/previews/99d373e5-cc9d-45e8-8aa5-1ed47e481791/1637491523/?edition_number=30&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:01:22.611Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xDB5f1aDCFFA1869B9711cBFBe3Bf46cc5d5319E5",
+          "tokenId": "53786937838666333597165308782200386930273821852612025004794790984421544860709"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

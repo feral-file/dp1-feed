@@ -1,0 +1,101 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "53c95e2f-7be5-4a59-8a85-f506e7cbc769",
+  "slug": "i-know-on-the-aesthetic-of-truth-the-art-of-survival-aphorisms-b",
+  "title": "I KNOW – On the aesthetic of truth — The Art of Survival: Aphorisms by an Old Girl",
+  "summary": "“The Art of Survival” is a series of NFTs, inspired by Machiavelli’s The Prince and Sun Tzu’s The Art of War —  the classical canons of power politics. These aphorisms are the words of another OG, Claudia Hart, narrated by the late and great OG paradigm, Queen Elizabeth (or rather, her bot). Hart’s versions are not books, however, but instead are animated NFTs, mottos meant to heal a flaming world where discussion has been polarized by social media and current real politics. Evoking Times Square billboards and branding slogans, this is a public address, but imagined here as a series of homilies directed to the divided space of social discourse.",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/53f4aeed-51b0-486b-1328-f62d2254c400/raw",
+  "created": "2026-02-26T07:03:08.281Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "2a538d09-ed53-41a1-817b-65755e4d55cb",
+      "title": "The Art of Survival: Aphorisms by an Old Girl #1",
+      "source": "https://cdn.feralfileassets.com/previews/6ed56114-2768-4625-84a9-7eda5baad6b8/1673657166/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:08.281Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE46A41b840176b62983FC71162dc9faEAC4D9bcB",
+          "tokenId": "42849076508508026618683845219469713839953339652164819629057624528191877779934"
+        }
+      }
+    },
+    {
+      "id": "3c8d5654-6dd5-4a98-89bd-4227e07b3ecf",
+      "title": "The Art of Survival: Aphorisms by an Old Girl #2",
+      "source": "https://cdn.feralfileassets.com/previews/6ed56114-2768-4625-84a9-7eda5baad6b8/1673657166/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:08.281Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE46A41b840176b62983FC71162dc9faEAC4D9bcB",
+          "tokenId": "42849076508508026618683845219469713839953339652164819629057624528191877779935"
+        }
+      }
+    },
+    {
+      "id": "a44a7f5a-20f5-413c-b130-963c0463e692",
+      "title": "The Art of Survival: Aphorisms by an Old Girl #3",
+      "source": "https://cdn.feralfileassets.com/previews/6ed56114-2768-4625-84a9-7eda5baad6b8/1673657166/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:08.281Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE46A41b840176b62983FC71162dc9faEAC4D9bcB",
+          "tokenId": "42849076508508026618683845219469713839953339652164819629057624528191877779936"
+        }
+      }
+    },
+    {
+      "id": "9b090b10-2d2a-4f40-942c-1ca1cdcf90ad",
+      "title": "The Art of Survival: Aphorisms by an Old Girl #4",
+      "source": "https://cdn.feralfileassets.com/previews/6ed56114-2768-4625-84a9-7eda5baad6b8/1673657166/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:08.281Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE46A41b840176b62983FC71162dc9faEAC4D9bcB",
+          "tokenId": "42849076508508026618683845219469713839953339652164819629057624528191877779937"
+        }
+      }
+    },
+    {
+      "id": "b26169ac-185c-4df6-93c7-03c7bc450aa2",
+      "title": "The Art of Survival: Aphorisms by an Old Girl #5",
+      "source": "https://cdn.feralfileassets.com/previews/6ed56114-2768-4625-84a9-7eda5baad6b8/1673657166/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-02-26T07:03:08.281Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xE46A41b840176b62983FC71162dc9faEAC4D9bcB",
+          "tokenId": "42849076508508026618683845219469713839953339652164819629057624528191877779938"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}
