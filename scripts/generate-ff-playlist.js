@@ -522,7 +522,7 @@ async function generatePlaylists(exhibitionIdOrSlug) {
 
     if (isSolo) {
       // --- Solo Exhibition Logic ---
-      
+
       // Master Playlist: All "1 of 1" (single) + "Edition of n" (multi) works
       // Name: [Exhibition Name] — Highlight Reel
       const highlightReelItems = allSeriesArtworks
@@ -565,7 +565,7 @@ async function generatePlaylists(exhibitionIdOrSlug) {
       }
     } else {
       // --- Group Exhibition Logic ---
-      
+
       // Master Playlist: All artworks from the exhibition, interleaved
       // Name: [Exhibition Name] — Full Collection
       const allArtworksPerSeries = allSeriesArtworks.map(({ artworks }) => artworks);
