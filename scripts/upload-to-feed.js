@@ -32,6 +32,7 @@ import fs from 'fs';
 import path from 'path';
 
 const FF_API_BASE = 'https://feralfile.com/api';
+const PUBLISH_ARTIFACT_SCHEMA_VERSION = 1;
 
 /**
  * Fetch data from Feral File API
@@ -281,7 +282,9 @@ async function processExhibition(feedEndpoint, apiKey, exhibitionPath) {
   }
 
   // Build playlist URLs from uploaded playlists
-  const playlistUrls = uploadedPlaylists.map(p => `${feedEndpoint}/api/v1/playlists/${p.id}`);
+  const playlistUrls = uploadedPlaylists.map(
+    p => `${feedEndpoint}/api/v1/playlists/${encodeURIComponent(p.id)}`
+  );
 
   // Fetch exhibition info from Feral File API
   const exhibition = await getExhibition(exhibitionSlug);
@@ -303,6 +306,7 @@ async function processExhibition(feedEndpoint, apiKey, exhibitionPath) {
     return {
       exhibitionSlug,
       status: 'success',
+      publishedAt: new Date().toISOString(),
       exhibition: {
         title: exhibition.title,
         slug: exhibitionSlug,
@@ -311,9 +315,13 @@ async function processExhibition(feedEndpoint, apiKey, exhibitionPath) {
         id: channel.id,
         slug: channel.slug,
         title: channel.title,
+        url: `${feedEndpoint}/api/v1/channels/${encodeURIComponent(channel.id)}`,
         playlistCount: uploadedPlaylists.length,
       },
-      playlists: uploadedPlaylists,
+      playlists: uploadedPlaylists.map(playlist => ({
+        ...playlist,
+        url: `${feedEndpoint}/api/v1/playlists/${encodeURIComponent(playlist.id)}`,
+      })),
       duration,
     };
   } catch (error) {
@@ -327,6 +335,165 @@ async function processExhibition(feedEndpoint, apiKey, exhibitionPath) {
       failedPlaylists,
       duration: Date.now() - startTime,
     };
+  }
+}
+
+function normalizeFeedOrigin(rawFeedEndpoint) {
+  if (typeof rawFeedEndpoint !== 'string' || rawFeedEndpoint.trim() === '') {
+    throw new Error('feed endpoint is required');
+  }
+
+  let parsed;
+  try {
+    parsed = new URL(rawFeedEndpoint);
+  } catch {
+    throw new Error(`invalid --feed-endpoint URL: ${rawFeedEndpoint}`);
+  }
+
+  if (!/^https?:$/.test(parsed.protocol)) {
+    throw new Error(
+      `unsupported --feed-endpoint protocol: ${parsed.protocol} (expected http/https)`
+    );
+  }
+
+  const normalizedOrigin = parsed.origin;
+  const normalizedPath = parsed.pathname.replace(/\/+$/, '');
+  if (normalizedPath && normalizedPath !== '') {
+    console.warn(
+      `⚠️  Ignoring path in --feed-endpoint (${parsed.pathname}); using origin only: ${normalizedOrigin}`
+    );
+  }
+  return normalizedOrigin;
+}
+
+function writePublishArtifact({artifactPath, artifact}) {
+  fs.writeFileSync(artifactPath, JSON.stringify(artifact, null, 2), 'utf-8');
+  console.log(`\n📦 Publish artifact written to: ${artifactPath}`);
+}
+
+function validatePublishedExhibition({result, canonicalOrigin}) {
+  if (result.status !== 'success') {
+    return;
+  }
+  if (!result.channel?.id || !result.channel?.slug || !result.channel?.url) {
+    throw new Error(
+      `validation failed for exhibition ${result.exhibitionSlug}: missing required channel fields`
+    );
+  }
+  if (!Array.isArray(result.playlists) || result.playlists.length === 0) {
+    throw new Error(
+      `validation failed for exhibition ${result.exhibitionSlug}: no playlists in success result`
+    );
+  }
+
+  const expectedChannelUrl = `${canonicalOrigin}/api/v1/channels/${encodeURIComponent(result.channel.id)}`;
+  if (result.channel.url !== expectedChannelUrl) {
+    throw new Error(
+      `validation failed for exhibition ${result.exhibitionSlug}: channel url mismatch (expected ${expectedChannelUrl}, got ${result.channel.url})`
+    );
+  }
+
+  for (const playlist of result.playlists) {
+    if (!playlist?.id || !playlist?.slug || !playlist?.url) {
+      throw new Error(
+        `validation failed for exhibition ${result.exhibitionSlug}: playlist is missing id/slug/url`
+      );
+    }
+    const expectedPlaylistUrl = `${canonicalOrigin}/api/v1/playlists/${encodeURIComponent(playlist.id)}`;
+    if (playlist.url !== expectedPlaylistUrl) {
+      throw new Error(
+        `validation failed for exhibition ${result.exhibitionSlug}: playlist url mismatch for ${playlist.id} (expected ${expectedPlaylistUrl}, got ${playlist.url})`
+      );
+    }
+  }
+}
+
+function buildPublishArtifact({
+  results,
+  canonicalOrigin,
+  feedEndpointInput,
+  startedAt,
+  completedAt,
+  isDryRun,
+}) {
+  return {
+    schema_version: PUBLISH_ARTIFACT_SCHEMA_VERSION,
+    generated_at: new Date().toISOString(),
+    mode: isDryRun ? 'dry-run' : 'upload',
+    started_at: startedAt,
+    completed_at: completedAt,
+    canonical_origin: canonicalOrigin,
+    feed_endpoint_input: feedEndpointInput,
+    exhibitions: results.map(result => ({
+      exhibition_slug: result.exhibitionSlug,
+      status: result.status,
+      published_at: result.publishedAt || null,
+      duration_ms: result.duration || 0,
+      reason: result.reason || null,
+      exhibition: result.exhibition || null,
+      channel:
+        result.channel && result.status === 'success'
+          ? {
+              id: result.channel.id,
+              slug: result.channel.slug,
+              title: result.channel.title,
+              url: result.channel.url,
+            }
+          : null,
+      playlists: Array.isArray(result.playlists)
+        ? result.playlists.map(playlist => ({
+            file: playlist.file || null,
+            id: playlist.id || null,
+            slug: playlist.slug || null,
+            title: playlist.title || null,
+            item_count: playlist.itemCount || 0,
+            url: playlist.url || null,
+          }))
+        : [],
+    })),
+  };
+}
+
+function validatePublishArtifactOrThrow(artifact) {
+  if (!artifact || typeof artifact !== 'object') {
+    throw new Error('artifact validation failed: expected object');
+  }
+  if (artifact.schema_version !== PUBLISH_ARTIFACT_SCHEMA_VERSION) {
+    throw new Error(
+      `artifact validation failed: schema_version must be ${PUBLISH_ARTIFACT_SCHEMA_VERSION}`
+    );
+  }
+  if (!artifact.canonical_origin || !artifact.started_at || !artifact.completed_at) {
+    throw new Error(
+      'artifact validation failed: missing canonical_origin/started_at/completed_at'
+    );
+  }
+  if (!Array.isArray(artifact.exhibitions)) {
+    throw new Error('artifact validation failed: exhibitions must be an array');
+  }
+  for (const exhibition of artifact.exhibitions) {
+    if (!exhibition?.exhibition_slug || !exhibition?.status) {
+      throw new Error('artifact validation failed: exhibition_slug/status are required');
+    }
+    if (exhibition.status === 'success') {
+      if (!exhibition.channel?.id || !exhibition.channel?.url) {
+        throw new Error(
+          `artifact validation failed: success exhibition ${exhibition.exhibition_slug} missing channel`
+        );
+      }
+      if (!Array.isArray(exhibition.playlists) || exhibition.playlists.length === 0) {
+        throw new Error(
+          `artifact validation failed: success exhibition ${exhibition.exhibition_slug} missing playlists`
+        );
+      }
+      for (const playlist of exhibition.playlists) {
+        if (!playlist?.id || !playlist?.url || !playlist?.slug) {
+          throw new Error(
+            `artifact validation failed: success exhibition ${exhibition.exhibition_slug} has incomplete playlist rows`
+          );
+        }
+      }
+    }
   }
 }
 
@@ -464,13 +631,14 @@ async function main() {
   };
 
   const apiKey = getFlag('--api-key');
-  const feedEndpoint = getFlag('--feed-endpoint');
+  const feedEndpointInput = getFlag('--feed-endpoint');
   const playlistsPath = getFlag('--playlists-path');
   const isDryRun = args.includes('--dry-run');
   const outputPath = getFlag('--output');
+  const artifactOutputPath = getFlag('--artifact-output');
 
   // Validate required flags
-  if (!apiKey || !feedEndpoint || !playlistsPath) {
+  if (!apiKey || !feedEndpointInput || !playlistsPath) {
     console.error(
       'Usage: node upload-to-feed.js --api-key <key> --feed-endpoint <url> --playlists-path <path> [--dry-run] [--output <summary-file>]'
     );
@@ -478,6 +646,7 @@ async function main() {
     console.error('  --api-key         API key for Feed server authentication');
     console.error('  --feed-endpoint   Feed server URL (e.g., https://feed.feralfile.com)');
     console.error('  --playlists-path  Path to playlists folder or exhibition folder');
+    console.error('  --artifact-output Path to machine-readable JSON publish artifact');
     console.error('\nOptional flags:');
     console.error('  --dry-run         Validate playlists without uploading');
     console.error('  --output          Write summary report to specified file');
@@ -509,6 +678,11 @@ async function main() {
   }
 
   const startTime = Date.now();
+  const startedAtIso = new Date(startTime).toISOString();
+  const feedEndpoint = normalizeFeedOrigin(feedEndpointInput);
+  const artifactPath = artifactOutputPath
+    ? path.resolve(artifactOutputPath)
+    : path.resolve(process.cwd(), 'dp1-feed-publish-artifact.json');
 
   // Validate paths
   if (!fs.existsSync(playlistsPath)) {
@@ -609,6 +783,28 @@ async function main() {
     }
 
     const endTime = Date.now();
+    const completedAtIso = new Date(endTime).toISOString();
+
+    for (const result of results) {
+      validatePublishedExhibition({
+        result,
+        canonicalOrigin: feedEndpoint,
+      });
+    }
+
+    const publishArtifact = buildPublishArtifact({
+      results,
+      canonicalOrigin: feedEndpoint,
+      feedEndpointInput,
+      startedAt: startedAtIso,
+      completedAt: completedAtIso,
+      isDryRun,
+    });
+    validatePublishArtifactOrThrow(publishArtifact);
+    writePublishArtifact({
+      artifactPath,
+      artifact: publishArtifact,
+    });
 
     // Write summary report if output path specified
     if (outputPath && results.length > 0) {
