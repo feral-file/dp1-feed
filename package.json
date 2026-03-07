@@ -61,6 +61,7 @@
     "worker:kv:list": "wrangler kv namespace list",
     "worker:kv:get": "wrangler kv key get",
     "worker:kv:put": "wrangler kv key put",
+    "generate:snapshot-input": "node scripts/generate-snapshot-input.js",
     "node:dev": "tsx --env-file .env.sample --env-file .env --watch server.ts",
     "node:start": "node --env-file .env.sample --env-file .env dist/server.js",
     "node:start:dev": "tsx --env-file .env.sample --env-file .env server.ts",
