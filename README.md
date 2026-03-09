@@ -5,176 +5,131 @@
 [![Code Coverage](https://img.shields.io/codecov/c/github/feral-file/dp1-feed/main?label=code%20coverage&logo=codecov)](https://codecov.io/gh/feral-file/dp1-feed)
 [![Benchmark](https://img.shields.io/github/actions/workflow/status/feral-file/dp1-feed/benchmark.yaml?branch=main&label=benchmark%20status&logo=github)](https://github.com/feral-file/dp1-feed/actions/workflows/benchmark.yaml)
 
-A REST API server implementing the [DP-1 specification](https://github.com/display-protocol/dp1/blob/main/docs/spec.md) for managing blockchain-native digital art playlists. Deploy as serverless (Cloudflare Workers) or self-hosted (Node.js).
+Open-source reference implementation of a DP-1 feed operator API.
 
-## Features
+- It implements operator-side API behavior for creating, signing, storing, and serving playlists/channels.
+- It is not the same thing as Feral File's hosted production feed service.
+- It can run in two deployment modes: Cloudflare Workers or self-hosted Node.js.
 
-- **DP-1 v1.1.0 Compliant** - Full OpenAPI 3.1.0 implementation
-- **Dual Deployment** - Cloudflare Workers (serverless) or Node.js (self-hosted)
-- **Type-Safe** - TypeScript with Zod validation
-- **Production Ready** - Ed25519 signatures, JWT auth, async processing (RFC 7240)
+## Canonical Entry Points
 
-## Quick Start
+- `openapi.yaml` - API surface and request/response contracts in this repo.
+- [display-protocol/dp1](https://github.com/display-protocol/dp1) - canonical DP-1 protocol spec source.
+- [docs.feralfile.com](https://docs.feralfile.com) - guided integration and operator usage paths.
 
-### Prerequisites
+## Compatibility Note (Current, Legacy, Transitional, Unverified)
+
+The DP-1 protocol and ecosystem are in a transition period. This repo intentionally states compatibility status plainly.
+
+| Status                | Meaning in this repo                                                                                                                                                                                    |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Canonical**         | DP-1 spec canonical source is `display-protocol/dp1` and currently states **v1.1.0**.                                                                                                                   |
+| **Current here**      | This operator API, `openapi.yaml`, and first-run examples are centered on the currently implemented API behavior in this repo. In request examples, `dpVersion: "1.0.0"` remains the explicit baseline. |
+| **Legacy-compatible** | Legacy naming still accepted where documented (for example `playlist-group` query compatibility and `/api/v1/playlist-groups` endpoint).                                                                |
+| **Transitional**      | Some adjacent tools/examples in the wider ecosystem still center 1.0.x conventions. This repo keeps those paths visible where they are actively implemented.                                            |
+| **Unverified**        | End-to-end parity claims for all DP-1 v1.1.0 semantics are **not** made here unless specifically validated in this repo.                                                                                |
+
+If protocol truth and this implementation diverge, protocol truth lives in `display-protocol/dp1`, and implementation notes should be updated here with explicit status.
+
+## Deployment Choices
+
+### Option A: Self-hosted Node.js (quickest local path)
+
+This is the most direct local operator quickstart in this repo because `docker-compose.yml` and `.env.sample` already provide runnable defaults.
+
+Prerequisites:
 
 - Node.js 22+
-- **Cloudflare Workers**: Cloudflare account + Wrangler CLI
-- **Node.js**: Docker or etcd + NATS JetStream
+- Docker + Docker Compose
 
-### Installation
+Run:
 
 ```bash
-git clone https://github.com/feral-file/dp1-feed.git
-cd dp1-feed
 npm install
+docker compose up -d
 ```
 
-### Deploy
+The API is served at `http://localhost:8787`.
 
-**Cloudflare Workers (Serverless)**
+### Option B: Cloudflare Workers
+
+Prerequisites:
+
+- Node.js 22+
+- Wrangler CLI
+- Cloudflare account
+- KV namespaces and queue setup
+- required secrets: `API_SECRET`, `ED25519_PRIVATE_KEY` (and optionally JWT settings)
+
+Run:
 
 ```bash
-# Setup and deploy
+npm install
 npm run worker:setup:kv
 npm run worker:setup:secrets
-npm run worker:deploy
+npm run worker:setup:queues:dev
+npm run worker:dev
 ```
 
-**Node.js (Self-Hosted)**
+## First Run: Build Trust in 3 Calls
+
+Write operations require auth (`Authorization: Bearer <API_SECRET or JWT>`). Read operations are public.
 
 ```bash
-# Option 1: Docker Compose (recommended)
-docker compose up -d
+# 1) Health check (no auth)
+curl http://localhost:8787/api/v1/health
 
-# Option 2: Local development
-npm run node:dev
-```
-
-Server runs on `http://localhost:8787` by default.
-
-## API Reference
-
-### Authentication
-
-Write operations (`POST`, `PUT`, `DELETE`) require authentication:
-
-```bash
-# API Key
-Authorization: Bearer YOUR_API_SECRET
-
-# JWT Token (RS256)
-Authorization: Bearer JWT_TOKEN
-```
-
-**JWT Configuration:**
-
-```bash
-# Use either JWT_PUBLIC_KEY or JWT_JWKS_URL (not both)
-JWT_PUBLIC_KEY="-----BEGIN PUBLIC KEY-----..."  # PEM format or base64 encoded
-JWT_JWKS_URL="https://auth.example.com/.well-known/jwks.json"  # Or JWKS URL
-
-# Optional validation
-JWT_ISSUER="your-issuer"       # Expected 'iss' claim
-JWT_AUDIENCE="your-audience"   # Expected 'aud' claim
-```
-
-Generate test keys: `npm run jwt:generate-keys`
-
-### Endpoints
-
-| Method   | Endpoint                      | Description     | Auth |
-| -------- | ----------------------------- | --------------- | ---- |
-| `GET`    | `/api/v1`                     | API info        | No   |
-| `GET`    | `/api/v1/health`              | Health check    | No   |
-| `GET`    | `/api/v1/playlists`           | List playlists  | No   |
-| `POST`   | `/api/v1/playlists`           | Create playlist | Yes  |
-| `GET`    | `/api/v1/playlists/{id}`      | Get playlist    | No   |
-| `PUT`    | `/api/v1/playlists/{id}`      | Update playlist | Yes  |
-| `DELETE` | `/api/v1/playlists/{id}`      | Delete playlist | Yes  |
-| `GET`    | `/api/v1/channels`            | List channels   | No   |
-| `POST`   | `/api/v1/channels`            | Create channel  | Yes  |
-| `GET`    | `/api/v1/channels/{id}`       | Get channel     | No   |
-| `PUT`    | `/api/v1/channels/{id}`       | Update channel  | Yes  |
-| `DELETE` | `/api/v1/channels/{id}`       | Delete channel  | Yes  |
-| `GET`    | `/api/v1/playlist-items`      | List items      | No   |
-| `GET`    | `/api/v1/playlist-items/{id}` | Get item        | No   |
-
-### Examples
-
-**Create Playlist**
-
-```bash
+# 2) Create a minimal playlist (auth required)
 curl -X POST http://localhost:8787/api/v1/playlists \
-  -H "Authorization: Bearer YOUR_API_SECRET" \
+  -H "Authorization: Bearer dev-api-secret" \
   -H "Content-Type: application/json" \
   -d '{
     "dpVersion": "1.0.0",
-    "title": "my-playlist",
-    "items": [{
-      "source": "https://example.com/art.html",
-      "duration": 300,
-      "license": "open"
-    }]
+    "title": "minimal-playlist",
+    "items": [
+      {
+        "source": "https://example.com/artwork.html",
+        "duration": 300,
+        "license": "open"
+      }
+    ]
   }'
+
+# 3) Fetch it back (replace <playlist-id-or-slug>)
+curl http://localhost:8787/api/v1/playlists/<playlist-id-or-slug>
 ```
 
-**List Playlists**
+## Operator Responsibilities in This Repo
 
-```bash
-curl "http://localhost:8787/api/v1/playlists?sort=desc&limit=10"
-```
+- Deploy runtime (`worker.ts` or `server.ts` path).
+- Configure secrets/auth (`API_SECRET`, `ED25519_PRIVATE_KEY`, optional JWT settings).
+- Accept and validate DP-1 payloads (`openapi.yaml` + Zod/ff-dp1-js validation paths).
+- Sign playlists/channels server-side with Ed25519 before persistence.
+- Serve read APIs and write APIs (sync by default, optional `Prefer: respond-async`).
 
-### Async Processing
+## Hosted vs Run-Your-Own References
 
-Add `Prefer: respond-async` header for background processing:
+- Hosted Feral feed usage guidance: use `docs.feralfile.com`.
+- Run-your-own operator behavior and deployment: this repository.
 
-```bash
-curl -X POST http://localhost:8787/api/v1/playlists \
-  -H "Authorization: Bearer YOUR_API_SECRET" \
-  -H "Prefer: respond-async" \
-  -H "Content-Type: application/json" \
-  -d '{...}'
-```
+## API Surface
 
-- **Synchronous** (default): Returns `201` after data is persisted
-- **Asynchronous**: Returns `202` immediately, queues for background processing
+See `openapi.yaml` for complete endpoint definitions and schemas.
 
-## Development
+Key routes:
 
-```bash
-# Cloudflare Workers
-npm run worker:dev
+- `GET /api/v1`, `GET /api/v1/health`
+- `GET/POST /api/v1/playlists`, `GET/PUT/PATCH/DELETE /api/v1/playlists/{id}`
+- `GET/POST /api/v1/channels`, `GET/PUT/PATCH/DELETE /api/v1/channels/{id}`
+- `GET /api/v1/playlist-items`, `GET /api/v1/playlist-items/{id}`
+- Legacy compatibility: `GET /api/v1/playlist-groups`
+- Self-hosted queue processing endpoints: `/queues/process-message`, `/queues/process-batch`
 
-# Node.js
-npm run node:dev
+## Development and Testing
 
-# Tests
-npm test
-npm run test:api         # Integration tests
-npm run benchmark        # Performance tests
-
-# Code quality
-npm run validate         # Run all checks
-```
-
-See [DEVELOPMENT.md](DEVELOPMENT.md) for detailed setup and [TESTING.md](TESTING.md) for testing guide.
-
-## Documentation
-
-- **[DEVELOPMENT.md](DEVELOPMENT.md)** - Setup, configuration, and project structure
-- **[TESTING.md](TESTING.md)** - Testing strategies and benchmarking
-- **[OpenAPI Spec](openapi.yaml)** - Full API specification
-- **[DP-1 Specification](https://github.com/display-protocol/dp1/blob/main/docs/spec.md)** - Protocol documentation
-
-## Contributing
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-feature`)
-3. Write tests and ensure they pass (`npm run validate`)
-4. Commit changes (`git commit -m 'Add amazing feature'`)
-5. Push to branch (`git push origin feature/amazing-feature`)
-6. Open a Pull Request
+- Development setup: [DEVELOPMENT.md](DEVELOPMENT.md)
+- Testing and benchmarks: [TESTING.md](TESTING.md)
+- Protocol spec source: [display-protocol/dp1](https://github.com/display-protocol/dp1/blob/main/docs/spec.md)
 
 ## License
 
