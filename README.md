@@ -95,6 +95,40 @@ Validation gate behavior:
 - Script exits non-zero if emitted URLs do not match canonical origin shape.
 - Script exits non-zero if artifact structure is incomplete/invalid.
 
+### `scripts/generate-snapshot-input.js`
+
+Generates the existing ff-app snapshot input shape (legacy `dp1_playlist.publishers[].channel_urls`) from authoritative sources.
+
+Use one source mode only:
+
+- `--artifact <path>`: PR1 publish artifact JSON
+- `--feed-endpoint <url>`: feed `/api/v1/channels` list
+
+Optional flags:
+
+- `--output <path>` (default: `./ff-app-snapshot-input.json`)
+- `--publisher-name <name>` (default: `Feral File`)
+
+Examples:
+
+```bash
+# From publish artifact
+node scripts/generate-snapshot-input.js \
+  --artifact ./artifacts/casey-publish.json \
+  --output ./artifacts/casey-snapshot-input.json
+
+# From authoritative feed channels endpoint
+node scripts/generate-snapshot-input.js \
+  --feed-endpoint "https://dp1-feed-operator-api-prod.autonomy-system.workers.dev" \
+  --output ./artifacts/all-channels-snapshot-input.json
+```
+
+Failure behavior:
+
+- Exits non-zero for missing/invalid input source.
+- Exits non-zero when generated channel URL list is empty.
+- Exits non-zero for malformed artifact or malformed `/channels` payload.
+
 ## API Reference
 
 ### Authentication
