@@ -9,6 +9,7 @@ dist/
 build/
 .wrangler/
 dp1-feed-publish-artifact.json
+ff-app-snapshot-input.json
 
 # Environment files
 .env
