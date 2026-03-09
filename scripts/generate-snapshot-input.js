@@ -132,7 +132,7 @@ function loadFromArtifact(rawPath) {
 async function loadFromFeed(rawFeedEndpoint) {
   const origin = normalizeOrigin(rawFeedEndpoint);
   const channelIds = await fetchAllChannelIds(origin);
-  return channelIds.map((id) => `${origin}/api/v1/channels/${encodeURIComponent(id)}`);
+  return channelIds.map(id => `${origin}/api/v1/channels/${encodeURIComponent(id)}`);
 }
 
 async function fetchAllChannelIds(origin) {
@@ -141,7 +141,7 @@ async function fetchAllChannelIds(origin) {
   let hasMore = true;
 
   while (hasMore) {
-    const params = new URLSearchParams({limit: '100'});
+    const params = new URLSearchParams({ limit: '100' });
     if (cursor) {
       params.set('cursor', cursor);
     }
@@ -172,7 +172,9 @@ async function fetchJson(url) {
   });
   const body = await response.text();
   if (!response.ok) {
-    throw new Error(`HTTP ${response.status} ${response.statusText} for ${url} - ${body.slice(0, 800)}`);
+    throw new Error(
+      `HTTP ${response.status} ${response.statusText} for ${url} - ${body.slice(0, 800)}`
+    );
   }
   try {
     return JSON.parse(body);
@@ -181,7 +183,7 @@ async function fetchJson(url) {
   }
 }
 
-main().catch((error) => {
+main().catch(error => {
   console.error(`[error] ${error?.stack || String(error)}`);
   process.exit(1);
 });
