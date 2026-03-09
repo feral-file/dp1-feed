@@ -8,6 +8,7 @@ yarn-error.log*
 dist/
 build/
 .wrangler/
+dp1-feed-publish-artifact.json
 
 # Environment files
 .env
