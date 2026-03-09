@@ -1,0 +1,23 @@
+services:
+  # Single-process DP-1 Feed Server with SQLite storage
+  dp1-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    container_name: dp1-server-sqlite
+    restart: unless-stopped
+    env_file:
+      - .env.sample
+      - path: .env
+        required: false
+    environment:
+      - SQLITE_DB_PATH=/app/data/dp1-feed.db
+    ports:
+      - '8787:8787'
+    volumes:
+      - sqlite_data:/app/data
+    command: ['dumb-init', 'node', 'dist/server-sqlite.js']
+
+volumes:
+  sqlite_data:
+    driver: local

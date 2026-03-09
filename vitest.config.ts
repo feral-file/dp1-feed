@@ -23,6 +23,7 @@ export default defineConfig({
         'test-helpers.ts',
         'worker.ts',
         'server.ts',
+        'server-sqlite.ts',
         // Wrangler temporary files
         '.wrangler/**',
         '**/.wrangler/**',
