@@ -20,11 +20,8 @@
  *   # Use local development server
  *   node scripts/upload-to-feed.js --api-key YOUR_API_KEY --feed-endpoint http://localhost:8787 --playlists-path ./playlists/net-evil-das
  *
- *   # Dry-run with summary output (Markdown format)
- *   node scripts/upload-to-feed.js --api-key YOUR_API_KEY --feed-endpoint https://feed.feralfile.com --playlists-path ./playlists --dry-run --output SUMMARY.md
- *
- *   # Upload with summary report
- *   node scripts/upload-to-feed.js --api-key YOUR_API_KEY --feed-endpoint https://feed.feralfile.com --playlists-path ./playlists --output UPLOAD-REPORT.md
+ *   # Dry-run mode
+ *   node scripts/upload-to-feed.js --api-key YOUR_API_KEY --feed-endpoint https://feed.feralfile.com --playlists-path ./playlists --dry-run
  *
  */
 
@@ -496,124 +493,6 @@ function validatePublishArtifactOrThrow(artifact) {
 }
 
 /**
- * Write summary report to file
- */
-function writeSummaryReport(summaryPath, results, startTime, endTime, isDryRun = false) {
-  const successful = results.filter(r => r.status === 'success' || r.status === 'validated');
-  const failed = results.filter(r => r.status === 'failed' || r.status === 'validation_failed');
-  const skipped = results.filter(r => r.status === 'skipped');
-
-  const totalDuration = endTime - startTime;
-  const totalPlaylists = results.reduce((sum, r) => sum + (r.playlists?.length || 0), 0);
-
-  // Build Markdown content
-  let markdown = '';
-
-  // Header
-  markdown += `# DP-1 Feed Upload Summary\n\n`;
-  markdown += `**Mode**: ${isDryRun ? 'Dry Run (Validation Only)' : 'Upload'}\n`;
-  markdown += `**Date**: ${new Date().toISOString()}\n`;
-  markdown += `**Duration**: ${(totalDuration / 1000).toFixed(2)}s\n\n`;
-
-  // Statistics
-  markdown += `## Summary Statistics\n\n`;
-  markdown += `| Metric | Count |\n`;
-  markdown += `|--------|-------|\n`;
-  markdown += `| Total Exhibitions | ${results.length} |\n`;
-  markdown += `| ${isDryRun ? 'Validated' : 'Successful'} | ${successful.length} |\n`;
-  markdown += `| Failed | ${failed.length} |\n`;
-  markdown += `| Skipped | ${skipped.length} |\n`;
-  markdown += `| Total Playlists | ${totalPlaylists} |\n`;
-  if (!isDryRun) {
-    markdown += `| Total Channels Created | ${successful.length} |\n`;
-  }
-  markdown += `\n`;
-
-  // Successful exhibitions
-  if (successful.length > 0) {
-    markdown += `## ${isDryRun ? 'Validated' : 'Successful'} Exhibitions\n\n`;
-
-    for (const result of successful) {
-      const duration = result.duration ? `${(result.duration / 1000).toFixed(2)}s` : '0s';
-      markdown += `### ✓ ${result.exhibition?.title || result.exhibitionSlug}\n\n`;
-      markdown += `- **Exhibition Slug**: \`${result.exhibitionSlug}\`\n`;
-      markdown += `- **Duration**: ${duration}\n`;
-
-      if (result.curator) {
-        markdown += `- **Curator**: ${result.curator.name}\n`;
-      }
-
-      if (!isDryRun && result.channel) {
-        markdown += `- **Channel ID**: \`${result.channel.id}\`\n`;
-        markdown += `- **Channel Slug**: \`${result.channel.slug}\`\n`;
-      }
-
-      markdown += `\n`;
-
-      // Playlists
-      if (result.playlists && result.playlists.length > 0) {
-        markdown += `#### Playlists (${result.playlists.length})\n\n`;
-        markdown += `| # | Title | Items |${!isDryRun ? ' ID | Slug |' : ''}\n`;
-        markdown += `|---|-------|-------|${!isDryRun ? '----|----|' : ''}\n`;
-
-        result.playlists.forEach((playlist, index) => {
-          if (!isDryRun) {
-            markdown += `| ${index + 1} | ${playlist.title} | ${playlist.itemCount} | \`${playlist.id}\` | \`${playlist.slug}\` |\n`;
-          } else {
-            markdown += `| ${index + 1} | ${playlist.title} | ${playlist.itemCount} |\n`;
-          }
-        });
-
-        markdown += `\n`;
-      }
-
-      if (isDryRun && result.wouldCreateChannel) {
-        markdown += `> ✓ Would create channel with ${result.playlists?.length || 0} playlist(s)\n\n`;
-      }
-    }
-  }
-
-  // Failed exhibitions
-  if (failed.length > 0) {
-    markdown += `## Failed Exhibitions\n\n`;
-
-    for (const result of failed) {
-      const duration = result.duration ? `${(result.duration / 1000).toFixed(2)}s` : '0s';
-      markdown += `### ✗ ${result.exhibitionSlug}\n\n`;
-      markdown += `- **Status**: ${result.status}\n`;
-      markdown += `- **Duration**: ${duration}\n`;
-      markdown += `- **Reason**: ${result.reason || 'Unknown error'}\n`;
-
-      if (result.invalidPlaylists && result.invalidPlaylists.length > 0) {
-        markdown += `\n**Invalid Playlists:**\n\n`;
-        result.invalidPlaylists.forEach(p => {
-          markdown += `- \`${p.file}\`: ${p.error}\n`;
-        });
-      }
-
-      markdown += `\n`;
-    }
-  }
-
-  // Skipped exhibitions
-  if (skipped.length > 0) {
-    markdown += `## Skipped Exhibitions\n\n`;
-
-    for (const result of skipped) {
-      markdown += `### ⊘ ${result.exhibitionSlug}\n\n`;
-      markdown += `- **Reason**: ${result.reason || 'Unknown'}\n\n`;
-    }
-  }
-
-  // Footer
-  markdown += `---\n\n`;
-  markdown += `*Generated by DP-1 Feed Upload Script*\n`;
-
-  fs.writeFileSync(summaryPath, markdown, 'utf-8');
-  console.log(`\n📄 Summary report written to: ${summaryPath}`);
-}
-
-/**
  * Main function
  */
 async function main() {
@@ -632,13 +511,12 @@ async function main() {
   const feedEndpointInput = getFlag('--feed-endpoint');
   const playlistsPath = getFlag('--playlists-path');
   const isDryRun = args.includes('--dry-run');
-  const outputPath = getFlag('--output');
   const artifactOutputPath = getFlag('--artifact-output');
 
   // Validate required flags
   if (!apiKey || !feedEndpointInput || !playlistsPath) {
     console.error(
-      'Usage: node upload-to-feed.js --api-key <key> --feed-endpoint <url> --playlists-path <path> [--dry-run] [--output <summary-file>]'
+      'Usage: node upload-to-feed.js --api-key <key> --feed-endpoint <url> --playlists-path <path> [--dry-run]'
     );
     console.error('\nRequired flags:');
     console.error('  --api-key         API key for Feed server authentication');
@@ -647,7 +525,6 @@ async function main() {
     console.error('  --artifact-output Path to machine-readable JSON publish artifact');
     console.error('\nOptional flags:');
     console.error('  --dry-run         Validate playlists without uploading');
-    console.error('  --output          Write summary report to specified file');
     console.error('\nExamples:');
     console.error(
       '  node scripts/upload-to-feed.js --api-key YOUR_API_KEY --feed-endpoint https://feed.feralfile.com --playlists-path ./playlists'
@@ -658,21 +535,11 @@ async function main() {
     console.error(
       '  node scripts/upload-to-feed.js --api-key YOUR_API_KEY --feed-endpoint https://feed.feralfile.com --playlists-path ./playlists --dry-run'
     );
-    console.error(
-      '  node scripts/upload-to-feed.js --api-key YOUR_API_KEY --feed-endpoint https://feed.feralfile.com --playlists-path ./playlists --output SUMMARY.md'
-    );
-    console.error(
-      '  node scripts/upload-to-feed.js --api-key YOUR_API_KEY --feed-endpoint https://feed.feralfile.com --playlists-path ./playlists --dry-run --output DRY-RUN.md'
-    );
     process.exit(1);
   }
 
   if (isDryRun) {
     console.log('🔍 DRY RUN MODE - No data will be uploaded\n');
-  }
-
-  if (outputPath) {
-    console.log(`📄 Summary will be written to: ${outputPath}\n`);
   }
 
   const startTime = Date.now();
@@ -803,11 +670,6 @@ async function main() {
       artifactPath,
       artifact: publishArtifact,
     });
-
-    // Write summary report if output path specified
-    if (outputPath && results.length > 0) {
-      writeSummaryReport(outputPath, results, startTime, endTime, isDryRun);
-    }
 
     if (isDryRun) {
       console.log('\n✓ Dry run complete! No data was uploaded.');
