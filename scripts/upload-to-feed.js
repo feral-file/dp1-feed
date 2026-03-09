@@ -366,12 +366,12 @@ function normalizeFeedOrigin(rawFeedEndpoint) {
   return normalizedOrigin;
 }
 
-function writePublishArtifact({artifactPath, artifact}) {
+function writePublishArtifact({ artifactPath, artifact }) {
   fs.writeFileSync(artifactPath, JSON.stringify(artifact, null, 2), 'utf-8');
   console.log(`\n📦 Publish artifact written to: ${artifactPath}`);
 }
 
-function validatePublishedExhibition({result, canonicalOrigin}) {
+function validatePublishedExhibition({ result, canonicalOrigin }) {
   if (result.status !== 'success') {
     return;
   }
@@ -464,9 +464,7 @@ function validatePublishArtifactOrThrow(artifact) {
     );
   }
   if (!artifact.canonical_origin || !artifact.started_at || !artifact.completed_at) {
-    throw new Error(
-      'artifact validation failed: missing canonical_origin/started_at/completed_at'
-    );
+    throw new Error('artifact validation failed: missing canonical_origin/started_at/completed_at');
   }
   if (!Array.isArray(artifact.exhibitions)) {
     throw new Error('artifact validation failed: exhibitions must be an array');
