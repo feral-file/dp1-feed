@@ -1,7 +1,7 @@
 {
   "name": "dp1-feed-operator-api",
   "version": "1.0.0",
-  "description": "DP-1 Feed Operator API Server - OpenAPI 3.1.0 compliant server for managing blockchain-native digital art playlists and exhibitions",
+  "description": "Open-source reference DP-1 feed operator API for Cloudflare Workers and self-hosted Node.js deployments",
   "main": "./worker.ts",
   "exports": {
     ".": {

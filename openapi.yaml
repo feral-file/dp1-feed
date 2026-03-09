@@ -3,9 +3,13 @@ info:
   title: DP-1 Feed Operator API
   version: 1.1.0
   description: |
-    REST interface for creating, updating, and retrieving DP-1 playlists and channels.
+    Open-source reference feed operator interface for creating, updating, and retrieving DP-1 playlists and channels.
 
-    This API implements the DP-1 (Display Protocol v1) specification for managing digital content playlists and channels.
+    This repository is an operator implementation, not a managed hosted service definition.
+
+    Canonical DP-1 protocol truth is maintained in display-protocol/dp1 (currently v1.1.0).
+    This implementation keeps explicit compatibility with actively implemented 1.0.x-style request examples
+    and legacy endpoint/query aliases where noted in this OpenAPI document.
 
     ## Authentication
 
@@ -34,10 +38,10 @@ info:
     name: MIT
     url: https://opensource.org/licenses/MIT
 servers:
-  - url: https://feed.feralfile.com
-    description: Production server
   - url: http://localhost:8787
-    description: Local development server
+    description: Local operator instance (self-hosted or wrangler dev)
+  - url: https://example-dp1-feed.your-domain.tld
+    description: Example deployed operator base URL
 
 security:
   - ApiKeyAuth: []

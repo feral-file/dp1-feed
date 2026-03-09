@@ -2,6 +2,8 @@
 
 Comprehensive testing guide for the DP-1 Feed API covering unit tests, integration tests, and performance benchmarks.
 
+These tests validate implemented operator behavior in this repository; they should not be read as blanket proof of full end-to-end DP-1 v1.1.0 parity across the wider ecosystem.
+
 ## Quick Start
 
 ```bash

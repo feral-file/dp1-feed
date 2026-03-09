@@ -1,6 +1,8 @@
 # Development Guide
 
-Quick start guide for local development of the DP-1 Feed API.
+Quick start guide for developing and operating the open-source DP-1 feed operator API in this repository.
+
+Canonical protocol versioning is defined in `display-protocol/dp1` (currently v1.1.0). This codebase keeps explicit compatibility with implemented 1.0.x request patterns and documented legacy aliases.
 
 ## Prerequisites
 
@@ -9,6 +11,8 @@ Quick start guide for local development of the DP-1 Feed API.
 - **Node.js**: Docker (recommended) or etcd + NATS JetStream
 
 ## Quick Start
+
+The quickest local path in this repo is Node.js with Docker Compose. Cloudflare Workers is also supported.
 
 ### Cloudflare Workers
 
@@ -41,6 +45,19 @@ docker compose down
 ```
 
 Server runs at `http://localhost:8787`
+
+First-run verification (after either path is up):
+
+```bash
+curl http://localhost:8787/api/v1/health
+
+curl -X POST http://localhost:8787/api/v1/playlists \
+  -H "Authorization: Bearer dev-api-secret" \
+  -H "Content-Type: application/json" \
+  -d '{"dpVersion":"1.0.0","title":"minimal-playlist","items":[{"source":"https://example.com/artwork.html","duration":300,"license":"open"}]}'
+```
+
+Write operations require `Authorization: Bearer <API_SECRET or JWT>`.
 
 ### Node.js (Local Development)
 
