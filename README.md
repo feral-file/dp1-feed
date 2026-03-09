@@ -53,6 +53,48 @@ npm run node:dev
 
 Server runs on `http://localhost:8787` by default.
 
+## Orbit 2 Publishing Spine Scripts
+
+### `scripts/upload-to-feed.js`
+
+Publishes local exhibition playlists into feed playlists/channels and now emits a
+strict machine-readable artifact.
+
+Required flags:
+
+- `--api-key`
+- `--feed-endpoint`
+- `--playlists-path`
+
+Optional flags:
+
+- `--artifact-output` (default: `./dp1-feed-publish-artifact.json`)
+- `--output` (markdown summary)
+- `--dry-run`
+
+Example:
+
+```bash
+node scripts/upload-to-feed.js \
+  --api-key "$DP1_FEED_API_KEY" \
+  --feed-endpoint "https://dp1-feed-operator-api-prod.autonomy-system.workers.dev" \
+  --playlists-path "./playlists/casey-reas-solo" \
+  --artifact-output "./artifacts/casey-publish.json"
+```
+
+Publish artifact guarantees for successful exhibitions:
+
+- Canonical feed origin is normalized from `--feed-endpoint` origin.
+- Channel row includes `id`, `slug`, `title`, `url`.
+- Playlist rows include `id`, `slug`, `title`, `url`, `item_count`.
+- Artifact includes `schema_version`, `started_at`, `completed_at`, `generated_at`.
+
+Validation gate behavior:
+
+- Script exits non-zero if a success row is missing required ids/slug/urls.
+- Script exits non-zero if emitted URLs do not match canonical origin shape.
+- Script exits non-zero if artifact structure is incomplete/invalid.
+
 ## API Reference
 
 ### Authentication
