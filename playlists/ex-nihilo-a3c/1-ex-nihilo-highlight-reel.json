@@ -1,0 +1,104 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "2624f5bb-5a7b-4dc6-9891-e62a9049020c",
+  "slug": "ex-nihilo-highlight-reel",
+  "title": "Ex Nihilo — Highlight Reel",
+  "summary": "This is a new exhibition within the “Still Life” series of exhibitions. It’s my first solo exhibition with Feral File, an online gallery I co-founded in 2020. The Still Life exhibitions started in 2016 with There’s No Distance at the bitforms gallery in New York and the most recent was Purely Platonic at DAM Project in Berlin in Summer 2025. This series of work utilizes the form and ideas surrounding the five Platonic Solid. The show in Berlin focused on Cube → EARTH and the Feral File work is grounded in Dodecahedron → COSMOS.",
+  "coverImage": "https://cdn.feralfileassets.com/exhibition-thumbnails/2b290b34-46db-4b14-b411-9b30f68ae208/1772608129",
+  "created": "2026-03-10T07:23:31.615Z",
+  "defaults": {
+    "display": {
+      "background": "#FFFFFF"
+    },
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "fedb5e45-4887-4bf1-b28f-ae381d1d367c",
+      "title": "SIMULACRUM (E-P-01)",
+      "source": "https://cdn.feralfileassets.com/previews/0b80c8a6-986f-4bfb-a289-a84585e61ab9/1772012441/preview.svg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-03-10T07:23:31.609Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x32c07ADE321B90813220F5064842B1F34A59f322",
+          "tokenId": "19521970547325482287223751920524790401807421661766303641190603200318191649344"
+        }
+      }
+    },
+    {
+      "id": "cd864c9e-d28a-4c56-978f-d72d1b6ef00d",
+      "title": "SIMULACRUM (E-P-02)",
+      "source": "https://cdn.feralfileassets.com/previews/1593439c-084d-4f3e-9644-8f450d0030d7/1772012649/preview.svg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-03-10T07:23:31.614Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x32c07ADE321B90813220F5064842B1F34A59f322",
+          "tokenId": "19521970547325482287223751920524790401807421661766303641190603200318192649344"
+        }
+      }
+    },
+    {
+      "id": "9be960cf-9555-40f1-b43d-c5ea540a78ce",
+      "title": "COSMOS–SIMULACRUM–RGB–7087313-353-371",
+      "source": "https://cdn.feralfileassets.com/previews/5437c7a8-08f7-4747-9404-8d8534851bf7/1772012722/preview.svg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-03-10T07:23:31.614Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x32c07ADE321B90813220F5064842B1F34A59f322",
+          "tokenId": "19521970547325482287223751920524790401807421661766303641190603200318193649344"
+        }
+      }
+    },
+    {
+      "id": "04faa78f-cec2-4587-bb5c-4992ebd0719c",
+      "title": "COSMOS–SIMULACRUM–RGB–7105313-170-455",
+      "source": "https://cdn.feralfileassets.com/previews/1ec610e8-aff6-46c7-8c2d-1698bbdb1d8f/1772012864/preview.svg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-03-10T07:23:31.615Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x32c07ADE321B90813220F5064842B1F34A59f322",
+          "tokenId": "19521970547325482287223751920524790401807421661766303641190603200318194649344"
+        }
+      }
+    },
+    {
+      "id": "921511f2-f691-4be2-b138-39729d5dd162",
+      "title": "COSMOS–SIMULACRUM–RGB–7135313-183-489",
+      "source": "https://cdn.feralfileassets.com/previews/497d82a5-a6f1-4dd6-81c2-1db97db807ec/1772012945/preview.svg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-03-10T07:23:31.615Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x32c07ADE321B90813220F5064842B1F34A59f322",
+          "tokenId": "19521970547325482287223751920524790401807421661766303641190603200318195649344"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

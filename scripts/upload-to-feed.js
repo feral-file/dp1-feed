@@ -6,6 +6,20 @@
  * This script uploads playlists from local files to the DP-1 Feed API.
  * It processes exhibition folders, creates channels, and uploads playlists.
  *
+ * Channel Ordering:
+ *   When processing multiple exhibitions, you can control the upload order using a
+ *   channels-manifest.json file in the playlists folder. If no manifest exists, the
+ *   script will create a default one with exhibitions in alphabetical order.
+ *
+ *   Manifest format:
+ *   {
+ *     "_comment": "Reorder the 'channels' array to change upload sequence",
+ *     "channels": ["exhibition-slug-1", "exhibition-slug-2", ...]
+ *   }
+ *
+ * Playlist Ordering:
+ *   Within each exhibition, playlists are ordered by their numeric filename prefix
+ *   (e.g., 01-intro.json, 02-main.json, 03-outro.json).
  *
  * Usage:
  *   node scripts/upload-to-feed.js --api-key <key> --feed-endpoint <url> --playlists-path <path> [--dry-run] [--output <summary-file>]
@@ -231,7 +245,7 @@ async function processExhibition(feedEndpoint, apiKey, exhibitionPath) {
   // Get all playlist files in the exhibition folder
   const files = fs
     .readdirSync(exhibitionPath)
-    .filter(file => file.endsWith('.json'))
+    .filter(file => file.endsWith('.json') && file !== 'channels-manifest.json')
     .sort((a, b) => {
       // Sort by the index number at the start of filename
       const aIndex = parseInt(a.split('-')[0]);
@@ -493,6 +507,51 @@ function validatePublishArtifactOrThrow(artifact) {
 }
 
 /**
+ * Read or create channels manifest file
+ */
+function getChannelsManifest(playlistsPath) {
+  const manifestPath = path.join(playlistsPath, 'channels-manifest.json');
+  
+  // Check if manifest exists
+  if (fs.existsSync(manifestPath)) {
+    try {
+      const manifestData = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+      console.log(`📋 Using channels manifest: ${manifestPath}`);
+      return {
+        path: manifestPath,
+        channels: manifestData.channels || [],
+        existed: true,
+      };
+    } catch (error) {
+      console.warn(`⚠️  Failed to parse manifest file: ${error.message}`);
+      console.warn('    Falling back to alphabetical order');
+      return null;
+    }
+  }
+  
+  return null;
+}
+
+/**
+ * Create default channels manifest file
+ */
+function createDefaultManifest(playlistsPath, subDirs) {
+  const manifestPath = path.join(playlistsPath, 'channels-manifest.json');
+  
+  const manifest = {
+    _comment: "This file defines the order in which exhibition channels are processed and uploaded. Reorder the 'channels' array to change the upload sequence.",
+    channels: subDirs.sort(),
+  };
+  
+  fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2), 'utf-8');
+  console.log(`📝 Created default channels manifest: ${manifestPath}`);
+  console.log(`   Contains ${subDirs.length} exhibition(s) in alphabetical order`);
+  console.log(`   Edit this file to customize the upload order\n`);
+  
+  return manifest.channels;
+}
+
+/**
  * Main function
  */
 async function main() {
@@ -560,11 +619,11 @@ async function main() {
 
   try {
     if (stat.isDirectory()) {
-      // Check if it's an exhibition folder (contains JSON files) or a parent folder
+      // Check if it's an exhibition folder (contains playlist JSON files) or a parent folder
       const files = fs.readdirSync(playlistsPath);
-      const hasJsonFiles = files.some(f => f.endsWith('.json'));
+      const hasPlaylistFiles = files.some(f => f.endsWith('.json') && f !== 'channels-manifest.json');
 
-      if (hasJsonFiles) {
+      if (hasPlaylistFiles) {
         // It's an exhibition folder
         if (isDryRun) {
           const result = await processExhibitionDryRun(playlistsPath);
@@ -584,9 +643,45 @@ async function main() {
           return fs.statSync(subPath).isDirectory();
         });
 
-        console.log(`Found ${subDirs.length} exhibition folder(s) to process\n`);
+        console.log(`Found ${subDirs.length} exhibition folder(s)\n`);
 
-        for (const subDir of subDirs) {
+        // Check for channels manifest
+        const manifest = getChannelsManifest(playlistsPath);
+        let orderedSubDirs;
+
+        if (manifest && manifest.channels.length > 0) {
+          // Use manifest order
+          orderedSubDirs = manifest.channels;
+          
+          // Warn about exhibitions in filesystem but not in manifest
+          const missingFromManifest = subDirs.filter(dir => !orderedSubDirs.includes(dir));
+          if (missingFromManifest.length > 0) {
+            console.warn(`⚠️  Warning: ${missingFromManifest.length} exhibition(s) found but not in manifest:`);
+            missingFromManifest.forEach(dir => console.warn(`    - ${dir}`));
+            console.warn('    These will be skipped. Update channels-manifest.json to include them.\n');
+          }
+          
+          // Warn about exhibitions in manifest but not in filesystem
+          const missingFromFilesystem = orderedSubDirs.filter(dir => !subDirs.includes(dir));
+          if (missingFromFilesystem.length > 0) {
+            console.warn(`⚠️  Warning: ${missingFromFilesystem.length} exhibition(s) in manifest but not found:`);
+            missingFromFilesystem.forEach(dir => console.warn(`    - ${dir}`));
+            console.warn('    These will be skipped.\n');
+          }
+          
+          // Filter to only process exhibitions that exist
+          orderedSubDirs = orderedSubDirs.filter(dir => subDirs.includes(dir));
+          console.log(`Processing ${orderedSubDirs.length} exhibition(s) in manifest order:\n`);
+          orderedSubDirs.forEach((dir, idx) => console.log(`  ${idx + 1}. ${dir}`));
+          console.log('');
+        } else {
+          // No manifest, create default one
+          console.log('No channels manifest found. Creating default...\n');
+          orderedSubDirs = createDefaultManifest(playlistsPath, subDirs);
+          console.log(`Processing ${orderedSubDirs.length} exhibition(s) in alphabetical order\n`);
+        }
+
+        for (const subDir of orderedSubDirs) {
           const subPath = path.join(playlistsPath, subDir);
           try {
             if (isDryRun) {
@@ -700,7 +795,7 @@ async function processExhibitionDryRun(exhibitionPath) {
   // Get all playlist files
   const files = fs
     .readdirSync(exhibitionPath)
-    .filter(file => file.endsWith('.json'))
+    .filter(file => file.endsWith('.json') && file !== 'channels-manifest.json')
     .sort((a, b) => {
       const aIndex = parseInt(a.split('-')[0]);
       const bIndex = parseInt(b.split('-')[0]);

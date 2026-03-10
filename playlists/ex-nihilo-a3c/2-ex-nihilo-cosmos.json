@@ -1,0 +1,33 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "315718ad-6788-44e9-a70e-33d567cd91c1",
+  "slug": "ex-nihilo-cosmos",
+  "title": "Ex Nihilo (Cosmos)",
+  "summary": "Ex Nihilo (Cosmos) is the latest work in Casey REAS’ Still Life series. The series draws on the forms and conceptual framework of the five Platonic solids: cube, tetrahedron, octahedron, dodecahedron, and icosahedron. Plato’s Theory of Forms is central to this lineage, shaping his understanding of truth, beauty, and knowledge. For Plato, the world grasped through the senses is not fully real, but an imitation of a higher, invisible realm of perfect, eternal, and unchanging Forms. Ex Nihilo (Cosmos) explores the dodecahedron, and future works will engage the remaining four solids.\n\nEx Nihilo (Cosmos) connects Plato’s worldview to computer graphics, where images are generated ex nihilo—from code rather than physical materials. Forms are not represented directly, but instantiated through mathematical rules and procedural processes. What appears on screen is not a depiction of an object, but a series of Forms articulated through lines and resolved into pixels.\n\nIn the Still Life series, Platonic solids are not depicted as stable volumes, but decomposed into pixels. Each pixel’s values are translated into lines of varying position and color. From these simple rules emerge visual fields that oscillate between structure and dissolution. Designed to run continuously, the work never repeats. Rather than producing fixed compositions, the series operates as a kinetic system that unfolds over time.\n\nPlatonic Solids in Still Life software series: Cube → EARTH Tetrahedron → FIRE Octahedron → AIR Dodecahedron → COSMOS Icosahedron → WATER\n\nThis work is co-presented by Art Blocks and Feral File in March 2026. The Still Life exhibitions began in 2016 with There’s No Distance at bitforms, New York. The most recent, Purely Platonic, was presented at DAM Projects, Berlin, in summer 2025.\n\nKey Commands 'R' — Show/hide the Red channel 'G' — Show/hide the Green channel 'B' — Show/hide the Blue channel 'W' — Toggle colors to White 'S' — Adjust Speed 'P' — Pause Spacebar — Generate a new Still Life",
+  "coverImage": "https://cdn.feralfileassets.com/exhibition-thumbnails/2b290b34-46db-4b14-b411-9b30f68ae208/1772608129",
+  "created": "2026-03-10T07:23:31.615Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "9ff62313-fb15-43ae-92c7-843751b24575",
+      "title": "Ex Nihilo (Cosmos) — #0",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-03-10T07:23:31.615Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000C687DaeD0fbA60d1dBA4e5f6149E8B894",
+          "tokenId": "0"
+        }
+      }
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}
