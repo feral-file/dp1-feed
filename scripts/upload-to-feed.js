@@ -511,7 +511,7 @@ function validatePublishArtifactOrThrow(artifact) {
  */
 function getChannelsManifest(playlistsPath) {
   const manifestPath = path.join(playlistsPath, 'channels-manifest.json');
-  
+
   // Check if manifest exists
   if (fs.existsSync(manifestPath)) {
     try {
@@ -528,7 +528,7 @@ function getChannelsManifest(playlistsPath) {
       return null;
     }
   }
-  
+
   return null;
 }
 
@@ -537,17 +537,18 @@ function getChannelsManifest(playlistsPath) {
  */
 function createDefaultManifest(playlistsPath, subDirs) {
   const manifestPath = path.join(playlistsPath, 'channels-manifest.json');
-  
+
   const manifest = {
-    _comment: "This file defines the order in which exhibition channels are processed and uploaded. Reorder the 'channels' array to change the upload sequence.",
+    _comment:
+      "This file defines the order in which exhibition channels are processed and uploaded. Reorder the 'channels' array to change the upload sequence.",
     channels: subDirs.sort(),
   };
-  
+
   fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2), 'utf-8');
   console.log(`📝 Created default channels manifest: ${manifestPath}`);
   console.log(`   Contains ${subDirs.length} exhibition(s) in alphabetical order`);
   console.log(`   Edit this file to customize the upload order\n`);
-  
+
   return manifest.channels;
 }
 
@@ -621,7 +622,9 @@ async function main() {
     if (stat.isDirectory()) {
       // Check if it's an exhibition folder (contains playlist JSON files) or a parent folder
       const files = fs.readdirSync(playlistsPath);
-      const hasPlaylistFiles = files.some(f => f.endsWith('.json') && f !== 'channels-manifest.json');
+      const hasPlaylistFiles = files.some(
+        f => f.endsWith('.json') && f !== 'channels-manifest.json'
+      );
 
       if (hasPlaylistFiles) {
         // It's an exhibition folder
@@ -652,23 +655,29 @@ async function main() {
         if (manifest && manifest.channels.length > 0) {
           // Use manifest order
           orderedSubDirs = manifest.channels;
-          
+
           // Warn about exhibitions in filesystem but not in manifest
           const missingFromManifest = subDirs.filter(dir => !orderedSubDirs.includes(dir));
           if (missingFromManifest.length > 0) {
-            console.warn(`⚠️  Warning: ${missingFromManifest.length} exhibition(s) found but not in manifest:`);
+            console.warn(
+              `⚠️  Warning: ${missingFromManifest.length} exhibition(s) found but not in manifest:`
+            );
             missingFromManifest.forEach(dir => console.warn(`    - ${dir}`));
-            console.warn('    These will be skipped. Update channels-manifest.json to include them.\n');
+            console.warn(
+              '    These will be skipped. Update channels-manifest.json to include them.\n'
+            );
           }
-          
+
           // Warn about exhibitions in manifest but not in filesystem
           const missingFromFilesystem = orderedSubDirs.filter(dir => !subDirs.includes(dir));
           if (missingFromFilesystem.length > 0) {
-            console.warn(`⚠️  Warning: ${missingFromFilesystem.length} exhibition(s) in manifest but not found:`);
+            console.warn(
+              `⚠️  Warning: ${missingFromFilesystem.length} exhibition(s) in manifest but not found:`
+            );
             missingFromFilesystem.forEach(dir => console.warn(`    - ${dir}`));
             console.warn('    These will be skipped.\n');
           }
-          
+
           // Filter to only process exhibitions that exist
           orderedSubDirs = orderedSubDirs.filter(dir => subDirs.includes(dir));
           console.log(`Processing ${orderedSubDirs.length} exhibition(s) in manifest order:\n`);
