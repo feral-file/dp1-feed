@@ -1,11 +1,11 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import {
   EtcdKVStorage,
-  EtcdStorageProvider,
+  SelfHostedStorageProvider,
   encodeBase64,
   incrementString,
   type EtcdConfig,
-} from './etcd-kv';
+} from './selfhosted';
 import type { KVGetOptions, KVListOptions } from './interfaces';
 
 // Mock fetch globally
@@ -911,8 +911,8 @@ describe('EtcdKVStorage', () => {
   });
 });
 
-describe('EtcdStorageProvider', () => {
-  let provider: EtcdStorageProvider;
+describe('SelfHostedStorageProvider', () => {
+  let provider: SelfHostedStorageProvider;
   let mockConfig: EtcdConfig;
 
   beforeEach(() => {
@@ -923,12 +923,12 @@ describe('EtcdStorageProvider', () => {
       prefix: 'dp1',
     };
 
-    provider = new EtcdStorageProvider(mockConfig);
+    provider = new SelfHostedStorageProvider(mockConfig);
   });
 
   describe('constructor', () => {
     it('should create a provider with the provided config', () => {
-      expect(provider).toBeInstanceOf(EtcdStorageProvider);
+      expect(provider).toBeInstanceOf(SelfHostedStorageProvider);
     });
   });
 
@@ -1049,7 +1049,7 @@ describe('EtcdStorageProvider', () => {
         username: 'test-user',
         password: 'test-pass',
       };
-      const authProvider = new EtcdStorageProvider(authConfig);
+      const authProvider = new SelfHostedStorageProvider(authConfig);
 
       const playlistStorage = authProvider.getPlaylistStorage();
       const groupStorage = authProvider.getChannelStorage();
@@ -1059,6 +1059,33 @@ describe('EtcdStorageProvider', () => {
       expect(playlistStorage).toBeInstanceOf(EtcdKVStorage);
       expect(groupStorage).toBeInstanceOf(EtcdKVStorage);
       expect(itemStorage).toBeInstanceOf(EtcdKVStorage);
+    });
+  });
+
+  describe('getFileStorage', () => {
+    it('should return undefined when no file storage path is provided', () => {
+      const providerWithoutFileStorage = new SelfHostedStorageProvider(mockConfig);
+
+      const fileStorage = providerWithoutFileStorage.getFileStorage();
+
+      expect(fileStorage).toBeUndefined();
+    });
+
+    it('should return LocalFileStorage when path is provided', () => {
+      const providerWithFileStorage = new SelfHostedStorageProvider(mockConfig, './test-data');
+
+      const fileStorage = providerWithFileStorage.getFileStorage();
+
+      expect(fileStorage).toBeDefined();
+    });
+
+    it('should return the same instance on multiple calls', () => {
+      const providerWithFileStorage = new SelfHostedStorageProvider(mockConfig, './test-data');
+
+      const fileStorage1 = providerWithFileStorage.getFileStorage();
+      const fileStorage2 = providerWithFileStorage.getFileStorage();
+
+      expect(fileStorage1).toBe(fileStorage2);
     });
   });
 });

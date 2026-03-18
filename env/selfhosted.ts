@@ -1,5 +1,5 @@
 import type { Env } from '../types';
-import { EtcdStorageProvider } from '../storage/etcd-kv';
+import { SelfHostedStorageProvider } from '../storage/selfhosted';
 import { NatsJetStreamQueueProvider } from '../queue/nats-jetstream';
 
 /**
@@ -30,6 +30,9 @@ export interface SelfHostedBindings {
   NATS_STREAM_NAME: string;
   NATS_SUBJECT_NAME: string;
 
+  // File storage configuration
+  FILE_STORAGE_PATH?: string; // Base path for local file storage, default: ./data/files
+
   // Optional environment variables
   ENVIRONMENT?: string;
   SELF_HOSTED_DOMAINS?: string;
@@ -58,7 +61,8 @@ export async function initializeSelfHostedEnv(bindings: SelfHostedBindings): Pro
     password: bindings.ETCD_PASSWORD,
     prefix: bindings.ETCD_PREFIX || 'dp1',
   };
-  const storageProvider = new EtcdStorageProvider(etcdConfig);
+  const fileStoragePath = bindings.FILE_STORAGE_PATH || './data/files';
+  const storageProvider = new SelfHostedStorageProvider(etcdConfig, fileStoragePath);
 
   // Create NATS JetStream queue provider
   const natsConfig = {

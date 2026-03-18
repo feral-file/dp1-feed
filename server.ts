@@ -48,6 +48,9 @@ async function startServer() {
     NATS_STREAM_NAME: process.env.NATS_STREAM_NAME || 'DP1_WRITE_OPERATIONS',
     NATS_SUBJECT_NAME: process.env.NATS_SUBJECT_NAME || 'dp1.write.operations',
 
+    // File storage configuration
+    FILE_STORAGE_PATH: process.env.FILE_STORAGE_PATH || './data/files',
+
     // Optional environment variables
     ENVIRONMENT: process.env.ENVIRONMENT || 'self-hosted',
     SELF_HOSTED_DOMAINS: process.env.SELF_HOSTED_DOMAINS,

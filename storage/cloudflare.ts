@@ -6,6 +6,7 @@ import type {
   KVListOptions,
   KVGetOptions,
 } from './interfaces';
+import { R2FileStorage } from './file-storage';
 
 /**
  * Configuration for CloudFlare KV API access
@@ -287,12 +288,13 @@ export class CloudFlareKVStorage implements KeyValueStorage {
 }
 
 /**
- * CloudFlare storage provider that provides access to KV namespaces
+ * CloudFlare storage provider that provides access to KV namespaces and R2 buckets
  */
 export class CloudFlareStorageProvider implements StorageProvider {
   private playlistStorage: CloudFlareKVStorage;
   private channelStorage: CloudFlareKVStorage;
   private playlistItemStorage: CloudFlareKVStorage;
+  private fileStorage?: R2FileStorage;
 
   constructor(
     playlistKV: KVNamespace,
@@ -300,11 +302,17 @@ export class CloudFlareStorageProvider implements StorageProvider {
     playlistItemKV: KVNamespace,
     playlistConfig: CloudFlareKVConfig,
     channelConfig: CloudFlareKVConfig,
-    playlistItemConfig: CloudFlareKVConfig
+    playlistItemConfig: CloudFlareKVConfig,
+    r2Bucket?: any // Optional R2 bucket for file storage
   ) {
     this.playlistStorage = new CloudFlareKVStorage(playlistKV, playlistConfig);
     this.channelStorage = new CloudFlareKVStorage(channelKV, channelConfig);
     this.playlistItemStorage = new CloudFlareKVStorage(playlistItemKV, playlistItemConfig);
+
+    // Initialize file storage if R2 bucket is provided
+    if (r2Bucket) {
+      this.fileStorage = new R2FileStorage(r2Bucket);
+    }
   }
 
   getPlaylistStorage(): KeyValueStorage {
@@ -317,5 +325,9 @@ export class CloudFlareStorageProvider implements StorageProvider {
 
   getPlaylistItemStorage(): KeyValueStorage {
     return this.playlistItemStorage;
+  }
+
+  getFileStorage() {
+    return this.fileStorage;
   }
 }

@@ -37,6 +37,7 @@ npm install
 ```bash
 # Setup and deploy
 npm run worker:setup:kv
+npm run worker:setup:r2
 npm run worker:setup:secrets
 npm run worker:deploy
 ```
@@ -95,40 +96,6 @@ Validation gate behavior:
 - Script exits non-zero if emitted URLs do not match canonical origin shape.
 - Script exits non-zero if artifact structure is incomplete/invalid.
 
-### `scripts/generate-snapshot-input.js`
-
-Generates the existing ff-app snapshot input shape (legacy `dp1_playlist.publishers[].channel_urls`) from authoritative sources.
-
-Use one source mode only:
-
-- `--artifact <path>`: PR1 publish artifact JSON
-- `--feed-endpoint <url>`: feed `/api/v1/channels` list
-
-Optional flags:
-
-- `--output <path>` (default: `./ff-app-snapshot-input.json`)
-- `--publisher-name <name>` (default: `Feral File`)
-
-Examples:
-
-```bash
-# From publish artifact
-node scripts/generate-snapshot-input.js \
-  --artifact ./artifacts/casey-publish.json \
-  --output ./artifacts/casey-snapshot-input.json
-
-# From authoritative feed channels endpoint
-node scripts/generate-snapshot-input.js \
-  --feed-endpoint "https://dp1-feed-operator-api-prod.autonomy-system.workers.dev" \
-  --output ./artifacts/all-channels-snapshot-input.json
-```
-
-Failure behavior:
-
-- Exits non-zero for missing/invalid input source.
-- Exits non-zero when generated channel URL list is empty.
-- Exits non-zero for malformed artifact or malformed `/channels` payload.
-
 ## API Reference
 
 ### Authentication
@@ -159,22 +126,24 @@ Generate test keys: `npm run jwt:generate-keys`
 
 ### Endpoints
 
-| Method   | Endpoint                      | Description     | Auth |
-| -------- | ----------------------------- | --------------- | ---- |
-| `GET`    | `/api/v1`                     | API info        | No   |
-| `GET`    | `/api/v1/health`              | Health check    | No   |
-| `GET`    | `/api/v1/playlists`           | List playlists  | No   |
-| `POST`   | `/api/v1/playlists`           | Create playlist | Yes  |
-| `GET`    | `/api/v1/playlists/{id}`      | Get playlist    | No   |
-| `PUT`    | `/api/v1/playlists/{id}`      | Update playlist | Yes  |
-| `DELETE` | `/api/v1/playlists/{id}`      | Delete playlist | Yes  |
-| `GET`    | `/api/v1/channels`            | List channels   | No   |
-| `POST`   | `/api/v1/channels`            | Create channel  | Yes  |
-| `GET`    | `/api/v1/channels/{id}`       | Get channel     | No   |
-| `PUT`    | `/api/v1/channels/{id}`       | Update channel  | Yes  |
-| `DELETE` | `/api/v1/channels/{id}`       | Delete channel  | Yes  |
-| `GET`    | `/api/v1/playlist-items`      | List items      | No   |
-| `GET`    | `/api/v1/playlist-items/{id}` | Get item        | No   |
+| Method   | Endpoint                      | Description             | Auth |
+| -------- | ----------------------------- | ----------------------- | ---- |
+| `GET`    | `/api/v1`                     | API info                | No   |
+| `GET`    | `/api/v1/health`              | Health check            | No   |
+| `GET`    | `/api/v1/playlists`           | List playlists          | No   |
+| `POST`   | `/api/v1/playlists`           | Create playlist         | Yes  |
+| `GET`    | `/api/v1/playlists/{id}`      | Get playlist            | No   |
+| `PUT`    | `/api/v1/playlists/{id}`      | Update playlist         | Yes  |
+| `DELETE` | `/api/v1/playlists/{id}`      | Delete playlist         | Yes  |
+| `GET`    | `/api/v1/channels`            | List channels           | No   |
+| `POST`   | `/api/v1/channels`            | Create channel          | Yes  |
+| `GET`    | `/api/v1/channels/{id}`       | Get channel             | No   |
+| `PUT`    | `/api/v1/channels/{id}`       | Update channel          | Yes  |
+| `DELETE` | `/api/v1/channels/{id}`       | Delete channel          | Yes  |
+| `GET`    | `/api/v1/playlist-items`      | List items              | No   |
+| `GET`    | `/api/v1/playlist-items/{id}` | Get item                | No   |
+| `GET`    | `/api/v1/registry/channels`   | Get channel registry    | No   |
+| `PUT`    | `/api/v1/registry/channels`   | Update channel registry | Yes  |
 
 ### Examples
 
@@ -199,6 +168,28 @@ curl -X POST http://localhost:8787/api/v1/playlists \
 
 ```bash
 curl "http://localhost:8787/api/v1/playlists?sort=desc&limit=10"
+```
+
+**Get Curated Registry**
+
+```bash
+curl "http://localhost:8787/api/v1/registry/channels"
+```
+
+**Update Curated Registry**
+
+```bash
+curl -X PUT http://localhost:8787/api/v1/registry/channels \
+  -H "Authorization: Bearer YOUR_API_SECRET" \
+  -H "Content-Type: application/json" \
+  -d '[
+    {
+      "name": "Feral File",
+      "channel_urls": [
+        "https://example.com/api/v1/channels/123e4567-e89b-12d3-a456-426614174000"
+      ]
+    }
+  ]'
 ```
 
 ### Async Processing

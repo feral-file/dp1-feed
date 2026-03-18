@@ -34,6 +34,9 @@ RUN npm ci --only=production && npm cache clean --force
 # Copy the compiled JavaScript bundle from builder stage
 COPY --from=builder --chown=nodejs:nodejs /app/dist ./dist
 
+# Create data directory for file storage and set permissions
+RUN mkdir -p /app/data/files && chown -R nodejs:nodejs /app/data
+
 # Switch to non-root user
 USER nodejs
 

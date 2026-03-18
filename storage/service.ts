@@ -1465,4 +1465,26 @@ export class StorageService {
 
     return true;
   }
+
+  /**
+   * Get curated channel registry
+   */
+  async getCuratedRegistry(): Promise<string | null> {
+    const fileStorage = this.storageProvider.getFileStorage?.();
+    if (!fileStorage) {
+      throw new Error('File storage is not configured for this deployment');
+    }
+    return await fileStorage.read('registry/channels.json');
+  }
+
+  /**
+   * Save curated channel registry with backup
+   */
+  async saveCuratedRegistry(content: string): Promise<void> {
+    const fileStorage = this.storageProvider.getFileStorage?.();
+    if (!fileStorage) {
+      throw new Error('File storage is not configured for this deployment');
+    }
+    await fileStorage.write('registry/channels.json', content, { backup: true });
+  }
 }

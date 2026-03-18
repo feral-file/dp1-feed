@@ -5,6 +5,7 @@ import type {
   KVListOptions,
   KVGetOptions,
 } from './interfaces';
+import { LocalFileStorage } from './file-storage';
 
 /**
  * Configuration for etcd connection
@@ -376,15 +377,21 @@ export class EtcdKVStorage implements KeyValueStorage {
 /**
  * etcd storage provider that provides access to different namespaces
  */
-export class EtcdStorageProvider implements StorageProvider {
+export class SelfHostedStorageProvider implements StorageProvider {
   private playlistStorage: EtcdKVStorage;
   private channelStorage: EtcdKVStorage;
   private playlistItemStorage: EtcdKVStorage;
+  private fileStorage?: LocalFileStorage;
 
-  constructor(config: EtcdConfig) {
+  constructor(config: EtcdConfig, fileStoragePath?: string) {
     this.playlistStorage = new EtcdKVStorage(config, 'playlists');
     this.channelStorage = new EtcdKVStorage(config, 'playlist-groups');
     this.playlistItemStorage = new EtcdKVStorage(config, 'playlist-items');
+
+    // Initialize file storage if path is provided
+    if (fileStoragePath) {
+      this.fileStorage = new LocalFileStorage(fileStoragePath);
+    }
   }
 
   getPlaylistStorage(): KeyValueStorage {
@@ -397,6 +404,10 @@ export class EtcdStorageProvider implements StorageProvider {
 
   getPlaylistItemStorage(): KeyValueStorage {
     return this.playlistItemStorage;
+  }
+
+  getFileStorage() {
+    return this.fileStorage;
   }
 }
 

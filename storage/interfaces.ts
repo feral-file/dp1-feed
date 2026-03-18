@@ -75,6 +75,12 @@ export interface StorageProvider {
    * Get the playlist items storage namespace
    */
   getPlaylistItemStorage(): KeyValueStorage;
+
+  /**
+   * Get the file storage for static JSON files (optional)
+   * Used for curated registry and other static files
+   */
+  getFileStorage?(): any; // Returns FileStorage but using 'any' to avoid circular deps
 }
 
 export interface PaginatedResult<T> {

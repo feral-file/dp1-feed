@@ -423,4 +423,121 @@ describe('types schemas integration with ff-dp1-js validators', () => {
     expect(slug).toMatch(/^[a-z0-9-]+-\d{4}$/);
     expect(slug.length).toBeLessThanOrEqual(64);
   });
+
+  it('validates curated registry with valid data', async () => {
+    const { validateCuratedRegistry } = await loadTypes();
+
+    const validRegistry = [
+      {
+        name: 'Test Publisher 1',
+        channel_urls: [
+          'https://example.com/api/v1/channels/123e4567-e89b-12d3-a456-426614174000',
+          'https://example.com/api/v1/channels/223e4567-e89b-12d3-a456-426614174000',
+        ],
+      },
+      {
+        name: 'Test Publisher 2',
+        channel_urls: ['https://example.com/api/v1/channels/323e4567-e89b-12d3-a456-426614174000'],
+      },
+    ];
+
+    const result = validateCuratedRegistry(validRegistry);
+    expect(result.success).toBe(true);
+    expect(result.data).toHaveLength(2);
+    expect(result.data![0].name).toBe('Test Publisher 1');
+    expect(result.data![0].channel_urls).toHaveLength(2);
+  });
+
+  it('rejects invalid curated registry: not an array', async () => {
+    const { validateCuratedRegistry } = await loadTypes();
+
+    const invalidRegistry = {
+      dp1_playlist: {
+        publishers: [],
+      },
+    };
+
+    const result = validateCuratedRegistry(invalidRegistry);
+    expect(result.success).toBe(false);
+    expect(result.error?.message).toBe('Invalid curated registry format');
+  });
+
+  it('rejects invalid curated registry: empty array', async () => {
+    const { validateCuratedRegistry } = await loadTypes();
+
+    const invalidRegistry: any[] = [];
+
+    const result = validateCuratedRegistry(invalidRegistry);
+    expect(result.success).toBe(false);
+    expect(result.error?.issues).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          message: expect.stringContaining('at least 1'),
+        }),
+      ])
+    );
+  });
+
+  it('rejects invalid curated registry: missing name field', async () => {
+    const { validateCuratedRegistry } = await loadTypes();
+
+    const invalidRegistry = [
+      {
+        channel_urls: ['https://example.com/api/v1/channels/123e4567-e89b-12d3-a456-426614174000'],
+      },
+    ];
+
+    const result = validateCuratedRegistry(invalidRegistry);
+    expect(result.success).toBe(false);
+    expect(result.error?.issues).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          path: '0.name',
+          message: expect.stringContaining('Required'),
+        }),
+      ])
+    );
+  });
+
+  it('rejects invalid curated registry: invalid channel URL format', async () => {
+    const { validateCuratedRegistry } = await loadTypes();
+
+    const invalidRegistry = [
+      {
+        name: 'Test Publisher',
+        channel_urls: ['https://example.com/invalid/path'],
+      },
+    ];
+
+    const result = validateCuratedRegistry(invalidRegistry);
+    expect(result.success).toBe(false);
+    expect(result.error?.issues).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          message: 'Channel URL must end with /api/v1/channels/{uuid}',
+        }),
+      ])
+    );
+  });
+
+  it('rejects invalid curated registry: empty channel_urls array', async () => {
+    const { validateCuratedRegistry } = await loadTypes();
+
+    const invalidRegistry = [
+      {
+        name: 'Test Publisher',
+        channel_urls: [],
+      },
+    ];
+
+    const result = validateCuratedRegistry(invalidRegistry);
+    expect(result.success).toBe(false);
+    expect(result.error?.issues).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          message: expect.stringContaining('at least 1'),
+        }),
+      ])
+    );
+  });
 });
