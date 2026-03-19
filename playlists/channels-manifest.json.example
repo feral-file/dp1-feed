@@ -47,5 +47,23 @@
     "console-spirituality-m6j",
     "star-quest-adm",
     "ex-nihilo-a3c"
-  ]
+  ],
+  "metadata": {
+    "example-channel-slug": {
+      "title": "Example Exhibition Title",
+      "curator": "Curator Name (deprecated, use curators instead)",
+      "curators": [
+        {
+          "name": "Curator Name",
+          "url": "https://feralfile.com/curators/curator-alias"
+        }
+      ],
+      "summary": "A detailed description of the exhibition that provides context and information about the artworks and theme.",
+      "publisher": {
+        "name": "Feral File",
+        "url": "https://feralfile.com"
+      },
+      "coverImage": "https://example.com/cover-image.jpg"
+    }
+  }
 }

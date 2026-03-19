@@ -7,13 +7,12 @@
  * triggers a GitHub workflow to create a database snapshot.
  *
  * Usage:
- *   node scripts/update-channel-registry.js --artifact <path> --feed <host> --api-key <key> --publisher <name> [--github-token <token>] [--mode <append|replace>]
+ *   node scripts/update-channel-registry.js --artifact <path> --api-key <key> --publisher <name> [--github-token <token>] [--mode <append|replace>] [--dryrun]
  *
  * Examples:
  *   # Append mode (default) - add channel to existing publisher channels
  *   node scripts/update-channel-registry.js \
  *     --artifact dp1-feed-publish-artifact.json \
- *     --feed https://dp1-feed-operator-api-prod.autonomy-system.workers.dev \
  *     --api-key YOUR_API_KEY \
  *     --publisher "Feral File" \
  *     --github-token ghp_xxx
@@ -21,11 +20,18 @@
  *   # Replace mode - replace all channels for a publisher
  *   node scripts/update-channel-registry.js \
  *     --artifact dp1-feed-publish-artifact.json \
- *     --feed https://dp1-feed-operator-api-prod.autonomy-system.workers.dev \
  *     --api-key YOUR_API_KEY \
  *     --publisher "Feral File" \
  *     --github-token ghp_xxx \
  *     --mode replace
+ *
+ *   # Dry-run mode - skip registry update, just print logs
+ *   node scripts/update-channel-registry.js \
+ *     --artifact dp1-feed-publish-artifact.json \
+ *     --api-key YOUR_API_KEY \
+ *     --publisher "Feral File" \
+ *     --github-token ghp_xxx \
+ *     --dryrun
  */
 
 import fs from 'fs';
@@ -53,20 +59,22 @@ function parseArgs() {
     return null;
   };
 
+  const hasFlag = flag => args.includes(flag);
+
   const artifactPath = getFlag('--artifact');
-  const feedHost = getFlag('--feed');
   const apiKey = getFlag('--api-key');
   const publisher = getFlag('--publisher');
   const githubToken = getFlag('--github-token');
   const mode = getFlag('--mode') || 'append';
+  const dryrun = hasFlag('--dryrun');
 
   return {
     artifactPath,
-    feedHost,
     apiKey,
     publisher,
     githubToken,
     mode,
+    dryrun,
   };
 }
 
@@ -78,9 +86,6 @@ function validateArgs(args) {
 
   if (!args.artifactPath) {
     errors.push('--artifact is required');
-  }
-  if (!args.feedHost) {
-    errors.push('--feed is required');
   }
   if (!args.apiKey) {
     errors.push('--api-key is required');
@@ -97,11 +102,10 @@ function validateArgs(args) {
     errors.forEach(err => console.error(`  - ${err}`));
     console.error('\nUsage:');
     console.error(
-      '  node scripts/update-channel-registry.js --artifact <path> --feed <host> --api-key <key> --publisher <name> [--github-token <token>] [--mode <append|replace>]'
+      '  node scripts/update-channel-registry.js --artifact <path> --api-key <key> --publisher <name> [--github-token <token>] [--mode <append|replace>] [--dryrun]'
     );
     console.error('\nRequired flags:');
     console.error('  --artifact       Path to dp1-feed-publish-artifact.json');
-    console.error('  --feed           Feed server host (e.g., https://feed.example.com)');
     console.error('  --api-key        API key for Feed server authentication');
     console.error('  --publisher      Publisher name (e.g., "Feral File")');
     console.error('\nOptional flags:');
@@ -109,11 +113,13 @@ function validateArgs(args) {
       '  --github-token   GitHub personal access token (triggers workflow if provided)'
     );
     console.error('  --mode           Update mode: "append" (default) or "replace"');
+    console.error(
+      '  --dryrun         Skip registry update, just print logs (passes dryrun=true to workflow)'
+    );
     console.error('\nExamples:');
     console.error('  # With GitHub workflow trigger:');
     console.error('  node scripts/update-channel-registry.js \\');
     console.error('    --artifact dp1-feed-publish-artifact.json \\');
-    console.error('    --feed https://feed.example.com \\');
     console.error('    --api-key YOUR_API_KEY \\');
     console.error('    --publisher "Feral File" \\');
     console.error('    --github-token ghp_xxx');
@@ -121,7 +127,6 @@ function validateArgs(args) {
     console.error('  # Without GitHub workflow trigger:');
     console.error('  node scripts/update-channel-registry.js \\');
     console.error('    --artifact dp1-feed-publish-artifact.json \\');
-    console.error('    --feed https://feed.example.com \\');
     console.error('    --api-key YOUR_API_KEY \\');
     console.error('    --publisher "Feral File"');
     process.exit(1);
@@ -142,14 +147,19 @@ function readPublishArtifact(artifactPath) {
     const content = fs.readFileSync(artifactPath, 'utf-8');
     const artifact = JSON.parse(content);
 
-    if (!artifact.exhibitions || !Array.isArray(artifact.exhibitions)) {
-      throw new Error('Invalid artifact: missing exhibitions array');
+    if (!artifact.channels || !Array.isArray(artifact.channels)) {
+      throw new Error('Invalid artifact: missing channels array');
+    }
+
+    if (!artifact.canonical_origin) {
+      throw new Error('Invalid artifact: missing canonical_origin');
     }
 
     console.log(`✓ Artifact read successfully`);
     console.log(`  Schema version: ${artifact.schema_version}`);
     console.log(`  Mode: ${artifact.mode}`);
-    console.log(`  Exhibitions: ${artifact.exhibitions.length}`);
+    console.log(`  Channels: ${artifact.channels.length}`);
+    console.log(`  Canonical origin: ${artifact.canonical_origin}`);
 
     return artifact;
   } catch (error) {
@@ -165,19 +175,19 @@ function extractChannelUrls(artifact) {
 
   const channelUrls = [];
 
-  for (const exhibition of artifact.exhibitions) {
-    if (exhibition.status === 'success' && exhibition.channel?.url) {
-      channelUrls.push(exhibition.channel.url);
+  for (const channelItem of artifact.channels) {
+    if (channelItem.status === 'success' && channelItem.channel?.url) {
+      channelUrls.push(channelItem.channel.url);
       console.log(
-        `  ✓ ${exhibition.exhibition?.title || exhibition.exhibition_slug}: ${exhibition.channel.url}`
+        `  ✓ ${channelItem.channel?.title || channelItem.source_folder}: ${channelItem.channel.url}`
       );
     } else {
-      console.log(`  ⚠️  Skipping ${exhibition.exhibition_slug}: status=${exhibition.status}`);
+      console.log(`  ⚠️  Skipping ${channelItem.source_folder}: status=${channelItem.status}`);
     }
   }
 
   if (channelUrls.length === 0) {
-    throw new Error('No successful exhibitions with channel URLs found in artifact');
+    throw new Error('No successful channels with URLs found in artifact');
   }
 
   console.log(`\n✓ Extracted ${channelUrls.length} channel URL(s)`);
@@ -361,14 +371,21 @@ function buildUpdatedRegistry(currentRegistry, newChannelUrls, publisher, mode) 
  * Update channel registry on feed server
  * Registry must be an array: [{ name, channel_urls }, ...]
  */
-async function updateChannelRegistry(feedHost, apiKey, registryArray) {
+async function updateChannelRegistry(feedHost, apiKey, registryArray, dryrun = false) {
   const registryUrl = `${feedHost}/api/v1/registry/channels`;
 
-  console.log(`\n📤 Updating channel registry...`);
+  console.log(`\n📤 ${dryrun ? '[DRY RUN] ' : ''}Updating channel registry...`);
   console.log(`  URL: ${registryUrl}`);
   const totalChannels = registryArray.reduce((sum, item) => sum + item.channel_urls.length, 0);
   console.log(`  Publishers: ${registryArray.length}`);
   console.log(`  Total channels: ${totalChannels}`);
+
+  if (dryrun) {
+    console.log(`\n  🔍 DRY RUN MODE - Registry update skipped`);
+    console.log(`  Registry data that would be sent:`);
+    console.log(JSON.stringify(registryArray, null, 2));
+    return;
+  }
 
   try {
     const response = await fetch(registryUrl, {
@@ -564,7 +581,7 @@ async function checkWorkflowExists(githubToken) {
 /**
  * Trigger GitHub workflow
  */
-async function triggerGitHubWorkflow(githubToken, feedHost) {
+async function triggerGitHubWorkflow(githubToken, feedHost, dryrun = false) {
   const workflowUrl = `${GITHUB_API_BASE}/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/actions/workflows/${WORKFLOW_FILE}/dispatches`;
   const channelsSource = `${feedHost}/api/v1/registry/channels`;
 
@@ -572,6 +589,7 @@ async function triggerGitHubWorkflow(githubToken, feedHost) {
   console.log(`  Repository: ${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}`);
   console.log(`  Workflow: ${WORKFLOW_FILE}`);
   console.log(`  Channels source: ${channelsSource}`);
+  console.log(`  Dry run: ${dryrun ? 'true' : 'false'}`);
 
   // First, check if the workflow exists
   await checkWorkflowExists(githubToken);
@@ -589,6 +607,7 @@ async function triggerGitHubWorkflow(githubToken, feedHost) {
         ref: 'main',
         inputs: {
           channels_source: channelsSource,
+          dryrun: dryrun ? 'true' : 'false',
         },
       }),
     });
@@ -796,18 +815,21 @@ async function main() {
   const args = parseArgs();
   validateArgs(args);
 
+  if (args.dryrun) {
+    console.log('🔍 DRY RUN MODE ENABLED - No actual updates will be made\n');
+  }
+
   const startTime = Date.now();
 
   try {
-    // Step 1: Read artifact and extract channel URLs
+    // Step 1: Read artifact and extract feed host and channel URLs
     const artifact = readPublishArtifact(args.artifactPath);
+    const feedHost = normalizeFeedHost(artifact.canonical_origin);
     const channelUrls = extractChannelUrls(artifact);
 
-    // Step 2: Normalize feed host
-    const feedHost = normalizeFeedHost(args.feedHost);
     console.log(`\n🌐 Feed host: ${feedHost}`);
 
-    // Step 3: Fetch current registry (in append mode)
+    // Step 2: Fetch current registry (in append mode)
     let currentRegistry = null;
     if (args.mode === 'append' || args.mode === 'replace') {
       try {
@@ -818,7 +840,7 @@ async function main() {
       }
     }
 
-    // Step 4: Build updated registry
+    // Step 3: Build updated registry
     const updatedRegistry = buildUpdatedRegistry(
       currentRegistry,
       channelUrls,
@@ -826,19 +848,23 @@ async function main() {
       args.mode
     );
 
-    // Step 5: Update registry on server
-    await updateChannelRegistry(feedHost, args.apiKey, updatedRegistry);
+    // Step 4: Update registry on server (skip if dry-run)
+    await updateChannelRegistry(feedHost, args.apiKey, updatedRegistry, args.dryrun);
 
-    // Step 6, 7 & 8: Optionally trigger GitHub workflow if token provided
+    // Step 5, 6 & 7: Optionally trigger GitHub workflow if token provided
     if (args.githubToken) {
       console.log(`\n${'='.repeat(80)}`);
       console.log('GitHub Workflow');
       console.log('='.repeat(80));
 
-      // Step 6: Verify registry update has taken effect (not cached)
-      await verifyRegistryUpdate(feedHost, updatedRegistry);
+      // Step 5: Verify registry update has taken effect (skip if dry-run)
+      if (!args.dryrun) {
+        await verifyRegistryUpdate(feedHost, updatedRegistry);
+      } else {
+        console.log('\n  🔍 DRY RUN - Skipping registry verification');
+      }
 
-      // Step 7: Get existing workflow runs before triggering
+      // Step 6: Get existing workflow runs before triggering
       let existingRunIds = new Set();
       try {
         const existingRuns = await getRecentWorkflowRuns(args.githubToken, 20);
@@ -848,15 +874,15 @@ async function main() {
         console.warn(`  ⚠️  Could not fetch existing runs: ${error.message}`);
       }
 
-      // Step 8: Trigger GitHub workflow
-      await triggerGitHubWorkflow(args.githubToken, feedHost);
+      // Step 7: Trigger GitHub workflow
+      await triggerGitHubWorkflow(args.githubToken, feedHost, args.dryrun);
 
-      // Step 9: Wait for workflow completion
+      // Step 8: Wait for workflow completion
       const workflowRun = await waitForWorkflowCompletion(args.githubToken, existingRunIds);
 
       const duration = ((Date.now() - startTime) / 1000).toFixed(1);
       console.log(`\n${'='.repeat(80)}`);
-      console.log('✅ Process completed successfully!');
+      console.log(`✅ Process completed successfully!${args.dryrun ? ' (DRY RUN)' : ''}`);
       console.log(`   Total duration: ${duration}s`);
       console.log('='.repeat(80));
 
@@ -872,7 +898,7 @@ async function main() {
 
       const duration = ((Date.now() - startTime) / 1000).toFixed(1);
       console.log(`\n${'='.repeat(80)}`);
-      console.log('✅ Registry update completed successfully!');
+      console.log(`✅ Registry update completed successfully!${args.dryrun ? ' (DRY RUN)' : ''}`);
       console.log(`   Total duration: ${duration}s`);
       console.log(`   Note: GitHub workflow was not triggered`);
       console.log('='.repeat(80));

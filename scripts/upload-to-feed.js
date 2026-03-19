@@ -4,31 +4,45 @@
  * Upload DP-1 Playlists and Channels to Feed Server
  *
  * This script uploads playlists from local files to the DP-1 Feed API.
- * It processes exhibition folders, creates channels, and uploads playlists.
+ * It processes channel folders, creates channels, and uploads playlists.
+ *
+ * Concept:
+ *   - Each folder contains a group of playlists that will be combined into one channel
+ *   - Channel metadata can be provided via channels-manifest.json
+ *   - If no metadata is provided, the script can optionally fallback to Feral File Exhibition API
  *
  * Channel Ordering:
- *   When processing multiple exhibitions, you can control the upload order using a
+ *   When processing multiple channels, you can control the upload order using a
  *   channels-manifest.json file in the playlists folder. If no manifest exists, the
- *   script will create a default one with exhibitions in alphabetical order.
+ *   script will create a default one with channels in alphabetical order.
  *
  *   Manifest format:
  *   {
  *     "_comment": "Reorder the 'channels' array to change upload sequence",
- *     "channels": ["exhibition-slug-1", "exhibition-slug-2", ...]
+ *     "channels": ["channel-slug-1", "channel-slug-2", ...],
+ *     "metadata": {
+ *       "channel-slug-1": {
+ *         "title": "Channel Title",
+ *         "curators": [{"name": "Curator Name", "url": "..."}],
+ *         "summary": "Description...",
+ *         "publisher": {"name": "Publisher", "url": "..."},
+ *         "coverImage": "https://..."
+ *       }
+ *     }
  *   }
  *
  * Playlist Ordering:
- *   Within each exhibition, playlists are ordered by their numeric filename prefix
+ *   Within each channel, playlists are ordered by their numeric filename prefix
  *   (e.g., 01-intro.json, 02-main.json, 03-outro.json).
  *
  * Usage:
  *   node scripts/upload-to-feed.js --api-key <key> --feed-endpoint <url> --playlists-path <path> [--dry-run] [--output <summary-file>]
  *
  * Examples:
- *   # Upload all exhibitions
+ *   # Upload all channels
  *   node scripts/upload-to-feed.js --api-key YOUR_API_KEY --feed-endpoint https://feed.feralfile.com --playlists-path ./playlists
  *
- *   # Upload a single exhibition
+ *   # Upload a single channel
  *   node scripts/upload-to-feed.js --api-key YOUR_API_KEY --feed-endpoint https://feed.feralfile.com --playlists-path ./playlists/net-evil-das
  *
  *   # Use local development server
@@ -62,7 +76,7 @@ async function fetchFeralFileAPI(endpoint) {
 }
 
 /**
- * Get exhibition info from Feral File API
+ * Get exhibition info from Feral File API (used as fallback for channel metadata)
  */
 async function getExhibition(slug) {
   console.log(`Fetching exhibition info for: ${slug}...`);
@@ -100,7 +114,7 @@ function resolveURI(rawSrc) {
 }
 
 /**
- * Build channel data from exhibition
+ * Build channel data from Feral File exhibition API response (fallback option)
  */
 function buildChannelFromExhibition(exhibition, playlistUrls) {
   // Build curators from curatorAlumni (single object)
@@ -155,6 +169,42 @@ function buildChannelFromExhibition(exhibition, playlistUrls) {
 
   if (coverImage) {
     channel.coverImage = coverImage;
+  }
+
+  return channel;
+}
+
+/**
+ * Build channel data from manifest metadata
+ */
+function buildChannelFromMetadata(metadata, playlistUrls) {
+  const channel = {
+    playlists: playlistUrls,
+  };
+
+  // Copy all metadata fields to channel
+  if (metadata.title) {
+    channel.title = metadata.title;
+  }
+
+  if (metadata.curator) {
+    channel.curator = metadata.curator;
+  }
+
+  if (metadata.curators) {
+    channel.curators = metadata.curators;
+  }
+
+  if (metadata.summary) {
+    channel.summary = metadata.summary;
+  }
+
+  if (metadata.publisher) {
+    channel.publisher = metadata.publisher;
+  }
+
+  if (metadata.coverImage) {
+    channel.coverImage = metadata.coverImage;
   }
 
   return channel;
@@ -232,19 +282,25 @@ async function createChannel(feedEndpoint, apiKey, channel) {
 }
 
 /**
- * Process a single exhibition folder
+ * Process a single channel folder (creates one channel from multiple playlists)
  */
-async function processExhibition(feedEndpoint, apiKey, exhibitionPath) {
-  const exhibitionSlug = path.basename(exhibitionPath);
+async function processChannel(
+  feedEndpoint,
+  apiKey,
+  channelPath,
+  channelMetadata = null,
+  dryrun = false
+) {
+  const channelSlug = path.basename(channelPath);
   const startTime = Date.now();
 
   console.log(`\n${'='.repeat(80)}`);
-  console.log(`Processing exhibition: ${exhibitionSlug}`);
+  console.log(`${dryrun ? '[DRY RUN] ' : ''}Processing channel: ${channelSlug}`);
   console.log('='.repeat(80));
 
-  // Get all playlist files in the exhibition folder
+  // Get all playlist files in the folder
   const files = fs
-    .readdirSync(exhibitionPath)
+    .readdirSync(channelPath)
     .filter(file => file.endsWith('.json') && file !== 'channels-manifest.json')
     .sort((a, b) => {
       // Sort by the index number at the start of filename
@@ -254,9 +310,9 @@ async function processExhibition(feedEndpoint, apiKey, exhibitionPath) {
     });
 
   if (files.length === 0) {
-    console.log(`⚠️  No playlist files found in ${exhibitionPath}`);
+    console.log(`⚠️  No playlist files found in ${channelPath}`);
     return {
-      exhibitionSlug,
+      channelSlug,
       status: 'skipped',
       reason: 'No playlist files found',
       playlists: [],
@@ -265,30 +321,48 @@ async function processExhibition(feedEndpoint, apiKey, exhibitionPath) {
 
   console.log(`Found ${files.length} playlist(s)`);
 
-  // Upload all playlists
+  // Upload all playlists (or validate in dry-run mode)
   const uploadedPlaylists = [];
   const failedPlaylists = [];
 
   for (const file of files) {
-    const playlistPath = path.join(exhibitionPath, file);
-    const playlistData = JSON.parse(fs.readFileSync(playlistPath, 'utf-8'));
+    const playlistPath = path.join(channelPath, file);
 
     try {
-      const result = await uploadPlaylist(feedEndpoint, apiKey, playlistData);
-      uploadedPlaylists.push({
-        file,
-        id: result.id,
-        slug: result.slug,
-        title: result.title,
-        itemCount: result.items?.length || 0,
-      });
+      const playlistData = JSON.parse(fs.readFileSync(playlistPath, 'utf-8'));
+
+      if (dryrun) {
+        // Dry-run: validate playlist structure
+        console.log(
+          `  ✓ ${file}: ${playlistData.title} (${playlistData.items?.length || 0} items) [VALIDATED]`
+        );
+        uploadedPlaylists.push({
+          file,
+          id: 'dry-run-id',
+          slug: 'dry-run-slug',
+          title: playlistData.title,
+          itemCount: playlistData.items?.length || 0,
+        });
+      } else {
+        // Actually upload
+        const result = await uploadPlaylist(feedEndpoint, apiKey, playlistData);
+        uploadedPlaylists.push({
+          file,
+          id: result.id,
+          slug: result.slug,
+          title: result.title,
+          itemCount: result.items?.length || 0,
+        });
+      }
     } catch (error) {
-      console.error(`  ✗ Failed to upload ${file}:`, error.message);
+      console.error(`  ✗ Failed to ${dryrun ? 'validate' : 'upload'} ${file}:`, error.message);
       failedPlaylists.push({
         file,
         error: error.message,
       });
-      throw error;
+      if (!dryrun) {
+        throw error;
+      }
     }
   }
 
@@ -297,31 +371,114 @@ async function processExhibition(feedEndpoint, apiKey, exhibitionPath) {
     p => `${feedEndpoint}/api/v1/playlists/${encodeURIComponent(p.id)}`
   );
 
-  // Fetch exhibition info from Feral File API
-  const exhibition = await getExhibition(exhibitionSlug);
+  // Build channel data - prefer manifest metadata, fallback to Feral File Exhibition API
+  let channelData;
+  let channelTitle = null;
+  let dataSource = 'unknown';
 
-  // Build channel data
-  const channelData = buildChannelFromExhibition(exhibition, playlistUrls);
+  if (channelMetadata) {
+    // Use metadata from channels-manifest.json
+    console.log(`${dryrun ? '\n' : ''}Using channel metadata from channels-manifest.json`);
+    channelData = buildChannelFromMetadata(channelMetadata, playlistUrls);
+    dataSource = 'manifest';
+  } else {
+    // Fallback to Feral File Exhibition API (treating channel slug as exhibition slug)
+    console.log(
+      `${dryrun ? '\n' : ''}No manifest metadata found, attempting fallback to Feral File Exhibition API...`
+    );
+    try {
+      const exhibition = await getExhibition(channelSlug);
+      channelData = buildChannelFromExhibition(exhibition, playlistUrls);
+      dataSource = 'feral-file-api';
+    } catch (error) {
+      console.error(`✗ Failed to fetch from Feral File Exhibition API: ${error.message}`);
 
-  // Create channel
+      // In dry-run mode, return validation failure instead of throwing
+      if (dryrun) {
+        return {
+          channelSlug,
+          status: 'validation_failed',
+          reason: `No channel metadata in manifest and Feral File Exhibition API failed: ${error.message}`,
+          dataSource: null,
+          playlists: uploadedPlaylists,
+          invalidPlaylists: failedPlaylists,
+          duration: Date.now() - startTime,
+        };
+      }
+
+      throw new Error(
+        `No channel metadata in manifest and Feral File Exhibition API failed: ${error.message}`
+      );
+    }
+  }
+
+  // Validate that we have at least a title
+  if (!channelData.title) {
+    const errorMsg = `Channel data must include a title. Source: ${dataSource}`;
+
+    if (dryrun) {
+      return {
+        channelSlug,
+        status: 'validation_failed',
+        reason: errorMsg,
+        dataSource,
+        playlists: uploadedPlaylists,
+        invalidPlaylists: failedPlaylists,
+        duration: Date.now() - startTime,
+      };
+    }
+
+    throw new Error(errorMsg);
+  }
+
+  channelTitle = channelData.title;
+
+  // Create channel (or validate in dry-run mode)
   try {
+    if (dryrun) {
+      // Dry-run: just validate and report what would be created
+      const duration = Date.now() - startTime;
+
+      console.log(`\n  Would create channel: "${channelTitle}"`);
+      console.log(`  Playlists: ${uploadedPlaylists.length}`);
+      console.log(`  Data Source: ${dataSource}`);
+      console.log(`  Duration: ${(duration / 1000).toFixed(2)}s`);
+
+      if (failedPlaylists.length > 0) {
+        console.log(`  ⚠️  ${failedPlaylists.length} playlist(s) failed validation`);
+      }
+
+      return {
+        channelSlug,
+        status: failedPlaylists.length > 0 ? 'validation_failed' : 'validated',
+        dataSource,
+        wouldCreateChannel: failedPlaylists.length === 0,
+        channelData: {
+          title: channelTitle,
+          playlistCount: uploadedPlaylists.length,
+        },
+        playlists: uploadedPlaylists,
+        invalidPlaylists: failedPlaylists,
+        duration,
+      };
+    }
+
+    // Actually create channel
     const channel = await createChannel(feedEndpoint, apiKey, channelData);
     const duration = Date.now() - startTime;
 
-    console.log(`\n✓ Exhibition "${exhibition.title}" uploaded successfully!`);
+    console.log(`\n✓ Channel "${channelTitle}" uploaded successfully!`);
     console.log(`  Channel ID: ${channel.id}`);
     console.log(`  Channel Slug: ${channel.slug}`);
     console.log(`  Playlists: ${uploadedPlaylists.length}`);
+    console.log(`  Data Source: ${dataSource}`);
     console.log(`  Duration: ${(duration / 1000).toFixed(2)}s`);
 
     return {
-      exhibitionSlug,
+      channelSlug,
       status: 'success',
       publishedAt: new Date().toISOString(),
-      exhibition: {
-        title: exhibition.title,
-        slug: exhibitionSlug,
-      },
+      dataSource,
       channel: {
         id: channel.id,
         slug: channel.slug,
@@ -339,7 +496,7 @@ async function processExhibition(feedEndpoint, apiKey, exhibitionPath) {
     console.error(`✗ Failed to create channel:`, error.message);
 
     return {
-      exhibitionSlug,
+      channelSlug,
       status: 'failed',
       reason: `Failed to create channel: ${error.message}`,
       playlists: uploadedPlaylists,
@@ -382,38 +539,38 @@ function writePublishArtifact({ artifactPath, artifact }) {
   console.log(`\n📦 Publish artifact written to: ${artifactPath}`);
 }
 
-function validatePublishedExhibition({ result, canonicalOrigin }) {
+function validatePublishedChannel({ result, canonicalOrigin }) {
   if (result.status !== 'success') {
     return;
   }
   if (!result.channel?.id || !result.channel?.slug || !result.channel?.url) {
     throw new Error(
-      `validation failed for exhibition ${result.exhibitionSlug}: missing required channel fields`
+      `validation failed for channel ${result.channelSlug}: missing required channel fields`
     );
   }
   if (!Array.isArray(result.playlists) || result.playlists.length === 0) {
     throw new Error(
-      `validation failed for exhibition ${result.exhibitionSlug}: no playlists in success result`
+      `validation failed for channel ${result.channelSlug}: no playlists in success result`
     );
   }
 
   const expectedChannelUrl = `${canonicalOrigin}/api/v1/channels/${encodeURIComponent(result.channel.id)}`;
   if (result.channel.url !== expectedChannelUrl) {
     throw new Error(
-      `validation failed for exhibition ${result.exhibitionSlug}: channel url mismatch (expected ${expectedChannelUrl}, got ${result.channel.url})`
+      `validation failed for channel ${result.channelSlug}: channel url mismatch (expected ${expectedChannelUrl}, got ${result.channel.url})`
     );
   }
 
   for (const playlist of result.playlists) {
     if (!playlist?.id || !playlist?.slug || !playlist?.url) {
       throw new Error(
-        `validation failed for exhibition ${result.exhibitionSlug}: playlist is missing id/slug/url`
+        `validation failed for channel ${result.channelSlug}: playlist is missing id/slug/url`
       );
     }
     const expectedPlaylistUrl = `${canonicalOrigin}/api/v1/playlists/${encodeURIComponent(playlist.id)}`;
     if (playlist.url !== expectedPlaylistUrl) {
       throw new Error(
-        `validation failed for exhibition ${result.exhibitionSlug}: playlist url mismatch for ${playlist.id} (expected ${expectedPlaylistUrl}, got ${playlist.url})`
+        `validation failed for channel ${result.channelSlug}: playlist url mismatch for ${playlist.id} (expected ${expectedPlaylistUrl}, got ${playlist.url})`
       );
     }
   }
@@ -427,6 +584,13 @@ function buildPublishArtifact({
   completedAt,
   isDryRun,
 }) {
+  // Calculate summary statistics
+  const successful = results.filter(r => r.status === 'success').length;
+  const failed = results.filter(r => r.status === 'failed').length;
+  const skipped = results.filter(r => r.status === 'skipped').length;
+  const totalPlaylists = results.reduce((sum, r) => sum + (r.playlists?.length || 0), 0);
+  const totalDuration = results.reduce((sum, r) => sum + (r.duration || 0), 0);
+
   return {
     schema_version: PUBLISH_ARTIFACT_SCHEMA_VERSION,
     generated_at: new Date().toISOString(),
@@ -434,14 +598,21 @@ function buildPublishArtifact({
     started_at: startedAt,
     completed_at: completedAt,
     canonical_origin: canonicalOrigin,
-    feed_endpoint_input: feedEndpointInput,
-    exhibitions: results.map(result => ({
-      exhibition_slug: result.exhibitionSlug,
+    summary: {
+      total: results.length,
+      successful,
+      failed,
+      skipped,
+      total_playlists: totalPlaylists,
+      total_duration_ms: totalDuration,
+    },
+    channels: results.map(result => ({
+      source_folder: result.channelSlug,
       status: result.status,
       published_at: result.publishedAt || null,
       duration_ms: result.duration || 0,
+      data_source: result.dataSource || null,
       reason: result.reason || null,
-      exhibition: result.exhibition || null,
       channel:
         result.channel && result.status === 'success'
           ? {
@@ -449,11 +620,12 @@ function buildPublishArtifact({
               slug: result.channel.slug,
               title: result.channel.title,
               url: result.channel.url,
+              playlist_count: result.channel.playlistCount || 0,
             }
           : null,
       playlists: Array.isArray(result.playlists)
         ? result.playlists.map(playlist => ({
-            file: playlist.file || null,
+            source_file: playlist.file || null,
             id: playlist.id || null,
             slug: playlist.slug || null,
             title: playlist.title || null,
@@ -477,28 +649,31 @@ function validatePublishArtifactOrThrow(artifact) {
   if (!artifact.canonical_origin || !artifact.started_at || !artifact.completed_at) {
     throw new Error('artifact validation failed: missing canonical_origin/started_at/completed_at');
   }
-  if (!Array.isArray(artifact.exhibitions)) {
-    throw new Error('artifact validation failed: exhibitions must be an array');
+  if (!artifact.summary || typeof artifact.summary !== 'object') {
+    throw new Error('artifact validation failed: missing summary object');
   }
-  for (const exhibition of artifact.exhibitions) {
-    if (!exhibition?.exhibition_slug || !exhibition?.status) {
-      throw new Error('artifact validation failed: exhibition_slug/status are required');
+  if (!Array.isArray(artifact.channels)) {
+    throw new Error('artifact validation failed: channels must be an array');
+  }
+  for (const channel of artifact.channels) {
+    if (!channel?.source_folder || !channel?.status) {
+      throw new Error('artifact validation failed: source_folder/status are required');
     }
-    if (exhibition.status === 'success') {
-      if (!exhibition.channel?.id || !exhibition.channel?.url) {
+    if (channel.status === 'success') {
+      if (!channel.channel?.id || !channel.channel?.url) {
         throw new Error(
-          `artifact validation failed: success exhibition ${exhibition.exhibition_slug} missing channel`
+          `artifact validation failed: success channel ${channel.source_folder} missing channel data`
         );
       }
-      if (!Array.isArray(exhibition.playlists) || exhibition.playlists.length === 0) {
+      if (!Array.isArray(channel.playlists) || channel.playlists.length === 0) {
         throw new Error(
-          `artifact validation failed: success exhibition ${exhibition.exhibition_slug} missing playlists`
+          `artifact validation failed: success channel ${channel.source_folder} missing playlists`
         );
       }
-      for (const playlist of exhibition.playlists) {
+      for (const playlist of channel.playlists) {
         if (!playlist?.id || !playlist?.url || !playlist?.slug) {
           throw new Error(
-            `artifact validation failed: success exhibition ${exhibition.exhibition_slug} has incomplete playlist rows`
+            `artifact validation failed: success channel ${channel.source_folder} has incomplete playlist rows`
           );
         }
       }
@@ -520,6 +695,7 @@ function getChannelsManifest(playlistsPath) {
       return {
         path: manifestPath,
         channels: manifestData.channels || [],
+        metadata: manifestData.metadata || {},
         existed: true,
       };
     } catch (error) {
@@ -620,33 +796,38 @@ async function main() {
 
   try {
     if (stat.isDirectory()) {
-      // Check if it's an exhibition folder (contains playlist JSON files) or a parent folder
+      // Check if it's an channel folder (contains playlist JSON files) or a parent folder
       const files = fs.readdirSync(playlistsPath);
       const hasPlaylistFiles = files.some(
         f => f.endsWith('.json') && f !== 'channels-manifest.json'
       );
 
       if (hasPlaylistFiles) {
-        // It's an exhibition folder
-        if (isDryRun) {
-          const result = await processExhibitionDryRun(playlistsPath);
-          if (result) {
-            results.push(result);
-          }
-        } else {
-          const result = await processExhibition(feedEndpoint, apiKey, playlistsPath);
-          if (result) {
-            results.push(result);
-          }
+        // It's a channel folder
+        // When processing a single channel folder, check for manifest in parent
+        const channelSlug = path.basename(playlistsPath);
+        const parentPath = path.dirname(playlistsPath);
+        const manifest = getChannelsManifest(parentPath);
+        const channelMetadata = manifest?.metadata?.[channelSlug] || null;
+
+        const result = await processChannel(
+          feedEndpoint,
+          apiKey,
+          playlistsPath,
+          channelMetadata,
+          isDryRun
+        );
+        if (result) {
+          results.push(result);
         }
       } else {
-        // It's a parent folder, process all subdirectories
+        // It's a parent folder, process all subdirectories (channels)
         const subDirs = files.filter(f => {
           const subPath = path.join(playlistsPath, f);
           return fs.statSync(subPath).isDirectory();
         });
 
-        console.log(`Found ${subDirs.length} exhibition folder(s)\n`);
+        console.log(`Found ${subDirs.length} channel folder(s)\n`);
 
         // Check for channels manifest
         const manifest = getChannelsManifest(playlistsPath);
@@ -656,11 +837,11 @@ async function main() {
           // Use manifest order
           orderedSubDirs = manifest.channels;
 
-          // Warn about exhibitions in filesystem but not in manifest
+          // Warn about channels in filesystem but not in manifest
           const missingFromManifest = subDirs.filter(dir => !orderedSubDirs.includes(dir));
           if (missingFromManifest.length > 0) {
             console.warn(
-              `⚠️  Warning: ${missingFromManifest.length} exhibition(s) found but not in manifest:`
+              `⚠️  Warning: ${missingFromManifest.length} channel(s) found but not in manifest:`
             );
             missingFromManifest.forEach(dir => console.warn(`    - ${dir}`));
             console.warn(
@@ -668,46 +849,47 @@ async function main() {
             );
           }
 
-          // Warn about exhibitions in manifest but not in filesystem
+          // Warn about channels in manifest but not in filesystem
           const missingFromFilesystem = orderedSubDirs.filter(dir => !subDirs.includes(dir));
           if (missingFromFilesystem.length > 0) {
             console.warn(
-              `⚠️  Warning: ${missingFromFilesystem.length} exhibition(s) in manifest but not found:`
+              `⚠️  Warning: ${missingFromFilesystem.length} channel(s) in manifest but not found:`
             );
             missingFromFilesystem.forEach(dir => console.warn(`    - ${dir}`));
             console.warn('    These will be skipped.\n');
           }
 
-          // Filter to only process exhibitions that exist
+          // Filter to only process channels that exist
           orderedSubDirs = orderedSubDirs.filter(dir => subDirs.includes(dir));
-          console.log(`Processing ${orderedSubDirs.length} exhibition(s) in manifest order:\n`);
+          console.log(`Processing ${orderedSubDirs.length} channel(s) in manifest order:\n`);
           orderedSubDirs.forEach((dir, idx) => console.log(`  ${idx + 1}. ${dir}`));
           console.log('');
         } else {
           // No manifest, create default one
           console.log('No channels manifest found. Creating default...\n');
           orderedSubDirs = createDefaultManifest(playlistsPath, subDirs);
-          console.log(`Processing ${orderedSubDirs.length} exhibition(s) in alphabetical order\n`);
+          console.log(`Processing ${orderedSubDirs.length} channel(s) in alphabetical order\n`);
         }
 
         for (const subDir of orderedSubDirs) {
           const subPath = path.join(playlistsPath, subDir);
+          const channelMetadata = manifest?.metadata?.[subDir] || null;
+
           try {
-            if (isDryRun) {
-              const result = await processExhibitionDryRun(subPath);
-              if (result) {
-                results.push(result);
-              }
-            } else {
-              const result = await processExhibition(feedEndpoint, apiKey, subPath);
-              if (result) {
-                results.push(result);
-              }
+            const result = await processChannel(
+              feedEndpoint,
+              apiKey,
+              subPath,
+              channelMetadata,
+              isDryRun
+            );
+            if (result) {
+              results.push(result);
             }
           } catch (error) {
             console.error(`\n✗ Failed to process ${subDir}:`, error.message);
             results.push({
-              exhibitionSlug: subDir,
+              channelSlug: subDir,
               status: 'failed',
               reason: error.message,
               playlists: [],
@@ -725,7 +907,7 @@ async function main() {
 
         console.log(`\n${'='.repeat(80)}`);
         console.log('Summary:');
-        console.log(`  Total Exhibitions: ${results.length}`);
+        console.log(`  Total Channels: ${results.length}`);
         if (isDryRun) {
           console.log(`  Validated: ${successful.length}`);
           console.log(`  Validation Failed: ${failed.length}`);
@@ -740,9 +922,9 @@ async function main() {
         console.log('='.repeat(80));
 
         if (failed.length > 0) {
-          console.log(`\nFailed exhibitions:`);
+          console.log(`\nFailed channels:`);
           for (const result of failed) {
-            console.log(`  ✗ ${result.exhibitionSlug}: ${result.reason || 'Validation failed'}`);
+            console.log(`  ✗ ${result.channelSlug}: ${result.reason || 'Validation failed'}`);
           }
         }
       }
@@ -755,7 +937,7 @@ async function main() {
     const completedAtIso = new Date(endTime).toISOString();
 
     for (const result of results) {
-      validatePublishedExhibition({
+      validatePublishedChannel({
         result,
         canonicalOrigin: feedEndpoint,
       });
@@ -788,109 +970,6 @@ async function main() {
     }
     process.exit(1);
   }
-}
-
-/**
- * Process exhibition in dry-run mode (validation only)
- */
-async function processExhibitionDryRun(exhibitionPath) {
-  const exhibitionSlug = path.basename(exhibitionPath);
-  const startTime = Date.now();
-
-  console.log(`\n${'='.repeat(80)}`);
-  console.log(`[DRY RUN] Processing exhibition: ${exhibitionSlug}`);
-  console.log('='.repeat(80));
-
-  // Get all playlist files
-  const files = fs
-    .readdirSync(exhibitionPath)
-    .filter(file => file.endsWith('.json') && file !== 'channels-manifest.json')
-    .sort((a, b) => {
-      const aIndex = parseInt(a.split('-')[0]);
-      const bIndex = parseInt(b.split('-')[0]);
-      return aIndex - bIndex;
-    });
-
-  if (files.length === 0) {
-    console.log(`⚠️  No playlist files found in ${exhibitionPath}`);
-    return {
-      exhibitionSlug,
-      status: 'skipped',
-      reason: 'No playlist files found',
-      playlists: [],
-      duration: Date.now() - startTime,
-    };
-  }
-
-  console.log(`Found ${files.length} playlist(s)`);
-
-  const validatedPlaylists = [];
-  const invalidPlaylists = [];
-
-  // Validate each playlist
-  for (const file of files) {
-    const playlistPath = path.join(exhibitionPath, file);
-    try {
-      const playlistData = JSON.parse(fs.readFileSync(playlistPath, 'utf-8'));
-      console.log(`  ✓ ${file}: ${playlistData.title} (${playlistData.items?.length || 0} items)`);
-      validatedPlaylists.push({
-        file,
-        title: playlistData.title,
-        itemCount: playlistData.items?.length || 0,
-      });
-    } catch (error) {
-      console.error(`  ✗ ${file}: Failed to parse - ${error.message}`);
-      invalidPlaylists.push({
-        file,
-        error: error.message,
-      });
-    }
-  }
-
-  // Fetch exhibition info
-  let exhibitionInfo = null;
-  let curator = null;
-
-  try {
-    const exhibition = await getExhibition(exhibitionSlug);
-    exhibitionInfo = {
-      title: exhibition.title,
-      slug: exhibitionSlug,
-    };
-
-    console.log(`\n  Exhibition: ${exhibition.title}`);
-
-    const hasCurator = exhibition.curatorAlumni && typeof exhibition.curatorAlumni === 'object';
-    console.log(`  Curator: ${hasCurator ? '✓' : 'None'}`);
-
-    if (hasCurator) {
-      const curatorData = exhibition.curatorAlumni;
-      const name = curatorData.alias || curatorData.fullName;
-      console.log(`    - ${name}`);
-
-      curator = {
-        name,
-        alias: curatorData.alias,
-      };
-    }
-
-    console.log(`\n  Would create channel with ${files.length} playlist(s)`);
-  } catch (error) {
-    console.error(`\n  ⚠️  Could not fetch exhibition info: ${error.message}`);
-  }
-
-  const duration = Date.now() - startTime;
-
-  return {
-    exhibitionSlug,
-    status: invalidPlaylists.length > 0 ? 'validation_failed' : 'validated',
-    exhibition: exhibitionInfo,
-    curator,
-    playlists: validatedPlaylists,
-    invalidPlaylists,
-    wouldCreateChannel: invalidPlaylists.length === 0,
-    duration,
-  };
 }
 
 // Run the script
