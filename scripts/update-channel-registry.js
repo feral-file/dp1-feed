@@ -105,7 +105,9 @@ function validateArgs(args) {
     console.error('  --api-key        API key for Feed server authentication');
     console.error('  --publisher      Publisher name (e.g., "Feral File")');
     console.error('\nOptional flags:');
-    console.error('  --github-token   GitHub personal access token (triggers workflow if provided)');
+    console.error(
+      '  --github-token   GitHub personal access token (triggers workflow if provided)'
+    );
     console.error('  --mode           Update mode: "append" (default) or "replace"');
     console.error('\nExamples:');
     console.error('  # With GitHub workflow trigger:');
@@ -406,71 +408,82 @@ async function updateChannelRegistry(feedHost, apiKey, registryArray) {
 async function verifyRegistryUpdate(feedHost, expectedRegistry) {
   console.log(`\n🔍 Verifying registry update has taken effect...`);
   console.log(`  Expected publishers: ${expectedRegistry.length}`);
-  const expectedTotalChannels = expectedRegistry.reduce((sum, item) => sum + item.channel_urls.length, 0);
+  const expectedTotalChannels = expectedRegistry.reduce(
+    (sum, item) => sum + item.channel_urls.length,
+    0
+  );
   console.log(`  Expected total channels: ${expectedTotalChannels}`);
-  
+
   const startTime = Date.now();
   let attempts = 0;
-  
+
   while (true) {
     const elapsed = Date.now() - startTime;
     attempts++;
-    
+
     if (elapsed > REGISTRY_VERIFICATION_TIMEOUT_MS) {
-      console.warn(`\n⚠️  Registry verification timeout after ${REGISTRY_VERIFICATION_TIMEOUT_MS / 1000}s`);
+      console.warn(
+        `\n⚠️  Registry verification timeout after ${REGISTRY_VERIFICATION_TIMEOUT_MS / 1000}s`
+      );
       console.warn(`  The registry may still be cached. Proceeding anyway...`);
       return false;
     }
-    
+
     try {
       // Fetch with cache-busting query parameter
       const cacheBuster = Date.now();
       const registryUrl = `${feedHost}/api/v1/registry/channels?_=${cacheBuster}`;
-      
+
       const response = await fetch(registryUrl, {
         headers: {
           'Cache-Control': 'no-cache, no-store, must-revalidate',
-          'Pragma': 'no-cache',
+          Pragma: 'no-cache',
         },
       });
-      
+
       if (!response.ok) {
-        console.log(`  Attempt ${attempts}: Registry fetch failed (${response.status}), retrying...`);
+        console.log(
+          `  Attempt ${attempts}: Registry fetch failed (${response.status}), retrying...`
+        );
         await new Promise(resolve => setTimeout(resolve, REGISTRY_VERIFICATION_INTERVAL_MS));
         continue;
       }
-      
+
       const currentRegistry = await response.json();
-      
+
       if (!Array.isArray(currentRegistry)) {
         console.log(`  Attempt ${attempts}: Registry format unexpected, retrying...`);
         await new Promise(resolve => setTimeout(resolve, REGISTRY_VERIFICATION_INTERVAL_MS));
         continue;
       }
-      
+
       // Compare the registry data
-      const currentTotalChannels = currentRegistry.reduce((sum, item) => sum + (item.channel_urls?.length || 0), 0);
-      
+      const currentTotalChannels = currentRegistry.reduce(
+        (sum, item) => sum + (item.channel_urls?.length || 0),
+        0
+      );
+
       // Check if the data matches expectations
-      if (currentRegistry.length === expectedRegistry.length && 
-          currentTotalChannels === expectedTotalChannels) {
-        
+      if (
+        currentRegistry.length === expectedRegistry.length &&
+        currentTotalChannels === expectedTotalChannels
+      ) {
         // Deep verification: check that all expected publishers and channels exist
         let allMatch = true;
-        
+
         for (const expectedItem of expectedRegistry) {
           const currentItem = currentRegistry.find(item => item.name === expectedItem.name);
-          
+
           if (!currentItem) {
             allMatch = false;
             break;
           }
-          
+
           if (currentItem.channel_urls.length !== expectedItem.channel_urls.length) {
             allMatch = false;
             break;
           }
-          
+
           // Check if all URLs match (order-independent)
           const currentUrls = new Set(currentItem.channel_urls);
           for (const url of expectedItem.channel_urls) {
@@ -479,21 +492,24 @@ async function verifyRegistryUpdate(feedHost, expectedRegistry) {
               break;
             }
           }
-          
+
           if (!allMatch) break;
         }
-        
+
         if (allMatch) {
-          console.log(`  ✓ Registry update verified! (took ${((Date.now() - startTime) / 1000).toFixed(1)}s)`);
+          console.log(
+            `  ✓ Registry update verified! (took ${((Date.now() - startTime) / 1000).toFixed(1)}s)`
+          );
           console.log(`    Publishers: ${currentRegistry.length}`);
           console.log(`    Total channels: ${currentTotalChannels}`);
           return true;
         }
       }
-      
-      console.log(`  Attempt ${attempts}: Registry not yet updated (publishers: ${currentRegistry.length}, channels: ${currentTotalChannels}), retrying...`);
+
+      console.log(
+        `  Attempt ${attempts}: Registry not yet updated (publishers: ${currentRegistry.length}, channels: ${currentTotalChannels}), retrying...`
+      );
       await new Promise(resolve => setTimeout(resolve, REGISTRY_VERIFICATION_INTERVAL_MS));
-      
     } catch (error) {
       console.log(`  Attempt ${attempts}: Error fetching registry: ${error.message}, retrying...`);
       await new Promise(resolve => setTimeout(resolve, REGISTRY_VERIFICATION_INTERVAL_MS));
@@ -746,28 +762,28 @@ async function main() {
 
     // Step 5: Update registry on server
     await updateChannelRegistry(feedHost, args.apiKey, updatedRegistry);
-    
+
     // Step 6, 7 & 8: Optionally trigger GitHub workflow if token provided
     if (args.githubToken) {
       console.log(`\n${'='.repeat(80)}`);
       console.log('GitHub Workflow');
       console.log('='.repeat(80));
-      
+
       // Step 6: Verify registry update has taken effect (not cached)
       await verifyRegistryUpdate(feedHost, updatedRegistry);
-      
+
       // Step 7: Trigger GitHub workflow
       await triggerGitHubWorkflow(args.githubToken, feedHost);
-      
+
       // Step 8: Wait for workflow completion
       const workflowRun = await waitForWorkflowCompletion(args.githubToken);
-      
+
       const duration = ((Date.now() - startTime) / 1000).toFixed(1);
       console.log(`\n${'='.repeat(80)}`);
       console.log('✅ Process completed successfully!');
       console.log(`   Total duration: ${duration}s`);
       console.log('='.repeat(80));
-      
+
       if (workflowRun && workflowRun.conclusion !== 'success') {
         process.exit(1);
       }
@@ -777,7 +793,7 @@ async function main() {
       console.log('='.repeat(80));
       console.log('⚠️  No GitHub token provided - skipping workflow trigger');
       console.log('   To trigger the database snapshot workflow, provide --github-token');
-      
+
       const duration = ((Date.now() - startTime) / 1000).toFixed(1);
       console.log(`\n${'='.repeat(80)}`);
       console.log('✅ Registry update completed successfully!');
