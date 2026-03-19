@@ -518,6 +518,50 @@ async function verifyRegistryUpdate(feedHost, expectedRegistry) {
 }
 
 /**
+ * Check if GitHub workflow exists
+ */
+async function checkWorkflowExists(githubToken) {
+  const workflowsUrl = `${GITHUB_API_BASE}/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/actions/workflows`;
+  
+  try {
+    const response = await fetch(workflowsUrl, {
+      headers: {
+        'Accept': 'application/vnd.github+json',
+        'Authorization': `Bearer ${githubToken}`,
+        'X-GitHub-Api-Version': '2022-11-28',
+      },
+    });
+    
+    if (!response.ok) {
+      throw new Error(`Failed to list workflows: ${response.status} ${response.statusText}`);
+    }
+    
+    const data = await response.json();
+    const workflows = data.workflows || [];
+    
+    // Look for the workflow by filename
+    const workflow = workflows.find(w => w.path.endsWith(WORKFLOW_FILE));
+    
+    if (!workflow) {
+      console.error(`\n❌ Workflow not found: ${WORKFLOW_FILE}`);
+      console.error(`\nAvailable workflows in ${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}:`);
+      workflows.forEach(w => {
+        console.error(`  - ${w.name} (${w.path}) [${w.state}]`);
+      });
+      throw new Error(`Workflow file "${WORKFLOW_FILE}" not found in repository`);
+    }
+    
+    console.log(`  ✓ Workflow found: ${workflow.name} (${workflow.state})`);
+    return workflow;
+  } catch (error) {
+    if (error.message.includes('fetch failed')) {
+      throw new Error(`Network error checking workflow: ${error.message}`);
+    }
+    throw error;
+  }
+}
+
+/**
  * Trigger GitHub workflow
  */
 async function triggerGitHubWorkflow(githubToken, feedHost) {
@@ -528,6 +572,9 @@ async function triggerGitHubWorkflow(githubToken, feedHost) {
   console.log(`  Repository: ${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}`);
   console.log(`  Workflow: ${WORKFLOW_FILE}`);
   console.log(`  Channels source: ${channelsSource}`);
+
+  // First, check if the workflow exists
+  await checkWorkflowExists(githubToken);
 
   try {
     const response = await fetch(workflowUrl, {
@@ -548,9 +595,29 @@ async function triggerGitHubWorkflow(githubToken, feedHost) {
 
     if (!response.ok) {
       const errorText = await response.text();
-      throw new Error(
-        `Failed to trigger workflow: ${response.status} ${response.statusText}\n${errorText}`
-      );
+
+      // Provide helpful error messages
+      if (response.status === 404) {
+        throw new Error(
+          `Failed to trigger workflow (404 Not Found).\n` +
+            `Possible causes:\n` +
+            `  1. Workflow file "${WORKFLOW_FILE}" doesn't exist on branch "main"\n` +
+            `  2. Branch "main" doesn't exist (try "master" or another branch)\n` +
+            `  3. GitHub token doesn't have "actions" permission\n` +
+            `Details: ${errorText}`
+        );
+      } else if (response.status === 403) {
+        throw new Error(
+          `Failed to trigger workflow (403 Forbidden).\n` +
+            `GitHub token may not have sufficient permissions.\n` +
+            `Required scopes: "repo", "workflow"\n` +
+            `Details: ${errorText}`
+        );
+      } else {
+        throw new Error(
+          `Failed to trigger workflow: ${response.status} ${response.statusText}\n${errorText}`
+        );
+      }
     }
 
     console.log(`  ✓ Workflow triggered successfully`);
@@ -565,8 +632,8 @@ async function triggerGitHubWorkflow(githubToken, feedHost) {
 /**
  * Get recent workflow runs
  */
-async function getRecentWorkflowRuns(githubToken) {
-  const runsUrl = `${GITHUB_API_BASE}/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/actions/workflows/${WORKFLOW_FILE}/runs?per_page=5`;
+async function getRecentWorkflowRuns(githubToken, limit = 10) {
+  const runsUrl = `${GITHUB_API_BASE}/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/actions/workflows/${WORKFLOW_FILE}/runs?per_page=${limit}`;
 
   try {
     const response = await fetch(runsUrl, {
@@ -614,49 +681,47 @@ async function getWorkflowRunStatus(githubToken, runId) {
 }
 
 /**
- * Wait for workflow to complete
+ * Wait for workflow to complete by finding the newly created run
  */
-async function waitForWorkflowCompletion(githubToken) {
+async function waitForWorkflowCompletion(githubToken, existingRunIds) {
   console.log(`\n⏳ Waiting for workflow to start...`);
 
   const startTime = Date.now();
-  let previousRunIds = new Set();
-
-  // Get current runs to establish baseline
-  try {
-    const initialRuns = await getRecentWorkflowRuns(githubToken);
-    initialRuns.forEach(run => previousRunIds.add(run.id));
-  } catch (error) {
-    console.warn(`  ⚠️  Could not fetch initial runs: ${error.message}`);
-  }
-
-  // Wait a bit for the workflow to appear
-  await new Promise(resolve => setTimeout(resolve, 5000));
+  
+  // Wait for GitHub to create the workflow run
+  console.log(`  Waiting 10 seconds for workflow to be created...`);
+  await new Promise(resolve => setTimeout(resolve, 10000));
 
   let workflowRun = null;
   let attempts = 0;
-  const maxAttempts = 12; // Try for 2 minutes to find the new run
+  const maxAttempts = 18; // Try for 3 minutes to find the new run
 
-  // Find the newly triggered run
+  // Find the newly triggered run by comparing with existing runs
   while (!workflowRun && attempts < maxAttempts) {
     attempts++;
 
     try {
-      const runs = await getRecentWorkflowRuns(githubToken);
+      const runs = await getRecentWorkflowRuns(githubToken, 20);
 
-      // Find a run that wasn't in our previous set
-      const newRun = runs.find(run => !previousRunIds.has(run.id));
+      // Find a run that wasn't in the existing set
+      const newRuns = runs.filter(run => !existingRunIds.has(run.id));
 
-      if (newRun) {
-        workflowRun = newRun;
+      if (newRuns.length > 0) {
+        // Get the most recent new run (runs are sorted by created_at desc)
+        workflowRun = newRuns[0];
         console.log(`  ✓ Workflow run found: #${workflowRun.run_number} (${workflowRun.id})`);
         console.log(`  Status: ${workflowRun.status}`);
+        console.log(`  Created: ${workflowRun.created_at}`);
         console.log(`  URL: ${workflowRun.html_url}`);
         break;
       }
 
       if (attempts < maxAttempts) {
         console.log(`  Attempt ${attempts}/${maxAttempts}: Workflow not yet visible, waiting...`);
+        if (attempts === 6) {
+          console.log(`  💡 Tip: Check if workflow is visible at:`);
+          console.log(`     https://github.com/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/actions`);
+        }
         await new Promise(resolve => setTimeout(resolve, WORKFLOW_CHECK_INTERVAL_MS));
       }
     } catch (error) {
@@ -671,6 +736,7 @@ async function waitForWorkflowCompletion(githubToken) {
     console.warn(
       `  https://github.com/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/actions/workflows/${WORKFLOW_FILE}`
     );
+    console.warn(`\n  Note: The workflow was successfully triggered.`);
     return null;
   }
 
@@ -771,12 +837,22 @@ async function main() {
 
       // Step 6: Verify registry update has taken effect (not cached)
       await verifyRegistryUpdate(feedHost, updatedRegistry);
-
-      // Step 7: Trigger GitHub workflow
+      
+      // Step 7: Get existing workflow runs before triggering
+      let existingRunIds = new Set();
+      try {
+        const existingRuns = await getRecentWorkflowRuns(args.githubToken, 20);
+        existingRuns.forEach(run => existingRunIds.add(run.id));
+        console.log(`\n  Recorded ${existingRunIds.size} existing workflow run(s)`);
+      } catch (error) {
+        console.warn(`  ⚠️  Could not fetch existing runs: ${error.message}`);
+      }
+      
+      // Step 8: Trigger GitHub workflow
       await triggerGitHubWorkflow(args.githubToken, feedHost);
-
-      // Step 8: Wait for workflow completion
-      const workflowRun = await waitForWorkflowCompletion(args.githubToken);
+      
+      // Step 9: Wait for workflow completion
+      const workflowRun = await waitForWorkflowCompletion(args.githubToken, existingRunIds);
 
       const duration = ((Date.now() - startTime) / 1000).toFixed(1);
       console.log(`\n${'='.repeat(80)}`);
