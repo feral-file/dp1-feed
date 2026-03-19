@@ -477,6 +477,70 @@ export function generateSlug(title: string): string {
 }
 
 /**
+ * Zod schemas for curated channel registry validation
+ * Simple array format with name and channel_urls
+ */
+
+// Registry item schema
+export const RegistryItemSchema = z.object({
+  name: z.string().min(1).max(256),
+  channel_urls: z
+    .array(
+      z
+        .string()
+        .url()
+        .regex(/\/api\/v1\/channels\/[0-9a-f-]{36}$/, {
+          message: 'Channel URL must end with /api/v1/channels/{uuid}',
+        })
+    )
+    .min(1)
+    .max(10000), // Reasonable upper limit
+});
+
+// Curated registry schema - a simple array
+export const CuratedRegistrySchema = z.array(RegistryItemSchema).min(1).max(1000);
+
+// TypeScript types inferred from schemas
+export type RegistryItem = z.infer<typeof RegistryItemSchema>;
+export type CuratedRegistry = z.infer<typeof CuratedRegistrySchema>;
+
+/**
+ * Validate curated registry JSON structure
+ * Returns validation result with typed data or error details
+ */
+export function validateCuratedRegistry(data: unknown): {
+  success: boolean;
+  data?: CuratedRegistry;
+  error?: {
+    message: string;
+    issues: Array<{ path: string; message: string }>;
+  };
+} {
+  const result = CuratedRegistrySchema.safeParse(data);
+
+  if (result.success) {
+    return {
+      success: true,
+      data: result.data,
+    };
+  }
+
+  // Format Zod errors into a readable structure
+  const issues = result.error.issues.map(issue => ({
+    path: issue.path.join('.'),
+    message: issue.message,
+  }));
+
+  return {
+    success: false,
+    error: {
+      message: 'Invalid curated registry format',
+      issues,
+    },
+  };
+}
+
+/**
  * Create a deterministic content hash for playlist items using JCS (RFC 8785) and SHA-256
  * This allows us to detect changes in playlist items regardless of field order
  */

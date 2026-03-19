@@ -56,6 +56,8 @@ services:
       - .env.sample
       - path: .env # Optional: override with local values
         required: false
+    volumes:
+      - file_storage:/app/data/files
     ports:
       - '8787:8787'
     networks:
@@ -127,6 +129,8 @@ volumes:
   etcd_data:
     driver: local
   nats_data:
+    driver: local
+  file_storage:
     driver: local
 
 networks:

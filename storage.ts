@@ -143,6 +143,22 @@ export async function deleteChannel(channelId: string, env: Env): Promise<boolea
   return await storageService.deleteChannel(channelId, env);
 }
 
+/**
+ * Get curated channel registry
+ */
+export async function getCuratedRegistry(env: Env): Promise<string | null> {
+  const storageService = createStorageService(env);
+  return await storageService.getCuratedRegistry();
+}
+
+/**
+ * Save curated channel registry
+ */
+export async function saveCuratedRegistry(content: string, env: Env): Promise<void> {
+  const storageService = createStorageService(env);
+  await storageService.saveCuratedRegistry(content);
+}
+
 // Re-export types and constants for convenience
 export type { PaginatedResult, ListOptions };
 export { STORAGE_KEYS };

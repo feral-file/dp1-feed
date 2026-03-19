@@ -1,7 +1,7 @@
 import type { Env } from '../types';
-import { CloudFlareStorageProvider } from '../storage/cloudflare-kv';
+import { CloudFlareStorageProvider } from '../storage/cloudflare';
 import { CloudFlareQueueProvider } from '../queue/cloudflare-queue';
-import type { KVNamespace, Queue } from '@cloudflare/workers-types';
+import type { KVNamespace, Queue, R2Bucket } from '@cloudflare/workers-types';
 
 /**
  * CloudFlare Worker bindings interface
@@ -31,6 +31,9 @@ export interface CloudFlareBindings {
 
   // CloudFlare Queue binding
   DP1_WRITE_QUEUE: Queue;
+
+  // CloudFlare R2 binding (optional, for file storage)
+  DP1_STATIC_FILES?: R2Bucket;
 
   // Optional environment variables
   ENVIRONMENT?: string;
@@ -92,7 +95,8 @@ export function initializeCloudFlareEnv(bindings: CloudFlareBindings): Env {
       namespaceId: bindings.CLOUDFLARE_PLAYLIST_ITEMS_NAMESPACE_ID,
       apiToken: bindings.CLOUDFLARE_API_TOKEN,
       localBinding: isLocal,
-    }
+    },
+    bindings.DP1_STATIC_FILES // Pass R2 bucket for file storage (optional)
   );
 
   const queueProvider = new CloudFlareQueueProvider(bindings.DP1_WRITE_QUEUE);

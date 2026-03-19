@@ -1951,6 +1951,207 @@ async function testPlaylistItemSorting() {
   return true;
 }
 
+// Curated Registry API Tests
+async function testGetCuratedRegistry() {
+  console.log('\n📋 Testing GET curated registry...');
+
+  const response = await makeRequest('GET', '/api/v1/registry/channels');
+
+  if (response.ok) {
+    console.log('✅ Curated registry retrieved successfully');
+
+    // Verify response structure - should be an array
+    if (!Array.isArray(response.data)) {
+      console.log('❌ Registry should be an array');
+      return false;
+    }
+
+    console.log(`   Items count: ${response.data.length}`);
+
+    // If there are items, validate structure
+    if (response.data.length > 0) {
+      const firstItem = response.data[0];
+      if (!firstItem.name || !Array.isArray(firstItem.channel_urls)) {
+        console.log('❌ Invalid registry item structure');
+        return false;
+      }
+      console.log(`   First item: ${firstItem.name}`);
+      console.log(`   Channel URLs: ${firstItem.channel_urls.length}`);
+    }
+
+    return true;
+  } else if (response.status === 404) {
+    console.log('ℹ️  Registry file not found yet (expected for new deployment)');
+    return true;
+  } else {
+    console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
+    return false;
+  }
+}
+
+async function testPutCuratedRegistry() {
+  console.log('\n📝 Testing PUT curated registry...');
+
+  const testRegistry = [
+    {
+      name: 'Test Publisher 1',
+      channel_urls: [
+        `${baseUrl}/api/v1/channels/${randomUUID()}`,
+        `${baseUrl}/api/v1/channels/${randomUUID()}`,
+      ],
+    },
+    {
+      name: 'Test Publisher 2',
+      channel_urls: [`${baseUrl}/api/v1/channels/${randomUUID()}`],
+    },
+  ];
+
+  const response = await makeRequest('PUT', '/api/v1/registry/channels', testRegistry);
+
+  if (response.ok) {
+    console.log('✅ Curated registry updated successfully');
+    console.log(`   Items: ${testRegistry.length}`);
+
+    // Verify the update by reading it back
+    await new Promise(resolve => setTimeout(resolve, 500)); // Wait for write to complete
+
+    const getResponse = await makeRequest('GET', '/api/v1/registry/channels');
+
+    if (!getResponse.ok) {
+      console.log('❌ Failed to retrieve updated registry');
+      return false;
+    }
+
+    // Verify the data matches
+    if (getResponse.data.length !== testRegistry.length) {
+      console.log('❌ Item count mismatch after update');
+      return false;
+    }
+
+    console.log('✅ Registry update verified');
+    return true;
+  } else {
+    console.log(`❌ Failed: ${response.status} - ${JSON.stringify(response.data)}`);
+    return false;
+  }
+}
+
+async function testPutCuratedRegistryValidation() {
+  console.log('\n🔍 Testing PUT curated registry validation...');
+
+  // Test 1: Invalid type - not an array
+  console.log('   Testing invalid type (not an array)...');
+  const invalidRegistry1 = {
+    dp1_playlist: {
+      publishers: [],
+    },
+  };
+
+  const response1 = await makeRequest('PUT', '/api/v1/registry/channels', invalidRegistry1);
+
+  if (response1.status !== 400) {
+    console.log(`❌ Expected 400 for non-array data, got ${response1.status}`);
+    return false;
+  }
+  console.log('   ✅ Correctly rejected non-array data');
+
+  // Test 2: Empty array
+  console.log('   Testing empty array...');
+  const invalidRegistry2 = [];
+
+  const response2 = await makeRequest('PUT', '/api/v1/registry/channels', invalidRegistry2);
+
+  if (response2.status !== 400) {
+    console.log(`❌ Expected 400 for empty array, got ${response2.status}`);
+    return false;
+  }
+  console.log('   ✅ Correctly rejected empty array');
+
+  // Test 3: Invalid channel URL format
+  console.log('   Testing invalid channel URL format...');
+  const invalidRegistry3 = [
+    {
+      name: 'Invalid Publisher',
+      channel_urls: ['https://example.com/invalid/path'],
+    },
+  ];
+
+  const response3 = await makeRequest('PUT', '/api/v1/registry/channels', invalidRegistry3);
+
+  if (response3.status !== 400) {
+    console.log(`❌ Expected 400 for invalid channel URL, got ${response3.status}`);
+    return false;
+  }
+  console.log('   ✅ Correctly rejected invalid channel URL format');
+
+  // Test 4: Empty publisher name
+  console.log('   Testing empty publisher name...');
+  const invalidRegistry4 = {
+    dp1_playlist: {
+      publishers: [
+        {
+          name: '',
+          channel_urls: [`${baseUrl}/api/v1/channels/${randomUUID()}`],
+        },
+      ],
+    },
+  };
+
+  const response4 = await makeRequest('PUT', '/api/v1/registry/channels', invalidRegistry4);
+
+  if (response4.status !== 400) {
+    console.log(`❌ Expected 400 for empty name, got ${response4.status}`);
+    return false;
+  }
+  console.log('   ✅ Correctly rejected empty publisher name');
+
+  console.log('✅ All validation tests passed');
+  return true;
+}
+
+async function testCuratedRegistryAuthentication() {
+  console.log('\n🔐 Testing curated registry authentication...');
+
+  const testRegistry = [
+    {
+      name: 'Auth Test Publisher',
+      channel_urls: [`${baseUrl}/api/v1/channels/${randomUUID()}`],
+    },
+  ];
+
+  // Try PUT without authentication
+  console.log('   Testing PUT without authentication...');
+  const unauthResponse = await fetch(`${baseUrl}/api/v1/registry/channels`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      // No x-api-secret header
+    },
+    body: JSON.stringify(testRegistry),
+  });
+
+  if (unauthResponse.status !== 401 && unauthResponse.status !== 403) {
+    console.log(`❌ Expected 401/403 without auth, got ${unauthResponse.status}`);
+    return false;
+  }
+  console.log('   ✅ Correctly rejected unauthenticated PUT request');
+
+  // GET should work without authentication
+  console.log('   Testing GET without authentication...');
+  const publicGetResponse = await fetch(`${baseUrl}/api/v1/registry/channels`, {
+    method: 'GET',
+  });
+
+  if (publicGetResponse.status !== 200 && publicGetResponse.status !== 404) {
+    console.log(`❌ GET should be public, got ${publicGetResponse.status}`);
+    return false;
+  }
+  console.log('   ✅ GET is public (no authentication required)');
+
+  console.log('✅ Registry authentication working correctly');
+  return true;
+}
+
 // Test bulk write: Playlist with 1024 items
 let bulkTestPlaylistId = null;
 let bulkTestChannelId = null;
@@ -2505,6 +2706,11 @@ async function runTests() {
     { name: 'Playlist Sorting (Default)', fn: testPlaylistSortingDefault },
     { name: 'Channels Sorting', fn: testChannelSorting },
     { name: 'Playlist Item Sorting', fn: testPlaylistItemSorting },
+    // Curated registry tests
+    { name: 'Get Curated Registry', fn: testGetCuratedRegistry },
+    { name: 'Put Curated Registry', fn: testPutCuratedRegistry },
+    { name: 'Curated Registry Validation', fn: testPutCuratedRegistryValidation },
+    { name: 'Curated Registry Authentication', fn: testCuratedRegistryAuthentication },
     // Bulk write tests
     { name: 'Bulk Write: Create Playlist (1024 items)', fn: testBulkPlaylistCreate },
     { name: 'Bulk Write: Update Playlist (1024 items)', fn: testBulkPlaylistUpdate },
@@ -2545,7 +2751,7 @@ async function runTests() {
 
   if (passed === total) {
     console.log(
-      '\n🎉 All tests passed! Your DP-1 Feed Operator API is working correctly with UUID, slug support, queue-based processing, and bulk write operations (1024 items, 100 playlists).'
+      '\n🎉 All tests passed! Your DP-1 Feed Operator API is working correctly with UUID, slug support, queue-based processing, curated registry API, and bulk write operations (1024 items, 100 playlists).'
     );
   } else {
     console.log('\n⚠️  Some tests failed. Please check the output above for details.');

@@ -17,12 +17,7 @@ Quick start guide for local development of the DP-1 Feed API.
 npm install -g wrangler
 wrangler login
 
-# 2. Setup resources
-npm run worker:setup:kv
-npm run worker:setup:secrets
-npm run worker:setup:queues:dev
-
-# 3. Start development
+# 2. Start development
 npm run worker:dev
 # Server runs at http://localhost:8787
 ```
@@ -97,6 +92,10 @@ JWT_AUDIENCE = "your-audience"
 binding = "DP1_PLAYLISTS"
 id = "your-kv-id"
 
+[[r2_buckets]]
+binding = "DP1_STATIC_FILES"
+bucket_name = "dp1-static-files-dev"
+
 [[queues.producers]]
 binding = "DP1_WRITE_QUEUE"
 queue = "dp1-write-operations"
@@ -110,6 +109,36 @@ npm run worker:setup:secrets
 
 # Or for production
 npm run worker:setup:secrets:production
+```
+
+**R2 Buckets**:
+
+```bash
+# Create R2 buckets for dev environment
+npm run worker:setup:r2:dev
+
+# Or for production
+npm run worker:setup:r2:production
+```
+
+**KV**:
+
+```bash
+# Create KV for dev environment
+npm run worker:setup:kv
+
+# Or for production
+npm run worker:setup:kv:production
+```
+
+**Queue**:
+
+```bash
+# Create Queue for dev environment
+npm run worker:setup:queues:dev
+
+# Or for production
+npm worker:setup:queues:production
 ```
 
 ### Node.js

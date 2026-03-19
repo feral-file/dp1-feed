@@ -12,6 +12,7 @@ import { playlists } from './routes/playlists';
 import { channels } from './routes/channels';
 import playlistItems from './routes/playlistItems';
 import { queues as queueRoutes } from './routes/queues';
+import { registry } from './routes/registry';
 
 // Check if the runtime is self-hosted (Node.js)
 const isSelfHosted =
@@ -66,6 +67,7 @@ export function createApp<TBindings extends Record<string, any> = any>(envMiddle
         playlists: '/api/v1/playlists',
         channels: '/api/v1/channels',
         playlistItems: '/api/v1/playlist-items',
+        registryChannels: '/api/v1/registry/channels',
         health: '/api/v1/health',
         ...(isSelfHosted && { queues: '/queues' }),
       },
@@ -88,6 +90,9 @@ export function createApp<TBindings extends Record<string, any> = any>(envMiddle
   app.route('/api/v1/playlists', playlists);
   app.route('/api/v1/channels', channels);
   app.route('/api/v1/playlist-items', playlistItems);
+
+  // Mount registry routes under /api/channels
+  app.route('/api/v1/registry', registry);
 
   // For backward compatibility
   app.route('/api/v1/playlist-groups', channels);
@@ -116,6 +121,8 @@ export function createApp<TBindings extends Record<string, any> = any>(envMiddle
       'DELETE /api/v1/channels/:id',
       'GET /api/v1/playlist-items',
       'GET /api/v1/playlist-items/:id',
+      'GET /api/v1/registry/channels',
+      'PUT /api/v1/registry/channels',
     ];
 
     // Add queue endpoints for Node.js (self-hosted) deployment

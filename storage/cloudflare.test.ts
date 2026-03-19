@@ -3,7 +3,7 @@ import {
   CloudFlareKVStorage,
   CloudFlareStorageProvider,
   type CloudFlareKVConfig,
-} from './cloudflare-kv';
+} from './cloudflare';
 import type { KVGetOptions, KVListOptions } from './interfaces';
 
 // Mock global fetch
@@ -559,6 +559,105 @@ describe('CloudFlareStorageProvider', () => {
       const storage2 = provider.getPlaylistItemStorage();
 
       expect(storage1).toBe(storage2);
+    });
+  });
+
+  describe('getFileStorage', () => {
+    it('should return undefined when no R2 bucket is provided', () => {
+      const providerWithoutR2 = new CloudFlareStorageProvider(
+        mockPlaylistKV,
+        mockChannelKV,
+        mockPlaylistItemKV,
+        playlistConfig,
+        channelConfig,
+        playlistItemConfig
+      );
+
+      const fileStorage = providerWithoutR2.getFileStorage();
+
+      expect(fileStorage).toBeUndefined();
+    });
+
+    it('should return R2FileStorage when bucket is provided', () => {
+      const mockR2Bucket: any = {
+        get: vi.fn(),
+        put: vi.fn(),
+        head: vi.fn(),
+        delete: vi.fn(),
+        list: vi.fn(),
+      };
+
+      const providerWithR2 = new CloudFlareStorageProvider(
+        mockPlaylistKV,
+        mockChannelKV,
+        mockPlaylistItemKV,
+        playlistConfig,
+        channelConfig,
+        playlistItemConfig,
+        mockR2Bucket
+      );
+
+      const fileStorage = providerWithR2.getFileStorage();
+
+      expect(fileStorage).not.toBeNull();
+    });
+
+    it('should return the same instance on multiple calls', () => {
+      const mockR2Bucket: any = {
+        get: vi.fn(),
+        put: vi.fn(),
+        head: vi.fn(),
+        delete: vi.fn(),
+        list: vi.fn(),
+      };
+
+      const providerWithR2 = new CloudFlareStorageProvider(
+        mockPlaylistKV,
+        mockChannelKV,
+        mockPlaylistItemKV,
+        playlistConfig,
+        channelConfig,
+        playlistItemConfig,
+        mockR2Bucket
+      );
+
+      const fileStorage1 = providerWithR2.getFileStorage();
+      const fileStorage2 = providerWithR2.getFileStorage();
+
+      expect(fileStorage1).toBe(fileStorage2);
+    });
+
+    it('should allow file operations when R2 bucket is provided', async () => {
+      const mockR2Bucket: any = {
+        get: vi.fn(),
+        put: vi.fn(),
+        head: vi.fn(),
+        delete: vi.fn(),
+        list: vi.fn(),
+      };
+
+      const mockObject = {
+        text: vi.fn().mockResolvedValue('{"test": "data"}'),
+      };
+      mockR2Bucket.get.mockResolvedValue(mockObject);
+
+      const providerWithR2 = new CloudFlareStorageProvider(
+        mockPlaylistKV,
+        mockChannelKV,
+        mockPlaylistItemKV,
+        playlistConfig,
+        channelConfig,
+        playlistItemConfig,
+        mockR2Bucket
+      );
+
+      const fileStorage = providerWithR2.getFileStorage();
+      expect(fileStorage).not.toBeNull();
+
+      const content = await fileStorage!.read('test.json');
+
+      expect(mockR2Bucket.get).toHaveBeenCalledWith('test.json');
+      expect(content).toBe('{"test": "data"}');
     });
   });
 });

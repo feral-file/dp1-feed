@@ -31,6 +31,11 @@ id = "local-channel-id"
 binding = "DP1_PLAYLIST_ITEMS"
 id = "local-item-id"
 
+# R2 bucket binding for file storage (optional)
+[[r2_buckets]]
+binding = "DP1_STATIC_FILES"
+bucket_name = "dp1-static-files-local"
+
 # Queue configuration for async processing
 [[queues.producers]]
 binding = "DP1_WRITE_QUEUE"
@@ -81,6 +86,11 @@ id = "7a34bb7347e54236b107f9077416c5ba"
 [[env.dev.kv_namespaces]]
 binding = "DP1_PLAYLIST_ITEMS"
 id = "796f0a4b1e7541f48df8e0d744c77b98"
+
+# Dev R2 bucket
+[[env.dev.r2_buckets]]
+binding = "DP1_STATIC_FILES"
+bucket_name = "dp1-static-files-dev"
 
 # Dev Queue configuration
 [[env.dev.queues.producers]]
@@ -134,6 +144,11 @@ id = "99d0a95fdb844df6bd01e688c014be26"
 [[env.production.kv_namespaces]]
 binding = "DP1_PLAYLIST_ITEMS"
 id = "97e0151430994b37b443eda4260f07d7"
+
+# Production R2 bucket
+[[env.production.r2_buckets]]
+binding = "DP1_STATIC_FILES"
+bucket_name = "dp1-static-files-prod"
 
 # Production Queue configuration
 [[env.production.queues.producers]]
