@@ -522,26 +522,26 @@ async function verifyRegistryUpdate(feedHost, expectedRegistry) {
  */
 async function checkWorkflowExists(githubToken) {
   const workflowsUrl = `${GITHUB_API_BASE}/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/actions/workflows`;
-  
+
   try {
     const response = await fetch(workflowsUrl, {
       headers: {
-        'Accept': 'application/vnd.github+json',
-        'Authorization': `Bearer ${githubToken}`,
+        Accept: 'application/vnd.github+json',
+        Authorization: `Bearer ${githubToken}`,
         'X-GitHub-Api-Version': '2022-11-28',
       },
     });
-    
+
     if (!response.ok) {
       throw new Error(`Failed to list workflows: ${response.status} ${response.statusText}`);
     }
-    
+
     const data = await response.json();
     const workflows = data.workflows || [];
-    
+
     // Look for the workflow by filename
     const workflow = workflows.find(w => w.path.endsWith(WORKFLOW_FILE));
-    
+
     if (!workflow) {
       console.error(`\n❌ Workflow not found: ${WORKFLOW_FILE}`);
       console.error(`\nAvailable workflows in ${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}:`);
@@ -550,7 +550,7 @@ async function checkWorkflowExists(githubToken) {
       });
       throw new Error(`Workflow file "${WORKFLOW_FILE}" not found in repository`);
     }
-    
+
     console.log(`  ✓ Workflow found: ${workflow.name} (${workflow.state})`);
     return workflow;
   } catch (error) {
@@ -687,7 +687,7 @@ async function waitForWorkflowCompletion(githubToken, existingRunIds) {
   console.log(`\n⏳ Waiting for workflow to start...`);
 
   const startTime = Date.now();
-  
+
   // Wait for GitHub to create the workflow run
   console.log(`  Waiting 10 seconds for workflow to be created...`);
   await new Promise(resolve => setTimeout(resolve, 10000));
@@ -837,7 +837,7 @@ async function main() {
 
       // Step 6: Verify registry update has taken effect (not cached)
       await verifyRegistryUpdate(feedHost, updatedRegistry);
-      
+
       // Step 7: Get existing workflow runs before triggering
       let existingRunIds = new Set();
       try {
@@ -847,10 +847,10 @@ async function main() {
       } catch (error) {
         console.warn(`  ⚠️  Could not fetch existing runs: ${error.message}`);
       }
-      
+
       // Step 8: Trigger GitHub workflow
       await triggerGitHubWorkflow(args.githubToken, feedHost);
-      
+
       // Step 9: Wait for workflow completion
       const workflowRun = await waitForWorkflowCompletion(args.githubToken, existingRunIds);
 
