@@ -23,9 +23,9 @@
  *     "metadata": {
  *       "channel-slug-1": {
  *         "title": "Channel Title",
- *         "curators": [{"name": "Curator Name", "url": "..."}],
- *         "summary": "Description...",
- *         "publisher": {"name": "Publisher", "url": "..."},
+ *         "curators": [{"name": "Curator Name", "addresses": {"ethereum": "0x..."}, "url": "..."}],
+ *         "summary": "Description... (if over 2000 chars, use --summary-* / SUMMARY_* env; see generate-ff-playlist)",
+ *         "publisher": {"name": "Feral File", "url": "https://feralfile.com"}  // key added automatically
  *         "coverImage": "https://..."
  *       }
  *     }
@@ -51,13 +51,145 @@
  *   # Dry-run mode
  *   node scripts/upload-to-feed.js --api-key YOUR_API_KEY --feed-endpoint https://feed.feralfile.com --playlists-path ./playlists --dry-run
  *
+ *   # Long channel summaries (over 2000 chars): same flags/env as generate-ff-playlist (--summary-provider, SUMMARY_API_KEY, …)
+ *   node scripts/upload-to-feed.js ... --summary-provider openai --summary-api-key sk-...
+ *
  */
 
 import fs from 'fs';
 import path from 'path';
+import { summarizeLongText, DEFAULT_MAX_TEXT_LENGTH } from './lib/llm-summarize-summary.js';
 
 const FF_API_BASE = 'https://feralfile.com/api';
 const PUBLISH_ARTIFACT_SCHEMA_VERSION = 1;
+const CHANNEL_SCHEMA_TITLE_MAX = 200;
+
+/** Ethereum address used for default publisher `Entity.key` (`did:pkh:eip155:1:…`) */
+const FERAL_FILE_PUBLISHER_ETH = '0x1d05cf6c6BEb0c869851BFdb9510D4E44E855ad6';
+
+/**
+ * Build did:pkh from Feral File alumni `addresses` (ethereum / tezos).
+ * @param {Record<string, string> | null | undefined} addresses
+ * @returns {string | null}
+ */
+function alumniAddressToDidPkh(addresses) {
+  if (!addresses || typeof addresses !== 'object') return null;
+  const eth = addresses.ethereum;
+  if (typeof eth === 'string' && /^0x[a-fA-F0-9]{40}$/.test(eth.trim())) {
+    return `did:pkh:eip155:1:${eth.trim().toLowerCase()}`;
+  }
+  const tz = addresses.tezos;
+  if (typeof tz === 'string' && /^tz[123][1-9A-HJ-NP-Za-km-z]{33}$/.test(tz.trim())) {
+    return `did:pkh:tezos:mainnet:${tz.trim()}`;
+  }
+  return null;
+}
+
+const FERAL_FILE_PUBLISHER_KEY = alumniAddressToDidPkh({ ethereum: FERAL_FILE_PUBLISHER_ETH });
+
+function isValidDidPkhKey(key) {
+  return (
+    typeof key === 'string' && key.startsWith('did:pkh:') && /^did:[a-z]+:.+$/.test(key.trim())
+  );
+}
+
+/**
+ * Curator entity for the channel schema: requires did:pkh from addresses or an existing did:pkh key.
+ * @returns {({ name: string, key: string, url?: string }) | null}
+ */
+function curatorEntityFromManifestOrApi(entity) {
+  if (!entity || typeof entity !== 'object') return null;
+  const name =
+    (entity.name != null && String(entity.name).trim()) ||
+    (entity.alias != null && String(entity.alias).trim()) ||
+    (entity.fullName != null && String(entity.fullName).trim()) ||
+    'Unknown';
+  let key = null;
+  if (isValidDidPkhKey(entity.key)) {
+    key = entity.key.trim();
+  } else {
+    key = alumniAddressToDidPkh(entity.addresses);
+  }
+  if (!key) return null;
+  const out = { name, key };
+  if (entity.url != null && String(entity.url).trim()) {
+    out.url = String(entity.url).trim();
+  }
+  return out;
+}
+
+/**
+ * Merge singular `curator` into `curators`, drop non-schema `curator`, keep only curators with did:pkh.
+ */
+function mergeCuratorFields(channel) {
+  const merged = [];
+  if (channel.curator) merged.push(channel.curator);
+  if (Array.isArray(channel.curators)) merged.push(...channel.curators);
+  delete channel.curator;
+  const out = merged.map(curatorEntityFromManifestOrApi).filter(Boolean);
+  if (out.length) {
+    channel.curators = out;
+  } else {
+    delete channel.curators;
+  }
+}
+
+/**
+ * Default Feral File publisher in manifest often omits `key`; fill from FERAL_FILE_PUBLISHER_ETH.
+ */
+function ensureDefaultPublisherKey(channel) {
+  if (!FERAL_FILE_PUBLISHER_KEY) return;
+  const p = channel.publisher;
+  if (!p || typeof p !== 'object' || p.key) return;
+  const name = String(p.name || '').trim();
+  const url = String(p.url || '').trim();
+  if (name === 'Feral File' && (!url || url === 'https://feralfile.com')) {
+    channel.publisher = { ...p, key: FERAL_FILE_PUBLISHER_KEY };
+  }
+}
+
+function assertChannelTitleLength(title) {
+  if (title == null) return;
+  const t = String(title);
+  if (t.length > CHANNEL_SCHEMA_TITLE_MAX) {
+    throw new Error(
+      `Channel title exceeds ${CHANNEL_SCHEMA_TITLE_MAX} characters (got ${t.length}). Shorten the title in channels-manifest.json or the exhibition source.`
+    );
+  }
+}
+
+/**
+ * Validates title length, merges curators, strips version/created, LLM-shortens long summaries.
+ */
+async function prepareChannelPayload(raw, summaryOpts, context) {
+  assertChannelTitleLength(raw.title);
+  const channel = { ...raw };
+  mergeCuratorFields(channel);
+  ensureDefaultPublisherKey(channel);
+  delete channel.version;
+  delete channel.created;
+  delete channel.id;
+
+  if (channel.summary != null && String(channel.summary).length > DEFAULT_MAX_TEXT_LENGTH) {
+    if (!summaryOpts?.apiKey || !summaryOpts?.provider) {
+      throw new Error(
+        `Channel summary exceeds ${DEFAULT_MAX_TEXT_LENGTH} characters (length ${String(channel.summary).length}). ` +
+          `Set --summary-provider and --summary-api-key (or SUMMARY_PROVIDER and SUMMARY_API_KEY).`
+      );
+    }
+    channel.summary = await summarizeLongText(
+      summaryOpts,
+      {
+        kind: 'channel summary',
+        subject: context.title ?? channel.title,
+        labels: context.channelSlug ? { Slug: context.channelSlug } : {},
+      },
+      String(channel.summary)
+    );
+  }
+
+  return channel;
+}
 
 /**
  * Fetch data from Feral File API
@@ -117,41 +249,25 @@ function resolveURI(rawSrc) {
  * Build channel data from Feral File exhibition API response (fallback option)
  */
 function buildChannelFromExhibition(exhibition, playlistUrls) {
-  // Build curators from curatorAlumni (single object)
-  const curators = [];
+  // Curators only when we can derive did:pkh from Feral File alumni addresses (schema Entity.key)
+  const curatorAlumni = exhibition.curatorAlumni;
+  const did =
+    curatorAlumni && typeof curatorAlumni === 'object'
+      ? alumniAddressToDidPkh(curatorAlumni.addresses)
+      : null;
 
-  if (exhibition.curatorAlumni && typeof exhibition.curatorAlumni === 'object') {
-    const curator = exhibition.curatorAlumni;
-    const curatorEntity = {
-      name: curator.alias || curator.fullName || 'Unknown Curator',
-    };
-
-    // Add URL if available
-    if (curator.alias) {
-      // URL encode the alias to handle spaces and special characters
-      const encodedAlias = encodeURIComponent(curator.alias);
-      curatorEntity.url = `https://feralfile.com/curators/${encodedAlias}`;
-    }
-
-    curators.push(curatorEntity);
-  }
-
-  // Build publisher (Feral File)
+  // Build publisher (Feral File) — schema Entity.key from fixed org address
   const publisher = {
     name: 'Feral File',
     url: 'https://feralfile.com',
+    key: FERAL_FILE_PUBLISHER_KEY,
   };
 
-  // Build summary
+  // Build summary (long HTML/plain notes: prepareChannelPayload + LLM if over 2000 chars)
   let summary =
     exhibition.note ||
     exhibition.noteBrief ||
     `A digital art exhibition featuring works from ${exhibition.title}`;
-
-  // Truncate if too long
-  if (summary.length > 4096) {
-    summary = summary.substring(0, 4093) + '...';
-  }
 
   // Build cover image
   let coverImage = exhibition.coverDisplay || exhibition.coverURI;
@@ -161,11 +277,23 @@ function buildChannelFromExhibition(exhibition, playlistUrls) {
 
   const channel = {
     title: exhibition.title,
-    curators,
     publisher,
     summary,
     playlists: playlistUrls,
   };
+
+  if (did && curatorAlumni) {
+    const curator = curatorAlumni;
+    const curatorEntity = {
+      name: curator.alias || curator.fullName || 'Unknown Curator',
+      key: did,
+    };
+    if (curator.alias) {
+      const encodedAlias = encodeURIComponent(curator.alias);
+      curatorEntity.url = `https://feralfile.com/curators/${encodedAlias}`;
+    }
+    channel.curators = [curatorEntity];
+  }
 
   if (coverImage) {
     channel.coverImage = coverImage;
@@ -289,7 +417,8 @@ async function processChannel(
   apiKey,
   channelPath,
   channelMetadata = null,
-  dryrun = false
+  dryrun = false,
+  summaryOpts = null
 ) {
   const channelSlug = path.basename(channelPath);
   const startTime = Date.now();
@@ -431,7 +560,37 @@ async function processChannel(
     throw new Error(errorMsg);
   }
 
-  channelTitle = channelData.title;
+  let preparedChannelData;
+  try {
+    preparedChannelData = await prepareChannelPayload(channelData, summaryOpts, {
+      channelSlug,
+      title: channelData.title,
+    });
+  } catch (prepareErr) {
+    const duration = Date.now() - startTime;
+    if (dryrun) {
+      return {
+        channelSlug,
+        status: 'validation_failed',
+        reason: prepareErr.message,
+        dataSource,
+        playlists: uploadedPlaylists,
+        invalidPlaylists: failedPlaylists,
+        duration,
+      };
+    }
+    console.error(`✗ Channel preparation failed:`, prepareErr.message);
+    return {
+      channelSlug,
+      status: 'failed',
+      reason: prepareErr.message,
+      playlists: uploadedPlaylists,
+      failedPlaylists: failedPlaylists,
+      duration,
+    };
+  }
+
+  channelTitle = preparedChannelData.title;
 
   // Create channel (or validate in dry-run mode)
   try {
@@ -464,7 +623,7 @@ async function processChannel(
     }
 
     // Actually create channel
-    const channel = await createChannel(feedEndpoint, apiKey, channelData);
+    const channel = await createChannel(feedEndpoint, apiKey, preparedChannelData);
     const duration = Date.now() - startTime;
 
     console.log(`\n✓ Channel "${channelTitle}" uploaded successfully!`);
@@ -749,6 +908,28 @@ async function main() {
   const isDryRun = args.includes('--dry-run');
   const artifactOutputPath = getFlag('--artifact-output');
 
+  const summaryProvider = getFlag('--summary-provider') || process.env.SUMMARY_PROVIDER;
+  const summaryApiKey = getFlag('--summary-api-key') || process.env.SUMMARY_API_KEY;
+  const summaryBaseUrl = getFlag('--summary-base-url') || process.env.SUMMARY_BASE_URL;
+  const summaryModel = getFlag('--summary-model') || process.env.SUMMARY_MODEL;
+
+  let summaryOpts = null;
+  if (summaryProvider && summaryApiKey) {
+    const p = String(summaryProvider).toLowerCase();
+    if (p !== 'openai' && p !== 'gemini') {
+      console.error(
+        `Error: --summary-provider / SUMMARY_PROVIDER must be openai or gemini, got: ${summaryProvider}`
+      );
+      process.exit(1);
+    }
+    summaryOpts = {
+      provider: p,
+      apiKey: summaryApiKey,
+      ...(summaryBaseUrl ? { baseUrl: String(summaryBaseUrl).replace(/\/$/, '') } : {}),
+      ...(summaryModel ? { model: summaryModel } : {}),
+    };
+  }
+
   // Validate required flags
   if (!apiKey || !feedEndpointInput || !playlistsPath) {
     console.error(
@@ -761,6 +942,13 @@ async function main() {
     console.error('  --artifact-output Path to machine-readable JSON publish artifact');
     console.error('\nOptional flags:');
     console.error('  --dry-run         Validate playlists without uploading');
+    console.error(
+      '\nChannel summary (when text over 2000 chars), same flags as generate-ff-playlist:'
+    );
+    console.error('  --summary-provider  openai | gemini (or SUMMARY_PROVIDER)');
+    console.error('  --summary-api-key   API key (or SUMMARY_API_KEY)');
+    console.error('  --summary-model     Optional (or SUMMARY_MODEL)');
+    console.error('  --summary-base-url  Optional (or SUMMARY_BASE_URL)');
     console.error('\nExamples:');
     console.error(
       '  node scripts/upload-to-feed.js --api-key YOUR_API_KEY --feed-endpoint https://feed.feralfile.com --playlists-path ./playlists'
@@ -815,7 +1003,8 @@ async function main() {
           apiKey,
           playlistsPath,
           channelMetadata,
-          isDryRun
+          isDryRun,
+          summaryOpts
         );
         if (result) {
           results.push(result);
@@ -881,7 +1070,8 @@ async function main() {
               apiKey,
               subPath,
               channelMetadata,
-              isDryRun
+              isDryRun,
+              summaryOpts
             );
             if (result) {
               results.push(result);

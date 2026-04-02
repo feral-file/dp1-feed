@@ -21,15 +21,23 @@
  *      Name: [Exhibition Name] — [Series Title]
  *
  * Usage:
- *   node scripts/generate-ff-playlist.js <exhibition-id-or-slug> [--private-key <key>]
+ *   node scripts/generate-ff-playlist.js <exhibition-id-or-slug> [output-dir] [options]
  *
  * Example:
  *   node scripts/generate-ff-playlist.js infinite-entropy-xhj
  *   node scripts/generate-ff-playlist.js 71513905-f7b2-4ac1-b617-0d41123b3639
+ *   node scripts/generate-ff-playlist.js infinite-entropy-xhj ./out --summary-provider openai --summary-api-key sk-...
+ *   node scripts/generate-ff-playlist.js infinite-entropy-xhj ./out --summary-provider gemini --summary-api-key KEY
  */
 
 import dp1 from 'ff-dp1-js';
 import { randomUUID } from 'crypto';
+
+import {
+  DEFAULT_MAX_TEXT_LENGTH,
+  mechanicalTruncate,
+  summarizeLongText,
+} from './lib/llm-summarize-summary.js';
 
 const FF_API_BASE = 'https://feralfile.com/api';
 const CDN_BASE = 'https://cdn.feralfileassets.com';
@@ -406,7 +414,7 @@ function buildPlaylistItems(selectedItems, exhibition) {
  * Pass a series object for series-specific playlists; omit (or pass null) for
  * 1-of-1s and mixed playlists, which fall back to the exhibition-level description.
  */
-function buildPlaylist(title, items, exhibition, series = null) {
+async function buildPlaylist(title, items, exhibition, series = null, summaryOpts = null) {
   const playlistId = randomUUID();
   const playlistSlug = createSlug(title);
 
@@ -430,8 +438,24 @@ function buildPlaylist(title, items, exhibition, series = null) {
       exhibition.noteBrief ||
       `A digital art exhibition featuring works from ${exhibition.title}`;
   }
-  if (summary.length > 4096) {
-    summary = summary.substring(0, 4093) + '...';
+  if (summary.length > DEFAULT_MAX_TEXT_LENGTH) {
+    if (summaryOpts?.provider && summaryOpts?.apiKey) {
+      try {
+        summary = await summarizeLongText(
+          summaryOpts,
+          {
+            kind: 'playlist summary',
+            labels: { Title: title, Slug: playlistSlug },
+          },
+          summary
+        );
+      } catch (err) {
+        console.warn(`  ⚠ Summary LLM failed (${err.message}); using mechanical truncate.`);
+        summary = mechanicalTruncate(summary, DEFAULT_MAX_TEXT_LENGTH);
+      }
+    } else {
+      summary = mechanicalTruncate(summary, DEFAULT_MAX_TEXT_LENGTH);
+    }
   }
 
   const playlist = {
@@ -481,7 +505,7 @@ function validatePlaylist(playlist) {
  * Generate DP-1 playlists from exhibition
  * Returns an array of playlists.
  */
-async function generatePlaylists(exhibitionIdOrSlug) {
+async function generatePlaylists(exhibitionIdOrSlug, summaryOpts = null) {
   try {
     // 1. Fetch exhibition
     const exhibition = await getExhibition(exhibitionIdOrSlug);
@@ -539,7 +563,13 @@ async function generatePlaylists(exhibitionIdOrSlug) {
         );
         const items = buildPlaylistItems(highlightReelItems, exhibition);
         if (items.length > 0) {
-          const playlist = buildPlaylist(highlightReelTitle, items, exhibition);
+          const playlist = await buildPlaylist(
+            highlightReelTitle,
+            items,
+            exhibition,
+            null,
+            summaryOpts
+          );
           validatePlaylist(playlist);
           playlists.push(playlist);
         }
@@ -558,7 +588,13 @@ async function generatePlaylists(exhibitionIdOrSlug) {
         );
         const items = buildPlaylistItems(artworks, exhibition);
         if (items.length > 0) {
-          const playlist = buildPlaylist(playlistTitle, items, exhibition, series);
+          const playlist = await buildPlaylist(
+            playlistTitle,
+            items,
+            exhibition,
+            series,
+            summaryOpts
+          );
           validatePlaylist(playlist);
           playlists.push(playlist);
         }
@@ -578,7 +614,13 @@ async function generatePlaylists(exhibitionIdOrSlug) {
         );
         const items = buildPlaylistItems(fullCollectionItems, exhibition);
         if (items.length > 0) {
-          const playlist = buildPlaylist(fullCollectionTitle, items, exhibition);
+          const playlist = await buildPlaylist(
+            fullCollectionTitle,
+            items,
+            exhibition,
+            null,
+            summaryOpts
+          );
           validatePlaylist(playlist);
           playlists.push(playlist);
         }
@@ -597,7 +639,13 @@ async function generatePlaylists(exhibitionIdOrSlug) {
         );
         const items = buildPlaylistItems(artworks, exhibition);
         if (items.length > 0) {
-          const playlist = buildPlaylist(playlistTitle, items, exhibition, series);
+          const playlist = await buildPlaylist(
+            playlistTitle,
+            items,
+            exhibition,
+            series,
+            summaryOpts
+          );
           validatePlaylist(playlist);
           playlists.push(playlist);
         }
@@ -621,26 +669,88 @@ async function generatePlaylists(exhibitionIdOrSlug) {
   }
 }
 
+function parseGenerateArgs(argv) {
+  const out = {
+    positional: [],
+    summaryProvider: null,
+    summaryApiKey: null,
+    summaryBaseUrl: null,
+    summaryModel: null,
+  };
+  for (let i = 0; i < argv.length; i++) {
+    const a = argv[i];
+    if (a === '--summary-provider' && argv[i + 1]) {
+      const p = argv[++i].toLowerCase();
+      if (p !== 'openai' && p !== 'gemini') {
+        throw new Error(`--summary-provider must be openai or gemini, got: ${p}`);
+      }
+      out.summaryProvider = p;
+    } else if (a === '--summary-api-key' && argv[i + 1]) {
+      out.summaryApiKey = argv[++i];
+    } else if (a === '--summary-base-url' && argv[i + 1]) {
+      out.summaryBaseUrl = argv[++i];
+    } else if (a === '--summary-model' && argv[i + 1]) {
+      out.summaryModel = argv[++i];
+    } else {
+      out.positional.push(a);
+    }
+  }
+  return out;
+}
+
 /**
  * Main function
  */
 async function main() {
-  const args = process.argv.slice(2);
+  let parsed;
+  try {
+    parsed = parseGenerateArgs(process.argv.slice(2));
+  } catch (e) {
+    console.error(e.message);
+    process.exit(1);
+  }
 
-  if (args.length === 0) {
-    console.error('Usage: node generate-ff-playlist.js <exhibition-id-or-slug> [output-dir]');
+  if (parsed.positional.length === 0) {
+    console.error(
+      'Usage: node generate-ff-playlist.js <exhibition-id-or-slug> [output-dir] [options]'
+    );
     console.error('\nExamples:');
     console.error('  node scripts/generate-ff-playlist.js infinite-entropy-xhj');
     console.error('  node scripts/generate-ff-playlist.js 71513905-f7b2-4ac1-b617-0d41123b3639');
     console.error('  node scripts/generate-ff-playlist.js infinite-entropy-xhj playlist-new');
+    console.error(
+      '  node scripts/generate-ff-playlist.js infinite-entropy-xhj ./out --summary-provider openai --summary-api-key KEY'
+    );
     process.exit(1);
   }
 
-  const exhibitionIdOrSlug = args[0];
-  const outputDir = args[1] || '.';
+  const exhibitionIdOrSlug = parsed.positional[0];
+  const outputDir = parsed.positional[1] || '.';
+
+  const sp = parsed.summaryProvider || process.env.SUMMARY_PROVIDER;
+  const sk = parsed.summaryApiKey || process.env.SUMMARY_API_KEY;
+  const sb = parsed.summaryBaseUrl || process.env.SUMMARY_BASE_URL;
+  const sm = parsed.summaryModel || process.env.SUMMARY_MODEL;
+
+  let summaryOpts = null;
+  if (sp && sk) {
+    const p = String(sp).toLowerCase();
+    if (p !== 'openai' && p !== 'gemini') {
+      console.error(
+        `Error: --summary-provider / SUMMARY_PROVIDER must be openai or gemini, got: ${sp}`
+      );
+      process.exit(1);
+    }
+    summaryOpts = {
+      provider: p,
+      apiKey: sk,
+      ...(sb ? { baseUrl: String(sb).replace(/\/$/, '') } : {}),
+      ...(sm ? { model: sm } : {}),
+    };
+  }
 
   try {
-    const { playlists, exhibitionSlug } = await generatePlaylists(exhibitionIdOrSlug);
+    const { playlists, exhibitionSlug } = await generatePlaylists(exhibitionIdOrSlug, summaryOpts);
     const fs = await import('fs');
     const path = await import('path');
 
