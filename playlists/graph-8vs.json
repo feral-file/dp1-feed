@@ -1,0 +1,3083 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "406a842b-cd49-4f47-a994-7cb3fc4aa8ad",
+  "slug": "graph-8vs",
+  "title": "+GRAPH",
+  "summary": "<p>It’s been two years since the opening of –GRAPH, an iconic exhibition held during Feral File’s first year. Today that early exhibition has evolved into a new one called +GRAPH, which, like its predecessor, explores the deep historical connection between coding and drawing and brings together artists who engage with both. Each artist in +GRAPH created generative software that is capable of making limitless new drawings, and has selected 30 of these variations to render as physical works. Five artists from the original exhibition — Iskra Velitchkova, Licia He, Aleksandra Jovanić, Julien Gachadoat, and James Merrill — are back for +GRAPH, and we’re thrilled to welcome the addition of Joanie Lemercier this time around.</p>\n<p>These six artists all share a love of working with visual systems and writing code, and transforming how the code is rendered through drawing machines. For +GRAPH, each of them has created one software artwork that creates 30 unique physical drawings. Every drawing in this exhibition is a 1/1 artwork, meaning only one will ever be created. Along with each of these unique drawings, there are millions of other compositions that are embedded in the original code.</p>\n<p>The work in +GRAPH makes a strong reference to the history of generative art. Today, we most often experience generative art on screens and projectors of all sizes. If the work is transformed into a “physical,” it’s usually as a digital print, and most often an inkjet print (a.k.a archival pigment print.) Sixty years ago, when generative art created with code was first evolving, it was all very different. Color screens and printing weren’t options. The majority of work from this time was created and experienced as physical drawings produced with a machine called a “plotter.” A plotter is a physical drawing machine that holds a pen or other drawing tool and physically moves it across a sheet of paper. Over the years, plotters evolved from massive room-sized machines to objects tha...",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/42d58312-32df-43b3-fb07-216727225600/raw",
+  "created": "2026-07-09T09:15:45.943Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "c4bdcca9-9296-4406-9818-d11dd893ab98",
+      "title": "Fictional Lullaby #1",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=0&artwork_number=1&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854080&token_id_hash=0x623958b54470d8bcf8087bfed095c1426224898ab03da4ededdf1d02815a26d7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.913Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854080"
+        }
+      }
+    },
+    {
+      "id": "821785b6-7521-4a67-a326-8bdfe0c34a86",
+      "title": "Fine Particles #1",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.920Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854080"
+        }
+      }
+    },
+    {
+      "id": "60e653a8-254c-449a-a918-f1c59cff9221",
+      "title": "The Space in Between #1",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=0&artwork_number=1&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854080&token_id_hash=0x8aa618bba26a20bd9dc653b8091970ff780b6eca462f4df844d30536124b7dbd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.921Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854080"
+        }
+      }
+    },
+    {
+      "id": "3459e103-b4a2-4642-82ee-ea5c340889d7",
+      "title": "Breakpoint. #1",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=0&artwork_number=1&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490880&token_id_hash=0xde30dc7774dae099db68b4f1b07b48ace90ad45c08f1e643c0d7f1d68ce62d9b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.921Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490880"
+        }
+      }
+    },
+    {
+      "id": "dd4eebdb-7962-4f05-a344-6c00b3868054",
+      "title": "ANATOMY of a rabbit but bird #1",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=0&artwork_number=1&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854080&token_id_hash=0xf82eb1d0dec2c15401723de9b0ab21bd4e24b27a6202004f2789a6e90b0eb2ab",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.922Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854080"
+        }
+      }
+    },
+    {
+      "id": "c349bbab-ba1d-4761-bc6b-633b7050c686",
+      "title": "Mineral #1",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=0&artwork_number=1&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854080&token_id_hash=0x7a695451912480bd18c462864b9c4ab10698b191eb5abb48523ef860d9277458",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.922Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854080"
+        }
+      }
+    },
+    {
+      "id": "23b6e54d-c8cf-4a1f-b057-acfdb7871167",
+      "title": "Fictional Lullaby #2",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=1&artwork_number=2&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854081&token_id_hash=0xd4bd3ebe0d7b09d319255c044de979a2a75953686c064c7863f8d5df9d2c806b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.922Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854081"
+        }
+      }
+    },
+    {
+      "id": "9d87fa3d-1d8d-49c0-84b6-3ef6319466bc",
+      "title": "Fine Particles #2",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.922Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854081"
+        }
+      }
+    },
+    {
+      "id": "27e33dca-ea24-47f8-b8bc-5cf1c1517077",
+      "title": "The Space in Between #2",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=1&artwork_number=2&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854081&token_id_hash=0xf9445b4019d80cbb5fb32e8b5e2a8e0aa04ff68e9a16da0db95cccf5728ad2db",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.922Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854081"
+        }
+      }
+    },
+    {
+      "id": "7ff3ad5b-0e8a-49ac-9f67-2c79a6634f2a",
+      "title": "Breakpoint. #2",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=1&artwork_number=2&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490881&token_id_hash=0xe2c377cc2888da2f957ea8488f009aee018904eac7bc1b948bece4d1eecdf662",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.922Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490881"
+        }
+      }
+    },
+    {
+      "id": "fd1f249a-0728-49b9-b326-74f8d8ed0e46",
+      "title": "ANATOMY of a rabbit but bird #2",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=1&artwork_number=2&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854081&token_id_hash=0x9623729ab4ffc1f52ddd0d695901d50c38ee571885dec1a027c1e0f86044a103",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.923Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854081"
+        }
+      }
+    },
+    {
+      "id": "9e4a834c-af8b-4ae3-97c2-5baf231c5ee4",
+      "title": "Mineral #2",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=1&artwork_number=2&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854081&token_id_hash=0xbb0aa688ccb10371ac422c7fd6f6bad267fb83adbe48a146f88cc492a8bb8854",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.923Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854081"
+        }
+      }
+    },
+    {
+      "id": "e27e27bd-a322-43c7-bf5d-a27cb10a22e1",
+      "title": "Fictional Lullaby #3",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=2&artwork_number=3&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854082&token_id_hash=0x0e88a12d7b317e23b6150d3c78976585e2b450c9d042dc8f8822346fd5100a07",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.923Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854082"
+        }
+      }
+    },
+    {
+      "id": "9f25fae0-6063-46c5-b597-a145eaed5340",
+      "title": "Fine Particles #3",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.923Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854082"
+        }
+      }
+    },
+    {
+      "id": "28bd5413-4102-440a-a4ab-550a9e600970",
+      "title": "The Space in Between #3",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=2&artwork_number=3&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854082&token_id_hash=0x8af2bb97576371e0f1b5a02213e50a82e5b4ccee6c44fa6d33e6cbcaed34bc37",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.923Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854082"
+        }
+      }
+    },
+    {
+      "id": "82d99e25-1c25-4f0b-9100-4eadf37c4745",
+      "title": "Breakpoint. #3",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=2&artwork_number=3&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490882&token_id_hash=0x7f73f81bf015d5f404b2c2f5630950ae314554b0e5b963eba6e4fbb97d86d35d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.923Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490882"
+        }
+      }
+    },
+    {
+      "id": "b3fffda8-c658-48bf-893d-0f9e81777713",
+      "title": "ANATOMY of a rabbit but bird #3",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=2&artwork_number=3&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854082&token_id_hash=0xa52059f27a223df2b9ba781f591bc49762d75a3425a48e87d7a827c2025980c1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.923Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854082"
+        }
+      }
+    },
+    {
+      "id": "227c2fbd-6da9-41ce-8e5e-fbc1d5220a07",
+      "title": "Mineral #3",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=2&artwork_number=3&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854082&token_id_hash=0x6d8fda7440029768260536f8ced0a3fee5dc24c38b6a1208617de48a4018fc8f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.923Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854082"
+        }
+      }
+    },
+    {
+      "id": "5f188e7d-f5dd-4123-9474-bf81501cf1fa",
+      "title": "Fictional Lullaby #4",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=3&artwork_number=4&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854083&token_id_hash=0x926bc3e723ca8c569f8252e971e314be52ae1f3cd6778fb8c39fa80e5820d612",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.923Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854083"
+        }
+      }
+    },
+    {
+      "id": "a82687af-9878-4c94-b995-af7e315835d8",
+      "title": "Fine Particles #4",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.923Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854083"
+        }
+      }
+    },
+    {
+      "id": "9e08466e-599c-49eb-95da-378fd0e0f4d5",
+      "title": "The Space in Between #4",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=3&artwork_number=4&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854083&token_id_hash=0x6d8620e4377b539a30992d3761e99203dd02555f61e70b965fa62e22a9adc32c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.923Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854083"
+        }
+      }
+    },
+    {
+      "id": "74c338fd-db00-48af-8a83-60f2d72a0ffa",
+      "title": "Breakpoint. #4",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=3&artwork_number=4&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490883&token_id_hash=0x731619992119a77e70838f5094d339e0729ca9ce17a23b560929469fd031a360",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.923Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490883"
+        }
+      }
+    },
+    {
+      "id": "62f92436-db1b-4e6a-b9fd-d4ec529ab9d9",
+      "title": "ANATOMY of a rabbit but bird #4",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=3&artwork_number=4&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854083&token_id_hash=0x44615b0d215b3aa2199f1ff32e5c0831b2550332fc5d5344fb5034fff3bde931",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.923Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854083"
+        }
+      }
+    },
+    {
+      "id": "c85602b6-202e-4d27-bcd4-c1916243912a",
+      "title": "Mineral #4",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=3&artwork_number=4&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854083&token_id_hash=0x4b26aa449ae98bfc2e9279b2e71dff8a5f4d62c035221caba868dc6fb397113a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.923Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854083"
+        }
+      }
+    },
+    {
+      "id": "89932bb4-4dbf-4ba8-9389-6a2cec953052",
+      "title": "Fictional Lullaby #5",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=4&artwork_number=5&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854084&token_id_hash=0xc4e715743af6106655a8b1c2b2c2bbdb7154ec09ca1a62d05d58a76635d41bb5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.923Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854084"
+        }
+      }
+    },
+    {
+      "id": "cce82519-174d-4f4c-8656-c726e729ca17",
+      "title": "Fine Particles #5",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.924Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854084"
+        }
+      }
+    },
+    {
+      "id": "35b92f33-ce60-4817-aa73-a8f9099c893b",
+      "title": "The Space in Between #5",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=4&artwork_number=5&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854084&token_id_hash=0xa23697072cd16981389d6ae7dd41cc3bfd7493f0843631211b7015f76fafc3c3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.924Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854084"
+        }
+      }
+    },
+    {
+      "id": "88d81c26-d1bb-4a19-bf8d-29c13cd89866",
+      "title": "Breakpoint. #5",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=4&artwork_number=5&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490884&token_id_hash=0x49d7c465f82378111a487ca61ceb39390539c058ea66bd73073ffe6010b2fb32",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.924Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490884"
+        }
+      }
+    },
+    {
+      "id": "877b714c-0edc-4480-b6a2-1625fe43d1d3",
+      "title": "ANATOMY of a rabbit but bird #5",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=4&artwork_number=5&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854084&token_id_hash=0x2c19464f9808462994cdd301ca083e180b11635797b7cf6cda8e65f790f4bc0d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.925Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854084"
+        }
+      }
+    },
+    {
+      "id": "d3cd8c0a-b8b3-401a-905d-1003d0008bd6",
+      "title": "Mineral #5",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=4&artwork_number=5&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854084&token_id_hash=0x5a1eccef3553cbc710907156111f8af41d2e665c6ef8446cdffbe56fb7723693",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.925Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854084"
+        }
+      }
+    },
+    {
+      "id": "3b455aba-e8f2-4e27-8150-056d7649607b",
+      "title": "Fictional Lullaby #6",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=5&artwork_number=6&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854085&token_id_hash=0xfed810d8befc32a3f4ea31331f12042c54ecd6128e0f32071844b39e8f101b37",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.925Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854085"
+        }
+      }
+    },
+    {
+      "id": "aa2e1b64-bcca-41ce-8bc1-d38bdfc82597",
+      "title": "Fine Particles #6",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.925Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854085"
+        }
+      }
+    },
+    {
+      "id": "d73b6958-3db5-4bd5-a4eb-a1ff2284369f",
+      "title": "The Space in Between #6",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=5&artwork_number=6&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854085&token_id_hash=0x3e75a7836c3b5c8f0bad948ae5ccf91e044811fcbf646abb84e56326da294c6a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.925Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854085"
+        }
+      }
+    },
+    {
+      "id": "02693d21-d91d-4ee5-9dd1-b6505fcc9ba5",
+      "title": "Breakpoint. #6",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=5&artwork_number=6&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490885&token_id_hash=0xe9dbb7517aaecfe6d88f474dd22a08b822bb47f87360ebb57ff5364bd5ce4c35",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.925Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490885"
+        }
+      }
+    },
+    {
+      "id": "b28d78e3-1111-4dad-9c0a-585b5a9da488",
+      "title": "ANATOMY of a rabbit but bird #6",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=5&artwork_number=6&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854085&token_id_hash=0x1ddb63b6f6c926683b9b3dcfff4465480ab3da44e6e716b967006c16e2965502",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.925Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854085"
+        }
+      }
+    },
+    {
+      "id": "02495129-7e2a-4b12-8a07-1b7fb6c5980c",
+      "title": "Mineral #6",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=5&artwork_number=6&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854085&token_id_hash=0xe5ee5f060806969c3340c52d153815d5c6ec36ce6a6e9e7865fbb923cd88cafb",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.926Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854085"
+        }
+      }
+    },
+    {
+      "id": "3a0a841d-3901-4c60-b0b5-467aca84e556",
+      "title": "Fictional Lullaby #7",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=6&artwork_number=7&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854086&token_id_hash=0xd1b64d6d1285796180100b477cb77f2cfeeb69e15537806658eaf8bd33d472e6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.926Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854086"
+        }
+      }
+    },
+    {
+      "id": "34a59c7f-c7e9-42d4-83e0-00ace0e3a6c3",
+      "title": "Fine Particles #7",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.926Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854086"
+        }
+      }
+    },
+    {
+      "id": "502b172d-b851-4efc-965c-a1d8d31d6588",
+      "title": "The Space in Between #7",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=6&artwork_number=7&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854086&token_id_hash=0x66702388ac9bebfd480e1385b6f3f09d1992ea4d580f9bd7aaded399883203de",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.926Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854086"
+        }
+      }
+    },
+    {
+      "id": "194d7857-5723-4378-b7b9-e5df49c34923",
+      "title": "Breakpoint. #7",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=6&artwork_number=7&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490886&token_id_hash=0x2e46bb0d195acbeba83a1d7e060ce03753bf70781299058ce5afd248bedb2c86",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.927Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490886"
+        }
+      }
+    },
+    {
+      "id": "4a43dc5a-375b-4ef7-8fef-8799cc7807fe",
+      "title": "ANATOMY of a rabbit but bird #7",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=6&artwork_number=7&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854086&token_id_hash=0xd705087e792a8122338f187ccc0c2e1649ad147cab236837b687a0bc2f55bbc9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.927Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854086"
+        }
+      }
+    },
+    {
+      "id": "0bee8f8d-13de-4455-a9e8-27dc956b8264",
+      "title": "Mineral #7",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=6&artwork_number=7&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854086&token_id_hash=0xcedaa866ee73f3ef7c2389d63c5274468497defdf349e0dabc964e7b5f5cc953",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.927Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854086"
+        }
+      }
+    },
+    {
+      "id": "ac64f50d-3390-41cc-9dea-13662f795ab7",
+      "title": "Fictional Lullaby #8",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=7&artwork_number=8&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854087&token_id_hash=0x9f1240bbf5256a10f76a5d5fe5bdc51fa111838ef81ffd3cf2a7aecb2950a111",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.927Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854087"
+        }
+      }
+    },
+    {
+      "id": "8fe369d1-7b4e-4225-88ff-f86251a0dc69",
+      "title": "Fine Particles #8",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.927Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854087"
+        }
+      }
+    },
+    {
+      "id": "6faa6067-0f24-446e-b55c-038ae128ff72",
+      "title": "The Space in Between #8",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=7&artwork_number=8&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854087&token_id_hash=0x6ac73be86ad923255c2e515a32c3af6d89588e36961475f068459264a3af4511",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.928Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854087"
+        }
+      }
+    },
+    {
+      "id": "b2dde930-c5f7-4e32-9e18-5e5d3eefb320",
+      "title": "Breakpoint. #8",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=7&artwork_number=8&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490887&token_id_hash=0xd0beb91ac61c85fed238eb7bd0cfbd93f9f3b9d5e840d4ca1b818f9606d18a84",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.928Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490887"
+        }
+      }
+    },
+    {
+      "id": "c202d71f-76e1-4545-bc62-44d4766138c0",
+      "title": "ANATOMY of a rabbit but bird #8",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=7&artwork_number=8&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854087&token_id_hash=0xf25fe2673a1d1576b1909155ce237e2bde574aa7e9204252d390675afc78a04f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.928Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854087"
+        }
+      }
+    },
+    {
+      "id": "a3553b3c-458d-44d4-b752-04ea876ee043",
+      "title": "Mineral #8",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=7&artwork_number=8&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854087&token_id_hash=0x54139ca1089c356a3daf483d5e1dca766320aa20811a4cb7783ca8d635209d7d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.928Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854087"
+        }
+      }
+    },
+    {
+      "id": "a85ce082-ea0a-4223-b771-67a4991c7586",
+      "title": "Fictional Lullaby #9",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=8&artwork_number=9&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854088&token_id_hash=0x517743653c6a216374a3adeca878b34054b691323f96c3119fa8713843c4c455",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.928Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854088"
+        }
+      }
+    },
+    {
+      "id": "41d43476-b2a5-474d-b8f9-d432a292a710",
+      "title": "Fine Particles #9",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.928Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854088"
+        }
+      }
+    },
+    {
+      "id": "eb36e8ec-72be-45f2-9990-39eed50057f5",
+      "title": "The Space in Between #9",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=8&artwork_number=9&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854088&token_id_hash=0x8c7f2b75b21a6d629e3655c815f3d02fc2eb87bc93235152f8038dbda845839b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.928Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854088"
+        }
+      }
+    },
+    {
+      "id": "419f0176-5855-41ae-a78a-283bcec340cb",
+      "title": "Breakpoint. #9",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=8&artwork_number=9&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490888&token_id_hash=0xf242ef1afa6884e93d7bfe298c07cbfb33cf7fb6094c9eb362b0f9f74493dc22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.928Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490888"
+        }
+      }
+    },
+    {
+      "id": "37df15f4-f833-4203-90dc-2363d8f23747",
+      "title": "ANATOMY of a rabbit but bird #9",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=8&artwork_number=9&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854088&token_id_hash=0x279de9443427e6c4114ba464303fd501ab38698178659fef30df8e601a7f10cd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.928Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854088"
+        }
+      }
+    },
+    {
+      "id": "7296d55b-b6f2-4603-a64f-bbbf75267ca5",
+      "title": "Mineral #9",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=8&artwork_number=9&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854088&token_id_hash=0x98d629b465a97f72a32c5d8ded51f25ebc607850ab6c19bedbd29e47ab1da266",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.928Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854088"
+        }
+      }
+    },
+    {
+      "id": "e5216ac9-a916-4f90-8e97-5fd7c8573518",
+      "title": "Fictional Lullaby #10",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=9&artwork_number=10&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854089&token_id_hash=0x439dc78ee150adcd4f7357285a2cc6ffa3d5dfeff6832268d11d0428bcadf72f",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.929Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854089"
+        }
+      }
+    },
+    {
+      "id": "a52ebf63-92a9-4ebd-8cf0-b1f33164f968",
+      "title": "Fine Particles #10",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.929Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854089"
+        }
+      }
+    },
+    {
+      "id": "a2ebf097-84e5-44f1-8991-1dc5bcdacc4d",
+      "title": "The Space in Between #10",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=9&artwork_number=10&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854089&token_id_hash=0x7f4fd9d6ca8f16599ec4f7f351273f47f58a93bda4078c04c4fc2c38306bf3cf",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.929Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854089"
+        }
+      }
+    },
+    {
+      "id": "0f5e0414-5f5e-457c-b980-4a31c947e411",
+      "title": "Breakpoint. #10",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=9&artwork_number=10&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490889&token_id_hash=0x1d4ae9548fb2bbb5c7e21ec15d4b80f3494562a2ce1ccb3b7f020ffea2e297fd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.929Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490889"
+        }
+      }
+    },
+    {
+      "id": "e6eea00f-4b8a-40ea-9e92-1bc0484ee98d",
+      "title": "ANATOMY of a rabbit but bird #10",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=9&artwork_number=10&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854089&token_id_hash=0x4b675ae20908a09fdddee469c82677a1ae364d7c5360b8f113c79cdeb7facf71",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.929Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854089"
+        }
+      }
+    },
+    {
+      "id": "18ef3e27-5ead-4905-953c-93dc514a76ce",
+      "title": "Mineral #10",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=9&artwork_number=10&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854089&token_id_hash=0x0d88de3e8ac3409a57e274d781be1bc05e74c4f1503d20d76a98cb38d90883fa",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.929Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854089"
+        }
+      }
+    },
+    {
+      "id": "83bfbef4-fdc0-49ef-86bb-6e962c5ebb01",
+      "title": "Fictional Lullaby #11",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=10&artwork_number=11&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854090&token_id_hash=0x77b1d51c8bbdafd5c59705938b137a66b06f29fa7791d609f9d173fffd53f023",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.930Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854090"
+        }
+      }
+    },
+    {
+      "id": "be6d082b-6333-4e30-81f6-9ad9b5c1b283",
+      "title": "Fine Particles #11",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/10",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.930Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854090"
+        }
+      }
+    },
+    {
+      "id": "797ed198-be65-4126-bfa0-f072bcec5038",
+      "title": "The Space in Between #11",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=10&artwork_number=11&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854090&token_id_hash=0x4fd813fc7ab04dde02d56f2db2e1637e5e6cdef3bb2bb729ed3fa268e27744d6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.930Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854090"
+        }
+      }
+    },
+    {
+      "id": "a1858ebd-61c5-4f8b-b774-48e0eb7028d7",
+      "title": "Breakpoint. #11",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=10&artwork_number=11&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490890&token_id_hash=0x82d946ade03d8392b673bf40698335d0746bbbbe406db7eff8d26877037c63d6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.930Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490890"
+        }
+      }
+    },
+    {
+      "id": "da83623f-3a8e-48bf-9ab6-e21eb0db31f7",
+      "title": "ANATOMY of a rabbit but bird #11",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=10&artwork_number=11&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854090&token_id_hash=0xa4e7abcc65a7beb9301375c56100daaad314a90ed77863d199da8488c637f2dd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.930Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854090"
+        }
+      }
+    },
+    {
+      "id": "64e5d7d4-f433-4334-9901-ae20c8d8b585",
+      "title": "Mineral #11",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=10&artwork_number=11&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854090&token_id_hash=0x9c0b8cf18703444f69b38184bf36715903f3fbcc43b3842b01147e0c45bcebc9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.930Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854090"
+        }
+      }
+    },
+    {
+      "id": "1639630a-e80f-43d3-833b-f3fb453320bd",
+      "title": "Fictional Lullaby #12",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=11&artwork_number=12&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854091&token_id_hash=0xb987e425587577979bc621d69e391b18c9916f54f9b895ea57d9599bf67cfb4b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.930Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854091"
+        }
+      }
+    },
+    {
+      "id": "cc24208e-d29e-4e53-a315-1e07480a8b4f",
+      "title": "Fine Particles #12",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/11",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.930Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854091"
+        }
+      }
+    },
+    {
+      "id": "b39251db-a1e3-4aa9-be5b-eb8eb7449e5c",
+      "title": "The Space in Between #12",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=11&artwork_number=12&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854091&token_id_hash=0x4e134a07f9a3bcfb4c8a0f24ff4b1a482a167304693619d35f9750c2d2f367d3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.930Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854091"
+        }
+      }
+    },
+    {
+      "id": "4680a7cb-d46d-4a81-8986-96da23254825",
+      "title": "Breakpoint. #12",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=11&artwork_number=12&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490891&token_id_hash=0x8c5d00fcb6fada81d18c058c998fabeae6dd4519ab31d83c8443c1032a2dff90",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.931Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490891"
+        }
+      }
+    },
+    {
+      "id": "1aebde82-2a07-400c-aaf1-9132e2cae51e",
+      "title": "ANATOMY of a rabbit but bird #12",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=11&artwork_number=12&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854091&token_id_hash=0x019edc47c8205a2c5b5087fc4ae612f060bf1afe5e752b673f4594fb171ef3c1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.931Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854091"
+        }
+      }
+    },
+    {
+      "id": "ff51375b-80c7-4497-88ba-5269ab175559",
+      "title": "Mineral #12",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=11&artwork_number=12&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854091&token_id_hash=0x1611a749cf27623a18c91a7e30886ee5f4867ea87890342748d60d984c236090",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.931Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854091"
+        }
+      }
+    },
+    {
+      "id": "9082816c-606f-4e37-a3ac-6063601540ef",
+      "title": "Fictional Lullaby #13",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=12&artwork_number=13&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854092&token_id_hash=0x89ecd767541d9f802f82df531b8682913af078a4f9e1dfcfc986ebf8890652b2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.932Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854092"
+        }
+      }
+    },
+    {
+      "id": "93d3447b-99df-4a87-8901-fce4a2449ae7",
+      "title": "Fine Particles #13",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/12",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.932Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854092"
+        }
+      }
+    },
+    {
+      "id": "faaa57b3-2ce8-4abf-a537-1300a8c0e892",
+      "title": "The Space in Between #13",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=12&artwork_number=13&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854092&token_id_hash=0xb5c77eb2be02b95b7ca9ece0cb1e39e3590c4d351f146dd55826adfca2e594a1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.932Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854092"
+        }
+      }
+    },
+    {
+      "id": "266df38e-27e1-4b8f-bdaa-d8dbd7456ca6",
+      "title": "Breakpoint. #13",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=12&artwork_number=13&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490892&token_id_hash=0x2a89815ae610f048594f07079148a2f63f214911d441063bc0621ef6e856e263",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.932Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490892"
+        }
+      }
+    },
+    {
+      "id": "ba949bdc-0a73-40be-b507-d73f283a7769",
+      "title": "ANATOMY of a rabbit but bird #13",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=12&artwork_number=13&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854092&token_id_hash=0xf553c8ae908ca4df7f24ca0fb6c9e965f4549e16773d699f2274b49b997a1479",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.932Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854092"
+        }
+      }
+    },
+    {
+      "id": "775e9d9e-f101-4049-ac9a-afc53dd20f5c",
+      "title": "Mineral #13",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=12&artwork_number=13&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854092&token_id_hash=0x8810b18f8aa2f84ceead00fde692302e99d1649f4e9922840865b8a617ffcb34",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.932Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854092"
+        }
+      }
+    },
+    {
+      "id": "197d7f4e-d651-453a-829c-17955fc04139",
+      "title": "Fictional Lullaby #14",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=13&artwork_number=14&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854093&token_id_hash=0xaa4f8b86d329360bf7af2d63a884f12af13fab25e800479f25fdc4fe282f45f0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.932Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854093"
+        }
+      }
+    },
+    {
+      "id": "4d1e77ad-2568-4ac0-9357-1d7bcb61edb9",
+      "title": "Fine Particles #14",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/13",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.933Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854093"
+        }
+      }
+    },
+    {
+      "id": "25d3a1b5-8856-4607-9d55-8d53bdc4e75f",
+      "title": "The Space in Between #14",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=13&artwork_number=14&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854093&token_id_hash=0x0d89f2154bff72ae30d36147a003aa9821347119ab24b191e6b16fd8a313d852",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.933Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854093"
+        }
+      }
+    },
+    {
+      "id": "51e8d9de-df40-49b5-a818-2d7e79959dbc",
+      "title": "Breakpoint. #14",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=13&artwork_number=14&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490893&token_id_hash=0x2833d06e50328a0c42d90936337e3068b5c64613ef026a232f513eff50c0e459",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.933Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490893"
+        }
+      }
+    },
+    {
+      "id": "839efeec-cca2-41af-80da-a9d563a7deb3",
+      "title": "ANATOMY of a rabbit but bird #14",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=13&artwork_number=14&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854093&token_id_hash=0xf56652a8c0a291bf71786c2b3896000db43bda23cadb34ca1c0c3abb6a9eb62d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.933Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854093"
+        }
+      }
+    },
+    {
+      "id": "ca607f06-8108-4975-8a63-fc5a2872320c",
+      "title": "Mineral #14",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=13&artwork_number=14&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854093&token_id_hash=0xad835e882c6af64e3d064c272ed34c8963a95f7733d25de45d5d14e35b7b1ec1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.933Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854093"
+        }
+      }
+    },
+    {
+      "id": "c255de98-cbf1-4de6-af39-d1a6f30c08ac",
+      "title": "Fictional Lullaby #15",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=14&artwork_number=15&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854094&token_id_hash=0x6209055d96975c3af94beda2e4e1c9d0dfb71f9d680c9a0ae6569969434cf1d0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.933Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854094"
+        }
+      }
+    },
+    {
+      "id": "280933a2-29c7-4e1c-9b73-2b7830410b93",
+      "title": "Fine Particles #15",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/14",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.933Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854094"
+        }
+      }
+    },
+    {
+      "id": "452f6f77-14b6-4e3e-8d72-5fe9376786e2",
+      "title": "The Space in Between #15",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=14&artwork_number=15&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854094&token_id_hash=0x3335752444601efef195747039325eb48ee1651dbe4d7e24d3a68269f7472019",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.933Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854094"
+        }
+      }
+    },
+    {
+      "id": "9e2653dc-8d65-4f61-8788-fb60188e858c",
+      "title": "Breakpoint. #15",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=14&artwork_number=15&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490894&token_id_hash=0x138ad65b3a37b02ced669f4696375220f730c6fd484cf18754cfd846973b4e06",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.933Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490894"
+        }
+      }
+    },
+    {
+      "id": "58e15745-1e45-4eb4-a453-906138e67665",
+      "title": "ANATOMY of a rabbit but bird #15",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=14&artwork_number=15&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854094&token_id_hash=0x650f1eef5cae0a46b4d698eee74ee85b3733407a7dc65df7b7d202c8f5310c6a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.933Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854094"
+        }
+      }
+    },
+    {
+      "id": "d59312b0-7cef-40ec-bffa-effe860f264a",
+      "title": "Mineral #15",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=14&artwork_number=15&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854094&token_id_hash=0x7c95b53ddd2e4491fea56f9e3f8a7ed683c6fe91368a99b8d040daa654c2ebc1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.934Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854094"
+        }
+      }
+    },
+    {
+      "id": "e533e63a-4578-4c17-acc3-fef3db041998",
+      "title": "Fictional Lullaby #16",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=15&artwork_number=16&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854095&token_id_hash=0x0083942c0960d1891892ddb3a446ab5a3d93f5be91c444037f3563e4b8678888",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.934Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854095"
+        }
+      }
+    },
+    {
+      "id": "c76519ed-f2d9-4aad-b468-0475748d9856",
+      "title": "Fine Particles #16",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/15",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.934Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854095"
+        }
+      }
+    },
+    {
+      "id": "33a87e45-3ea4-4ef5-b87a-b7f09bc70dcc",
+      "title": "The Space in Between #16",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=15&artwork_number=16&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854095&token_id_hash=0xe057eb393e026bf72717393ffc2eb0d8491bf8b85701ddab5dbb3f10cbe0fb8e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.934Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854095"
+        }
+      }
+    },
+    {
+      "id": "8ee33a6a-8db5-493f-ac10-2a2bb98b9db2",
+      "title": "Breakpoint. #16",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=15&artwork_number=16&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490895&token_id_hash=0xf8c2bf98619bb070a0badf5618c7bcbe2d79fc1ca60a9be72ab1138cc812c078",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.934Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490895"
+        }
+      }
+    },
+    {
+      "id": "fc4a535c-590e-40f4-b154-9cb9665b10df",
+      "title": "ANATOMY of a rabbit but bird #16",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=15&artwork_number=16&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854095&token_id_hash=0xfaf56c05dac8e70effad6518023ef80a53f4d8c4f934853aaae6a1684f3507a7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.934Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854095"
+        }
+      }
+    },
+    {
+      "id": "9b7f1e51-870d-4a81-9a3e-ee31cb7f01a8",
+      "title": "Mineral #16",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=15&artwork_number=16&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854095&token_id_hash=0x3d8314287f903d4ac7fe99ad5f92d917f10f10eea1701281272a605d8dc462f8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.934Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854095"
+        }
+      }
+    },
+    {
+      "id": "08bc5b71-28cc-4831-be45-ae478d262d20",
+      "title": "Fictional Lullaby #17",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=16&artwork_number=17&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854096&token_id_hash=0x3ed58e7396970d7fa8302120a6318d02447db9e204bf432916828530d02cc625",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.935Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854096"
+        }
+      }
+    },
+    {
+      "id": "3018c555-ff77-4d6f-b09c-2155f0a5c043",
+      "title": "Fine Particles #17",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/16",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.936Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854096"
+        }
+      }
+    },
+    {
+      "id": "85fe2ab3-ac93-4fc4-a652-2ac7a137c91f",
+      "title": "The Space in Between #17",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=16&artwork_number=17&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854096&token_id_hash=0xd9b39cc24e680e30d61f1000f5b0952b134e501404d0b68090676b3444173176",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.936Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854096"
+        }
+      }
+    },
+    {
+      "id": "dee4b9f8-35fc-4e93-8f9d-d7b32c8febfa",
+      "title": "Breakpoint. #17",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=16&artwork_number=17&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490896&token_id_hash=0xf9436009e3e6f9fe392b3f59cd47599022c147c9295109b74ddcd26364829102",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.936Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490896"
+        }
+      }
+    },
+    {
+      "id": "fed12584-07a4-46d2-98fa-7575e4cd1dee",
+      "title": "ANATOMY of a rabbit but bird #17",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=16&artwork_number=17&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854096&token_id_hash=0x92fb2c47b9a357198d968588aca20caec3cfdfcd6ad08fd1294cbac2c36ced7e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.936Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854096"
+        }
+      }
+    },
+    {
+      "id": "0e6a7058-579c-44fd-8f60-d734ea8c7d12",
+      "title": "Mineral #17",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=16&artwork_number=17&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854096&token_id_hash=0xff33717e911d31d8361a03adada0948ef49fbe4178946ab1d129499e4c50da8d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.937Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854096"
+        }
+      }
+    },
+    {
+      "id": "6428543f-542c-4bb3-8dfa-005ab5c57f85",
+      "title": "Fictional Lullaby #18",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=17&artwork_number=18&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854097&token_id_hash=0xdfbe6f73ba3f3fce71b36640c6f8cea312cbc9f6621f4446679c9b69bd6061ac",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.938Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854097"
+        }
+      }
+    },
+    {
+      "id": "f1463cc6-f7b8-4a68-806d-a209d51db65a",
+      "title": "Fine Particles #18",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/17",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.938Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854097"
+        }
+      }
+    },
+    {
+      "id": "28b0e13c-dc34-4033-bcdc-f467950cd13e",
+      "title": "The Space in Between #18",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=17&artwork_number=18&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854097&token_id_hash=0x6035ad5b6ddbaa8703b0315196b3db644fd718430035f971e5d5074ff4d09417",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.938Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854097"
+        }
+      }
+    },
+    {
+      "id": "d3ba2806-f2b5-4637-838c-51d97032d4dd",
+      "title": "Breakpoint. #18",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=17&artwork_number=18&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490897&token_id_hash=0x31beaa1ddcd1f09c8f49a00bcf9f0ec0104299d3be34203ca9f635851cf1649b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.938Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490897"
+        }
+      }
+    },
+    {
+      "id": "673fa8ba-1c64-4407-9db1-b0e538837994",
+      "title": "ANATOMY of a rabbit but bird #18",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=17&artwork_number=18&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854097&token_id_hash=0x931a49dc2f67ddfa2264f5aaf1d885cde7d20602f2f7ae5c1b2d76516d6765ea",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854097"
+        }
+      }
+    },
+    {
+      "id": "d96a4e06-e8a9-4f2c-adcc-b8ebe9110cd7",
+      "title": "Mineral #18",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=17&artwork_number=18&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854097&token_id_hash=0x9146ec4fd397c6e0624d9b126760b042b89218f475b35ecf8ba93867543438c8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854097"
+        }
+      }
+    },
+    {
+      "id": "1c5e0da7-ffc0-4486-85a7-634aa38838a9",
+      "title": "Fictional Lullaby #19",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=18&artwork_number=19&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854098&token_id_hash=0x90a678f553b563c9dc7c4f1f2cba01f5511410e5ac969b94260b46c735e6f151",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854098"
+        }
+      }
+    },
+    {
+      "id": "49da1665-c945-4d45-80a1-94ac8c3b2340",
+      "title": "Fine Particles #19",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/18",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854098"
+        }
+      }
+    },
+    {
+      "id": "679ef063-abc1-4162-8baa-30b80de1dcf9",
+      "title": "The Space in Between #19",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=18&artwork_number=19&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854098&token_id_hash=0x935c9d6e88c3e4a8d666cb60a3b2c8e042bf3738803253578e287d484cdba9ee",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854098"
+        }
+      }
+    },
+    {
+      "id": "e14fb14e-a924-4a72-93a4-8333c79a28bc",
+      "title": "Breakpoint. #19",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=18&artwork_number=19&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490898&token_id_hash=0x56e0b3537def6bd0727ae6f8a2e103b0c25b71b62696ad0a89e9612e2b997fec",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490898"
+        }
+      }
+    },
+    {
+      "id": "6c005c20-4032-45a7-be7d-2b6b7584c31c",
+      "title": "ANATOMY of a rabbit but bird #19",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=18&artwork_number=19&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854098&token_id_hash=0x657115517ba59ccec13b3846a19bc93a31232dca3c0fc6b004e8f9f728798aa6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854098"
+        }
+      }
+    },
+    {
+      "id": "756f5423-7c8b-4e6a-bc64-b804bfa494b1",
+      "title": "Mineral #19",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=18&artwork_number=19&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854098&token_id_hash=0xff65e5d77432923a2c18fbac8abc8e767f76df8984bdee1ff8e61b2f1c453b46",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854098"
+        }
+      }
+    },
+    {
+      "id": "3f7cb08f-bec1-4e62-bcb6-51b62d9c29f1",
+      "title": "Fictional Lullaby #20",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=19&artwork_number=20&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854099&token_id_hash=0x24fefa4dac3563e259b1c6cf5e4b3c7decbe95d310cbcb4e746549231c2dafbd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854099"
+        }
+      }
+    },
+    {
+      "id": "9e32c108-e045-405c-b617-8ac8ff47d11c",
+      "title": "Fine Particles #20",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/19",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854099"
+        }
+      }
+    },
+    {
+      "id": "19556739-b53e-457c-a288-205657ece161",
+      "title": "The Space in Between #20",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=19&artwork_number=20&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854099&token_id_hash=0xa0ba8c888fa532e1be76541a31b30dc041acd5e4ca27804305b3613fe1857a28",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854099"
+        }
+      }
+    },
+    {
+      "id": "93d02eaa-7550-4821-8ff6-2efb8dd24444",
+      "title": "Breakpoint. #20",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=19&artwork_number=20&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490899&token_id_hash=0x9b1009601cd1bf713c708bbb4b8e546a5d46d0a3098d4fc3b4e37eced7cef723",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490899"
+        }
+      }
+    },
+    {
+      "id": "6eed8bdb-8269-4816-abf1-86bfe6a1482f",
+      "title": "ANATOMY of a rabbit but bird #20",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=19&artwork_number=20&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854099&token_id_hash=0x53190c17a5c661e4736eade140a5899fef8ce855968d51d12ab2e4af15b821c6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854099"
+        }
+      }
+    },
+    {
+      "id": "abc92f72-f8ab-4c17-be7d-92f8829cf254",
+      "title": "Mineral #20",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=19&artwork_number=20&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854099&token_id_hash=0x198c56cd67130c14483a29862dc6e296df6bcef3adfcff24f48f0e44d502e95a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854099"
+        }
+      }
+    },
+    {
+      "id": "cabed813-11ff-484c-a3f9-f9645ce488d0",
+      "title": "Fictional Lullaby #21",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=20&artwork_number=21&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854100&token_id_hash=0x40418dbc611b82f29e9568a26ea75221c6966066605e33d2005ebd4890996c6e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854100"
+        }
+      }
+    },
+    {
+      "id": "f4e6ca5b-cdc1-43a9-8a15-ed25b5f33109",
+      "title": "Fine Particles #21",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/20",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854100"
+        }
+      }
+    },
+    {
+      "id": "e2f24ee5-8de8-41d7-adaa-7d6f56e5f85c",
+      "title": "The Space in Between #21",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=20&artwork_number=21&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854100&token_id_hash=0x9b674ef5bbf323386c6ed61469cda5611cd8e400ce97d9113c59d9e6cc9ea7de",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854100"
+        }
+      }
+    },
+    {
+      "id": "f2b639dc-4936-46fe-9cc4-70754e6b4231",
+      "title": "Breakpoint. #21",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=20&artwork_number=21&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490900&token_id_hash=0xceb09784848eb31a4e8e4ebac3a7928437c34496e18c70c30e9c949b78b35f44",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490900"
+        }
+      }
+    },
+    {
+      "id": "28f3e692-fa4b-46e3-b620-5ae812ca13b2",
+      "title": "ANATOMY of a rabbit but bird #21",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=20&artwork_number=21&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854100&token_id_hash=0xcae0fceb86583625aa9dca79e41ea3595d2c6d4a040d30613c6825aff7c309a9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854100"
+        }
+      }
+    },
+    {
+      "id": "e4c20965-d7c5-4787-a458-1d7db585fcb4",
+      "title": "Mineral #21",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=20&artwork_number=21&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854100&token_id_hash=0x12020ae6dba817dec051ceea1c62c74688649b5628f2bc6f86ef8f251e6c368c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.939Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854100"
+        }
+      }
+    },
+    {
+      "id": "797f9661-ff4a-487e-83eb-73129b837323",
+      "title": "Fictional Lullaby #22",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=21&artwork_number=22&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854101&token_id_hash=0x528782bc07462deb649cae434ac2d5b815a4add8d46c11521deefc7132b7414c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.940Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854101"
+        }
+      }
+    },
+    {
+      "id": "49117e0f-cf7c-4094-b08b-6dc7c4015ba8",
+      "title": "Fine Particles #22",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/21",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.940Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854101"
+        }
+      }
+    },
+    {
+      "id": "440f9eca-9933-4731-aabc-4e524a61df66",
+      "title": "The Space in Between #22",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=21&artwork_number=22&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854101&token_id_hash=0xe5c7e26439e11fc22aeb105e8a8c1e2b568e26222c2a8e746be2d753559427bd",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.940Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854101"
+        }
+      }
+    },
+    {
+      "id": "8c5b5712-ee6a-4fc8-b2a8-ff71b2670d19",
+      "title": "Breakpoint. #22",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=21&artwork_number=22&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490901&token_id_hash=0xb5b56b1228a2c3428e9888c2b18e4fd1a195f749f25e92ec17e2ce3a3f0a2287",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.940Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490901"
+        }
+      }
+    },
+    {
+      "id": "b223f5f3-4ebb-4591-8b6b-c00696ceba33",
+      "title": "ANATOMY of a rabbit but bird #22",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=21&artwork_number=22&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854101&token_id_hash=0xaa0a2bcf7b689d22c5251f57d7dcb5a11085caffc1062ce73a42b884af030977",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.940Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854101"
+        }
+      }
+    },
+    {
+      "id": "04531354-be16-4fc5-823f-ec354cc0433c",
+      "title": "Mineral #22",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=21&artwork_number=22&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854101&token_id_hash=0x41b6eac00899401fc2994d292d9956dad812d2b26a90716712270cafd8d755a9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.940Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854101"
+        }
+      }
+    },
+    {
+      "id": "981917fa-8f36-49ce-9c3f-77f2e92861a2",
+      "title": "Fictional Lullaby #23",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=22&artwork_number=23&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854102&token_id_hash=0xcb77a57405fbb3d26514b9b210d34e903b9121554da204ed2aeb90d302712da1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.940Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854102"
+        }
+      }
+    },
+    {
+      "id": "d06fe229-257a-4791-8f83-9ec977d7fd7c",
+      "title": "Fine Particles #23",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854102"
+        }
+      }
+    },
+    {
+      "id": "7eb844e4-8a41-4d8d-9f43-ff13b6cd3eae",
+      "title": "The Space in Between #23",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=22&artwork_number=23&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854102&token_id_hash=0xe13e50edafb6567491a8ade9468a90143505a01068f7bdc8138dc105100de867",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854102"
+        }
+      }
+    },
+    {
+      "id": "b19922fd-03d9-4b7c-9c3b-35eabec856dc",
+      "title": "Breakpoint. #23",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=22&artwork_number=23&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490902&token_id_hash=0x15b03546c506d3ce5fafe0b87182fa005652e415acc19ea73a03f0b36776e984",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490902"
+        }
+      }
+    },
+    {
+      "id": "ea5f2bb7-9f06-4c24-b7d1-a8df62cb73c2",
+      "title": "ANATOMY of a rabbit but bird #23",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=22&artwork_number=23&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854102&token_id_hash=0xaac197c5c4bef66bdace11e164c321ae2e0f698e2b98ffbac96c9d8216be1ade",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854102"
+        }
+      }
+    },
+    {
+      "id": "ee34d241-aa82-47b9-b9c1-0d544f4f76b3",
+      "title": "Mineral #23",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=22&artwork_number=23&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854102&token_id_hash=0x6ce61ba1b3666f11207a827d0541c831d4f58714d49d4a4fa9f2a288ad258e2a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854102"
+        }
+      }
+    },
+    {
+      "id": "a13796dc-90f5-401e-8529-69a92dcc0191",
+      "title": "Fictional Lullaby #24",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=23&artwork_number=24&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854103&token_id_hash=0x2f5ee89ea8db24654a227da9369dd6552144ad3924ab997bb5fae49901f96e1e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854103"
+        }
+      }
+    },
+    {
+      "id": "77095f12-bfad-461f-8c6b-c215ecda2072",
+      "title": "Fine Particles #24",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/23",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854103"
+        }
+      }
+    },
+    {
+      "id": "eb688c8a-fd8f-42b8-adaa-0c939b983e62",
+      "title": "The Space in Between #24",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=23&artwork_number=24&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854103&token_id_hash=0x650e106b6cf5a0599635f1c902cf873d498c91355c1a4d6e423d11bf56b200db",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854103"
+        }
+      }
+    },
+    {
+      "id": "fcbed1cb-a7c8-4b3b-87d2-df6fe758a847",
+      "title": "Breakpoint. #24",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=23&artwork_number=24&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490903&token_id_hash=0x8018e7885179c957d060a3a0027117444e1385fbf6c421d26282c65f00904d1c",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490903"
+        }
+      }
+    },
+    {
+      "id": "0b1d5f1c-643f-480f-a939-e2477d140ba4",
+      "title": "ANATOMY of a rabbit but bird #24",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=23&artwork_number=24&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854103&token_id_hash=0xb216e0502d23bee8e58971bf69b2ee6d0db4d5a870b6b8a198ac048a0cae2b2e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854103"
+        }
+      }
+    },
+    {
+      "id": "100998e2-b96c-48cf-9880-3706dad5221f",
+      "title": "Mineral #24",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=23&artwork_number=24&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854103&token_id_hash=0x0cf5fc4da29608d39d71ce76c5890f6de70147000c0369d767e6bbddf5a506d2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854103"
+        }
+      }
+    },
+    {
+      "id": "38723984-c758-434f-a394-e972db55ba62",
+      "title": "Fictional Lullaby #25",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=24&artwork_number=25&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854104&token_id_hash=0xaa32d8290c61281ebdf57483ea2e8b680e524db81c15db05ee2cdc0960d28bff",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854104"
+        }
+      }
+    },
+    {
+      "id": "806b9669-4e29-4843-8bd4-75e86f1e1388",
+      "title": "Fine Particles #25",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/24",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854104"
+        }
+      }
+    },
+    {
+      "id": "f74033c2-d54e-4acd-add9-7718a0e45d7e",
+      "title": "The Space in Between #25",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=24&artwork_number=25&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854104&token_id_hash=0x56ca7ee95cb4114a280eeffc5a9b2dd5b66d0bdf5883aeaa61a02737419baf1d",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854104"
+        }
+      }
+    },
+    {
+      "id": "7795e15d-67e5-4e6f-9d31-6b666a42629b",
+      "title": "Breakpoint. #25",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=24&artwork_number=25&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490904&token_id_hash=0x821d3e2ad6a5e631e0821a986ca83b1331cc96e8d6822933f3397144630156f8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490904"
+        }
+      }
+    },
+    {
+      "id": "6613d9ed-1aa5-4f82-9861-9e9a4065f5c7",
+      "title": "ANATOMY of a rabbit but bird #25",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=24&artwork_number=25&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854104&token_id_hash=0xdfdaad3434f1d49a2ddb952757af9291f13e7ccbdc869a93ec1daf0fc04a49e6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854104"
+        }
+      }
+    },
+    {
+      "id": "1a757582-e115-4f4b-a5ae-478a2d3dab1a",
+      "title": "Mineral #25",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=24&artwork_number=25&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854104&token_id_hash=0xf8ce5d51bfe987337302237794f45a6992b223bd55882e436e877d9f6396e386",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854104"
+        }
+      }
+    },
+    {
+      "id": "bfd335f0-a054-496e-aba7-af0a30e08a8e",
+      "title": "Fictional Lullaby #26",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=25&artwork_number=26&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854105&token_id_hash=0xcc370769a3b4c9584aa41fdc3467a9517f0ab1bd1b9f50d50cbd69e82a18d00b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854105"
+        }
+      }
+    },
+    {
+      "id": "b0a23850-3d03-486b-a883-09e517f3bace",
+      "title": "Fine Particles #26",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/25",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854105"
+        }
+      }
+    },
+    {
+      "id": "3e2ad5c9-574f-40e9-9d47-84f8e2f13315",
+      "title": "The Space in Between #26",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=25&artwork_number=26&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854105&token_id_hash=0x01cfc6c611c480d14b84ce4dc14e69b0b824926ee01943792171f9158f7c3c04",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854105"
+        }
+      }
+    },
+    {
+      "id": "d36b2a78-5d2d-44af-bc0d-b6873641c693",
+      "title": "Breakpoint. #26",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=25&artwork_number=26&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490905&token_id_hash=0xc9e329d35c511b9ca1f61750ad1431c68dcb7d0d7ae7ef755e0e27e8d37951e7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490905"
+        }
+      }
+    },
+    {
+      "id": "94fc294c-7928-4fb1-8a17-a2e3191acbfd",
+      "title": "ANATOMY of a rabbit but bird #26",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=25&artwork_number=26&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854105&token_id_hash=0xe5ee2220e774d383cf252b9b80046f18285c5676d28eaae7c43a655cec7c73ad",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854105"
+        }
+      }
+    },
+    {
+      "id": "27003008-47bf-416b-ba7b-5964da401bed",
+      "title": "Mineral #26",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=25&artwork_number=26&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854105&token_id_hash=0x719fa812db252c9feb864cdd9eb6d05f20a1f4abb659336afd4abdd3faf78a10",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854105"
+        }
+      }
+    },
+    {
+      "id": "11c24453-56ac-4677-b5c8-671170a766d8",
+      "title": "Fictional Lullaby #27",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=26&artwork_number=27&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854106&token_id_hash=0x3884e653e6c8a3da3ec530d17c3e9a44ab7e9d4a48b0565b843e339febda8df4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854106"
+        }
+      }
+    },
+    {
+      "id": "1e91874b-711c-4448-95d6-32c29aa69bad",
+      "title": "Fine Particles #27",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/26",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854106"
+        }
+      }
+    },
+    {
+      "id": "f254d7b0-aa35-489b-b459-dbf25dc10059",
+      "title": "The Space in Between #27",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=26&artwork_number=27&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854106&token_id_hash=0xecbf589f100752e743dad7182a18cf35ba55629edabd04855e4aa9889afac6af",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854106"
+        }
+      }
+    },
+    {
+      "id": "284f9721-45f3-4196-a785-79239653845c",
+      "title": "Breakpoint. #27",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=26&artwork_number=27&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490906&token_id_hash=0x50502ac0de73a4c3a70ad8a409a3c589ac27a39ea1f0df07bc43810a142cd5e6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490906"
+        }
+      }
+    },
+    {
+      "id": "12fd12d9-3325-4f0a-93eb-890261f96545",
+      "title": "ANATOMY of a rabbit but bird #27",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=26&artwork_number=27&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854106&token_id_hash=0x46d5264971f0325ef1396e06626d13697c8394352ce2cf3e04a9f16efef2440a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854106"
+        }
+      }
+    },
+    {
+      "id": "9c70424f-b563-401a-984e-4db5922fa492",
+      "title": "Mineral #27",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=26&artwork_number=27&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854106&token_id_hash=0x9416ce5e83bf270fe51f369dad2b1f7c8807796ef1a22484716fecf7e95ae6b6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854106"
+        }
+      }
+    },
+    {
+      "id": "85071ec0-9f1e-4eb5-b859-e3a46e08b350",
+      "title": "Fictional Lullaby #28",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=27&artwork_number=28&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854107&token_id_hash=0x6c61fa96f0c95951e4b6354a0c1d498a2f04a45866292d27a5fc4f0a6c3cf702",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.941Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854107"
+        }
+      }
+    },
+    {
+      "id": "5aca5681-e822-45d8-b6d3-c941c4cfa02f",
+      "title": "Fine Particles #28",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/27",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.942Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854107"
+        }
+      }
+    },
+    {
+      "id": "103dd089-2488-411a-a22c-5fab2ecd6cdf",
+      "title": "The Space in Between #28",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=27&artwork_number=28&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854107&token_id_hash=0x324de47a9627881c215b639e9125ada94874e3e2ae7a9ead1248fe07188e9f01",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.942Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854107"
+        }
+      }
+    },
+    {
+      "id": "9ce70873-d33d-4daa-9766-4896653880e9",
+      "title": "Breakpoint. #28",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=27&artwork_number=28&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490907&token_id_hash=0x4b1865ad8e3ff04ae2fd0d17921ddd02463e5c4e2a2151b1c397eca8f6d315fc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.942Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490907"
+        }
+      }
+    },
+    {
+      "id": "829862b0-f302-4c1b-bec4-5e403d75ddc9",
+      "title": "ANATOMY of a rabbit but bird #28",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=27&artwork_number=28&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854107&token_id_hash=0x0198714da20bb9152cbe98adf9eef91d2ac3dd0151ac9ac66b3a78b62b8b6ca8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.942Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854107"
+        }
+      }
+    },
+    {
+      "id": "90af5ca7-dc2f-4782-ae78-cc80ee0e0ac6",
+      "title": "Mineral #28",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=27&artwork_number=28&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854107&token_id_hash=0x198c6ddf92f7a790ca7a084aaa2c7c729cfbd09e05df4590cce696777b295855",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.942Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854107"
+        }
+      }
+    },
+    {
+      "id": "6fe8ee84-b91e-4781-8a75-3502c7db4b02",
+      "title": "Fictional Lullaby #29",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=28&artwork_number=29&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854108&token_id_hash=0xf32deedefafffe7a0815b7e05c7dbb24cc0d885758073b1fbc9113644cdf70bc",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.942Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854108"
+        }
+      }
+    },
+    {
+      "id": "3b161fc2-183e-44ad-abb5-3331020d5c61",
+      "title": "Fine Particles #29",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/28",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.942Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854108"
+        }
+      }
+    },
+    {
+      "id": "761436b0-c398-4d4b-86db-c096cf0e4601",
+      "title": "The Space in Between #29",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=28&artwork_number=29&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854108&token_id_hash=0x15c724966a44f2ca4e30130f5ac8d7245d3e18b74f7a3fe5fba1415a02e4d6c7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.942Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854108"
+        }
+      }
+    },
+    {
+      "id": "619ac22b-3eed-43d8-aba7-119b8a2fae7d",
+      "title": "Breakpoint. #29",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=28&artwork_number=29&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490908&token_id_hash=0x378ce0e8d219060880a09b3970bfc882ad80cf5d278df0fea97d2a94f0f20a6a",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.942Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490908"
+        }
+      }
+    },
+    {
+      "id": "ac7870e5-f601-41f8-ab8d-fbb0bd98ae21",
+      "title": "ANATOMY of a rabbit but bird #29",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=28&artwork_number=29&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854108&token_id_hash=0x0521ccff0543790dd040b73a393f50ab6794b357d42dde3e47d2a913e750e5e2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.942Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854108"
+        }
+      }
+    },
+    {
+      "id": "e67ae22c-ec0a-4d7f-b75e-7f63c4808335",
+      "title": "Mineral #29",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=28&artwork_number=29&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854108&token_id_hash=0xe8380207365444b8d3bdb19fe7599cd8937d5c8143d9d3da3f9c2081358b120b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.942Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854108"
+        }
+      }
+    },
+    {
+      "id": "aa784f84-c310-403d-912e-c9eb930b174b",
+      "title": "Fictional Lullaby #30",
+      "source": "https://cdn.feralfileassets.com/previews/490e2542-daac-48c4-8407-bbd15eb9ab74/1699587289/index.html?edition_number=29&artwork_number=30&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737834854109&token_id_hash=0xe16f6916847c2ac195543a54f000ffa2349f05b7d648c3bb955a8d6577fe7e70",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.942Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737834854109"
+        }
+      }
+    },
+    {
+      "id": "15c3f961-c2da-4bbe-8286-1bafb0eabefa",
+      "title": "Fine Particles #30",
+      "source": "https://cdn.feralfileassets.com/previews/22356067-3858-46c7-ba80-02f0dafa04b6/1696273109/_unique-previews/29",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.942Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737836854109"
+        }
+      }
+    },
+    {
+      "id": "08737d2d-2089-4055-bebf-40a6da365113",
+      "title": "The Space in Between #30",
+      "source": "https://cdn.feralfileassets.com/previews/688c1976-748d-4b54-8aac-61b5561924e6/1697235166/index.html?edition_number=29&artwork_number=30&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737837854109&token_id_hash=0x7d4c6af14a02f641b0b3fad52f7bb985c8085e9e3691c38f2349877c18dab3e7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.942Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737837854109"
+        }
+      }
+    },
+    {
+      "id": "040e19e8-ce26-496d-af87-52a10df2ce14",
+      "title": "Breakpoint. #30",
+      "source": "https://cdn.feralfileassets.com/previews/abc9532c-3b95-4502-b0ac-fa5a64510ccd/1699624754/index.html?edition_number=29&artwork_number=30&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=118466963467443821351093017535965421115490909&token_id_hash=0x0d725b8c92902f5913e11239e79a8c54697e6dce5d76f3c61a515eabd4dda763",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.942Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "118466963467443821351093017535965421115490909"
+        }
+      }
+    },
+    {
+      "id": "566e47eb-0c76-413d-a9d1-47acdc843f2c",
+      "title": "ANATOMY of a rabbit but bird #30",
+      "source": "https://cdn.feralfileassets.com/previews/fe2f3149-d59c-44dc-ba15-f9bc21798388/1699526305/index.html?edition_number=29&artwork_number=30&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737833854109&token_id_hash=0x8241882f7cf87bdf200b83435c06375e079686a39e42d6d0c9b49b0e7c4f237e",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.942Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737833854109"
+        }
+      }
+    },
+    {
+      "id": "edf3c2e1-2d28-46da-ad18-249ba12a695b",
+      "title": "Mineral #30",
+      "source": "https://cdn.feralfileassets.com/previews/55e9a993-a644-405f-b489-d4dc7e03ac5c/1698155087/index.html?edition_number=29&artwork_number=30&blockchain=ethereum&contract=0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096&token_id=1895471415479101141617488280575446737835854109&token_id_hash=0x110fea925e2a4cdd3ef3913413c55e3d614d46902491fa47949e1465c78fbe2b",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:45.942Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xacd3392e9Ec2C4D876D09DC38cb52F842Ea58096",
+          "tokenId": "1895471415479101141617488280575446737835854109"
+        }
+      }
+    }
+  ],
+  "curators": [
+    {
+      "name": "Casey REAS",
+      "key": "did:pkh:eip155:1:0x457ee5f723C7606c12a7264b52e285906F91eEA6",
+      "url": "https://feralfile.com/curators/Casey%20REAS"
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

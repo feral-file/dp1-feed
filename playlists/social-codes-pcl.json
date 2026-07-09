@@ -1,0 +1,193 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "b09badef-28ef-4857-9040-88184905d338",
+  "slug": "social-codes-pcl",
+  "title": "Social Codes",
+  "summary": "For the last twenty five years, I&rsquo;ve shared my time and ideas with artists who write code. The internet has always been essential for us, because the web isn&rsquo;t just a space for documentation&mdash;it&rsquo;s the main place where our work is shared and discussed. For many of us, the internet is also the primary place to exhibit work, and be in community. The Social Codes online exhibition is a view into this community of hybrid artists/coders in 2021.\n\nSocial Codes is an exhibition of software art, also called generative art. All of the work is comprised of code written by artists to create visual experiences. Some works in the exhibition relate to the visual histories of drawing, painting, animation, and video, but all of it is native digital art, in that each artwork is a performance of code choreographed by the artist.\n\nArtists have been working with code since the 1960s, and within that time frame, code has evolved from languages written by engineers to run on room&#45;sized computers to artist&#45;created coding languages running inside a web browser. In 2021, artists are writing code in many languages and environments. Each programming language is like a different material to work with.\n\nAs I started working on this exhibition in September 2020, I asked the following on Twitter: &ldquo;I&rsquo;m researching &lsquo;generative art&rsquo; on &lsquo;social media&rsquo; with a focus on the ~present. Who&rsquo;s doing the most interesting work in this space? Twitter, Instagram, Tumblr, OpenProcessing, etc. What do you think?&rdquo; Over a few days we created a <a href=\"https://docs.google.com/spreadsheets/d/1bSg5QzNrVtRUjYUSQQ4r6L25xrgUZevGdFMnuwCmMFc/edit?usp=sharing\" target=\"_blank\">public document </a> with a crowdsourced list of over three hundred people. This was the seed that grew into this exhibition.\n\nIn Social Codes, the artists&rsquo; works are presented together in an intentional way, instead of spread out across different online platforms a...",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/828f2aa7-7edd-4961-f5c7-0fbac8a9ec00/raw",
+  "created": "2026-07-09T09:13:40.292Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "0ba84e76-5669-4692-87a9-0d123d59995f",
+      "title": "Scrampled AP",
+      "source": "https://cdn.feralfileassets.com/previews/00f8e853-e20e-49bb-9f2f-8190507b8066/1615449076/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:13:40.278Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x28b51BA8B990c48CB22cB6EF0ad5415fdBA5210C",
+          "tokenId": "111189432907883705479781860609730558140985427661919345637476715406273466581241"
+        }
+      }
+    },
+    {
+      "id": "5179f7ef-d9f4-41e8-af01-a2a64e7d9582",
+      "title": "dada data AP",
+      "source": "https://cdn.feralfileassets.com/previews/07c766f0-edc4-45fd-be50-83f89228b08c/1615370392/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:13:40.289Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x28b51BA8B990c48CB22cB6EF0ad5415fdBA5210C",
+          "tokenId": "53850398982106570267917421068933678215838025172652046814035972200709896037619"
+        }
+      }
+    },
+    {
+      "id": "2b8d5cdb-0ee2-4ec4-a8be-ce7a0061c817",
+      "title": "Transparent Grit AP",
+      "source": "https://cdn.feralfileassets.com/previews/2a727b17-7890-4464-913d-3fe5ad2af4ae/1615474528/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:13:40.290Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x28b51BA8B990c48CB22cB6EF0ad5415fdBA5210C",
+          "tokenId": "64490119310938983285306696386755133646434567552627492079611317320066764665822"
+        }
+      }
+    },
+    {
+      "id": "c11166f9-a83d-4bd5-bab7-46712d3d98f0",
+      "title": "1DE94 AP",
+      "source": "https://cdn.feralfileassets.com/previews/1f060e42-3437-444c-b823-a8b8532c449c/1615550075/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:13:40.290Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x28b51BA8B990c48CB22cB6EF0ad5415fdBA5210C",
+          "tokenId": "56106112984270038917905828064139003773693484334495013411603562382354856816828"
+        }
+      }
+    },
+    {
+      "id": "212fe2bc-2c21-4af6-8699-f9a9747ee006",
+      "title": "Arrels AP",
+      "source": "https://cdn.feralfileassets.com/previews/43c29566-9fad-42ce-aab9-1c4947164d94/1615728457/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:13:40.290Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x28b51BA8B990c48CB22cB6EF0ad5415fdBA5210C",
+          "tokenId": "59708377447550061117940200307772073115750811538487998108113477949081946656826"
+        }
+      }
+    },
+    {
+      "id": "4315756a-3b6c-4330-9afd-2b05ec5862a6",
+      "title": "uneasy dream #1",
+      "source": "https://cdn.feralfileassets.com/previews/9983bf66-380e-4af3-bee9-237c492f18a0/1615757415/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:13:40.291Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x28b51BA8B990c48CB22cB6EF0ad5415fdBA5210C",
+          "tokenId": "101203243301117787559401599223798510155457323902733064063026283969832858934880"
+        }
+      }
+    },
+    {
+      "id": "75d9f636-14a2-4a9d-807c-d36fbd0aebbe",
+      "title": "can I go where you go? AP",
+      "source": "https://cdn.feralfileassets.com/previews/69518c54-2bc5-4b90-b606-675529c7593d/1615845070/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:13:40.291Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x28b51BA8B990c48CB22cB6EF0ad5415fdBA5210C",
+          "tokenId": "81364566765837085577860824876328324342986698332133339997943493484390163948634"
+        }
+      }
+    },
+    {
+      "id": "6348a4b8-a456-4ecd-b57b-53c05433d744",
+      "title": "Lamia AP",
+      "source": "https://cdn.feralfileassets.com/previews/33e55482-5dac-40b8-972e-750c374d69bb/1615652677/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:13:40.291Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x28b51BA8B990c48CB22cB6EF0ad5415fdBA5210C",
+          "tokenId": "82162346596283144564966583883145667011953207418372457382158238642223100810926"
+        }
+      }
+    },
+    {
+      "id": "f1eb7e12-ef35-4670-97fb-0d08ed6350ae",
+      "title": "enchanting luxuriance #1",
+      "source": "https://cdn.feralfileassets.com/previews/5af4af6f-1e6b-4e45-95db-7b4de60fe0ca/1615757683/?edition_number=1&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:13:40.291Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x28b51BA8B990c48CB22cB6EF0ad5415fdBA5210C",
+          "tokenId": "13817206977692934950913675317980862042943036316936798729844259854918098451891"
+        }
+      }
+    },
+    {
+      "id": "da1b3a77-a8f9-4373-b509-7cf6eeae7ee1",
+      "title": "Shimmer AP",
+      "source": "https://cdn.feralfileassets.com/previews/28cad12d-50f2-4d82-a77d-1284cf934b8c/1615815656/?edition_number=0&blockchain=bitmark",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:13:40.291Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x28b51BA8B990c48CB22cB6EF0ad5415fdBA5210C",
+          "tokenId": "12686393674845874925129035513704534169549355780905676792985114895836083713054"
+        }
+      }
+    }
+  ],
+  "curators": [
+    {
+      "name": "Casey REAS",
+      "key": "did:pkh:eip155:1:0x457ee5f723C7606c12a7264b52e285906F91eEA6",
+      "url": "https://feralfile.com/curators/Casey%20REAS"
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

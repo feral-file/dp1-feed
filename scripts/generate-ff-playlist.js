@@ -3,31 +3,35 @@
 /**
  * DP-1 Playlist Generator for Feral File Exhibitions
  *
- * This script generates DP-1 playlists from a Feral File exhibition
- * using the Feral File API and the dp1-js library.
+ * This script generates a single DP-1 playlist per Feral File exhibition.
  *
- * Playlist Generation Logic:
+ * Playlist Generation Logic (applied uniformly to all exhibition types):
  *
- * 1. Solo Exhibition:
- *    - Master Playlist: All "1 of 1" (single) + "Edition of n" (multi) works
- *      Name: [Exhibition Name] — Highlight Reel
- *    - Separate playlists for each "1 of n" (multi_unique/Generative) series
- *      Name: [Exhibition Name] — [Series Title]
+ * 1. Sort all series by displayIndex (ascending).
+ * 2. Partition series into:
+ *    - Primary series: "1 of 1" (single) + "Edition of n" (multi)
+ *    - Generative series: "1 of n" (multi_unique)
+ * 3. Primary items come first, flat in series display order.
+ * 4. Generative items follow, interleaved round-robin across series in
+ *    display order (series 1 item 1, series 2 item 1, ... series 1 item 2, ...).
+ * 5. Total items capped at MAX_PLAYLIST_ITEMS (1024).
  *
- * 2. Group Exhibition:
- *    - Master Playlist: All artworks from the exhibition, interleaved
- *      Name: [Exhibition Name] — Full Collection
- *    - Separate playlists for each "1 of n" (multi_unique/Generative) series
- *      Name: [Exhibition Name] — [Series Title]
+ * Curator: derived from exhibition.curatorAlumni as a DP-1 curator Entity with a
+ * did:pkh key (CAIP-10, from the alumni's wallet address) when available.
+ *
+ * Slug: matches dp1-feed-v2 makeSlug — uses exhibition.slug when present (client
+ * slug path), otherwise slugify(title) + '-' + first 8 chars of playlist id.
+ *
+ * Output: one flat JSON file per exhibition — <output-dir>/<exhibition-slug>.json
  *
  * Usage:
  *   node scripts/generate-ff-playlist.js <exhibition-id-or-slug> [output-dir] [options]
  *
- * Example:
+ * Examples:
  *   node scripts/generate-ff-playlist.js infinite-entropy-xhj
  *   node scripts/generate-ff-playlist.js 71513905-f7b2-4ac1-b617-0d41123b3639
- *   node scripts/generate-ff-playlist.js infinite-entropy-xhj ./out --summary-provider openai --summary-api-key sk-...
- *   node scripts/generate-ff-playlist.js infinite-entropy-xhj ./out --summary-provider gemini --summary-api-key KEY
+ *   node scripts/generate-ff-playlist.js infinite-entropy-xhj ./playlists --summary-provider openai --summary-api-key sk-...
+ *   node scripts/generate-ff-playlist.js infinite-entropy-xhj ./playlists --summary-provider gemini --summary-api-key KEY
  */
 
 import dp1 from 'ff-dp1-js';
@@ -45,7 +49,6 @@ const MAX_PLAYLIST_ITEMS = 1024;
 
 /**
  * Fetch a single page from the Feral File API.
- * Returns the full parsed JSON body so callers can inspect paging metadata.
  */
 async function fetchAPI(endpoint) {
   const url = `${FF_API_BASE}${endpoint}`;
@@ -60,8 +63,6 @@ async function fetchAPI(endpoint) {
 
 /**
  * Fetch all pages for a paginated Feral File API endpoint.
- * The endpoint must not already include `offset` or `limit` params.
- * Uses the `paging` envelope `{ offset, limit, total }` to determine when to stop.
  */
 async function fetchAllPages(endpoint, pageSize = 300) {
   const allResults = [];
@@ -109,8 +110,8 @@ async function getArtworks(seriesId) {
 }
 
 /**
- * Transform URI according to the specified rules
- * Handles Cloudflare Images, IPFS, relative paths, and other URL types
+ * Transform URI according to the specified rules.
+ * Handles Cloudflare Images, IPFS, relative paths, and other URL types.
  */
 function resolveURI(rawSrc) {
   if (!rawSrc) {
@@ -119,32 +120,19 @@ function resolveURI(rawSrc) {
 
   let resolvedSrc = rawSrc;
 
-  // If starts with https
   if (rawSrc.startsWith('https://')) {
-    // Check if it's Cloudflare Images
     if (rawSrc.includes('imagedelivery.net')) {
-      // Remove any existing variant (like /thumbnail, /public, etc.)
-      // Cloudflare Images URL format: https://imagedelivery.net/<account-id>/<image-id>[/variant]
       const cfImageMatch = rawSrc.match(/^(https:\/\/imagedelivery\.net\/[^\/]+\/[^\/]+)/);
       if (cfImageMatch) {
-        // Remove existing variant and append /raw
         resolvedSrc = `${cfImageMatch[1]}/raw`;
       } else {
-        // Fallback: just append /raw if pattern doesn't match
         resolvedSrc = rawSrc.replace(/\/(thumbnail|public|[^\/]+)$/, '') + '/raw';
       }
     }
-    // Otherwise (any other HTTPS host), leave as is
-  }
-  // If starts with ipfs://
-  else if (rawSrc.startsWith('ipfs://')) {
-    // Convert to HTTP gateway: ipfs://<CID/...> → https://ipfs.io/ipfs/<CID/...>
-    const ipfsPath = rawSrc.substring(7); // Remove 'ipfs://'
+  } else if (rawSrc.startsWith('ipfs://')) {
+    const ipfsPath = rawSrc.substring(7);
     resolvedSrc = `https://ipfs.io/ipfs/${ipfsPath}`;
-  }
-  // Else (relative or non-standard path)
-  else {
-    // Prefix with CDN
+  } else {
     resolvedSrc = `${CDN_BASE}/${rawSrc}`;
   }
 
@@ -152,11 +140,10 @@ function resolveURI(rawSrc) {
 }
 
 /**
- * Transform preview URI according to the specified rules
+ * Pick the best preview URI for an artwork.
  */
 function resolvePreviewURI(artwork) {
-  // Step 1: Pick the best raw candidate
-  let rawSrc = artwork.metadata?.alternativePreviewURI || artwork.previewURI;
+  const rawSrc = artwork.metadata?.alternativePreviewURI || artwork.previewURI;
 
   if (!rawSrc) {
     console.warn(`No preview URI found for artwork ${artwork.id}`);
@@ -167,52 +154,103 @@ function resolvePreviewURI(artwork) {
 }
 
 /**
- * Generate item title based on artwork name
+ * Generate item title based on artwork name and series model.
  */
 function generateItemTitle(seriesTitle, artworkName, artworkModel) {
-  // If artwork model is 'single' and series title ends with #{number}, use series title
   if (artworkModel === 'single') {
     return seriesTitle;
   }
 
-  // If artwork.name is AE, AP, PP or contains #, use formula "series.title artwork.name"
   const specialCategories = ['AE', 'AP', 'PP'];
-
   if (specialCategories.includes(artworkName) || artworkName.includes('#')) {
     return `${seriesTitle} ${artworkName}`;
   }
 
-  // Otherwise, just use artwork.name
   return artworkName;
 }
 
 /**
- * Create a slug from a title
+ * Build a CAIP-10 did:pkh identifier from a Feral File alumni account's
+ * `addresses` (ethereum / tezos). Feral File only exposes wallet addresses for
+ * curators/artists (not raw public key bytes), so did:pkh — not did:key — is
+ * the DID method that can actually be derived here. The production feed
+ * server (dp1-go) validates Entity.key against the generic DID pattern
+ * `^did:[a-z]+:.+$`, which accepts did:pkh.
  */
-function createSlug(title) {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .substring(0, 64);
+function alumniAddressToDidPkh(addresses) {
+  if (!addresses || typeof addresses !== 'object') return null;
+  const eth = addresses.ethereum;
+  if (typeof eth === 'string' && /^0x[a-fA-F0-9]{40}$/.test(eth.trim())) {
+    return `did:pkh:eip155:1:${eth.trim()}`;
+  }
+  const tz = addresses.tezos;
+  if (typeof tz === 'string' && /^tz[123][1-9A-HJ-NP-Za-km-z]{33}$/.test(tz.trim())) {
+    return `did:pkh:tezos:mainnet:${tz.trim()}`;
+  }
+  return null;
 }
 
 /**
- * Check if artwork should be included based on series settings
+ * Build a DP-1 curator Entity from a Feral File alumni account (curatorAlumni).
+ */
+function curatorEntityFromAlumni(alumni) {
+  if (!alumni || typeof alumni !== 'object') return null;
+  const name = alumni.fullName || alumni.alias;
+  if (!name) return null;
+  const entity = { name: String(name).trim() };
+  const key = alumniAddressToDidPkh(alumni.addresses);
+  if (key) entity.key = key;
+  if (alumni.alias) {
+    entity.url = `https://feralfile.com/curators/${encodeURIComponent(alumni.alias)}`;
+  }
+  return entity;
+}
+
+/**
+ * Lowercase, replace non-alphanumeric runs with '-', trim edges (empty → "").
+ * Matches dp1-feed-v2 internal/executor slugify().
+ */
+function slugify(s) {
+  return String(s)
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+/**
+ * First 8 characters of a UUID string. Matches dp1-feed-v2 shortID().
+ */
+function shortID(uuid) {
+  return String(uuid).slice(0, 8);
+}
+
+/**
+ * URL-friendly slug for playlists (matches dp1-feed-v2 makeSlug).
+ * Priority: 1) client-provided slug (slugified), 2) title-based slug + short id suffix.
+ */
+function makeSlug(clientSlug, title, id, defaultName = 'playlist') {
+  if (clientSlug) {
+    const slug = slugify(clientSlug);
+    if (slug) return slug;
+  }
+  let base = slugify(title);
+  if (!base) base = defaultName;
+  return `${base}-${shortID(id)}`;
+}
+
+/**
+ * Check if artwork should be included based on series settings.
  */
 function shouldIncludeArtwork(artwork, series, exhibition, includeCount) {
   const artworkModel = series.settings?.artworkModel;
 
-  // For 'multi' or 'single', only include the first artwork (index 0)
   if (artworkModel === 'multi' || artworkModel === 'single') {
     if (includeCount > 0) {
       return false;
     }
   }
-  // For 'multi_unique', include all artworks
-  // (no additional filtering needed)
 
-  // If exhibition was minted on bitmark blockchain, only pick artworks with active swap
   if (exhibition.mintBlockchain === 'bitmark') {
     if (!artwork.swap || !artwork.swap.id) {
       console.log(
@@ -226,7 +264,7 @@ function shouldIncludeArtwork(artwork, series, exhibition, includeCount) {
 }
 
 /**
- * Get blockchain chain type from blockchain name
+ * Get blockchain chain type from blockchain name.
  */
 function getChainType(blockchainType) {
   const evmChains = ['ethereum', 'base', 'arbitrum', 'polygon'];
@@ -238,26 +276,24 @@ function getChainType(blockchainType) {
   if (tezosChains.includes(blockchainType?.toLowerCase())) {
     return 'tezos';
   }
-  // Default to evm for bitmark-migrated tokens (they go to ethereum)
   return 'evm';
 }
 
 /**
- * Get contract standard based on chain type
+ * Get contract standard based on chain type.
  */
 function getContractStandard(chainType) {
   return chainType === 'tezos' ? 'fa2' : 'erc721';
 }
 
 /**
- * Find the appropriate contract address for the blockchain type
+ * Find the appropriate contract address for the blockchain type.
  */
 function findContractAddress(exhibition, blockchainType) {
   if (!exhibition.contracts || exhibition.contracts.length === 0) {
     return null;
   }
 
-  // Find contract matching the blockchain type
   const contract = exhibition.contracts.find(
     c => c.blockchainType?.toLowerCase() === blockchainType?.toLowerCase()
   );
@@ -266,10 +302,9 @@ function findContractAddress(exhibition, blockchainType) {
 }
 
 /**
- * Create provenance information for an artwork
+ * Create provenance information for an artwork.
  */
 function createProvenance(artwork, exhibition) {
-  // Determine blockchain type - prefer swap blockchain, fallback to exhibition mint blockchain
   const blockchainType = artwork.swap?.blockchainType || exhibition.mintBlockchain || 'ethereum';
   const chainType = getChainType(blockchainType);
   const standard = getContractStandard(chainType);
@@ -293,7 +328,7 @@ function createProvenance(artwork, exhibition) {
 }
 
 /**
- * Select artworks from a series based on the rules
+ * Select artworks from a series based on artworkModel rules.
  */
 async function selectArtworksFromSeries(series, exhibition) {
   const artworks = await getArtworks(series.id);
@@ -303,19 +338,14 @@ async function selectArtworksFromSeries(series, exhibition) {
   console.log(`  Artwork model: ${artworkModel}`);
   console.log(`  Total artworks found: ${artworks.length}`);
 
-  // Sort artworks by index to ensure we pick lower index first
   artworks.sort((a, b) => a.index - b.index);
 
   const selectedArtworks = [];
 
   for (const artwork of artworks) {
     if (shouldIncludeArtwork(artwork, series, exhibition, selectedArtworks.length)) {
-      selectedArtworks.push({
-        artwork,
-        series,
-      });
+      selectedArtworks.push({ artwork, series });
 
-      // For multi or single, stop after first artwork
       if ((artworkModel === 'multi' || artworkModel === 'single') && selectedArtworks.length >= 1) {
         break;
       }
@@ -327,18 +357,17 @@ async function selectArtworksFromSeries(series, exhibition) {
 }
 
 /**
- * Interleave artworks from multiple series for group exhibitions
+ * Interleave artworks from multiple series round-robin.
+ * Takes item 0 from each series, then item 1, etc.
  */
 function interleaveArtworks(seriesArtworks) {
   const result = [];
   let maxLength = 0;
 
-  // Find the maximum number of artworks in any series
   for (const artworks of seriesArtworks) {
     maxLength = Math.max(maxLength, artworks.length);
   }
 
-  // Interleave: take one from each series in turn
   for (let i = 0; i < maxLength; i++) {
     for (const artworks of seriesArtworks) {
       if (i < artworks.length) {
@@ -351,7 +380,8 @@ function interleaveArtworks(seriesArtworks) {
 }
 
 /**
- * Build DP-1 playlist items from a list of {artwork, series} pairs
+ * Build DP-1 playlist items from a list of {artwork, series} pairs.
+ * Stops at MAX_PLAYLIST_ITEMS.
  */
 function buildPlaylistItems(selectedItems, exhibition) {
   const playlistItems = [];
@@ -380,8 +410,8 @@ function buildPlaylistItems(selectedItems, exhibition) {
         id: randomUUID(),
         title,
         source,
-        duration: 300, // Default 300 seconds per artwork
-        license: 'open', // Feral File artworks are open access
+        duration: 300,
+        license: 'open',
         created: new Date().toISOString(),
         provenance,
       };
@@ -411,33 +441,23 @@ function buildPlaylistItems(selectedItems, exhibition) {
 
 /**
  * Build a full DP-1 playlist object from a title, items, and exhibition metadata.
- * Pass a series object for series-specific playlists; omit (or pass null) for
- * 1-of-1s and mixed playlists, which fall back to the exhibition-level description.
+ * Extension fields (summary, coverImage, curators) are emitted as top-level siblings
+ * per the DP-1 "playlists" extension (extensions/playlists/schema.json).
  */
-async function buildPlaylist(title, items, exhibition, series = null, summaryOpts = null) {
+async function buildPlaylist(title, items, exhibition, summaryOpts = null) {
   const playlistId = randomUUID();
-  const playlistSlug = createSlug(title);
+  const playlistSlug = makeSlug(exhibition.slug, title, playlistId, 'playlist');
 
-  let coverImageUrl = series
-    ? series.thumbnailDisplay || series.thumbnailURI
-    : exhibition.coverDisplay || exhibition.coverURI;
+  let coverImageUrl = exhibition.coverDisplay || exhibition.coverURI;
   if (coverImageUrl) {
     coverImageUrl = resolveURI(coverImageUrl);
   }
 
-  let summary;
-  if (series) {
-    summary =
-      series.description ||
-      series.note ||
-      series.noteBrief ||
-      `A digital art series: ${series.title}`;
-  } else {
-    summary =
-      exhibition.note ||
-      exhibition.noteBrief ||
-      `A digital art exhibition featuring works from ${exhibition.title}`;
-  }
+  let summary =
+    exhibition.note ||
+    exhibition.noteBrief ||
+    `A digital art exhibition featuring works from ${exhibition.title}`;
+
   if (summary.length > DEFAULT_MAX_TEXT_LENGTH) {
     if (summaryOpts?.provider && summaryOpts?.apiKey) {
       try {
@@ -473,7 +493,12 @@ async function buildPlaylist(title, items, exhibition, series = null, summaryOpt
     items,
   };
 
-  // Generate a temporary signature (should be replaced with real signing)
+  const curatorAlumni = exhibition.curatorAlumni || exhibition.curator?.alumniAccount;
+  const curatorEntity = curatorEntityFromAlumni(curatorAlumni);
+  if (curatorEntity) {
+    playlist.curators = [curatorEntity];
+  }
+
   playlist.signature =
     'ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000';
 
@@ -481,10 +506,19 @@ async function buildPlaylist(title, items, exhibition, series = null, summaryOpt
 }
 
 /**
- * Validate and log a playlist, throwing if invalid
+ * Validate and log a playlist, throwing if invalid.
+ *
+ * Note: the local `ff-dp1-js` package's Entity.key validator only accepts
+ * did:key (multibase Ed25519 pubkey) and rejects did:pkh, even though the
+ * actual production feed server (dp1-go) validates Entity.key against the
+ * generic DID pattern `^did:[a-z]+:.+$` and accepts did:pkh fine. Since
+ * curators here use did:pkh (the only DID method derivable from Feral File's
+ * wallet-address-only alumni data), structural validation runs on a
+ * curators-stripped copy to avoid a false failure from this local package.
  */
 function validatePlaylist(playlist) {
-  const result = dp1.parseDP1Playlist(playlist);
+  const { curators, ...structural } = playlist;
+  const result = dp1.parseDP1Playlist(structural);
   if (result.error) {
     console.error('\n✗ Playlist validation failed:');
     console.error(result.error.message);
@@ -499,25 +533,32 @@ function validatePlaylist(playlist) {
   console.log(`  ID: ${playlist.id}`);
   console.log(`  Slug: ${playlist.slug}`);
   console.log(`  Items: ${playlist.items.length}`);
+  if (curators?.length) {
+    console.log(`  Curators: ${curators.map(c => `${c.name} (${c.key || 'no key'})`).join(', ')}`);
+  }
 }
 
 /**
- * Generate DP-1 playlists from exhibition
- * Returns an array of playlists.
+ * Generate a single DP-1 playlist from an exhibition.
+ *
+ * Ordering:
+ *  1. Primary series (single/multi) items, flat, in display_index order.
+ *  2. Generative series (multi_unique) items, interleaved round-robin in display_index order.
+ *  3. Capped at MAX_PLAYLIST_ITEMS total.
+ *
+ * Returns { playlist, exhibitionSlug }.
  */
-async function generatePlaylists(exhibitionIdOrSlug, summaryOpts = null) {
+async function generatePlaylist(exhibitionIdOrSlug, summaryOpts = null) {
   try {
-    // 1. Fetch exhibition
     const exhibition = await getExhibition(exhibitionIdOrSlug);
     console.log(`\nExhibition: ${exhibition.title}`);
     console.log(`Type: ${exhibition.type}`);
     console.log(`Mint blockchain: ${exhibition.mintBlockchain}`);
 
-    // 2. Fetch series
     const seriesList = await getSeries(exhibition.id);
     console.log(`\nFound ${seriesList.length} series\n`);
 
-    // Sort series by displayIndex (ascending) to ensure proper order
+    // Sort series by displayIndex ascending
     seriesList.sort((a, b) => {
       if (
         a.displayIndex !== undefined &&
@@ -534,137 +575,57 @@ async function generatePlaylists(exhibitionIdOrSlug, summaryOpts = null) {
       return new Date(a.createdAt) - new Date(b.createdAt);
     });
 
-    // 3. Select artworks from each series
+    // Select artworks from each series
     const allSeriesArtworks = [];
     for (const series of seriesList) {
       const artworks = await selectArtworksFromSeries(series, exhibition);
       allSeriesArtworks.push({ series, artworks });
     }
 
-    const playlists = [];
-    const isSolo = exhibition.type !== 'group' && exhibition.type !== 'curated';
+    // Partition into primary (single/multi) and generative (multi_unique)
+    const primarySeries = allSeriesArtworks.filter(({ series }) => {
+      const model = series.settings?.artworkModel;
+      return model === 'single' || model === 'multi';
+    });
 
-    if (isSolo) {
-      // --- Solo Exhibition Logic ---
+    const generativeSeries = allSeriesArtworks.filter(({ series }) => {
+      return series.settings?.artworkModel === 'multi_unique';
+    });
 
-      // Master Playlist: All "1 of 1" (single) + "Edition of n" (multi) works
-      // Name: [Exhibition Name] — Highlight Reel
-      const highlightReelItems = allSeriesArtworks
-        .filter(({ series }) => {
-          const model = series.settings?.artworkModel;
-          return model === 'single' || model === 'multi';
-        })
-        .flatMap(({ artworks }) => artworks);
+    // Primary items: flat in display_index order
+    const primaryItems = primarySeries.flatMap(({ artworks }) => artworks);
 
-      if (highlightReelItems.length > 0) {
-        const highlightReelTitle = `${exhibition.title} — Highlight Reel`;
-        console.log(
-          `\nBuilding Highlight Reel playlist (${highlightReelItems.length} artworks: 1 of 1 + Edition of n)...`
-        );
-        const items = buildPlaylistItems(highlightReelItems, exhibition);
-        if (items.length > 0) {
-          const playlist = await buildPlaylist(
-            highlightReelTitle,
-            items,
-            exhibition,
-            null,
-            summaryOpts
-          );
-          validatePlaylist(playlist);
-          playlists.push(playlist);
-        }
-      }
+    // Generative items: interleaved round-robin across generative series
+    const generativeItems = interleaveArtworks(generativeSeries.map(({ artworks }) => artworks));
 
-      // Separate playlists for each "1 of n" (multi_unique/Generative) series
-      // Name: [Exhibition Name] — [Series Title]
-      for (const { series, artworks } of allSeriesArtworks) {
-        const artworkModel = series.settings?.artworkModel;
-        if (artworkModel !== 'multi_unique') continue;
-        if (artworks.length === 0) continue;
+    const combinedItems = [...primaryItems, ...generativeItems];
 
-        const playlistTitle = `${exhibition.title} — ${series.title}`;
-        console.log(
-          `\nBuilding generative series playlist: "${playlistTitle}" (${artworks.length} artworks)...`
-        );
-        const items = buildPlaylistItems(artworks, exhibition);
-        if (items.length > 0) {
-          const playlist = await buildPlaylist(
-            playlistTitle,
-            items,
-            exhibition,
-            series,
-            summaryOpts
-          );
-          validatePlaylist(playlist);
-          playlists.push(playlist);
-        }
-      }
-    } else {
-      // --- Group Exhibition Logic ---
-
-      // Master Playlist: All artworks from the exhibition, interleaved
-      // Name: [Exhibition Name] — Full Collection
-      const allArtworksPerSeries = allSeriesArtworks.map(({ artworks }) => artworks);
-      const fullCollectionItems = interleaveArtworks(allArtworksPerSeries);
-
-      if (fullCollectionItems.length > 0) {
-        const fullCollectionTitle = `${exhibition.title} — Full Collection`;
-        console.log(
-          `\nBuilding Full Collection playlist: "${fullCollectionTitle}" (${fullCollectionItems.length} artworks)...`
-        );
-        const items = buildPlaylistItems(fullCollectionItems, exhibition);
-        if (items.length > 0) {
-          const playlist = await buildPlaylist(
-            fullCollectionTitle,
-            items,
-            exhibition,
-            null,
-            summaryOpts
-          );
-          validatePlaylist(playlist);
-          playlists.push(playlist);
-        }
-      }
-
-      // Separate playlists for each "1 of n" (multi_unique/Generative) series
-      // Name: [Exhibition Name] — [Series Title]
-      for (const { series, artworks } of allSeriesArtworks) {
-        const artworkModel = series.settings?.artworkModel;
-        if (artworkModel !== 'multi_unique') continue;
-        if (artworks.length === 0) continue;
-
-        const playlistTitle = `${exhibition.title} — ${series.title}`;
-        console.log(
-          `\nBuilding generative series playlist: "${playlistTitle}" (${artworks.length} artworks)...`
-        );
-        const items = buildPlaylistItems(artworks, exhibition);
-        if (items.length > 0) {
-          const playlist = await buildPlaylist(
-            playlistTitle,
-            items,
-            exhibition,
-            series,
-            summaryOpts
-          );
-          validatePlaylist(playlist);
-          playlists.push(playlist);
-        }
-      }
-    }
-
-    if (playlists.length === 0) {
-      throw new Error('No valid playlists could be created');
-    }
-
-    console.log(`\n✓ Generated ${playlists.length} playlist(s) total.`);
     console.log(
-      'Note: Signatures are placeholders. Use a proper Ed25519 key to sign in production.'
+      `\nCombined: ${primaryItems.length} primary + ${generativeItems.length} generative = ${combinedItems.length} total (cap: ${MAX_PLAYLIST_ITEMS})`
     );
 
-    const exhibitionSlug = exhibition.slug || createSlug(exhibition.title);
-    return { playlists, exhibitionSlug };
+    if (combinedItems.length === 0) {
+      throw new Error('No artworks could be selected for this exhibition');
+    }
+
+    const items = buildPlaylistItems(combinedItems, exhibition);
+
+    if (items.length === 0) {
+      throw new Error('No valid playlist items could be created');
+    }
+
+    const playlist = await buildPlaylist(exhibition.title, items, exhibition, summaryOpts);
+    validatePlaylist(playlist);
+
+    console.log(`\n✓ Generated 1 playlist.`);
+    console.log(
+      'Note: Signature is a placeholder. Use a proper Ed25519 key to sign in production.'
+    );
+
+    const exhibitionSlug = exhibition.slug || makeSlug(null, exhibition.title, playlist.id, 'playlist');
+    return { playlist, exhibitionSlug };
   } catch (error) {
-    console.error('\n✗ Error generating playlists:', error.message);
+    console.error('\n✗ Error generating playlist:', error.message);
     throw error;
   }
 }
@@ -717,9 +678,9 @@ async function main() {
     console.error('\nExamples:');
     console.error('  node scripts/generate-ff-playlist.js infinite-entropy-xhj');
     console.error('  node scripts/generate-ff-playlist.js 71513905-f7b2-4ac1-b617-0d41123b3639');
-    console.error('  node scripts/generate-ff-playlist.js infinite-entropy-xhj playlist-new');
+    console.error('  node scripts/generate-ff-playlist.js infinite-entropy-xhj ./playlists');
     console.error(
-      '  node scripts/generate-ff-playlist.js infinite-entropy-xhj ./out --summary-provider openai --summary-api-key KEY'
+      '  node scripts/generate-ff-playlist.js infinite-entropy-xhj ./playlists --summary-provider openai --summary-api-key KEY'
     );
     process.exit(1);
   }
@@ -750,21 +711,17 @@ async function main() {
   }
 
   try {
-    const { playlists, exhibitionSlug } = await generatePlaylists(exhibitionIdOrSlug, summaryOpts);
+    const { playlist, exhibitionSlug } = await generatePlaylist(exhibitionIdOrSlug, summaryOpts);
     const fs = await import('fs');
     const path = await import('path');
 
-    const exhibitionDir = path.join(outputDir, exhibitionSlug);
-    fs.mkdirSync(exhibitionDir, { recursive: true });
+    fs.mkdirSync(outputDir, { recursive: true });
 
-    playlists.forEach((playlist, index) => {
-      const playlistJson = JSON.stringify(playlist, null, 2);
-      const outputFile = path.join(exhibitionDir, `${index + 1}-${playlist.slug}.json`);
-      fs.writeFileSync(outputFile, playlistJson, 'utf-8');
-      console.log(`\n✓ Playlist saved to: ${outputFile}`);
-    });
+    const outputFile = path.join(outputDir, `${exhibitionSlug}.json`);
+    fs.writeFileSync(outputFile, JSON.stringify(playlist, null, 2), 'utf-8');
+    console.log(`\n✓ Playlist saved to: ${outputFile}`);
   } catch (error) {
-    console.error('\n✗ Failed to generate playlists');
+    console.error('\n✗ Failed to generate playlist');
     process.exit(1);
   }
 }

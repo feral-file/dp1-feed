@@ -1,0 +1,176 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "44f29561-ff33-4868-97bd-e9d925c9de23",
+  "slug": "material-wonderland-ufx",
+  "title": "Material Wonderland",
+  "summary": "Material Wonderland is the first solo exhibition of NFT-backed work by internationally acclaimed Chinese multimedia artist Lu Yang, co-curated by Alice Scope and Barry Threw for Vellum LA and Feral File.\r\n\r\nThe exhibition includes eight new works taken from “The Great Adventure of Material World,” Lu Yang’s second piece from the \"Material World\" series created in 2019, arguably known to be his most ambitious game work thus far. \r\n\r\nThis fresh presentation of Lu Yang’s metamorphic world comes at a critical time when shared online spaces are increasingly conditioning the possibilities for defining our own modes of being. The avatars, actions, and settings in the Material Wonderland exhibition gesture toward the transformative potential of video games to serve as sites of enactment and exploration, while also demonstrating the vital role of artists in anticipating cultural traumas and envisioning expansive responses. Resisting the myopic view of virtual worlds as escapism, Material Wonderland presents an interactive open narrative as a transcendental technology-of-the-self, providing a toolkit for reconstructing identity back in the physical world.\r\n\r\n“The Great Adventure of Material World” consists of six levels structured in direct reference to the six reincarnations in Buddhism. Through gameplay as “The Knight,” viewers are invited to explore multiple identity transformations, moving beyond tropes of popular manga culture while growing in power and abilities. Through this journey of observation the Knight goes through internal struggles amongst various emotions and desires, while players are challenged to reflect on their conventional views of contemporary society, and invited to explore alternate paths of being. Many characters from Lu Yang's previous works can be seen in the Material Wonderland and together they form a game world which offers infinite possibilities to build one’s existence liberated from the rigid confines of nationality, gender, and sexuality....",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/ba6f7ed4-e3a2-43d4-afbb-ada16c679f00/raw",
+  "created": "2026-07-09T09:15:17.834Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "d8dd7b2d-c517-40b2-84e2-a9b25b76e983",
+      "title": "Material World Knight: Fighting Mode",
+      "source": "https://cdn.feralfileassets.com/previews/b45f236a-f29f-4e0a-94b4-e894cb7566e7/1675926395/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:17.830Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "37405486248744233930716135614171504735129073536868819020061938488135423751467"
+        }
+      }
+    },
+    {
+      "id": "26d14e94-9e7a-4cdf-9f27-ac8a5a9f205c",
+      "title": "Material World Knight: Flying Mode",
+      "source": "https://cdn.feralfileassets.com/previews/c570b9bd-d434-4e95-8295-801cc9458b03/1675925666/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:17.833Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "71410372871747443489515838479889316636126954869602511437783803458556682723748"
+        }
+      }
+    },
+    {
+      "id": "bb6d1a49-12ae-443a-803d-d60c73474695",
+      "title": "Material World Knight: Fight the Universe",
+      "source": "https://cdn.feralfileassets.com/previews/ce6dc4ca-13d5-4cda-ba15-9d3201873384/1675927167/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:17.833Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "2492964552115222111455723893464644415786209733158740338236313478633292903956"
+        }
+      }
+    },
+    {
+      "id": "aeac90eb-d63b-4b2e-8269-5ae1e47aa441",
+      "title": "Material World Knight: Giant Heart",
+      "source": "https://cdn.feralfileassets.com/previews/c281ce58-3507-4f6f-bb15-540a88ee553f/1675927590/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:17.834Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "49331212307299913695431248663336053857151499231527615863517194291341458754529"
+        }
+      }
+    },
+    {
+      "id": "2dae8695-c568-4ec5-bb49-43ce663edc37",
+      "title": "Material World Knight: Full Armed Fighting Mode",
+      "source": "https://cdn.feralfileassets.com/previews/866f3fab-e74a-46fe-ba92-651b95e356e9/1675928540/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:17.834Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "31830990513774020773856075078173769724056013930901601507946534590488789174621"
+        }
+      }
+    },
+    {
+      "id": "8a0645dd-6381-4c1d-91d2-cc8a0d126edb",
+      "title": "Material World Knight: Head Forest",
+      "source": "https://cdn.feralfileassets.com/previews/af10361f-ee39-4e5b-88d0-6c43e8d9bab5/1675929058/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:17.834Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "65218211541065683149590553991882510753504416247622639219453290930292260922908"
+        }
+      }
+    },
+    {
+      "id": "a3b77ef9-e0f3-46f2-9e38-075375827762",
+      "title": "Material World Knight: Vajra Power",
+      "source": "https://cdn.feralfileassets.com/previews/412568f3-8e46-4058-baa8-b2d907578f0c/1675929748/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:17.834Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "86092054222848149411274226430384902086016540654465058178380214564830543514781"
+        }
+      }
+    },
+    {
+      "id": "40817575-1cee-4bfd-bf6f-947468127887",
+      "title": "Material World Knight: Bardo Tunnel",
+      "source": "https://cdn.feralfileassets.com/previews/07f145a0-1131-4366-a422-a6e18999d054/1675930114/preview.mp4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:17.834Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "30557345746184669595663040401756320711447993718270973898970391747135121472976"
+        }
+      }
+    },
+    {
+      "id": "9a7cbb1e-d311-416d-a3ac-142d1d846b5c",
+      "title": "Material World Knight: Poster AE",
+      "source": "https://cdn.feralfileassets.com/previews/f2cabb51-5eae-48a7-ba16-fc847c23e0fe/1675931007/preview.jpg",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:17.834Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x8f30722dd16BD63cF2665C383c1aEf5e307B0046",
+          "tokenId": "64083282194581793942215293811836391478974900789963845024963281200227193839067"
+        }
+      }
+    }
+  ],
+  "curators": [
+    {
+      "name": "Alice Scope and Barry Threw",
+      "key": "did:pkh:eip155:1:0x46f148279F1006DAbd01ab80D05779671EF95F6a",
+      "url": "https://feralfile.com/curators/Alice%20Scope%20and%20Barry%20Threw"
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

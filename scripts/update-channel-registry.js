@@ -6,6 +6,20 @@
  * This script updates the channel registry on the feed server and optionally
  * triggers a GitHub workflow to create a database snapshot.
  *
+ * Migration note (one-time cutover from per-exhibition channels to single FF channel):
+ *   After the first successful run of the new upload-to-feed.js, run this script
+ *   once with --mode replace to swap the registry entry for "Feral File" from the
+ *   ~49 old per-exhibition channel URLs to the single new channel URL:
+ *
+ *     node scripts/update-channel-registry.js \
+ *       --artifact dp1-feed-publish-artifact.json \
+ *       --api-key YOUR_API_KEY \
+ *       --publisher "Feral File" \
+ *       --mode replace
+ *
+ *   The old per-exhibition channel objects remain on the feed server (orphaned)
+ *   but are no longer listed in the registry.
+ *
  * Usage:
  *   node scripts/update-channel-registry.js --artifact <path> --api-key <key> --publisher <name> [--github-token <token>] [--mode <append|replace>] [--dryrun]
  *
@@ -207,8 +221,62 @@ function normalizeFeedHost(feedHost) {
 }
 
 /**
- * Fetch current channel registry from feed server
- * Returns an array of registry items: [{ name, channel_urls }, ...]
+ * Normalize registry GET responses from dp1-feed-v2 ({ publishers: [...] }) or legacy
+ * array format ([{ name, channel_urls }]).
+ */
+function normalizeRegistryResponse(data) {
+  if (Array.isArray(data)) {
+    return data.map(item => {
+      if ('static' in item || 'living' in item) {
+        return {
+          name: item.name,
+          did: item.did || undefined,
+          static: Array.isArray(item.static) ? [...item.static] : [],
+          living: Array.isArray(item.living) ? [...item.living] : [],
+        };
+      }
+
+      return {
+        name: item.name,
+        did: item.did || undefined,
+        static: Array.isArray(item.channel_urls) ? [...item.channel_urls] : [],
+        living: [],
+      };
+    });
+  }
+  if (data && Array.isArray(data.publishers)) {
+    return data.publishers.map(item => ({
+      name: item.name,
+      did: item.did || undefined,
+      static: Array.isArray(item.static) ? [...item.static] : [],
+      living: Array.isArray(item.living) ? [...item.living] : [],
+    }));
+  }
+  return [];
+}
+
+function countPublisherChannels(publisher) {
+  return (publisher.static?.length || 0) + (publisher.living?.length || 0);
+}
+
+function countRegistryChannels(publishers) {
+  return publishers.reduce((sum, item) => sum + countPublisherChannels(item), 0);
+}
+
+function toRegistryPutBody(publishers) {
+  return {
+    publishers: publishers.map(item => ({
+      name: item.name,
+      ...(item.did ? { did: item.did } : {}),
+      static: item.static || [],
+      living: item.living || [],
+    })),
+  };
+}
+
+/**
+ * Fetch current channel registry from feed server.
+ * Returns normalized publishers: [{ name, did?, static, living }, ...]
  */
 async function fetchChannelRegistry(feedHost) {
   const registryUrl = `${feedHost}/api/v1/registry/channels`;
@@ -220,7 +288,6 @@ async function fetchChannelRegistry(feedHost) {
     const response = await fetch(registryUrl);
 
     if (!response.ok) {
-      // If 404, registry might not exist yet - return empty array
       if (response.status === 404) {
         console.log(`  ⚠️  Registry not found (404), will create new one`);
         return [];
@@ -229,18 +296,12 @@ async function fetchChannelRegistry(feedHost) {
     }
 
     const registry = await response.json();
+    const publishers = normalizeRegistryResponse(registry);
     console.log(`  ✓ Registry fetched successfully`);
+    console.log(`  Current publishers: ${publishers.length}`);
+    console.log(`  Total channels: ${countRegistryChannels(publishers)}`);
 
-    if (Array.isArray(registry)) {
-      const totalChannels = registry.reduce(
-        (sum, item) => sum + (item.channel_urls?.length || 0),
-        0
-      );
-      console.log(`  Current publishers: ${registry.length}`);
-      console.log(`  Total channels: ${totalChannels}`);
-    }
-
-    return registry;
+    return publishers;
   } catch (error) {
     if (error.message.includes('fetch failed')) {
       throw new Error(`Network error fetching registry: ${error.message}`);
@@ -259,8 +320,28 @@ function extractChannelUuid(url) {
 }
 
 /**
- * Build updated registry based on mode
- * Registry format: [{ name: "Publisher Name", channel_urls: [...] }, ...]
+ * Find channel URL index by UUID in a publisher URL list.
+ */
+function findChannelUrlIndex(urls, targetUuid) {
+  return urls.findIndex(existingUrl => extractChannelUuid(existingUrl) === targetUuid);
+}
+
+/**
+ * Remove a channel URL from a list when the UUID matches.
+ */
+function removeChannelUrlByUuid(urls, targetUuid) {
+  const index = findChannelUrlIndex(urls, targetUuid);
+  if (index === -1) {
+    return false;
+  }
+  urls.splice(index, 1);
+  return true;
+}
+
+/**
+ * Build updated registry based on mode.
+ * Uses dp1-feed-v2 shape internally: [{ name, did?, static, living }, ...].
+ * Feral File channels are stored in the static list.
  */
 function buildUpdatedRegistry(currentRegistry, newChannelUrls, publisher, mode) {
   console.log(`\n🔨 Building updated registry...`);
@@ -268,38 +349,38 @@ function buildUpdatedRegistry(currentRegistry, newChannelUrls, publisher, mode) 
   console.log(`  Publisher: ${publisher}`);
   console.log(`  New channels: ${newChannelUrls.length}`);
 
-  // Ensure currentRegistry is an array
-  const registryArray = Array.isArray(currentRegistry) ? currentRegistry : [];
-
+  const registryArray = normalizeRegistryResponse(currentRegistry);
   let updatedRegistry = [];
 
   if (mode === 'replace') {
-    // Replace mode: keep all publishers except the one we're updating
     updatedRegistry = registryArray.filter(item => item.name !== publisher);
     console.log(`  Keeping ${updatedRegistry.length} other publisher(s)`);
   } else if (mode === 'append') {
-    // Append mode: keep all existing publishers
-    updatedRegistry = [...registryArray];
+    updatedRegistry = registryArray.map(item => ({
+      name: item.name,
+      did: item.did,
+      static: [...(item.static || [])],
+      living: [...(item.living || [])],
+    }));
     console.log(`  Keeping all ${updatedRegistry.length} existing publisher(s)`);
   }
 
-  // Find or create the publisher entry
   let publisherEntry = updatedRegistry.find(item => item.name === publisher);
 
   if (!publisherEntry) {
-    // Create new publisher entry
     publisherEntry = {
       name: publisher,
-      channel_urls: [],
+      static: [],
+      living: [],
     };
     updatedRegistry.push(publisherEntry);
     console.log(`  Creating new entry for publisher: ${publisher}`);
   } else {
     console.log(`  Found existing entry for publisher: ${publisher}`);
-    console.log(`    Current channels: ${publisherEntry.channel_urls.length}`);
+    console.log(`    Current living channels: ${publisherEntry.living.length}`);
+    console.log(`    Current static channels: ${publisherEntry.static.length}`);
   }
 
-  // Add new channels to the publisher
   let addedCount = 0;
   let replacedCount = 0;
   let skippedCount = 0;
@@ -314,37 +395,33 @@ function buildUpdatedRegistry(currentRegistry, newChannelUrls, publisher, mode) 
     }
 
     if (mode === 'replace') {
-      // In replace mode, we already filtered out the publisher, so just add
-      publisherEntry.channel_urls.push(newUrl);
+      publisherEntry.static.push(newUrl);
       addedCount++;
     } else if (mode === 'append') {
-      // In append mode, check if this UUID already exists (regardless of host)
-      const existingIndex = publisherEntry.channel_urls.findIndex(existingUrl => {
-        const existingUuid = extractChannelUuid(existingUrl);
-        return existingUuid === newUuid;
-      });
+      const existingIndex = findChannelUrlIndex(publisherEntry.static, newUuid);
 
       if (existingIndex !== -1) {
-        const oldUrl = publisherEntry.channel_urls[existingIndex];
+        const oldUrl = publisherEntry.static[existingIndex];
 
-        // Check if URLs are identical
         if (oldUrl === newUrl) {
           console.log(`  ⚠️  Channel already exists (same URL): ${newUuid}`);
           skippedCount++;
         } else {
-          // Remove the old URL and append the new one
-          publisherEntry.channel_urls.splice(existingIndex, 1);
-          publisherEntry.channel_urls.push(newUrl);
+          publisherEntry.static.splice(existingIndex, 1);
+          publisherEntry.static.push(newUrl);
           console.log(`  🔄 Replaced channel ${newUuid}:`);
           console.log(`     Old: ${oldUrl}`);
           console.log(`     New: ${newUrl}`);
           replacedCount++;
         }
       } else {
-        // New channel, append to the end
-        publisherEntry.channel_urls.push(newUrl);
+        publisherEntry.static.push(newUrl);
         console.log(`  ✓ Added new channel: ${newUuid}`);
         addedCount++;
+      }
+
+      if (removeChannelUrlByUuid(publisherEntry.living, newUuid)) {
+        console.log(`  ↪ Moved channel ${newUuid} from living to static`);
       }
     }
   }
@@ -359,7 +436,7 @@ function buildUpdatedRegistry(currentRegistry, newChannelUrls, publisher, mode) 
     console.log(`  Skipped ${skippedCount} duplicate(s) or invalid URL(s)`);
   }
 
-  const totalChannels = updatedRegistry.reduce((sum, item) => sum + item.channel_urls.length, 0);
+  const totalChannels = countRegistryChannels(updatedRegistry);
   console.log(
     `  ✓ Updated registry: ${updatedRegistry.length} publisher(s), ${totalChannels} total channel(s)`
   );
@@ -368,22 +445,21 @@ function buildUpdatedRegistry(currentRegistry, newChannelUrls, publisher, mode) 
 }
 
 /**
- * Update channel registry on feed server
- * Registry must be an array: [{ name, channel_urls }, ...]
+ * Update channel registry on feed server (dp1-feed-v2 PUT body: { publishers: [...] }).
  */
-async function updateChannelRegistry(feedHost, apiKey, registryArray, dryrun = false) {
+async function updateChannelRegistry(feedHost, apiKey, publishers, dryrun = false) {
   const registryUrl = `${feedHost}/api/v1/registry/channels`;
+  const putBody = toRegistryPutBody(publishers);
 
   console.log(`\n📤 ${dryrun ? '[DRY RUN] ' : ''}Updating channel registry...`);
   console.log(`  URL: ${registryUrl}`);
-  const totalChannels = registryArray.reduce((sum, item) => sum + item.channel_urls.length, 0);
-  console.log(`  Publishers: ${registryArray.length}`);
-  console.log(`  Total channels: ${totalChannels}`);
+  console.log(`  Publishers: ${publishers.length}`);
+  console.log(`  Total channels: ${countRegistryChannels(publishers)}`);
 
   if (dryrun) {
     console.log(`\n  🔍 DRY RUN MODE - Registry update skipped`);
     console.log(`  Registry data that would be sent:`);
-    console.log(JSON.stringify(registryArray, null, 2));
+    console.log(JSON.stringify(putBody, null, 2));
     return;
   }
 
@@ -394,7 +470,7 @@ async function updateChannelRegistry(feedHost, apiKey, registryArray, dryrun = f
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
       },
-      body: JSON.stringify(registryArray),
+      body: JSON.stringify(putBody),
     });
 
     if (!response.ok) {
@@ -418,18 +494,25 @@ async function updateChannelRegistry(feedHost, apiKey, registryArray, dryrun = f
   }
 }
 
+function publisherUrlsMatch(a, b) {
+  const aStatic = new Set(a.static || []);
+  const bStatic = new Set(b.static || []);
+  const aLiving = new Set(a.living || []);
+  const bLiving = new Set(b.living || []);
+  if (aStatic.size !== bStatic.size || aLiving.size !== bLiving.size) return false;
+  for (const url of aStatic) if (!bStatic.has(url)) return false;
+  for (const url of aLiving) if (!bLiving.has(url)) return false;
+  return true;
+}
+
 /**
  * Verify registry update has taken effect (not cached)
  * Polls the registry endpoint until the expected data is returned
  */
-async function verifyRegistryUpdate(feedHost, expectedRegistry) {
+async function verifyRegistryUpdate(feedHost, expectedPublishers) {
   console.log(`\n🔍 Verifying registry update has taken effect...`);
-  console.log(`  Expected publishers: ${expectedRegistry.length}`);
-  const expectedTotalChannels = expectedRegistry.reduce(
-    (sum, item) => sum + item.channel_urls.length,
-    0
-  );
-  console.log(`  Expected total channels: ${expectedTotalChannels}`);
+  console.log(`  Expected publishers: ${expectedPublishers.length}`);
+  console.log(`  Expected total channels: ${countRegistryChannels(expectedPublishers)}`);
 
   const startTime = Date.now();
   let attempts = 0;
@@ -447,7 +530,6 @@ async function verifyRegistryUpdate(feedHost, expectedRegistry) {
     }
 
     try {
-      // Fetch with cache-busting query parameter
       const cacheBuster = Date.now();
       const registryUrl = `${feedHost}/api/v1/registry/channels?_=${cacheBuster}`;
 
@@ -466,65 +548,35 @@ async function verifyRegistryUpdate(feedHost, expectedRegistry) {
         continue;
       }
 
-      const currentRegistry = await response.json();
+      const currentPublishers = normalizeRegistryResponse(await response.json());
+      const currentTotalChannels = countRegistryChannels(currentPublishers);
 
-      if (!Array.isArray(currentRegistry)) {
-        console.log(`  Attempt ${attempts}: Registry format unexpected, retrying...`);
-        await new Promise(resolve => setTimeout(resolve, REGISTRY_VERIFICATION_INTERVAL_MS));
-        continue;
-      }
-
-      // Compare the registry data
-      const currentTotalChannels = currentRegistry.reduce(
-        (sum, item) => sum + (item.channel_urls?.length || 0),
-        0
-      );
-
-      // Check if the data matches expectations
       if (
-        currentRegistry.length === expectedRegistry.length &&
-        currentTotalChannels === expectedTotalChannels
+        currentPublishers.length === expectedPublishers.length &&
+        currentTotalChannels === countRegistryChannels(expectedPublishers)
       ) {
-        // Deep verification: check that all expected publishers and channels exist
         let allMatch = true;
 
-        for (const expectedItem of expectedRegistry) {
-          const currentItem = currentRegistry.find(item => item.name === expectedItem.name);
-
-          if (!currentItem) {
+        for (const expectedItem of expectedPublishers) {
+          const currentItem = currentPublishers.find(item => item.name === expectedItem.name);
+          if (!currentItem || !publisherUrlsMatch(currentItem, expectedItem)) {
             allMatch = false;
             break;
           }
-
-          if (currentItem.channel_urls.length !== expectedItem.channel_urls.length) {
-            allMatch = false;
-            break;
-          }
-
-          // Check if all URLs match (order-independent)
-          const currentUrls = new Set(currentItem.channel_urls);
-          for (const url of expectedItem.channel_urls) {
-            if (!currentUrls.has(url)) {
-              allMatch = false;
-              break;
-            }
-          }
-
-          if (!allMatch) break;
         }
 
         if (allMatch) {
           console.log(
             `  ✓ Registry update verified! (took ${((Date.now() - startTime) / 1000).toFixed(1)}s)`
           );
-          console.log(`    Publishers: ${currentRegistry.length}`);
+          console.log(`    Publishers: ${currentPublishers.length}`);
           console.log(`    Total channels: ${currentTotalChannels}`);
           return true;
         }
       }
 
       console.log(
-        `  Attempt ${attempts}: Registry not yet updated (publishers: ${currentRegistry.length}, channels: ${currentTotalChannels}), retrying...`
+        `  Attempt ${attempts}: Registry not yet updated (publishers: ${currentPublishers.length}, channels: ${currentTotalChannels}), retrying...`
       );
       await new Promise(resolve => setTimeout(resolve, REGISTRY_VERIFICATION_INTERVAL_MS));
     } catch (error) {

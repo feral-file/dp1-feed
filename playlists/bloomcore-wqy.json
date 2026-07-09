@@ -1,0 +1,958 @@
+{
+  "dpVersion": "1.1.0",
+  "id": "176e6a32-3b7d-4a55-ba73-068746e90ba4",
+  "slug": "bloomcore-wqy",
+  "title": "BLOOMCORE",
+  "summary": "I’ve always been a little bit afraid of plants. I love them, of course, but on some ancient instinct, I have a dreadful respect for their vegetable will. This might be because of <em><a href=\"https://www.are.na/block/2359767\">The Man Whom The Trees Loved</a></em>, a horror story I read at an impressionable age, by the British gothic writer Algernon Blackwood. In the story, a young man senses a murky intelligence deep beneath the bark of a cedar. This special living “something” in the tree excites him; it feels almost animal-like. He can’t shake it, and the obsession becomes overwhelming, ecstatic. He fantasizes that the forest might someday “engulf human vitality into the immense whirlpool of its own vast dreaming life.” The monstrous forest at the edge of his ordered cottage garden creeps closer and closer, until it claims him whole. \n\nBlackwood’s story stirs something deep in me. When the tendrils of ivy creeping along my back fence touch the ground, I rush to cut them back, lest they take me away too. On a whim I recently Googled “dendrophobia,” the fear of trees. In the years-spanning comments section of an online phobia dictionary — a place I consider to be the Deep Internet, almost primevally online — I read about a man stricken to paralysis by the gnarled roots of banyan trees “haphazardly touching the ground in one strangling embrace.” The whooshing sound of leaves in the wind is a common trigger. Another account, from a young mother: her preschooler noticed a tree near his playground for the first time, and, convinced it wasn’t there yesterday, is now inconsolable. \t\t\n\t\t\t\t\nThe toddler isn’t wrong; plants are always watching us. They’re alive, and even though they can appear static, they’re always on the move, especially, it seems, when we’re not paying attention. As the botanist Jack Schultz writes, plants are “<a href=\"https://mospace.umsystem.edu/xmlui/handle/10355/6759\">just very slow animals</a>.” Forests migrate across great distances, racing agains...",
+  "coverImage": "https://imagedelivery.net/iCRs13uicXIPOWrnuHbaKA/5def536f-9981-412d-913e-fbbf7cbf9a00/raw",
+  "created": "2026-07-09T09:15:25.522Z",
+  "defaults": {
+    "license": "open",
+    "duration": 300
+  },
+  "items": [
+    {
+      "id": "c13466a6-1254-4f7f-9749-c4735304b5cc",
+      "title": "BLOOMCORE #1",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/0",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.512Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853347"
+        }
+      }
+    },
+    {
+      "id": "fb5cbe2e-8f2e-48c3-ba93-d1eaf53f28a3",
+      "title": "BLOOMCORE #2",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/1",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.516Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853348"
+        }
+      }
+    },
+    {
+      "id": "a136306a-c7c3-4399-9ab5-28afe17a999b",
+      "title": "BLOOMCORE #3",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/2",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.517Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853349"
+        }
+      }
+    },
+    {
+      "id": "b4d5f82c-b5d9-4771-86dc-68e445a8797f",
+      "title": "BLOOMCORE #4",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/3",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.517Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853350"
+        }
+      }
+    },
+    {
+      "id": "f61ce17a-2ea1-40d4-9708-6cbd46569684",
+      "title": "BLOOMCORE #5",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/4",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.517Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853351"
+        }
+      }
+    },
+    {
+      "id": "4fa52578-636c-4abe-8bc2-fc5261bf11e7",
+      "title": "BLOOMCORE #6",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/5",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.518Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853352"
+        }
+      }
+    },
+    {
+      "id": "1ca6b874-1aa9-4822-80bc-9d2a231685ed",
+      "title": "BLOOMCORE #7",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/6",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.518Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853353"
+        }
+      }
+    },
+    {
+      "id": "368ea032-3a56-486a-bfdb-71a49afb3a8f",
+      "title": "BLOOMCORE #8",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/7",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.518Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853354"
+        }
+      }
+    },
+    {
+      "id": "1de5f01a-443d-434c-8119-7d35836f5125",
+      "title": "BLOOMCORE #9",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/8",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.518Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853355"
+        }
+      }
+    },
+    {
+      "id": "c8d96e4a-bbca-4f8f-b5b8-1b660b7f7884",
+      "title": "BLOOMCORE #10",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/9",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.518Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853356"
+        }
+      }
+    },
+    {
+      "id": "4798f0c2-b2bd-4aee-8232-413769a7af78",
+      "title": "BLOOMCORE #11",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/10",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.519Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853357"
+        }
+      }
+    },
+    {
+      "id": "32cdedbb-6a39-470d-b0dc-6001e82ef911",
+      "title": "BLOOMCORE #12",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/11",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.519Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853358"
+        }
+      }
+    },
+    {
+      "id": "ac0667b7-4efe-4db7-88e0-79e5fbb01220",
+      "title": "BLOOMCORE #13",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/12",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.519Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853359"
+        }
+      }
+    },
+    {
+      "id": "4acf1de6-4fdc-4223-960f-402ea325fc47",
+      "title": "BLOOMCORE #14",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/13",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.519Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853360"
+        }
+      }
+    },
+    {
+      "id": "491244d6-68d8-4388-b210-296060897883",
+      "title": "BLOOMCORE #15",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/14",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.519Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853361"
+        }
+      }
+    },
+    {
+      "id": "b1a25a58-5e48-4bdc-bd3c-a3aacde630fe",
+      "title": "BLOOMCORE #16",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/15",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.519Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853362"
+        }
+      }
+    },
+    {
+      "id": "168e0061-f31b-4c8d-a317-9db905cb2604",
+      "title": "BLOOMCORE #17",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/16",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.519Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853363"
+        }
+      }
+    },
+    {
+      "id": "03fca547-585b-4f4b-b81b-552d60dc544a",
+      "title": "BLOOMCORE #18",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/17",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.519Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853364"
+        }
+      }
+    },
+    {
+      "id": "abf3ed1a-e062-400b-8400-6c423ff01029",
+      "title": "BLOOMCORE #19",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/18",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.519Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853365"
+        }
+      }
+    },
+    {
+      "id": "acb667c7-0a9a-476c-8b47-4193d5e5b46c",
+      "title": "BLOOMCORE #20",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/19",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.519Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853366"
+        }
+      }
+    },
+    {
+      "id": "df83399e-6c71-4227-b63e-fe5222884936",
+      "title": "BLOOMCORE #21",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/20",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853367"
+        }
+      }
+    },
+    {
+      "id": "e943b01f-292b-4b6d-b5a2-5a0deb0789f4",
+      "title": "BLOOMCORE #22",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/21",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853368"
+        }
+      }
+    },
+    {
+      "id": "91774867-70a0-4a60-be47-d4f10321db6a",
+      "title": "BLOOMCORE #23",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/22",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853369"
+        }
+      }
+    },
+    {
+      "id": "60c12d1e-86a1-449a-b8d8-6385e534304f",
+      "title": "BLOOMCORE #24",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/23",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853370"
+        }
+      }
+    },
+    {
+      "id": "9548950c-9604-4e3f-bfe3-760dcedcc0b9",
+      "title": "BLOOMCORE #25",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/24",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853371"
+        }
+      }
+    },
+    {
+      "id": "ffd33a47-5ec9-44bd-b1b5-374c061319d3",
+      "title": "BLOOMCORE #26",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/25",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853372"
+        }
+      }
+    },
+    {
+      "id": "ec63a3aa-c399-4f8b-82d3-2a10aaf633d5",
+      "title": "BLOOMCORE #27",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/26",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853373"
+        }
+      }
+    },
+    {
+      "id": "01e66c1f-d7a2-4508-99f4-587c63cf36a5",
+      "title": "BLOOMCORE #28",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/27",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853374"
+        }
+      }
+    },
+    {
+      "id": "b06428fe-0882-400a-b420-404a6f197e9d",
+      "title": "BLOOMCORE #29",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/28",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853375"
+        }
+      }
+    },
+    {
+      "id": "ba84158d-d150-4e76-9a90-42eafb126205",
+      "title": "BLOOMCORE #30",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/29",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853376"
+        }
+      }
+    },
+    {
+      "id": "236aaa47-fe40-45de-9aac-a145f444e00d",
+      "title": "BLOOMCORE #31",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/30",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853377"
+        }
+      }
+    },
+    {
+      "id": "e20a9806-cf06-4a9b-b275-60f190603018",
+      "title": "BLOOMCORE #32",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/31",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853378"
+        }
+      }
+    },
+    {
+      "id": "4e17f090-ab73-4122-9750-ca86f427fb60",
+      "title": "BLOOMCORE #33",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/32",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.520Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853379"
+        }
+      }
+    },
+    {
+      "id": "a263fc94-e6ab-4fe9-a41c-33b089fd6a2e",
+      "title": "BLOOMCORE #34",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/33",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853380"
+        }
+      }
+    },
+    {
+      "id": "cf42a9f6-d3bc-43ad-881a-9b960b6c6601",
+      "title": "BLOOMCORE #35",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/34",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853381"
+        }
+      }
+    },
+    {
+      "id": "d081d566-05cb-4403-9288-fe8152004db2",
+      "title": "BLOOMCORE #36",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/35",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853382"
+        }
+      }
+    },
+    {
+      "id": "b1666136-afb0-487b-b327-e0ea5241f51d",
+      "title": "BLOOMCORE #37",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/36",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853383"
+        }
+      }
+    },
+    {
+      "id": "760a9011-85a7-468d-b162-87e9457a715d",
+      "title": "BLOOMCORE #38",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/37",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853384"
+        }
+      }
+    },
+    {
+      "id": "a04a679b-26c8-4314-a4d5-488ea8786ef3",
+      "title": "BLOOMCORE #39",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/38",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853385"
+        }
+      }
+    },
+    {
+      "id": "53d8e05c-fe05-484d-9825-699148e87f64",
+      "title": "BLOOMCORE #40",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/39",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853386"
+        }
+      }
+    },
+    {
+      "id": "4aaf464f-332d-4432-806d-2c9b8f1bdce8",
+      "title": "BLOOMCORE #41",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/40",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853387"
+        }
+      }
+    },
+    {
+      "id": "88d6c2ae-a3db-4465-8953-c4f53ec19b84",
+      "title": "BLOOMCORE #42",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/41",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853388"
+        }
+      }
+    },
+    {
+      "id": "3b5cb50d-f8f9-4383-b962-67a59bcfff0a",
+      "title": "BLOOMCORE #43",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/42",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853389"
+        }
+      }
+    },
+    {
+      "id": "5a195973-b4b7-420a-8a56-da9799247fec",
+      "title": "BLOOMCORE #44",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/43",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853390"
+        }
+      }
+    },
+    {
+      "id": "52d70335-8d1e-496a-b601-bc322ea2fcf6",
+      "title": "BLOOMCORE #45",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/44",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853391"
+        }
+      }
+    },
+    {
+      "id": "f3b60f85-10ca-45a1-a12d-5676ef9b8e72",
+      "title": "BLOOMCORE #46",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/45",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853392"
+        }
+      }
+    },
+    {
+      "id": "28c88171-34c6-4a26-af23-b336616260b4",
+      "title": "BLOOMCORE #47",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/46",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853393"
+        }
+      }
+    },
+    {
+      "id": "2b5cfe06-1237-4ed3-986b-e8bf220bd7b8",
+      "title": "BLOOMCORE #48",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/47",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.521Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853394"
+        }
+      }
+    },
+    {
+      "id": "3e13864c-cfb6-4b27-9e47-6e6b2dab6d57",
+      "title": "BLOOMCORE #49",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/48",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.522Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853395"
+        }
+      }
+    },
+    {
+      "id": "6a88e8a0-ec27-47d9-99b7-f69d693032fa",
+      "title": "BLOOMCORE #50",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/49",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.522Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853396"
+        }
+      }
+    },
+    {
+      "id": "0225c383-fd9d-4894-b2f6-683a08ecf94d",
+      "title": "BLOOMCORE #51",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/50",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.522Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853397"
+        }
+      }
+    },
+    {
+      "id": "aaa326f8-098d-4df4-aa77-289d5208b409",
+      "title": "BLOOMCORE #52",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/51",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.522Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853398"
+        }
+      }
+    },
+    {
+      "id": "39bea5d4-0515-4e64-b0cd-9811fdd1c084",
+      "title": "BLOOMCORE #53",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/52",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.522Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853399"
+        }
+      }
+    },
+    {
+      "id": "2ef7d154-f8ea-44ff-b14e-837fa07519c8",
+      "title": "BLOOMCORE #54",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/53",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.522Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853400"
+        }
+      }
+    },
+    {
+      "id": "047ff90d-c916-4587-8860-3508e17bd0e1",
+      "title": "BLOOMCORE #55",
+      "source": "https://cdn.feralfileassets.com/previews/a00f828f-f402-42e6-b382-0d99e7881da7/1681742024/_unique-previews/54",
+      "duration": 300,
+      "license": "open",
+      "created": "2026-07-09T09:15:25.522Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0xe59B7D60d7d7183E09d8ABb6DF8B20EB4CF66632",
+          "tokenId": "8520038953287439433536834341059117372268365319568716555346026339118809853401"
+        }
+      }
+    }
+  ],
+  "curators": [
+    {
+      "name": "Claire L. Evans",
+      "key": "did:pkh:eip155:1:0x6B5d39eaa55376b8A28a22a982378372F66d8D16",
+      "url": "https://feralfile.com/curators/Claire%20L.%20Evans"
+    }
+  ],
+  "signature": "ed25519:0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}
