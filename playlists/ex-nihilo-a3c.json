@@ -1,23 +1,23 @@
 {
   "dpVersion": "1.1.0",
-  "id": "39e6042f-7a67-4b2a-b194-7dbaaea299aa",
+  "id": "b34ea902-f593-44b0-933c-3da5c1216341",
   "slug": "ex-nihilo-a3c",
   "title": "Ex Nihilo",
   "summary": "This is a new exhibition within the “Still Life” series of exhibitions. It’s my first solo exhibition with Feral File, an online gallery I co-founded in 2020. The Still Life exhibitions started in 2016 with There’s No Distance at the bitforms gallery in New York and the most recent was Purely Platonic at DAM Project in Berlin in Summer 2025. This series of work utilizes the form and ideas surrounding the five Platonic Solid. The show in Berlin focused on Cube → EARTH and the Feral File work is grounded in Dodecahedron → COSMOS.",
   "coverImage": "https://cdn.feralfileassets.com/exhibition-thumbnails/2b290b34-46db-4b14-b411-9b30f68ae208/1772608129",
-  "created": "2026-07-09T09:16:24.561Z",
+  "created": "2026-07-09T10:33:02.047Z",
   "defaults": {
     "license": "open",
     "duration": 300
   },
   "items": [
     {
-      "id": "044f0296-39e7-4ca1-8c2b-ed9beae77d61",
+      "id": "c4db063b-8b9f-4011-a2b2-dd034276a889",
       "title": "SIMULACRUM (E-P-01)",
       "source": "https://cdn.feralfileassets.com/previews/0b80c8a6-986f-4bfb-a289-a84585e61ab9/1772012441/preview.svg",
       "duration": 300,
       "license": "open",
-      "created": "2026-07-09T09:16:24.556Z",
+      "created": "2026-07-09T10:33:00.359Z",
       "provenance": {
         "type": "onChain",
         "contract": {
@@ -29,12 +29,12 @@
       }
     },
     {
-      "id": "2d1a42de-74a6-4487-9b42-03e4036245ba",
+      "id": "d990736f-25c1-4ade-af13-4f79262883cc",
       "title": "SIMULACRUM (E-P-02)",
       "source": "https://cdn.feralfileassets.com/previews/1593439c-084d-4f3e-9644-8f450d0030d7/1772012649/preview.svg",
       "duration": 300,
       "license": "open",
-      "created": "2026-07-09T09:16:24.560Z",
+      "created": "2026-07-09T10:33:00.378Z",
       "provenance": {
         "type": "onChain",
         "contract": {
@@ -46,12 +46,12 @@
       }
     },
     {
-      "id": "000fd408-6321-4882-9146-8c2f2e725d74",
+      "id": "700c0e4d-667d-4cb3-8f7a-5a5f4d0df435",
       "title": "COSMOS–SIMULACRUM–RGB–7087313-353-371",
       "source": "https://cdn.feralfileassets.com/previews/5437c7a8-08f7-4747-9404-8d8534851bf7/1772012722/preview.svg",
       "duration": 300,
       "license": "open",
-      "created": "2026-07-09T09:16:24.560Z",
+      "created": "2026-07-09T10:33:00.380Z",
       "provenance": {
         "type": "onChain",
         "contract": {
@@ -63,12 +63,12 @@
       }
     },
     {
-      "id": "9d797d98-8842-42a9-9b60-520907396acf",
+      "id": "ad23365f-e632-4a24-b562-0108b5af4ba6",
       "title": "COSMOS–SIMULACRUM–RGB–7105313-170-455",
       "source": "https://cdn.feralfileassets.com/previews/1ec610e8-aff6-46c7-8c2d-1698bbdb1d8f/1772012864/preview.svg",
       "duration": 300,
       "license": "open",
-      "created": "2026-07-09T09:16:24.561Z",
+      "created": "2026-07-09T10:33:00.380Z",
       "provenance": {
         "type": "onChain",
         "contract": {
@@ -80,12 +80,12 @@
       }
     },
     {
-      "id": "29673e5e-d5a1-482a-8e68-b5e3e319e625",
+      "id": "a2299c2b-89a1-4b53-a12d-280f906cad7e",
       "title": "COSMOS–SIMULACRUM–RGB–7135313-183-489",
       "source": "https://cdn.feralfileassets.com/previews/497d82a5-a6f1-4dd6-81c2-1db97db807ec/1772012945/preview.svg",
       "duration": 300,
       "license": "open",
-      "created": "2026-07-09T09:16:24.561Z",
+      "created": "2026-07-09T10:33:00.403Z",
       "provenance": {
         "type": "onChain",
         "contract": {
@@ -93,6 +93,4358 @@
           "standard": "erc721",
           "address": "0x32c07ADE321B90813220F5064842B1F34A59f322",
           "tokenId": "19521970547325482287223751920524790401807421661766303641190603200318195649344"
+        }
+      }
+    },
+    {
+      "id": "a0ac737c-bd13-4d59-b6c3-372e9808cf88",
+      "title": "Ex Nihilo (Cosmos) — #0",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/0",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.038Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "0"
+        }
+      }
+    },
+    {
+      "id": "3ed5b2e4-e516-4c87-8815-24379b131e0c",
+      "title": "Ex Nihilo (Cosmos) — #1",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/1",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.038Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "1"
+        }
+      }
+    },
+    {
+      "id": "b779d46c-ad23-4c98-91ae-68f500dc108d",
+      "title": "Ex Nihilo (Cosmos) — #2",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/2",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.038Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "2"
+        }
+      }
+    },
+    {
+      "id": "8174e1a3-3f07-44fb-8cdd-3fe3fa722cdc",
+      "title": "Ex Nihilo (Cosmos) — #3",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/3",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.038Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "3"
+        }
+      }
+    },
+    {
+      "id": "da24994b-51b2-46c4-93b2-99a0cc0290d8",
+      "title": "Ex Nihilo (Cosmos) — #4",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/4",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.038Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "4"
+        }
+      }
+    },
+    {
+      "id": "94910aef-648c-41cd-91a4-64c1280ab42d",
+      "title": "Ex Nihilo (Cosmos) — #5",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/5",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.038Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "5"
+        }
+      }
+    },
+    {
+      "id": "64753e12-cc24-462d-8962-32d6c9838220",
+      "title": "Ex Nihilo (Cosmos) — #6",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/6",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.038Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "6"
+        }
+      }
+    },
+    {
+      "id": "a7762d28-fecb-4668-a91c-f29197ea902d",
+      "title": "Ex Nihilo (Cosmos) — #7",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/7",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.038Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "7"
+        }
+      }
+    },
+    {
+      "id": "c05f2a70-5ae3-4ba9-8bca-c58cff5f677e",
+      "title": "Ex Nihilo (Cosmos) — #8",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/8",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.038Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "8"
+        }
+      }
+    },
+    {
+      "id": "537772d0-88c9-49fd-bac7-618fbb888924",
+      "title": "Ex Nihilo (Cosmos) — #9",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/9",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.038Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "9"
+        }
+      }
+    },
+    {
+      "id": "8794ccf9-c75b-4c8a-867d-4614191ee4d2",
+      "title": "Ex Nihilo (Cosmos) — #10",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/10",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "10"
+        }
+      }
+    },
+    {
+      "id": "41be9061-54a3-4d48-900b-ed6985a472a0",
+      "title": "Ex Nihilo (Cosmos) — #11",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/11",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "11"
+        }
+      }
+    },
+    {
+      "id": "62a07757-8f5b-4a97-9612-28d2ab2db196",
+      "title": "Ex Nihilo (Cosmos) — #12",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/12",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "12"
+        }
+      }
+    },
+    {
+      "id": "46511b14-7be7-44c7-a051-af45cbbba710",
+      "title": "Ex Nihilo (Cosmos) — #13",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/13",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "13"
+        }
+      }
+    },
+    {
+      "id": "d03081ad-1896-419d-9ef2-3f1fad1f4c44",
+      "title": "Ex Nihilo (Cosmos) — #14",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/14",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "14"
+        }
+      }
+    },
+    {
+      "id": "243dbb49-a23d-4661-b09c-de951de96508",
+      "title": "Ex Nihilo (Cosmos) — #15",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/15",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "15"
+        }
+      }
+    },
+    {
+      "id": "052e3164-4cd7-498f-ab45-dd6977b913f8",
+      "title": "Ex Nihilo (Cosmos) — #16",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/16",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "16"
+        }
+      }
+    },
+    {
+      "id": "7a2cad97-1632-4489-99dd-6d310b4018c2",
+      "title": "Ex Nihilo (Cosmos) — #17",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/17",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "17"
+        }
+      }
+    },
+    {
+      "id": "8d2c5f57-490f-4c25-bbb8-e1b79580b699",
+      "title": "Ex Nihilo (Cosmos) — #18",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/18",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "18"
+        }
+      }
+    },
+    {
+      "id": "51af37f9-c075-453a-94d4-c9e37e2919b6",
+      "title": "Ex Nihilo (Cosmos) — #19",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/19",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "19"
+        }
+      }
+    },
+    {
+      "id": "352c7f37-abe4-4b3e-89d1-ba73e06a1033",
+      "title": "Ex Nihilo (Cosmos) — #20",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/20",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "20"
+        }
+      }
+    },
+    {
+      "id": "c2bb289b-ad50-4aad-84ee-be7f345e32bd",
+      "title": "Ex Nihilo (Cosmos) — #21",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/21",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "21"
+        }
+      }
+    },
+    {
+      "id": "19fc2b53-d568-4468-815a-9a9ce6e6ad5d",
+      "title": "Ex Nihilo (Cosmos) — #22",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/22",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "22"
+        }
+      }
+    },
+    {
+      "id": "6b1a6a17-d027-48f5-9da3-792ea7a9dd9a",
+      "title": "Ex Nihilo (Cosmos) — #23",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/23",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "23"
+        }
+      }
+    },
+    {
+      "id": "a34a7443-9206-4bcd-b30f-9cfcf1ce5a0b",
+      "title": "Ex Nihilo (Cosmos) — #24",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/24",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "24"
+        }
+      }
+    },
+    {
+      "id": "c797abde-469b-4055-baf7-58cd3866f6ed",
+      "title": "Ex Nihilo (Cosmos) — #25",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/25",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "25"
+        }
+      }
+    },
+    {
+      "id": "be4f8793-d8fc-4790-98e2-6dc4bd056ae7",
+      "title": "Ex Nihilo (Cosmos) — #26",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/26",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "26"
+        }
+      }
+    },
+    {
+      "id": "0d1bf614-448d-4129-abf1-d45d0a797dc1",
+      "title": "Ex Nihilo (Cosmos) — #27",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/27",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "27"
+        }
+      }
+    },
+    {
+      "id": "e27605f8-0c0a-47cc-be31-94edaa301be8",
+      "title": "Ex Nihilo (Cosmos) — #28",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/28",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "28"
+        }
+      }
+    },
+    {
+      "id": "a5f07a3b-6f8d-4df3-860e-7592fdde2bcc",
+      "title": "Ex Nihilo (Cosmos) — #29",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/29",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "29"
+        }
+      }
+    },
+    {
+      "id": "a3a89b18-f431-493e-9de9-9c6d4d799d92",
+      "title": "Ex Nihilo (Cosmos) — #30",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/30",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "30"
+        }
+      }
+    },
+    {
+      "id": "1b4b76cc-83da-447b-93f5-faf24e6884f8",
+      "title": "Ex Nihilo (Cosmos) — #31",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/31",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "31"
+        }
+      }
+    },
+    {
+      "id": "6e029e2c-c108-4888-9878-8e69c14afd61",
+      "title": "Ex Nihilo (Cosmos) — #32",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/32",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "32"
+        }
+      }
+    },
+    {
+      "id": "88b981ed-442f-43af-bf93-e36c28298eb1",
+      "title": "Ex Nihilo (Cosmos) — #33",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/33",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "33"
+        }
+      }
+    },
+    {
+      "id": "63757bf9-ab57-48d0-aa62-378ffb478e50",
+      "title": "Ex Nihilo (Cosmos) — #34",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/34",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "34"
+        }
+      }
+    },
+    {
+      "id": "0908501a-5e6d-4f4e-a8e0-6ad23c8b4efc",
+      "title": "Ex Nihilo (Cosmos) — #35",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/35",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "35"
+        }
+      }
+    },
+    {
+      "id": "82f06162-768f-4768-8bd1-9da027e805a6",
+      "title": "Ex Nihilo (Cosmos) — #36",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/36",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "36"
+        }
+      }
+    },
+    {
+      "id": "d6512349-5051-46f7-978e-4b788623f384",
+      "title": "Ex Nihilo (Cosmos) — #37",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/37",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "37"
+        }
+      }
+    },
+    {
+      "id": "e36d3218-d6fb-45fe-af7d-71a1237c579a",
+      "title": "Ex Nihilo (Cosmos) — #38",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/38",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "38"
+        }
+      }
+    },
+    {
+      "id": "2333c5b7-de45-4cbe-8549-b7f0b28fc2d3",
+      "title": "Ex Nihilo (Cosmos) — #39",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/39",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "39"
+        }
+      }
+    },
+    {
+      "id": "ca5ba39f-8ee6-4e48-b622-7571f2577070",
+      "title": "Ex Nihilo (Cosmos) — #40",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/40",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "40"
+        }
+      }
+    },
+    {
+      "id": "e22caad0-d056-4c3d-a5de-efab37fb59b4",
+      "title": "Ex Nihilo (Cosmos) — #41",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/41",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "41"
+        }
+      }
+    },
+    {
+      "id": "907e7dac-8900-469b-b723-e6c5f105b88f",
+      "title": "Ex Nihilo (Cosmos) — #42",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/42",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "42"
+        }
+      }
+    },
+    {
+      "id": "57a1e890-0412-4e33-a908-5dc7f37f21cb",
+      "title": "Ex Nihilo (Cosmos) — #43",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/43",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "43"
+        }
+      }
+    },
+    {
+      "id": "dc7ecea2-56b6-4319-ad4c-c4b48531fb91",
+      "title": "Ex Nihilo (Cosmos) — #44",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/44",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "44"
+        }
+      }
+    },
+    {
+      "id": "34b93527-a059-4fdb-a640-b37ae74f79fd",
+      "title": "Ex Nihilo (Cosmos) — #45",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/45",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "45"
+        }
+      }
+    },
+    {
+      "id": "0678f4a3-d946-4ac4-8f6c-d7464632b581",
+      "title": "Ex Nihilo (Cosmos) — #46",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/46",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "46"
+        }
+      }
+    },
+    {
+      "id": "07e403ba-080c-4cdf-a855-c09ee74a4910",
+      "title": "Ex Nihilo (Cosmos) — #47",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/47",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.039Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "47"
+        }
+      }
+    },
+    {
+      "id": "ece1b26f-53f6-4179-96d6-5f6da10c33ee",
+      "title": "Ex Nihilo (Cosmos) — #48",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/48",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "48"
+        }
+      }
+    },
+    {
+      "id": "8d35870f-525e-4316-9a25-7472a053ae64",
+      "title": "Ex Nihilo (Cosmos) — #49",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/49",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "49"
+        }
+      }
+    },
+    {
+      "id": "22b5bbab-4505-47c6-8bf8-5f0ffd5845b5",
+      "title": "Ex Nihilo (Cosmos) — #50",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/50",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "50"
+        }
+      }
+    },
+    {
+      "id": "7abce518-8538-4b68-a8ca-779323048204",
+      "title": "Ex Nihilo (Cosmos) — #51",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/51",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "51"
+        }
+      }
+    },
+    {
+      "id": "1014980b-9237-4d6c-b75d-6c9ea8fe6e32",
+      "title": "Ex Nihilo (Cosmos) — #52",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/52",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "52"
+        }
+      }
+    },
+    {
+      "id": "90d376f2-f680-43fc-b0c2-a7569c1d15d2",
+      "title": "Ex Nihilo (Cosmos) — #53",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/53",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "53"
+        }
+      }
+    },
+    {
+      "id": "3ae858c3-ec47-462f-8029-d150a0a67277",
+      "title": "Ex Nihilo (Cosmos) — #54",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/54",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "54"
+        }
+      }
+    },
+    {
+      "id": "2b3e78cf-3faa-46b3-8da3-a97a63a504af",
+      "title": "Ex Nihilo (Cosmos) — #55",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/55",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "55"
+        }
+      }
+    },
+    {
+      "id": "a7fa6f2f-81d1-4554-b5ee-41fe317bfeb3",
+      "title": "Ex Nihilo (Cosmos) — #56",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/56",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "56"
+        }
+      }
+    },
+    {
+      "id": "1c2e2786-11ef-4d8d-adb0-3fa8f6e7d37e",
+      "title": "Ex Nihilo (Cosmos) — #57",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/57",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "57"
+        }
+      }
+    },
+    {
+      "id": "7acc922f-03fa-4d21-9bde-23be4c79b6dd",
+      "title": "Ex Nihilo (Cosmos) — #58",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/58",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "58"
+        }
+      }
+    },
+    {
+      "id": "a89c8d90-b548-477c-a950-ebdb72e23ec2",
+      "title": "Ex Nihilo (Cosmos) — #59",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/59",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "59"
+        }
+      }
+    },
+    {
+      "id": "64ac66ef-5b41-4647-b4cd-07e3fa446dd5",
+      "title": "Ex Nihilo (Cosmos) — #60",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/60",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "60"
+        }
+      }
+    },
+    {
+      "id": "d2a65360-870f-478d-9928-42465e1d1a47",
+      "title": "Ex Nihilo (Cosmos) — #61",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/61",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "61"
+        }
+      }
+    },
+    {
+      "id": "9f72ef2c-49c7-41a7-9447-8fa98a177ef1",
+      "title": "Ex Nihilo (Cosmos) — #62",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/62",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "62"
+        }
+      }
+    },
+    {
+      "id": "d8a4719f-c2bd-4970-9e78-486bc8858362",
+      "title": "Ex Nihilo (Cosmos) — #63",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/63",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "63"
+        }
+      }
+    },
+    {
+      "id": "af9e202b-278f-473d-8a42-cefa36cd8c92",
+      "title": "Ex Nihilo (Cosmos) — #64",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/64",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "64"
+        }
+      }
+    },
+    {
+      "id": "9542d033-a5d3-4852-8fd9-e162acf6ef65",
+      "title": "Ex Nihilo (Cosmos) — #65",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/65",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "65"
+        }
+      }
+    },
+    {
+      "id": "4dae644c-b093-4011-b0ff-97dac1c2582b",
+      "title": "Ex Nihilo (Cosmos) — #66",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/66",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "66"
+        }
+      }
+    },
+    {
+      "id": "d3624677-9a6d-474f-aa5c-c4c68ff00b11",
+      "title": "Ex Nihilo (Cosmos) — #67",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/67",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "67"
+        }
+      }
+    },
+    {
+      "id": "d52a03ae-ec9a-429a-a521-19e689607529",
+      "title": "Ex Nihilo (Cosmos) — #68",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/68",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "68"
+        }
+      }
+    },
+    {
+      "id": "29a76a39-7d8d-4b81-8b10-0b73707d9da3",
+      "title": "Ex Nihilo (Cosmos) — #69",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/69",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "69"
+        }
+      }
+    },
+    {
+      "id": "69d02da3-369e-4dc0-a589-7bdf4bb6a7fe",
+      "title": "Ex Nihilo (Cosmos) — #70",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/70",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "70"
+        }
+      }
+    },
+    {
+      "id": "caec8c5d-5a73-49a5-8b6b-0ec7c9ea1e75",
+      "title": "Ex Nihilo (Cosmos) — #71",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/71",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "71"
+        }
+      }
+    },
+    {
+      "id": "2b82eea1-58b4-4459-86c8-bfdd9b2ad8c8",
+      "title": "Ex Nihilo (Cosmos) — #72",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/72",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "72"
+        }
+      }
+    },
+    {
+      "id": "d369d958-d1e7-40d7-8826-4e3309aa5e8c",
+      "title": "Ex Nihilo (Cosmos) — #73",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/73",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "73"
+        }
+      }
+    },
+    {
+      "id": "534ccfb3-04e8-4287-a6ad-d8fa9639ec12",
+      "title": "Ex Nihilo (Cosmos) — #74",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/74",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "74"
+        }
+      }
+    },
+    {
+      "id": "085ce4f7-3418-4a61-82e0-fb0c70079d7f",
+      "title": "Ex Nihilo (Cosmos) — #75",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/75",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "75"
+        }
+      }
+    },
+    {
+      "id": "a10dc090-50b5-4f8f-8192-226df2782249",
+      "title": "Ex Nihilo (Cosmos) — #76",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/76",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "76"
+        }
+      }
+    },
+    {
+      "id": "8b1a6f36-7da4-4bcb-8aa2-91cb07ff3eec",
+      "title": "Ex Nihilo (Cosmos) — #77",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/77",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "77"
+        }
+      }
+    },
+    {
+      "id": "5d9e971c-bbb2-4c24-8f89-b95bd0d39df3",
+      "title": "Ex Nihilo (Cosmos) — #78",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/78",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "78"
+        }
+      }
+    },
+    {
+      "id": "392b311b-0593-459f-80d5-bae6daa0d787",
+      "title": "Ex Nihilo (Cosmos) — #79",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/79",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "79"
+        }
+      }
+    },
+    {
+      "id": "5cad5082-48a2-44e2-be2a-fede89b9546f",
+      "title": "Ex Nihilo (Cosmos) — #80",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/80",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "80"
+        }
+      }
+    },
+    {
+      "id": "35c55625-a2f9-4ab4-bac9-e73a5cba38b5",
+      "title": "Ex Nihilo (Cosmos) — #81",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/81",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "81"
+        }
+      }
+    },
+    {
+      "id": "a4b20398-d52c-464d-bda4-524010b83eef",
+      "title": "Ex Nihilo (Cosmos) — #82",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/82",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "82"
+        }
+      }
+    },
+    {
+      "id": "c82fa8da-6044-44d9-aebc-ff86d53d57ab",
+      "title": "Ex Nihilo (Cosmos) — #83",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/83",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "83"
+        }
+      }
+    },
+    {
+      "id": "30af21b8-9767-48b3-a915-da85322f8979",
+      "title": "Ex Nihilo (Cosmos) — #84",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/84",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.040Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "84"
+        }
+      }
+    },
+    {
+      "id": "c12240ac-ca99-4e12-ade8-b7b56140d7a1",
+      "title": "Ex Nihilo (Cosmos) — #85",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/85",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "85"
+        }
+      }
+    },
+    {
+      "id": "30dd15d9-6822-473b-90d8-d1fa4f582ee8",
+      "title": "Ex Nihilo (Cosmos) — #86",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/86",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "86"
+        }
+      }
+    },
+    {
+      "id": "5f135d38-34f8-4abc-a21b-9729bfc57120",
+      "title": "Ex Nihilo (Cosmos) — #87",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/87",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "87"
+        }
+      }
+    },
+    {
+      "id": "60cde1fb-bf8c-491e-b6ee-ac27e52e4dff",
+      "title": "Ex Nihilo (Cosmos) — #88",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/88",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "88"
+        }
+      }
+    },
+    {
+      "id": "ce4a801f-bb4d-4829-acd6-c4d2a7669f30",
+      "title": "Ex Nihilo (Cosmos) — #89",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/89",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "89"
+        }
+      }
+    },
+    {
+      "id": "ccf58f5d-b2bd-4a3c-bc2e-b6f667c2bfc0",
+      "title": "Ex Nihilo (Cosmos) — #90",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/90",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "90"
+        }
+      }
+    },
+    {
+      "id": "58a304d3-af48-4bc9-8b77-0eed7ddaf939",
+      "title": "Ex Nihilo (Cosmos) — #91",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/91",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "91"
+        }
+      }
+    },
+    {
+      "id": "08c58204-846c-43b6-bd5e-402fa7cd95ca",
+      "title": "Ex Nihilo (Cosmos) — #92",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/92",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "92"
+        }
+      }
+    },
+    {
+      "id": "21e70953-d902-4a67-a175-ac2b2ca9b74a",
+      "title": "Ex Nihilo (Cosmos) — #93",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/93",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "93"
+        }
+      }
+    },
+    {
+      "id": "e45a534b-2b35-42a5-a4dc-659ad53a6cef",
+      "title": "Ex Nihilo (Cosmos) — #94",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/94",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "94"
+        }
+      }
+    },
+    {
+      "id": "f1c95c70-6c6a-41d3-961b-1d3f72542226",
+      "title": "Ex Nihilo (Cosmos) — #95",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/95",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "95"
+        }
+      }
+    },
+    {
+      "id": "e0455e1c-3f19-4df7-b4da-75dde387cbaa",
+      "title": "Ex Nihilo (Cosmos) — #96",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/96",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "96"
+        }
+      }
+    },
+    {
+      "id": "f087f82e-94b8-4254-acfb-ef5ae2490b7b",
+      "title": "Ex Nihilo (Cosmos) — #97",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/97",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "97"
+        }
+      }
+    },
+    {
+      "id": "c5ba9b7d-55d2-43a8-b9fb-d1ca322c5c43",
+      "title": "Ex Nihilo (Cosmos) — #98",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/98",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "98"
+        }
+      }
+    },
+    {
+      "id": "86ba9c76-6baf-47b5-ab2a-ece252bc65a6",
+      "title": "Ex Nihilo (Cosmos) — #99",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/99",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "99"
+        }
+      }
+    },
+    {
+      "id": "5a085759-00c0-4819-a649-f23885ee5644",
+      "title": "Ex Nihilo (Cosmos) — #100",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/100",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "100"
+        }
+      }
+    },
+    {
+      "id": "cd5e5c5b-9d00-4abc-85b0-3066147bf177",
+      "title": "Ex Nihilo (Cosmos) — #101",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/101",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "101"
+        }
+      }
+    },
+    {
+      "id": "17818842-7997-4b01-b676-e20f0d5d45bf",
+      "title": "Ex Nihilo (Cosmos) — #102",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/102",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "102"
+        }
+      }
+    },
+    {
+      "id": "c7483af3-5996-4d0b-afd0-7346c4a63fe7",
+      "title": "Ex Nihilo (Cosmos) — #103",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/103",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "103"
+        }
+      }
+    },
+    {
+      "id": "f01d2157-9d83-4d1c-bacc-1257802cda6f",
+      "title": "Ex Nihilo (Cosmos) — #104",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/104",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "104"
+        }
+      }
+    },
+    {
+      "id": "9e837035-3e8e-438c-bc74-05da74333ace",
+      "title": "Ex Nihilo (Cosmos) — #105",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/105",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "105"
+        }
+      }
+    },
+    {
+      "id": "4eb789be-d3f3-4ed1-83b4-4f4ab433d893",
+      "title": "Ex Nihilo (Cosmos) — #106",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/106",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "106"
+        }
+      }
+    },
+    {
+      "id": "26bbad6b-9b36-4fd4-a8b5-4390463b150e",
+      "title": "Ex Nihilo (Cosmos) — #107",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/107",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "107"
+        }
+      }
+    },
+    {
+      "id": "eca475f3-a846-4733-a4e3-41491e905e28",
+      "title": "Ex Nihilo (Cosmos) — #108",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/108",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "108"
+        }
+      }
+    },
+    {
+      "id": "5c79aa7d-2e62-4bee-b9d4-4211bbeed7be",
+      "title": "Ex Nihilo (Cosmos) — #109",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/109",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "109"
+        }
+      }
+    },
+    {
+      "id": "1cde16e4-4cda-4756-8c2a-9e11eda3983a",
+      "title": "Ex Nihilo (Cosmos) — #110",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/110",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "110"
+        }
+      }
+    },
+    {
+      "id": "b5ec1b6e-aaad-465e-8bb4-6bff4193c8ac",
+      "title": "Ex Nihilo (Cosmos) — #111",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/111",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "111"
+        }
+      }
+    },
+    {
+      "id": "c2cfacd5-b854-432b-b6b1-f314d32a405c",
+      "title": "Ex Nihilo (Cosmos) — #112",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/112",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "112"
+        }
+      }
+    },
+    {
+      "id": "eabd855f-888c-47fd-b7fa-75b511ad9edf",
+      "title": "Ex Nihilo (Cosmos) — #113",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/113",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "113"
+        }
+      }
+    },
+    {
+      "id": "c23be593-e4d5-4994-9e51-c481ce832453",
+      "title": "Ex Nihilo (Cosmos) — #114",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/114",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "114"
+        }
+      }
+    },
+    {
+      "id": "1f67a1ad-5806-4c5f-a8b0-bd1b20836914",
+      "title": "Ex Nihilo (Cosmos) — #115",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/115",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "115"
+        }
+      }
+    },
+    {
+      "id": "6a07d4e7-f836-4e45-8f94-eeabbe3a9b0c",
+      "title": "Ex Nihilo (Cosmos) — #116",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/116",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "116"
+        }
+      }
+    },
+    {
+      "id": "040bcb8b-42b2-401c-8189-34c91159b23b",
+      "title": "Ex Nihilo (Cosmos) — #117",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/117",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "117"
+        }
+      }
+    },
+    {
+      "id": "ebed7d6a-dd69-436a-981d-967ac2bb70f6",
+      "title": "Ex Nihilo (Cosmos) — #118",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/118",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "118"
+        }
+      }
+    },
+    {
+      "id": "29e110f5-6c46-4e0c-9394-ba30c4381b1a",
+      "title": "Ex Nihilo (Cosmos) — #119",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/119",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "119"
+        }
+      }
+    },
+    {
+      "id": "e7277390-332d-49b0-94bb-5b3356de35fd",
+      "title": "Ex Nihilo (Cosmos) — #120",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/120",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "120"
+        }
+      }
+    },
+    {
+      "id": "427ce4f4-2d4d-4157-ad04-9ae854f3c2c4",
+      "title": "Ex Nihilo (Cosmos) — #121",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/121",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.041Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "121"
+        }
+      }
+    },
+    {
+      "id": "fb1dcf3c-ef5f-411f-ac7a-3309561a7a20",
+      "title": "Ex Nihilo (Cosmos) — #122",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/122",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "122"
+        }
+      }
+    },
+    {
+      "id": "478f8011-f856-4f87-9956-c6b50e9a8834",
+      "title": "Ex Nihilo (Cosmos) — #123",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/123",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "123"
+        }
+      }
+    },
+    {
+      "id": "e0182fe8-254e-4e7f-91f1-fce71f3eb8ee",
+      "title": "Ex Nihilo (Cosmos) — #124",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/124",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "124"
+        }
+      }
+    },
+    {
+      "id": "02000bc6-771f-4bc4-9715-574f26c954f9",
+      "title": "Ex Nihilo (Cosmos) — #125",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/125",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "125"
+        }
+      }
+    },
+    {
+      "id": "b3b6e1b9-ff9c-405b-a5cf-c5553173dbfc",
+      "title": "Ex Nihilo (Cosmos) — #126",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/126",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "126"
+        }
+      }
+    },
+    {
+      "id": "d7957b56-528d-461e-b082-c65792f8a708",
+      "title": "Ex Nihilo (Cosmos) — #127",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/127",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "127"
+        }
+      }
+    },
+    {
+      "id": "6276e8bf-da68-4e9f-be4f-4a7585bba495",
+      "title": "Ex Nihilo (Cosmos) — #128",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/128",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "128"
+        }
+      }
+    },
+    {
+      "id": "3059d87c-5801-4e78-baa1-4e83e2c83617",
+      "title": "Ex Nihilo (Cosmos) — #129",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/129",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "129"
+        }
+      }
+    },
+    {
+      "id": "95b9885b-dd30-495e-b329-840365ff5a88",
+      "title": "Ex Nihilo (Cosmos) — #130",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/130",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "130"
+        }
+      }
+    },
+    {
+      "id": "6dd0e112-232d-428f-84df-084115ad5a48",
+      "title": "Ex Nihilo (Cosmos) — #131",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/131",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "131"
+        }
+      }
+    },
+    {
+      "id": "671d750e-754f-4863-abe4-fb6b782d5d1d",
+      "title": "Ex Nihilo (Cosmos) — #132",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/132",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "132"
+        }
+      }
+    },
+    {
+      "id": "645af81e-4e1c-45ba-8139-b50454626cd3",
+      "title": "Ex Nihilo (Cosmos) — #133",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/133",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "133"
+        }
+      }
+    },
+    {
+      "id": "f068076f-5756-4dde-862c-746d877a2452",
+      "title": "Ex Nihilo (Cosmos) — #134",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/134",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "134"
+        }
+      }
+    },
+    {
+      "id": "251168e8-2759-4a60-b053-43b7ef6ca78e",
+      "title": "Ex Nihilo (Cosmos) — #135",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/135",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "135"
+        }
+      }
+    },
+    {
+      "id": "02bd588f-3313-496a-92cd-c70c248de8c4",
+      "title": "Ex Nihilo (Cosmos) — #136",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/136",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "136"
+        }
+      }
+    },
+    {
+      "id": "0cd5a8be-852a-4976-8cdb-84628d5af6d8",
+      "title": "Ex Nihilo (Cosmos) — #137",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/137",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "137"
+        }
+      }
+    },
+    {
+      "id": "ebde0959-db66-4ca3-aecf-2973fb830099",
+      "title": "Ex Nihilo (Cosmos) — #138",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/138",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "138"
+        }
+      }
+    },
+    {
+      "id": "55c44421-6055-401e-bd14-318dd68807e9",
+      "title": "Ex Nihilo (Cosmos) — #139",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/139",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "139"
+        }
+      }
+    },
+    {
+      "id": "13578ecd-751d-4519-a6f2-f10a04f5d294",
+      "title": "Ex Nihilo (Cosmos) — #140",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/140",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "140"
+        }
+      }
+    },
+    {
+      "id": "e69f8e3b-3364-475b-8804-d75cd68497fd",
+      "title": "Ex Nihilo (Cosmos) — #141",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/141",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "141"
+        }
+      }
+    },
+    {
+      "id": "27540ace-446f-484c-a019-2f05123d3d28",
+      "title": "Ex Nihilo (Cosmos) — #142",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/142",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "142"
+        }
+      }
+    },
+    {
+      "id": "6d9b16b5-a77a-4f7e-bb40-595c3f44ac30",
+      "title": "Ex Nihilo (Cosmos) — #143",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/143",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "143"
+        }
+      }
+    },
+    {
+      "id": "590c10ad-8ffb-4f6b-a762-c2d0f26e0217",
+      "title": "Ex Nihilo (Cosmos) — #144",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/144",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "144"
+        }
+      }
+    },
+    {
+      "id": "a1d3870f-cc42-471c-bf0e-87c4dacdcc52",
+      "title": "Ex Nihilo (Cosmos) — #145",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/145",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "145"
+        }
+      }
+    },
+    {
+      "id": "5702632c-27fd-47ec-94b2-c314293502fe",
+      "title": "Ex Nihilo (Cosmos) — #146",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/146",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "146"
+        }
+      }
+    },
+    {
+      "id": "2ddc4d1b-0fb7-48de-9f03-868ba6849a14",
+      "title": "Ex Nihilo (Cosmos) — #147",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/147",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "147"
+        }
+      }
+    },
+    {
+      "id": "76e66239-c105-405b-8b45-2e176f86e52d",
+      "title": "Ex Nihilo (Cosmos) — #148",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/148",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "148"
+        }
+      }
+    },
+    {
+      "id": "dc90ce5d-78b9-4b82-a3a8-0f6f3b30c3d5",
+      "title": "Ex Nihilo (Cosmos) — #149",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/149",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "149"
+        }
+      }
+    },
+    {
+      "id": "f660a19e-65c4-4363-a877-daa69af67970",
+      "title": "Ex Nihilo (Cosmos) — #150",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/150",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "150"
+        }
+      }
+    },
+    {
+      "id": "af6b7d36-d858-4031-a2e5-0f5f733ca619",
+      "title": "Ex Nihilo (Cosmos) — #151",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/151",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "151"
+        }
+      }
+    },
+    {
+      "id": "ddbb6112-50cf-4e0a-849c-c1be16ce2e8d",
+      "title": "Ex Nihilo (Cosmos) — #152",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/152",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "152"
+        }
+      }
+    },
+    {
+      "id": "31f352e2-106c-44db-a059-b2c02e5825d2",
+      "title": "Ex Nihilo (Cosmos) — #153",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/153",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "153"
+        }
+      }
+    },
+    {
+      "id": "a60c50bd-3ecd-4f4c-a576-10643bce496d",
+      "title": "Ex Nihilo (Cosmos) — #154",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/154",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "154"
+        }
+      }
+    },
+    {
+      "id": "5319d03a-2ab7-4ab1-8b68-9fea20fc55f6",
+      "title": "Ex Nihilo (Cosmos) — #155",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/155",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.042Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "155"
+        }
+      }
+    },
+    {
+      "id": "9c5e9028-c378-4d85-95f6-0379d2846242",
+      "title": "Ex Nihilo (Cosmos) — #156",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/156",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.043Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "156"
+        }
+      }
+    },
+    {
+      "id": "0b596617-2788-4e6d-8773-1f76b0d7b77e",
+      "title": "Ex Nihilo (Cosmos) — #157",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/157",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.043Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "157"
+        }
+      }
+    },
+    {
+      "id": "a8084d3d-45c7-41e0-8e85-d1850f9e361c",
+      "title": "Ex Nihilo (Cosmos) — #158",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/158",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.043Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "158"
+        }
+      }
+    },
+    {
+      "id": "6a3bbb2d-22ce-4b7c-a64d-6ed13315ca8e",
+      "title": "Ex Nihilo (Cosmos) — #159",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/159",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.043Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "159"
+        }
+      }
+    },
+    {
+      "id": "f437d076-992d-4385-a224-0114bf715d1e",
+      "title": "Ex Nihilo (Cosmos) — #160",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/160",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.043Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "160"
+        }
+      }
+    },
+    {
+      "id": "30da4999-802b-4a5d-aaff-92ec2dff72aa",
+      "title": "Ex Nihilo (Cosmos) — #161",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/161",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.043Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "161"
+        }
+      }
+    },
+    {
+      "id": "8b74e01e-6971-427b-9cb1-683eadad972c",
+      "title": "Ex Nihilo (Cosmos) — #162",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/162",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.043Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "162"
+        }
+      }
+    },
+    {
+      "id": "cc4a62f0-929f-4468-856d-df80e90e597c",
+      "title": "Ex Nihilo (Cosmos) — #163",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/163",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.043Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "163"
+        }
+      }
+    },
+    {
+      "id": "6356b677-766e-42a8-bd56-1d0e1fe7531d",
+      "title": "Ex Nihilo (Cosmos) — #164",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/164",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.043Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "164"
+        }
+      }
+    },
+    {
+      "id": "3cf686ae-71e7-43c6-ac9d-50abd772b70d",
+      "title": "Ex Nihilo (Cosmos) — #165",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/165",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.043Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "165"
+        }
+      }
+    },
+    {
+      "id": "4a7b3f83-ee90-4c4e-9ed4-77ab366c419f",
+      "title": "Ex Nihilo (Cosmos) — #166",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/166",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.043Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "166"
+        }
+      }
+    },
+    {
+      "id": "69208ddd-a321-4eef-b28a-9a329701ad18",
+      "title": "Ex Nihilo (Cosmos) — #167",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/167",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.043Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "167"
+        }
+      }
+    },
+    {
+      "id": "f1190197-45ff-4fa2-977f-f098a1e69050",
+      "title": "Ex Nihilo (Cosmos) — #168",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/168",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.043Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "168"
+        }
+      }
+    },
+    {
+      "id": "7f50b377-2a54-42a5-8bc9-7fb2b0b45354",
+      "title": "Ex Nihilo (Cosmos) — #169",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/169",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "169"
+        }
+      }
+    },
+    {
+      "id": "fff09239-cfb0-4c7f-bb9b-2c60363dea27",
+      "title": "Ex Nihilo (Cosmos) — #170",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/170",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "170"
+        }
+      }
+    },
+    {
+      "id": "b2f1abb2-1b1d-4d49-834b-6b4ee15de692",
+      "title": "Ex Nihilo (Cosmos) — #171",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/171",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "171"
+        }
+      }
+    },
+    {
+      "id": "e116d7ff-92ee-46fe-8a90-88849e38cbe5",
+      "title": "Ex Nihilo (Cosmos) — #172",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/172",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "172"
+        }
+      }
+    },
+    {
+      "id": "61d5d975-7c9e-4b36-9c40-afe933160c1d",
+      "title": "Ex Nihilo (Cosmos) — #173",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/173",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "173"
+        }
+      }
+    },
+    {
+      "id": "8356877c-4db6-42ea-aa28-7a60823e3cc4",
+      "title": "Ex Nihilo (Cosmos) — #174",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/174",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "174"
+        }
+      }
+    },
+    {
+      "id": "370ffa1b-833d-4516-8d38-c1d26b680ffd",
+      "title": "Ex Nihilo (Cosmos) — #175",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/175",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "175"
+        }
+      }
+    },
+    {
+      "id": "f0bdddec-ff3a-46fe-8cdb-a970cc68df6b",
+      "title": "Ex Nihilo (Cosmos) — #176",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/176",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "176"
+        }
+      }
+    },
+    {
+      "id": "e3bd424a-09cc-4c30-b693-def910bbb9fe",
+      "title": "Ex Nihilo (Cosmos) — #177",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/177",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "177"
+        }
+      }
+    },
+    {
+      "id": "06a499f7-b44d-4153-885f-f47401260071",
+      "title": "Ex Nihilo (Cosmos) — #178",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/178",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "178"
+        }
+      }
+    },
+    {
+      "id": "e0cea4c5-5d10-41c7-88e2-fa7641cda41d",
+      "title": "Ex Nihilo (Cosmos) — #179",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/179",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "179"
+        }
+      }
+    },
+    {
+      "id": "19505bfb-bd57-4f9d-be7d-2fe7e68f0853",
+      "title": "Ex Nihilo (Cosmos) — #180",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/180",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "180"
+        }
+      }
+    },
+    {
+      "id": "6844afab-3f7e-4fdb-b9ee-e119e58e7fe0",
+      "title": "Ex Nihilo (Cosmos) — #181",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/181",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "181"
+        }
+      }
+    },
+    {
+      "id": "a61b0951-b5c8-4084-acc9-acc5ae2412f2",
+      "title": "Ex Nihilo (Cosmos) — #182",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/182",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "182"
+        }
+      }
+    },
+    {
+      "id": "e420d8bd-3d62-4450-b4c9-764b728d9c09",
+      "title": "Ex Nihilo (Cosmos) — #183",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/183",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "183"
+        }
+      }
+    },
+    {
+      "id": "7da32a72-13f4-4e44-8984-20fd33437353",
+      "title": "Ex Nihilo (Cosmos) — #184",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/184",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "184"
+        }
+      }
+    },
+    {
+      "id": "1d3b0eee-cc10-4426-9ccc-8dae81691fd1",
+      "title": "Ex Nihilo (Cosmos) — #185",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/185",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "185"
+        }
+      }
+    },
+    {
+      "id": "36b5e9e9-bc4b-4283-8958-724c79c07cc0",
+      "title": "Ex Nihilo (Cosmos) — #186",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/186",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "186"
+        }
+      }
+    },
+    {
+      "id": "a87c146c-e0d7-4050-ac97-6cf46f2db7b9",
+      "title": "Ex Nihilo (Cosmos) — #187",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/187",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "187"
+        }
+      }
+    },
+    {
+      "id": "8ae8135c-008f-4dcb-9e8b-1b6baee59007",
+      "title": "Ex Nihilo (Cosmos) — #188",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/188",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "188"
+        }
+      }
+    },
+    {
+      "id": "66ff3853-75f1-47ff-a7bd-ccc83436079e",
+      "title": "Ex Nihilo (Cosmos) — #189",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/189",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "189"
+        }
+      }
+    },
+    {
+      "id": "f81bbb26-dd24-4e06-8760-53ed1309190b",
+      "title": "Ex Nihilo (Cosmos) — #190",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/190",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "190"
+        }
+      }
+    },
+    {
+      "id": "64a52620-f569-4b1c-87a9-40b1eff95099",
+      "title": "Ex Nihilo (Cosmos) — #191",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/191",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "191"
+        }
+      }
+    },
+    {
+      "id": "af9bf534-0a1c-4472-ab1a-5ae33d72bf15",
+      "title": "Ex Nihilo (Cosmos) — #192",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/192",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "192"
+        }
+      }
+    },
+    {
+      "id": "57639a31-64ab-4f15-966b-689fda81d338",
+      "title": "Ex Nihilo (Cosmos) — #193",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/193",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "193"
+        }
+      }
+    },
+    {
+      "id": "76826734-4652-4215-a9c9-11573e7d6961",
+      "title": "Ex Nihilo (Cosmos) — #194",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/194",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "194"
+        }
+      }
+    },
+    {
+      "id": "caabff59-7984-46ef-8a15-4a5c84e8bc4d",
+      "title": "Ex Nihilo (Cosmos) — #195",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/195",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "195"
+        }
+      }
+    },
+    {
+      "id": "51e33986-6ba3-4bf6-8c0f-2b68117ac842",
+      "title": "Ex Nihilo (Cosmos) — #196",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/196",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "196"
+        }
+      }
+    },
+    {
+      "id": "9211b0ac-02af-4d44-85d9-94fdad4be7fe",
+      "title": "Ex Nihilo (Cosmos) — #197",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/197",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "197"
+        }
+      }
+    },
+    {
+      "id": "4432004c-44f6-4f9e-84fb-edc1554bbedb",
+      "title": "Ex Nihilo (Cosmos) — #198",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/198",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "198"
+        }
+      }
+    },
+    {
+      "id": "415b8662-4e01-46d0-a0c2-a12db091c1ee",
+      "title": "Ex Nihilo (Cosmos) — #199",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/199",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "199"
+        }
+      }
+    },
+    {
+      "id": "31bc65c6-8687-4c4b-aa8d-1cd3a2677185",
+      "title": "Ex Nihilo (Cosmos) — #200",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/200",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "200"
+        }
+      }
+    },
+    {
+      "id": "6bf9ea6d-c1b0-4f4f-8526-1b6b20ab341d",
+      "title": "Ex Nihilo (Cosmos) — #201",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/201",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.045Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "201"
+        }
+      }
+    },
+    {
+      "id": "2a57e2ba-a634-4905-9abe-a7231b6495ad",
+      "title": "Ex Nihilo (Cosmos) — #202",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/202",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "202"
+        }
+      }
+    },
+    {
+      "id": "323f13ef-1a46-4fd5-9c3a-4fcc7baedce7",
+      "title": "Ex Nihilo (Cosmos) — #203",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/203",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "203"
+        }
+      }
+    },
+    {
+      "id": "f2e748c0-6b65-4ed6-ac1b-8ffe0845afa7",
+      "title": "Ex Nihilo (Cosmos) — #204",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/204",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "204"
+        }
+      }
+    },
+    {
+      "id": "6230ed60-9a89-4dc3-a35f-33ebde72ebec",
+      "title": "Ex Nihilo (Cosmos) — #205",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/205",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "205"
+        }
+      }
+    },
+    {
+      "id": "9676af98-f638-4a29-a560-6d87093fd2c3",
+      "title": "Ex Nihilo (Cosmos) — #206",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/206",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "206"
+        }
+      }
+    },
+    {
+      "id": "83cdbfcd-de05-4aba-9449-d4e855049223",
+      "title": "Ex Nihilo (Cosmos) — #207",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/207",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "207"
+        }
+      }
+    },
+    {
+      "id": "fbe8e9c9-17e6-4f33-819a-543f02a76ed7",
+      "title": "Ex Nihilo (Cosmos) — #208",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/208",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "208"
+        }
+      }
+    },
+    {
+      "id": "7a742166-6025-470e-832a-60e4543217f6",
+      "title": "Ex Nihilo (Cosmos) — #209",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/209",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "209"
+        }
+      }
+    },
+    {
+      "id": "6aae61d7-1640-4972-9dc8-4af4125fbb6c",
+      "title": "Ex Nihilo (Cosmos) — #210",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/210",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "210"
+        }
+      }
+    },
+    {
+      "id": "0925222b-c459-4b2e-9ab5-8d42940cfd6b",
+      "title": "Ex Nihilo (Cosmos) — #211",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/211",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "211"
+        }
+      }
+    },
+    {
+      "id": "c37d1383-1056-40e5-9d8b-8c67566b4ca8",
+      "title": "Ex Nihilo (Cosmos) — #212",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/212",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "212"
+        }
+      }
+    },
+    {
+      "id": "05ef605a-8dfc-4810-bfb3-956ec7dcdfa1",
+      "title": "Ex Nihilo (Cosmos) — #213",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/213",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "213"
+        }
+      }
+    },
+    {
+      "id": "5a227f30-9372-41dd-80e6-cced9068a370",
+      "title": "Ex Nihilo (Cosmos) — #214",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/214",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "214"
+        }
+      }
+    },
+    {
+      "id": "0ba342f9-171c-491d-9b86-a02c7bb7c08d",
+      "title": "Ex Nihilo (Cosmos) — #215",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/215",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "215"
+        }
+      }
+    },
+    {
+      "id": "93d1da99-159d-4ec5-9917-76b7afe8c4b9",
+      "title": "Ex Nihilo (Cosmos) — #216",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/216",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "216"
+        }
+      }
+    },
+    {
+      "id": "73cafe97-2ec1-408b-be71-172854f13cd8",
+      "title": "Ex Nihilo (Cosmos) — #217",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/217",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "217"
+        }
+      }
+    },
+    {
+      "id": "6268b903-5902-4b25-a4ea-3b17499a65fe",
+      "title": "Ex Nihilo (Cosmos) — #218",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/218",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "218"
+        }
+      }
+    },
+    {
+      "id": "6eb492aa-8eb0-492d-809d-2eca1fbfb7a7",
+      "title": "Ex Nihilo (Cosmos) — #219",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/219",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "219"
+        }
+      }
+    },
+    {
+      "id": "e597a2c6-172b-432c-9183-1572f36cdb27",
+      "title": "Ex Nihilo (Cosmos) — #220",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/220",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "220"
+        }
+      }
+    },
+    {
+      "id": "38df6c67-ba44-4dd1-bf96-05f175ae85d4",
+      "title": "Ex Nihilo (Cosmos) — #221",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/221",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "221"
+        }
+      }
+    },
+    {
+      "id": "c8362751-a65d-472c-9a34-73e6f7160075",
+      "title": "Ex Nihilo (Cosmos) — #222",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/222",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "222"
+        }
+      }
+    },
+    {
+      "id": "601d2afe-c8b4-484b-8534-eb58119f9231",
+      "title": "Ex Nihilo (Cosmos) — #223",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/223",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "223"
+        }
+      }
+    },
+    {
+      "id": "cdccd9df-3bfd-4fa7-91c6-da2dd21adde1",
+      "title": "Ex Nihilo (Cosmos) — #224",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/224",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "224"
+        }
+      }
+    },
+    {
+      "id": "2e84412d-ab73-4b89-ab05-47ab8641e913",
+      "title": "Ex Nihilo (Cosmos) — #225",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/225",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "225"
+        }
+      }
+    },
+    {
+      "id": "50a7512e-e3c6-4cfd-b963-97aeab0eb9bb",
+      "title": "Ex Nihilo (Cosmos) — #226",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/226",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "226"
+        }
+      }
+    },
+    {
+      "id": "5502dfad-95b3-4039-ad99-0b14eb0e71b1",
+      "title": "Ex Nihilo (Cosmos) — #227",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/227",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "227"
+        }
+      }
+    },
+    {
+      "id": "7a8ce607-282d-403e-bef7-2a9d1865ebc3",
+      "title": "Ex Nihilo (Cosmos) — #228",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/228",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "228"
+        }
+      }
+    },
+    {
+      "id": "d5ab7326-fcb7-4178-9915-78750e5b87ac",
+      "title": "Ex Nihilo (Cosmos) — #229",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/229",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "229"
+        }
+      }
+    },
+    {
+      "id": "413ebdab-aa9f-4212-b704-f8eba9cecdf1",
+      "title": "Ex Nihilo (Cosmos) — #230",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/230",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "230"
+        }
+      }
+    },
+    {
+      "id": "640cb624-219b-4159-a349-a8c0fe8a8fab",
+      "title": "Ex Nihilo (Cosmos) — #231",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/231",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "231"
+        }
+      }
+    },
+    {
+      "id": "1258e84c-a5a6-4819-94d4-1ff4940959d3",
+      "title": "Ex Nihilo (Cosmos) — #232",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/232",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "232"
+        }
+      }
+    },
+    {
+      "id": "dedc537b-e487-4685-b793-6a727c61f2cc",
+      "title": "Ex Nihilo (Cosmos) — #233",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/233",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "233"
+        }
+      }
+    },
+    {
+      "id": "bf0d9bcf-f017-4ed1-8bfd-5219052bb060",
+      "title": "Ex Nihilo (Cosmos) — #234",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/234",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "234"
+        }
+      }
+    },
+    {
+      "id": "4b46701a-975e-4d09-80ff-370dee828ac9",
+      "title": "Ex Nihilo (Cosmos) — #235",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/235",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "235"
+        }
+      }
+    },
+    {
+      "id": "e0a26828-e07d-4797-985e-c8a928f909a2",
+      "title": "Ex Nihilo (Cosmos) — #236",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/236",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "236"
+        }
+      }
+    },
+    {
+      "id": "cf92e217-21c1-4a3a-af8d-230f7611dae1",
+      "title": "Ex Nihilo (Cosmos) — #237",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/237",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "237"
+        }
+      }
+    },
+    {
+      "id": "b175fd84-9a6c-4bde-a9f4-3abf9d1ff032",
+      "title": "Ex Nihilo (Cosmos) — #238",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/238",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "238"
+        }
+      }
+    },
+    {
+      "id": "3dcd3fe7-fad7-410e-9da3-945373a20239",
+      "title": "Ex Nihilo (Cosmos) — #239",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/239",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "239"
+        }
+      }
+    },
+    {
+      "id": "9d46624c-0dfc-4233-8eb0-db06c18b898f",
+      "title": "Ex Nihilo (Cosmos) — #240",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/240",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "240"
+        }
+      }
+    },
+    {
+      "id": "351b26e6-7909-4d47-a028-303d09d72fc4",
+      "title": "Ex Nihilo (Cosmos) — #241",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/241",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "241"
+        }
+      }
+    },
+    {
+      "id": "4fb6a0d8-cb56-4426-a4b0-47c54c308cbe",
+      "title": "Ex Nihilo (Cosmos) — #242",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/242",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "242"
+        }
+      }
+    },
+    {
+      "id": "342c8fef-dea2-4af6-9050-7b92c119bc05",
+      "title": "Ex Nihilo (Cosmos) — #243",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/243",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "243"
+        }
+      }
+    },
+    {
+      "id": "80566027-54cd-4ef9-b6bc-24e4340f8f04",
+      "title": "Ex Nihilo (Cosmos) — #244",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/244",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "244"
+        }
+      }
+    },
+    {
+      "id": "e4b45a34-547f-42f2-b1d2-38299fba5f0f",
+      "title": "Ex Nihilo (Cosmos) — #245",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/245",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "245"
+        }
+      }
+    },
+    {
+      "id": "e1e1ac50-eaf5-4540-8550-a46c48ced833",
+      "title": "Ex Nihilo (Cosmos) — #246",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/246",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "246"
+        }
+      }
+    },
+    {
+      "id": "8127eb19-ccd9-47e7-817d-7a9c64b9237c",
+      "title": "Ex Nihilo (Cosmos) — #247",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/247",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "247"
+        }
+      }
+    },
+    {
+      "id": "b7541c15-7bc6-4374-9b9f-e6bdae46c0e6",
+      "title": "Ex Nihilo (Cosmos) — #248",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/248",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "248"
+        }
+      }
+    },
+    {
+      "id": "52ecccf6-a507-4cf7-b497-3e1c1d59dce4",
+      "title": "Ex Nihilo (Cosmos) — #249",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/249",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "249"
+        }
+      }
+    },
+    {
+      "id": "08e192a3-c54d-46e8-b5f2-f9403289220d",
+      "title": "Ex Nihilo (Cosmos) — #250",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/250",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.046Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "250"
+        }
+      }
+    },
+    {
+      "id": "f42e9247-53d3-4c50-83b7-5c2dadcc6dbb",
+      "title": "Ex Nihilo (Cosmos) — #251",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/251",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.047Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "251"
+        }
+      }
+    },
+    {
+      "id": "afa60f47-ae67-4d51-85e2-54b33fa5d4b8",
+      "title": "Ex Nihilo (Cosmos) — #252",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/252",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.047Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "252"
+        }
+      }
+    },
+    {
+      "id": "82cb19eb-8f72-4bed-b70a-05e230e3dfbe",
+      "title": "Ex Nihilo (Cosmos) — #253",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/253",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.047Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "253"
+        }
+      }
+    },
+    {
+      "id": "2b8e4e0b-6ab8-4941-a8fb-70e4ca2c26df",
+      "title": "Ex Nihilo (Cosmos) — #254",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/254",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.047Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "254"
+        }
+      }
+    },
+    {
+      "id": "b387c353-7b80-42dd-a568-1ade7ec4f9fc",
+      "title": "Ex Nihilo (Cosmos) — #255",
+      "source": "https://generator.artblocks.io/1/0x0000000c687daed0fba60d1dba4e5f6149e8b894/255",
+      "duration": 60,
+      "license": "open",
+      "created": "2026-07-09T10:33:02.047Z",
+      "provenance": {
+        "type": "onChain",
+        "contract": {
+          "chain": "evm",
+          "standard": "erc721",
+          "address": "0x0000000c687daed0fba60d1dba4e5f6149e8b894",
+          "tokenId": "255"
         }
       }
     }

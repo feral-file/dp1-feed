@@ -24,6 +24,14 @@
  *
  * Output: one flat JSON file per exhibition — <output-dir>/<exhibition-slug>.json
  *
+ * Special case — unsupervised-sla: the main exhibition playlist also appends items
+ * from three companion "burned" solo exhibitions (2D, 3D, and Dreams), matching
+ * the legacy combined highlight reel that previously lived as a second playlist.
+ *
+ * Special case — ex-nihilo-a3c: the playlist also appends all tokens from the
+ * Art Blocks collection "Ex Nihilo (Cosmos)" (256 generative works), matching
+ * the legacy full-collection playlist that combined Feral File + Art Blocks items.
+ *
  * Usage:
  *   node scripts/generate-ff-playlist.js <exhibition-id-or-slug> [output-dir] [options]
  *
@@ -46,6 +54,28 @@ import {
 const FF_API_BASE = 'https://feralfile.com/api';
 const CDN_BASE = 'https://cdn.feralfileassets.com';
 const MAX_PLAYLIST_ITEMS = 1024;
+
+/** Main Unsupervised exhibition slug (includes companion burned exhibitions below). */
+const UNSUPERVISED_SLUG = 'unsupervised-sla';
+
+/** Companion burned solo exhibitions merged into the unsupervised-sla playlist. */
+const UNSUPERVISED_BURNED_EXHIBITION_SLUGS = [
+  'unsupervised-burned-data-universe-moma-2d-tlf',
+  'unsupervised-burned-data-universe-moma-3d-6pj',
+  'unsupervised-burned-machine-hallucinations-moma-dreams-b9c',
+];
+
+/** Ex Nihilo exhibition slug (includes Art Blocks Cosmos collection below). */
+const EX_NIHILO_SLUG = 'ex-nihilo-a3c';
+
+/** Art Blocks collection merged into the ex-nihilo-a3c playlist. */
+const EX_NIHILO_ARTBLOCKS_COLLECTION = {
+  collectionSlug: 'ex-nihilo-cosmos-by-casey-reas',
+  chainId: 1,
+  itemDuration: 60,
+};
+
+const ART_BLOCKS_GRAPHQL = 'https://data.artblocks.io/v1/graphql';
 
 /**
  * Fetch a single page from the Feral File API.
@@ -82,6 +112,178 @@ async function fetchAllPages(endpoint, pageSize = 300) {
   }
 
   return allResults;
+}
+
+/**
+ * Run a GraphQL query against the Art Blocks Hasura API.
+ * @see https://docs.artblocks.io/developer/graphql/
+ */
+async function fetchArtBlocksGraphQL(query) {
+  const response = await fetch(ART_BLOCKS_GRAPHQL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Art Blocks GraphQL request failed: ${response.status} ${response.statusText}`);
+  }
+
+  const payload = await response.json();
+  if (payload.errors?.length) {
+    throw new Error(`Art Blocks GraphQL error: ${payload.errors[0].message}`);
+  }
+
+  return payload.data;
+}
+
+/**
+ * Fetch an Art Blocks project by public collection slug.
+ */
+async function fetchArtBlocksProject(collectionSlug, chainId = 1) {
+  const query = `{
+    projects_metadata(
+      where: { slug: { _eq: ${JSON.stringify(collectionSlug)} }, chain_id: { _eq: ${chainId} } }
+      limit: 1
+    ) {
+      id
+      name
+      artist_name
+      contract_address
+    }
+  }`;
+
+  const data = await fetchArtBlocksGraphQL(query);
+  const project = data.projects_metadata?.[0];
+  if (!project) {
+    throw new Error(
+      `Art Blocks project not found for collection slug: ${collectionSlug} (chain ${chainId})`
+    );
+  }
+  return project;
+}
+
+/**
+ * Fetch all tokens for an Art Blocks project, ordered by invocation ascending.
+ */
+async function fetchArtBlocksProjectTokens(projectId, chainId = 1) {
+  const allTokens = [];
+  const pageSize = 100;
+  let offset = 0;
+
+  while (true) {
+    const query = `{
+      tokens_metadata(
+        where: {
+          project_id: { _eq: ${JSON.stringify(projectId)} }
+          chain_id: { _eq: ${chainId} }
+        }
+        order_by: { invocation: asc }
+        limit: ${pageSize}
+        offset: ${offset}
+      ) {
+        token_id
+        invocation
+        live_view_url
+      }
+    }`;
+
+    const data = await fetchArtBlocksGraphQL(query);
+    const page = data.tokens_metadata ?? [];
+    allTokens.push(...page);
+
+    if (page.length < pageSize) {
+      break;
+    }
+    offset += pageSize;
+  }
+
+  return allTokens;
+}
+
+/**
+ * Build DP-1 playlist items from Art Blocks token metadata.
+ */
+function buildArtBlocksPlaylistItems(tokens, project, chainId, itemDuration) {
+  const playlistItems = [];
+  const contractAddress = project.contract_address;
+  const projectName = project.name;
+
+  for (const token of tokens) {
+    const tokenId = String(token.token_id);
+    const invocation = token.invocation ?? token.token_id;
+    const source =
+      token.live_view_url ||
+      `https://generator.artblocks.io/${chainId}/${contractAddress.toLowerCase()}/${tokenId}`;
+
+    const item = {
+      id: randomUUID(),
+      title: `${projectName} — #${invocation}`,
+      source,
+      duration: itemDuration,
+      license: 'open',
+      created: new Date().toISOString(),
+      provenance: {
+        type: 'onChain',
+        contract: {
+          chain: 'evm',
+          standard: 'erc721',
+          address: contractAddress,
+          tokenId,
+        },
+      },
+    };
+
+    const validation = dp1.validatePlaylistItem(item);
+    if (!validation.success) {
+      console.error(
+        `  ✗ Invalid Art Blocks playlist item #${invocation}: ${validation.error.message}`
+      );
+      continue;
+    }
+
+    playlistItems.push(item);
+
+    if (playlistItems.length >= MAX_PLAYLIST_ITEMS) {
+      console.warn(
+        `\n⚠️  Reached maximum playlist item limit of ${MAX_PLAYLIST_ITEMS}. Stopping Art Blocks item creation.`
+      );
+      break;
+    }
+  }
+
+  return playlistItems;
+}
+
+/**
+ * Append Art Blocks collection tokens to an existing playlist item list.
+ */
+async function appendArtBlocksCollectionItems(playlistItems, collectionConfig) {
+  const { collectionSlug, chainId, itemDuration } = collectionConfig;
+
+  console.log(`\nFetching Art Blocks collection: ${collectionSlug}...`);
+  const project = await fetchArtBlocksProject(collectionSlug, chainId);
+  console.log(`  Project: ${project.name} by ${project.artist_name}`);
+  console.log(`  Contract: ${project.contract_address}`);
+
+  const tokens = await fetchArtBlocksProjectTokens(project.id, chainId);
+  console.log(`  Tokens found: ${tokens.length}`);
+
+  const remaining = MAX_PLAYLIST_ITEMS - playlistItems.length;
+  if (remaining <= 0) {
+    console.warn('  ⚠️  Playlist already at item cap; skipping Art Blocks tokens');
+    return playlistItems;
+  }
+
+  const artBlocksItems = buildArtBlocksPlaylistItems(
+    tokens.slice(0, remaining),
+    project,
+    chainId,
+    itemDuration
+  );
+  console.log(`  Added ${artBlocksItems.length} Art Blocks item(s)`);
+
+  return [...playlistItems, ...artBlocksItems];
 }
 
 /**
@@ -380,13 +582,68 @@ function interleaveArtworks(seriesArtworks) {
 }
 
 /**
- * Build DP-1 playlist items from a list of {artwork, series} pairs.
+ * Sort series by displayIndex (ascending), with numeric suffix and createdAt fallbacks.
+ */
+function sortSeriesByDisplayIndex(seriesList) {
+  seriesList.sort((a, b) => {
+    if (
+      a.displayIndex !== undefined &&
+      b.displayIndex !== undefined &&
+      a.displayIndex !== b.displayIndex
+    ) {
+      return a.displayIndex - b.displayIndex;
+    }
+    const aMatch = a.title.match(/(\d+)$/);
+    const bMatch = b.title.match(/(\d+)$/);
+    if (aMatch && bMatch) {
+      return parseInt(aMatch[1]) - parseInt(bMatch[1]);
+    }
+    return new Date(a.createdAt) - new Date(b.createdAt);
+  });
+}
+
+/**
+ * Select artwork pairs for one exhibition using the unified ordering algorithm.
+ * Returns [{ artwork, series, exhibition }, ...].
+ */
+async function selectExhibitionArtworkPairs(exhibition) {
+  const seriesList = await getSeries(exhibition.id);
+  sortSeriesByDisplayIndex(seriesList);
+
+  const allSeriesArtworks = [];
+  for (const series of seriesList) {
+    const artworks = await selectArtworksFromSeries(series, exhibition);
+    allSeriesArtworks.push({ series, artworks });
+  }
+
+  const primarySeries = allSeriesArtworks.filter(({ series }) => {
+    const model = series.settings?.artworkModel;
+    return model === 'single' || model === 'multi';
+  });
+
+  const generativeSeries = allSeriesArtworks.filter(({ series }) => {
+    return series.settings?.artworkModel === 'multi_unique';
+  });
+
+  const primaryItems = primarySeries.flatMap(({ artworks }) =>
+    artworks.map(pair => ({ ...pair, exhibition }))
+  );
+
+  const generativeItems = interleaveArtworks(generativeSeries.map(({ artworks }) => artworks)).map(
+    pair => ({ ...pair, exhibition })
+  );
+
+  return [...primaryItems, ...generativeItems];
+}
+
+/**
+ * Build DP-1 playlist items from a list of {artwork, series, exhibition} pairs.
  * Stops at MAX_PLAYLIST_ITEMS.
  */
-function buildPlaylistItems(selectedItems, exhibition) {
+function buildPlaylistItems(selectedItems) {
   const playlistItems = [];
 
-  for (const { artwork, series } of selectedItems) {
+  for (const { artwork, series, exhibition } of selectedItems) {
     const source = resolvePreviewURI(artwork);
 
     if (!source) {
@@ -558,63 +815,48 @@ async function generatePlaylist(exhibitionIdOrSlug, summaryOpts = null) {
     const seriesList = await getSeries(exhibition.id);
     console.log(`\nFound ${seriesList.length} series\n`);
 
-    // Sort series by displayIndex ascending
-    seriesList.sort((a, b) => {
-      if (
-        a.displayIndex !== undefined &&
-        b.displayIndex !== undefined &&
-        a.displayIndex !== b.displayIndex
-      ) {
-        return a.displayIndex - b.displayIndex;
-      }
-      const aMatch = a.title.match(/(\d+)$/);
-      const bMatch = b.title.match(/(\d+)$/);
-      if (aMatch && bMatch) {
-        return parseInt(aMatch[1]) - parseInt(bMatch[1]);
-      }
-      return new Date(a.createdAt) - new Date(b.createdAt);
-    });
-
-    // Select artworks from each series
-    const allSeriesArtworks = [];
-    for (const series of seriesList) {
-      const artworks = await selectArtworksFromSeries(series, exhibition);
-      allSeriesArtworks.push({ series, artworks });
-    }
-
-    // Partition into primary (single/multi) and generative (multi_unique)
-    const primarySeries = allSeriesArtworks.filter(({ series }) => {
-      const model = series.settings?.artworkModel;
-      return model === 'single' || model === 'multi';
-    });
-
-    const generativeSeries = allSeriesArtworks.filter(({ series }) => {
-      return series.settings?.artworkModel === 'multi_unique';
-    });
-
-    // Primary items: flat in display_index order
-    const primaryItems = primarySeries.flatMap(({ artworks }) => artworks);
-
-    // Generative items: interleaved round-robin across generative series
-    const generativeItems = interleaveArtworks(generativeSeries.map(({ artworks }) => artworks));
-
-    const combinedItems = [...primaryItems, ...generativeItems];
+    let combinedItems = await selectExhibitionArtworkPairs(exhibition);
 
     console.log(
-      `\nCombined: ${primaryItems.length} primary + ${generativeItems.length} generative = ${combinedItems.length} total (cap: ${MAX_PLAYLIST_ITEMS})`
+      `\n${exhibition.slug || exhibition.title}: ${combinedItems.length} item(s) selected`
     );
+
+    if (exhibition.slug === UNSUPERVISED_SLUG) {
+      console.log('\nIncluding companion burned exhibitions for unsupervised-sla...');
+      for (const burnedSlug of UNSUPERVISED_BURNED_EXHIBITION_SLUGS) {
+        const burnedExhibition = await getExhibition(burnedSlug);
+        const burnedItems = await selectExhibitionArtworkPairs(burnedExhibition);
+        console.log(`  ${burnedSlug}: ${burnedItems.length} item(s)`);
+        combinedItems = [...combinedItems, ...burnedItems];
+      }
+      console.log(
+        `\nCombined with burned exhibitions: ${combinedItems.length} total (cap: ${MAX_PLAYLIST_ITEMS})`
+      );
+    }
 
     if (combinedItems.length === 0) {
       throw new Error('No artworks could be selected for this exhibition');
     }
 
-    const items = buildPlaylistItems(combinedItems, exhibition);
+    const items = buildPlaylistItems(combinedItems);
 
     if (items.length === 0) {
       throw new Error('No valid playlist items could be created');
     }
 
-    const playlist = await buildPlaylist(exhibition.title, items, exhibition, summaryOpts);
+    let playlistItems = items;
+
+    if (exhibition.slug === EX_NIHILO_SLUG) {
+      playlistItems = await appendArtBlocksCollectionItems(
+        playlistItems,
+        EX_NIHILO_ARTBLOCKS_COLLECTION
+      );
+      console.log(
+        `\nCombined with Art Blocks collection: ${playlistItems.length} total (cap: ${MAX_PLAYLIST_ITEMS})`
+      );
+    }
+
+    const playlist = await buildPlaylist(exhibition.title, playlistItems, exhibition, summaryOpts);
     validatePlaylist(playlist);
 
     console.log(`\n✓ Generated 1 playlist.`);
@@ -622,7 +864,8 @@ async function generatePlaylist(exhibitionIdOrSlug, summaryOpts = null) {
       'Note: Signature is a placeholder. Use a proper Ed25519 key to sign in production.'
     );
 
-    const exhibitionSlug = exhibition.slug || makeSlug(null, exhibition.title, playlist.id, 'playlist');
+    const exhibitionSlug =
+      exhibition.slug || makeSlug(null, exhibition.title, playlist.id, 'playlist');
     return { playlist, exhibitionSlug };
   } catch (error) {
     console.error('\n✗ Error generating playlist:', error.message);
