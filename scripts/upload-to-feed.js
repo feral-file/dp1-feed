@@ -148,7 +148,11 @@ function sanitizePublisherKey(obj) {
   if (!p.key) {
     const name = String(p.name || '').trim();
     const url = String(p.url || '').trim();
-    if (FERAL_FILE_PUBLISHER_KEY && name === 'Feral File' && (!url || url === 'https://feralfile.com')) {
+    if (
+      FERAL_FILE_PUBLISHER_KEY &&
+      name === 'Feral File' &&
+      (!url || url === 'https://feralfile.com')
+    ) {
       obj.publisher = { ...p, key: FERAL_FILE_PUBLISHER_KEY };
     }
     return;
@@ -311,9 +315,77 @@ async function apiRequest(method, url, apiKey, body = null) {
 }
 
 /**
- * Upload a playlist JSON to the feed server.
+ * Fields a playlist PATCH may carry. The update schema has no `slug` or
+ * `signature`, and `id`/`created` are server-managed, so an update sends only
+ * the mutable subset rather than the whole object.
+ */
+const PLAYLIST_UPDATE_FIELDS = [
+  'dpVersion',
+  'defaults',
+  'items',
+  'coverImage',
+  'title',
+  'curators',
+  'summary',
+  'dynamicQueries',
+];
+
+/**
+ * Reduce a prepared playlist payload to the fields a PATCH accepts.
+ */
+function toPlaylistUpdate(playlistData) {
+  const update = {};
+  for (const field of PLAYLIST_UPDATE_FIELDS) {
+    if (playlistData[field] !== undefined) update[field] = playlistData[field];
+  }
+  return update;
+}
+
+/**
+ * Look up a playlist by slug. The feed resolves a playlist by either id or
+ * slug on the same path. Returns null when it does not exist yet.
+ */
+async function getPlaylistBySlug(feedEndpoint, apiKey, slug) {
+  const url = `${feedEndpoint}/api/v1/playlists/${encodeURIComponent(slug)}`;
+  const response = await apiRequest('GET', url, apiKey);
+  if (response.status === 404) return null;
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Failed to look up playlist ${slug}: ${response.status}\n${errorText}`);
+  }
+  return await response.json();
+}
+
+/**
+ * Create a playlist, or update it in place when one already exists under the
+ * same slug.
+ *
+ * Playlist slugs are unique on the feed, so a blind POST of an already
+ * published exhibition fails with a duplicate-key error and the re-generated
+ * items never reach the server. Re-running this script is the normal way to
+ * publish regenerated playlists, so an existing slug is an update, not a
+ * conflict.
  */
 async function uploadPlaylist(feedEndpoint, apiKey, playlistData) {
+  const existing = playlistData.slug
+    ? await getPlaylistBySlug(feedEndpoint, apiKey, playlistData.slug)
+    : null;
+
+  if (existing) {
+    console.log(`  Updating playlist: ${playlistData.title} (${existing.id})...`);
+    const url = `${feedEndpoint}/api/v1/playlists/${encodeURIComponent(existing.id)}`;
+    const response = await apiRequest('PATCH', url, apiKey, toPlaylistUpdate(playlistData));
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(
+        `Failed to update playlist: ${response.status} ${response.statusText}\n${errorText}`
+      );
+    }
+    const result = await response.json();
+    console.log(`  ✓ Playlist updated: ${result.id} (slug: ${result.slug})`);
+    return result;
+  }
+
   console.log(`  Uploading playlist: ${playlistData.title}...`);
   const url = `${feedEndpoint}/api/v1/playlists`;
   const response = await apiRequest('POST', url, apiKey, playlistData);
@@ -762,7 +834,12 @@ async function main() {
         // Try to fetch the existing channel
         const existing = await getChannel(feedEndpoint, apiKey, manifest.channel.id);
         if (existing) {
-          channelObj = await patchChannel(feedEndpoint, apiKey, manifest.channel.id, channelPayload);
+          channelObj = await patchChannel(
+            feedEndpoint,
+            apiKey,
+            manifest.channel.id,
+            channelPayload
+          );
         } else {
           console.warn(
             `⚠️  Stored channel id ${manifest.channel.id} not found on server; creating a new one.`
