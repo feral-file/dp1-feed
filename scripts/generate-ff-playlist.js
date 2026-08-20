@@ -18,7 +18,8 @@
  *    at every step. Exhibitions with token merging enabled (settings.burn) send
  *    every merged-away source token to the zero address; those tokens no longer
  *    exist and must not be published.
- * 6. Total items capped at MAX_PLAYLIST_ITEMS (1024).
+ * 6. Total items bounded by MAX_PLAYLIST_ITEMS, a runaway-output guard set
+ *    above the largest real exhibition rather than a protocol limit.
  *
  * Curator: derived from exhibition.curatorAlumni as a DP-1 curator Entity with a
  * did:pkh key (CAIP-10, from the alumni's wallet address) when available.
@@ -57,7 +58,22 @@ import {
 
 const FF_API_BASE = 'https://feralfile.com/api';
 const CDN_BASE = 'https://cdn.feralfileassets.com';
-const MAX_PLAYLIST_ITEMS = 1024;
+/**
+ * Upper bound on items in a generated playlist.
+ *
+ * This is a runaway-output sanity guard, not a protocol limit — DP-1 itself
+ * does not cap playlist length. It was 1024, which silently truncated the two
+ * largest exhibitions (crystalline-work-5ze at 9048 items, n-12-2ts at 1728),
+ * so it is now set well above the largest real exhibition.
+ */
+const MAX_PLAYLIST_ITEMS = 16384;
+
+/**
+ * Item-count ceiling baked into ff-dp1-js@1.0.0's playlist schema
+ * (items: z.array(...).max(1024)). See validatePlaylist() for why the
+ * generator validates around it rather than honouring it.
+ */
+const DP1_LIB_MAX_ITEMS = 1024;
 
 /**
  * Well-known burn sinks. An artwork owned by one of these is no longer a live
@@ -813,10 +829,21 @@ async function buildPlaylist(title, items, exhibition, summaryOpts = null) {
  * curators here use did:pkh (the only DID method derivable from Feral File's
  * wallet-address-only alumni data), structural validation runs on a
  * curators-stripped copy to avoid a false failure from this local package.
+ *
+ * The same package also caps items at DP1_LIB_MAX_ITEMS, which DP-1 itself does
+ * not require and which would reject the largest exhibitions outright. Coverage
+ * is preserved rather than dropped: the envelope is parsed with a bounded slice
+ * of the items, and then every item — including the ones outside that slice —
+ * is validated individually.
  */
 function validatePlaylist(playlist) {
   const { curators, ...structural } = playlist;
-  const result = dp1.parseDP1Playlist(structural);
+  const oversized = structural.items.length > DP1_LIB_MAX_ITEMS;
+  const envelope = oversized
+    ? { ...structural, items: structural.items.slice(0, DP1_LIB_MAX_ITEMS) }
+    : structural;
+
+  const result = dp1.parseDP1Playlist(envelope);
   if (result.error) {
     console.error('\n✗ Playlist validation failed:');
     console.error(result.error.message);
@@ -824,6 +851,20 @@ function validatePlaylist(playlist) {
       console.error('Details:', result.error.details);
     }
     throw new Error('Playlist validation failed');
+  }
+
+  if (oversized) {
+    for (const [index, item] of structural.items.entries()) {
+      const itemResult = dp1.validatePlaylistItem(item);
+      if (!itemResult.success) {
+        console.error(`\n✗ Invalid playlist item at index ${index}: ${itemResult.error.message}`);
+        throw new Error('Playlist validation failed');
+      }
+    }
+    console.log(
+      `  Note: ${structural.items.length} items exceeds the ff-dp1-js schema cap of ` +
+        `${DP1_LIB_MAX_ITEMS}; envelope validated on a bounded slice, all items validated individually.`
+    );
   }
 
   console.log(`\n✓ Playlist created successfully!`);
