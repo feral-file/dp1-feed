@@ -14,7 +14,11 @@
  * 3. Primary items come first, flat in series display order.
  * 4. Generative items follow, interleaved round-robin across series in
  *    display order (series 1 item 1, series 2 item 1, ... series 1 item 2, ...).
- * 5. Total items capped at MAX_PLAYLIST_ITEMS (1024).
+ * 5. Burned artworks (owner is a burn address — see BURN_ADDRESSES) are excluded
+ *    at every step. Exhibitions with token merging enabled (settings.burn) send
+ *    every merged-away source token to the zero address; those tokens no longer
+ *    exist and must not be published.
+ * 6. Total items capped at MAX_PLAYLIST_ITEMS (1024).
  *
  * Curator: derived from exhibition.curatorAlumni as a DP-1 curator Entity with a
  * did:pkh key (CAIP-10, from the alumni's wallet address) when available.
@@ -54,6 +58,24 @@ import {
 const FF_API_BASE = 'https://feralfile.com/api';
 const CDN_BASE = 'https://cdn.feralfileassets.com';
 const MAX_PLAYLIST_ITEMS = 1024;
+
+/**
+ * Well-known burn sinks. An artwork owned by one of these is no longer a live
+ * token and must not appear in a playlist.
+ *
+ * Some Feral File exhibitions enable token merging (exhibition.settings.burn):
+ * a collector merges several tokens of a series into one new token, and every
+ * source token is transferred to the EVM zero address. CRAWL is the clearest
+ * case — 60 of its 512 tokens were merged into the "CRAWL MULTI LEVEL" series
+ * (each merged token records its sources in metadata.ts044MergedIndexes), and
+ * merged tokens can themselves be merged again, so 4 intermediate MULTI LEVEL
+ * tokens are burned too.
+ */
+const BURN_ADDRESSES = new Set([
+  '0x0000000000000000000000000000000000000000',
+  '0x000000000000000000000000000000000000dead',
+  'tz1burnburnburnburnburnburnburjayjjx',
+]);
 
 /** Main Unsupervised exhibition slug (includes companion burned exhibitions below). */
 const UNSUPERVISED_SLUG = 'unsupervised-sla';
@@ -442,6 +464,18 @@ function makeSlug(clientSlug, title, id, defaultName = 'playlist') {
 }
 
 /**
+ * True when the artwork's current owner is a burn address, i.e. the token has
+ * been destroyed (merged away, or burned outright) and should be excluded.
+ */
+function isBurnedArtwork(artwork) {
+  const owner = artwork.ownerAddress;
+  if (typeof owner !== 'string') {
+    return false;
+  }
+  return BURN_ADDRESSES.has(owner.trim().toLowerCase());
+}
+
+/**
  * Check if artwork should be included based on series settings.
  */
 function shouldIncludeArtwork(artwork, series, exhibition, includeCount) {
@@ -451,6 +485,13 @@ function shouldIncludeArtwork(artwork, series, exhibition, includeCount) {
     if (includeCount > 0) {
       return false;
     }
+  }
+
+  if (isBurnedArtwork(artwork)) {
+    console.log(
+      `  Skipping artwork ${artwork.name} (index ${artwork.index}): burned (owner ${artwork.ownerAddress})`
+    );
+    return false;
   }
 
   if (exhibition.mintBlockchain === 'bitmark') {
