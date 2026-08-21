@@ -1,5 +1,5 @@
 {
-  "id": "5d8d871b-410d-46ac-b050-c383c6e8580d",
+  "id": "627fe84b-9991-48a3-b49a-3e08d2c1e5aa",
   "slug": "objkt",
   "title": "objkt.com",
   "summary": "objkt.com is a marketplace for digital art on Tezos. This channel brings together works from every objkt.com gallery and curated space in one place.",
@@ -395,7 +395,19 @@
     "https://feed.feralfile.com/api/v1/playlists/16c91dcd-3326-5336-ba31-e12cffee0269",
     "https://feed.feralfile.com/api/v1/playlists/a2cf41d7-1597-5d58-a8b9-c11e377f8ba3"
   ],
-  "created": "2026-08-21T10:13:57.402Z",
+  "created": "2026-08-21T10:31:09.216Z",
   "signature": "ed25519:0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "publisher": {
+    "name": "objkt.com",
+    "key": "did:key:z6Mkp2fxTYHmifbFFiCfKYuz1TWDB4GFpJ1afsb9ewjaD3rc",
+    "url": "https://objkt.com"
+  },
+  "curators": [
+    {
+      "name": "objkt.com",
+      "key": "did:key:z6Mkp2fxTYHmifbFFiCfKYuz1TWDB4GFpJ1afsb9ewjaD3rc",
+      "url": "https://objkt.com"
+    }
+  ],
   "coverImage": "https://assets.objkt.media/file/assets-003/bafkreihqohtaihr45vdgayroswlfsombabw53rrtdppzjuuf6ovbhr4lmq/thumb400"
 }
