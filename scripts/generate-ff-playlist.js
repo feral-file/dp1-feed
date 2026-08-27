@@ -58,6 +58,10 @@ import {
 
 const FF_API_BASE = 'https://feralfile.com/api';
 const CDN_BASE = 'https://cdn.feralfileassets.com';
+
+// Cloudflare Images variant used for playlist/channel cover images. Item
+// sources stay on /raw — that is the artwork itself and must not be resized.
+const COVER_IMAGE_VARIANT = 'public';
 /**
  * Upper bound on items in a generated playlist.
  *
@@ -391,6 +395,26 @@ function resolvePreviewURI(artwork) {
   }
 
   return resolveURI(rawSrc);
+}
+
+/**
+ * Pick the URI for a playlist cover image.
+ *
+ * Covers are chrome, not artwork: they are rendered as cards and grids, so the
+ * full-resolution original is the wrong trade. resolveURI() normalises every
+ * Cloudflare Images URL to /raw because that IS right for item sources, where
+ * the artwork itself is on screen. Here we want the resized variant instead —
+ * for the Social Codes cover that is 65 KB of JPEG rather than 3.0 MB of PNG.
+ *
+ * Only Cloudflare Images URLs carry variants; anything else (notably
+ * cdn.feralfileassets.com exhibition thumbnails) is returned untouched.
+ */
+function resolveCoverImageURI(rawSrc) {
+  const resolved = resolveURI(rawSrc);
+  if (!resolved || !resolved.includes('imagedelivery.net')) {
+    return resolved;
+  }
+  return resolved.replace(/\/raw$/, `/${COVER_IMAGE_VARIANT}`);
 }
 
 /**
@@ -764,7 +788,7 @@ async function buildPlaylist(title, items, exhibition, summaryOpts = null) {
 
   let coverImageUrl = exhibition.coverDisplay || exhibition.coverURI;
   if (coverImageUrl) {
-    coverImageUrl = resolveURI(coverImageUrl);
+    coverImageUrl = resolveCoverImageURI(coverImageUrl);
   }
 
   let summary =
