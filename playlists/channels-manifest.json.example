@@ -12,11 +12,7 @@
     "summary": "Feral File is a platform for digital art exhibitions, publishing, and collecting. This channel brings together artworks from all Feral File exhibitions in one place.",
     "coverImage": null
   },
-  "playlists": [
-    "social-codes-pcl",
-    "gray-matter-dn1",
-    "net-evil-das"
-  ],
+  "playlists": ["social-codes-pcl", "gray-matter-dn1", "net-evil-das"],
   "playlistUrls": {
     "social-codes-pcl": "https://feed.feralfile.com/api/v1/playlists/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     "gray-matter-dn1": "https://feed.feralfile.com/api/v1/playlists/yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy"
