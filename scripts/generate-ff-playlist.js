@@ -1072,7 +1072,9 @@ async function main() {
     fs.mkdirSync(outputDir, { recursive: true });
 
     const outputFile = path.join(outputDir, `${exhibitionSlug}.json`);
-    fs.writeFileSync(outputFile, JSON.stringify(playlist, null, 2), 'utf-8');
+    // Keep generated artifacts compatible with the repository-wide Prettier
+    // check. JSON.stringify does not add the final newline Prettier requires.
+    fs.writeFileSync(outputFile, `${JSON.stringify(playlist, null, 2)}\n`, 'utf-8');
     console.log(`\n✓ Playlist saved to: ${outputFile}`);
   } catch (error) {
     console.error('\n✗ Failed to generate playlist');
