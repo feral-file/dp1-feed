@@ -825,6 +825,11 @@ async function buildPlaylist(title, items, exhibition, summaryOpts = null) {
     coverImage: coverImageUrl,
     created: new Date().toISOString(),
     defaults: {
+      // Feral File exhibitions are composed for the wall: fill is the house
+      // default, while an item/ref manifest can still state a different intent.
+      // Keep it explicit because DP-1 deliberately falls back to fit when a
+      // publisher omits scaling.
+      display: { scaling: 'fill' },
       license: 'open',
       duration: 300,
     },
